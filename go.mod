@@ -1,4 +1,4 @@
-module github.com/smartcontractkit/ccip-chain-selectors
+module github.com/smartcontractkit/chain-selectors
 
 go 1.20
 

@@ -1,4 +1,4 @@
-package ccip_chain_selectors
+package chain_selectors
 
 import "testing"
 
