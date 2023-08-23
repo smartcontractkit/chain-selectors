@@ -15,7 +15,7 @@ supported networks and their selectors.
 
 ```go
 import (
-    "github.com/smartcontractkit/ccip-chain-selectors"
+    selectors "github.com/smartcontractkit/chain-selectors"
 )
 
 func main() {
