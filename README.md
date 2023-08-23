@@ -1,7 +1,7 @@
 # Chain Selectors
 
 CCIP uses its own set of chain selectors represented by uint64 to identify blockchains. This repository contains a
-mapping between the CCIP chain identifiers (`chainSelectorId`) and the chain identifiers used by the blockchains
+mapping between the custom chain identifiers (`chainSelectorId`) and the chain identifiers used by the blockchains
 themselves (`chainId`).
 
 Please refer to the [official documentation](https://docs.chain.link/ccip/supported-networks) to learn more about
