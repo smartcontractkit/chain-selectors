@@ -1,4 +1,4 @@
-# CCIP chain selectors
+# Chain Selectors
 
 CCIP uses its own set of chain selectors represented by uint64 to identify blockchains. This repository contains a
 mapping between the CCIP chain identifiers (`chainSelectorId`) and the chain identifiers used by the blockchains
@@ -9,7 +9,7 @@ supported networks and their selectors.
 
 ### Installation
 
-`go get github.com/smartcontractkit/ccip-chain-selectors`
+`go get github.com/smartcontractkit/chain-selectors`
 
 ### Usage
 
