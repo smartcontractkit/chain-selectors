@@ -9,7 +9,7 @@ supported networks and their selectors.
 
 ### Installation
 
-`go get github.com/smartcontract/ccip-chain-selectors`
+`go get github.com/smartcontractkit/ccip-chain-selectors`
 
 ### Usage
 
