@@ -15,19 +15,19 @@ supported networks and their selectors.
 
 ```go
 import (
-    selectors "github.com/smartcontractkit/chain-selectors"
+    chainselectors "github.com/smartcontractkit/chain-selectors"
 )
 
 func main() {
     // Getting selector based on ChainId
-    selector, err := selectors.SelectorFromChainId(420)
+    selector, err := chainselectors.SelectorFromChainId(420)
 
     // Getting ChainId based on ChainSelector
-    chainId, err := selectors.ChainIdFromSelector(2664363617261496610)
+    chainId, err := chainselectors.ChainIdFromSelector(2664363617261496610)
 
     // Accessing mapping directly
     lookupChainId := uint64(1337)
-    if chainSelector, exists := selectors.EvmChainIdToChainSelector()[lookupChainId]; exists {
+    if chainSelector, exists := chainselectors.EvmChainIdToChainSelector()[lookupChainId]; exists {
         fmt.Println("Found chain selector for chain", lookupChainId, ":", chainSelector)
     }
 }
