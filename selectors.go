@@ -13,17 +13,17 @@ var selectorsYml []byte
 //go:embed test_selectors.yml
 var testSelectorsYml []byte
 
+var selectorsMap = parseYml(selectorsYml)
+var testSelectorsMap = parseYml(testSelectorsYml)
+
 var evmChainIdToChainSelector = loadAllSelectors()
 
 func loadAllSelectors() map[uint64]uint64 {
-	selectors := parseYml(selectorsYml)
-	testSelectors := parseYml(testSelectorsYml)
-
-	output := make(map[uint64]uint64, len(selectors)+len(testSelectors))
-	for k, v := range selectors {
+	output := make(map[uint64]uint64, len(selectorsMap)+len(testSelectorsMap))
+	for k, v := range selectorsMap {
 		output[k] = v
 	}
-	for k, v := range testSelectors {
+	for k, v := range testSelectorsMap {
 		output[k] = v
 	}
 	return output
@@ -65,4 +65,12 @@ func SelectorFromChainId(chainId uint64) (uint64, error) {
 		return chainSelectorId, nil
 	}
 	return 0, fmt.Errorf("chain selector not found for chain %d", chainId)
+}
+
+func TestChainIds() []uint64 {
+	chainIds := make([]uint64, 0, len(testSelectorsMap))
+	for k := range testSelectorsMap {
+		chainIds = append(chainIds, k)
+	}
+	return chainIds
 }
