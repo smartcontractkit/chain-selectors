@@ -2,6 +2,24 @@ package chain_selectors
 
 import "testing"
 
+func TestBothSelectorsYmlAndTestSelectorsYmlAreValid(t *testing.T) {
+	optimismGoerliSelector, err := SelectorFromChainId(420)
+	if err != nil {
+		t.Error("Chain Selectors not found for chain 420")
+	}
+	if optimismGoerliSelector != 2664363617261496610 {
+		t.Error("Invalid Chain Selector for chain 420")
+	}
+
+	testChainSelector, err := SelectorFromChainId(90000020)
+	if err != nil {
+		t.Error("Chain Selectors not found for test chain 90000020")
+	}
+	if testChainSelector != 17810359353458878177 {
+		t.Error("Invalid Chain Selector for chain 90000020")
+	}
+}
+
 func TestEvmChainIdToChainSelectorReturningCopiedMap(t *testing.T) {
 	selectors := EvmChainIdToChainSelector()
 	selectors[1] = 2

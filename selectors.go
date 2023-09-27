@@ -9,15 +9,33 @@ import (
 
 //go:embed selectors.yml
 var selectorsYml []byte
-var evmChainIdToChainSelector = parseYml()
 
-func parseYml() map[uint64]uint64 {
+//go:embed test_selectors.yml
+var testSelectorsYml []byte
+
+var evmChainIdToChainSelector = loadAllSelectors()
+
+func loadAllSelectors() map[uint64]uint64 {
+	selectors := parseYml(selectorsYml)
+	testSelectors := parseYml(testSelectorsYml)
+
+	output := make(map[uint64]uint64, len(selectors)+len(testSelectors))
+	for k, v := range selectors {
+		output[k] = v
+	}
+	for k, v := range testSelectors {
+		output[k] = v
+	}
+	return output
+}
+
+func parseYml(ymlFile []byte) map[uint64]uint64 {
 	type ymlData struct {
 		Selectors map[uint64]uint64 `yaml:"selectors"`
 	}
 
 	var data ymlData
-	err := yaml.Unmarshal(selectorsYml, &data)
+	err := yaml.Unmarshal(ymlFile, &data)
 	if err != nil {
 		panic(err)
 	}
