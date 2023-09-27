@@ -1,6 +1,45 @@
 package chain_selectors
 
-import "testing"
+import (
+	"testing"
+)
+
+func TestNoSameChainSelectorsAreGenerated(t *testing.T) {
+	chainSelectors := map[uint64]bool{}
+
+	for k, v := range evmChainIdToChainSelector {
+		if _, exist := chainSelectors[v]; exist {
+			t.Errorf("Chain Selectors should be unique. Selector %d is duplicated for chain %d", v, k)
+		}
+		chainSelectors[v] = true
+	}
+}
+
+func TestNoOverlapBetweenRealAndTestChains(t *testing.T) {
+	for k, _ := range selectorsMap {
+		if _, exist := testSelectorsMap[k]; exist {
+			t.Errorf("Chain %d is duplicated between real and test chains", k)
+		}
+	}
+}
+
+func TestBothSelectorsYmlAndTestSelectorsYmlAreValid(t *testing.T) {
+	optimismGoerliSelector, err := SelectorFromChainId(420)
+	if err != nil {
+		t.Error("Chain Selectors not found for chain 420")
+	}
+	if optimismGoerliSelector != 2664363617261496610 {
+		t.Error("Invalid Chain Selector for chain 420")
+	}
+
+	testChainSelector, err := SelectorFromChainId(90000020)
+	if err != nil {
+		t.Error("Chain Selectors not found for test chain 90000020")
+	}
+	if testChainSelector != 17810359353458878177 {
+		t.Error("Invalid Chain Selector for chain 90000020")
+	}
+}
 
 func TestEvmChainIdToChainSelectorReturningCopiedMap(t *testing.T) {
 	selectors := EvmChainIdToChainSelector()
@@ -54,5 +93,18 @@ func TestSelectorFromChainId(t *testing.T) {
 	}
 	if chainSelectorId != 13264668187771770619 {
 		t.Error("Should return correct chain selector id")
+	}
+}
+
+func TestTestChainIds(t *testing.T) {
+	chainIds := TestChainIds()
+	if len(chainIds) != len(testSelectorsMap) {
+		t.Error("Should return correct number of test chain ids")
+	}
+
+	for _, chainId := range chainIds {
+		if _, exist := testSelectorsMap[chainId]; !exist {
+			t.Error("Should return correct test chain ids")
+		}
 	}
 }

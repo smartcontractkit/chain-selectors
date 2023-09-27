@@ -9,15 +9,33 @@ import (
 
 //go:embed selectors.yml
 var selectorsYml []byte
-var evmChainIdToChainSelector = parseYml()
 
-func parseYml() map[uint64]uint64 {
+//go:embed test_selectors.yml
+var testSelectorsYml []byte
+
+var selectorsMap = parseYml(selectorsYml)
+var testSelectorsMap = parseYml(testSelectorsYml)
+
+var evmChainIdToChainSelector = loadAllSelectors()
+
+func loadAllSelectors() map[uint64]uint64 {
+	output := make(map[uint64]uint64, len(selectorsMap)+len(testSelectorsMap))
+	for k, v := range selectorsMap {
+		output[k] = v
+	}
+	for k, v := range testSelectorsMap {
+		output[k] = v
+	}
+	return output
+}
+
+func parseYml(ymlFile []byte) map[uint64]uint64 {
 	type ymlData struct {
 		Selectors map[uint64]uint64 `yaml:"selectors"`
 	}
 
 	var data ymlData
-	err := yaml.Unmarshal(selectorsYml, &data)
+	err := yaml.Unmarshal(ymlFile, &data)
 	if err != nil {
 		panic(err)
 	}
@@ -47,4 +65,12 @@ func SelectorFromChainId(chainId uint64) (uint64, error) {
 		return chainSelectorId, nil
 	}
 	return 0, fmt.Errorf("chain selector not found for chain %d", chainId)
+}
+
+func TestChainIds() []uint64 {
+	chainIds := make([]uint64, 0, len(testSelectorsMap))
+	for k := range testSelectorsMap {
+		chainIds = append(chainIds, k)
+	}
+	return chainIds
 }
