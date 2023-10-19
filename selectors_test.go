@@ -8,10 +8,11 @@ func TestNoSameChainSelectorsAreGenerated(t *testing.T) {
 	chainSelectors := map[uint64]bool{}
 
 	for k, v := range evmChainIdToChainSelector {
-		if _, exist := chainSelectors[v]; exist {
-			t.Errorf("Chain Selectors should be unique. Selector %d is duplicated for chain %d", v, k)
+		selector := v.ChainSelector
+		if _, exist := chainSelectors[selector]; exist {
+			t.Errorf("Chain Selectors should be unique. Selector %d is duplicated for chain %d", selector, k)
 		}
-		chainSelectors[v] = true
+		chainSelectors[selector] = true
 	}
 }
 
@@ -106,5 +107,33 @@ func TestTestChainIds(t *testing.T) {
 		if _, exist := testSelectorsMap[chainId]; !exist {
 			t.Error("Should return correct test chain ids")
 		}
+	}
+}
+
+func TestNameFromChainId(t *testing.T) {
+	_, err := NameFromChainId(0)
+	if err == nil {
+		t.Error("Should return error if chain not found")
+	}
+
+	_, err = NameFromChainId(99999999)
+	if err == nil {
+		t.Error("Should return error if chain not found")
+	}
+
+	chainName, err := NameFromChainId(97)
+	if err != nil {
+		t.Error("Should return chain name if chain found")
+	}
+	if chainName != "bsc-testnet" {
+		t.Error("Should return correct chain name")
+	}
+
+	chainName, err = NameFromChainId(1337)
+	if err != nil {
+		t.Error("Should return chain name if chain found")
+	}
+	if chainName != "1337" {
+		t.Error("Should return chain id if name is not defined")
 	}
 }
