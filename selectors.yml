@@ -1,76 +1,86 @@
 selectors:
   # Testnets
-  97: # BSC Testnet
+  97:
     selector: 13264668187771770619
-    name: "bsc-testnet"
-  280: # ZKSync Era
+    name: "binance_smart_chain-testnet"
+  280:
     selector: 6802309497652714138
-  420: # Optimism Goerli
+    name: "ethereum-testnet-goerli-zksync-1"
+  420:
     selector: 2664363617261496610
     name: "ethereum-testnet-goerli-optimism-1"
-  1112: # Wemix testnet
+  1112:
     selector: 9284632837123596123
+    name: "wemix-testnet"
   1337: # Dev network
     selector: 3379446385462418246
-  1442: # Polygon zkEVM Testnet
+  1442:
     selector: 11059667695644972511
-  2358: # Kroma Sepolia
+    name: "polygon-testnet-mumbai-zkevm-1"
+  2358:
     selector: 5990477251245693094
-  43113: # Avalanche Fuji
+    name: "ethereum-testnet-sepolia-kroma-1"
+  43113:
     selector: 14767482510784806043
-    name: "avalanche-fuji-testnet"
+    name: "avalanche-testnet-fuji"
   76578:
     selector: 781901677223027175
-  84531: # BASE Goerli
+  84531:
     selector: 5790810961207155433
     name: "ethereum-testnet-goerli-base-1"
-  84532: # BASE Sepolia
+  84532:
     selector: 10344971235874465080
     name: "ethereum-testnet-sepolia-base-1"
-  80001: # Polygon Mumbai
+  80001:
     selector: 12532609583862916517
-    name: "matic-testnet"
-  421613: # Arbitrum Goerli
+    name: "polygon-testnet-mumbai"
+  421613:
     selector: 6101244977088475029
     name: "ethereum-testnet-goerli-arbitrum-1"
-  421614: # Arbitrum Sepolia
+  421614:
     selector: 3478487238524512106
-  534351: # Scroll Sepolia
+    name: "ethereum-testnet-sepolia-arbitrum-1"
+  534351:
     selector: 2279865765895943307
-  11155111: # Sepolia
+    name: "ethereum-testnet-sepolia-scroll-1"
+  11155111:
     selector: 16015286601757825753
     name: "ethereum-testnet-sepolia"
-  11155420: # Optimism Sepolia
+  11155420:
     selector: 5224473277236331295
-
+    name: "ethereum-testnet-sepolia-optimism-1"
 
   # Mainnets
-  1: # Ethereum
+  1:
     selector: 5009297550715157269
-    name: "mainnet"
-  10: # Optimism
+    name: "ethereum-mainnet"
+  10:
     selector: 3734403246176062136
     name: "ethereum-mainnet-optimism-1"
-  56: # BSC
+  56:
     selector: 11344663589394136015
-    name: "bsc-mainnet"
-  137: # Polygon
+    name: "binance_smart_chain-mainnet"
+  137:
     selector: 4051577828743386545
-    name: "matic-mainnet"
-  255: # Kroma
+    name: "polygon-mainnet"
+  255:
     selector: 3719320017875267166
-  1101: # Polygon zkEVM
+    name: "ethereum-mainnet-kroma-1"
+  1101:
     selector: 4348158687435793198
-  1111: # Wemix
+    name: "polygon-mainnet-zkevm-1"
+  1111:
     selector: 5142893604156789321
-  8453: # BASE
+    name: "wemix-mainnet"
+  8453:
     selector: 15971525489660198786
     name: "ethereum-mainnet-base-1"
-  42161: # Arbitrum
+  42161:
     selector: 4949039107694359620
     name: "ethereum-mainnet-arbitrum-1"
-  43114: # Avalanche
+  43114:
     selector: 6433500567565415381
     name: "avalanche-mainnet"
-  534352: # Scroll
+  534352:
     selector: 13204309965629103672
+    name: "ethereum-mainnet-scroll-1"

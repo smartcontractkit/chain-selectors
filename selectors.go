@@ -74,14 +74,14 @@ func SelectorFromChainId(chainId uint64) (uint64, error) {
 }
 
 func NameFromChainId(chainId uint64) (string, error) {
-	chainDetails, exist := evmChainIdToChainSelector[chainId]
+	details, exist := evmChainIdToChainSelector[chainId]
 	if !exist {
 		return "", fmt.Errorf("chain name not found for chain %d", chainId)
 	}
-	if chainDetails.ChainName == "" {
+	if details.ChainName == "" {
 		return strconv.FormatUint(chainId, 10), nil
 	}
-	return chainDetails.ChainName, nil
+	return details.ChainName, nil
 }
 
 func TestChainIds() []uint64 {
