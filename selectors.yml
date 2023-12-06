@@ -25,15 +25,15 @@ selectors:
     name: "avalanche-testnet-fuji"
   76578:
     selector: 781901677223027175
+  80001:
+    selector: 12532609583862916517
+    name: "polygon-testnet-mumbai"
   84531:
     selector: 5790810961207155433
     name: "ethereum-testnet-goerli-base-1"
   84532:
     selector: 10344971235874465080
     name: "ethereum-testnet-sepolia-base-1"
-  80001:
-    selector: 12532609583862916517
-    name: "polygon-testnet-mumbai"
   421613:
     selector: 6101244977088475029
     name: "ethereum-testnet-goerli-arbitrum-1"
