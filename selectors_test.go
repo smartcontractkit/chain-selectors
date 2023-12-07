@@ -46,31 +46,61 @@ func TestEvmChainIdToChainSelectorReturningCopiedMap(t *testing.T) {
 	assert.Error(t, err)
 }
 
-func TestChainIdFromSelector(t *testing.T) {
-	_, err := ChainIdFromSelector(0)
-	assert.Error(t, err, "Should return error if chain selector not found")
+func Test_ChainSelectors(t *testing.T) {
+	tests := []struct {
+		name          string
+		chainSelector uint64
+		chainId       uint64
+		expectErr     bool
+	}{
+		{
+			name:          "bsc chain",
+			chainSelector: 13264668187771770619,
+			chainId:       97,
+		},
+		{
+			name:          "optimism chain",
+			chainSelector: 2664363617261496610,
+			chainId:       420,
+		},
+		{
+			name:          "test chain",
+			chainSelector: 17810359353458878177,
+			chainId:       90000020,
+		},
+		{
+			name:          "not existing chain",
+			chainSelector: 120398123,
+			chainId:       123454312,
+			expectErr:     true,
+		},
+		{
+			name:          "invalid selector and chain id",
+			chainSelector: 0,
+			chainId:       0,
+			expectErr:     true,
+		},
+	}
 
-	_, err = ChainIdFromSelector(99999999)
-	assert.Error(t, err, "Should return error if chain selector not found")
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			chainId, err1 := ChainIdFromSelector(test.chainSelector)
+			chainSelector, err2 := SelectorFromChainId(test.chainId)
+			if test.expectErr {
+				require.Error(t, err1)
+				require.Error(t, err2)
+				return
+			}
+			require.NoError(t, err1)
+			assert.Equal(t, test.chainId, chainId)
 
-	chainId, err := ChainIdFromSelector(13264668187771770619)
-	require.NoError(t, err)
-	assert.Equal(t, uint64(97), chainId)
+			require.NoError(t, err2)
+			assert.Equal(t, test.chainSelector, chainSelector)
+		})
+	}
 }
 
-func TestSelectorFromChainId(t *testing.T) {
-	_, err := SelectorFromChainId(0)
-	require.Error(t, err)
-
-	_, err = SelectorFromChainId(99999999)
-	require.Error(t, err)
-
-	chainSelectorId, err := SelectorFromChainId(97)
-	require.NoError(t, err)
-	assert.Equal(t, uint64(13264668187771770619), chainSelectorId)
-}
-
-func TestTestChainIds(t *testing.T) {
+func Test_TestChainIds(t *testing.T) {
 	chainIds := TestChainIds()
 	assert.Equal(t, len(chainIds), len(testSelectorsMap), "Should return correct number of test chain ids")
 
@@ -80,18 +110,60 @@ func TestTestChainIds(t *testing.T) {
 	}
 }
 
-func TestNameFromChainId(t *testing.T) {
-	_, err := NameFromChainId(2)
-	require.Error(t, err, "Should return error if chain not found")
+func Test_ChainNames(t *testing.T) {
+	tests := []struct {
+		name      string
+		chainName string
+		chainId   uint64
+		expectErr bool
+	}{
+		{
+			name:      "zkevm chain with a dedicated name",
+			chainName: "ethereum-testnet-goerli-polygon-zkevm-1",
+			chainId:   1442,
+		},
+		{
+			name:      "bsc chain with a dedicated name",
+			chainName: "binance_smart_chain-testnet",
+			chainId:   97,
+		},
+		{
+			name:      "chain without a name defined",
+			chainName: "1337",
+			chainId:   1337,
+		},
+		{
+			name:      "test simulated chain without a dedicated name",
+			chainName: "90000013",
+			chainId:   90000013,
+		},
+		{
+			name:      "not existing chain",
+			chainName: "avalanche-testnet-mumbai-1",
+			chainId:   120398123,
+			expectErr: true,
+		},
+		{
+			name:      "should return error if chain id passed as a name for chain with a full name",
+			chainName: "1",
+			expectErr: true,
+		},
+	}
 
-	_, err = NameFromChainId(99999999)
-	require.Error(t, err, "Should return error if chain not found")
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			chainId, err1 := ChainIdFromName(test.chainName)
+			chainName, err2 := NameFromChainId(test.chainId)
+			if test.expectErr {
+				require.Error(t, err1)
+				require.Error(t, err2)
+				return
+			}
+			require.NoError(t, err1)
+			assert.Equal(t, test.chainId, chainId)
 
-	chainName, err := NameFromChainId(97)
-	require.NoError(t, err)
-	assert.Equal(t, "binance_smart_chain-testnet", chainName)
-
-	chainName, err = NameFromChainId(1337)
-	require.NoError(t, err)
-	assert.Equal(t, "1337", chainName)
+			require.NoError(t, err2)
+			assert.Equal(t, test.chainName, chainName)
+		})
+	}
 }

@@ -84,6 +84,21 @@ func NameFromChainId(chainId uint64) (string, error) {
 	return details.ChainName, nil
 }
 
+func ChainIdFromName(name string) (uint64, error) {
+	for k, v := range evmChainIdToChainSelector {
+		if v.ChainName == name {
+			return k, nil
+		}
+	}
+	chainId, err := strconv.ParseUint(name, 10, 64)
+	if err == nil {
+		if details, exist := evmChainIdToChainSelector[chainId]; exist && details.ChainName == "" {
+			return chainId, nil
+		}
+	}
+	return 0, fmt.Errorf("chain not found for name %s", name)
+}
+
 func TestChainIds() []uint64 {
 	chainIds := make([]uint64, 0, len(testSelectorsMap))
 	for k := range testSelectorsMap {
