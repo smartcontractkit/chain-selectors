@@ -9,6 +9,9 @@ selectors:
   420:
     selector: 2664363617261496610
     name: "ethereum-testnet-goerli-optimism-1"
+  1029:
+    selector: 4459371029167934217
+    name: "bttc-testnet"
   1112:
     selector: 9284632837123596123
     name: "wemix-testnet"
@@ -49,9 +52,6 @@ selectors:
   11155420:
     selector: 5224473277236331295
     name: "ethereum-testnet-sepolia-optimism-1"
-  1029:
-    selector: 4459371029167934217
-    name: "bttc-testnet"
 
   # Mainnets
   1:
@@ -66,6 +66,9 @@ selectors:
   137:
     selector: 4051577828743386545
     name: "polygon-mainnet"
+  199:
+    selector: 3776006016387883143
+    name: "bttc-mainnet"
   255:
     selector: 3719320017875267166
     name: "ethereum-mainnet-kroma-1"
@@ -87,6 +90,4 @@ selectors:
   534352:
     selector: 13204309965629103672
     name: "ethereum-mainnet-scroll-1"
-  199:
-    selector: 3776006016387883143
-    name: "bttc-mainnet"
+
