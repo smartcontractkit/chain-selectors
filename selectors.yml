@@ -11,7 +11,7 @@ selectors:
     name: "ethereum-testnet-goerli-optimism-1"
   1029:
     selector: 4459371029167934217
-    name: "bttc-testnet"
+    name: "bittorrent-chain-testnet"
   1112:
     selector: 9284632837123596123
     name: "wemix-testnet"
@@ -68,7 +68,7 @@ selectors:
     name: "polygon-mainnet"
   199:
     selector: 3776006016387883143
-    name: "bttc-mainnet"
+    name: "bittorrent-chain-mainnet"
   255:
     selector: 3719320017875267166
     name: "ethereum-mainnet-kroma-1"
