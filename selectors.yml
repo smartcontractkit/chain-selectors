@@ -68,7 +68,7 @@ selectors:
     name: "polygon-mainnet"
   199:
     selector: 3776006016387883143
-    name: "bittorrent-chain-mainnet"
+    name: "bittorrent_chain-mainnet"
   255:
     selector: 3719320017875267166
     name: "ethereum-mainnet-kroma-1"
