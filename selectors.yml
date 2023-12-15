@@ -11,7 +11,7 @@ selectors:
     name: "ethereum-testnet-goerli-optimism-1"
   1029:
     selector: 4459371029167934217
-    name: "bittorrent-chain-testnet"
+    name: "bittorrent_chain-testnet"
   1112:
     selector: 9284632837123596123
     name: "wemix-testnet"
