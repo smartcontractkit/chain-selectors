@@ -87,7 +87,7 @@ selectors:
   2222:
     selector: 7550000543357438061
     name: "kava-mainnet"
-  5001:
+  5000:
     selector: 1556008542357238666
     name: "ethereum-mainnet-mantle-1"
   8453:
