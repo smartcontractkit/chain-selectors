@@ -55,6 +55,9 @@ selectors:
   11155420:
     selector: 5224473277236331295
     name: "ethereum-testnet-sepolia-optimism-1"
+  5001:
+    selector: 1226473277236831298
+    name: "ethereum-testnet-goerli-mantle-1"
 
   # Mainnets
   1:
