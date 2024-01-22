@@ -26,6 +26,9 @@ selectors:
   2358:
     selector: 5990477251245693094
     name: "ethereum-testnet-sepolia-kroma-1"
+  5001:
+    selector: 1226473277236831298
+    name: "ethereum-testnet-goerli-mantle-1"
   43113:
     selector: 14767482510784806043
     name: "avalanche-testnet-fuji"
@@ -55,9 +58,6 @@ selectors:
   11155420:
     selector: 5224473277236331295
     name: "ethereum-testnet-sepolia-optimism-1"
-  5001:
-    selector: 1226473277236831298
-    name: "ethereum-testnet-goerli-mantle-1"
 
   # Mainnets
   1:
@@ -87,6 +87,9 @@ selectors:
   2222:
     selector: 7550000543357438061
     name: "kava-mainnet"
+  5001:
+    selector: 1556008542357238666
+    name: "ethereum-mainnet-mantle-1"
   8453:
     selector: 15971525489660198786
     name: "ethereum-mainnet-base-1"
