@@ -128,3 +128,12 @@ func ChainByEvmChainID(evmChainID uint64) (Chain, bool) {
 	ch, exists := chainsByEvmChainID[evmChainID]
 	return ch, exists
 }
+
+func IsEvm(chainSel uint64) (bool, error) {
+	_, exists := ChainBySelector(chainSel)
+	if !exists {
+		return false, fmt.Errorf("chain %d not found", chainSel)
+	}
+	// We always return true since only evm chains are supported atm.
+	return true, nil
+}
