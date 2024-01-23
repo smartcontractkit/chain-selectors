@@ -47,6 +47,8 @@ Any new chains and selectors should be always added to [selectors.yml](selectors
 details from this file. This ensures that all client libraries are in sync and use the same mapping.
 To add a new chain, please add new entry to the `selectors.yml` file and use the following format:
 
+Make sure to run `go generate` after making any changes.
+
 ```yaml
 $chain_id:
   selector: $chain_selector as uint64

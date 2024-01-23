@@ -100,7 +100,7 @@ func genChainsSourceCode() (string, error) {
 }
 
 func toVarName(name string, chainSel uint64) string {
-	const unnamed = "UNNAMED"
+	const unnamed = "TEST"
 	x := strings.ReplaceAll(name, "-", "_")
 	x = strings.ToUpper(x)
 	if len(x) > 0 && unicode.IsDigit(rune(x[0])) {
