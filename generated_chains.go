@@ -8,8 +8,6 @@ type Chain struct {
 	VarName    string
 }
 
-// test
-
 var (
 	AVALANCHE_MAINNET                       = Chain{EvmChainID: 43114, Selector: 6433500567565415381, Name: "avalanche-mainnet"}
 	AVALANCHE_TESTNET_FUJI                  = Chain{EvmChainID: 43113, Selector: 14767482510784806043, Name: "avalanche-testnet-fuji"}
