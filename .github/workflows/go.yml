@@ -18,3 +18,9 @@ jobs:
         run: go build -v ./...
       - name: Test
         run: go test -v ./...
+      - name: Make sure generated files are updated
+        run: |
+          if go generate | grep -q 'no changes detected'; then
+            exit 0;
+          fi
+          exit 1;
