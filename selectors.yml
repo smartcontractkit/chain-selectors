@@ -18,12 +18,6 @@ selectors:
   1337:
     selector: 3379446385462418246
     name: "geth-testnet"
-  1338:
-    selector: 3955042140255135581
-    name: "elysium-testnet"
-  1339:
-    selector: 1538177248062227161
-    name: "elysium-mainnet"
   1442:
     selector: 11059667695644972511
     name: "ethereum-testnet-goerli-polygon-zkevm-1"

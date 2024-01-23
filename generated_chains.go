@@ -15,8 +15,6 @@ var (
 	BINANCE_SMART_CHAIN_TESTNET             = Chain{EvmChainID: 97, Selector: 13264668187771770619, Name: "binance_smart_chain-testnet"}
 	BITTORRENT_CHAIN_MAINNET                = Chain{EvmChainID: 199, Selector: 3776006016387883143, Name: "bittorrent_chain-mainnet"}
 	BITTORRENT_CHAIN_TESTNET                = Chain{EvmChainID: 1029, Selector: 4459371029167934217, Name: "bittorrent_chain-testnet"}
-	ELYSIUM_MAINNET                         = Chain{EvmChainID: 1339, Selector: 1538177248062227161, Name: "elysium-mainnet"}
-	ELYSIUM_TESTNET                         = Chain{EvmChainID: 1338, Selector: 3955042140255135581, Name: "elysium-testnet"}
 	ETHEREUM_MAINNET                        = Chain{EvmChainID: 1, Selector: 5009297550715157269, Name: "ethereum-mainnet"}
 	ETHEREUM_MAINNET_ARBITRUM_1             = Chain{EvmChainID: 42161, Selector: 4949039107694359620, Name: "ethereum-mainnet-arbitrum-1"}
 	ETHEREUM_MAINNET_BASE_1                 = Chain{EvmChainID: 8453, Selector: 15971525489660198786, Name: "ethereum-mainnet-base-1"}
@@ -76,8 +74,6 @@ var ALL = []Chain{
 	BINANCE_SMART_CHAIN_TESTNET,
 	BITTORRENT_CHAIN_MAINNET,
 	BITTORRENT_CHAIN_TESTNET,
-	ELYSIUM_MAINNET,
-	ELYSIUM_TESTNET,
 	ETHEREUM_MAINNET,
 	ETHEREUM_MAINNET_ARBITRUM_1,
 	ETHEREUM_MAINNET_BASE_1,
