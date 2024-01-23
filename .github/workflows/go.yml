@@ -16,5 +16,11 @@ jobs:
           cache: false
       - name: Build
         run: go build -v ./...
+      - name: Make sure generated files are updated
+        run: |
+          if go generate | grep -q 'no changes detected'; then
+            exit 0;
+          fi
+          exit 1;
       - name: Test
         run: go test -v ./...
