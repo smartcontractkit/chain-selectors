@@ -108,3 +108,23 @@ func TestChainIds() []uint64 {
 	}
 	return chainIds
 }
+
+var chainsBySelector = make(map[uint64]Chain)
+var chainsByEvmChainID = make(map[uint64]Chain)
+
+func init() {
+	for _, ch := range ALL {
+		chainsBySelector[ch.Selector] = ch
+		chainsByEvmChainID[ch.EvmChainID] = ch
+	}
+}
+
+func ChainBySelector(sel uint64) (Chain, bool) {
+	ch, exists := chainsBySelector[sel]
+	return ch, exists
+}
+
+func ChainByEvmChainID(evmChainID uint64) (Chain, bool) {
+	ch, exists := chainsByEvmChainID[evmChainID]
+	return ch, exists
+}

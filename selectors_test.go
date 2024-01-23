@@ -167,3 +167,19 @@ func Test_ChainNames(t *testing.T) {
 		})
 	}
 }
+
+func Test_ChainBySelector(t *testing.T) {
+	for _, ch := range ALL {
+		v, exists := ChainBySelector(ch.Selector)
+		assert.True(t, exists)
+		assert.Equal(t, ch, v)
+	}
+}
+
+func Test_ChainByEvmChainID(t *testing.T) {
+	for _, ch := range ALL {
+		v, exists := ChainByEvmChainID(ch.EvmChainID)
+		assert.True(t, exists)
+		assert.Equal(t, ch, v)
+	}
+}
