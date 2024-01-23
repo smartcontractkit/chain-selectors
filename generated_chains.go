@@ -15,6 +15,8 @@ var (
 	BINANCE_SMART_CHAIN_TESTNET             = Chain{EvmChainID: 97, Selector: 13264668187771770619, Name: "binance_smart_chain-testnet"}
 	BITTORRENT_CHAIN_MAINNET                = Chain{EvmChainID: 199, Selector: 3776006016387883143, Name: "bittorrent_chain-mainnet"}
 	BITTORRENT_CHAIN_TESTNET                = Chain{EvmChainID: 1029, Selector: 4459371029167934217, Name: "bittorrent_chain-testnet"}
+	ELYSIUM_MAINNET                         = Chain{EvmChainID: 1339, Selector: 1538177248062227161, Name: "elysium-mainnet"}
+	ELYSIUM_TESTNET                         = Chain{EvmChainID: 1338, Selector: 3955042140255135581, Name: "elysium-testnet"}
 	ETHEREUM_MAINNET                        = Chain{EvmChainID: 1, Selector: 5009297550715157269, Name: "ethereum-mainnet"}
 	ETHEREUM_MAINNET_ARBITRUM_1             = Chain{EvmChainID: 42161, Selector: 4949039107694359620, Name: "ethereum-mainnet-arbitrum-1"}
 	ETHEREUM_MAINNET_BASE_1                 = Chain{EvmChainID: 8453, Selector: 15971525489660198786, Name: "ethereum-mainnet-base-1"}
@@ -35,12 +37,12 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_KROMA_1        = Chain{EvmChainID: 2358, Selector: 5990477251245693094, Name: "ethereum-testnet-sepolia-kroma-1"}
 	ETHEREUM_TESTNET_SEPOLIA_OPTIMISM_1     = Chain{EvmChainID: 11155420, Selector: 5224473277236331295, Name: "ethereum-testnet-sepolia-optimism-1"}
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1       = Chain{EvmChainID: 534351, Selector: 2279865765895943307, Name: "ethereum-testnet-sepolia-scroll-1"}
+	GETH_TESTNET                            = Chain{EvmChainID: 1337, Selector: 3379446385462418246, Name: "geth-testnet"}
 	KAVA_MAINNET                            = Chain{EvmChainID: 2222, Selector: 7550000543357438061, Name: "kava-mainnet"}
 	KAVA_TESTNET                            = Chain{EvmChainID: 2221, Selector: 2110537777356199208, Name: "kava-testnet"}
 	POLYGON_MAINNET                         = Chain{EvmChainID: 137, Selector: 4051577828743386545, Name: "polygon-mainnet"}
 	POLYGON_TESTNET_MUMBAI                  = Chain{EvmChainID: 80001, Selector: 12532609583862916517, Name: "polygon-testnet-mumbai"}
 	TEST_1000                               = Chain{EvmChainID: 1000, Selector: 11787463284727550157, Name: "1000"}
-	TEST_1337                               = Chain{EvmChainID: 1337, Selector: 3379446385462418246, Name: "1337"}
 	TEST_2337                               = Chain{EvmChainID: 2337, Selector: 12922642891491394802, Name: "2337"}
 	TEST_76578                              = Chain{EvmChainID: 76578, Selector: 781901677223027175, Name: "76578"}
 	TEST_90000001                           = Chain{EvmChainID: 90000001, Selector: 909606746561742123, Name: "90000001"}
@@ -74,6 +76,8 @@ var ALL = []Chain{
 	BINANCE_SMART_CHAIN_TESTNET,
 	BITTORRENT_CHAIN_MAINNET,
 	BITTORRENT_CHAIN_TESTNET,
+	ELYSIUM_MAINNET,
+	ELYSIUM_TESTNET,
 	ETHEREUM_MAINNET,
 	ETHEREUM_MAINNET_ARBITRUM_1,
 	ETHEREUM_MAINNET_BASE_1,
@@ -94,12 +98,12 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_KROMA_1,
 	ETHEREUM_TESTNET_SEPOLIA_OPTIMISM_1,
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1,
+	GETH_TESTNET,
 	KAVA_MAINNET,
 	KAVA_TESTNET,
 	POLYGON_MAINNET,
 	POLYGON_TESTNET_MUMBAI,
 	TEST_1000,
-	TEST_1337,
 	TEST_2337,
 	TEST_76578,
 	TEST_90000001,
