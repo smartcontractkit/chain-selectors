@@ -129,7 +129,7 @@ func Test_ChainNames(t *testing.T) {
 		},
 		{
 			name:      "chain without a name defined",
-			chainName: "1337",
+			chainName: "geth-testnet",
 			chainId:   1337,
 		},
 		{
