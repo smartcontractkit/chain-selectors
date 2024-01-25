@@ -1,6 +1,7 @@
 package chain_selectors
 
 import (
+	"math/rand"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -169,17 +170,47 @@ func Test_ChainNames(t *testing.T) {
 }
 
 func Test_ChainBySelector(t *testing.T) {
-	for _, ch := range ALL {
-		v, exists := ChainBySelector(ch.Selector)
-		assert.True(t, exists)
-		assert.Equal(t, ch, v)
-	}
+	t.Run("exist", func(t *testing.T) {
+		for _, ch := range ALL {
+			v, exists := ChainBySelector(ch.Selector)
+			assert.True(t, exists)
+			assert.Equal(t, ch, v)
+		}
+	})
+
+	t.Run("non existent", func(t *testing.T) {
+		_, exists := ChainBySelector(rand.Uint64())
+		assert.False(t, exists)
+	})
 }
 
 func Test_ChainByEvmChainID(t *testing.T) {
-	for _, ch := range ALL {
-		v, exists := ChainByEvmChainID(ch.EvmChainID)
-		assert.True(t, exists)
-		assert.Equal(t, ch, v)
-	}
+	t.Run("exist", func(t *testing.T) {
+		for _, ch := range ALL {
+			v, exists := ChainByEvmChainID(ch.EvmChainID)
+			assert.True(t, exists)
+			assert.Equal(t, ch, v)
+		}
+	})
+
+	t.Run("non existent", func(t *testing.T) {
+		_, exists := ChainByEvmChainID(rand.Uint64())
+		assert.False(t, exists)
+	})
+}
+
+func Test_IsEvm(t *testing.T) {
+	t.Run("exist", func(t *testing.T) {
+		for _, ch := range ALL {
+			isEvm, err := IsEvm(ch.Selector)
+			assert.NoError(t, err)
+			assert.True(t, isEvm)
+		}
+	})
+
+	t.Run("non existent", func(t *testing.T) {
+		isEvm, err := IsEvm(rand.Uint64())
+		assert.Error(t, err)
+		assert.False(t, isEvm)
+	})
 }
