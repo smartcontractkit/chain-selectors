@@ -27,6 +27,9 @@ selectors:
   2358:
     selector: 5990477251245693094
     name: "ethereum-testnet-sepolia-kroma-1"
+  5001:
+    selector: 4168263376276232250
+    name: "ethereum-testnet-goerli-mantle-1"
   5003:
     selector: 8236463271206331221
     name: "ethereum-testnet-sepolia-mantle-1"

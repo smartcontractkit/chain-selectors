@@ -25,6 +25,7 @@ var (
 	ETHEREUM_MAINNET_SCROLL_1               = Chain{EvmChainID: 534352, Selector: 13204309965629103672, Name: "ethereum-mainnet-scroll-1"}
 	ETHEREUM_TESTNET_GOERLI_ARBITRUM_1      = Chain{EvmChainID: 421613, Selector: 6101244977088475029, Name: "ethereum-testnet-goerli-arbitrum-1"}
 	ETHEREUM_TESTNET_GOERLI_BASE_1          = Chain{EvmChainID: 84531, Selector: 5790810961207155433, Name: "ethereum-testnet-goerli-base-1"}
+	ETHEREUM_TESTNET_GOERLI_MANTLE_1        = Chain{EvmChainID: 5001, Selector: 4168263376276232250, Name: "ethereum-testnet-goerli-mantle-1"}
 	ETHEREUM_TESTNET_GOERLI_OPTIMISM_1      = Chain{EvmChainID: 420, Selector: 2664363617261496610, Name: "ethereum-testnet-goerli-optimism-1"}
 	ETHEREUM_TESTNET_GOERLI_POLYGON_ZKEVM_1 = Chain{EvmChainID: 1442, Selector: 11059667695644972511, Name: "ethereum-testnet-goerli-polygon-zkevm-1"}
 	ETHEREUM_TESTNET_GOERLI_ZKSYNC_1        = Chain{EvmChainID: 280, Selector: 6802309497652714138, Name: "ethereum-testnet-goerli-zksync-1"}
@@ -84,6 +85,7 @@ var ALL = []Chain{
 	ETHEREUM_MAINNET_SCROLL_1,
 	ETHEREUM_TESTNET_GOERLI_ARBITRUM_1,
 	ETHEREUM_TESTNET_GOERLI_BASE_1,
+	ETHEREUM_TESTNET_GOERLI_MANTLE_1,
 	ETHEREUM_TESTNET_GOERLI_OPTIMISM_1,
 	ETHEREUM_TESTNET_GOERLI_POLYGON_ZKEVM_1,
 	ETHEREUM_TESTNET_GOERLI_ZKSYNC_1,
