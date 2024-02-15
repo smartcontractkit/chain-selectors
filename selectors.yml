@@ -2,7 +2,7 @@ selectors:
   # Testnets
   31: 
     selector: 8953668971247136127 
-    name: "bitcoin-rootstock-testnet-1"
+    name: "bitcoin-testnet-rootstock-1"
   97:
     selector: 13264668187771770619
     name: "binance_smart_chain-testnet"
@@ -76,7 +76,7 @@ selectors:
     name: "ethereum-testnet-sepolia-scroll-1"
   595581: 
     selector: 7837562506228496256
-    name: "avalanche-nexon-testnet-1"
+    name: "avalanche-testnet-nexon-1"
   11155111:
     selector: 16015286601757825753
     name: "ethereum-testnet-sepolia"
