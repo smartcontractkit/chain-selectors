@@ -64,7 +64,7 @@ selectors:
     name: "ethereum-testnet-sepolia-base-1"
   10200: 
     selector: 8871595565390010547
-    name: "gnosis-testnet-chiado"
+    name: "gnosis_chain-testnet-chiado"
   421613:
     selector: 6101244977088475029
     name: "ethereum-testnet-goerli-arbitrum-1"
