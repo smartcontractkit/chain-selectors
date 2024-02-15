@@ -11,7 +11,7 @@ selectors:
     name: "ethereum-testnet-goerli-zksync-1"
   300: 
     selector: 6898391096552792247 
-    name: "ethereum-zksync-testnet-sepolia-1"
+    name: "ethereum-testnet-sepolia-zksync-1"
   420:
     selector: 2664363617261496610
     name: "ethereum-testnet-goerli-optimism-1"
