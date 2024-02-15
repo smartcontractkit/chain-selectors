@@ -1,11 +1,17 @@
 selectors:
   # Testnets
+  31: 
+    selector: 8953668971247136127 
+    name: "bitcoin-rootstock-testnet-1"
   97:
     selector: 13264668187771770619
     name: "binance_smart_chain-testnet"
   280:
     selector: 6802309497652714138
     name: "ethereum-testnet-goerli-zksync-1"
+  300: 
+    selector: 6898391096552792247 
+    name: "ethereum-zksync-testnet-sepolia-1"
   420:
     selector: 2664363617261496610
     name: "ethereum-testnet-goerli-optimism-1"
@@ -27,6 +33,12 @@ selectors:
   2358:
     selector: 5990477251245693094
     name: "ethereum-testnet-sepolia-kroma-1"
+  4002: 
+    selector: 4905564228793744293
+    name: "fantom-testnet-1"
+  4202: 
+    selector: 5298399861320400553
+    name: "ethereum-testnet-sepolia-lisk-1"
   5001:
     selector: 4168263376276232250
     name: "ethereum-testnet-goerli-mantle-1"
@@ -36,6 +48,9 @@ selectors:
   43113:
     selector: 14767482510784806043
     name: "avalanche-testnet-fuji"
+  44787: 
+    selector: 3552045678561919002
+    name: "celo-testnet-alfajores-1"
   76578:
     selector: 781901677223027175
   80001:
@@ -47,6 +62,9 @@ selectors:
   84532:
     selector: 10344971235874465080
     name: "ethereum-testnet-sepolia-base-1"
+  10200: 
+    selector: 8871595565390010547
+    name: "gnosis-testnet-chiado-1"
   421613:
     selector: 6101244977088475029
     name: "ethereum-testnet-goerli-arbitrum-1"
@@ -56,12 +74,18 @@ selectors:
   534351:
     selector: 2279865765895943307
     name: "ethereum-testnet-sepolia-scroll-1"
+  595581: 
+    selector: 7837562506228496256
+    name: "avalanche-nexon-testnet-1"
   11155111:
     selector: 16015286601757825753
     name: "ethereum-testnet-sepolia"
   11155420:
     selector: 5224473277236331295
     name: "ethereum-testnet-sepolia-optimism-1"
+  168587773: 
+    selector: 2027362563942762617
+    name: "ethereum-testnet-sepolia-blast-1"
 
   # Mainnets
   1:
