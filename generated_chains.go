@@ -18,6 +18,7 @@ var (
 	BITTORRENT_CHAIN_MAINNET                = Chain{EvmChainID: 199, Selector: 3776006016387883143, Name: "bittorrent_chain-mainnet"}
 	BITTORRENT_CHAIN_TESTNET                = Chain{EvmChainID: 1029, Selector: 4459371029167934217, Name: "bittorrent_chain-testnet"}
 	CELO_TESTNET_ALFAJORES                  = Chain{EvmChainID: 44787, Selector: 3552045678561919002, Name: "celo-testnet-alfajores"}
+	CRONOS_TESTNET                          = Chain{EvmChainID: 338, Selector: 2995292832068775165, Name: "cronos-testnet"}
 	ETHEREUM_MAINNET                        = Chain{EvmChainID: 1, Selector: 5009297550715157269, Name: "ethereum-mainnet"}
 	ETHEREUM_MAINNET_ARBITRUM_1             = Chain{EvmChainID: 42161, Selector: 4949039107694359620, Name: "ethereum-mainnet-arbitrum-1"}
 	ETHEREUM_MAINNET_BASE_1                 = Chain{EvmChainID: 8453, Selector: 15971525489660198786, Name: "ethereum-mainnet-base-1"}
@@ -43,8 +44,10 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1       = Chain{EvmChainID: 534351, Selector: 2279865765895943307, Name: "ethereum-testnet-sepolia-scroll-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1       = Chain{EvmChainID: 300, Selector: 6898391096552792247, Name: "ethereum-testnet-sepolia-zksync-1"}
 	FANTOM_TESTNET                          = Chain{EvmChainID: 4002, Selector: 4905564228793744293, Name: "fantom-testnet"}
+	FRAXTAL_TESTNET_OPTIMISM_1              = Chain{EvmChainID: 2522, Selector: 8901520481741771655, Name: "fraxtal-testnet-optimism-1"}
 	GETH_TESTNET                            = Chain{EvmChainID: 1337, Selector: 3379446385462418246, Name: "geth-testnet"}
 	GNOSIS_CHAIN_TESTNET_CHIADO             = Chain{EvmChainID: 10200, Selector: 8871595565390010547, Name: "gnosis_chain-testnet-chiado"}
+	HEDERA_TESTNET                          = Chain{EvmChainID: 296, Selector: 222782988166878823, Name: "hedera-testnet"}
 	KAVA_MAINNET                            = Chain{EvmChainID: 2222, Selector: 7550000543357438061, Name: "kava-mainnet"}
 	KAVA_TESTNET                            = Chain{EvmChainID: 2221, Selector: 2110537777356199208, Name: "kava-testnet"}
 	POLYGON_MAINNET                         = Chain{EvmChainID: 137, Selector: 4051577828743386545, Name: "polygon-mainnet"}
@@ -86,6 +89,7 @@ var ALL = []Chain{
 	BITTORRENT_CHAIN_MAINNET,
 	BITTORRENT_CHAIN_TESTNET,
 	CELO_TESTNET_ALFAJORES,
+	CRONOS_TESTNET,
 	ETHEREUM_MAINNET,
 	ETHEREUM_MAINNET_ARBITRUM_1,
 	ETHEREUM_MAINNET_BASE_1,
@@ -111,8 +115,10 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1,
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1,
 	FANTOM_TESTNET,
+	FRAXTAL_TESTNET_OPTIMISM_1,
 	GETH_TESTNET,
 	GNOSIS_CHAIN_TESTNET_CHIADO,
+	HEDERA_TESTNET,
 	KAVA_MAINNET,
 	KAVA_TESTNET,
 	POLYGON_MAINNET,
