@@ -67,7 +67,7 @@ selectors:
     selector: 1355246678561316402
     name: "ethereum-testnet-goerli-linea-1" 
   76578:
-    selector: 781901677223027175 
+    selector: 781901677223027175
   80001:
     selector: 12532609583862916517
     name: "polygon-testnet-mumbai"
