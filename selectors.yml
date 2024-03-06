@@ -41,7 +41,7 @@ selectors:
     name: "ethereum-testnet-sepolia-kroma-1"
   2522:
     selector: 8901520481741771655
-    name: "fraxtal-testnet-optimism-1"
+    name: "ethereum-testnet-holesky-fraxtal-1"
   4002:
     selector: 4905564228793744293
     name: "fantom-testnet"
