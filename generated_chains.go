@@ -33,6 +33,7 @@ var (
 	ETHEREUM_TESTNET_GOERLI_OPTIMISM_1      = Chain{EvmChainID: 420, Selector: 2664363617261496610, Name: "ethereum-testnet-goerli-optimism-1"}
 	ETHEREUM_TESTNET_GOERLI_POLYGON_ZKEVM_1 = Chain{EvmChainID: 1442, Selector: 11059667695644972511, Name: "ethereum-testnet-goerli-polygon-zkevm-1"}
 	ETHEREUM_TESTNET_GOERLI_ZKSYNC_1        = Chain{EvmChainID: 280, Selector: 6802309497652714138, Name: "ethereum-testnet-goerli-zksync-1"}
+	ETHEREUM_TESTNET_HOLESKY_FRAXTAL_1      = Chain{EvmChainID: 2522, Selector: 8901520481741771655, Name: "ethereum-testnet-holesky-fraxtal-1"}
 	ETHEREUM_TESTNET_SEPOLIA                = Chain{EvmChainID: 11155111, Selector: 16015286601757825753, Name: "ethereum-testnet-sepolia"}
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1     = Chain{EvmChainID: 421614, Selector: 3478487238524512106, Name: "ethereum-testnet-sepolia-arbitrum-1"}
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1         = Chain{EvmChainID: 84532, Selector: 10344971235874465080, Name: "ethereum-testnet-sepolia-base-1"}
@@ -44,7 +45,6 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1       = Chain{EvmChainID: 534351, Selector: 2279865765895943307, Name: "ethereum-testnet-sepolia-scroll-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1       = Chain{EvmChainID: 300, Selector: 6898391096552792247, Name: "ethereum-testnet-sepolia-zksync-1"}
 	FANTOM_TESTNET                          = Chain{EvmChainID: 4002, Selector: 4905564228793744293, Name: "fantom-testnet"}
-	FRAXTAL_TESTNET_OPTIMISM_1              = Chain{EvmChainID: 2522, Selector: 8901520481741771655, Name: "fraxtal-testnet-optimism-1"}
 	GETH_TESTNET                            = Chain{EvmChainID: 1337, Selector: 3379446385462418246, Name: "geth-testnet"}
 	GNOSIS_CHAIN_TESTNET_CHIADO             = Chain{EvmChainID: 10200, Selector: 8871595565390010547, Name: "gnosis_chain-testnet-chiado"}
 	HEDERA_TESTNET                          = Chain{EvmChainID: 296, Selector: 222782988166878823, Name: "hedera-testnet"}
@@ -104,6 +104,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_GOERLI_OPTIMISM_1,
 	ETHEREUM_TESTNET_GOERLI_POLYGON_ZKEVM_1,
 	ETHEREUM_TESTNET_GOERLI_ZKSYNC_1,
+	ETHEREUM_TESTNET_HOLESKY_FRAXTAL_1,
 	ETHEREUM_TESTNET_SEPOLIA,
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1,
@@ -115,7 +116,6 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1,
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1,
 	FANTOM_TESTNET,
-	FRAXTAL_TESTNET_OPTIMISM_1,
 	GETH_TESTNET,
 	GNOSIS_CHAIN_TESTNET_CHIADO,
 	HEDERA_TESTNET,
