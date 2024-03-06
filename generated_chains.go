@@ -12,6 +12,7 @@ var (
 	AVALANCHE_MAINNET                        = Chain{EvmChainID: 43114, Selector: 6433500567565415381, Name: "avalanche-mainnet"}
 	AVALANCHE_TESTNET_FUJI                   = Chain{EvmChainID: 43113, Selector: 14767482510784806043, Name: "avalanche-testnet-fuji"}
 	AVALANCHE_TESTNET_NEXON                  = Chain{EvmChainID: 595581, Selector: 7837562506228496256, Name: "avalanche-testnet-nexon"}
+	BERACHAIN_TESTNET_ARTIO                  = Chain{EvmChainID: 80085, Selector: 12336603543561911511, Name: "berachain-testnet-artio"}
 	BINANCE_SMART_CHAIN_MAINNET              = Chain{EvmChainID: 56, Selector: 11344663589394136015, Name: "binance_smart_chain-mainnet"}
 	BINANCE_SMART_CHAIN_TESTNET              = Chain{EvmChainID: 97, Selector: 13264668187771770619, Name: "binance_smart_chain-testnet"}
 	BITCOIN_TESTNET_ROOTSTOCK                = Chain{EvmChainID: 31, Selector: 8953668971247136127, Name: "bitcoin-testnet-rootstock"}
@@ -29,6 +30,7 @@ var (
 	ETHEREUM_MAINNET_SCROLL_1                = Chain{EvmChainID: 534352, Selector: 13204309965629103672, Name: "ethereum-mainnet-scroll-1"}
 	ETHEREUM_TESTNET_GOERLI_ARBITRUM_1       = Chain{EvmChainID: 421613, Selector: 6101244977088475029, Name: "ethereum-testnet-goerli-arbitrum-1"}
 	ETHEREUM_TESTNET_GOERLI_BASE_1           = Chain{EvmChainID: 84531, Selector: 5790810961207155433, Name: "ethereum-testnet-goerli-base-1"}
+	ETHEREUM_TESTNET_GOERLI_LINEA_1          = Chain{EvmChainID: 59140, Selector: 1355246678561316402, Name: "ethereum-testnet-goerli-linea-1"}
 	ETHEREUM_TESTNET_GOERLI_MANTLE_1         = Chain{EvmChainID: 5001, Selector: 4168263376276232250, Name: "ethereum-testnet-goerli-mantle-1"}
 	ETHEREUM_TESTNET_GOERLI_OPTIMISM_1       = Chain{EvmChainID: 420, Selector: 2664363617261496610, Name: "ethereum-testnet-goerli-optimism-1"}
 	ETHEREUM_TESTNET_GOERLI_POLYGON_ZKEVM_1  = Chain{EvmChainID: 1442, Selector: 11059667695644972511, Name: "ethereum-testnet-goerli-polygon-zkevm-1"}
@@ -84,6 +86,7 @@ var ALL = []Chain{
 	AVALANCHE_MAINNET,
 	AVALANCHE_TESTNET_FUJI,
 	AVALANCHE_TESTNET_NEXON,
+	BERACHAIN_TESTNET_ARTIO,
 	BINANCE_SMART_CHAIN_MAINNET,
 	BINANCE_SMART_CHAIN_TESTNET,
 	BITCOIN_TESTNET_ROOTSTOCK,
@@ -101,6 +104,7 @@ var ALL = []Chain{
 	ETHEREUM_MAINNET_SCROLL_1,
 	ETHEREUM_TESTNET_GOERLI_ARBITRUM_1,
 	ETHEREUM_TESTNET_GOERLI_BASE_1,
+	ETHEREUM_TESTNET_GOERLI_LINEA_1,
 	ETHEREUM_TESTNET_GOERLI_MANTLE_1,
 	ETHEREUM_TESTNET_GOERLI_OPTIMISM_1,
 	ETHEREUM_TESTNET_GOERLI_POLYGON_ZKEVM_1,
