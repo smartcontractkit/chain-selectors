@@ -115,6 +115,9 @@ selectors:
   56:
     selector: 11344663589394136015
     name: "binance_smart_chain-mainnet"
+  100:
+    selector: 465200170687744372
+    name: "gnosis_chain-mainnet"
   137:
     selector: 4051577828743386545
     name: "polygon-mainnet"
