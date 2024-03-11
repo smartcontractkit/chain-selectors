@@ -49,6 +49,7 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1        = Chain{EvmChainID: 300, Selector: 6898391096552792247, Name: "ethereum-testnet-sepolia-zksync-1"}
 	FANTOM_TESTNET                           = Chain{EvmChainID: 4002, Selector: 4905564228793744293, Name: "fantom-testnet"}
 	GETH_TESTNET                             = Chain{EvmChainID: 1337, Selector: 3379446385462418246, Name: "geth-testnet"}
+	GNOSIS_CHAIN_MAINNET                     = Chain{EvmChainID: 100, Selector: 465200170687744372, Name: "gnosis_chain-mainnet"}
 	GNOSIS_CHAIN_TESTNET_CHIADO              = Chain{EvmChainID: 10200, Selector: 8871595565390010547, Name: "gnosis_chain-testnet-chiado"}
 	HEDERA_TESTNET                           = Chain{EvmChainID: 296, Selector: 222782988166878823, Name: "hedera-testnet"}
 	KAVA_MAINNET                             = Chain{EvmChainID: 2222, Selector: 7550000543357438061, Name: "kava-mainnet"}
@@ -123,6 +124,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1,
 	FANTOM_TESTNET,
 	GETH_TESTNET,
+	GNOSIS_CHAIN_MAINNET,
 	GNOSIS_CHAIN_TESTNET_CHIADO,
 	HEDERA_TESTNET,
 	KAVA_MAINNET,
