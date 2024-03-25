@@ -71,6 +71,9 @@ selectors:
   80001:
     selector: 12532609583862916517
     name: "polygon-testnet-mumbai"
+  80002:
+    selector: 16281711391670634445
+    name: "polygon-testnet-amoy"
   80085: 
     selector: 12336603543561911511
     name: "berachain-testnet-artio"
