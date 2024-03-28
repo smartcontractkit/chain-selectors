@@ -84,6 +84,86 @@ var (
 	TEST_90000018                            = Chain{EvmChainID: 90000018, Selector: 7777066535355430289, Name: "90000018"}
 	TEST_90000019                            = Chain{EvmChainID: 90000019, Selector: 1273605685587320666, Name: "90000019"}
 	TEST_90000020                            = Chain{EvmChainID: 90000020, Selector: 17810359353458878177, Name: "90000020"}
+	TEST_90000021                            = Chain{EvmChainID: 90000021, Selector: 13648736134397881410, Name: "90000021"}
+	TEST_90000022                            = Chain{EvmChainID: 90000022, Selector: 6742472197519042017, Name: "90000022"}
+	TEST_90000023                            = Chain{EvmChainID: 90000023, Selector: 16702426279731183946, Name: "90000023"}
+	TEST_90000024                            = Chain{EvmChainID: 90000024, Selector: 16449698933146693970, Name: "90000024"}
+	TEST_90000025                            = Chain{EvmChainID: 90000025, Selector: 5614341928911841614, Name: "90000025"}
+	TEST_90000026                            = Chain{EvmChainID: 90000026, Selector: 9932483170498916221, Name: "90000026"}
+	TEST_90000027                            = Chain{EvmChainID: 90000027, Selector: 9248511054298050610, Name: "90000027"}
+	TEST_90000028                            = Chain{EvmChainID: 90000028, Selector: 15733873364998401606, Name: "90000028"}
+	TEST_90000029                            = Chain{EvmChainID: 90000029, Selector: 10199579733509604193, Name: "90000029"}
+	TEST_90000030                            = Chain{EvmChainID: 90000030, Selector: 11754399446572002459, Name: "90000030"}
+	TEST_90000031                            = Chain{EvmChainID: 90000031, Selector: 15804983202763665802, Name: "90000031"}
+	TEST_90000032                            = Chain{EvmChainID: 90000032, Selector: 8794884152664322911, Name: "90000032"}
+	TEST_90000033                            = Chain{EvmChainID: 90000033, Selector: 7005880874640146484, Name: "90000033"}
+	TEST_90000034                            = Chain{EvmChainID: 90000034, Selector: 15998314635132476942, Name: "90000034"}
+	TEST_90000035                            = Chain{EvmChainID: 90000035, Selector: 6676710761873615962, Name: "90000035"}
+	TEST_90000036                            = Chain{EvmChainID: 90000036, Selector: 13973515790491921010, Name: "90000036"}
+	TEST_90000037                            = Chain{EvmChainID: 90000037, Selector: 12226902941055802385, Name: "90000037"}
+	TEST_90000038                            = Chain{EvmChainID: 90000038, Selector: 10547673735879567911, Name: "90000038"}
+	TEST_90000039                            = Chain{EvmChainID: 90000039, Selector: 2953028829530698683, Name: "90000039"}
+	TEST_90000040                            = Chain{EvmChainID: 90000040, Selector: 3740583887329090549, Name: "90000040"}
+	TEST_90000041                            = Chain{EvmChainID: 90000041, Selector: 4716670523656754658, Name: "90000041"}
+	TEST_90000042                            = Chain{EvmChainID: 90000042, Selector: 12965905455277595820, Name: "90000042"}
+	TEST_90000043                            = Chain{EvmChainID: 90000043, Selector: 6448403805635971860, Name: "90000043"}
+	TEST_90000044                            = Chain{EvmChainID: 90000044, Selector: 176199025415897437, Name: "90000044"}
+	TEST_90000045                            = Chain{EvmChainID: 90000045, Selector: 17251043223284625647, Name: "90000045"}
+	TEST_90000046                            = Chain{EvmChainID: 90000046, Selector: 14943531413383612703, Name: "90000046"}
+	TEST_90000047                            = Chain{EvmChainID: 90000047, Selector: 8015762103567576333, Name: "90000047"}
+	TEST_90000048                            = Chain{EvmChainID: 90000048, Selector: 2783890746839497525, Name: "90000048"}
+	TEST_90000049                            = Chain{EvmChainID: 90000049, Selector: 16591966440843528322, Name: "90000049"}
+	TEST_90000050                            = Chain{EvmChainID: 90000050, Selector: 9156614022853705708, Name: "90000050"}
+	TEST_90000051                            = Chain{EvmChainID: 90000051, Selector: 10089241509396411113, Name: "90000051"}
+	TEST_90000052                            = Chain{EvmChainID: 90000052, Selector: 7585715102059681757, Name: "90000052"}
+	TEST_90000053                            = Chain{EvmChainID: 90000053, Selector: 9574369650680012313, Name: "90000053"}
+	TEST_90000054                            = Chain{EvmChainID: 90000054, Selector: 15767478222558315144, Name: "90000054"}
+	TEST_90000055                            = Chain{EvmChainID: 90000055, Selector: 928756709184343973, Name: "90000055"}
+	TEST_90000056                            = Chain{EvmChainID: 90000056, Selector: 13936493323944617843, Name: "90000056"}
+	TEST_90000057                            = Chain{EvmChainID: 90000057, Selector: 9264503539336248559, Name: "90000057"}
+	TEST_90000058                            = Chain{EvmChainID: 90000058, Selector: 7032045258883126022, Name: "90000058"}
+	TEST_90000059                            = Chain{EvmChainID: 90000059, Selector: 13781595843667691007, Name: "90000059"}
+	TEST_90000060                            = Chain{EvmChainID: 90000060, Selector: 6751512843227450641, Name: "90000060"}
+	TEST_90000061                            = Chain{EvmChainID: 90000061, Selector: 12027427861168955422, Name: "90000061"}
+	TEST_90000062                            = Chain{EvmChainID: 90000062, Selector: 6690738652320128159, Name: "90000062"}
+	TEST_90000063                            = Chain{EvmChainID: 90000063, Selector: 12513826466599144030, Name: "90000063"}
+	TEST_90000064                            = Chain{EvmChainID: 90000064, Selector: 7823363553221722351, Name: "90000064"}
+	TEST_90000065                            = Chain{EvmChainID: 90000065, Selector: 17759418850483131633, Name: "90000065"}
+	TEST_90000066                            = Chain{EvmChainID: 90000066, Selector: 1488785539820432596, Name: "90000066"}
+	TEST_90000067                            = Chain{EvmChainID: 90000067, Selector: 12470167056735102403, Name: "90000067"}
+	TEST_90000068                            = Chain{EvmChainID: 90000068, Selector: 6059917085984771915, Name: "90000068"}
+	TEST_90000069                            = Chain{EvmChainID: 90000069, Selector: 8698844633699288298, Name: "90000069"}
+	TEST_90000070                            = Chain{EvmChainID: 90000070, Selector: 11335955773964346155, Name: "90000070"}
+	TEST_90000071                            = Chain{EvmChainID: 90000071, Selector: 15210860601736105873, Name: "90000071"}
+	TEST_90000072                            = Chain{EvmChainID: 90000072, Selector: 15447447865219782832, Name: "90000072"}
+	TEST_90000073                            = Chain{EvmChainID: 90000073, Selector: 7404045285477377670, Name: "90000073"}
+	TEST_90000074                            = Chain{EvmChainID: 90000074, Selector: 14506622911400094011, Name: "90000074"}
+	TEST_90000075                            = Chain{EvmChainID: 90000075, Selector: 18316006852148771137, Name: "90000075"}
+	TEST_90000076                            = Chain{EvmChainID: 90000076, Selector: 7961714422080771198, Name: "90000076"}
+	TEST_90000077                            = Chain{EvmChainID: 90000077, Selector: 15168140751097121912, Name: "90000077"}
+	TEST_90000078                            = Chain{EvmChainID: 90000078, Selector: 8354317460459584308, Name: "90000078"}
+	TEST_90000079                            = Chain{EvmChainID: 90000079, Selector: 1974710175227680991, Name: "90000079"}
+	TEST_90000080                            = Chain{EvmChainID: 90000080, Selector: 15896959195233368219, Name: "90000080"}
+	TEST_90000081                            = Chain{EvmChainID: 90000081, Selector: 13819071330241498802, Name: "90000081"}
+	TEST_90000082                            = Chain{EvmChainID: 90000082, Selector: 3632230855428784129, Name: "90000082"}
+	TEST_90000083                            = Chain{EvmChainID: 90000083, Selector: 3330151784927722907, Name: "90000083"}
+	TEST_90000084                            = Chain{EvmChainID: 90000084, Selector: 973671184102733124, Name: "90000084"}
+	TEST_90000085                            = Chain{EvmChainID: 90000085, Selector: 7353384334508842175, Name: "90000085"}
+	TEST_90000086                            = Chain{EvmChainID: 90000086, Selector: 4174149892778961910, Name: "90000086"}
+	TEST_90000087                            = Chain{EvmChainID: 90000087, Selector: 10497629267361915835, Name: "90000087"}
+	TEST_90000088                            = Chain{EvmChainID: 90000088, Selector: 10537986502862404866, Name: "90000088"}
+	TEST_90000089                            = Chain{EvmChainID: 90000089, Selector: 10106333385848939617, Name: "90000089"}
+	TEST_90000090                            = Chain{EvmChainID: 90000090, Selector: 2509173735760116798, Name: "90000090"}
+	TEST_90000091                            = Chain{EvmChainID: 90000091, Selector: 12499149790922928210, Name: "90000091"}
+	TEST_90000092                            = Chain{EvmChainID: 90000092, Selector: 665284410079532457, Name: "90000092"}
+	TEST_90000093                            = Chain{EvmChainID: 90000093, Selector: 17514102371649734225, Name: "90000093"}
+	TEST_90000094                            = Chain{EvmChainID: 90000094, Selector: 8211981504472319767, Name: "90000094"}
+	TEST_90000095                            = Chain{EvmChainID: 90000095, Selector: 15945074456050759193, Name: "90000095"}
+	TEST_90000096                            = Chain{EvmChainID: 90000096, Selector: 17580537314894454709, Name: "90000096"}
+	TEST_90000097                            = Chain{EvmChainID: 90000097, Selector: 13443138560923813712, Name: "90000097"}
+	TEST_90000098                            = Chain{EvmChainID: 90000098, Selector: 9675086780529785020, Name: "90000098"}
+	TEST_90000099                            = Chain{EvmChainID: 90000099, Selector: 7431973150957944526, Name: "90000099"}
+	TEST_90000100                            = Chain{EvmChainID: 90000100, Selector: 6875898693582952601, Name: "90000100"}
 	WEMIX_MAINNET                            = Chain{EvmChainID: 1111, Selector: 5142893604156789321, Name: "wemix-mainnet"}
 	WEMIX_TESTNET                            = Chain{EvmChainID: 1112, Selector: 9284632837123596123, Name: "wemix-testnet"}
 )
@@ -164,6 +244,86 @@ var ALL = []Chain{
 	TEST_90000018,
 	TEST_90000019,
 	TEST_90000020,
+	TEST_90000021,
+	TEST_90000022,
+	TEST_90000023,
+	TEST_90000024,
+	TEST_90000025,
+	TEST_90000026,
+	TEST_90000027,
+	TEST_90000028,
+	TEST_90000029,
+	TEST_90000030,
+	TEST_90000031,
+	TEST_90000032,
+	TEST_90000033,
+	TEST_90000034,
+	TEST_90000035,
+	TEST_90000036,
+	TEST_90000037,
+	TEST_90000038,
+	TEST_90000039,
+	TEST_90000040,
+	TEST_90000041,
+	TEST_90000042,
+	TEST_90000043,
+	TEST_90000044,
+	TEST_90000045,
+	TEST_90000046,
+	TEST_90000047,
+	TEST_90000048,
+	TEST_90000049,
+	TEST_90000050,
+	TEST_90000051,
+	TEST_90000052,
+	TEST_90000053,
+	TEST_90000054,
+	TEST_90000055,
+	TEST_90000056,
+	TEST_90000057,
+	TEST_90000058,
+	TEST_90000059,
+	TEST_90000060,
+	TEST_90000061,
+	TEST_90000062,
+	TEST_90000063,
+	TEST_90000064,
+	TEST_90000065,
+	TEST_90000066,
+	TEST_90000067,
+	TEST_90000068,
+	TEST_90000069,
+	TEST_90000070,
+	TEST_90000071,
+	TEST_90000072,
+	TEST_90000073,
+	TEST_90000074,
+	TEST_90000075,
+	TEST_90000076,
+	TEST_90000077,
+	TEST_90000078,
+	TEST_90000079,
+	TEST_90000080,
+	TEST_90000081,
+	TEST_90000082,
+	TEST_90000083,
+	TEST_90000084,
+	TEST_90000085,
+	TEST_90000086,
+	TEST_90000087,
+	TEST_90000088,
+	TEST_90000089,
+	TEST_90000090,
+	TEST_90000091,
+	TEST_90000092,
+	TEST_90000093,
+	TEST_90000094,
+	TEST_90000095,
+	TEST_90000096,
+	TEST_90000097,
+	TEST_90000098,
+	TEST_90000099,
+	TEST_90000100,
 	WEMIX_MAINNET,
 	WEMIX_TESTNET,
 }
