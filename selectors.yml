@@ -135,7 +135,7 @@ selectors:
     name: "ethereum-mainnet-kroma-1"
   1088:
     selector: 8805746078405598895
-    name: "ethereum-mainnet-metis-1"
+    name: "ethereum-mainnet-andromeda-1"
   1101:
     selector: 4348158687435793198
     name: "ethereum-mainnet-polygon-zkevm-1"
