@@ -26,6 +26,7 @@ var (
 	ETHEREUM_MAINNET_BASE_1                  = Chain{EvmChainID: 8453, Selector: 15971525489660198786, Name: "ethereum-mainnet-base-1"}
 	ETHEREUM_MAINNET_KROMA_1                 = Chain{EvmChainID: 255, Selector: 3719320017875267166, Name: "ethereum-mainnet-kroma-1"}
 	ETHEREUM_MAINNET_MANTLE_1                = Chain{EvmChainID: 5000, Selector: 1556008542357238666, Name: "ethereum-mainnet-mantle-1"}
+	ETHEREUM_MAINNET_METIS_1                 = Chain{EvmChainID: 1088, Selector: 8805746078405598895, Name: "ethereum-mainnet-metis-1"}
 	ETHEREUM_MAINNET_OPTIMISM_1              = Chain{EvmChainID: 10, Selector: 3734403246176062136, Name: "ethereum-mainnet-optimism-1"}
 	ETHEREUM_MAINNET_POLYGON_ZKEVM_1         = Chain{EvmChainID: 1101, Selector: 4348158687435793198, Name: "ethereum-mainnet-polygon-zkevm-1"}
 	ETHEREUM_MAINNET_SCROLL_1                = Chain{EvmChainID: 534352, Selector: 13204309965629103672, Name: "ethereum-mainnet-scroll-1"}
@@ -104,6 +105,7 @@ var ALL = []Chain{
 	ETHEREUM_MAINNET_BASE_1,
 	ETHEREUM_MAINNET_KROMA_1,
 	ETHEREUM_MAINNET_MANTLE_1,
+	ETHEREUM_MAINNET_METIS_1,
 	ETHEREUM_MAINNET_OPTIMISM_1,
 	ETHEREUM_MAINNET_POLYGON_ZKEVM_1,
 	ETHEREUM_MAINNET_SCROLL_1,
