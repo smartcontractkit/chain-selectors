@@ -65,7 +65,10 @@ selectors:
     name: "celo-testnet-alfajores"
   59140:
     selector: 1355246678561316402
-    name: "ethereum-testnet-goerli-linea-1" 
+    name: "ethereum-testnet-goerli-linea-1"
+  59902:
+    selector: 3777822886988675105
+    name: "ethereum-testnet-sepolia-metis-1"
   76578:
     selector: 781901677223027175
   80001:
@@ -74,7 +77,7 @@ selectors:
   80002:
     selector: 16281711391670634445
     name: "polygon-testnet-amoy"
-  80085: 
+  80085:
     selector: 12336603543561911511
     name: "berachain-testnet-artio"
   84531:
@@ -130,6 +133,9 @@ selectors:
   255:
     selector: 3719320017875267166
     name: "ethereum-mainnet-kroma-1"
+  1088:
+    selector: 8805746078405598895
+    name: "ethereum-mainnet-andromeda-metis-1"
   1101:
     selector: 4348158687435793198
     name: "ethereum-mainnet-polygon-zkevm-1"
