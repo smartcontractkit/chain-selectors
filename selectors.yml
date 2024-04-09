@@ -157,6 +157,9 @@ selectors:
   42161:
     selector: 4949039107694359620
     name: "ethereum-mainnet-arbitrum-1"
+  42220:
+    selector: 1346049177634351622 
+    name: "celo-mainnet"
   43114:
     selector: 6433500567565415381
     name: "avalanche-mainnet"
