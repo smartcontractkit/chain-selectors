@@ -24,6 +24,7 @@ var (
 	ETHEREUM_MAINNET                         = Chain{EvmChainID: 1, Selector: 5009297550715157269, Name: "ethereum-mainnet"}
 	ETHEREUM_MAINNET_ARBITRUM_1              = Chain{EvmChainID: 42161, Selector: 4949039107694359620, Name: "ethereum-mainnet-arbitrum-1"}
 	ETHEREUM_MAINNET_BASE_1                  = Chain{EvmChainID: 8453, Selector: 15971525489660198786, Name: "ethereum-mainnet-base-1"}
+	ETHEREUM_MAINNET_BLAST_1                 = Chain{EvmChainID: 81457, Selector: 4411394078118774322, Name: "ethereum-mainnet-blast-1"}
 	ETHEREUM_MAINNET_KROMA_1                 = Chain{EvmChainID: 255, Selector: 3719320017875267166, Name: "ethereum-mainnet-kroma-1"}
 	ETHEREUM_MAINNET_LINEA_1                 = Chain{EvmChainID: 59144, Selector: 4627098889531055414, Name: "ethereum-mainnet-linea-1"}
 	ETHEREUM_MAINNET_MANTLE_1                = Chain{EvmChainID: 5000, Selector: 1556008542357238666, Name: "ethereum-mainnet-mantle-1"}
@@ -185,6 +186,7 @@ var ALL = []Chain{
 	ETHEREUM_MAINNET,
 	ETHEREUM_MAINNET_ARBITRUM_1,
 	ETHEREUM_MAINNET_BASE_1,
+	ETHEREUM_MAINNET_BLAST_1,
 	ETHEREUM_MAINNET_KROMA_1,
 	ETHEREUM_MAINNET_LINEA_1,
 	ETHEREUM_MAINNET_MANTLE_1,
