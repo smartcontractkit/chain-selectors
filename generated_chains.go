@@ -24,10 +24,12 @@ var (
 	ETHEREUM_MAINNET                         = Chain{EvmChainID: 1, Selector: 5009297550715157269, Name: "ethereum-mainnet"}
 	ETHEREUM_MAINNET_ARBITRUM_1              = Chain{EvmChainID: 42161, Selector: 4949039107694359620, Name: "ethereum-mainnet-arbitrum-1"}
 	ETHEREUM_MAINNET_BASE_1                  = Chain{EvmChainID: 8453, Selector: 15971525489660198786, Name: "ethereum-mainnet-base-1"}
+	ETHEREUM_MAINNET_BLAST_1                 = Chain{EvmChainID: 81457, Selector: 4411394078118774322, Name: "ethereum-mainnet-blast-1"}
 	ETHEREUM_MAINNET_KROMA_1                 = Chain{EvmChainID: 255, Selector: 3719320017875267166, Name: "ethereum-mainnet-kroma-1"}
 	ETHEREUM_MAINNET_LINEA_1                 = Chain{EvmChainID: 59144, Selector: 4627098889531055414, Name: "ethereum-mainnet-linea-1"}
 	ETHEREUM_MAINNET_MANTLE_1                = Chain{EvmChainID: 5000, Selector: 1556008542357238666, Name: "ethereum-mainnet-mantle-1"}
 	ETHEREUM_MAINNET_METIS_1                 = Chain{EvmChainID: 1088, Selector: 8805746078405598895, Name: "ethereum-mainnet-metis-1"}
+	ETHEREUM_MAINNET_MODE_1                  = Chain{EvmChainID: 34443, Selector: 7264351850409363825, Name: "ethereum-mainnet-mode-1"}
 	ETHEREUM_MAINNET_OPTIMISM_1              = Chain{EvmChainID: 10, Selector: 3734403246176062136, Name: "ethereum-mainnet-optimism-1"}
 	ETHEREUM_MAINNET_POLYGON_ZKEVM_1         = Chain{EvmChainID: 1101, Selector: 4348158687435793198, Name: "ethereum-mainnet-polygon-zkevm-1"}
 	ETHEREUM_MAINNET_SCROLL_1                = Chain{EvmChainID: 534352, Selector: 13204309965629103672, Name: "ethereum-mainnet-scroll-1"}
@@ -48,6 +50,7 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_LISK_1          = Chain{EvmChainID: 4202, Selector: 5298399861320400553, Name: "ethereum-testnet-sepolia-lisk-1"}
 	ETHEREUM_TESTNET_SEPOLIA_MANTLE_1        = Chain{EvmChainID: 5003, Selector: 8236463271206331221, Name: "ethereum-testnet-sepolia-mantle-1"}
 	ETHEREUM_TESTNET_SEPOLIA_METIS_1         = Chain{EvmChainID: 59902, Selector: 3777822886988675105, Name: "ethereum-testnet-sepolia-metis-1"}
+	ETHEREUM_TESTNET_SEPOLIA_MODE_1          = Chain{EvmChainID: 919, Selector: 829525985033418733, Name: "ethereum-testnet-sepolia-mode-1"}
 	ETHEREUM_TESTNET_SEPOLIA_OPTIMISM_1      = Chain{EvmChainID: 11155420, Selector: 5224473277236331295, Name: "ethereum-testnet-sepolia-optimism-1"}
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_ZKEVM_1 = Chain{EvmChainID: 2442, Selector: 1654667687261492630, Name: "ethereum-testnet-sepolia-polygon-zkevm-1"}
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1        = Chain{EvmChainID: 534351, Selector: 2279865765895943307, Name: "ethereum-testnet-sepolia-scroll-1"}
@@ -185,10 +188,12 @@ var ALL = []Chain{
 	ETHEREUM_MAINNET,
 	ETHEREUM_MAINNET_ARBITRUM_1,
 	ETHEREUM_MAINNET_BASE_1,
+	ETHEREUM_MAINNET_BLAST_1,
 	ETHEREUM_MAINNET_KROMA_1,
 	ETHEREUM_MAINNET_LINEA_1,
 	ETHEREUM_MAINNET_MANTLE_1,
 	ETHEREUM_MAINNET_METIS_1,
+	ETHEREUM_MAINNET_MODE_1,
 	ETHEREUM_MAINNET_OPTIMISM_1,
 	ETHEREUM_MAINNET_POLYGON_ZKEVM_1,
 	ETHEREUM_MAINNET_SCROLL_1,
@@ -209,6 +214,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_LISK_1,
 	ETHEREUM_TESTNET_SEPOLIA_MANTLE_1,
 	ETHEREUM_TESTNET_SEPOLIA_METIS_1,
+	ETHEREUM_TESTNET_SEPOLIA_MODE_1,
 	ETHEREUM_TESTNET_SEPOLIA_OPTIMISM_1,
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_ZKEVM_1,
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1,

@@ -21,6 +21,9 @@ selectors:
   420:
     selector: 2664363617261496610
     name: "ethereum-testnet-goerli-optimism-1"
+  919:
+    selector: 829525985033418733
+    name: "ethereum-testnet-sepolia-mode-1"
   1029:
     selector: 4459371029167934217
     name: "bittorrent_chain-testnet"
@@ -65,10 +68,10 @@ selectors:
     name: "celo-testnet-alfajores"
   59140:
     selector: 1355246678561316402
-    name: "ethereum-testnet-goerli-linea-1" 
+    name: "ethereum-testnet-goerli-linea-1"
   59141:
     selector: 5719461335882077547
-    name: "ethereum-testnet-sepolia-linea-1" 
+    name: "ethereum-testnet-sepolia-linea-1"
   59902:
     selector: 3777822886988675105
     name: "ethereum-testnet-sepolia-metis-1"
@@ -154,18 +157,24 @@ selectors:
   8453:
     selector: 15971525489660198786
     name: "ethereum-mainnet-base-1"
+  34443:
+    selector: 7264351850409363825
+    name: "ethereum-mainnet-mode-1"
   42161:
     selector: 4949039107694359620
     name: "ethereum-mainnet-arbitrum-1"
   42220:
-    selector: 1346049177634351622 
+    selector: 1346049177634351622
     name: "celo-mainnet"
   43114:
     selector: 6433500567565415381
     name: "avalanche-mainnet"
   59144:
     selector: 4627098889531055414
-    name: "ethereum-mainnet-linea-1" 
+    name: "ethereum-mainnet-linea-1"
+  81457:
+    selector: 4411394078118774322
+    name: "ethereum-mainnet-blast-1"
   534352:
     selector: 13204309965629103672
     name: "ethereum-mainnet-scroll-1"
