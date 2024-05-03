@@ -1,0 +1,241 @@
+{
+    "mainnets": {
+        "1": {
+            "selector": 5009297550715158000,
+            "name": "ethereum-mainnet"
+        },
+        "10": {
+            "selector": 3734403246176062000,
+            "name": "ethereum-mainnet-optimism-1"
+        },
+        "56": {
+            "selector": 11344663589394135000,
+            "name": "binance_smart_chain-mainnet"
+        },
+        "100": {
+            "selector": 465200170687744400,
+            "name": "gnosis_chain-mainnet"
+        },
+        "137": {
+            "selector": 4051577828743386600,
+            "name": "polygon-mainnet"
+        },
+        "199": {
+            "selector": 3776006016387883000,
+            "name": "bittorrent_chain-mainnet"
+        },
+        "255": {
+            "selector": 3719320017875267000,
+            "name": "ethereum-mainnet-kroma-1"
+        },
+        "1088": {
+            "selector": 8805746078405599000,
+            "name": "ethereum-mainnet-metis-1"
+        },
+        "1101": {
+            "selector": 4348158687435793400,
+            "name": "ethereum-mainnet-polygon-zkevm-1"
+        },
+        "1111": {
+            "selector": 5142893604156790000,
+            "name": "wemix-mainnet"
+        },
+        "2222": {
+            "selector": 7550000543357438000,
+            "name": "kava-mainnet"
+        },
+        "5000": {
+            "selector": 1556008542357238800,
+            "name": "ethereum-mainnet-mantle-1"
+        },
+        "8453": {
+            "selector": 15971525489660199000,
+            "name": "ethereum-mainnet-base-1"
+        },
+        "34443": {
+            "selector": 7264351850409363000,
+            "name": "ethereum-mainnet-mode-1"
+        },
+        "42161": {
+            "selector": 4949039107694360000,
+            "name": "ethereum-mainnet-arbitrum-1"
+        },
+        "42220": {
+            "selector": 1346049177634351600,
+            "name": "celo-mainnet"
+        },
+        "43114": {
+            "selector": 6433500567565415000,
+            "name": "avalanche-mainnet"
+        },
+        "59144": {
+            "selector": 4627098889531055000,
+            "name": "ethereum-mainnet-linea-1"
+        },
+        "81457": {
+            "selector": 4411394078118774300,
+            "name": "ethereum-mainnet-blast-1"
+        },
+        "534352": {
+            "selector": 13204309965629104000,
+            "name": "ethereum-mainnet-scroll-1"
+        }
+    },
+    "testnets": {
+        "31": {
+            "selector": 8953668971247136000,
+            "name": "bitcoin-testnet-rootstock"
+        },
+        "97": {
+            "selector": 13264668187771770000,
+            "name": "binance_smart_chain-testnet"
+        },
+        "280": {
+            "selector": 6802309497652714000,
+            "name": "ethereum-testnet-goerli-zksync-1"
+        },
+        "296": {
+            "selector": 222782988166878820,
+            "name": "hedera-testnet"
+        },
+        "300": {
+            "selector": 6898391096552792000,
+            "name": "ethereum-testnet-sepolia-zksync-1"
+        },
+        "338": {
+            "selector": 2995292832068775000,
+            "name": "cronos-testnet"
+        },
+        "420": {
+            "selector": 2664363617261497000,
+            "name": "ethereum-testnet-goerli-optimism-1"
+        },
+        "919": {
+            "selector": 829525985033418800,
+            "name": "ethereum-testnet-sepolia-mode-1"
+        },
+        "1029": {
+            "selector": 4459371029167934500,
+            "name": "bittorrent_chain-testnet"
+        },
+        "1112": {
+            "selector": 9284632837123596000,
+            "name": "wemix-testnet"
+        },
+        "1337": {
+            "selector": 3379446385462418400,
+            "name": "geth-testnet"
+        },
+        "1442": {
+            "selector": 11059667695644973000,
+            "name": "ethereum-testnet-goerli-polygon-zkevm-1"
+        },
+        "2221": {
+            "selector": 2110537777356199200,
+            "name": "kava-testnet"
+        },
+        "2358": {
+            "selector": 5990477251245693000,
+            "name": "ethereum-testnet-sepolia-kroma-1"
+        },
+        "2442": {
+            "selector": 1654667687261492700,
+            "name": "ethereum-testnet-sepolia-polygon-zkevm-1"
+        },
+        "2522": {
+            "selector": 8901520481741772000,
+            "name": "ethereum-testnet-holesky-fraxtal-1"
+        },
+        "4002": {
+            "selector": 4905564228793744000,
+            "name": "fantom-testnet"
+        },
+        "4202": {
+            "selector": 5298399861320401000,
+            "name": "ethereum-testnet-sepolia-lisk-1"
+        },
+        "5001": {
+            "selector": 4168263376276232000,
+            "name": "ethereum-testnet-goerli-mantle-1"
+        },
+        "5003": {
+            "selector": 8236463271206331000,
+            "name": "ethereum-testnet-sepolia-mantle-1"
+        },
+        "10200": {
+            "selector": 8871595565390010000,
+            "name": "gnosis_chain-testnet-chiado"
+        },
+        "43113": {
+            "selector": 14767482510784807000,
+            "name": "avalanche-testnet-fuji"
+        },
+        "44787": {
+            "selector": 3552045678561919000,
+            "name": "celo-testnet-alfajores"
+        },
+        "59140": {
+            "selector": 1355246678561316400,
+            "name": "ethereum-testnet-goerli-linea-1"
+        },
+        "59141": {
+            "selector": 5719461335882077000,
+            "name": "ethereum-testnet-sepolia-linea-1"
+        },
+        "59902": {
+            "selector": 3777822886988675000,
+            "name": "ethereum-testnet-sepolia-metis-1"
+        },
+        "76578": {
+            "selector": 781901677223027200
+        },
+        "80001": {
+            "selector": 12532609583862917000,
+            "name": "polygon-testnet-mumbai"
+        },
+        "80002": {
+            "selector": 16281711391670634000,
+            "name": "polygon-testnet-amoy"
+        },
+        "80085": {
+            "selector": 12336603543561912000,
+            "name": "berachain-testnet-artio"
+        },
+        "84531": {
+            "selector": 5790810961207156000,
+            "name": "ethereum-testnet-goerli-base-1"
+        },
+        "84532": {
+            "selector": 10344971235874466000,
+            "name": "ethereum-testnet-sepolia-base-1"
+        },
+        "421613": {
+            "selector": 6101244977088475000,
+            "name": "ethereum-testnet-goerli-arbitrum-1"
+        },
+        "421614": {
+            "selector": 3478487238524512000,
+            "name": "ethereum-testnet-sepolia-arbitrum-1"
+        },
+        "534351": {
+            "selector": 2279865765895943400,
+            "name": "ethereum-testnet-sepolia-scroll-1"
+        },
+        "595581": {
+            "selector": 7837562506228496000,
+            "name": "avalanche-testnet-nexon"
+        },
+        "11155111": {
+            "selector": 16015286601757825000,
+            "name": "ethereum-testnet-sepolia"
+        },
+        "11155420": {
+            "selector": 5224473277236332000,
+            "name": "ethereum-testnet-sepolia-optimism-1"
+        },
+        "168587773": {
+            "selector": 2027362563942762500,
+            "name": "ethereum-testnet-sepolia-blast-1"
+        }
+    }
+}
