@@ -6,6 +6,12 @@ selectors:
   97:
     selector: 13264668187771770619
     name: "binance_smart_chain-testnet"
+  195:
+    selector: 2066098519157881736
+    name: "ethereum-testnet-sepolia-xlayer-1"
+  196:
+    selector: 3016212468291539606
+    name: "ethereum-mainnet-xlayer-1"
   280:
     selector: 6802309497652714138
     name: "ethereum-testnet-goerli-zksync-1"
