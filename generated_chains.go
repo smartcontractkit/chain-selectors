@@ -69,6 +69,7 @@ var (
 	POLYGON_TESTNET_MUMBAI                   = Chain{EvmChainID: 80001, Selector: 12532609583862916517, Name: "polygon-testnet-mumbai"}
 	TEST_1000                                = Chain{EvmChainID: 1000, Selector: 11787463284727550157, Name: "1000"}
 	TEST_2337                                = Chain{EvmChainID: 2337, Selector: 12922642891491394802, Name: "2337"}
+	TEST_3337                                = Chain{EvmChainID: 3337, Selector: 4793464827907405086, Name: "3337"}
 	TEST_76578                               = Chain{EvmChainID: 76578, Selector: 781901677223027175, Name: "76578"}
 	TEST_90000001                            = Chain{EvmChainID: 90000001, Selector: 909606746561742123, Name: "90000001"}
 	TEST_90000002                            = Chain{EvmChainID: 90000002, Selector: 5548718428018410741, Name: "90000002"}
@@ -235,6 +236,7 @@ var ALL = []Chain{
 	POLYGON_TESTNET_MUMBAI,
 	TEST_1000,
 	TEST_2337,
+	TEST_3337,
 	TEST_76578,
 	TEST_90000001,
 	TEST_90000002,
