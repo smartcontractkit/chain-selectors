@@ -58,6 +58,8 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1        = Chain{EvmChainID: 195, Selector: 2066098519157881736, Name: "ethereum-testnet-sepolia-xlayer-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1        = Chain{EvmChainID: 300, Selector: 6898391096552792247, Name: "ethereum-testnet-sepolia-zksync-1"}
 	FANTOM_TESTNET                           = Chain{EvmChainID: 4002, Selector: 4905564228793744293, Name: "fantom-testnet"}
+	GETH_DEVNET_2                            = Chain{EvmChainID: 2337, Selector: 12922642891491394802, Name: "geth-devnet-2"}
+	GETH_DEVNET_3                            = Chain{EvmChainID: 3337, Selector: 4793464827907405086, Name: "geth-devnet-3"}
 	GETH_TESTNET                             = Chain{EvmChainID: 1337, Selector: 3379446385462418246, Name: "geth-testnet"}
 	GNOSIS_CHAIN_MAINNET                     = Chain{EvmChainID: 100, Selector: 465200170687744372, Name: "gnosis_chain-mainnet"}
 	GNOSIS_CHAIN_TESTNET_CHIADO              = Chain{EvmChainID: 10200, Selector: 8871595565390010547, Name: "gnosis_chain-testnet-chiado"}
@@ -68,7 +70,6 @@ var (
 	POLYGON_TESTNET_AMOY                     = Chain{EvmChainID: 80002, Selector: 16281711391670634445, Name: "polygon-testnet-amoy"}
 	POLYGON_TESTNET_MUMBAI                   = Chain{EvmChainID: 80001, Selector: 12532609583862916517, Name: "polygon-testnet-mumbai"}
 	TEST_1000                                = Chain{EvmChainID: 1000, Selector: 11787463284727550157, Name: "1000"}
-	TEST_2337                                = Chain{EvmChainID: 2337, Selector: 12922642891491394802, Name: "2337"}
 	TEST_76578                               = Chain{EvmChainID: 76578, Selector: 781901677223027175, Name: "76578"}
 	TEST_90000001                            = Chain{EvmChainID: 90000001, Selector: 909606746561742123, Name: "90000001"}
 	TEST_90000002                            = Chain{EvmChainID: 90000002, Selector: 5548718428018410741, Name: "90000002"}
@@ -224,6 +225,8 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1,
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1,
 	FANTOM_TESTNET,
+	GETH_DEVNET_2,
+	GETH_DEVNET_3,
 	GETH_TESTNET,
 	GNOSIS_CHAIN_MAINNET,
 	GNOSIS_CHAIN_TESTNET_CHIADO,
@@ -234,7 +237,6 @@ var ALL = []Chain{
 	POLYGON_TESTNET_AMOY,
 	POLYGON_TESTNET_MUMBAI,
 	TEST_1000,
-	TEST_2337,
 	TEST_76578,
 	TEST_90000001,
 	TEST_90000002,

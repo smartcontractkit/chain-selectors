@@ -4,6 +4,10 @@ selectors:
     selector: 11787463284727550157
   2337:
     selector: 12922642891491394802
+    name: geth-devnet-2
+  3337:
+    selector: 4793464827907405086
+    name: geth-devnet-3
   90000001:
     selector: 909606746561742123
   90000002:
