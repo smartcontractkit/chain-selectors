@@ -1096,9 +1096,6 @@ selectors:
   999:
     selector: 4923423692808573000
     name: wanchain-testnet
-  1000:
-    selector: 4670574841503199000
-    name: gton-mainnet
   1001:
     selector: 138455676211945980
     name: klaytn-testnet-baobab
