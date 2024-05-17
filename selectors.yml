@@ -32,7 +32,7 @@ selectors:
     name: "ethereum-testnet-sepolia-mode-1"
   1029:
     selector: 4459371029167934217
-    name: "bittorrent_chain-testnet"
+    name: "bittorrent_chain-testnet-donau"
   1112:
     selector: 9284632837123596123
     name: "wemix-testnet"
@@ -184,3 +184,4266 @@ selectors:
   534352:
     selector: 13204309965629103672
     name: "ethereum-mainnet-scroll-1"
+
+  # Mainnet & Testnets  
+  2:
+    selector: 2561566851704579600
+    name: expansenetwork-mainnet
+  6:
+    selector: 9896614504728916000
+    name: ethereum-testnet-kotti
+  7:
+    selector: 8629570455006037000
+    name: thaichain-mainnet
+  8:
+    selector: 1438192154200079600
+    name: ubiq-mainnet
+  9:
+    selector: 3929836287306462700
+    name: ubiq-testnet
+  11:
+    selector: 403476106582558700
+    name: metadium-mainnet
+  12:
+    selector: 6608398891445493000
+    name: metadium-testnet
+  13:
+    selector: 9345142004403190000
+    name: diode-testnet-staging
+  14:
+    selector: 3104796453465339400
+    name: flare-mainnet
+  16:
+    selector: 1425755639653494300
+    name: songbird-testnet-coston
+  17:
+    selector: 5076874396540152000
+    name: thaichain-mainnet-2
+  18:
+    selector: 1523060218711209700
+    name: thundercore-testnet
+  19:
+    selector: 6992114884590097000
+    name: songbird-canary-mainnet
+  20:
+    selector: 2502656970521191000
+    name: elastos-smart-chain-mainnet
+  21:
+    selector: 3909301268821095000
+    name: elastos-smart-chain-testnet
+  22:
+    selector: 6082586942726769000
+    name: ela-did-sidechain-mainnet
+  23:
+    selector: 5800570751812973000
+    name: ela-did-sidechain-testnet
+  24:
+    selector: 6386202185909950000
+    name: kardiachain-mainnet
+  25:
+    selector: 1885504756478451000
+    name: cronos-mainnet
+  26:
+    selector: 107491696116559500
+    name: genesis-testnet
+  27:
+    selector: 2631011539454884000
+    name: shibachain
+  29:
+    selector: 2924087099991157000
+    name: genesis-mainnet
+  30:
+    selector: 9560564743620563000
+    name: rootstock-mainnet
+  32:
+    selector: 9776554093108978000
+    name: gooddata-testnet
+  33:
+    selector: 5310939028466371000
+    name: gooddata-mainnet
+  34:
+    selector: 1476481372922127000
+    name: securechain-mainnet
+  35:
+    selector: 5739363659316641000
+    name: tbwg-chain-mainnet
+  36:
+    selector: 4489074674401714000
+    name: dxchain-mainnet
+  37:
+    selector: 1290254299553370600
+    name: xpla-mainnet
+  38:
+    selector: 8811623689246386000
+    name: valorbit-mainnet
+  39:
+    selector: 8537305715042480000
+    name: u2u-solaris-mainnet
+  40:
+    selector: 1477345371608778000
+    name: telos-evm-mainnet
+  41:
+    selector: 729797994450396300
+    name: telos-evm-testnet
+  42:
+    selector: 2391625690633694000
+    name: lukso-mainnet
+  43:
+    selector: 3758441580581188600
+    name: darwinia-pangolin-testnet
+  44:
+    selector: 5149556244043628000
+    name: crab-network
+  45:
+    selector: 4340886533089894000
+    name: darwinia-pangoro-testnet
+  46:
+    selector: 8866418665544333000
+    name: darwinia-network
+  47:
+    selector: 5801214097737804000
+    name: acria-intellichain
+  48:
+    selector: 8868300418822634000
+    name: ennothem-mainnet-proterozoic
+  49:
+    selector: 10442099333547450
+    name: ennothem-testnet-pioneer
+  50:
+    selector: 6847472544919595000
+    name: xdc-network
+  51:
+    selector: 7568798581146509000
+    name: xdc-apothem-network
+  52:
+    selector: 1761333065194157300
+    name: coinex-smart-chain-mainnet
+  53:
+    selector: 8955032871639343000
+    name: coinex-smart-chain-testnet
+  54:
+    selector: 1345438856400662500
+    name: openpiece-mainnet
+  55:
+    selector: 2265025371210751500
+    name: zyx-mainnet
+  57:
+    selector: 200865483096814850
+    name: syscoin-mainnet
+  58:
+    selector: 6882115087969698000
+    name: ontology-mainnet
+  59:
+    selector: 8878714247859241000
+    name: eos-evm-legacy
+  60:
+    selector: 8669340082167387000
+    name: gochain
+  61:
+    selector: 7773187124888432000
+    name: ethereum-classic-mainnet
+  62:
+    selector: 5029053220920501000
+    name: morden-testnet
+  63:
+    selector: 5482805716383319000
+    name: mordor-testnet
+  64:
+    selector: 6129314378111972000
+    name: ellaism-mainnet
+  65:
+    selector: 7102925355443226000
+    name: okexchain-testnet
+  66:
+    selector: 9062185058161507000
+    name: okxchain-mainnet
+  67:
+    selector: 3962145109074808300
+    name: dbchain-testnet
+  68:
+    selector: 7844411480525380000
+    name: soterone-mainnet
+  69:
+    selector: 6690132650461471000
+    name: optimism-kovan
+  70:
+    selector: 6691701155429890000
+    name: hoo-smart-chain-mainnet
+  71:
+    selector: 4032207015911202300
+    name: conflux-espace-testnet
+  72:
+    selector: 5524176662376872000
+    name: dxchain-testnet
+  73:
+    selector: 1402917847592193300
+    name: fncy-mainnet
+  74:
+    selector: 6719828855826957000
+    name: idchain-mainnet
+  75:
+    selector: 7130587368273511000
+    name: decimal-smart-chain-mainnet
+  76:
+    selector: 4257253959955132000
+    name: mix-mainnet
+  77:
+    selector: 3698033713086537000
+    name: poa-network-sokol
+  78:
+    selector: 1325935216855709200
+    name: primuschain-mainnet
+  79:
+    selector: 79759942896120430
+    name: zenith-mainnet
+  80:
+    selector: 5251174744136649000
+    name: genechain
+  81:
+    selector: 5012606401986918000
+    name: japan-open-chain-mainnet
+  82:
+    selector: 6049329772948173000
+    name: meter-mainnet
+  83:
+    selector: 4454525003809273300
+    name: meter-testnet
+  84:
+    selector: 8527413842256945000
+    name: linqto-devnet
+  85:
+    selector: 4575214224826502700
+    name: gatechain-testnet
+  86:
+    selector: 5963101646825783000
+    name: gatechain-mainnet
+  87:
+    selector: 4036285331595915000
+    name: nova-network
+  88:
+    selector: 8450691884608035000
+    name: viction-mainnet
+  89:
+    selector: 2953958458330632000
+    name: viction-testnet
+  90:
+    selector: 6734791098280237000
+    name: garizon-stage0
+  91:
+    selector: 6217258539385333000
+    name: garizon-stage1
+  92:
+    selector: 911879707569855900
+    name: garizon-stage2
+  93:
+    selector: 1793622549660070000
+    name: garizon-stage3
+  94:
+    selector: 5195003442046524000
+    name: swissdlt-mainnet
+  95:
+    selector: 6386808206290520000
+    name: camdl-mainnet
+  96:
+    selector: 894445411843960400
+    name: bitkub-chain
+  98:
+    selector: 5386772174360678000
+    name: six-protocol
+  99:
+    selector: 7790419843307699000
+    name: poa-network-core
+  185:
+    selector: 3750659051491243000
+    name: mint-mainnet
+  186:
+    selector: 4473345800387969000
+    name: seele-mainnet
+  188:
+    selector: 7623842738889945000
+    name: bmc-mainnet
+  189:
+    selector: 7537448934057058000
+    name: bmc-testnet
+  191:
+    selector: 1286252900961730800
+    name: filefilego
+  193:
+    selector: 675256183927874800
+    name: crypto-emergency
+  197:
+    selector: 7073933650937423000
+    name: neutrinos-testnet
+  198:
+    selector: 4102033866113268000
+    name: bitchain-mainnet
+  200:
+    selector: 3574552215063802000
+    name: arbitrum-on-xdai
+  201:
+    selector: 754347747997545700
+    name: moac-testnet
+  202:
+    selector: 8558592292614385000
+    name: edgeless-testnet
+  204:
+    selector: 5017288067157193000
+    name: opbnb-mainnet
+  206:
+    selector: 2472565640432755700
+    name: vinuchain-testnet
+  207:
+    selector: 3684024668522740700
+    name: vinuchain-network
+  208:
+    selector: 7391732764552765000
+    name: structx-mainnet
+  210:
+    selector: 7278018412846687000
+    name: bitnet
+  211:
+    selector: 825616199357139800
+    name: freight-trust-network
+  212:
+    selector: 371051195984157800
+    name: mapo-makalu
+  213:
+    selector: 3174620033683200000
+    name: b2-hub-mainnet
+  214:
+    selector: 8675876288336681000
+    name: shinarium-mainnet
+  217:
+    selector: 3384449304923984400
+    name: siriusnet-v2
+  218:
+    selector: 2064567489514355200
+    name: soterone-mainnet-old
+  220:
+    selector: 2030699632639379000
+    name: scalind-testnet
+  222:
+    selector: 5054518609603440000
+    name: permission
+  223:
+    selector: 261233691880111680
+    name: b2-mainnet
+  224:
+    selector: 5965905335890915000
+    name: viridis-testnet
+  225:
+    selector: 5947978525924674000
+    name: lachain-mainnet
+  226:
+    selector: 4519215167086125600
+    name: lachain-testnet
+  228:
+    selector: 6077721642269432000
+    name: mind-network-mainnet
+  230:
+    selector: 3854767729230497300
+    name: swapdex
+  234:
+    selector: 7315851759362455000
+    name: protojumbo-testnet
+  236:
+    selector: 1549059144457820700
+    name: deamchain-testnet
+  238:
+    selector: 9804723746759817000
+    name: blast-mainnet
+  242:
+    selector: 7959164489995305000
+    name: plinga-mainnet
+  246:
+    selector: 7342972211698511000
+    name: energy-web-chain
+  248:
+    selector: 6009039776093264000
+    name: oasys-mainnet
+  250:
+    selector: 5088928492785718000
+    name: fantom-opera
+  252:
+    selector: 872970883702732800
+    name: fraxtal
+  256:
+    selector: 434714896728256600
+    name: huobi-eco-chain-testnet
+  258:
+    selector: 4656059929746088000
+    name: setheum
+  259:
+    selector: 8239338020728974000
+    name: neonlink-mainnet
+  262:
+    selector: 2107107118605919700
+    name: sur-blockchain-network
+  266:
+    selector: 3103087732677541000
+    name: neura
+  267:
+    selector: 9326180910019561000
+    name: neura-testnet
+  268:
+    selector: 1977204769754459100
+    name: neura-devnet
+  269:
+    selector: 4615190823018584000
+    name: high-performance-blockchain
+  271:
+    selector: 6943546484595362000
+    name: egoncoin-mainnet
+  274:
+    selector: 5145646652049855000
+    name: lachain
+  278:
+    selector: 8275319196445971000
+    name: xfair-ai-mainnet
+  279:
+    selector: 945164301987364600
+    name: bpx-blockchain
+  282:
+    selector: 3085117785252655600
+    name: cronos-zkevm-testnet
+  288:
+    selector: 6303925396828673000
+    name: boba-network
+  291:
+    selector: 1574182248864353000
+    name: orderly-mainnet
+  295:
+    selector: 8355361655269346000
+    name: hedera-mainnet
+  297:
+    selector: 2274431666381886500
+    name: hedera-previewnet
+  298:
+    selector: 6670952951962306000
+    name: hedera-localnet
+
+  301:
+    selector: 7938589571012286000
+    name: bobaopera
+  302:
+    selector: 5440563823517646000
+    name: zkcandy-sepolia-testnet
+  303:
+    selector: 8688503047774914000
+    name: neurochain-testnet
+  305:
+    selector: 3107028131520113000
+    name: zksats-mainnet
+  307:
+    selector: 82293245902234080
+    name: lovely-network-testnet
+  308:
+    selector: 9206337510839302000
+    name: furtheon
+  309:
+    selector: 5042880068877362000
+    name: wyzth-testnet
+  311:
+    selector: 9043408097740550000
+    name: omax-mainnet
+  313:
+    selector: 1122220131242264200
+    name: neurochain-mainnet
+  314:
+    selector: 9589568443011160000
+    name: filecoin-mainnet
+  321:
+    selector: 2403393780154175000
+    name: kcc-mainnet
+  322:
+    selector: 1751949657357558800
+    name: kcc-testnet
+  323:
+    selector: 561360265157089300
+    name: cosvm-mainnet
+  324:
+    selector: 1751735277343915500
+    name: zksync-mainnet
+  333:
+    selector: 1336493495328696600
+    name: web3q-mainnet
+  335:
+    selector: 6018330552602171000
+    name: dfk-chain-test
+  336:
+    selector: 6444938317194096000
+    name: shiden
+  361:
+    selector: 8684660175588766000
+    name: theta-mainnet
+  363:
+    selector: 611162562086606800
+    name: theta-sapphire-testnet
+  364:
+    selector: 3401875235387426000
+    name: theta-amber-testnet
+  365:
+    selector: 3382556478976617000
+    name: theta-testnet
+  369:
+    selector: 7499222450342995000
+    name: pulsechain
+  371:
+    selector: 3957540449871211000
+    name: consta-testnet
+  380:
+    selector: 501169965116226050
+    name: zkamoeba-testnet
+  381:
+    selector: 6782980878498532000
+    name: zkamoeba-mainnet
+  385:
+    selector: 6608492174959553000
+    name: lisinski
+  395:
+    selector: 2358534601107571000
+    name: camdl-testnet
+  397:
+    selector: 2039744413822257700
+    name: near-mainnet
+  398:
+    selector: 5061593697262339000
+    name: near-testnet
+  399:
+    selector: 8340192288852703000
+    name: nativ3-mainnet
+  400:
+    selector: 8343855745833999000
+    name: hyperonchain-testnet
+  401:
+    selector: 3033697966923752000
+    name: ozone-chain-testnet
+  404:
+    selector: 5277683879984896000
+    name: syndr-l3
+  411:
+    selector: 7451100889841000000
+    name: pepe-chain-mainnet
+  416:
+    selector: 5898180824480153000
+    name: sx-network-mainnet
+  418:
+    selector: 7297577348375240000
+    name: latestnet
+  422:
+    selector: 2860011063493150700
+    name: viridis-mainnet
+  424:
+    selector: 4257682548483545600
+    name: pgn-public-goods-network
+  427:
+    selector: 2383061762844489000
+    name: zeeth-chain
+  428:
+    selector: 4801794491134317000
+    name: geso-verse
+  434:
+    selector: 7960953172886076000
+    name: boyaa-mainnet
+  443:
+    selector: 2578446805194832000
+    name: ten-testnet
+  444:
+    selector: 2759778273334885400
+    name: synapse-chain-testnet
+  456:
+    selector: 606163791979679200
+    name: arzio-chain
+  462:
+    selector: 7317911323415911000
+    name: areon-network-testnet
+  463:
+    selector: 1939936305787790600
+    name: areon-network-mainnet
+  499:
+    selector: 8023679589832757000
+    name: rupaya
+  500:
+    selector: 2208322008489627100
+    name: camino-c-chain
+  501:
+    selector: 2319625385827519500
+    name: columbus-test-network
+  510:
+    selector: 2530159070960807000
+    name: syndicate-chain
+  512:
+    selector: 8261278461893904000
+    name: double-a-chain-mainnet
+  513:
+    selector: 7501799257938202000
+    name: double-a-chain-testnet
+  516:
+    selector: 7211057748295186000
+    name: gear-zero-network-mainnet
+  520:
+    selector: 5841671140413800000
+    name: xt-smart-chain-mainnet
+  529:
+    selector: 1044336816660680300
+    name: firechain-mainnet
+  530:
+    selector: 2389651174221774300
+    name: f-x-core-mainnet-network
+  534:
+    selector: 3603422025617690600
+    name: candle
+  537:
+    selector: 7805997909870275000
+    name: optrust-mainnet
+  542:
+    selector: 4280980781142714000
+    name: pawchain-testnet
+  545:
+    selector: 7345737322755617000
+    name: testnet
+  555:
+    selector: 4669293938533514000
+    name: vela1-chain-mainnet
+  558:
+    selector: 4828343019449608000
+    name: tao-network
+  568:
+    selector: 8526325031811095000
+    name: dogechain-testnet
+  570:
+    selector: 8795464341323833000
+    name: rollux-mainnet
+  571:
+    selector: 9884441822748269000
+    name: metachain-mainnet
+  579:
+    selector: 9450367604417448000
+    name: filenova-mainnet
+  588:
+    selector: 1556527815984785200
+    name: metis-stardust-testnet
+  592:
+    selector: 8143695622272600000
+    name: astar
+  595:
+    selector: 8561072556985457000
+    name: acala-mandala-testnet-tc9
+  596:
+    selector: 5473818217622917000
+    name: karura-network-testnet
+  597:
+    selector: 8669554642257244000
+    name: acala-network-testnet
+  599:
+    selector: 5084895882710852000
+    name: metis-goerli-testnet
+  600:
+    selector: 7634531989116358000
+    name: meshnyan-testnet
+  601:
+    selector: 4495769973340087000
+    name: vine-testnet
+  612:
+    selector: 9610789150170687000
+    name: eiob-mainnet
+  614:
+    selector: 4500485612809206300
+    name: graphlinq-blockchain-mainnet
+  634:
+    selector: 1879884848010855400
+    name: avocado
+  646:
+    selector: 2589832550638178300
+    name: previewnet
+  647:
+    selector: 9822288198044572000
+    name: sx-network-testnet
+  648:
+    selector: 9305968689807790000
+    name: endurance-smart-chain-mainnet
+  653:
+    selector: 3286751813371156000
+    name: kalichain-testnet
+  654:
+    selector: 3194183017379748000
+    name: kalichain
+  662:
+    selector: 9771190972377000000
+    name: ultronsmartchain
+  666:
+    selector: 7600310643553861000
+    name: pixie-chain-testnet
+  667:
+    selector: 7453628212189902000
+    name: laos-arrakis
+  668:
+    selector: 7774823584047051000
+    name: juncachain
+  669:
+    selector: 293993346268048830
+    name: juncachain-testnet
+  686:
+    selector: 4432711237858815000
+    name: karura-network
+  690:
+    selector: 6824751907443789000
+    name: redstone
+  700:
+    selector: 4308895699253871600
+    name: star-social-testnet
+  707:
+    selector: 9605831154928015000
+    name: blockchain-station-mainnet
+  708:
+    selector: 1886379327277132300
+    name: blockchain-station-testnet
+  710:
+    selector: 6632510928482505000
+    name: highbury
+  713:
+    selector: 9276917525516632000
+    name: vrcscan-mainnet
+  719:
+    selector: 2907091448363294700
+    name: shibarium-beta
+  721:
+    selector: 8890722117152014000
+    name: lycan-chain
+  727:
+    selector: 611085474180093000
+    name: blucrates
+  730:
+    selector: 6607870185249802000
+    name: lovely-network-mainnet
+  740:
+    selector: 9841359097001576000
+    name: canto-testnet
+  741:
+    selector: 3690903245690113500
+    name: vention-smart-chain-testnet
+  742:
+    selector: 1501842159755955000
+    name: script-testnet
+  747:
+    selector: 4265354970696024600
+    name: mainnet
+  766:
+    selector: 1852292288824368600
+    name: ql1
+  776:
+    selector: 4005922250641413600
+    name: openchain-testnet
+  777:
+    selector: 5999572055606547000
+    name: cheapeth
+  786:
+    selector: 1034991617296550100
+    name: maal-chain
+  787:
+    selector: 7590029545361083000
+    name: acala-network
+  788:
+    selector: 2651304732700361000
+    name: aerochain-testnet
+  789:
+    selector: 4516150886426582000
+    name: patex
+  799:
+    selector: 3531543510813877000
+    name: rupaya-testnet
+  800:
+    selector: 2412985657300903400
+    name: lucid-blockchain
+  803:
+    selector: 2723887125441378000
+    name: haic
+  808:
+    selector: 1248144393558770000
+    name: portal-fantasy-chain-test
+  810:
+    selector: 238593054584375070
+    name: haven1-testnet
+  813:
+    selector: 6148014685820694000
+    name: qitmeer-network-mainnet
+  814:
+    selector: 5417662941790271000
+    name: firechain-zkevm
+  818:
+    selector: 6594412024200806000
+    name: beone-chain-mainnet
+  820:
+    selector: 369179449398022700
+    name: callisto-mainnet
+  821:
+    selector: 6947379188939056000
+    name: callisto-testnet-deprecated
+  822:
+    selector: 1082508131496757800
+    name: runic-chain-testnet
+  831:
+    selector: 2395818937682426000
+    name: checkdot-blockchain-devnet
+  841:
+    selector: 7014674644162982000
+    name: taraxa-mainnet
+  842:
+    selector: 911958932969729800
+    name: taraxa-testnet
+  859:
+    selector: 3181652974905628700
+    name: zeeth-chain-dev
+  868:
+    selector: 1113782351179779600
+    name: fantasia-chain-mainnet
+  876:
+    selector: 2956703930415731700
+    name: bandai-namco-research-verse-mainnet
+  877:
+    selector: 599035436311759000
+    name: dexit-network
+  880:
+    selector: 8831777157958349000
+    name: ambros-chain-mainnet
+  888:
+    selector: 2337916896713834000
+    name: wanchain
+  898:
+    selector: 147993387793528000
+    name: maxi-chain-testnet
+  900:
+    selector: 5430477499414184000
+    name: garizon-testnet-stage0
+  901:
+    selector: 6432070938857548000
+    name: garizon-testnet-stage1
+  902:
+    selector: 1846113209297950500
+    name: garizon-testnet-stage2
+  903:
+    selector: 7318030822730161000
+    name: garizon-testnet-stage3
+  909:
+    selector: 5225139939410779000
+    name: portal-fantasy-chain
+  910:
+    selector: 9263267310882990000
+    name: decentrabone-layer1-testnet
+  911:
+    selector: 9993390548995570000
+    name: taproot-mainnet
+  917:
+    selector: 6202359852337680000
+    name: rinia-testnet
+  927:
+    selector: 9903136230584693000
+    name: yidark-chain-mainnet
+  940:
+    selector: 865843664023358000
+    name: pulsechain-testnet
+  941:
+    selector: 6375313143259995000
+    name: pulsechain-testnet-v2b
+  942:
+    selector: 8201505415674744000
+    name: pulsechain-testnet-v3
+  943:
+    selector: 3267674601649111000
+    name: pulsechain-testnet-v4
+  956:
+    selector: 5866417980214719000
+    name: munode-testnet
+  957:
+    selector: 359719752963703040
+    name: lyra-chain
+  963:
+    selector: 4103232360356048400
+    name: btc20-smart-chain
+  970:
+    selector: 7025594682696386000
+    name: oort-mainnet
+  971:
+    selector: 7764321696380492000
+    name: oort-huygens
+  972:
+    selector: 945582898174255400
+    name: oort-ascraeus
+  977:
+    selector: 2881919849717653500
+    name: nepal-blockchain-network
+  979:
+    selector: 5353920278090574000
+    name: ethxy-testnet
+  980:
+    selector: 7403230058483680000
+    name: top-mainnet-evm
+  985:
+    selector: 1524567695120069400
+    name: memo-smart-chain-mainnet
+  989:
+    selector: 9000474796255944000
+    name: top-mainnet
+  990:
+    selector: 9450536000104122000
+    name: eliberty-mainnet
+  997:
+    selector: 4425822975091737600
+    name: 5irechain-thunder
+  998:
+    selector: 1737147182480762600
+    name: lucky-network
+  999:
+    selector: 4923423692808573000
+    name: wanchain-testnet
+  1001:
+    selector: 138455676211945980
+    name: klaytn-testnet-baobab
+  1003:
+    selector: 3972727142570877400
+    name: tectum-emission-token
+  1004:
+    selector: 3016004762854107600
+    name: t-ekta
+  1007:
+    selector: 840852544653383200
+    name: newton-testnet
+  1008:
+    selector: 1468328820298448000
+    name: eurus-mainnet
+  1009:
+    selector: 3325450891606911500
+    name: jumbochain-mainnet
+  1010:
+    selector: 2333259931983982000
+    name: evrice-network
+  1011:
+    selector: 2765736767747972600
+    name: rebus-mainnet
+  1012:
+    selector: 5716866176462338000
+    name: newton
+  1022:
+    selector: 7100486016466983000
+    name: sakura
+  1023:
+    selector: 2171861007921254100
+    name: clover-testnet
+  1024:
+    selector: 5638588750834108000
+    name: clv-parachain
+  1028:
+    selector: 2179355099983757300
+    name: bittorrent-chain-testnet
+  1030:
+    selector: 7135135015615849000
+    name: conflux-espace
+  1031:
+    selector: 7065601598063576000
+    name: proxy-network-testnet
+  1038:
+    selector: 2238003290313570600
+    name: bronos-testnet
+  1039:
+    selector: 9830450369104978000
+    name: bronos-mainnet
+  1071:
+    selector: 4427777173617406500
+    name: shimmerevm-testnet-deprecated
+  1072:
+    selector: 3301021896493332500
+    name: shimmerevm-testnet-deprecated-1072
+  1073:
+    selector: 6852240016209463000
+    name: shimmerevm-testnet
+  1075:
+    selector: 9815392497349750000
+    name: iota-evm-testnet
+  1079:
+    selector: 9777522899115380000
+    name: mintara-testnet
+  1080:
+    selector: 1900583736941961000
+    name: mintara-mainnet
+  1089:
+    selector: 5554070281530484000
+    name: humansai-mainnet
+  1099:
+    selector: 5737244433422221000
+    name: moac-mainnet
+  1100:
+    selector: 7749544207833499000
+    name: dymension
+  1107:
+    selector: 1830227471019285500
+    name: blxq-testnet
+  1108:
+    selector: 8491399342295273000
+    name: blxq-mainnet
+  1113:
+    selector: 8641077563408151000
+    name: b2-hub-testnet
+  1115:
+    selector: 6100150567593783000
+    name: core-blockchain-testnet
+  1116:
+    selector: 2311724993376634000
+    name: core-blockchain-mainnet
+  1117:
+    selector: 9470251004522904000
+    name: dogcoin-mainnet
+  1123:
+    selector: 2197508742680238600
+    name: b2-testnet
+  1130:
+    selector: 580287896650006900
+    name: defichain-evm-network-mainnet
+  1131:
+    selector: 9851993074070200000
+    name: defichain-evm-network-testnet
+  1133:
+    selector: 411848986542695550
+    name: defimetachain-changi-testnet
+  1135:
+    selector: 1869225322285397200
+    name: lisk
+  1138:
+    selector: 826112257620970100
+    name: amstar-testnet
+  1139:
+    selector: 3888547837118785500
+    name: mathchain
+  1140:
+    selector: 7449604012517457000
+    name: mathchain-testnet
+  1149:
+    selector: 7895774948991325000
+    name: symplexia-smart-chain
+  1170:
+    selector: 6007059725591126000
+    name: origin-testnet
+  1177:
+    selector: 4412948056679395300
+    name: smart-host-teknoloji-testnet
+  1188:
+    selector: 6020137607748237000
+    name: clubmos-mainnet
+  1197:
+    selector: 4816067897186316000
+    name: iora-chain
+  1201:
+    selector: 5707083285352011000
+    name: evanesco-testnet
+  1202:
+    selector: 4470453891803423000
+    name: world-trade-technical-chain-mainnet
+  1209:
+    selector: 132917349594630080
+    name: saitablockchain-sbc
+  1213:
+    selector: 5735592710597645000
+    name: popcateum-mainnet
+  1214:
+    selector: 937001138502358000
+    name: enterchain-mainnet
+  1221:
+    selector: 4915641513636874000
+    name: cycle-network-testnet
+  1224:
+    selector: 8714148650153717000
+    name: hybrid-testnet
+  1229:
+    selector: 7763647308996227000
+    name: exzo-network-mainnet
+  1230:
+    selector: 8210861438863248000
+    name: ultron-testnet
+  1231:
+    selector: 9352146368025192000
+    name: ultron-mainnet
+  1234:
+    selector: 1949364006282998800
+    name: step-network
+  1243:
+    selector: 7460417004505926000
+    name: arc-mainnet
+  1244:
+    selector: 4042789826150443500
+    name: arc-testnet
+  1246:
+    selector: 4820215268553805000
+    name: om-platform-mainnet
+  1248:
+    selector: 6953805303772629000
+    name: dogether-mainnet
+  1252:
+    selector: 7769391608975311000
+    name: cic-chain-testnet
+  1280:
+    selector: 8381095688954066000
+    name: halo-mainnet
+  1284:
+    selector: 2331116403331139600
+    name: moonbeam
+  1285:
+    selector: 3032215390066339300
+    name: moonriver
+  1286:
+    selector: 8149447024676797000
+    name: moonrock-old
+  1287:
+    selector: 5144705914641221000
+    name: moonbase-alpha
+  1288:
+    selector: 293828642786908540
+    name: moonrock
+  1291:
+    selector: 2410244613465690600
+    name: swisstronik-testnet
+  1294:
+    selector: 1333146207445066200
+    name: bobabeam
+  1297:
+    selector: 1077605504634855400
+    name: bobabase-testnet
+  1311:
+    selector: 8980939222378577000
+    name: dos-fuji-subnet
+  1314:
+    selector: 2491318889518452000
+    name: alyx-mainnet
+  1319:
+    selector: 6272997235514297000
+    name: aia-mainnet
+  1320:
+    selector: 1265544589627831600
+    name: aia-testnet
+  1338:
+    selector: 7227952996504612000
+    name: elysium-testnet
+  1339:
+    selector: 5550481978206303000
+    name: elysium-mainnet
+  1343:
+    selector: 3594911597196537300
+    name: blitz-subnet
+  1353:
+    selector: 2529295173875099000
+    name: cic-chain-mainnet
+  1369:
+    selector: 3535030217740540000
+    name: zafirium-mainnet
+  1379:
+    selector: 3396515009003043000
+    name: kalar-chain
+  1388:
+    selector: 1955075555024750000
+    name: amstar-mainnet
+  1392:
+    selector: 3271502513662409700
+    name: joseon-mainnet
+  1402:
+    selector: 6637246348641201000
+    name: polygon-zkevm-testnet-old
+  1414:
+    selector: 9608161523096103000
+    name: silicon-zkevm-sepolia-testnet
+  1422:
+    selector: 8550433548914973000
+    name: polygon-zkevm-testnet-pre-audit-upgraded
+  1433:
+    selector: 8774070513931860000
+    name: rikeza-network-mainnet
+  1440:
+    selector: 453292363728219300
+    name: living-assets-mainnet
+  1452:
+    selector: 9470305265612462000
+    name: gil-testnet
+  1453:
+    selector: 6830164774775214000
+    name: metachain-istanbul
+  1455:
+    selector: 7942275516560080000
+    name: ctex-scan-blockchain
+  1490:
+    selector: 9327486209821968000
+    name: vitruveo-mainnet
+  1499:
+    selector: 4486812759536631300
+    name: idos-games-chain-testnet
+  1501:
+    selector: 8604914249685802000
+    name: bevm-canary
+  1506:
+    selector: 4678156195868217000
+    name: sherpax-mainnet
+  1507:
+    selector: 2709289709166937600
+    name: sherpax-testnet
+  1515:
+    selector: 5093022216913306000
+    name: beagle-messaging-chain
+  1559:
+    selector: 8713784330338057000
+    name: tenet
+  1617:
+    selector: 4931576416360286000
+    name: ethereum-inscription-mainnet
+  1618:
+    selector: 1912060463210838500
+    name: catecoin-chain-mainnet
+  1620:
+    selector: 5616333191471876000
+    name: atheios
+  1657:
+    selector: 1884308527379232500
+    name: btachain
+  1662:
+    selector: 4788472379729489000
+    name: liquichain
+  1663:
+    selector: 6607478724587998000
+    name: horizen-gobi-testnet
+  1686:
+    selector: 9355647844244838000
+    name: mint-testnet
+  1687:
+    selector: 9162289705894972000
+    name: mint-sepolia-testnet
+  1688:
+    selector: 7711109818980197000
+    name: ludan-mainnet
+  1701:
+    selector: 5538062612401145000
+    name: anytype-evm-chain
+  1707:
+    selector: 1368933225365678300
+    name: tbsi-mainnet
+  1708:
+    selector: 641990196579827000
+    name: tbsi-testnet
+  1717:
+    selector: 8285638918191949000
+    name: doric-network
+  1718:
+    selector: 2323175664256513500
+    name: palette-chain-mainnet
+  1729:
+    selector: 3536666286754004500
+    name: reya-network
+  1773:
+    selector: 4279855547366251500
+    name: partychain
+  1777:
+    selector: 6562431533348398000
+    name: gauss-mainnet
+  1804:
+    selector: 2461343954441288700
+    name: kerleano
+  1807:
+    selector: 760937386795153000
+    name: rabbit-analog-testnet-chain
+  1818:
+    selector: 7941139820965406000
+    name: cube-chain-mainnet
+  1819:
+    selector: 2543377397483350500
+    name: cube-chain-testnet
+  1821:
+    selector: 5000973987942943000
+    name: ruby-smart-chain-mainnet
+  1856:
+    selector: 3428269135070296600
+    name: teslafunds
+  1875:
+    selector: 8600713070048503000
+    name: whitechain
+  1881:
+    selector: 6368638467536461000
+    name: gitshock-cartenz-testnet
+  1890:
+    selector: 278529487645828860
+    name: lightlink-phoenix-mainnet
+  1891:
+    selector: 2964428587786429400
+    name: lightlink-pegasus-testnet
+  1898:
+    selector: 5524686284702572000
+    name: bon-network
+  1904:
+    selector: 9980223448715100000
+    name: sports-chain-network
+  1907:
+    selector: 4874388048629246000
+    name: bitcichain-mainnet
+  1908:
+    selector: 4888058894222120000
+    name: bitcichain-testnet
+  1909:
+    selector: 5517183006009110000
+    name: merkle-scan
+  1911:
+    selector: 1621267616834776000
+    name: scalind
+  1912:
+    selector: 5434810144898466000
+    name: ruby-smart-chain-testnet
+  1918:
+    selector: 9481685534625243000
+    name: upb-crescdi-testnet
+  1945:
+    selector: 1529294693552905000
+    name: onus-chain-testnet
+  1951:
+    selector: 5917464806145059000
+    name: d-chain-mainnet
+  1953:
+    selector: 9454863380268298000
+    name: selendra-network-testnet
+  1954:
+    selector: 8498890087461744000
+    name: dexilla-testnet
+  1956:
+    selector: 2881423692935012400
+    name: aiw3-testnet
+  1961:
+    selector: 1045280148172236300
+    name: selendra-network-mainnet
+  1967:
+    selector: 2235029238340651300
+    name: eleanor
+  1969:
+    selector: 3105407266606115000
+    name: super-smart-chain-testnet
+  1970:
+    selector: 318213097883681660
+    name: super-smart-chain-mainnet
+  1971:
+    selector: 3001749569131078000
+    name: atelier
+  1972:
+    selector: 6524181235468606000
+    name: redecoin
+  1975:
+    selector: 6017793947009476000
+    name: onus-chain-mainnet
+  1984:
+    selector: 7483025205332759000
+    name: eurus-testnet
+  1985:
+    selector: 3012134323411702000
+    name: satoshe
+  1986:
+    selector: 848961953145936900
+    name: satoshe-testnet
+  1987:
+    selector: 5931135189929848000
+    name: ethergem
+  1992:
+    selector: 232971346031567420
+    name: hubble-exchange
+  1994:
+    selector: 8386158070339536000
+    name: ekta
+  1995:
+    selector: 9558502621579827000
+    name: edexa-testnet
+  1998:
+    selector: 4870043241851170000
+    name: kyoto-testnet
+  2000:
+    selector: 1482482766388650800
+    name: dogechain-mainnet
+  2001:
+    selector: 727851744703245000
+    name: milkomeda-c1-mainnet
+  2002:
+    selector: 9400583244681110000
+    name: milkomeda-a1-mainnet
+  2008:
+    selector: 6842369200602627000
+    name: cloudwalk-testnet
+  2009:
+    selector: 9639253212634434000
+    name: cloudwalk-mainnet
+  2014:
+    selector: 5839634894353238000
+    name: now-chain
+  2016:
+    selector: 4494521695634366000
+    name: mainnetz-mainnet
+  2017:
+    selector: 1495117844169236000
+    name: adiri
+  2018:
+    selector: 1820700745250147800
+    name: publicmint-devnet
+  2019:
+    selector: 5817238819756494000
+    name: publicmint-testnet
+  2020:
+    selector: 6736462218754509000
+    name: publicmint-mainnet
+  2021:
+    selector: 7267021548886166000
+    name: edgeware-edgeevm-mainnet
+  2022:
+    selector: 952730244587778300
+    name: beresheet-bereevm-testnet
+  2023:
+    selector: 8345572314268335000
+    name: taycan-testnet
+  2024:
+    selector: 7311516361860184000
+    name: swan-saturn-testnet
+  2025:
+    selector: 8337087314076974000
+    name: rangers-protocol-mainnet
+  2026:
+    selector: 2983307997318489600
+    name: edgeless-network
+  2031:
+    selector: 6066080343305325000
+    name: centrifuge
+  2032:
+    selector: 6374563519602745000
+    name: catalyst
+  2035:
+    selector: 3375860965296207000
+    name: phala-network
+  2037:
+    selector: 27572025751114724
+    name: kiwi-subnet
+  2038:
+    selector: 3702406577566755000
+    name: shrapnel-testnet
+  2040:
+    selector: 9118209737672704000
+    name: vanar-mainnet
+  2043:
+    selector: 5832505388730008000
+    name: origintrail-parachain
+  2044:
+    selector: 8545510353889392000
+    name: shrapnel-subnet
+  2045:
+    selector: 3921733107007174700
+    name: aiw3-mainnet
+  2047:
+    selector: 3893966511996318700
+    name: stratos-testnet
+  2048:
+    selector: 3279381190546127000
+    name: stratos
+  2049:
+    selector: 1186305498744491000
+    name: movo-smart-chain-mainnet
+  2077:
+    selector: 2178134296262528300
+    name: quokkacoin-mainnet
+  2088:
+    selector: 2695435791335305700
+    name: altair
+  2089:
+    selector: 6954590979948055000
+    name: algol
+  2100:
+    selector: 904964060244650800
+    name: ecoball-mainnet
+  2101:
+    selector: 8360744058954039000
+    name: ecoball-testnet-espuma
+  2109:
+    selector: 3441580055384796000
+    name: exosama-network
+  2112:
+    selector: 1136886566104202800
+    name: uchain-mainnet
+  2121:
+    selector: 9611672996818750000
+    name: catena-mainnet
+  2122:
+    selector: 304684549793006200
+    name: metaplayerone-mainnet
+  2124:
+    selector: 7442866933017935000
+    name: metaplayerone-dubai-testnet
+  2136:
+    selector: 2590888715761552400
+    name: bigshortbets-testnet
+  2137:
+    selector: 9630845833289570000
+    name: bigshortbets
+  2138:
+    selector: 5155163068114479000
+    name: defi-oracle-meta-testnet
+  2140:
+    selector: 4118517768137255400
+    name: oneness-network
+  2141:
+    selector: 9587928205236922000
+    name: oneness-testnet
+  2151:
+    selector: 7655455320617118000
+    name: bosagora-mainnet
+  2152:
+    selector: 2329877676324223500
+    name: findora-mainnet
+  2153:
+    selector: 9867857716787862000
+    name: findora-testnet
+  2154:
+    selector: 3505394004832320500
+    name: findora-forge
+  2199:
+    selector: 236479803799407580
+    name: moonsama-network
+  2202:
+    selector: 3008791295423911400
+    name: antofy-mainnet
+  2203:
+    selector: 6115740349552634000
+    name: bitcoin-evm
+  2213:
+    selector: 968266471168060000
+    name: evanesco-mainnet
+  2223:
+    selector: 5520394118042386000
+    name: vchain-mainnet
+  2241:
+    selector: 5923274788479869000
+    name: krest-network
+  2300:
+    selector: 8475734899005590000
+    name: bomb-chain
+  2306:
+    selector: 5187839025592744000
+    name: ebro-network
+  2309:
+    selector: 6021734206546059000
+    name: arevia
+  2323:
+    selector: 9494833862233104000
+    name: soma-network-testnet
+  2330:
+    selector: 118117827213533040
+    name: altcoinchain
+  2331:
+    selector: 2389003994169669600
+    name: rss3-vsl-sepolia-testnet
+  2332:
+    selector: 6954692062660206000
+    name: soma-network-mainnet
+  2340:
+    selector: 3387968361384035000
+    name: atleta-olympia
+  2342:
+    selector: 5083486319389732000
+    name: omnia-chain
+  2355:
+    selector: 4513673368290110000
+    name: silicon-zkevm
+  2357:
+    selector: 6180084271370103000
+    name: deprecated-kroma-sepolia
+  2370:
+    selector: 9037125467967117000
+    name: nexis-network-testnet
+  2399:
+    selector: 3448303392182996500
+    name: bomb-chain-testnet
+  2400:
+    selector: 4237141401529363000
+    name: tcg-verse-mainnet
+  2410:
+    selector: 5012507086788094000
+    name: karak-mainnet
+  2415:
+    selector: 5041199238749394000
+    name: xodex
+  2425:
+    selector: 7851196274321997000
+    name: king-of-legends-devnet
+  2458:
+    selector: 6922965581932649000
+    name: hybrid-chain-network-testnet
+  2468:
+    selector: 8129015465648574000
+    name: hybrid-chain-network-mainnet
+  2484:
+    selector: 3500501181640265000
+    name: unicorn-ultra-nebulas-testnet
+  2511:
+    selector: 1358069978937886000
+    name: karak-goerli
+  2525:
+    selector: 3558383213092417500
+    name: inevm-mainnet
+  2559:
+    selector: 4938072473628630000
+    name: kortho-mainnet
+  2569:
+    selector: 544954726963615700
+    name: techpay-mainnet
+  2606:
+    selector: 4587848218718114000
+    name: pocrnet
+  2611:
+    selector: 9649340441996732000
+    name: redlight-chain-mainnet
+  2612:
+    selector: 6837885447009113000
+    name: ezchain-c-chain-mainnet
+  2613:
+    selector: 2806703000442276400
+    name: ezchain-c-chain-testnet
+  2625:
+    selector: 1973640743249369600
+    name: whitechain-testnet
+  2662:
+    selector: 4192170044653171700
+    name: apex
+  2710:
+    selector: 3065635076152611000
+    name: morph-testnet
+  2718:
+    selector: 7727043483844036000
+    name: k-laos
+  2730:
+    selector: 1109355202988890900
+    name: xr-sepolia
+  2731:
+    selector: 1007424296760441900
+    name: elizabeth-testnet
+  2748:
+    selector: 5464941925803073000
+    name: nanon
+  2810:
+    selector: 6161326242579271000
+    name: morph-holesky
+  2888:
+    selector: 8747763380752758000
+    name: boba-network-goerli-testnet
+  2907:
+    selector: 6590109965752140000
+    name: elux-chain
+  2911:
+    selector: 1751652190327879200
+    name: hychain
+  2941:
+    selector: 2131894468048345300
+    name: xenon-chain-testnet
+  2999:
+    selector: 2477196628146223000
+    name: bityuan-mainnet
+  3000:
+    selector: 8569074657995548000
+    name: cennznet-rata
+  3001:
+    selector: 5438678781762938000
+    name: cennznet-nikau
+  3003:
+    selector: 8797686925900623000
+    name: canxium-mainnet
+  3011:
+    selector: 2974202810471580000
+    name: playa3ull-games
+  3031:
+    selector: 8479517046511329000
+    name: orlando-chain
+  3033:
+    selector: 8680391661027513000
+    name: rebus-testnet
+  3068:
+    selector: 4812514167711379000
+    name: bifrost-mainnet
+  3073:
+    selector: 9888250046195300000
+    name: movement-evm
+  3100:
+    selector: 3035497421620115000
+    name: immu3-evm
+  3102:
+    selector: 2787481508177944600
+    name: vulture-evm-beta
+  3109:
+    selector: 5685384997102442000
+    name: satoshivm-alpha-mainnet
+  3110:
+    selector: 2832688830450298400
+    name: satoshivm-testnet
+  3141:
+    selector: 8284949125220499000
+    name: filecoin-hyperspace-testnet
+  3269:
+    selector: 4614658256734894000
+    name: dubxcoin-network
+  3270:
+    selector: 7900972852824005000
+    name: dubxcoin-testnet
+  3306:
+    selector: 5452486537187398000
+    name: debounce-subnet-testnet
+  3331:
+    selector: 6942778753194401000
+    name: zcore-testnet
+  3333:
+    selector: 9958227597080283000
+    name: ethstorage-testnet
+  3334:
+    selector: 7598611776855426000
+    name: web3q-galileo
+  3400:
+    selector: 4898623531043857000
+    name: paribu-net-mainnet
+  3424:
+    selector: 8176762381094183000
+    name: evolve-mainnet
+  3434:
+    selector: 2982034536034752000
+    name: securechain-testnet
+  3500:
+    selector: 7322042167466502000
+    name: paribu-net-testnet
+  3501:
+    selector: 1302915618216615700
+    name: jfin-chain
+  3601:
+    selector: 9205108217677214000
+    name: pandoproject-mainnet
+  3602:
+    selector: 8849909493927750000
+    name: pandoproject-testnet
+  3636:
+    selector: 5591864018034518000
+    name: botanix-testnet
+  3637:
+    selector: 342928643500455300
+    name: botanix-mainnet
+  3639:
+    selector: 5377520389372432000
+    name: ichain-network
+  3666:
+    selector: 6970868348607562000
+    name: jouleverse-mainnet
+  3690:
+    selector: 2676649686690897400
+    name: bittex-mainnet
+  3693:
+    selector: 6115082998190724000
+    name: empire-network
+  3698:
+    selector: 2987651324179774000
+    name: senjepowers-testnet
+  3699:
+    selector: 539383726402189440
+    name: senjepowers-mainnet
+  3701:
+    selector: 9585040457707033000
+    name: xpla-testnet
+  3737:
+    selector: 2699339081091078700
+    name: crossbell
+  3776:
+    selector: 2030656950203366700
+    name: astar-zkevm
+  3797:
+    selector: 1789946980804706300
+    name: alveychain-mainnet
+  3799:
+    selector: 1845748654719072800
+    name: tangle-testnet
+  3885:
+    selector: 4503347211793272000
+    name: firechain-zkevm-ghostrider
+  3888:
+    selector: 7525970473133414000
+    name: kalychain-mainnet
+  3889:
+    selector: 5343330181954429000
+    name: kalychain-testnet
+  3912:
+    selector: 3838077979764949000
+    name: drac-network
+  3939:
+    selector: 6498202443215026000
+    name: dos-tesnet
+  3966:
+    selector: 1102802567776659600
+    name: dyno-mainnet
+  3967:
+    selector: 833314280983277200
+    name: dyno-testnet
+  3993:
+    selector: 9683020108145800000
+    name: apex-testnet
+  3999:
+    selector: 8756049883381944000
+    name: yuanchain-mainnet
+  4000:
+    selector: 4603840967615653400
+    name: ozone-chain-mainnet
+  4001:
+    selector: 4447606368158685000
+    name: peperium-chain-testnet
+  4003:
+    selector: 9606541834773998000
+    name: x1-fastnet
+  4048:
+    selector: 8440785369177137000
+    name: gan-testnet
+  4051:
+    selector: 9925609621578120000
+    name: bobaopera-testnet
+  4061:
+    selector: 6324071324934442000
+    name: nahmii-3-mainnet
+  4062:
+    selector: 9328050246430600000
+    name: nahmii-3-testnet
+  4078:
+    selector: 2245871379701409500
+    name: muster-mainnet
+  4080:
+    selector: 9547168183398476000
+    name: tobe-chain
+  4090:
+    selector: 8284188625511614000
+    name: fastex-chain-bahamut-oasis-testnet
+  4096:
+    selector: 5079569380949864000
+    name: bitindi-testnet
+  4099:
+    selector: 9098614151420401000
+    name: bitindi-mainnet
+  4102:
+    selector: 1985227280375579000
+    name: aioz-network-testnet
+  4139:
+    selector: 1304993607750841600
+    name: humans-ai-testnet
+  4141:
+    selector: 1346385710887783000
+    name: tipboxcoin-testnet
+  4157:
+    selector: 4126528998537306600
+    name: crossfi-testnet
+  4181:
+    selector: 8059044506441515000
+    name: phi-network-v1
+  4200:
+    selector: 5182790920407309000
+    name: merlin-mainnet
+  4201:
+    selector: 9788097964798472000
+    name: lukso-testnet
+  4242:
+    selector: 2581554443240201700
+    name: nexi-mainnet
+  4243:
+    selector: 5074470826237854000
+    name: nexi-v2-mainnet
+  4328:
+    selector: 5579533936254228000
+    name: bobafuji-testnet
+  4337:
+    selector: 6422146164517181000
+    name: beam
+  4400:
+    selector: 7052369854433884000
+    name: credit-smart-chain-mainnet
+  4444:
+    selector: 744434613388178600
+    name: htmlcoin-mainnet
+  4460:
+    selector: 193790958483626140
+    name: orderly-sepolia-testnet
+  4544:
+    selector: 4515901079355333000
+    name: emoney-network-testnet
+  4613:
+    selector: 5145937152287685000
+    name: very-mainnet
+  4653:
+    selector: 4912731116117615000
+    name: gold-chain
+  4689:
+    selector: 9051802278297734000
+    name: iotex-network-mainnet
+  4690:
+    selector: 8340381756392836000
+    name: iotex-network-testnet
+  4759:
+    selector: 7052111060816950000
+    name: meverse-chain-testnet
+  4777:
+    selector: 8410097017320503000
+    name: blackfort-exchange-network-testnet
+  4893:
+    selector: 5317943002578742000
+    name: globel-chain
+  4918:
+    selector: 7229461551125019000
+    name: venidium-testnet
+  4919:
+    selector: 3759755273615755000
+    name: venidium-mainnet
+  4999:
+    selector: 7467847345400654000
+    name: blackfort-exchange-network
+  5002:
+    selector: 7040442206885904000
+    name: treasurenet-mainnet-alpha
+  5005:
+    selector: 7498478961889836000
+    name: treasurenet-testnet
+  5039:
+    selector: 8811239423830184000
+    name: onigiri-test-subnet
+  5051:
+    selector: 6917170209111168000
+    name: nollie-skatechain-testnet
+  5100:
+    selector: 8712348414339608000
+    name: syndicate-testnet
+  5101:
+    selector: 2655103420350544400
+    name: syndicate-frame-chain
+  5102:
+    selector: 5248944883613909000
+    name: sic-testnet
+  5103:
+    selector: 5155631631433839000
+    name: coordinape-testnet
+  5104:
+    selector: 9047432999246718000
+    name: charmverse-testnet
+  5105:
+    selector: 3561652001429054500
+    name: superloyalty-testnet
+  5106:
+    selector: 8393990296506297000
+    name: azra-testnet
+  5165:
+    selector: 638499993788261900
+    name: bahamut
+  5169:
+    selector: 8750153960350173000
+    name: smart-layer-network
+  5177:
+    selector: 8853373615938498000
+    name: tlchain-network-mainnet
+  5197:
+    selector: 6126468919430168000
+    name: eraswap-mainnet
+  5234:
+    selector: 8946043976900539000
+    name: humanode-mainnet
+  5290:
+    selector: 3774339078465296400
+    name: firechain-mainnet-old
+  5315:
+    selector: 5947450538410373000
+    name: uzmi-network-mainnet
+  5317:
+    selector: 1931664690738714600
+    name: optrust-testnet
+  5353:
+    selector: 1543571421385232400
+    name: tritanium-testnet
+  5424:
+    selector: 8132741184710457000
+    name: edexa-mainnet
+  5439:
+    selector: 3374963560329023000
+    name: egochain
+  5522:
+    selector: 8792984262136190000
+    name: vex-evm-testnet
+  5551:
+    selector: 1624773840185305000
+    name: nahmii-mainnet
+  5553:
+    selector: 4705769647670382000
+    name: nahmii-testnet
+  5555:
+    selector: 2244816313471847000
+    name: chain-verse-mainnet
+  5611:
+    selector: 9138354849731372000
+    name: opbnb-testnet
+  5615:
+    selector: 4361879523727658500
+    name: arcturus-testneet
+  5616:
+    selector: 4645601439810248000
+    name: arcturus-chain-testnet
+  5656:
+    selector: 5624066101127527000
+    name: qie-blockchain
+  5675:
+    selector: 5694218169980210000
+    name: filenova-testnet
+  5678:
+    selector: 4899383053722630000
+    name: tanssi-demo
+  5700:
+    selector: 5442281253559043000
+    name: syscoin-tanenbaum-testnet
+  5729:
+    selector: 2496628509098615300
+    name: hika-network-testnet
+  5758:
+    selector: 5921745463928494000
+    name: satoshichain-testnet
+  5777:
+    selector: 6605472571260675000
+    name: ganache
+  5845:
+    selector: 1460174451933162800
+    name: tangle
+  5851:
+    selector: 5307220274806217000
+    name: ontology-testnet
+  5869:
+    selector: 61810776410602400
+    name: wegochain-rubidium-mainnet
+  6000:
+    selector: 2626064743128464400
+    name: bouncebit-testnet
+  6001:
+    selector: 8209213691461532000
+    name: bouncebit-mainnet
+  6065:
+    selector: 4639640934107934000
+    name: tres-testnet
+  6066:
+    selector: 7487508185728209000
+    name: tres-mainnet
+  6102:
+    selector: 7163061491297185000
+    name: cascadia-testnet
+  6118:
+    selector: 2763773567009622000
+    name: uptn-testnet
+  6119:
+    selector: 552319287028897340
+    name: uptn
+  6321:
+    selector: 6200085684463568000
+    name: aura-euphoria-testnet
+  6363:
+    selector: 3301847894289955300
+    name: digit-soul-smart-chain
+  6502:
+    selector: 8199552427230337000
+    name: peerpay
+  6552:
+    selector: 6993505015971899000
+    name: scolcoin-weichain-testnet
+  6565:
+    selector: 916169237247139700
+    name: fox-testnet-network
+  6626:
+    selector: 3827109064542582300
+    name: pixie-chain-mainnet
+  6660:
+    selector: 6348895821816396000
+    name: latest-chain-testnet
+  6661:
+    selector: 8371821740306273000
+    name: cybria-mainnet
+  6666:
+    selector: 8621720859936810000
+    name: cybria-testnet
+  6688:
+    selector: 6971929933022614000
+    name: irishub
+  6701:
+    selector: 5201018955142495000
+    name: paxb-mainnet
+  6779:
+    selector: 936947020857375000
+    name: compverse-mainnet
+  6789:
+    selector: 9780309687947704000
+    name: gold-smart-chain-mainnet
+  6969:
+    selector: 6410163983337962000
+    name: tomb-chain-mainnet
+  6999:
+    selector: 262818749831543740
+    name: polysmartchain
+  7000:
+    selector: 2800922268497794000
+    name: zetachain-mainnet
+  7001:
+    selector: 2876426021914964000
+    name: zetachain-athens-3-testnet
+  7007:
+    selector: 6298619132290610000
+    name: bst-chain
+  7027:
+    selector: 4508337508704023600
+    name: ella-the-heart
+  7070:
+    selector: 733915272264116200
+    name: planq-mainnet
+  7077:
+    selector: 8998590148931342000
+    name: planq-atlas-testnet
+  7100:
+    selector: 3768625952917248500
+    name: nume
+  7118:
+    selector: 9311103115219763000
+    name: help-the-homeless
+  7171:
+    selector: 2427094802358005000
+    name: bitrock-mainnet
+  7331:
+    selector: 4718569110645974000
+    name: klyntar
+  7332:
+    selector: 9878509910964095000
+    name: horizen-eon-mainnet
+  7341:
+    selector: 8858728887871817000
+    name: shyft-mainnet
+  7484:
+    selector: 7159787013100906000
+    name: raba-network-mainnet
+  7518:
+    selector: 477329910406876200
+    name: meverse-chain-mainnet
+  7560:
+    selector: 2877544103398841300
+    name: cyber-mainnet
+  7575:
+    selector: 3214466682839658500
+    name: adil-testnet
+  7576:
+    selector: 5773062147969427000
+    name: adil-chain-v2-mainnet
+  7668:
+    selector: 4671266926852602000
+    name: the-root-network-mainnet
+  7672:
+    selector: 999935855044618000
+    name: the-root-network-porcini-testnet
+  7700:
+    selector: 448711390784761700
+    name: canto
+  7701:
+    selector: 6422493115823837000
+    name: canto-tesnet
+  7771:
+    selector: 926108027995229400
+    name: bitrock-testnet
+  7775:
+    selector: 8240594124271410000
+    name: gdcc-testnet
+  7777:
+    selector: 3929128208352805400
+    name: rise-of-the-warbots-testnet
+  7778:
+    selector: 6517034846878042000
+    name: orenium-mainnet-protocol
+  7798:
+    selector: 9132500642831989000
+    name: openex-long-testnet
+  7860:
+    selector: 1732843132881447400
+    name: maalchain-testnet
+  7878:
+    selector: 1458864066775105300
+    name: hazlor-testnet
+  7887:
+    selector: 6304744074046926000
+    name: kinto-mainnet
+  7895:
+    selector: 30800723317530030
+    name: ardenium-athena
+  7923:
+    selector: 4619536213246614000
+    name: dot-blox
+  7979:
+    selector: 4681291586533118000
+    name: dos-chain
+  8000:
+    selector: 6126602428312982000
+    name: teleport
+  8001:
+    selector: 3067175920685074400
+    name: teleport-testnet
+  8029:
+    selector: 4306023998248789000
+    name: mdgl-testnet
+  8054:
+    selector: 3568642716374661600
+    name: karak-sepolia
+  8080:
+    selector: 5279006596045142000
+    name: shardeum-liberty-1
+  8081:
+    selector: 1777224470867111400
+    name: shardeum-liberty-2
+  8082:
+    selector: 1181777362289209000
+    name: shardeum-sphinx-1
+  8086:
+    selector: 9664684256234934000
+    name: bitcoin-chain
+  8087:
+    selector: 4794883223173045000
+    name: e-dollar
+  8098:
+    selector: 8336413319848710000
+    name: streamux-blockchain
+  8131:
+    selector: 225466089685901760
+    name: qitmeer-network-testnet
+  8132:
+    selector: 3961197984252382700
+    name: qitmeer-network-mixnet
+  8133:
+    selector: 351707235336435900
+    name: qitmeer-network-privnet
+  8134:
+    selector: 3940780202584875000
+    name: amana
+  8135:
+    selector: 3818566855694896000
+    name: flana
+  8136:
+    selector: 2785586428009026000
+    name: mizana
+  8181:
+    selector: 4546628384452546600
+    name: testnet-beone-chain
+  8192:
+    selector: 9300523834474891000
+    name: torus-mainnet
+  8194:
+    selector: 110994096103607100
+    name: torus-testnet
+  8217:
+    selector: 9154130251126054000
+    name: klaytn-mainnet-cypress
+  8272:
+    selector: 6637677258753580000
+    name: blockton-blockchain
+  8285:
+    selector: 4674378876189782000
+    name: korthotest
+  8387:
+    selector: 9647107313822652000
+    name: dracones-financial-services
+  8654:
+    selector: 3924803465288522000
+    name: toki-network
+  8655:
+    selector: 6985921275134885000
+    name: toki-testnet
+  8668:
+    selector: 7494066252657996000
+    name: hela-official-runtime-mainnet
+  8723:
+    selector: 6069819435594917000
+    name: tool-global-mainnet
+  8724:
+    selector: 3236799791458608600
+    name: tool-global-testnet
+  8726:
+    selector: 7057476626143848000
+    name: storagechain-mainnet
+  8727:
+    selector: 1799977758845909800
+    name: storagechain-testnet
+  8738:
+    selector: 7459271123132996000
+    name: alph-network
+  8768:
+    selector: 5381784556213467000
+    name: tmy-chain
+  8822:
+    selector: 689635456447457200
+    name: iota-evm
+  8848:
+    selector: 3449551762009817000
+    name: maro-blockchain-mainnet
+  8866:
+    selector: 7391841359538826000
+    name: superlumio
+  8880:
+    selector: 1859080544127878000
+    name: unique
+  8881:
+    selector: 3157816838863185400
+    name: quartz-by-unique
+  8882:
+    selector: 9819430728095615000
+    name: opal-testnet-by-unique
+  8883:
+    selector: 8582964465286660000
+    name: sapphire-by-unique
+  8888:
+    selector: 1803937028009248300
+    name: xanachain
+  8889:
+    selector: 7526431331541113000
+    name: vyvo-smart-chain
+  8890:
+    selector: 8176410495433080000
+    name: orenium-testnet-protocol
+  8898:
+    selector: 7636952188265374000
+    name: mammoth-mainnet
+  8899:
+    selector: 2883798307777865000
+    name: jibchain-l1
+  8989:
+    selector: 1703697004410955500
+    name: giant-mammoth-mainnet
+  8995:
+    selector: 2219971840293368800
+    name: bloxberg
+  9000:
+    selector: 8739613056867750000
+    name: evmos-testnet
+  9001:
+    selector: 1806460364341633300
+    name: evmos
+  9007:
+    selector: 7230890135271601000
+    name: shido-testnet-block
+  9008:
+    selector: 1267468590826710300
+    name: shido-mainnet-block
+  9012:
+    selector: 3445101684769351700
+    name: berylbit-mainnet
+  9024:
+    selector: 9948518904512570000
+    name: nexa-testnet-block
+  9025:
+    selector: 9209939601594028000
+    name: nexa-mainnet-block
+  9100:
+    selector: 8425949527238046000
+    name: genesis-coin
+  9170:
+    selector: 9248062151928642000
+    name: rinia-testnet-old
+  9223:
+    selector: 8665802360855708000
+    name: codefin-mainnet
+  9339:
+    selector: 1871122007785246500
+    name: dogcoin-testnet
+  9393:
+    selector: 7596279200153335000
+    name: dela-sepolia-testnet
+  9395:
+    selector: 2665624216560176000
+    name: evoke-mainnet
+  9527:
+    selector: 6942355893310841000
+    name: rangers-protocol-testnet-robin
+  9528:
+    selector: 6948650201790467000
+    name: qeasyweb3-testnet
+  9559:
+    selector: 1113014352258747600
+    name: neonlink-testnet
+  9700:
+    selector: 4066043819975955500
+    name: oort-mainnetdev
+  9728:
+    selector: 437126752686039000
+    name: boba-bnb-testnet
+  9768:
+    selector: 7804971509201668000
+    name: mainnetz-testnet
+  9779:
+    selector: 9416698505797960000
+    name: pepenetwork-mainnet
+  9789:
+    selector: 2518299178484009000
+    name: tabi-testnet
+  9790:
+    selector: 3724682248373618700
+    name: carbon-evm
+  9792:
+    selector: 7840103914951946000
+    name: carbon-evm-testnet
+  9818:
+    selector: 5408282417866383000
+    name: imperium-testnet
+  9819:
+    selector: 2795207525083671600
+    name: imperium-mainnet
+  9888:
+    selector: 824817236879724700
+    name: dogelayer-mainnet
+  9898:
+    selector: 3463578271801628000
+    name: larissa-chain
+  9911:
+    selector: 7231876796969949000
+    name: espento-mainnet
+  9977:
+    selector: 5127509100346957000
+    name: mind-smart-chain-testnet
+  9980:
+    selector: 3542122099548590000
+    name: combo-mainnet
+  9990:
+    selector: 8848266878238644000
+    name: agung-network
+  9996:
+    selector: 6559790520837270000
+    name: mind-smart-chain-mainnet
+  9997:
+    selector: 3847582522241211000
+    name: altlayer-testnet
+  9998:
+    selector: 9568536511606335000
+    name: ztc-mainnet
+  9999:
+    selector: 3298502876323455000
+    name: myown-testnet
+  10000:
+    selector: 4858525827981454000
+    name: smart-bitcoin-cash
+  10001:
+    selector: 4531218241574677000
+    name: smart-bitcoin-cash-testnet
+  10024:
+    selector: 1735384631649352700
+    name: gon-chain
+  10081:
+    selector: 7967307066508773000
+    name: japan-open-chain-testnet
+  10086:
+    selector: 3473777470467489300
+    name: sjatsh
+  10101:
+    selector: 7976427521374307000
+    name: blockchain-genesis-mainnet
+  10201:
+    selector: 4275379417294485000
+    name: maxxchain-mainnet
+  10242:
+    selector: 2296889742094414600
+    name: arthera-mainnet
+  10243:
+    selector: 3236632372217385000
+    name: arthera-testnet
+  10248:
+    selector: 7861246621036943000
+    name: 0xtade
+  10324:
+    selector: 8106063997388740000
+    name: tao-evm-testnet
+  10395:
+    selector: 7133591995264501000
+    name: worldland-testnet
+  10507:
+    selector: 393410264790612350
+    name: numbers-mainnet
+  10508:
+    selector: 2177597932526453800
+    name: numbers-testnet
+  10823:
+    selector: 8258201995735628000
+    name: cryptocoinpay
+  10946:
+    selector: 1140809030693885600
+    name: quadrans-blockchain
+  10947:
+    selector: 824731417233599500
+    name: quadrans-blockchain-testnet
+  11110:
+    selector: 1073478550309832100
+    name: astra
+  11111:
+    selector: 9900045334784072000
+    name: wagmi
+  11115:
+    selector: 7365695659617037000
+    name: astra-testnet
+  11119:
+    selector: 3594753881798860000
+    name: hashbit-mainnet
+  11221:
+    selector: 6019851540086460000
+    name: shine-chain
+  11235:
+    selector: 484738100594941400
+    name: haqq-network
+  11437:
+    selector: 5266832190819206000
+    name: shyft-testnet
+  11501:
+    selector: 7843071531759611000
+    name: bevm-mainnet
+  11503:
+    selector: 580330196672427300
+    name: bevm-testnet
+  11612:
+    selector: 595812542957119200
+    name: sardis-testnet
+  11888:
+    selector: 9551327177767078000
+    name: santiment-intelligence-network
+  11891:
+    selector: 7558198248701858000
+    name: polygon-supernet-arianee
+  12009:
+    selector: 8978546635029043000
+    name: satoshichain-mainnet
+  12020:
+    selector: 4491041108791127000
+    name: aternos
+  12051:
+    selector: 9781448157851312000
+    name: singularity-zero-testnet
+  12052:
+    selector: 9372824912101462000
+    name: singularity-zero-mainnet
+  12123:
+    selector: 3401863884654572500
+    name: brc-chain-mainnet
+  12306:
+    selector: 315411914862357950
+    name: fibonacci-mainnet
+  12321:
+    selector: 1434062103272322300
+    name: blg-testnet
+  12345:
+    selector: 7927964806184633000
+    name: step-testnet
+  12553:
+    selector: 9088612827065683000
+    name: rss3-vsl-mainnet
+  12715:
+    selector: 7827095058376532000
+    name: rikeza-network-testnet
+  12781:
+    selector: 9455882275405564000
+    name: playdapp-testnet
+  12890:
+    selector: 5416804183737154000
+    name: quantum-chain-testnet
+  13000:
+    selector: 1370882222573353000
+    name: sps
+  13308:
+    selector: 3998187556452890000
+    name: credit-smart-chain
+  13337:
+    selector: 7393318377549489000
+    name: beam-testnet
+  13371:
+    selector: 1765160514880088600
+    name: immutable-zkevm
+  13381:
+    selector: 4419350481295077000
+    name: phoenix-mainnet
+  13396:
+    selector: 6490623924080252000
+    name: masa
+  13473:
+    selector: 4882590379360521000
+    name: immutable-zkevm-testnet
+  13600:
+    selector: 9392104347462970000
+    name: kronobit-mainnet
+  13812:
+    selector: 1598311236091674000
+    name: susono
+  14000:
+    selector: 8871715346020405000
+    name: sps-testnet
+  14324:
+    selector: 4184035812123150300
+    name: evolve-testnet
+  14333:
+    selector: 2212065088704824300
+    name: vitruveo-testnet
+  14853:
+    selector: 5957244388952061000
+    name: humanode-testnet-5-israfel
+  15003:
+    selector: 7014913650732018000
+    name: immutable-zkevm-devnet
+  15551:
+    selector: 5171039921504905000
+    name: loopnetwork-mainnet
+  15555:
+    selector: 2169784309805935600
+    name: trust-evm-testnet
+  15557:
+    selector: 7451292337711431000
+    name: eos-evm-network-testnet
+  16000:
+    selector: 4770497024665405000
+    name: metadot-mainnet
+  16001:
+    selector: 5087665649512232000
+    name: metadot-testnet
+  16507:
+    selector: 4202398749580458000
+    name: genesys-mainnet
+  16688:
+    selector: 2365363636772655000
+    name: irishub-testnet
+  16718:
+    selector: 236691614090294140
+    name: airdao-mainnet
+  16888:
+    selector: 3139395019329682400
+    name: ivar-chain-testnet
+  17000:
+    selector: 3876683960833071600
+    name: holesky
+  17001:
+    selector: 3217448448952909000
+    name: redstone-holesky-testnet
+  17069:
+    selector: 950126839765796900
+    name: garnet-holesky
+  17171:
+    selector: 4405527388574617000
+    name: g8chain-mainnet
+  17172:
+    selector: 3625246530074129000
+    name: eclipse-subnet
+  17180:
+    selector: 3409809448292760000
+    name: palette-chain-testnet
+  17217:
+    selector: 5083093092041959000
+    name: konet-mainnet
+  17777:
+    selector: 7647763596069221000
+    name: eos-evm-network
+  18000:
+    selector: 3068327975421843000
+    name: frontier-of-dreams-testnet
+  18122:
+    selector: 3714463498102356000
+    name: smart-trade-networks
+  18159:
+    selector: 4661752464249507000
+    name: proof-of-memes
+  18181:
+    selector: 4486636345315267000
+    name: g8chain-testnet
+  18231:
+    selector: 8401202944201102000
+    name: unreal-old
+  18233:
+    selector: 9090873363604810000
+    name: unreal
+  18686:
+    selector: 3168426075561259000
+    name: mxc-zkevm-moonchain
+  18888:
+    selector: 9602822421297226000
+    name: titan-tkx
+  18889:
+    selector: 7895117322126790000
+    name: titan-tkx-testnet
+  19011:
+    selector: 9071831516726420000
+    name: home-verse-mainnet
+  19224:
+    selector: 304454741617523650
+    name: decentraconnect-social
+  19527:
+    selector: 2942733339212488700
+    name: magnet-network
+  19600:
+    selector: 3631295042142814700
+    name: lbry-mainnet
+  19845:
+    selector: 3317437485353747000
+    name: btcix-network
+  20001:
+    selector: 6596018824503315000
+    name: camelark-mainnet
+  20729:
+    selector: 5733403484056450000
+    name: callisto-testnet
+  20736:
+    selector: 1290608770650187800
+    name: p12-chain
+  20765:
+    selector: 4663997612259190000
+    name: jono11-subnet
+  21004:
+    selector: 1624296307473713700
+    name: c4ei
+  21133:
+    selector: 4165661578685900000
+    name: all-about-healthy
+  21223:
+    selector: 2437399017316431000
+    name: dcpay-mainnet
+  21337:
+    selector: 5594140123362428000
+    name: cennznet-azalea
+  21816:
+    selector: 7816483347164591000
+    name: omchain-mainnet
+  21912:
+    selector: 7181510855285112000
+    name: bsl-mainnet
+  22023:
+    selector: 497133077453229000
+    name: taycan
+  22040:
+    selector: 9831210676624250000
+    name: airdao-testnet
+  22222:
+    selector: 4801072543485019000
+    name: nautilus-mainnet
+  22324:
+    selector: 3593375509232612400
+    name: goldxchain-testnet
+  22776:
+    selector: 9891640973147527000
+    name: map-protocol
+  23006:
+    selector: 2084420414620811300
+    name: antofy-testnet
+  23118:
+    selector: 4725693445109036000
+    name: opside-testnet
+  23294:
+    selector: 4342753281148006400
+    name: oasis-sapphire
+  23295:
+    selector: 9706555528865489000
+    name: oasis-sapphire-testnet
+  23451:
+    selector: 6171993060575476000
+    name: dreyerx-mainnet
+  23452:
+    selector: 1384841525280531200
+    name: dreyerx-testnet
+  23888:
+    selector: 7531809199778991000
+    name: blast-testnet
+  24484:
+    selector: 810683925579984600
+    name: webchain
+  24734:
+    selector: 2868566054377633000
+    name: mintme-coin-mainnet
+  25186:
+    selector: 7458884582687220000
+    name: liquidlayer-mainnet
+  25839:
+    selector: 5985441723163358000
+    name: alveychain-testnet
+  25888:
+    selector: 4401565005076721700
+    name: hammer-chain-mainnet
+  25925:
+    selector: 3551622272929489000
+    name: bitkub-chain-testnet
+  26026:
+    selector: 5914861844763059000
+    name: ferrum-testnet
+  26600:
+    selector: 5383770784014277000
+    name: hertz-network-mainnet
+  26863:
+    selector: 4448818486916814300
+    name: oasischain-mainnet
+  27181:
+    selector: 9178469268529912000
+    name: klaos-nova
+  27483:
+    selector: 8995519267965028000
+    name: nanon-sepolia
+  27827:
+    selector: 9718118852354345000
+    name: zeroone-mainnet-subnet
+  28516:
+    selector: 3131106266112833000
+    name: vizing-testnet
+  28518:
+    selector: 5022881219430051000
+    name: vizing-mainnet
+  28528:
+    selector: 4940212586765676000
+    name: optimism-bedrock-goerli-alpha-testnet
+  28882:
+    selector: 7943383705358260000
+    name: boba-sepolia
+  29112:
+    selector: 2062450060289831000
+    name: hychain-testnet
+  29536:
+    selector: 5952497012759493000
+    name: kaichain-testnet
+  29548:
+    selector: 1522522616804071700
+    name: mch-verse-mainnet
+  30067:
+    selector: 3533608787362064000
+    name: piece-testnet
+  30088:
+    selector: 9799780278994170000
+    name: miyou-mainnet
+  30103:
+    selector: 1897041277155688700
+    name: cerium-testnet
+  30730:
+    selector: 6201335585480169000
+    name: movement-evm-legacy
+  30731:
+    selector: 1248136393896848100
+    name: movement-evm-devnet
+  30732:
+    selector: 228173159516724670
+    name: movement-evm-testnet
+  31102:
+    selector: 9880727412360862000
+    name: ethersocial-network
+  31223:
+    selector: 8511567268289622000
+    name: cloudtx-mainnet
+  31224:
+    selector: 3115214606094829600
+    name: cloudtx-testnet
+  31337:
+    selector: 11219485085867120
+    name: gochain-testnet
+  31414:
+    selector: 7741320775166618000
+    name: evoke-testnet
+  31415:
+    selector: 2805194266629643000
+    name: filecoin-wallaby-testnet
+  31753:
+    selector: 3816206307605598700
+    name: xchain-mainnet
+  31754:
+    selector: 105542115966388290
+    name: xchain-testnet
+  32001:
+    selector: 8467437903278740000
+    name: w3gamez-holesky-testnet
+  32520:
+    selector: 8990509791179042000
+    name: bitgert-mainnet
+  32659:
+    selector: 8345340393864090000
+    name: fusion-mainnet
+  32769:
+    selector: 180992144997715870
+    name: zilliqa-evm
+  32990:
+    selector: 6257411768726360000
+    name: zilliqa-evm-isolated-server
+  33033:
+    selector: 6254553816092914000
+    name: entangle-mainnet
+  33101:
+    selector: 8049337632208540000
+    name: zilliqa-evm-testnet
+  33133:
+    selector: 8199801146547247000
+    name: entangle-testnet
+  33210:
+    selector: 9299510651824134000
+    name: cloudverse-subnet
+  33333:
+    selector: 109247254160544930
+    name: aves-mainnet
+  33385:
+    selector: 354235050240718800
+    name: zilliqa-evm-devnet
+  33469:
+    selector: 2754751804167963000
+    name: zilliqa-2-evm-devnet
+  33979:
+    selector: 5526276542462870000
+    name: funki
+  35011:
+    selector: 6080458203783210000
+    name: j2o-taro
+  35441:
+    selector: 8927891708655824000
+    name: q-mainnet
+  35443:
+    selector: 5044206371616902000
+    name: q-testnet
+  38400:
+    selector: 3643868234433378300
+    name: connectormanager
+  38401:
+    selector: 1042570801677706900
+    name: connectormanager-robin
+  39656:
+    selector: 1527603123750847000
+    name: prm-mainnet
+  39797:
+    selector: 2576101405310951000
+    name: energi-mainnet
+  39815:
+    selector: 4267991835576288000
+    name: oho-mainnet
+  41500:
+    selector: 6168621412265465000
+    name: opulent-x-beta
+  42069:
+    selector: 1976883123639972000
+    name: pegglecoin
+  42170:
+    selector: 6494667278242348000
+    name: arbitrum-nova
+  42261:
+    selector: 796476508167414100
+    name: oasis-emerald-testnet
+  42262:
+    selector: 4855354063695399000
+    name: oasis-emerald
+  42355:
+    selector: 5900646444088711000
+    name: goldxchain-mainnet
+  42766:
+    selector: 1787320107748766700
+    name: zkfair-mainnet
+  42793:
+    selector: 2034954497776340000
+    name: etherlink-mainnet
+  42801:
+    selector: 7364557559221170000
+    name: gesoten-verse-testnet
+  42888:
+    selector: 8470180408447914000
+    name: kinto-testnet
+  43110:
+    selector: 8947562581470047000
+    name: athereum
+  43111:
+    selector: 6403318188172611000
+    name: hemi-network
+  43288:
+    selector: 9731579944253555000
+    name: boba-avax
+  43851:
+    selector: 2820332642195771000
+    name: zkfair-testnet
+  44444:
+    selector: 9982796081397760000
+    name: frenchain
+  44445:
+    selector: 2697286543855197000
+    name: quantum-network
+  45000:
+    selector: 9719146869555646000
+    name: autobahn-network
+  45454:
+    selector: 6832431231619116000
+    name: swamps-l2
+  45510:
+    selector: 6490197107203744000
+    name: deelance-mainnet
+  46688:
+    selector: 2781864777063863000
+    name: fusion-testnet
+  47805:
+    selector: 8089332794901176000
+    name: rei-network
+  49049:
+    selector: 861434480980409700
+    name: wireshape-floripa-testnet
+  49088:
+    selector: 8840700664026826000
+    name: bifrost-testnet
+  49321:
+    selector: 3826149206950222300
+    name: gunz-testnet
+  49797:
+    selector: 2931896190555036700
+    name: energi-testnet
+  50001:
+    selector: 1839393404875966500
+    name: liveplex-oracleevm
+  50005:
+    selector: 63289876673828790
+    name: yooldo-verse-mainnet
+  50006:
+    selector: 3330747465590024700
+    name: yooldo-verse-testnet
+  50021:
+    selector: 8564174845316994000
+    name: gton-testnet
+  51178:
+    selector: 2859384749486609000
+    name: lumoz-testnet-alpha
+  51712:
+    selector: 7641529224686190000
+    name: sardis-mainnet
+  52014:
+    selector: 5107426682598682000
+    name: electroneum-mainnet
+  53277:
+    selector: 9521795150897627000
+    name: doid
+  53457:
+    selector: 5142387089565272000
+    name: dodochain-testnet
+  53935:
+    selector: 7461881411167826000
+    name: dfk-chain
+  54211:
+    selector: 9340548309212666000
+    name: haqq-chain-testnet
+  54321:
+    selector: 7114246962735092000
+    name: toronet-testnet
+  54555:
+    selector: 918543704359702300
+    name: photon-testnet
+  55004:
+    selector: 7008214085170843000
+    name: titan
+  55555:
+    selector: 5445444805333943000
+    name: rei-chain-mainnet
+  55556:
+    selector: 1983034660994766800
+    name: rei-chain-testnet
+  56026:
+    selector: 2473558815866823000
+    name: lambda-chain-mainnet
+  56288:
+    selector: 8920962707904752000
+    name: boba-bnb-mainnet
+  56400:
+    selector: 8525556332672825000
+    name: testnet-zeroone-subnet
+  56789:
+    selector: 4735987517572545000
+    name: velo-labs-mainnet
+  56797:
+    selector: 3953581779691335000
+    name: doid-testnet
+  57000:
+    selector: 1440800693409685000
+    name: rollux-testnet
+  58008:
+    selector: 235568619458317300
+    name: sepolia-pgn-public-goods-network
+  59971:
+    selector: 7711737597493391000
+    name: genesys-code-mainnet
+  60000:
+    selector: 7985692211089761000
+    name: thinkium-testnet-chain-0
+  60001:
+    selector: 3330519629058477000
+    name: thinkium-testnet-chain-1
+  60002:
+    selector: 517960285926708500
+    name: thinkium-testnet-chain-2
+  60103:
+    selector: 2034311797839996200
+    name: thinkium-testnet-chain-103
+  60808:
+    selector: 3024274652078682000
+    name: bob
+  61406:
+    selector: 9944478906325967000
+    name: kaichain
+  61800:
+    selector: 4945196869799682000
+    name: axelchain-dev-net
+  61803:
+    selector: 2047948485157738000
+    name: etica-mainnet
+  61916:
+    selector: 9104884433915625000
+    name: doken-super-chain-mainnet
+  62049:
+    selector: 4142735858714683400
+    name: optopia-testnet
+  62050:
+    selector: 8883436280969648000
+    name: optopia-mainnet
+  62320:
+    selector: 730802046917842200
+    name: celo-baklava-testnet
+  62621:
+    selector: 1253065847767072000
+    name: multivac-mainnet
+  62831:
+    selector: 8546728978012317000
+    name: plyr-tau-testnet
+  63000:
+    selector: 688938999023418500
+    name: ecredits-mainnet
+  63001:
+    selector: 4601055079288924700
+    name: ecredits-testnet
+  65450:
+    selector: 8293908462960209000
+    name: scolcoin-mainnet
+  66988:
+    selector: 6566971584808452000
+    name: janus-testnet
+  67390:
+    selector: 4989256877272330000
+    name: siriusnet
+  67588:
+    selector: 3380197888123664000
+    name: cosmic-chain
+  68770:
+    selector: 3164253794543261000
+    name: dm2-verse-mainnet
+  69420:
+    selector: 5797675344557618000
+    name: condrieu
+  70000:
+    selector: 9594388236133620000
+    name: thinkium-mainnet-chain-0
+  70001:
+    selector: 2265984248152164000
+    name: thinkium-mainnet-chain-1
+  70002:
+    selector: 312874054607632500
+    name: thinkium-mainnet-chain-2
+  70103:
+    selector: 5976706347442005000
+    name: thinkium-mainnet-chain-103
+  70700:
+    selector: 5111434552100487000
+    name: proof-of-play-apex
+  71111:
+    selector: 5896692933422516000
+    name: guapcoinx
+  71393:
+    selector: 6044483848744879000
+    name: polyjuice-testnet
+  71402:
+    selector: 1634150555024356400
+    name: godwoken-mainnet
+  72778:
+    selector: 2701646127164989400
+    name: caga-crypto-ankara-testnet
+  72992:
+    selector: 9959122622535612000
+    name: grok-chain-mainnet
+  73114:
+    selector: 3147231244010213400
+    name: icb-testnet
+  73115:
+    selector: 1901810908644343600
+    name: icb-network
+  73799:
+    selector: 6459923709661939000
+    name: energy-web-volta-testnet
+  73927:
+    selector: 6883641657343287000
+    name: mixin-virtual-machine
+  75000:
+    selector: 9222490757236603000
+    name: resincoin-mainnet
+  77001:
+    selector: 6526535727102951000
+    name: borachain-mainnet
+  77238:
+    selector: 2539577530979764000
+    name: foundry-chain-testnet
+  77612:
+    selector: 2695887848178395600
+    name: vention-smart-chain-mainnet
+  77777:
+    selector: 5824336489221791000
+    name: toronet-mainnet
+  78110:
+    selector: 3743444158698943000
+    name: firenze-test-network
+  78281:
+    selector: 8608323440725015000
+    name: dragonfly-mainnet-hexapod
+  78430:
+    selector: 7541923833051261000
+    name: amplify-subnet
+  78431:
+    selector: 2756557892356322000
+    name: bulletin-subnet
+  78432:
+    selector: 2517519928245690400
+    name: conduit-subnet
+  78600:
+    selector: 4496594024809801000
+    name: vanguard
+  79879:
+    selector: 7985024447635794000
+    name: gold-smart-chain-testnet
+  80096:
+    selector: 6757279985378403000
+    name: hizoco-mainnet
+  81041:
+    selector: 6343541583648291000
+    name: nordek-mainnet
+  81341:
+    selector: 7766754367871645000
+    name: amana-testnet
+  81342:
+    selector: 1584620830289071900
+    name: amana-mixnet
+  81343:
+    selector: 8829672393887351000
+    name: amana-privnet
+  81351:
+    selector: 1378999845325106200
+    name: flana-testnet
+  81352:
+    selector: 9292192667025832000
+    name: flana-mixnet
+  81353:
+    selector: 7564601968247116000
+    name: flana-privnet
+  81361:
+    selector: 3904588593636246500
+    name: mizana-testnet
+  81362:
+    selector: 7262176404388719000
+    name: mizana-mixnet
+  81363:
+    selector: 8403573097853010000
+    name: mizana-privnet
+  81720:
+    selector: 7268713274288514000
+    name: quantum-chain-mainnet
+  82459:
+    selector: 3822909701379122700
+    name: smart-layer-network-testnet
+  83872:
+    selector: 7576074722366189000
+    name: zedxion
+  84886:
+    selector: 5200491835826304000
+    name: aerie-network
+  85449:
+    selector: 1791025976175533000
+    name: cybertrust
+  88002:
+    selector: 648798609108249900
+    name: nautilus-proteus-testnet
+  88559:
+    selector: 4968259643896973000
+    name: inoai-network
+  88817:
+    selector: 644612904665449200
+    name: unit-zero-testnet
+  88819:
+    selector: 3668829073204698000
+    name: unit-zero-stagenet
+  88880:
+    selector: 922019405384022500
+    name: chiliz-scoville-testnet
+  88882:
+    selector: 6017616765960450000
+    name: chiliz-spicy-testnet
+  88888:
+    selector: 399141943199878850
+    name: chiliz-chain-mainnet
+  90210:
+    selector: 4609744700732077000
+    name: beverly-hills
+  90354:
+    selector: 1967418309267026200
+    name: camp-testnet
+  91002:
+    selector: 3110275323276869600
+    name: nautilus-trition-chain
+  91120:
+    selector: 9549804375193088000
+    name: metadap-enterprise-mainnet
+  91715:
+    selector: 8401134521553222000
+    name: combo-testnet
+  92001:
+    selector: 2844982648908043300
+    name: lambda-testnet
+  93572:
+    selector: 9315422110895434000
+    name: liquidlayer-testnet
+  96970:
+    selector: 1426898847174438100
+    name: mantis-testnet-hexapod
+  97288:
+    selector: 2197127280554514000
+    name: boba-bnb-mainnet-old
+  97531:
+    selector: 8144343852883306000
+    name: green-chain-testnet
+  99099:
+    selector: 6980137056391473000
+    name: eliberty-testnet
+  99998:
+    selector: 1504080613646501400
+    name: ub-smart-chain-testnet
+  99999:
+    selector: 3070097987808366600
+    name: ub-smart-chain
+  100000:
+    selector: 246563471569201120
+    name: quarkchain-mainnet-root
+  100001:
+    selector: 5221110347172598000
+    name: quarkchain-mainnet-shard-0
+  100002:
+    selector: 9362651613949018000
+    name: quarkchain-mainnet-shard-1
+  100003:
+    selector: 2646911338760713700
+    name: quarkchain-mainnet-shard-2
+  100004:
+    selector: 6600934288406579000
+    name: quarkchain-mainnet-shard-3
+  100005:
+    selector: 9921844111642580000
+    name: quarkchain-mainnet-shard-4
+  100006:
+    selector: 3218787942944528000
+    name: quarkchain-mainnet-shard-5
+  100007:
+    selector: 9390279501624210000
+    name: quarkchain-mainnet-shard-6
+  100008:
+    selector: 1859673921014359800
+    name: quarkchain-mainnet-shard-7
+  100009:
+    selector: 9615308241211552000
+    name: vechain
+  100010:
+    selector: 720261092306786400
+    name: vechain-testnet
+  100100:
+    selector: 6726457217671357000
+    name: deprecated-chi
+  101010:
+    selector: 5647821644506643000
+    name: global-trust-network
+  102031:
+    selector: 6620301706093667000
+    name: creditcoin-testnet
+  103090:
+    selector: 5121910250485431000
+    name: crystaleum
+  103454:
+    selector: 5536436624238235000
+    name: masa-testnet
+  104566:
+    selector: 7555244936655669000
+    name: kaspaclassic-mainnet
+  105105:
+    selector: 6807031494448898000
+    name: stratis-mainnet
+  108801:
+    selector: 129623918204886380
+    name: brochain-mainnet
+  110000:
+    selector: 7787939805063164000
+    name: quarkchain-devnet-root
+  110001:
+    selector: 775738767498066400
+    name: quarkchain-devnet-shard-0
+  110002:
+    selector: 5412240466269615000
+    name: quarkchain-devnet-shard-1
+  110003:
+    selector: 5893243623649162000
+    name: quarkchain-devnet-shard-2
+  110004:
+    selector: 9841899758385990000
+    name: quarkchain-devnet-shard-3
+  110005:
+    selector: 4182742863087685000
+    name: quarkchain-devnet-shard-4
+  110006:
+    selector: 4097546301822799000
+    name: quarkchain-devnet-shard-5
+  110007:
+    selector: 5929678176709614000
+    name: quarkchain-devnet-shard-6
+  110008:
+    selector: 313154417911398800
+    name: quarkchain-devnet-shard-7
+  111000:
+    selector: 2745978653050582500
+    name: siberium-test-network
+  111111:
+    selector: 3333802349226100000
+    name: siberium-network
+  112358:
+    selector: 5535466569130874000
+    name: metachain-one-mainnet
+  119139:
+    selector: 355696335376434200
+    name: metadap-enterprise-testnet
+  123456:
+    selector: 7332861717273613000
+    name: adil-devnet
+  128123:
+    selector: 5250892885081413000
+    name: etherlink-testnet
+  131313:
+    selector: 5787719087650170000
+    name: odyssey-chain-testnet
+  131419:
+    selector: 760513549870880400
+    name: etnd-chain-mainnets
+  141319:
+    selector: 376840303498928700
+    name: magape-testnet
+  142857:
+    selector: 2261536285378311700
+    name: icplaza-mainnet
+  161212:
+    selector: 5632534774229341000
+    name: playfi-mainnet
+  165279:
+    selector: 2902861700935093000
+    name: eclat-mainnet
+  167000:
+    selector: 7095913215434526000
+    name: taiko-mainnet
+  167004:
+    selector: 5425725528357370000
+    name: taiko-alpha-2-testnet
+  167005:
+    selector: 2298892762552762000
+    name: taiko-grimsvotn-l2
+  167006:
+    selector: 3320463771172741600
+    name: taiko-eldfell-l3
+  167007:
+    selector: 7551022388882798000
+    name: taiko-jolnir-l2
+  167008:
+    selector: 6867089156569004000
+    name: taiko-katla-l2
+  167009:
+    selector: 2794369515229007400
+    name: taiko-hekla-l2
+  188710:
+    selector: 4682408122386962000
+    name: bitica-chain-mainnet
+  188881:
+    selector: 6652947189419800000
+    name: condor-test-network
+  192940:
+    selector: 904716004864343200
+    name: mind-network-testnet
+  200000:
+    selector: 2872794815095853600
+    name: xfair-ai-testnet
+  200101:
+    selector: 1455069163891933200
+    name: milkomeda-c1-testnet
+  200202:
+    selector: 3966034693643034600
+    name: milkomeda-a1-testnet
+  200625:
+    selector: 7358206496112653000
+    name: akroma
+  200810:
+    selector: 5899169812288653000
+    name: bitlayer-testnet
+  200901:
+    selector: 4464868721962769400
+    name: bitlayer-mainnet
+  201018:
+    selector: 8294211854749487000
+    name: alaya-mainnet
+  201030:
+    selector: 161988298601489800
+    name: alaya-dev-testnet
+  201804:
+    selector: 2444956223012209000
+    name: mythical-chain
+  202020:
+    selector: 2244882601277551400
+    name: decimal-smart-chain-testnet
+  202212:
+    selector: 9017304038727465000
+    name: x1-devnet
+  202401:
+    selector: 4526296464905175000
+    name: ymtech-besu-testnet
+  202624:
+    selector: 189223968483753800
+    name: jellie
+  204005:
+    selector: 187527480508229440
+    name: x1-network
+  205205:
+    selector: 7213025953163504000
+    name: auroria-testnet
+  210049:
+    selector: 5943238904263932000
+    name: gitagi-atlas-testnet
+  210425:
+    selector: 1430126447789867800
+    name: platon-mainnet
+  220315:
+    selector: 9542501312389825000
+    name: mas-mainnet
+  221230:
+    selector: 3311091084437958000
+    name: reapchain-mainnet
+  221231:
+    selector: 8041996273286362000
+    name: reapchain-testnet
+  222222:
+    selector: 1701547739441484500
+    name: hydradx
+  222555:
+    selector: 3007143338121225000
+    name: deepl-mainnet
+  222666:
+    selector: 7217986433300192000
+    name: deepL-testnet
+  224168:
+    selector: 5905713304300810000
+    name: taf-ECO-Chain-mainnet
+  224422:
+    selector: 6119047046190344000
+    name: conet-sebolia-testnet
+  224433:
+    selector: 40046025752666910
+    name: conet-holesky
+  230315:
+    selector: 8990398028482596000
+    name: hashKey-Chain-testnet-discard
+  234666:
+    selector: 1564537059387079000
+    name: haymo-testnet
+  246529:
+    selector: 3865831703248770000
+    name: artis-sigma1
+  246785:
+    selector: 9958773497704724000
+    name: artis-testnet-tau1
+  247253:
+    selector: 8315821033394471000
+    name: saakuru-testnet
+  256256:
+    selector: 7633260383627278000
+    name: cmp-mainnet
+  262371:
+    selector: 783935802070678800
+    name: eclat-testnet
+  266256:
+    selector: 33241322407615572
+    name: gear-Zero-Network-testnet
+  271271:
+    selector: 3668008191432459300
+    name: egonCoin-testnet
+  281121:
+    selector: 9731709529276385000
+    name: social-Smart-Chain-mainnet
+  282828:
+    selector: 9509708097713424000
+    name: zillion-sepolia-testnet
+  309075:
+    selector: 9558752770086658000
+    name: one-World-Chain-mainnet
+  313313:
+    selector: 711103779952297900
+    name: saharaAI-testnet
+  314159:
+    selector: 5529498360376284000
+    name: filecoin-Calibration-testnet
+  322202:
+    selector: 9382041020221538000
+    name: parex-mainnet
+  323213:
+    selector: 1620119013124983300
+    name: bloom-Genesis-testnet
+  330844:
+    selector: 3346551121142183000
+    name: ttcoin-Smart-Chain-mainnet
+  333313:
+    selector: 5435965023852143000
+    name: bloom-Genesis-mainnet
+  333331:
+    selector: 4340999953630340000
+    name: aves-testnet
+  333333:
+    selector: 4764154693077789000
+    name: nativ3-testnet
+  333666:
+    selector: 3263253296562824700
+    name: oone-Chain-testnet
+  333777:
+    selector: 9698136831756530000
+    name: oone-Chain-devnet
+  333888:
+    selector: 1402379908418955800
+    name: polis-testnet
+  333999:
+    selector: 6132208441257623000
+    name: polis-mainnet
+  336655:
+    selector: 6053775725321235000
+    name: upchain-testnet
+  336666:
+    selector: 2668222497604331000
+    name: upchain-mainnet
+  355113:
+    selector: 4411273814505907000
+    name: bitfinity-Network-testnet
+  363636:
+    selector: 450263317417090050
+    name: digit-Soul-Smart-Chain-2
+  373737:
+    selector: 5981870751303781000
+    name: hapchain-testnet
+  381931:
+    selector: 8877245718134798000
+    name: metal-C-Chain
+  381932:
+    selector: 7405061460791673000
+    name: metal-Tahoe-C-Chain
+  404040:
+    selector: 1102234436685922700
+    name: tipboxcoin-mainnet
+  413413:
+    selector: 6480751057647880000
+    name: aie-testnet
+  420420:
+    selector: 6698174655297516000
+    name: kekchain
+  420666:
+    selector: 8167420586896514000
+    name: kekchain-kektest
+  420692:
+    selector: 8406136843211837000
+    name: alterium-L2-testnet
+  421611:
+    selector: 6115303759747138000
+    name: arbitrum-rinkeby
+  424242:
+    selector: 6867139239724325000
+    name: fastex-Chain-testnet
+  431140:
+    selector: 5930873940374872000
+    name: markr-Go
+  432201:
+    selector: 3637376302014869500
+    name: dexalot-Subnet-testnet
+  432204:
+    selector: 2598084846027999000
+    name: dexalot-Subnet
+  444444:
+    selector: 5882948082968729000
+    name: syndr-L3-sepolia
+  444900:
+    selector: 532089292678505900
+    name: weelink-testnet
+  471100:
+    selector: 7870611336438706000
+    name: patex-Sepolia-testnet
+  473861:
+    selector: 5156991784014182000
+    name: ultra-Pro-mainnet
+  474142:
+    selector: 9565481811741546000
+    name: openChain-mainnet
+  504441:
+    selector: 3972680668083481600
+    name: playdapp-Network
+  512512:
+    selector: 6367877956213699000
+    name: cmp-testnet
+  513100:
+    selector: 5650642319227867000
+    name: disChain
+  526916:
+    selector: 2034709489566864000
+    name: doCoin-Community-Chain
+  534353:
+    selector: 2054675349793921800
+    name: scroll-Alpha-testnet
+  534354:
+    selector: 581175075069353300
+    name: scroll-Pre-Alpha-testnet
+  534849:
+    selector: 593530187772131100
+    name: shinarium-Beta
+  535037:
+    selector: 1835842352273511200
+    name: beanEco-SmartChain
+  552981:
+    selector: 772180790265986000
+    name: one-World-Chain-testnet
+  555666:
+    selector: 8118303953378021000
+    name: eclipse-testnet
+  622277:
+    selector: 4211825988067859000
+    name: hypra-mainnet
+  641230:
+    selector: 6652550763846572000
+    name: bear-Network-Chain-mainnet
+  651940:
+    selector: 3565170293884750000
+    name: all-mainnet
+  660279:
+    selector: 3503079007626077700
+    name: xai-mainnet
+  666666:
+    selector: 851638424869147800
+    name: vision-Vpioneer-Test-Chain
+  666888:
+    selector: 5555426787334937000
+    name: hela-Official-Runtime-testnet
+  686868:
+    selector: 5917553960030262000
+    name: won-Network
+  696969:
+    selector: 1118471649957304400
+    name: galadriel-Devnet
+  710420:
+    selector: 7731589443041527000
+    name: tiltyard-mainnet-Subnet
+  713715:
+    selector: 1753977489007348000
+    name: sei-Devnet
+  743111:
+    selector: 7417840161044275000
+    name: hemi-Sepolia
+  751230:
+    selector: 3742334613613738000
+    name: bear-Network-Chain-testnet
+  761412:
+    selector: 6455846165430665000
+    name: miexs-Smartchain
+  776877:
+    selector: 8779242160800484000
+    name: modularium
+  800001:
+    selector: 7321054928794233000
+    name: octaSpace
+  808080:
+    selector: 2221183045921064700
+    name: biz-Smart-Chain-testnet
+  810180:
+    selector: 4040552250946030000
+    name: zkLink-Nova-mainnet
+  810181:
+    selector: 3382175011680943600
+    name: zkLink-Nova-Sepolia-testnet
+  810182:
+    selector: 422019041887102850
+    name: zkLink-Nova-Goerli-testnet
+  827431:
+    selector: 617016943057457900
+    name: curve-mainnet
+  839320:
+    selector: 1467515381947355100
+    name: prm-testnet
+  846000:
+    selector: 8746030282923282000
+    name: 4GoodNetwork
+  855456:
+    selector: 9948959372805224000
+    name: dodao
+  879151:
+    selector: 2042160132330888000
+    name: blocX-mainnet
+  888882:
+    selector: 1673040241622243300
+    name: rexx-mainnet
+  888888:
+    selector: 4632248170783446000
+    name: vision-mainnet
+  900000:
+    selector: 4626519876510107000
+    name: posichain-mainnet-Shard-0
+  910000:
+    selector: 3353914419304562000
+    name: posichain-testnet-Shard-0
+  912559:
+    selector: 8785632565959440000
+    name: astria-EVM-Dusknet
+  920000:
+    selector: 5694585018752729000
+    name: posichain-Devnet-Shard-0
+  920001:
+    selector: 5519479496538259000
+    name: posichain-Devnet-Shard-1
+  923018:
+    selector: 4449023860779721
+    name: fncy-testnet
+  955081:
+    selector: 1375655747949919700
+    name: jono12-Subnet
+  955305:
+    selector: 2758622643099087000
+    name: eluvio-Content-Fabric
+  988207:
+    selector: 978531225796619400
+    name: ecrox-Chain-mainnet
+  999999:
+    selector: 6750020922023487000
+    name: amChain
+  1100789:
+    selector: 8918451450584075000
+    name: netmind-Chain-testnet
+  1127469:
+    selector: 156253433940916060
+    name: tiltyard-Subnet
+  1261120:
+    selector: 637250430732199200
+    name: zkatana
+  1313114:
+    selector: 8736672159154800000
+    name: etho-Protocol
+  1313500:
+    selector: 8542459110455292000
+    name: xerom
+  1337702:
+    selector: 3027298787943493000
+    name: kintsugi
+  1337802:
+    selector: 7994974085522695000
+    name: kiln
+  1337803:
+    selector: 8968066443944038000
+    name: zhejiang
+  1398243:
+    selector: 2766424938688203300
+    name: automata-testnet
+  1612127:
+    selector: 4282345543170025500
+    name: playfi-albireo-testnet
+  1731313:
+    selector: 2476905677949530000
+    name: turkey-demo-dev
+  2021398:
+    selector: 9049734721850178000
+    name: debank-testnet
+  2099156:
+    selector: 7171965163991967000
+    name: plian-mainnet-main
+  2203181:
+    selector: 9515130089713803000
+    name: platon-dev-testnet-deprecated
+  2206132:
+    selector: 7789432422225291000
+    name: platon-dev-testnet2
+  2611555:
+    selector: 8138774506020905000
+    name: dpu-chain
+  3132023:
+    selector: 627174411144821900
+    name: saharaai-network
+  3141592:
+    selector: 2554338579947803600
+    name: filecoin-butterfly-testnet
+  3397901:
+    selector: 7236705907417649000
+    name: funki-sepolia-sandbox
+  3441005:
+    selector: 7116790181435167000
+    name: manta-pacific-testnet
+  3441006:
+    selector: 9982690741242750000
+    name: manta-pacific-sepolia-testnet
+  4000003:
+    selector: 4760196434260704000
+    name: altlayer-zero-gas-network
+  4281033:
+    selector: 7284883540934770000
+    name: worlds-caldera
+  5167003:
+    selector: 1777542746339564300
+    name: mxc-wannsee-zkevm-testnet
+  5167004:
+    selector: 163944455805267170
+    name: moonchain-geneva-testnet
+  5201420:
+    selector: 1451164542621528000
+    name: electroneum-testnet
+  5318008:
+    selector: 2723532191827717600
+    name: reactive-kopli
+  5555555:
+    selector: 2745951594938898000
+    name: imversed-mainnet
+  5555558:
+    selector: 790231338650304600
+    name: imversed-testnet
+  6038361:
+    selector: 443163333283955700
+    name: astar-zkyoto
+  6666665:
+    selector: 1209112413171820000
+    name: safe-anwang-mainnet
+  6666666:
+    selector: 9724843415186493000
+    name: safe-anwang-testnet
+  7225878:
+    selector: 6085328449408685000
+    name: saakuru-mainnet
+  7355310:
+    selector: 1769769557033100800
+    name: openvessel
+  7668378:
+    selector: 475862895406489150
+    name: ql1-testnet
+  7762959:
+    selector: 1804099154242724400
+    name: musicoin
+  7777777:
+    selector: 365177594811583170
+    name: zora
+  8007736:
+    selector: 9203155995050764000
+    name: plian-mainnet-subchain-1
+  8080808:
+    selector: 9044690156803099000
+    name: hokum
+  8794598:
+    selector: 3586950710777261600
+    name: hapchain
+  8888881:
+    selector: 7917262869722524000
+    name: quarix-testnet
+  8888888:
+    selector: 6468742140062220000
+    name: quarix
+  9322252:
+    selector: 5111203109553267000
+    name: xcap
+  9322253:
+    selector: 1529123784932564500
+    name: milvine
+  10067275:
+    selector: 6046219166406766000
+    name: plian-testnet-subchain-1
+  10101010:
+    selector: 5257098951723751000
+    name: soverun-mainnet
+  13068200:
+    selector: 2710868047971419600
+    name: coti-devnet
+  13371337:
+    selector: 8407997913912915000
+    name: pepchain-churchill
+  14288640:
+    selector: 9156987034660184000
+    name: anduschain-mainnet
+  16658437:
+    selector: 4960228519900718000
+    name: plian-testnet-main
+  17000920:
+    selector: 2879632549154365000
+    name: lambda-chain-testnet
+  18289463:
+    selector: 4114178857382327000
+    name: iolite
+  20180427:
+    selector: 4837189145333401000
+    name: stability-testnet
+  20180430:
+    selector: 6715128093199221000
+    name: smartmesh-mainnet
+  20181205:
+    selector: 9836073126363916000
+    name: quarkblockchain
+  20201022:
+    selector: 2051249019110326000
+    name: pego-network
+  20240324:
+    selector: 9686923291064832000
+    name: debank-sepolia-testnet
+  20482050:
+    selector: 8353951082740214000
+    name: hokum-testnet
+  22052002:
+    selector: 8528184855569132000
+    name: excelon-mainnet
+  27082017:
+    selector: 6752100751412897000
+    name: excoincial-chain-volta-testnet
+  27082022:
+    selector: 3703612276715058000
+    name: excoincial-chain-mainnet
+  28122024:
+    selector: 34731565802694764
+    name: ancient8-testnet
+  28945486:
+    selector: 5537762436579996000
+    name: auxilium-network-mainnet
+  29032022:
+    selector: 1256721375160818700
+    name: flachain-mainnet
+  31415926:
+    selector: 7060342227814389000
+    name: filecoin-local-testnet
+  35855456:
+    selector: 2047444139476444200
+    name: joys-digital-mainnet
+  37084624:
+    selector: 9659708103228396000
+    name: skale-nebula-hub-testnet
+  39916801:
+    selector: 4223478656447337000
+    name: kingdom-chain
+  43214913:
+    selector: 4324803305215419000
+    name: maistestsubnet
+  61717561:
+    selector: 5289868739243171000
+    name: aquachain
+  65010000:
+    selector: 4888170459303254000
+    name: autonity-bakerloo-thames-testnet
+  65010001:
+    selector: 4580382774751115000
+    name: autonity-bakerloo-barada-testnet
+  65010002:
+    selector: 510586525502394500
+    name: autonity-bakerloo-sumida-testnet
+  65100000:
+    selector: 7688769979994437000
+    name: autonity-piccadilly-thames-testnet
+  65100001:
+    selector: 9204657237950320000
+    name: autonity-piccadilly-barada-testnet
+  65100002:
+    selector: 4186165651132696000
+    name: autonity-piccadilly-sumida-testnet
+  68840142:
+    selector: 1556255404694002400
+    name: frame-testnet
+  77787778:
+    selector: 4943440195349198000
+    name: 0xhash-testnet
+  88888888:
+    selector: 8074980489370396000
+    name: team-blockchain
+  94204209:
+    selector: 8753726855744741000
+    name: polygon-blackberry
+  99415706:
+    selector: 8533395476774716000
+    name: joys-digital-testnet
+  111557560:
+    selector: 461610787264288260
+    name: cyber-testnet
+  123420111:
+    selector: 8699544738346763000
+    name: op-celestia-raspberry
+  161221135:
+    selector: 3825045472765080600
+    name: plume-testnet
+  192837465:
+    selector: 4532988908452166700
+    name: gather-mainnet-network
+  222000222:
+    selector: 4199640424162329600
+    name: kanazawa
+  245022926:
+    selector: 9929215767073319000
+    name: neon-evm-devnet
+  245022934:
+    selector: 3039940411110810600
+    name: neon-evm-mainnet
+  245022940:
+    selector: 3891501205463910000
+    name: neon-evm-testnet
+  278611351:
+    selector: 9368655391074770000
+    name: razor-skale-chain
+  311752642:
+    selector: 9552654590320116000
+    name: oneledger-mainnet
+  333000333:
+    selector: 3937804100949768700
+    name: meld
+  344106930:
+    selector: 5736888659294137000
+    name: deprecated-skale-calypso-hub-testnet
+  356256156:
+    selector: 5061799844387822000
+    name: gather-testnet-network
+  476158412:
+    selector: 7555886293522233000
+    name: deprecated-skale-europa-hub-testnet
+  486217935:
+    selector: 9595195899463561000
+    name: gather-devnet-network
+  503129905:
+    selector: 7417556686250144000
+    name: deprecated-skale-nebula-hub-testnet
+  666666666:
+    selector: 3039228942022907000
+    name: degen-chain
+  888888888:
+    selector: 4048776140118675000
+    name: ancient8
+  889910245:
+    selector: 9703901791954455000
+    name: ptcescan-testnet
+  889910246:
+    selector: 3201735980034696700
+    name: ptcescan-mainnet
+  974399131:
+    selector: 4276764117566885000
+    name: skale-calypso-hub-testnet
+  999999999:
+    selector: 5092122251252476000
+    name: zora-sepolia-testnet
+  1020352220:
+    selector: 2068303655053891300
+    name: skale-titan-hub-testnet
+  1122334455:
+    selector: 6976748724480870000
+    name: ipos-network
+  1146703430:
+    selector: 6633411868115145000
+    name: cyberdecknet
+  1273227453:
+    selector: 9119242365590610000
+    name: human-protocol
+  1313161554:
+    selector: 435380095260118340
+    name: aurora-mainnet
+  1313161555:
+    selector: 7629268323540692000
+    name: aurora-testnet
+  1313161556:
+    selector: 1233661223711437600
+    name: aurora-betanet
+  1313161560:
+    selector: 4425427580852366000
+    name: powergold
+  1350216234:
+    selector: 5199329758851530000
+    name: skale-titan-hub
+  1351057110:
+    selector: 3711301886109053000
+    name: chaos-skale-testnet
+  1380012617:
+    selector: 4006226940972004400
+    name: rari-chain-mainnet
+  1380996178:
+    selector: 5411611436952879000
+    name: raptorchain
+  1444673419:
+    selector: 142726821970162740
+    name: skale-europa-hub-testnet
+  1482601649:
+    selector: 5212614593910287000
+    name: skale-nebula-hub
+  1517929550:
+    selector: 8513730015364174000
+    name: deprecated-skale-titan-hub-testnet
+  1564830818:
+    selector: 2564050094826833000
+    name: skale-calypso-hub
+  1666600000:
+    selector: 173757803325393920
+    name: harmony-mainnet-shard-0
+  1666600001:
+    selector: 6364180926413363000
+    name: harmony-mainnet-shard-1
+  1666600002:
+    selector: 2215343258155588900
+    name: harmony-mainnet-shard-2
+  1666600003:
+    selector: 5082367771568803000
+    name: harmony-mainnet-shard-3
+  1666700000:
+    selector: 5890064446226271000
+    name: harmony-testnet-shard-0
+  1666700001:
+    selector: 4517776255767594000
+    name: harmony-testnet-shard-1
+  1666900000:
+    selector: 2128987573035949800
+    name: harmony-devnet-shard-0
+  1666900001:
+    selector: 8455402859127392000
+    name: harmony-devnet-shard-1
+  1802203764:
+    selector: 1014659363063457000
+    name: kakarot-sepolia
+  1918988905:
+    selector: 2929104023800322000
+    name: rari-chain-testnet
+  2021121117:
+    selector: 3707429235449626000
+    name: datahopper
+  2046399126:
+    selector: 1085070445301072900
+    name: skale-europa-hub
+  2863311531:
+    selector: 3831738416221302000
+    name: ancient8testnet-deprecated
+  3125659152:
+    selector: 196911677975772930
+    name: pirl
+  4216137055:
+    selector: 1089516267996355500
+    name: oneledger-testnet-frankenstein
+  11297108099:
+    selector: 3186064136644255000
+    name: palm-testnet
+  11297108109:
+    selector: 8453390086587433000
+    name: palm
+  28872323069:
+    selector: 8612630765490781000
+    name: gitswarm-test-network
+  37714555429:
+    selector: 9411637731309834000
+    name: xai-testnet-v2
+  88153591557:
+    selector: 6674891144123208000
+    name: arbitrum-blueberry
+  107107114116:
+    selector: 3813001194726388700
+    name: kakarot-sepolia-deprecated
+  111222333444:
+    selector: 9571433358274720000
+    name: alphabet-mainnet
+  197710212030:
+    selector: 8002289944565660000
+    name: ntity-mainnet
+  197710212031:
+    selector: 8113484337956007000
+    name: haradev-testnet
+  383414847825:
+    selector: 5372751405913461000
+    name: zeniq
+  666301171999:
+    selector: 8981825876129683000
+    name: pdc-mainnet
+  6022140761023:
+    selector: 4206919706627468000
+    name: molereum-network
+  868455272153094:
+    selector: 8169182983637793000
+    name: godwoken-testnet-v1
+  2713017997578000:
+    selector: 3907172524297979400
+    name: dchain-testnet
