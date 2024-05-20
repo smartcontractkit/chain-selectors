@@ -248,10 +248,18 @@ func Test_MainnetAndTestnetAreSynchronized(t *testing.T) {
 		}
 	}
 
+	// Skip legacy testnet only chains
+	delete(chainMap, "bitcoin")
+	delete(chainMap, "geth")
+	delete(chainMap, "hedera")
+	delete(chainMap, "berachain")
+	delete(chainMap, "cronos")
+	delete(chainMap, "fantom")
+
 	// analyze results
 	for chain, details := range chainMap {
 		if len(details.mainnet) == 0 && len(details.testnet) != 0 {
-			assert.Fail(t, "Chain %s has testnet chains but no mainnet chains", chain)
+			assert.Fail(t, "Chain %s has testnet chains but no mainnet chains. If this is intentional add an exception to this test with a comment explaining why.", chain)
 		}
 	}
 }
