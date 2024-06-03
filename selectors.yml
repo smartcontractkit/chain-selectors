@@ -32,7 +32,7 @@ selectors:
     name: "ethereum-testnet-goerli-zksync-1"
   282: 
     selector: 3842103497652714138 
-    name: "cronos-testnet-zkevm"
+    name: "cronos-testnet-zkevm-1"
   296:
     selector: 222782988166878823
     name: "hedera-testnet"
@@ -50,7 +50,7 @@ selectors:
     name: "ethereum-testnet-goerli-optimism-1"
   462:
     selector: 7317911323415911000
-    name: areon-network-testnet
+    name: areon-testnet
   919:
     selector: 829525985033418733
     name: "ethereum-testnet-sepolia-mode-1"
@@ -154,7 +154,7 @@ selectors:
     name: "ethereum-testnet-sepolia-scroll-1"
   686868:
     selector: 5269261765892944301 
-    name: "bitcoin-merlin-testnet"
+    name: "bitcoin-testnet-merlin"
   595581:
     selector: 7837562506228496256
     name: "avalanche-testnet-nexon"
@@ -228,7 +228,7 @@ selectors:
     name: near-mainnet
   463:
     selector: 1939936305787790600
-    name: areon-network-mainnet
+    name: areon-mainnet
   592: 
     selector: 6422105447186081193 
     name: "astar-mainnet"
@@ -297,4 +297,4 @@ selectors:
     name: "ethereum-mainnet-scroll-1"
   810180: 
     selector: 4350319965322101699
-    name: "zklink-nova-mainnet" 
+    name: "zklink_nova-mainnet" 

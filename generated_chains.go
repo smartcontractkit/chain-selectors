@@ -9,8 +9,8 @@ type Chain struct {
 }
 
 var (
-	AREON_NETWORK_MAINNET                      = Chain{EvmChainID: 463, Selector: 1939936305787790600, Name: "areon-network-mainnet"}
-	AREON_NETWORK_TESTNET                      = Chain{EvmChainID: 462, Selector: 7317911323415911000, Name: "areon-network-testnet"}
+	AREON_MAINNET                              = Chain{EvmChainID: 463, Selector: 1939936305787790600, Name: "areon-mainnet"}
+	AREON_TESTNET                              = Chain{EvmChainID: 462, Selector: 7317911323415911000, Name: "areon-testnet"}
 	ASTAR_MAINNET                              = Chain{EvmChainID: 592, Selector: 6422105447186081193, Name: "astar-mainnet"}
 	ASTAR_MAINNET_ZKEVM                        = Chain{EvmChainID: 3776, Selector: 1540201334317828111, Name: "astar-mainnet-zkevm"}
 	ASTAR_TESTNET_SHIBUYA                      = Chain{EvmChainID: 81, Selector: 6955638871347136141, Name: "astar-testnet-shibuya"}
@@ -25,7 +25,7 @@ var (
 	BITCOIN_BOTANIX_MAINNET                    = Chain{EvmChainID: 3637, Selector: 4560701533377838164, Name: "bitcoin-botanix-mainnet"}
 	BITCOIN_BOTANIX_TESTNET                    = Chain{EvmChainID: 3636, Selector: 1467223411771711614, Name: "bitcoin-botanix-testnet"}
 	BITCOIN_MERLIN_MAINNET                     = Chain{EvmChainID: 4200, Selector: 241851231317828981, Name: "bitcoin-merlin-mainnet"}
-	BITCOIN_MERLIN_TESTNET                     = Chain{EvmChainID: 686868, Selector: 5269261765892944301, Name: "bitcoin-merlin-testnet"}
+	BITCOIN_TESTNET_MERLIN                     = Chain{EvmChainID: 686868, Selector: 5269261765892944301, Name: "bitcoin-testnet-merlin"}
 	BITCOIN_TESTNET_ROOTSTOCK                  = Chain{EvmChainID: 31, Selector: 8953668971247136127, Name: "bitcoin-testnet-rootstock"}
 	BITTORRENT_CHAIN_MAINNET                   = Chain{EvmChainID: 199, Selector: 3776006016387883143, Name: "bittorrent_chain-mainnet"}
 	BITTORRENT_CHAIN_TESTNET                   = Chain{EvmChainID: 1029, Selector: 4459371029167934217, Name: "bittorrent_chain-testnet"}
@@ -36,7 +36,7 @@ var (
 	CORN_TESTNET_ALPHA                         = Chain{EvmChainID: 21000000, Selector: 1467427327723633929, Name: "corn-testnet-alpha"}
 	CRONOS_MAINNET                             = Chain{EvmChainID: 25, Selector: 1456215246176062136, Name: "cronos-mainnet"}
 	CRONOS_TESTNET                             = Chain{EvmChainID: 338, Selector: 2995292832068775165, Name: "cronos-testnet"}
-	CRONOS_TESTNET_ZKEVM                       = Chain{EvmChainID: 282, Selector: 3842103497652714138, Name: "cronos-testnet-zkevm"}
+	CRONOS_TESTNET_ZKEVM_1                     = Chain{EvmChainID: 282, Selector: 3842103497652714138, Name: "cronos-testnet-zkevm-1"}
 	DARWINIA_MAINNET                           = Chain{EvmChainID: 46, Selector: 8866418665544333000, Name: "darwinia-mainnet"}
 	DARWINIA_TESTNET_PANGORO                   = Chain{EvmChainID: 45, Selector: 4340886533089894000, Name: "darwinia-testnet-pangoro"}
 	DEXALOT_SUBNET_MAINNET                     = Chain{EvmChainID: 432204, Selector: 5463201557265485081, Name: "dexalot-subnet-mainnet"}
@@ -209,13 +209,13 @@ var (
 	VELAS_TESTNET                              = Chain{EvmChainID: 111, Selector: 572210378683744374, Name: "velas-testnet"}
 	WEMIX_MAINNET                              = Chain{EvmChainID: 1111, Selector: 5142893604156789321, Name: "wemix-mainnet"}
 	WEMIX_TESTNET                              = Chain{EvmChainID: 1112, Selector: 9284632837123596123, Name: "wemix-testnet"}
-	ZKLINK_NOVA_MAINNET                        = Chain{EvmChainID: 810180, Selector: 4350319965322101699, Name: "zklink-nova-mainnet"}
+	ZKLINK_NOVA_MAINNET                        = Chain{EvmChainID: 810180, Selector: 4350319965322101699, Name: "zklink_nova-mainnet"}
 	ZKLINK_NOVA_TESTNET                        = Chain{EvmChainID: 810181, Selector: 5837261596322416298, Name: "zklink-nova-testnet"}
 )
 
 var ALL = []Chain{
-	AREON_NETWORK_MAINNET,
-	AREON_NETWORK_TESTNET,
+	AREON_MAINNET,
+	AREON_TESTNET,
 	ASTAR_MAINNET,
 	ASTAR_MAINNET_ZKEVM,
 	ASTAR_TESTNET_SHIBUYA,
@@ -230,7 +230,7 @@ var ALL = []Chain{
 	BITCOIN_BOTANIX_MAINNET,
 	BITCOIN_BOTANIX_TESTNET,
 	BITCOIN_MERLIN_MAINNET,
-	BITCOIN_MERLIN_TESTNET,
+	BITCOIN_TESTNET_MERLIN,
 	BITCOIN_TESTNET_ROOTSTOCK,
 	BITTORRENT_CHAIN_MAINNET,
 	BITTORRENT_CHAIN_TESTNET,
@@ -241,7 +241,7 @@ var ALL = []Chain{
 	CORN_TESTNET_ALPHA,
 	CRONOS_MAINNET,
 	CRONOS_TESTNET,
-	CRONOS_TESTNET_ZKEVM,
+	CRONOS_TESTNET_ZKEVM_1,
 	DARWINIA_MAINNET,
 	DARWINIA_TESTNET_PANGORO,
 	DEXALOT_SUBNET_MAINNET,
