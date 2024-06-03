@@ -64,6 +64,7 @@ var (
 	ETHEREUM_TESTNET_GOERLI_POLYGON_ZKEVM_1    = Chain{EvmChainID: 1442, Selector: 11059667695644972511, Name: "ethereum-testnet-goerli-polygon-zkevm-1"}
 	ETHEREUM_TESTNET_GOERLI_ZKSYNC_1           = Chain{EvmChainID: 280, Selector: 6802309497652714138, Name: "ethereum-testnet-goerli-zksync-1"}
 	ETHEREUM_TESTNET_HOLESKY_FRAXTAL_1         = Chain{EvmChainID: 2522, Selector: 8901520481741771655, Name: "ethereum-testnet-holesky-fraxtal-1"}
+	ETHEREUM_TESTNET_HOLESKY_MORPH_1           = Chain{EvmChainID: 2810, Selector: 8304510386741731151, Name: "ethereum-testnet-holesky-morph-1"}
 	ETHEREUM_TESTNET_SEPOLIA                   = Chain{EvmChainID: 11155111, Selector: 16015286601757825753, Name: "ethereum-testnet-sepolia"}
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1        = Chain{EvmChainID: 421614, Selector: 3478487238524512106, Name: "ethereum-testnet-sepolia-arbitrum-1"}
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1            = Chain{EvmChainID: 84532, Selector: 10344971235874465080, Name: "ethereum-testnet-sepolia-base-1"}
@@ -79,6 +80,7 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_ZKEVM_1   = Chain{EvmChainID: 2442, Selector: 1654667687261492630, Name: "ethereum-testnet-sepolia-polygon-zkevm-1"}
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1          = Chain{EvmChainID: 534351, Selector: 2279865765895943307, Name: "ethereum-testnet-sepolia-scroll-1"}
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1          = Chain{EvmChainID: 195, Selector: 2066098519157881736, Name: "ethereum-testnet-sepolia-xlayer-1"}
+	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT           = Chain{EvmChainID: 48899, Selector: 4562743618362911021, Name: "ethereum-testnet-sepolia-zircuit"}
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1          = Chain{EvmChainID: 300, Selector: 6898391096552792247, Name: "ethereum-testnet-sepolia-zksync-1"}
 	FANTOM_TESTNET                             = Chain{EvmChainID: 4002, Selector: 4905564228793744293, Name: "fantom-testnet"}
 	FANTOM_TESTNET_OPERA                       = Chain{EvmChainID: 250, Selector: 3768048213127883732, Name: "fantom-testnet-opera"}
@@ -269,6 +271,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_GOERLI_POLYGON_ZKEVM_1,
 	ETHEREUM_TESTNET_GOERLI_ZKSYNC_1,
 	ETHEREUM_TESTNET_HOLESKY_FRAXTAL_1,
+	ETHEREUM_TESTNET_HOLESKY_MORPH_1,
 	ETHEREUM_TESTNET_SEPOLIA,
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1,
@@ -284,6 +287,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_ZKEVM_1,
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1,
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1,
+	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT,
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1,
 	FANTOM_TESTNET,
 	FANTOM_TESTNET_OPERA,

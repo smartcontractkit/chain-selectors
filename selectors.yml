@@ -84,6 +84,9 @@ selectors:
   2522:
     selector: 8901520481741771655
     name: "ethereum-testnet-holesky-fraxtal-1"
+  2810: 
+    selector: 8304510386741731151
+    name: "ethereum-testnet-holesky-morph-1" 
   3636:
     selector: 1467223411771711614
     name: "bitcoin-botanix-testnet"
@@ -111,6 +114,9 @@ selectors:
   44787:
     selector: 3552045678561919002
     name: "celo-testnet-alfajores"
+  48899: 
+    selector: 4562743618362911021 
+    name: "ethereum-testnet-sepolia-zircuit"
   59140:
     selector: 1355246678561316402
     name: "ethereum-testnet-goerli-linea-1"
