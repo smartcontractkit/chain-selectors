@@ -264,7 +264,7 @@ selectors:
     name: "bitcoin-mainnet-botanix"
   3776:
     selector: 1540201334317828111
-    name: "astar-mainnet-zkevm" 
+    name: "ethereum-mainnet-astar-zkevm-1" 
   4200:
     selector: 241851231317828981 
     name: "bitcoin-merlin-mainnet"
