@@ -5,16 +5,16 @@ selectors:
     name: "bitcoin-testnet-rootstock"
   41:
     selector: 729797994450396300
-    name: telos-evm-testnet
+    name: "telos-evm-testnet"
   45:
     selector: 4340886533089894000
-    name: darwinia-testnet-pangoro
+    name: "polkadot-testnet-darwinia-pangoro"
   53:
     selector: 8955032871639343000
-    name: coinex_smart_chain-testnet
+    name: "coinex_smart_chain-testnet"
   81: 
     selector: 6955638871347136141
-    name: "astar-testnet-shibuya" 
+    name: "polkadot-testnet-astar-shibuya" 
   97:
     selector: 13264668187771770619
     name: "binance_smart_chain-testnet"
@@ -44,13 +44,13 @@ selectors:
     name: "cronos-testnet"
   398:
     selector: 5061593697262339000
-    name: near-testnet
+    name: "near-testnet"
   420:
     selector: 2664363617261496610
     name: "ethereum-testnet-goerli-optimism-1"
   462:
     selector: 7317911323415911000
-    name: areon-testnet
+    name: "areon-testnet"
   919:
     selector: 829525985033418733
     name: "ethereum-testnet-sepolia-mode-1"
@@ -62,7 +62,7 @@ selectors:
     name: "wemix-testnet" 
   1287: 
     selector: 5361632739113536121 
-    name: "moonbeam-testnet-moonbase-alpha"
+    name: "polkadot-testnet-moonbeam-moonbase"
   1337:
     selector: 3379446385462418246
     name: "geth-testnet"
@@ -71,7 +71,7 @@ selectors:
     name: "ethereum-testnet-goerli-polygon-zkevm-1"
   1908:
     selector: 4888058894222120000
-    name: bitcichain-testnet
+    name: "bitcichain-testnet"
   2221:
     selector: 2110537777356199208
     name: "kava-testnet"
@@ -89,7 +89,7 @@ selectors:
     name: "ethereum-testnet-holesky-morph-1" 
   3636:
     selector: 1467223411771711614
-    name: "bitcoin-botanix-testnet"
+    name: "bitcoin-testnet-botanix"
   4002:
     selector: 4905564228793744293
     name: "fantom-testnet"
@@ -104,7 +104,7 @@ selectors:
     name: "ethereum-testnet-sepolia-mantle-1"
   9559:
     selector: 1113014352258747600
-    name: neonlink-testnet
+    name: "neonlink-testnet"
   13473: 
     selector: 4526165231216331901 
     name: "ethereum-testnet-sepolia-immutable-zkevm-1"
@@ -154,7 +154,7 @@ selectors:
     name: "ethereum-testnet-sepolia-arbitrum-1"
   432201:
     selector: 1458281248224512906 
-    name: "dexalot-subnet-testnet"
+    name: "avalanche-subnet-dexalot-testnet"
   534351:
     selector: 2279865765895943307
     name: "ethereum-testnet-sepolia-scroll-1"
@@ -175,7 +175,7 @@ selectors:
     name: "ethereum-testnet-sepolia-optimism-1"
   21000000:
     selector: 1467427327723633929
-    name: "corn-testnet-alpha"
+    name: "ethereum-testnet-corn-1"
   168587773:
     selector: 2027362563942762617
     name: "ethereum-testnet-sepolia-blast-1"
@@ -192,13 +192,13 @@ selectors:
     name: "cronos-mainnet"
   40:
     selector: 1477345371608778000
-    name: telos-evm-mainnet
+    name: "telos-evm-mainnet"
   46:
     selector: 8866418665544333000
-    name: darwinia-mainnet
+    name: "polkadot-mainnet-darwinia"
   52:
     selector: 1761333065194157300
-    name: coinex_smart_chain-mainnet
+    name: "coinex_smart_chain-mainnet"
   56:
     selector: 11344663589394136015
     name: "binance_smart_chain-mainnet"
@@ -225,19 +225,19 @@ selectors:
     name: "ethereum-mainnet-kroma-1"
   259:
     selector: 8239338020728974000
-    name: neonlink-mainnet
+    name: "neonlink-mainnet"
   324: 
     selector: 1562403441176082196
     name: "ethereum-mainnet-zksync-1" 
   397:
     selector: 2039744413822257700
-    name: near-mainnet
+    name: "near-mainnet"
   463:
     selector: 1939936305787790600
-    name: areon-mainnet
+    name: "areon-mainnet"
   592: 
     selector: 6422105447186081193 
-    name: "astar-mainnet"
+    name: "polkadot-mainnet-astar"
   1088:
     selector: 8805746078405598895
     name: "ethereum-mainnet-metis-1"
@@ -249,19 +249,19 @@ selectors:
     name: "wemix-mainnet"
   1284: 
     selector: 1252863800116739621 
-    name: "moonbeam-mainnet"
+    name: "polkadot-mainnet-moonbeam"
   1285:
     selector: 1355020143337428062 
-    name: "moonriver-mainnet"
+    name: "kusama-mainnet-moonriver"
   1907:
     selector: 4874388048629246000
-    name: bitcichain-mainnet
+    name: "bitcichain-mainnet"
   2222:
     selector: 7550000543357438061
     name: "kava-mainnet"
   3637:
     selector: 4560701533377838164 
-    name: "bitcoin-botanix-mainnet"
+    name: "bitcoin-mainnet-botanix"
   3776:
     selector: 1540201334317828111
     name: "astar-mainnet-zkevm" 
@@ -291,7 +291,7 @@ selectors:
     name: "avalanche-mainnet"
   432204: 
     selector: 5463201557265485081 
-    name: "dexalot-subnet-mainnet"
+    name: "avalanche-subnet-dexalot-mainnet"
   59144:
     selector: 4627098889531055414
     name: "ethereum-mainnet-linea-1"
