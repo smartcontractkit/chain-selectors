@@ -3,6 +3,9 @@ selectors:
   31:
     selector: 8953668971247136127
     name: "bitcoin-testnet-rootstock"
+  81:
+    selector: 6955638871347136141
+    name: "polkadot-testnet-astar-shibuya"
   97:
     selector: 13264668187771770619
     name: "binance_smart_chain-testnet"
