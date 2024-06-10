@@ -166,7 +166,7 @@ selectors:
     name: "avalanche-testnet-nexon"
   810181: 
     selector: 5837261596322416298
-    name: "zklink-nova-testnet" 
+    name: "zklink_nova-testnet" 
   11155111:
     selector: 16015286601757825753
     name: "ethereum-testnet-sepolia"
