@@ -51,7 +51,6 @@ var (
 	ETHEREUM_MAINNET_SCROLL_1                  = Chain{EvmChainID: 534352, Selector: 13204309965629103672, Name: "ethereum-mainnet-scroll-1"}
 	ETHEREUM_MAINNET_XLAYER_1                  = Chain{EvmChainID: 196, Selector: 3016212468291539606, Name: "ethereum-mainnet-xlayer-1"}
 	ETHEREUM_MAINNET_ZKSYNC_1                  = Chain{EvmChainID: 324, Selector: 1562403441176082196, Name: "ethereum-mainnet-zksync-1"}
-	ETHEREUM_TESTNET_CORN_1                    = Chain{EvmChainID: 21000000, Selector: 1467427327723633929, Name: "ethereum-testnet-corn-1"}
 	ETHEREUM_TESTNET_GOERLI_ARBITRUM_1         = Chain{EvmChainID: 421613, Selector: 6101244977088475029, Name: "ethereum-testnet-goerli-arbitrum-1"}
 	ETHEREUM_TESTNET_GOERLI_BASE_1             = Chain{EvmChainID: 84531, Selector: 5790810961207155433, Name: "ethereum-testnet-goerli-base-1"}
 	ETHEREUM_TESTNET_GOERLI_LINEA_1            = Chain{EvmChainID: 59140, Selector: 1355246678561316402, Name: "ethereum-testnet-goerli-linea-1"}
@@ -65,6 +64,7 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1        = Chain{EvmChainID: 421614, Selector: 3478487238524512106, Name: "ethereum-testnet-sepolia-arbitrum-1"}
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1            = Chain{EvmChainID: 84532, Selector: 10344971235874465080, Name: "ethereum-testnet-sepolia-base-1"}
 	ETHEREUM_TESTNET_SEPOLIA_BLAST_1           = Chain{EvmChainID: 168587773, Selector: 2027362563942762617, Name: "ethereum-testnet-sepolia-blast-1"}
+	ETHEREUM_TESTNET_SEPOLIA_CORN_1            = Chain{EvmChainID: 21000000, Selector: 1467427327723633929, Name: "ethereum-testnet-sepolia-corn-1"}
 	ETHEREUM_TESTNET_SEPOLIA_IMMUTABLE_ZKEVM_1 = Chain{EvmChainID: 13473, Selector: 4526165231216331901, Name: "ethereum-testnet-sepolia-immutable-zkevm-1"}
 	ETHEREUM_TESTNET_SEPOLIA_KROMA_1           = Chain{EvmChainID: 2358, Selector: 5990477251245693094, Name: "ethereum-testnet-sepolia-kroma-1"}
 	ETHEREUM_TESTNET_SEPOLIA_LINEA_1           = Chain{EvmChainID: 59141, Selector: 5719461335882077547, Name: "ethereum-testnet-sepolia-linea-1"}
@@ -212,7 +212,7 @@ var (
 	WEMIX_MAINNET                              = Chain{EvmChainID: 1111, Selector: 5142893604156789321, Name: "wemix-mainnet"}
 	WEMIX_TESTNET                              = Chain{EvmChainID: 1112, Selector: 9284632837123596123, Name: "wemix-testnet"}
 	ZKLINK_NOVA_MAINNET                        = Chain{EvmChainID: 810180, Selector: 4350319965322101699, Name: "zklink_nova-mainnet"}
-	ZKLINK_NOVA_TESTNET                        = Chain{EvmChainID: 810181, Selector: 5837261596322416298, Name: "zklink-nova-testnet"}
+	ZKLINK_NOVA_TESTNET                        = Chain{EvmChainID: 810181, Selector: 5837261596322416298, Name: "zklink_nova-testnet"}
 )
 
 var ALL = []Chain{
@@ -258,7 +258,6 @@ var ALL = []Chain{
 	ETHEREUM_MAINNET_SCROLL_1,
 	ETHEREUM_MAINNET_XLAYER_1,
 	ETHEREUM_MAINNET_ZKSYNC_1,
-	ETHEREUM_TESTNET_CORN_1,
 	ETHEREUM_TESTNET_GOERLI_ARBITRUM_1,
 	ETHEREUM_TESTNET_GOERLI_BASE_1,
 	ETHEREUM_TESTNET_GOERLI_LINEA_1,
@@ -272,6 +271,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1,
 	ETHEREUM_TESTNET_SEPOLIA_BLAST_1,
+	ETHEREUM_TESTNET_SEPOLIA_CORN_1,
 	ETHEREUM_TESTNET_SEPOLIA_IMMUTABLE_ZKEVM_1,
 	ETHEREUM_TESTNET_SEPOLIA_KROMA_1,
 	ETHEREUM_TESTNET_SEPOLIA_LINEA_1,

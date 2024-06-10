@@ -175,7 +175,7 @@ selectors:
     name: "ethereum-testnet-sepolia-optimism-1"
   21000000:
     selector: 1467427327723633929
-    name: "ethereum-testnet-corn-1"
+    name: "ethereum-testnet-sepolia-corn-1"
   168587773:
     selector: 2027362563942762617
     name: "ethereum-testnet-sepolia-blast-1"
