@@ -60,6 +60,9 @@ selectors:
   1112:
     selector: 9284632837123596123
     name: "wemix-testnet" 
+  12325:
+    selector: 3486622437121596122 
+    name: "arbitrum-orbit-l3x-testnet"
   1287: 
     selector: 5361632739113536121 
     name: "polkadot-testnet-moonbeam-moonbase"
@@ -155,6 +158,9 @@ selectors:
   432201:
     selector: 1458281248224512906 
     name: "avalanche-subnet-dexalot-testnet"
+  717160:
+    selector: 4418231248214522936 
+    name: "ethereum-testnet-polygon-validium-1"
   534351:
     selector: 2279865765895943307
     name: "ethereum-testnet-sepolia-scroll-1"
@@ -167,6 +173,9 @@ selectors:
   810181: 
     selector: 5837261596322416298
     name: "zklink_nova-testnet" 
+  31415926:
+    selector: 7060342227814389000
+    name: "filecoin-testnet"
   11155111:
     selector: 16015286601757825753
     name: "ethereum-testnet-sepolia"
@@ -226,6 +235,9 @@ selectors:
   259:
     selector: 8239338020728974000
     name: "neonlink-mainnet"
+  295:
+    selector: 3229138320728879060
+    name: "hedera-mainnet"
   324: 
     selector: 1562403441176082196
     name: "ethereum-mainnet-zksync-1" 
@@ -247,6 +259,9 @@ selectors:
   1111:
     selector: 5142893604156789321
     name: "wemix-mainnet"
+  12324:
+    selector: 3162193654116181371 
+    name: "arbitrum-orbit-l3x-mainnet"
   1284: 
     selector: 1252863800116739621 
     name: "polkadot-mainnet-moonbeam"

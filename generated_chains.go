@@ -9,6 +9,8 @@ type Chain struct {
 }
 
 var (
+	ARBITRUM_ORBIT_L3X_MAINNET                 = Chain{EvmChainID: 12324, Selector: 3162193654116181371, Name: "arbitrum-orbit-l3x-mainnet"}
+	ARBITRUM_ORBIT_L3X_TESTNET                 = Chain{EvmChainID: 12325, Selector: 3486622437121596122, Name: "arbitrum-orbit-l3x-testnet"}
 	AREON_MAINNET                              = Chain{EvmChainID: 463, Selector: 1939936305787790600, Name: "areon-mainnet"}
 	AREON_TESTNET                              = Chain{EvmChainID: 462, Selector: 7317911323415911000, Name: "areon-testnet"}
 	AVALANCHE_MAINNET                          = Chain{EvmChainID: 43114, Selector: 6433500567565415381, Name: "avalanche-mainnet"}
@@ -60,6 +62,7 @@ var (
 	ETHEREUM_TESTNET_GOERLI_ZKSYNC_1           = Chain{EvmChainID: 280, Selector: 6802309497652714138, Name: "ethereum-testnet-goerli-zksync-1"}
 	ETHEREUM_TESTNET_HOLESKY_FRAXTAL_1         = Chain{EvmChainID: 2522, Selector: 8901520481741771655, Name: "ethereum-testnet-holesky-fraxtal-1"}
 	ETHEREUM_TESTNET_HOLESKY_MORPH_1           = Chain{EvmChainID: 2810, Selector: 8304510386741731151, Name: "ethereum-testnet-holesky-morph-1"}
+	ETHEREUM_TESTNET_POLYGON_VALIDIUM_1        = Chain{EvmChainID: 717160, Selector: 4418231248214522936, Name: "ethereum-testnet-polygon-validium-1"}
 	ETHEREUM_TESTNET_SEPOLIA                   = Chain{EvmChainID: 11155111, Selector: 16015286601757825753, Name: "ethereum-testnet-sepolia"}
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1        = Chain{EvmChainID: 421614, Selector: 3478487238524512106, Name: "ethereum-testnet-sepolia-arbitrum-1"}
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1            = Chain{EvmChainID: 84532, Selector: 10344971235874465080, Name: "ethereum-testnet-sepolia-base-1"}
@@ -80,12 +83,14 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1          = Chain{EvmChainID: 300, Selector: 6898391096552792247, Name: "ethereum-testnet-sepolia-zksync-1"}
 	FANTOM_TESTNET                             = Chain{EvmChainID: 4002, Selector: 4905564228793744293, Name: "fantom-testnet"}
 	FANTOM_TESTNET_OPERA                       = Chain{EvmChainID: 250, Selector: 3768048213127883732, Name: "fantom-testnet-opera"}
+	FILECOIN_TESTNET                           = Chain{EvmChainID: 31415926, Selector: 7060342227814389000, Name: "filecoin-testnet"}
 	FRAXTAL_MAINNET                            = Chain{EvmChainID: 252, Selector: 1462016016387883143, Name: "fraxtal-mainnet"}
 	GETH_DEVNET_2                              = Chain{EvmChainID: 2337, Selector: 12922642891491394802, Name: "geth-devnet-2"}
 	GETH_DEVNET_3                              = Chain{EvmChainID: 3337, Selector: 4793464827907405086, Name: "geth-devnet-3"}
 	GETH_TESTNET                               = Chain{EvmChainID: 1337, Selector: 3379446385462418246, Name: "geth-testnet"}
 	GNOSIS_CHAIN_MAINNET                       = Chain{EvmChainID: 100, Selector: 465200170687744372, Name: "gnosis_chain-mainnet"}
 	GNOSIS_CHAIN_TESTNET_CHIADO                = Chain{EvmChainID: 10200, Selector: 8871595565390010547, Name: "gnosis_chain-testnet-chiado"}
+	HEDERA_MAINNET                             = Chain{EvmChainID: 295, Selector: 3229138320728879060, Name: "hedera-mainnet"}
 	HEDERA_TESTNET                             = Chain{EvmChainID: 296, Selector: 222782988166878823, Name: "hedera-testnet"}
 	KAVA_MAINNET                               = Chain{EvmChainID: 2222, Selector: 7550000543357438061, Name: "kava-mainnet"}
 	KAVA_TESTNET                               = Chain{EvmChainID: 2221, Selector: 2110537777356199208, Name: "kava-testnet"}
@@ -216,6 +221,8 @@ var (
 )
 
 var ALL = []Chain{
+	ARBITRUM_ORBIT_L3X_MAINNET,
+	ARBITRUM_ORBIT_L3X_TESTNET,
 	AREON_MAINNET,
 	AREON_TESTNET,
 	AVALANCHE_MAINNET,
@@ -267,6 +274,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_GOERLI_ZKSYNC_1,
 	ETHEREUM_TESTNET_HOLESKY_FRAXTAL_1,
 	ETHEREUM_TESTNET_HOLESKY_MORPH_1,
+	ETHEREUM_TESTNET_POLYGON_VALIDIUM_1,
 	ETHEREUM_TESTNET_SEPOLIA,
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1,
@@ -287,12 +295,14 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1,
 	FANTOM_TESTNET,
 	FANTOM_TESTNET_OPERA,
+	FILECOIN_TESTNET,
 	FRAXTAL_MAINNET,
 	GETH_DEVNET_2,
 	GETH_DEVNET_3,
 	GETH_TESTNET,
 	GNOSIS_CHAIN_MAINNET,
 	GNOSIS_CHAIN_TESTNET_CHIADO,
+	HEDERA_MAINNET,
 	HEDERA_TESTNET,
 	KAVA_MAINNET,
 	KAVA_TESTNET,
