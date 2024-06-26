@@ -105,6 +105,9 @@ selectors:
   9559:
     selector: 1113014352258747600
     name: "neonlink-testnet"
+  12325:
+    selector: 1233014352258747600
+    name: "l3x-testnet-sepolia-arbitrum-1"
   13473: 
     selector: 4526165231216331901 
     name: "ethereum-testnet-sepolia-immutable-zkevm-1"
@@ -274,6 +277,9 @@ selectors:
   8453:
     selector: 15971525489660198786
     name: "ethereum-mainnet-base-1"
+  12324:
+    selector: 1456165231216331901
+    name: "l3x-mainnet-arbitrum-1"
   13371: 
     selector: 1237925231416731909 
     name: "ethereum-mainnet-immutable-zkevm-1"
