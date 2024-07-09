@@ -9,8 +9,6 @@ type Chain struct {
 }
 
 var (
-	ARBITRUM_ORBIT_L3X_MAINNET                  = Chain{EvmChainID: 12324, Selector: 3162193654116181371, Name: "arbitrum-orbit-l3x-mainnet"}
-	ARBITRUM_ORBIT_L3X_TESTNET                  = Chain{EvmChainID: 12325, Selector: 3486622437121596122, Name: "arbitrum-orbit-l3x-testnet"}
 	AREON_MAINNET                               = Chain{EvmChainID: 463, Selector: 1939936305787790600, Name: "areon-mainnet"}
 	AREON_TESTNET                               = Chain{EvmChainID: 462, Selector: 7317911323415911000, Name: "areon-testnet"}
 	AVALANCHE_MAINNET                           = Chain{EvmChainID: 43114, Selector: 6433500567565415381, Name: "avalanche-mainnet"}
@@ -39,6 +37,7 @@ var (
 	CRONOS_TESTNET_ZKEVM_1                      = Chain{EvmChainID: 282, Selector: 3842103497652714138, Name: "cronos-testnet-zkevm-1"}
 	ETHEREUM_MAINNET                            = Chain{EvmChainID: 1, Selector: 5009297550715157269, Name: "ethereum-mainnet"}
 	ETHEREUM_MAINNET_ARBITRUM_1                 = Chain{EvmChainID: 42161, Selector: 4949039107694359620, Name: "ethereum-mainnet-arbitrum-1"}
+	ETHEREUM_MAINNET_ARBITRUM_L3X_1             = Chain{EvmChainID: 12324, Selector: 3162193654116181371, Name: "ethereum-mainnet-arbitrum-l3x-1"}
 	ETHEREUM_MAINNET_ASTAR_ZKEVM_1              = Chain{EvmChainID: 3776, Selector: 1540201334317828111, Name: "ethereum-mainnet-astar-zkevm-1"}
 	ETHEREUM_MAINNET_BASE_1                     = Chain{EvmChainID: 8453, Selector: 15971525489660198786, Name: "ethereum-mainnet-base-1"}
 	ETHEREUM_MAINNET_BLAST_1                    = Chain{EvmChainID: 81457, Selector: 4411394078118774322, Name: "ethereum-mainnet-blast-1"}
@@ -64,6 +63,7 @@ var (
 	ETHEREUM_TESTNET_HOLESKY_MORPH_1            = Chain{EvmChainID: 2810, Selector: 8304510386741731151, Name: "ethereum-testnet-holesky-morph-1"}
 	ETHEREUM_TESTNET_SEPOLIA                    = Chain{EvmChainID: 11155111, Selector: 16015286601757825753, Name: "ethereum-testnet-sepolia"}
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1         = Chain{EvmChainID: 421614, Selector: 3478487238524512106, Name: "ethereum-testnet-sepolia-arbitrum-1"}
+	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_L3X_1     = Chain{EvmChainID: 12325, Selector: 3486622437121596122, Name: "ethereum-testnet-sepolia-arbitrum-l3x-1"}
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1             = Chain{EvmChainID: 84532, Selector: 10344971235874465080, Name: "ethereum-testnet-sepolia-base-1"}
 	ETHEREUM_TESTNET_SEPOLIA_BLAST_1            = Chain{EvmChainID: 168587773, Selector: 2027362563942762617, Name: "ethereum-testnet-sepolia-blast-1"}
 	ETHEREUM_TESTNET_SEPOLIA_CORN_1             = Chain{EvmChainID: 21000000, Selector: 1467427327723633929, Name: "ethereum-testnet-sepolia-corn-1"}
@@ -222,8 +222,6 @@ var (
 )
 
 var ALL = []Chain{
-	ARBITRUM_ORBIT_L3X_MAINNET,
-	ARBITRUM_ORBIT_L3X_TESTNET,
 	AREON_MAINNET,
 	AREON_TESTNET,
 	AVALANCHE_MAINNET,
@@ -252,6 +250,7 @@ var ALL = []Chain{
 	CRONOS_TESTNET_ZKEVM_1,
 	ETHEREUM_MAINNET,
 	ETHEREUM_MAINNET_ARBITRUM_1,
+	ETHEREUM_MAINNET_ARBITRUM_L3X_1,
 	ETHEREUM_MAINNET_ASTAR_ZKEVM_1,
 	ETHEREUM_MAINNET_BASE_1,
 	ETHEREUM_MAINNET_BLAST_1,
@@ -277,6 +276,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_HOLESKY_MORPH_1,
 	ETHEREUM_TESTNET_SEPOLIA,
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1,
+	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_L3X_1,
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1,
 	ETHEREUM_TESTNET_SEPOLIA_BLAST_1,
 	ETHEREUM_TESTNET_SEPOLIA_CORN_1,
