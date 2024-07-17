@@ -62,7 +62,7 @@ selectors:
     name: "wemix-testnet" 
   12325:
     selector: 3486622437121596122 
-    name: "ethereum-testnet-sepolia-arbitrum-l3x-1"
+    name: "ethereum-testnet-sepolia-arbitrum-1-l3x-1"
   1287: 
     selector: 5361632739113536121 
     name: "polkadot-testnet-moonbeam-moonbase"
@@ -264,7 +264,7 @@ selectors:
     name: "wemix-mainnet"
   12324:
     selector: 3162193654116181371 
-    name: "ethereum-mainnet-arbitrum-l3x-1"
+    name: "ethereum-mainnet-arbitrum-1-l3x-1"
   1284: 
     selector: 1252863800116739621 
     name: "polkadot-mainnet-moonbeam"
