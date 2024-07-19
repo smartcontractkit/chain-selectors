@@ -89,7 +89,6 @@ var (
 	GETH_DEVNET_2                               = Chain{EvmChainID: 2337, Selector: 12922642891491394802, Name: "geth-devnet-2"}
 	GETH_DEVNET_3                               = Chain{EvmChainID: 3337, Selector: 4793464827907405086, Name: "geth-devnet-3"}
 	GETH_TESTNET                                = Chain{EvmChainID: 1337, Selector: 3379446385462418246, Name: "geth-testnet"}
-	GETH_TESTNET_3                              = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "geth-testnet-3"}
 	GNOSIS_CHAIN_MAINNET                        = Chain{EvmChainID: 100, Selector: 465200170687744372, Name: "gnosis_chain-mainnet"}
 	GNOSIS_CHAIN_TESTNET_CHIADO                 = Chain{EvmChainID: 10200, Selector: 8871595565390010547, Name: "gnosis_chain-testnet-chiado"}
 	HEDERA_MAINNET                              = Chain{EvmChainID: 295, Selector: 3229138320728879060, Name: "hedera-mainnet"}
@@ -112,6 +111,7 @@ var (
 	POLYGON_MAINNET                             = Chain{EvmChainID: 137, Selector: 4051577828743386545, Name: "polygon-mainnet"}
 	POLYGON_TESTNET_AMOY                        = Chain{EvmChainID: 80002, Selector: 16281711391670634445, Name: "polygon-testnet-amoy"}
 	POLYGON_TESTNET_MUMBAI                      = Chain{EvmChainID: 80001, Selector: 12532609583862916517, Name: "polygon-testnet-mumbai"}
+	PRIVATE_TESTNET_OPALA                       = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala"}
 	TELOS_EVM_MAINNET                           = Chain{EvmChainID: 40, Selector: 1477345371608778000, Name: "telos-evm-mainnet"}
 	TELOS_EVM_TESTNET                           = Chain{EvmChainID: 41, Selector: 729797994450396300, Name: "telos-evm-testnet"}
 	TEST_1000                                   = Chain{EvmChainID: 1000, Selector: 11787463284727550157, Name: "1000"}
@@ -305,7 +305,6 @@ var ALL = []Chain{
 	GETH_DEVNET_2,
 	GETH_DEVNET_3,
 	GETH_TESTNET,
-	GETH_TESTNET_3,
 	GNOSIS_CHAIN_MAINNET,
 	GNOSIS_CHAIN_TESTNET_CHIADO,
 	HEDERA_MAINNET,
@@ -328,6 +327,7 @@ var ALL = []Chain{
 	POLYGON_MAINNET,
 	POLYGON_TESTNET_AMOY,
 	POLYGON_TESTNET_MUMBAI,
+	PRIVATE_TESTNET_OPALA,
 	TELOS_EVM_MAINNET,
 	TELOS_EVM_TESTNET,
 	TEST_1000,

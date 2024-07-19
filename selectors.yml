@@ -74,7 +74,7 @@ selectors:
     name: "geth-testnet"
   45439:
     selector: 8446413392851542429
-    name: "geth-testnet-3"
+    name: "private-testnet-opala"
   1442:
     selector: 11059667695644972511
     name: "ethereum-testnet-goerli-polygon-zkevm-1"
