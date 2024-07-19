@@ -89,6 +89,7 @@ var (
 	GETH_DEVNET_2                               = Chain{EvmChainID: 2337, Selector: 12922642891491394802, Name: "geth-devnet-2"}
 	GETH_DEVNET_3                               = Chain{EvmChainID: 3337, Selector: 4793464827907405086, Name: "geth-devnet-3"}
 	GETH_TESTNET                                = Chain{EvmChainID: 1337, Selector: 3379446385462418246, Name: "geth-testnet"}
+	GETH_TESTNET_3                              = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "geth-testnet-3"}
 	GNOSIS_CHAIN_MAINNET                        = Chain{EvmChainID: 100, Selector: 465200170687744372, Name: "gnosis_chain-mainnet"}
 	GNOSIS_CHAIN_TESTNET_CHIADO                 = Chain{EvmChainID: 10200, Selector: 8871595565390010547, Name: "gnosis_chain-testnet-chiado"}
 	HEDERA_MAINNET                              = Chain{EvmChainID: 295, Selector: 3229138320728879060, Name: "hedera-mainnet"}
@@ -101,9 +102,11 @@ var (
 	NEONLINK_MAINNET                            = Chain{EvmChainID: 259, Selector: 8239338020728974000, Name: "neonlink-mainnet"}
 	NEONLINK_TESTNET                            = Chain{EvmChainID: 9559, Selector: 1113014352258747600, Name: "neonlink-testnet"}
 	POLKADOT_MAINNET_ASTAR                      = Chain{EvmChainID: 592, Selector: 6422105447186081193, Name: "polkadot-mainnet-astar"}
+	POLKADOT_MAINNET_CENTRIFUGE                 = Chain{EvmChainID: 2031, Selector: 8175830712062617656, Name: "polkadot-mainnet-centrifuge"}
 	POLKADOT_MAINNET_DARWINIA                   = Chain{EvmChainID: 46, Selector: 8866418665544333000, Name: "polkadot-mainnet-darwinia"}
 	POLKADOT_MAINNET_MOONBEAM                   = Chain{EvmChainID: 1284, Selector: 1252863800116739621, Name: "polkadot-mainnet-moonbeam"}
 	POLKADOT_TESTNET_ASTAR_SHIBUYA              = Chain{EvmChainID: 81, Selector: 6955638871347136141, Name: "polkadot-testnet-astar-shibuya"}
+	POLKADOT_TESTNET_CENTRIFUGE_ALTAIR          = Chain{EvmChainID: 2088, Selector: 2333097300889804761, Name: "polkadot-testnet-centrifuge-altair"}
 	POLKADOT_TESTNET_DARWINIA_PANGORO           = Chain{EvmChainID: 45, Selector: 4340886533089894000, Name: "polkadot-testnet-darwinia-pangoro"}
 	POLKADOT_TESTNET_MOONBEAM_MOONBASE          = Chain{EvmChainID: 1287, Selector: 5361632739113536121, Name: "polkadot-testnet-moonbeam-moonbase"}
 	POLYGON_MAINNET                             = Chain{EvmChainID: 137, Selector: 4051577828743386545, Name: "polygon-mainnet"}
@@ -302,6 +305,7 @@ var ALL = []Chain{
 	GETH_DEVNET_2,
 	GETH_DEVNET_3,
 	GETH_TESTNET,
+	GETH_TESTNET_3,
 	GNOSIS_CHAIN_MAINNET,
 	GNOSIS_CHAIN_TESTNET_CHIADO,
 	HEDERA_MAINNET,
@@ -314,9 +318,11 @@ var ALL = []Chain{
 	NEONLINK_MAINNET,
 	NEONLINK_TESTNET,
 	POLKADOT_MAINNET_ASTAR,
+	POLKADOT_MAINNET_CENTRIFUGE,
 	POLKADOT_MAINNET_DARWINIA,
 	POLKADOT_MAINNET_MOONBEAM,
 	POLKADOT_TESTNET_ASTAR_SHIBUYA,
+	POLKADOT_TESTNET_CENTRIFUGE_ALTAIR,
 	POLKADOT_TESTNET_DARWINIA_PANGORO,
 	POLKADOT_TESTNET_MOONBEAM_MOONBASE,
 	POLYGON_MAINNET,
