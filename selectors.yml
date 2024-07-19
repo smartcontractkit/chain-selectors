@@ -66,9 +66,15 @@ selectors:
   1287: 
     selector: 5361632739113536121 
     name: "polkadot-testnet-moonbeam-moonbase"
+  2088:
+    selector: 2333097300889804761
+    name: polkadot-testnet-centrifuge-altair
   1337:
     selector: 3379446385462418246
     name: "geth-testnet"
+  45439:
+    selector: 8446413392851542429
+    name: "geth-testnet-3"
   1442:
     selector: 11059667695644972511
     name: "ethereum-testnet-goerli-polygon-zkevm-1"
@@ -322,3 +328,6 @@ selectors:
   810180: 
     selector: 4350319965322101699
     name: "zklink_nova-mainnet" 
+  2031:
+    selector: 8175830712062617656
+    name: "polkadot-mainnet-centrifuge"
