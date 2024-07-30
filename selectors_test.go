@@ -47,6 +47,16 @@ func TestEvmChainIdToChainSelectorReturningCopiedMap(t *testing.T) {
 	assert.Error(t, err)
 }
 
+func TestAllChainSelectorsHaveFamilies(t *testing.T) {
+	for _, ch := range ALL {
+		family, err := GetSelectorFamily(ch.Selector)
+		require.NoError(t, err,
+			"Family not found for selector %d (chain id %d, name %s), please update selector_families.yml with the appropriate chain family for this chain",
+			ch.Selector, ch.EvmChainID, ch.Name)
+		require.NotEmpty(t, family)
+	}
+}
+
 func Test_ChainSelectors(t *testing.T) {
 	tests := []struct {
 		name          string
