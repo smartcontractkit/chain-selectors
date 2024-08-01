@@ -16,15 +16,27 @@ var selectorsYml []byte
 //go:embed test_selectors.yml
 var testSelectorsYml []byte
 
+//go:embed selector_families.yml
+var selectorFamiliesYml []byte
+
 type chainDetails struct {
 	ChainSelector uint64 `yaml:"selector"`
 	ChainName     string `yaml:"name"`
 }
 
+const (
+	FamilyEVM      = "evm"
+	FamilySolana   = "solana"
+	FamilyStarknet = "starknet"
+	FamilyCosmos   = "cosmos"
+	FamilyAptos    = "aptos"
+)
+
 var selectorsMap = parseYml(selectorsYml)
 var testSelectorsMap = parseYml(testSelectorsYml)
 
 var evmChainIdToChainSelector = loadAllSelectors()
+var selectorToChainFamily = loadSelectorToFamilyMap()
 
 func loadAllSelectors() map[uint64]chainDetails {
 	output := make(map[uint64]chainDetails, len(selectorsMap)+len(testSelectorsMap))
@@ -35,6 +47,30 @@ func loadAllSelectors() map[uint64]chainDetails {
 		output[k] = v
 	}
 	return output
+}
+
+func loadSelectorToFamilyMap() map[uint64]string {
+	type familyDetails struct {
+		Family string `yaml:"family"`
+		Name   string `yaml:"name"`
+	}
+
+	type yamlData struct {
+		SelectorFamilies map[uint64]familyDetails `yaml:"selector_families"`
+	}
+
+	var data yamlData
+	err := yaml.Unmarshal(selectorFamiliesYml, &data)
+	if err != nil {
+		panic(err)
+	}
+
+	var selectorFamilies = make(map[uint64]string, len(data.SelectorFamilies))
+	for k, v := range data.SelectorFamilies {
+		selectorFamilies[k] = v.Family
+	}
+
+	return selectorFamilies
 }
 
 func parseYml(ymlFile []byte) map[uint64]chainDetails {
@@ -49,6 +85,15 @@ func parseYml(ymlFile []byte) map[uint64]chainDetails {
 	}
 
 	return data.Selectors
+}
+
+func GetSelectorFamily(selector uint64) (string, error) {
+	family, exist := selectorToChainFamily[selector]
+	if !exist {
+		return "", fmt.Errorf("family not found for selector %d", selector)
+	}
+
+	return family, nil
 }
 
 func EvmChainIdToChainSelector() map[uint64]uint64 {

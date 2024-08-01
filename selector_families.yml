@@ -1,0 +1,538 @@
+selector_families:
+  176199025415897437:
+    family: evm
+  222782988166878823:
+    family: evm
+    name: hedera-testnet
+  241851231317828981:
+    family: evm
+    name: bitcoin-merlin-mainnet
+  328334718812072308:
+    family: evm
+  374210358663784372:
+    family: evm
+    name: velas-mainnet
+  465200170687744372:
+    family: evm
+    name: gnosis_chain-mainnet
+  572210378683744374:
+    family: evm
+    name: velas-testnet
+  665284410079532457:
+    family: evm
+  729797994450396300:
+    family: evm
+    name: telos-evm-testnet
+  781901677223027175:
+    family: evm
+  789068866484373046:
+    family: evm
+  829525985033418733:
+    family: evm
+    name: ethereum-testnet-sepolia-mode-1
+  909606746561742123:
+    family: evm
+  928756709184343973:
+    family: evm
+  964127714438319834:
+    family: evm
+  973671184102733124:
+    family: evm
+  1113014352258747600:
+    family: evm
+    name: neonlink-testnet
+  1237925231416731909:
+    family: evm
+    name: ethereum-mainnet-immutable-zkevm-1
+  1252863800116739621:
+    family: evm
+    name: polkadot-mainnet-moonbeam
+  1273605685587320666:
+    family: evm
+  1346049177634351622:
+    family: evm
+    name: celo-mainnet
+  1355020143337428062:
+    family: evm
+    name: kusama-mainnet-moonriver
+  1355246678561316402:
+    family: evm
+    name: ethereum-testnet-goerli-linea-1
+  1456215246176062136:
+    family: evm
+    name: cronos-mainnet
+  1458281248224512906:
+    family: evm
+    name: avalanche-subnet-dexalot-testnet
+  1462016016387883143:
+    family: evm
+    name: fraxtal-mainnet
+  1467223411771711614:
+    family: evm
+    name: bitcoin-testnet-botanix
+  1467427327723633929:
+    family: evm
+    name: ethereum-testnet-sepolia-corn-1
+  1477345371608778000:
+    family: evm
+    name: telos-evm-mainnet
+  1488785539820432596:
+    family: evm
+  1540201334317828111:
+    family: evm
+    name: ethereum-mainnet-astar-zkevm-1
+  1556008542357238666:
+    family: evm
+    name: ethereum-mainnet-mantle-1
+  1562403441176082196:
+    family: evm
+    name: ethereum-mainnet-zksync-1
+  1654667687261492630:
+    family: evm
+    name: ethereum-testnet-sepolia-polygon-zkevm-1
+  1761333065194157300:
+    family: evm
+    name: coinex_smart_chain-mainnet
+  1939936305787790600:
+    family: evm
+    name: areon-mainnet
+  1974710175227680991:
+    family: evm
+  2027362563942762617:
+    family: evm
+    name: ethereum-testnet-sepolia-blast-1
+  2039744413822257700:
+    family: evm
+    name: near-mainnet
+  2066098519157881736:
+    family: evm
+    name: ethereum-testnet-sepolia-xlayer-1
+  2110537777356199208:
+    family: evm
+    name: kava-testnet
+  2279865765895943307:
+    family: evm
+    name: ethereum-testnet-sepolia-scroll-1
+  2333097300889804761:
+    family: evm
+    name: polkadot-testnet-centrifuge-altair
+  2509173735760116798:
+    family: evm
+  2664363617261496610:
+    family: evm
+    name: ethereum-testnet-goerli-optimism-1
+  2783890746839497525:
+    family: evm
+  2953028829530698683:
+    family: evm
+  2995292832068775165:
+    family: evm
+    name: cronos-testnet
+  3016212468291539606:
+    family: evm
+    name: ethereum-mainnet-xlayer-1
+  3162193654116181371:
+    family: evm
+    name: ethereum-mainnet-arbitrum-1-l3x-1
+  3229138320728879060:
+    family: evm
+    name: hedera-mainnet
+  3330151784927722907:
+    family: evm
+  3379446385462418246:
+    family: evm
+    name: geth-testnet
+  3478487238524512106:
+    family: evm
+    name: ethereum-testnet-sepolia-arbitrum-1
+  3486622437121596122:
+    family: evm
+    name: ethereum-testnet-sepolia-arbitrum-1-l3x-1
+  3552045678561919002:
+    family: evm
+    name: celo-testnet-alfajores
+  3574539439524578558:
+    family: evm
+  3632230855428784129:
+    family: evm
+  3719320017875267166:
+    family: evm
+    name: ethereum-mainnet-kroma-1
+  3734403246176062136:
+    family: evm
+    name: ethereum-mainnet-optimism-1
+  3740583887329090549:
+    family: evm
+  3768048213127883732:
+    family: evm
+    name: fantom-testnet-opera
+  3776006016387883143:
+    family: evm
+    name: bittorrent_chain-mainnet
+  3777822886988675105:
+    family: evm
+    name: ethereum-testnet-sepolia-metis-1
+  3842103497652714138:
+    family: evm
+    name: cronos-testnet-zkevm-1
+  4051577828743386545:
+    family: evm
+    name: polygon-mainnet
+  4066443121807923198:
+    family: evm
+  4168263376276232250:
+    family: evm
+    name: ethereum-testnet-goerli-mantle-1
+  4174149892778961910:
+    family: evm
+  4340886533089894000:
+    family: evm
+    name: polkadot-testnet-darwinia-pangoro
+  4348158687435793198:
+    family: evm
+    name: ethereum-mainnet-polygon-zkevm-1
+  4350319965322101699:
+    family: evm
+    name: zklink_nova-mainnet
+  4411394078118774322:
+    family: evm
+    name: ethereum-mainnet-blast-1
+  4418231248214522936:
+    family: evm
+    name: ethereum-testnet-sepolia-polygon-validium-1
+  4459371029167934217:
+    family: evm
+    name: bittorrent_chain-testnet
+  4526165231216331901:
+    family: evm
+    name: ethereum-testnet-sepolia-immutable-zkevm-1
+  4543928599863227519:
+    family: evm
+  4560701533377838164:
+    family: evm
+    name: bitcoin-mainnet-botanix
+  4561443241176882990:
+    family: evm
+    name: filecoin-mainnet
+  4562743618362911021:
+    family: evm
+    name: ethereum-testnet-sepolia-zircuit
+  4627098889531055414:
+    family: evm
+    name: ethereum-mainnet-linea-1
+  4716670523656754658:
+    family: evm
+  4793464827907405086:
+    family: evm
+    name: geth-devnet-3
+  4874388048629246000:
+    family: evm
+    name: bitcichain-mainnet
+  4888058894222120000:
+    family: evm
+    name: bitcichain-testnet
+  4905564228793744293:
+    family: evm
+    name: fantom-testnet
+  4949039107694359620:
+    family: evm
+    name: ethereum-mainnet-arbitrum-1
+  5009297550715157269:
+    family: evm
+    name: ethereum-mainnet
+  5061593697262339000:
+    family: evm
+    name: near-testnet
+  5142893604156789321:
+    family: evm
+    name: wemix-mainnet
+  5224473277236331295:
+    family: evm
+    name: ethereum-testnet-sepolia-optimism-1
+  5269261765892944301:
+    family: evm
+    name: bitcoin-testnet-merlin
+  5298399861320400553:
+    family: evm
+    name: ethereum-testnet-sepolia-lisk-1
+  5361632739113536121:
+    family: evm
+    name: polkadot-testnet-moonbeam-moonbase
+  5463201557265485081:
+    family: evm
+    name: avalanche-subnet-dexalot-mainnet
+  5548718428018410741:
+    family: evm
+  5614341928911841614:
+    family: evm
+  5719461335882077547:
+    family: evm
+    name: ethereum-testnet-sepolia-linea-1
+  5721565186521185178:
+    family: evm
+  5790810961207155433:
+    family: evm
+    name: ethereum-testnet-goerli-base-1
+  5837261596322416298:
+    family: evm
+    name: zklink_nova-testnet
+  5990477251245693094:
+    family: evm
+    name: ethereum-testnet-sepolia-kroma-1
+  6059917085984771915:
+    family: evm
+  6101244977088475029:
+    family: evm
+    name: ethereum-testnet-goerli-arbitrum-1
+  6422105447186081193:
+    family: evm
+    name: polkadot-mainnet-astar
+  6433500567565415381:
+    family: evm
+    name: avalanche-mainnet
+  6443235356619661032:
+    family: evm
+  6448403805635971860:
+    family: evm
+  6676710761873615962:
+    family: evm
+  6690738652320128159:
+    family: evm
+  6742472197519042017:
+    family: evm
+  6747736380229414777:
+    family: evm
+  6751512843227450641:
+    family: evm
+  6802309497652714138:
+    family: evm
+    name: ethereum-testnet-goerli-zksync-1
+  6875898693582952601:
+    family: evm
+  6898391096552792247:
+    family: evm
+    name: ethereum-testnet-sepolia-zksync-1
+  6955638871347136141:
+    family: evm
+    name: polkadot-testnet-astar-shibuya
+  7005880874640146484:
+    family: evm
+  7032045258883126022:
+    family: evm
+  7060342227814389000:
+    family: evm
+    name: filecoin-testnet
+  7264351850409363825:
+    family: evm
+    name: ethereum-mainnet-mode-1
+  7317911323415911000:
+    family: evm
+    name: areon-testnet
+  7353384334508842175:
+    family: evm
+  7404045285477377670:
+    family: evm
+  7431973150957944526:
+    family: evm
+  7550000543357438061:
+    family: evm
+    name: kava-mainnet
+  7585715102059681757:
+    family: evm
+  7715160997071429212:
+    family: evm
+  7777066535355430289:
+    family: evm
+  7823363553221722351:
+    family: evm
+  7837562506228496256:
+    family: evm
+    name: avalanche-testnet-nexon
+  7961714422080771198:
+    family: evm
+  8015762103567576333:
+    family: evm
+  8175830712062617656:
+    family: evm
+    name: polkadot-mainnet-centrifuge
+  8211981504472319767:
+    family: evm
+  8236463271206331221:
+    family: evm
+    name: ethereum-testnet-sepolia-mantle-1
+  8239338020728974000:
+    family: evm
+    name: neonlink-mainnet
+  8304510386741731151:
+    family: evm
+    name: ethereum-testnet-holesky-morph-1
+  8354317460459584308:
+    family: evm
+  8412806778050735057:
+    family: evm
+  8446413392851542429:
+    family: evm
+    name: private-testnet-opala
+  8694984074292254623:
+    family: evm
+  8698844633699288298:
+    family: evm
+  8794884152664322911:
+    family: evm
+  8805746078405598895:
+    family: evm
+    name: ethereum-mainnet-metis-1
+  8866418665544333000:
+    family: evm
+    name: polkadot-mainnet-darwinia
+  8871595565390010547:
+    family: evm
+    name: gnosis_chain-testnet-chiado
+  8901520481741771655:
+    family: evm
+    name: ethereum-testnet-holesky-fraxtal-1
+  8953668971247136127:
+    family: evm
+    name: bitcoin-testnet-rootstock
+  8955032871639343000:
+    family: evm
+    name: coinex_smart_chain-testnet
+  8966794841936584464:
+    family: evm
+  9156614022853705708:
+    family: evm
+  9248511054298050610:
+    family: evm
+  9264503539336248559:
+    family: evm
+  9284632837123596123:
+    family: evm
+    name: wemix-testnet
+  9574369650680012313:
+    family: evm
+  9675086780529785020:
+    family: evm
+  9932483170498916221:
+    family: evm
+  10089241509396411113:
+    family: evm
+  10106333385848939617:
+    family: evm
+  10199579733509604193:
+    family: evm
+  10344971235874465080:
+    family: evm
+    name: ethereum-testnet-sepolia-base-1
+  10497629267361915835:
+    family: evm
+  10537986502862404866:
+    family: evm
+  10547673735879567911:
+    family: evm
+  11059667695644972511:
+    family: evm
+    name: ethereum-testnet-goerli-polygon-zkevm-1
+  11335955773964346155:
+    family: evm
+  11344663589394136015:
+    family: evm
+    name: binance_smart_chain-mainnet
+  11754399446572002459:
+    family: evm
+  11787463284727550157:
+    family: evm
+  11985232338641871056:
+    family: evm
+  12027427861168955422:
+    family: evm
+  12226902941055802385:
+    family: evm
+  12336603543561911511:
+    family: evm
+    name: berachain-testnet-artio
+  12470167056735102403:
+    family: evm
+  12499149790922928210:
+    family: evm
+  12513826466599144030:
+    family: evm
+  12532609583862916517:
+    family: evm
+    name: polygon-testnet-mumbai
+  12922642891491394802:
+    family: evm
+    name: geth-devnet-2
+  12965905455277595820:
+    family: evm
+  13087962012083037329:
+    family: evm
+  13204309965629103672:
+    family: evm
+    name: ethereum-mainnet-scroll-1
+  13264668187771770619:
+    family: evm
+    name: binance_smart_chain-testnet
+  13443138560923813712:
+    family: evm
+  13648736134397881410:
+    family: evm
+  13781595843667691007:
+    family: evm
+  13819071330241498802:
+    family: evm
+  13936493323944617843:
+    family: evm
+  13973515790491921010:
+    family: evm
+  14506622911400094011:
+    family: evm
+  14767482510784806043:
+    family: evm
+    name: avalanche-testnet-fuji
+  14943531413383612703:
+    family: evm
+  15168140751097121912:
+    family: evm
+  15210860601736105873:
+    family: evm
+  15447447865219782832:
+    family: evm
+  15733873364998401606:
+    family: evm
+  15767478222558315144:
+    family: evm
+  15804983202763665802:
+    family: evm
+  15896959195233368219:
+    family: evm
+  15945074456050759193:
+    family: evm
+  15971525489660198786:
+    family: evm
+    name: ethereum-mainnet-base-1
+  15998314635132476942:
+    family: evm
+  16015286601757825753:
+    family: evm
+    name: ethereum-testnet-sepolia
+  16281711391670634445:
+    family: evm
+    name: polygon-testnet-amoy
+  16449698933146693970:
+    family: evm
+  16591966440843528322:
+    family: evm
+  16702426279731183946:
+    family: evm
+  17251043223284625647:
+    family: evm
+  17514102371649734225:
+    family: evm
+  17580537314894454709:
+    family: evm
+  17759418850483131633:
+    family: evm
+  17810359353458878177:
+    family: evm
+  18316006852148771137:
+    family: evm
