@@ -195,6 +195,9 @@ selectors:
   168587773:
     selector: 2027362563942762617
     name: "ethereum-testnet-sepolia-blast-1"
+  978657:
+    selector: 10443705513486043421
+    name: "ethereum-testnet-sepolia-arbitrum-1-treasure-1"
 
   # Mainnets
   1:
