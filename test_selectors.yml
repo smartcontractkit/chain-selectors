@@ -8,6 +8,8 @@ selectors:
   3337:
     selector: 4793464827907405086
     name: geth-devnet-3
+  424242:
+    selector: 4489326297382772450
   90000001:
     selector: 909606746561742123
   90000002:
