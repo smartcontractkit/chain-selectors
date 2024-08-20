@@ -335,3 +335,6 @@ selectors:
   2031:
     selector: 8175830712062617656
     name: "polkadot-mainnet-centrifuge"
+  424242:
+    selector: 4489326297382772450
+    name: "private-testnet-mitre"
