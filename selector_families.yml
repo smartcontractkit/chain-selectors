@@ -539,3 +539,6 @@ selector_families:
   10443705513486043421:
     family: evm
     name: ethereum-testnet-sepolia-arbitrum-1-treasure-1
+  1010349088906777999:
+    family: evm
+    name: ethereum-mainnet-arbitrum-1-treasure-1
