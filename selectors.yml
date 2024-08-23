@@ -337,4 +337,4 @@ selectors:
     name: "polkadot-mainnet-centrifuge"
   424242:
     selector: 4489326297382772450
-    name: "private-testnet-mitre"
+    name: "private-testnet-mica"
