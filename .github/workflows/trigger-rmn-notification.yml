@@ -34,7 +34,7 @@ jobs:
         with:
           repo: smartcontractkit/chainlink-integrations-pipeline
           workflow: track-rmn-releases.yml
-          ref: rmn-notification
+          ref: main
           actor: "app-token-issuer-devex[bot]"
           github-token: ${{ steps.setup-github-token.outputs.access-token }}
           # distinct_run_name is used by the dispatch-workflow action to find the right job
