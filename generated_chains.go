@@ -113,6 +113,7 @@ var (
 	POLYGON_MAINNET                                = Chain{EvmChainID: 137, Selector: 4051577828743386545, Name: "polygon-mainnet"}
 	POLYGON_TESTNET_AMOY                           = Chain{EvmChainID: 80002, Selector: 16281711391670634445, Name: "polygon-testnet-amoy"}
 	POLYGON_TESTNET_MUMBAI                         = Chain{EvmChainID: 80001, Selector: 12532609583862916517, Name: "polygon-testnet-mumbai"}
+	PRIVATE_TESTNET_MICA                           = Chain{EvmChainID: 424242, Selector: 4489326297382772450, Name: "private-testnet-mica"}
 	PRIVATE_TESTNET_OPALA                          = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala"}
 	TELOS_EVM_MAINNET                              = Chain{EvmChainID: 40, Selector: 1477345371608778000, Name: "telos-evm-mainnet"}
 	TELOS_EVM_TESTNET                              = Chain{EvmChainID: 41, Selector: 729797994450396300, Name: "telos-evm-testnet"}
@@ -331,6 +332,7 @@ var ALL = []Chain{
 	POLYGON_MAINNET,
 	POLYGON_TESTNET_AMOY,
 	POLYGON_TESTNET_MUMBAI,
+	PRIVATE_TESTNET_MICA,
 	PRIVATE_TESTNET_OPALA,
 	TELOS_EVM_MAINNET,
 	TELOS_EVM_TESTNET,
