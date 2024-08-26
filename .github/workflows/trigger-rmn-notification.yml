@@ -1,9 +1,8 @@
 name: Call Track RMN Releases
 
 on:
-  push:
-  #release:
-  #  types: [published]
+  release:
+    types: [published]
 
 jobs:
   call-track-rmn-releases:
