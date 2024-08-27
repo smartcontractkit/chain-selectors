@@ -1,7 +1,9 @@
 package chain_selectors
 
 import (
+	"fmt"
 	"math/rand"
+	"regexp"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -223,4 +225,51 @@ func Test_IsEvm(t *testing.T) {
 		assert.Error(t, err)
 		assert.False(t, isEvm)
 	})
+}
+
+func Test_MainnetAndTestnetAreSynchronized(t *testing.T) {
+	re := regexp.MustCompile(`^([a-zA-Z0-9-]+)-(mainnet|testnet)`)
+	parseName := func(str string) (chain string, isMainnet bool, err error) {
+		matches := re.FindStringSubmatch(str)
+
+		if matches == nil {
+			return "", false, fmt.Errorf("no matches found")
+		}
+
+		return matches[1], matches[2] == "mainnet", nil
+	}
+
+	type chainDetails struct {
+		mainnet []string
+		testnet []string
+	}
+
+	var chainMap = make(map[string]chainDetails)
+	for _, chain := range ALL {
+		name, isMainnet, err := parseName(chain.Name)
+		if err == nil {
+			details := chainMap[name]
+			if isMainnet {
+				details.mainnet = append(details.mainnet, chain.Name)
+			} else {
+				details.testnet = append(details.testnet, chain.Name)
+			}
+			chainMap[name] = details
+		}
+	}
+
+	// Skip legacy testnet only chains
+	delete(chainMap, "bitcoin")
+	delete(chainMap, "geth")
+	delete(chainMap, "hedera")
+	delete(chainMap, "berachain")
+	delete(chainMap, "cronos")
+	delete(chainMap, "fantom")
+
+	// analyze results
+	for chain, details := range chainMap {
+		if len(details.mainnet) == 0 && len(details.testnet) != 0 {
+			assert.Fail(t, "Chain %s has testnet chains but no mainnet chains. If this is intentional add an exception to this test with a comment explaining why.", chain)
+		}
+	}
 }
