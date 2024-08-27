@@ -335,6 +335,9 @@ selectors:
   2031:
     selector: 8175830712062617656
     name: "polkadot-mainnet-centrifuge"
+  978670:
+    selector: 1010349088906777999
+    name: "ethereum-mainnet-arbitrum-1-treasure-1"
   424242:
     selector: 4489326297382772450
     name: "private-testnet-mica"
