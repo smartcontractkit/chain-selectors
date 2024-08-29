@@ -198,6 +198,9 @@ selectors:
   978657:
     selector: 10443705513486043421
     name: "ethereum-testnet-sepolia-arbitrum-1-treasure-1"
+  1946:
+    selector: 686603546605904534
+    name: "ethereum-testnet-sepolia-soneium-1"
 
   # Mainnets
   1:
@@ -340,4 +343,4 @@ selectors:
     name: "ethereum-mainnet-arbitrum-1-treasure-1"
   424242:
     selector: 4489326297382772450
-    name: "private-testnet-mica"
+    name: "private-testnet-mica"  

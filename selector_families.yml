@@ -544,3 +544,5 @@ selector_families:
     name: ethereum-mainnet-arbitrum-1-treasure-1
   4489326297382772450:
     family: evm
+  686603546605904534:
+    family: evm

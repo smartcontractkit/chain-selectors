@@ -80,6 +80,7 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_VALIDIUM_1    = Chain{EvmChainID: 717160, Selector: 4418231248214522936, Name: "ethereum-testnet-sepolia-polygon-validium-1"}
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_ZKEVM_1       = Chain{EvmChainID: 2442, Selector: 1654667687261492630, Name: "ethereum-testnet-sepolia-polygon-zkevm-1"}
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1              = Chain{EvmChainID: 534351, Selector: 2279865765895943307, Name: "ethereum-testnet-sepolia-scroll-1"}
+	ETHEREUM_TESTNET_SEPOLIA_SONEIUM_1             = Chain{EvmChainID: 1946, Selector: 686603546605904534, Name: "ethereum-testnet-sepolia-soneium-1"}
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1              = Chain{EvmChainID: 195, Selector: 2066098519157881736, Name: "ethereum-testnet-sepolia-xlayer-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT               = Chain{EvmChainID: 48899, Selector: 4562743618362911021, Name: "ethereum-testnet-sepolia-zircuit"}
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1              = Chain{EvmChainID: 300, Selector: 6898391096552792247, Name: "ethereum-testnet-sepolia-zksync-1"}
@@ -299,6 +300,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_VALIDIUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_ZKEVM_1,
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1,
+	ETHEREUM_TESTNET_SEPOLIA_SONEIUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1,
 	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT,
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1,
