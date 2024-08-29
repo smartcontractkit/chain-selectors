@@ -216,7 +216,7 @@ selector_families:
     name: filecoin-mainnet
   4562743618362911021:
     family: evm
-    name: ethereum-testnet-sepolia-zircuit
+    name: ethereum-testnet-sepolia-zircuit-1
   4627098889531055414:
     family: evm
     name: ethereum-mainnet-linea-1
@@ -545,4 +545,6 @@ selector_families:
   4489326297382772450:
     family: evm
   686603546605904534:
+    family: evm
+  17198166215261833993:
     family: evm
