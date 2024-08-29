@@ -52,6 +52,7 @@ var (
 	ETHEREUM_MAINNET_POLYGON_ZKEVM_1               = Chain{EvmChainID: 1101, Selector: 4348158687435793198, Name: "ethereum-mainnet-polygon-zkevm-1"}
 	ETHEREUM_MAINNET_SCROLL_1                      = Chain{EvmChainID: 534352, Selector: 13204309965629103672, Name: "ethereum-mainnet-scroll-1"}
 	ETHEREUM_MAINNET_XLAYER_1                      = Chain{EvmChainID: 196, Selector: 3016212468291539606, Name: "ethereum-mainnet-xlayer-1"}
+	ETHEREUM_MAINNET_ZIRCUIT_1                     = Chain{EvmChainID: 48900, Selector: 17198166215261833993, Name: "ethereum-mainnet-zircuit-1"}
 	ETHEREUM_MAINNET_ZKSYNC_1                      = Chain{EvmChainID: 324, Selector: 1562403441176082196, Name: "ethereum-mainnet-zksync-1"}
 	ETHEREUM_TESTNET_GOERLI_ARBITRUM_1             = Chain{EvmChainID: 421613, Selector: 6101244977088475029, Name: "ethereum-testnet-goerli-arbitrum-1"}
 	ETHEREUM_TESTNET_GOERLI_BASE_1                 = Chain{EvmChainID: 84531, Selector: 5790810961207155433, Name: "ethereum-testnet-goerli-base-1"}
@@ -82,7 +83,7 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1              = Chain{EvmChainID: 534351, Selector: 2279865765895943307, Name: "ethereum-testnet-sepolia-scroll-1"}
 	ETHEREUM_TESTNET_SEPOLIA_SONEIUM_1             = Chain{EvmChainID: 1946, Selector: 686603546605904534, Name: "ethereum-testnet-sepolia-soneium-1"}
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1              = Chain{EvmChainID: 195, Selector: 2066098519157881736, Name: "ethereum-testnet-sepolia-xlayer-1"}
-	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT               = Chain{EvmChainID: 48899, Selector: 4562743618362911021, Name: "ethereum-testnet-sepolia-zircuit"}
+	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT_1             = Chain{EvmChainID: 48899, Selector: 4562743618362911021, Name: "ethereum-testnet-sepolia-zircuit-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1              = Chain{EvmChainID: 300, Selector: 6898391096552792247, Name: "ethereum-testnet-sepolia-zksync-1"}
 	FANTOM_TESTNET                                 = Chain{EvmChainID: 4002, Selector: 4905564228793744293, Name: "fantom-testnet"}
 	FANTOM_TESTNET_OPERA                           = Chain{EvmChainID: 250, Selector: 3768048213127883732, Name: "fantom-testnet-opera"}
@@ -272,6 +273,7 @@ var ALL = []Chain{
 	ETHEREUM_MAINNET_POLYGON_ZKEVM_1,
 	ETHEREUM_MAINNET_SCROLL_1,
 	ETHEREUM_MAINNET_XLAYER_1,
+	ETHEREUM_MAINNET_ZIRCUIT_1,
 	ETHEREUM_MAINNET_ZKSYNC_1,
 	ETHEREUM_TESTNET_GOERLI_ARBITRUM_1,
 	ETHEREUM_TESTNET_GOERLI_BASE_1,
@@ -302,7 +304,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1,
 	ETHEREUM_TESTNET_SEPOLIA_SONEIUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1,
-	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT,
+	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT_1,
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1,
 	FANTOM_TESTNET,
 	FANTOM_TESTNET_OPERA,

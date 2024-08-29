@@ -126,7 +126,7 @@ selectors:
     name: "celo-testnet-alfajores"
   48899:
     selector: 4562743618362911021
-    name: "ethereum-testnet-sepolia-zircuit"
+    name: "ethereum-testnet-sepolia-zircuit-1"
   59140:
     selector: 1355246678561316402
     name: "ethereum-testnet-goerli-linea-1"
@@ -344,3 +344,6 @@ selectors:
   424242:
     selector: 4489326297382772450
     name: "private-testnet-mica"
+  48900:
+    selector: 17198166215261833993
+    name: "ethereum-mainnet-zircuit-1"
