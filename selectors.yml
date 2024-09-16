@@ -201,6 +201,9 @@ selectors:
   1946:
     selector: 686603546605904534
     name: "ethereum-testnet-sepolia-soneium-1"
+  2021:
+    selector: 13116810400804392105
+    name: "ethereum-testnet-seigon-ronin-1"
 
   # Mainnets
   1:
