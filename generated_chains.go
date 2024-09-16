@@ -62,6 +62,7 @@ var (
 	ETHEREUM_TESTNET_GOERLI_ZKSYNC_1               = Chain{EvmChainID: 280, Selector: 6802309497652714138, Name: "ethereum-testnet-goerli-zksync-1"}
 	ETHEREUM_TESTNET_HOLESKY_FRAXTAL_1             = Chain{EvmChainID: 2522, Selector: 8901520481741771655, Name: "ethereum-testnet-holesky-fraxtal-1"}
 	ETHEREUM_TESTNET_HOLESKY_MORPH_1               = Chain{EvmChainID: 2810, Selector: 8304510386741731151, Name: "ethereum-testnet-holesky-morph-1"}
+	ETHEREUM_TESTNET_SEIGON_RONIN_1                = Chain{EvmChainID: 2021, Selector: 13116810400804392105, Name: "ethereum-testnet-seigon-ronin-1"}
 	ETHEREUM_TESTNET_SEPOLIA                       = Chain{EvmChainID: 11155111, Selector: 16015286601757825753, Name: "ethereum-testnet-sepolia"}
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1            = Chain{EvmChainID: 421614, Selector: 3478487238524512106, Name: "ethereum-testnet-sepolia-arbitrum-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1_L3X_1      = Chain{EvmChainID: 12325, Selector: 3486622437121596122, Name: "ethereum-testnet-sepolia-arbitrum-1-l3x-1"}
@@ -280,6 +281,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_GOERLI_ZKSYNC_1,
 	ETHEREUM_TESTNET_HOLESKY_FRAXTAL_1,
 	ETHEREUM_TESTNET_HOLESKY_MORPH_1,
+	ETHEREUM_TESTNET_SEIGON_RONIN_1,
 	ETHEREUM_TESTNET_SEPOLIA,
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1_L3X_1,

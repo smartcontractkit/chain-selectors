@@ -198,6 +198,9 @@ selectors:
   978657:
     selector: 10443705513486043421
     name: "ethereum-testnet-sepolia-arbitrum-1-treasure-1"
+  2021:
+    selector: 13116810400804392105
+    name: "ethereum-testnet-seigon-ronin-1"
 
   # Mainnets
   1:
