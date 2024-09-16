@@ -203,7 +203,7 @@ selectors:
     name: "ethereum-testnet-sepolia-soneium-1"
   2021:
     selector: 13116810400804392105
-    name: "ethereum-testnet-saigon-ronin-1"
+    name: "ronin-testnet-saigon"
 
   # Mainnets
   1:
