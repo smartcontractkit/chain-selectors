@@ -550,4 +550,4 @@ selector_families:
     family: evm
   13116810400804392105:
     family: evm
-    name: ethereum-testnet-seigon-ronin-1
+    name: ronin-testnet-saigon
