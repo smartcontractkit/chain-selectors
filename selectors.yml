@@ -63,7 +63,7 @@ selectors:
     name: "wemix-testnet"
   1123:
     selector: 1948510578179542068
-    name: "bsquared-testnet"
+    name: "bitcoin-testnet-bsquared-1"
   12325:
     selector: 3486622437121596122
     name: "ethereum-testnet-sepolia-arbitrum-1-l3x-1"

@@ -553,4 +553,4 @@ selector_families:
     name: ronin-testnet-saigon
   1948510578179542068:
     family: evm    
-    name: "bsquared-testnet"
+    name: "bitcoin-testnet-bsquared-1"

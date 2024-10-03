@@ -24,11 +24,11 @@ var (
 	BITCOIN_MAINNET_BOTANIX                        = Chain{EvmChainID: 3637, Selector: 4560701533377838164, Name: "bitcoin-mainnet-botanix"}
 	BITCOIN_MERLIN_MAINNET                         = Chain{EvmChainID: 4200, Selector: 241851231317828981, Name: "bitcoin-merlin-mainnet"}
 	BITCOIN_TESTNET_BOTANIX                        = Chain{EvmChainID: 3636, Selector: 1467223411771711614, Name: "bitcoin-testnet-botanix"}
+	BITCOIN_TESTNET_BSQUARED_1                     = Chain{EvmChainID: 1123, Selector: 1948510578179542068, Name: "bitcoin-testnet-bsquared-1"}
 	BITCOIN_TESTNET_MERLIN                         = Chain{EvmChainID: 686868, Selector: 5269261765892944301, Name: "bitcoin-testnet-merlin"}
 	BITCOIN_TESTNET_ROOTSTOCK                      = Chain{EvmChainID: 31, Selector: 8953668971247136127, Name: "bitcoin-testnet-rootstock"}
 	BITTORRENT_CHAIN_MAINNET                       = Chain{EvmChainID: 199, Selector: 3776006016387883143, Name: "bittorrent_chain-mainnet"}
 	BITTORRENT_CHAIN_TESTNET                       = Chain{EvmChainID: 1029, Selector: 4459371029167934217, Name: "bittorrent_chain-testnet"}
-	BSQUARED_TESTNET                               = Chain{EvmChainID: 1123, Selector: 1948510578179542068, Name: "bsquared-testnet"}
 	CELO_MAINNET                                   = Chain{EvmChainID: 42220, Selector: 1346049177634351622, Name: "celo-mainnet"}
 	CELO_TESTNET_ALFAJORES                         = Chain{EvmChainID: 44787, Selector: 3552045678561919002, Name: "celo-testnet-alfajores"}
 	COINEX_SMART_CHAIN_MAINNET                     = Chain{EvmChainID: 52, Selector: 1761333065194157300, Name: "coinex_smart_chain-mainnet"}
@@ -247,11 +247,11 @@ var ALL = []Chain{
 	BITCOIN_MAINNET_BOTANIX,
 	BITCOIN_MERLIN_MAINNET,
 	BITCOIN_TESTNET_BOTANIX,
+	BITCOIN_TESTNET_BSQUARED_1,
 	BITCOIN_TESTNET_MERLIN,
 	BITCOIN_TESTNET_ROOTSTOCK,
 	BITTORRENT_CHAIN_MAINNET,
 	BITTORRENT_CHAIN_TESTNET,
-	BSQUARED_TESTNET,
 	CELO_MAINNET,
 	CELO_TESTNET_ALFAJORES,
 	COINEX_SMART_CHAIN_MAINNET,
