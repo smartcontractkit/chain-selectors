@@ -551,3 +551,6 @@ selector_families:
   13116810400804392105:
     family: evm
     name: ronin-testnet-saigon
+  1948510578179542068:
+    family: evm    
+    name: "bsquared-testnet"
