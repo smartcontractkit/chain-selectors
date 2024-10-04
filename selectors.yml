@@ -207,6 +207,27 @@ selectors:
   2021:
     selector: 13116810400804392105
     name: "ronin-testnet-saigon"
+  200810:
+    selector: 3789623672476206327
+    name: "bitcoin-testnet-bitlayer-1"
+  808813:
+    selector: 5535534526963509396
+    name: "ethereum-testnet-sepolia-bob-1"
+  37111:
+    selector: 6827576821754315911
+    name: "ethereum-testnet-sepolia-lens-1"
+  1328:
+    selector: 1216300075444106652
+    name: "ethereum-testnet-sepolia-sei-1"
+  64165:
+    selector: 3676871237479449268
+    name: "sonic-testnet"
+  998:
+    selector: 4286062357653186312
+    name: "hyperliquid-testnet"
+  1513:
+    selector: 4237030917318060427
+    name: "story-testnet"   
 
   # Mainnets
   1:

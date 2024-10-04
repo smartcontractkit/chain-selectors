@@ -554,3 +554,24 @@ selector_families:
   1948510578179542068:
     family: evm    
     name: "bitcoin-testnet-bsquared-1"
+  3789623672476206327:
+    family: evm
+    name: "bitcoin-testnet-bitlayer-1"
+  5535534526963509396:
+    family: evm
+    name: "ethereum-testnet-sepolia-bob-1"
+  6827576821754315911:
+    family: evm
+    name: "ethereum-testnet-sepolia-lens-1"
+  1216300075444106652:
+    family: evm
+    name: "ethereum-testnet-sepolia-sei-1"
+  3676871237479449268:
+    family: evm
+    name: "sonic-testnet"
+  4286062357653186312:
+    family: evm
+    name: "hyperliquid-testnet"
+  4237030917318060427:
+    family: evm
+    name: "story-testnet"
