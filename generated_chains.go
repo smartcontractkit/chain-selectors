@@ -34,6 +34,7 @@ var (
 	CELO_TESTNET_ALFAJORES                         = Chain{EvmChainID: 44787, Selector: 3552045678561919002, Name: "celo-testnet-alfajores"}
 	COINEX_SMART_CHAIN_MAINNET                     = Chain{EvmChainID: 52, Selector: 1761333065194157300, Name: "coinex_smart_chain-mainnet"}
 	COINEX_SMART_CHAIN_TESTNET                     = Chain{EvmChainID: 53, Selector: 8955032871639343000, Name: "coinex_smart_chain-testnet"}
+	COSMOS_TESTNET_SEI                             = Chain{EvmChainID: 1328, Selector: 1216300075444106652, Name: "cosmos-testnet-sei"}
 	CRONOS_MAINNET                                 = Chain{EvmChainID: 25, Selector: 1456215246176062136, Name: "cronos-mainnet"}
 	CRONOS_TESTNET                                 = Chain{EvmChainID: 338, Selector: 2995292832068775165, Name: "cronos-testnet"}
 	CRONOS_TESTNET_ZKEVM_1                         = Chain{EvmChainID: 282, Selector: 3842103497652714138, Name: "cronos-testnet-zkevm-1"}
@@ -85,7 +86,6 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_VALIDIUM_1    = Chain{EvmChainID: 717160, Selector: 4418231248214522936, Name: "ethereum-testnet-sepolia-polygon-validium-1"}
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_ZKEVM_1       = Chain{EvmChainID: 2442, Selector: 1654667687261492630, Name: "ethereum-testnet-sepolia-polygon-zkevm-1"}
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1              = Chain{EvmChainID: 534351, Selector: 2279865765895943307, Name: "ethereum-testnet-sepolia-scroll-1"}
-	ETHEREUM_TESTNET_SEPOLIA_SEI_1                 = Chain{EvmChainID: 1328, Selector: 1216300075444106652, Name: "ethereum-testnet-sepolia-sei-1"}
 	ETHEREUM_TESTNET_SEPOLIA_SONEIUM_1             = Chain{EvmChainID: 1946, Selector: 686603546605904534, Name: "ethereum-testnet-sepolia-soneium-1"}
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1              = Chain{EvmChainID: 195, Selector: 2066098519157881736, Name: "ethereum-testnet-sepolia-xlayer-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT_1             = Chain{EvmChainID: 48899, Selector: 4562743618362911021, Name: "ethereum-testnet-sepolia-zircuit-1"}
@@ -264,6 +264,7 @@ var ALL = []Chain{
 	CELO_TESTNET_ALFAJORES,
 	COINEX_SMART_CHAIN_MAINNET,
 	COINEX_SMART_CHAIN_TESTNET,
+	COSMOS_TESTNET_SEI,
 	CRONOS_MAINNET,
 	CRONOS_TESTNET,
 	CRONOS_TESTNET_ZKEVM_1,
@@ -315,7 +316,6 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_VALIDIUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_ZKEVM_1,
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1,
-	ETHEREUM_TESTNET_SEPOLIA_SEI_1,
 	ETHEREUM_TESTNET_SEPOLIA_SONEIUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1,
 	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT_1,
