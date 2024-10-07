@@ -34,7 +34,6 @@ var (
 	CELO_TESTNET_ALFAJORES                         = Chain{EvmChainID: 44787, Selector: 3552045678561919002, Name: "celo-testnet-alfajores"}
 	COINEX_SMART_CHAIN_MAINNET                     = Chain{EvmChainID: 52, Selector: 1761333065194157300, Name: "coinex_smart_chain-mainnet"}
 	COINEX_SMART_CHAIN_TESTNET                     = Chain{EvmChainID: 53, Selector: 8955032871639343000, Name: "coinex_smart_chain-testnet"}
-	COSMOS_TESTNET_SEI                             = Chain{EvmChainID: 1328, Selector: 1216300075444106652, Name: "cosmos-testnet-sei"}
 	CRONOS_MAINNET                                 = Chain{EvmChainID: 25, Selector: 1456215246176062136, Name: "cronos-mainnet"}
 	CRONOS_TESTNET                                 = Chain{EvmChainID: 338, Selector: 2995292832068775165, Name: "cronos-testnet"}
 	CRONOS_TESTNET_ZKEVM_1                         = Chain{EvmChainID: 282, Selector: 3842103497652714138, Name: "cronos-testnet-zkevm-1"}
@@ -124,6 +123,7 @@ var (
 	PRIVATE_TESTNET_MICA                           = Chain{EvmChainID: 424242, Selector: 4489326297382772450, Name: "private-testnet-mica"}
 	PRIVATE_TESTNET_OPALA                          = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala"}
 	RONIN_TESTNET_SAIGON                           = Chain{EvmChainID: 2021, Selector: 13116810400804392105, Name: "ronin-testnet-saigon"}
+	SEI_TESTNET                                    = Chain{EvmChainID: 1328, Selector: 1216300075444106652, Name: "sei-testnet"}
 	SONIC_TESTNET                                  = Chain{EvmChainID: 64165, Selector: 3676871237479449268, Name: "sonic-testnet"}
 	STORY_TESTNET                                  = Chain{EvmChainID: 1513, Selector: 4237030917318060427, Name: "story-testnet"}
 	TELOS_EVM_MAINNET                              = Chain{EvmChainID: 40, Selector: 1477345371608778000, Name: "telos-evm-mainnet"}
@@ -264,7 +264,6 @@ var ALL = []Chain{
 	CELO_TESTNET_ALFAJORES,
 	COINEX_SMART_CHAIN_MAINNET,
 	COINEX_SMART_CHAIN_TESTNET,
-	COSMOS_TESTNET_SEI,
 	CRONOS_MAINNET,
 	CRONOS_TESTNET,
 	CRONOS_TESTNET_ZKEVM_1,
@@ -354,6 +353,7 @@ var ALL = []Chain{
 	PRIVATE_TESTNET_MICA,
 	PRIVATE_TESTNET_OPALA,
 	RONIN_TESTNET_SAIGON,
+	SEI_TESTNET,
 	SONIC_TESTNET,
 	STORY_TESTNET,
 	TELOS_EVM_MAINNET,
