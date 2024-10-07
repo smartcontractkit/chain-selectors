@@ -374,3 +374,15 @@ selectors:
   48900:
     selector: 17198166215261833993
     name: "ethereum-mainnet-zircuit-1"
+  223:
+    selector: 5406759801798337480
+    name: "bitcoin-mainnet-bsquared-1"
+  200901:
+    selector: 7937294810946806131
+    name: "bitcoin-mainnet-bitlayer-1"
+  60808:
+    selector: 3849287863852499584
+    name: "ethereum-mainnet-sepolia-bob-1"
+  1329:
+    selector: 9027416829622342829
+    name: "sei-mainnet-pacific"

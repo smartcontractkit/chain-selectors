@@ -21,7 +21,9 @@ var (
 	BINANCE_SMART_CHAIN_TESTNET                    = Chain{EvmChainID: 97, Selector: 13264668187771770619, Name: "binance_smart_chain-testnet"}
 	BITCICHAIN_MAINNET                             = Chain{EvmChainID: 1907, Selector: 4874388048629246000, Name: "bitcichain-mainnet"}
 	BITCICHAIN_TESTNET                             = Chain{EvmChainID: 1908, Selector: 4888058894222120000, Name: "bitcichain-testnet"}
+	BITCOIN_MAINNET_BITLAYER_1                     = Chain{EvmChainID: 200901, Selector: 7937294810946806131, Name: "bitcoin-mainnet-bitlayer-1"}
 	BITCOIN_MAINNET_BOTANIX                        = Chain{EvmChainID: 3637, Selector: 4560701533377838164, Name: "bitcoin-mainnet-botanix"}
+	BITCOIN_MAINNET_BSQUARED_1                     = Chain{EvmChainID: 223, Selector: 5406759801798337480, Name: "bitcoin-mainnet-bsquared-1"}
 	BITCOIN_MERLIN_MAINNET                         = Chain{EvmChainID: 4200, Selector: 241851231317828981, Name: "bitcoin-merlin-mainnet"}
 	BITCOIN_TESTNET_BITLAYER_1                     = Chain{EvmChainID: 200810, Selector: 3789623672476206327, Name: "bitcoin-testnet-bitlayer-1"}
 	BITCOIN_TESTNET_BOTANIX                        = Chain{EvmChainID: 3636, Selector: 1467223411771711614, Name: "bitcoin-testnet-botanix"}
@@ -53,6 +55,7 @@ var (
 	ETHEREUM_MAINNET_OPTIMISM_1                    = Chain{EvmChainID: 10, Selector: 3734403246176062136, Name: "ethereum-mainnet-optimism-1"}
 	ETHEREUM_MAINNET_POLYGON_ZKEVM_1               = Chain{EvmChainID: 1101, Selector: 4348158687435793198, Name: "ethereum-mainnet-polygon-zkevm-1"}
 	ETHEREUM_MAINNET_SCROLL_1                      = Chain{EvmChainID: 534352, Selector: 13204309965629103672, Name: "ethereum-mainnet-scroll-1"}
+	ETHEREUM_MAINNET_SEPOLIA_BOB_1                 = Chain{EvmChainID: 60808, Selector: 3849287863852499584, Name: "ethereum-mainnet-sepolia-bob-1"}
 	ETHEREUM_MAINNET_XLAYER_1                      = Chain{EvmChainID: 196, Selector: 3016212468291539606, Name: "ethereum-mainnet-xlayer-1"}
 	ETHEREUM_MAINNET_ZIRCUIT_1                     = Chain{EvmChainID: 48900, Selector: 17198166215261833993, Name: "ethereum-mainnet-zircuit-1"}
 	ETHEREUM_MAINNET_ZKSYNC_1                      = Chain{EvmChainID: 324, Selector: 1562403441176082196, Name: "ethereum-mainnet-zksync-1"}
@@ -123,6 +126,7 @@ var (
 	PRIVATE_TESTNET_MICA                           = Chain{EvmChainID: 424242, Selector: 4489326297382772450, Name: "private-testnet-mica"}
 	PRIVATE_TESTNET_OPALA                          = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala"}
 	RONIN_TESTNET_SAIGON                           = Chain{EvmChainID: 2021, Selector: 13116810400804392105, Name: "ronin-testnet-saigon"}
+	SEI_MAINNET_PACIFIC                            = Chain{EvmChainID: 1329, Selector: 9027416829622342829, Name: "sei-mainnet-pacific"}
 	SEI_TESTNET_ATLANTIC                           = Chain{EvmChainID: 1328, Selector: 1216300075444106652, Name: "sei-testnet-atlantic"}
 	SONIC_TESTNET                                  = Chain{EvmChainID: 64165, Selector: 3676871237479449268, Name: "sonic-testnet"}
 	STORY_TESTNET                                  = Chain{EvmChainID: 1513, Selector: 4237030917318060427, Name: "story-testnet"}
@@ -251,7 +255,9 @@ var ALL = []Chain{
 	BINANCE_SMART_CHAIN_TESTNET,
 	BITCICHAIN_MAINNET,
 	BITCICHAIN_TESTNET,
+	BITCOIN_MAINNET_BITLAYER_1,
 	BITCOIN_MAINNET_BOTANIX,
+	BITCOIN_MAINNET_BSQUARED_1,
 	BITCOIN_MERLIN_MAINNET,
 	BITCOIN_TESTNET_BITLAYER_1,
 	BITCOIN_TESTNET_BOTANIX,
@@ -283,6 +289,7 @@ var ALL = []Chain{
 	ETHEREUM_MAINNET_OPTIMISM_1,
 	ETHEREUM_MAINNET_POLYGON_ZKEVM_1,
 	ETHEREUM_MAINNET_SCROLL_1,
+	ETHEREUM_MAINNET_SEPOLIA_BOB_1,
 	ETHEREUM_MAINNET_XLAYER_1,
 	ETHEREUM_MAINNET_ZIRCUIT_1,
 	ETHEREUM_MAINNET_ZKSYNC_1,
@@ -353,6 +360,7 @@ var ALL = []Chain{
 	PRIVATE_TESTNET_MICA,
 	PRIVATE_TESTNET_OPALA,
 	RONIN_TESTNET_SAIGON,
+	SEI_MAINNET_PACIFIC,
 	SEI_TESTNET_ATLANTIC,
 	SONIC_TESTNET,
 	STORY_TESTNET,
