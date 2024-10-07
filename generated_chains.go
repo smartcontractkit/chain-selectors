@@ -123,7 +123,7 @@ var (
 	PRIVATE_TESTNET_MICA                           = Chain{EvmChainID: 424242, Selector: 4489326297382772450, Name: "private-testnet-mica"}
 	PRIVATE_TESTNET_OPALA                          = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala"}
 	RONIN_TESTNET_SAIGON                           = Chain{EvmChainID: 2021, Selector: 13116810400804392105, Name: "ronin-testnet-saigon"}
-	SEI_TESTNET                                    = Chain{EvmChainID: 1328, Selector: 1216300075444106652, Name: "sei-testnet"}
+	SEI_TESTNET_ATLANTIC                           = Chain{EvmChainID: 1328, Selector: 1216300075444106652, Name: "sei-testnet-atlantic"}
 	SONIC_TESTNET                                  = Chain{EvmChainID: 64165, Selector: 3676871237479449268, Name: "sonic-testnet"}
 	STORY_TESTNET                                  = Chain{EvmChainID: 1513, Selector: 4237030917318060427, Name: "story-testnet"}
 	TELOS_EVM_MAINNET                              = Chain{EvmChainID: 40, Selector: 1477345371608778000, Name: "telos-evm-mainnet"}
@@ -353,7 +353,7 @@ var ALL = []Chain{
 	PRIVATE_TESTNET_MICA,
 	PRIVATE_TESTNET_OPALA,
 	RONIN_TESTNET_SAIGON,
-	SEI_TESTNET,
+	SEI_TESTNET_ATLANTIC,
 	SONIC_TESTNET,
 	STORY_TESTNET,
 	TELOS_EVM_MAINNET,

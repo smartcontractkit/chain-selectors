@@ -565,7 +565,7 @@ selector_families:
     name: "ethereum-testnet-sepolia-lens-1"
   1216300075444106652:
     family: evm
-    name: "sei-testnet"
+    name: "sei-testnet-atlantic"
   3676871237479449268:
     family: evm
     name: "sonic-testnet"

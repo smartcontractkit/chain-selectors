@@ -218,7 +218,7 @@ selectors:
     name: "ethereum-testnet-sepolia-lens-1"
   1328:
     selector: 1216300075444106652
-    name: "sei-testnet"
+    name: "sei-testnet-atlantic"
   64165:
     selector: 3676871237479449268
     name: "sonic-testnet"
