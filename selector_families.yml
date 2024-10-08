@@ -450,6 +450,9 @@ selector_families:
   12336603543561911511:
     family: evm
     name: berachain-testnet-artio
+  8999465244383784164:
+    family: evm
+    name: berachain-testnet-bartio
   12470167056735102403:
     family: evm
   12499149790922928210:

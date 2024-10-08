@@ -150,6 +150,9 @@ selectors:
   80085:
     selector: 12336603543561911511
     name: "berachain-testnet-artio"
+  80084:
+    selector: 8999465244383784164
+    name: "berachain-testnet-bartio"
   84531:
     selector: 5790810961207155433
     name: "ethereum-testnet-goerli-base-1"
