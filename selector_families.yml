@@ -559,7 +559,7 @@ selector_families:
     name: "bitcoin-testnet-bitlayer-1"
   5535534526963509396:
     family: evm
-    name: "ethereum-testnet-sepolia-bob-1"
+    name: "bitcoin-testnet-sepolia-bob-1"
   6827576821754315911:
     family: evm
     name: "ethereum-testnet-sepolia-lens-1"
@@ -583,7 +583,7 @@ selector_families:
     name: "bitcoin-mainnet-bitlayer-1"
   3849287863852499584:
     family: evm
-    name: "ethereum-mainnet-bob-1"
+    name: "bitcoin-mainnet-bob-1"
   9027416829622342829:
     family: evm
     name: "sei-mainnet"

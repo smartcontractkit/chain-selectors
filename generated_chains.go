@@ -22,6 +22,7 @@ var (
 	BITCICHAIN_MAINNET                             = Chain{EvmChainID: 1907, Selector: 4874388048629246000, Name: "bitcichain-mainnet"}
 	BITCICHAIN_TESTNET                             = Chain{EvmChainID: 1908, Selector: 4888058894222120000, Name: "bitcichain-testnet"}
 	BITCOIN_MAINNET_BITLAYER_1                     = Chain{EvmChainID: 200901, Selector: 7937294810946806131, Name: "bitcoin-mainnet-bitlayer-1"}
+	BITCOIN_MAINNET_BOB_1                          = Chain{EvmChainID: 60808, Selector: 3849287863852499584, Name: "bitcoin-mainnet-bob-1"}
 	BITCOIN_MAINNET_BOTANIX                        = Chain{EvmChainID: 3637, Selector: 4560701533377838164, Name: "bitcoin-mainnet-botanix"}
 	BITCOIN_MAINNET_BSQUARED_1                     = Chain{EvmChainID: 223, Selector: 5406759801798337480, Name: "bitcoin-mainnet-bsquared-1"}
 	BITCOIN_MERLIN_MAINNET                         = Chain{EvmChainID: 4200, Selector: 241851231317828981, Name: "bitcoin-merlin-mainnet"}
@@ -30,6 +31,7 @@ var (
 	BITCOIN_TESTNET_BSQUARED_1                     = Chain{EvmChainID: 1123, Selector: 1948510578179542068, Name: "bitcoin-testnet-bsquared-1"}
 	BITCOIN_TESTNET_MERLIN                         = Chain{EvmChainID: 686868, Selector: 5269261765892944301, Name: "bitcoin-testnet-merlin"}
 	BITCOIN_TESTNET_ROOTSTOCK                      = Chain{EvmChainID: 31, Selector: 8953668971247136127, Name: "bitcoin-testnet-rootstock"}
+	BITCOIN_TESTNET_SEPOLIA_BOB_1                  = Chain{EvmChainID: 808813, Selector: 5535534526963509396, Name: "bitcoin-testnet-sepolia-bob-1"}
 	BITTORRENT_CHAIN_MAINNET                       = Chain{EvmChainID: 199, Selector: 3776006016387883143, Name: "bittorrent_chain-mainnet"}
 	BITTORRENT_CHAIN_TESTNET                       = Chain{EvmChainID: 1029, Selector: 4459371029167934217, Name: "bittorrent_chain-testnet"}
 	CELO_MAINNET                                   = Chain{EvmChainID: 42220, Selector: 1346049177634351622, Name: "celo-mainnet"}
@@ -46,7 +48,6 @@ var (
 	ETHEREUM_MAINNET_ASTAR_ZKEVM_1                 = Chain{EvmChainID: 3776, Selector: 1540201334317828111, Name: "ethereum-mainnet-astar-zkevm-1"}
 	ETHEREUM_MAINNET_BASE_1                        = Chain{EvmChainID: 8453, Selector: 15971525489660198786, Name: "ethereum-mainnet-base-1"}
 	ETHEREUM_MAINNET_BLAST_1                       = Chain{EvmChainID: 81457, Selector: 4411394078118774322, Name: "ethereum-mainnet-blast-1"}
-	ETHEREUM_MAINNET_BOB_1                         = Chain{EvmChainID: 60808, Selector: 3849287863852499584, Name: "ethereum-mainnet-bob-1"}
 	ETHEREUM_MAINNET_IMMUTABLE_ZKEVM_1             = Chain{EvmChainID: 13371, Selector: 1237925231416731909, Name: "ethereum-mainnet-immutable-zkevm-1"}
 	ETHEREUM_MAINNET_KROMA_1                       = Chain{EvmChainID: 255, Selector: 3719320017875267166, Name: "ethereum-mainnet-kroma-1"}
 	ETHEREUM_MAINNET_LINEA_1                       = Chain{EvmChainID: 59144, Selector: 4627098889531055414, Name: "ethereum-mainnet-linea-1"}
@@ -74,7 +75,6 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1_TREASURE_1 = Chain{EvmChainID: 978657, Selector: 10443705513486043421, Name: "ethereum-testnet-sepolia-arbitrum-1-treasure-1"}
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1                = Chain{EvmChainID: 84532, Selector: 10344971235874465080, Name: "ethereum-testnet-sepolia-base-1"}
 	ETHEREUM_TESTNET_SEPOLIA_BLAST_1               = Chain{EvmChainID: 168587773, Selector: 2027362563942762617, Name: "ethereum-testnet-sepolia-blast-1"}
-	ETHEREUM_TESTNET_SEPOLIA_BOB_1                 = Chain{EvmChainID: 808813, Selector: 5535534526963509396, Name: "ethereum-testnet-sepolia-bob-1"}
 	ETHEREUM_TESTNET_SEPOLIA_CORN_1                = Chain{EvmChainID: 21000000, Selector: 1467427327723633929, Name: "ethereum-testnet-sepolia-corn-1"}
 	ETHEREUM_TESTNET_SEPOLIA_IMMUTABLE_ZKEVM_1     = Chain{EvmChainID: 13473, Selector: 4526165231216331901, Name: "ethereum-testnet-sepolia-immutable-zkevm-1"}
 	ETHEREUM_TESTNET_SEPOLIA_KROMA_1               = Chain{EvmChainID: 2358, Selector: 5990477251245693094, Name: "ethereum-testnet-sepolia-kroma-1"}
@@ -256,6 +256,7 @@ var ALL = []Chain{
 	BITCICHAIN_MAINNET,
 	BITCICHAIN_TESTNET,
 	BITCOIN_MAINNET_BITLAYER_1,
+	BITCOIN_MAINNET_BOB_1,
 	BITCOIN_MAINNET_BOTANIX,
 	BITCOIN_MAINNET_BSQUARED_1,
 	BITCOIN_MERLIN_MAINNET,
@@ -264,6 +265,7 @@ var ALL = []Chain{
 	BITCOIN_TESTNET_BSQUARED_1,
 	BITCOIN_TESTNET_MERLIN,
 	BITCOIN_TESTNET_ROOTSTOCK,
+	BITCOIN_TESTNET_SEPOLIA_BOB_1,
 	BITTORRENT_CHAIN_MAINNET,
 	BITTORRENT_CHAIN_TESTNET,
 	CELO_MAINNET,
@@ -280,7 +282,6 @@ var ALL = []Chain{
 	ETHEREUM_MAINNET_ASTAR_ZKEVM_1,
 	ETHEREUM_MAINNET_BASE_1,
 	ETHEREUM_MAINNET_BLAST_1,
-	ETHEREUM_MAINNET_BOB_1,
 	ETHEREUM_MAINNET_IMMUTABLE_ZKEVM_1,
 	ETHEREUM_MAINNET_KROMA_1,
 	ETHEREUM_MAINNET_LINEA_1,
@@ -308,7 +309,6 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1_TREASURE_1,
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1,
 	ETHEREUM_TESTNET_SEPOLIA_BLAST_1,
-	ETHEREUM_TESTNET_SEPOLIA_BOB_1,
 	ETHEREUM_TESTNET_SEPOLIA_CORN_1,
 	ETHEREUM_TESTNET_SEPOLIA_IMMUTABLE_ZKEVM_1,
 	ETHEREUM_TESTNET_SEPOLIA_KROMA_1,
