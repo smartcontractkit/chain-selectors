@@ -382,7 +382,7 @@ selectors:
     name: "bitcoin-mainnet-bitlayer-1"
   60808:
     selector: 3849287863852499584
-    name: "ethereum-mainnet-sepolia-bob-1"
+    name: "ethereum-mainnet-bob-1"
   1329:
     selector: 9027416829622342829
-    name: "sei-mainnet-pacific"
+    name: "sei-mainnet"
