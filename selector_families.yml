@@ -450,6 +450,9 @@ selector_families:
   12336603543561911511:
     family: evm
     name: berachain-testnet-artio
+  8999465244383784164:
+    family: evm
+    name: berachain-testnet-bartio
   12470167056735102403:
     family: evm
   12499149790922928210:
@@ -559,7 +562,7 @@ selector_families:
     name: "bitcoin-testnet-bitlayer-1"
   5535534526963509396:
     family: evm
-    name: "ethereum-testnet-sepolia-bob-1"
+    name: "bitcoin-testnet-sepolia-bob-1"
   6827576821754315911:
     family: evm
     name: "ethereum-testnet-sepolia-lens-1"
@@ -575,3 +578,15 @@ selector_families:
   4237030917318060427:
     family: evm
     name: "story-testnet"
+  5406759801798337480:
+    family: evm
+    name: "bitcoin-mainnet-bsquared-1"
+  7937294810946806131:
+    family: evm
+    name: "bitcoin-mainnet-bitlayer-1"
+  3849287863852499584:
+    family: evm
+    name: "bitcoin-mainnet-bob-1"
+  9027416829622342829:
+    family: evm
+    name: "sei-mainnet"

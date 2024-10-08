@@ -17,17 +17,22 @@ var (
 	AVALANCHE_TESTNET_FUJI                         = Chain{EvmChainID: 43113, Selector: 14767482510784806043, Name: "avalanche-testnet-fuji"}
 	AVALANCHE_TESTNET_NEXON                        = Chain{EvmChainID: 595581, Selector: 7837562506228496256, Name: "avalanche-testnet-nexon"}
 	BERACHAIN_TESTNET_ARTIO                        = Chain{EvmChainID: 80085, Selector: 12336603543561911511, Name: "berachain-testnet-artio"}
+	BERACHAIN_TESTNET_BARTIO                       = Chain{EvmChainID: 80084, Selector: 8999465244383784164, Name: "berachain-testnet-bartio"}
 	BINANCE_SMART_CHAIN_MAINNET                    = Chain{EvmChainID: 56, Selector: 11344663589394136015, Name: "binance_smart_chain-mainnet"}
 	BINANCE_SMART_CHAIN_TESTNET                    = Chain{EvmChainID: 97, Selector: 13264668187771770619, Name: "binance_smart_chain-testnet"}
 	BITCICHAIN_MAINNET                             = Chain{EvmChainID: 1907, Selector: 4874388048629246000, Name: "bitcichain-mainnet"}
 	BITCICHAIN_TESTNET                             = Chain{EvmChainID: 1908, Selector: 4888058894222120000, Name: "bitcichain-testnet"}
+	BITCOIN_MAINNET_BITLAYER_1                     = Chain{EvmChainID: 200901, Selector: 7937294810946806131, Name: "bitcoin-mainnet-bitlayer-1"}
+	BITCOIN_MAINNET_BOB_1                          = Chain{EvmChainID: 60808, Selector: 3849287863852499584, Name: "bitcoin-mainnet-bob-1"}
 	BITCOIN_MAINNET_BOTANIX                        = Chain{EvmChainID: 3637, Selector: 4560701533377838164, Name: "bitcoin-mainnet-botanix"}
+	BITCOIN_MAINNET_BSQUARED_1                     = Chain{EvmChainID: 223, Selector: 5406759801798337480, Name: "bitcoin-mainnet-bsquared-1"}
 	BITCOIN_MERLIN_MAINNET                         = Chain{EvmChainID: 4200, Selector: 241851231317828981, Name: "bitcoin-merlin-mainnet"}
 	BITCOIN_TESTNET_BITLAYER_1                     = Chain{EvmChainID: 200810, Selector: 3789623672476206327, Name: "bitcoin-testnet-bitlayer-1"}
 	BITCOIN_TESTNET_BOTANIX                        = Chain{EvmChainID: 3636, Selector: 1467223411771711614, Name: "bitcoin-testnet-botanix"}
 	BITCOIN_TESTNET_BSQUARED_1                     = Chain{EvmChainID: 1123, Selector: 1948510578179542068, Name: "bitcoin-testnet-bsquared-1"}
 	BITCOIN_TESTNET_MERLIN                         = Chain{EvmChainID: 686868, Selector: 5269261765892944301, Name: "bitcoin-testnet-merlin"}
 	BITCOIN_TESTNET_ROOTSTOCK                      = Chain{EvmChainID: 31, Selector: 8953668971247136127, Name: "bitcoin-testnet-rootstock"}
+	BITCOIN_TESTNET_SEPOLIA_BOB_1                  = Chain{EvmChainID: 808813, Selector: 5535534526963509396, Name: "bitcoin-testnet-sepolia-bob-1"}
 	BITTORRENT_CHAIN_MAINNET                       = Chain{EvmChainID: 199, Selector: 3776006016387883143, Name: "bittorrent_chain-mainnet"}
 	BITTORRENT_CHAIN_TESTNET                       = Chain{EvmChainID: 1029, Selector: 4459371029167934217, Name: "bittorrent_chain-testnet"}
 	CELO_MAINNET                                   = Chain{EvmChainID: 42220, Selector: 1346049177634351622, Name: "celo-mainnet"}
@@ -71,7 +76,6 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1_TREASURE_1 = Chain{EvmChainID: 978657, Selector: 10443705513486043421, Name: "ethereum-testnet-sepolia-arbitrum-1-treasure-1"}
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1                = Chain{EvmChainID: 84532, Selector: 10344971235874465080, Name: "ethereum-testnet-sepolia-base-1"}
 	ETHEREUM_TESTNET_SEPOLIA_BLAST_1               = Chain{EvmChainID: 168587773, Selector: 2027362563942762617, Name: "ethereum-testnet-sepolia-blast-1"}
-	ETHEREUM_TESTNET_SEPOLIA_BOB_1                 = Chain{EvmChainID: 808813, Selector: 5535534526963509396, Name: "ethereum-testnet-sepolia-bob-1"}
 	ETHEREUM_TESTNET_SEPOLIA_CORN_1                = Chain{EvmChainID: 21000000, Selector: 1467427327723633929, Name: "ethereum-testnet-sepolia-corn-1"}
 	ETHEREUM_TESTNET_SEPOLIA_IMMUTABLE_ZKEVM_1     = Chain{EvmChainID: 13473, Selector: 4526165231216331901, Name: "ethereum-testnet-sepolia-immutable-zkevm-1"}
 	ETHEREUM_TESTNET_SEPOLIA_KROMA_1               = Chain{EvmChainID: 2358, Selector: 5990477251245693094, Name: "ethereum-testnet-sepolia-kroma-1"}
@@ -123,6 +127,7 @@ var (
 	PRIVATE_TESTNET_MICA                           = Chain{EvmChainID: 424242, Selector: 4489326297382772450, Name: "private-testnet-mica"}
 	PRIVATE_TESTNET_OPALA                          = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala"}
 	RONIN_TESTNET_SAIGON                           = Chain{EvmChainID: 2021, Selector: 13116810400804392105, Name: "ronin-testnet-saigon"}
+	SEI_MAINNET                                    = Chain{EvmChainID: 1329, Selector: 9027416829622342829, Name: "sei-mainnet"}
 	SEI_TESTNET_ATLANTIC                           = Chain{EvmChainID: 1328, Selector: 1216300075444106652, Name: "sei-testnet-atlantic"}
 	SONIC_TESTNET                                  = Chain{EvmChainID: 64165, Selector: 3676871237479449268, Name: "sonic-testnet"}
 	STORY_TESTNET                                  = Chain{EvmChainID: 1513, Selector: 4237030917318060427, Name: "story-testnet"}
@@ -247,17 +252,22 @@ var ALL = []Chain{
 	AVALANCHE_TESTNET_FUJI,
 	AVALANCHE_TESTNET_NEXON,
 	BERACHAIN_TESTNET_ARTIO,
+	BERACHAIN_TESTNET_BARTIO,
 	BINANCE_SMART_CHAIN_MAINNET,
 	BINANCE_SMART_CHAIN_TESTNET,
 	BITCICHAIN_MAINNET,
 	BITCICHAIN_TESTNET,
+	BITCOIN_MAINNET_BITLAYER_1,
+	BITCOIN_MAINNET_BOB_1,
 	BITCOIN_MAINNET_BOTANIX,
+	BITCOIN_MAINNET_BSQUARED_1,
 	BITCOIN_MERLIN_MAINNET,
 	BITCOIN_TESTNET_BITLAYER_1,
 	BITCOIN_TESTNET_BOTANIX,
 	BITCOIN_TESTNET_BSQUARED_1,
 	BITCOIN_TESTNET_MERLIN,
 	BITCOIN_TESTNET_ROOTSTOCK,
+	BITCOIN_TESTNET_SEPOLIA_BOB_1,
 	BITTORRENT_CHAIN_MAINNET,
 	BITTORRENT_CHAIN_TESTNET,
 	CELO_MAINNET,
@@ -301,7 +311,6 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1_TREASURE_1,
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1,
 	ETHEREUM_TESTNET_SEPOLIA_BLAST_1,
-	ETHEREUM_TESTNET_SEPOLIA_BOB_1,
 	ETHEREUM_TESTNET_SEPOLIA_CORN_1,
 	ETHEREUM_TESTNET_SEPOLIA_IMMUTABLE_ZKEVM_1,
 	ETHEREUM_TESTNET_SEPOLIA_KROMA_1,
@@ -353,6 +362,7 @@ var ALL = []Chain{
 	PRIVATE_TESTNET_MICA,
 	PRIVATE_TESTNET_OPALA,
 	RONIN_TESTNET_SAIGON,
+	SEI_MAINNET,
 	SEI_TESTNET_ATLANTIC,
 	SONIC_TESTNET,
 	STORY_TESTNET,
