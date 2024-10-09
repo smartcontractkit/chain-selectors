@@ -210,12 +210,6 @@ selectors:
   2021:
     selector: 13116810400804392105
     name: "ronin-testnet-saigon"
-  2023:
-    selector: 3260900564719373474
-    name: "private-testnet-granite"
-  2024:
-    selector: 6915682381028791124
-    name: "private-testnet-andesite"
   200810:
     selector: 3789623672476206327
     name: "bitcoin-testnet-bitlayer-1"
@@ -380,6 +374,12 @@ selectors:
   424242:
     selector: 4489326297382772450
     name: "private-testnet-mica"
+  2023:
+    selector: 3260900564719373474
+    name: "private-testnet-granite"
+  2024:
+    selector: 6915682381028791124
+    name: "private-testnet-andesite"
   48900:
     selector: 17198166215261833993
     name: "ethereum-mainnet-zircuit-1"
