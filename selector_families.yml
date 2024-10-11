@@ -590,3 +590,6 @@ selector_families:
   9027416829622342829:
     family: evm
     name: "sei-mainnet"
+  6916147374840168594:
+    family: evm
+    name: "ronin-mainnet"
