@@ -126,6 +126,7 @@ var (
 	POLYGON_TESTNET_MUMBAI                         = Chain{EvmChainID: 80001, Selector: 12532609583862916517, Name: "polygon-testnet-mumbai"}
 	PRIVATE_TESTNET_MICA                           = Chain{EvmChainID: 424242, Selector: 4489326297382772450, Name: "private-testnet-mica"}
 	PRIVATE_TESTNET_OPALA                          = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala"}
+	RONIN_MAINNET                                  = Chain{EvmChainID: 2020, Selector: 6916147374840168594, Name: "ronin-mainnet"}
 	RONIN_TESTNET_SAIGON                           = Chain{EvmChainID: 2021, Selector: 13116810400804392105, Name: "ronin-testnet-saigon"}
 	SEI_MAINNET                                    = Chain{EvmChainID: 1329, Selector: 9027416829622342829, Name: "sei-mainnet"}
 	SEI_TESTNET_ATLANTIC                           = Chain{EvmChainID: 1328, Selector: 1216300075444106652, Name: "sei-testnet-atlantic"}
@@ -361,6 +362,7 @@ var ALL = []Chain{
 	POLYGON_TESTNET_MUMBAI,
 	PRIVATE_TESTNET_MICA,
 	PRIVATE_TESTNET_OPALA,
+	RONIN_MAINNET,
 	RONIN_TESTNET_SAIGON,
 	SEI_MAINNET,
 	SEI_TESTNET_ATLANTIC,
