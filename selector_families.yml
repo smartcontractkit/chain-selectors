@@ -163,9 +163,6 @@ selector_families:
     name: ethereum-mainnet-optimism-1
   3740583887329090549:
     family: evm
-  3768048213127883732:
-    family: evm
-    name: fantom-testnet-opera
   3776006016387883143:
     family: evm
     name: bittorrent_chain-mainnet
@@ -590,3 +587,21 @@ selector_families:
   9027416829622342829:
     family: evm
     name: "sei-mainnet"
+  13274425992935471758:
+    family: evm
+  7717148896336251131:
+    family: evm
+  14135854469784514356:
+    family: evm
+  7248756420937879088:
+    family: evm
+  14684575664602284776:
+    family: evm
+  465944652040885897:
+    family: evm
+  16468599424800719238:
+    family: evm
+  3768048213127883732:
+    family: evm
+  9058427471408475956:
+    family: evm
