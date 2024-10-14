@@ -402,6 +402,9 @@ selectors:
   1329:
     selector: 9027416829622342829
     name: "sei-mainnet"
+  2020: 
+    selector: 6916147374840168594
+    name: "ronin-mainnet"
   204:
     selector: 465944652040885897
     name: "bnb-mainnet-opBNB-1"
@@ -411,6 +414,3 @@ selectors:
   250:
     selector: 3768048213127883732
     name: "fantom-mainnet"
-  2020:
-    selector: 9058427471408475956
-    name: "ronin-mainnet"
