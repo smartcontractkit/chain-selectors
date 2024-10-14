@@ -19,7 +19,9 @@ var (
 	BERACHAIN_TESTNET_ARTIO                        = Chain{EvmChainID: 80085, Selector: 12336603543561911511, Name: "berachain-testnet-artio"}
 	BERACHAIN_TESTNET_BARTIO                       = Chain{EvmChainID: 80084, Selector: 8999465244383784164, Name: "berachain-testnet-bartio"}
 	BINANCE_SMART_CHAIN_MAINNET                    = Chain{EvmChainID: 56, Selector: 11344663589394136015, Name: "binance_smart_chain-mainnet"}
+	BINANCE_SMART_CHAIN_MAINNET_OPBNB_1            = Chain{EvmChainID: 204, Selector: 465944652040885897, Name: "binance_smart_chain-mainnet-opbnb-1"}
 	BINANCE_SMART_CHAIN_TESTNET                    = Chain{EvmChainID: 97, Selector: 13264668187771770619, Name: "binance_smart_chain-testnet"}
+	BINANCE_SMART_CHAIN_TESTNET_OPBNB_1            = Chain{EvmChainID: 5611, Selector: 13274425992935471758, Name: "binance_smart_chain-testnet-opbnb-1"}
 	BITCICHAIN_MAINNET                             = Chain{EvmChainID: 1907, Selector: 4874388048629246000, Name: "bitcichain-mainnet"}
 	BITCICHAIN_TESTNET                             = Chain{EvmChainID: 1908, Selector: 4888058894222120000, Name: "bitcichain-testnet"}
 	BITCOIN_MAINNET_BITLAYER_1                     = Chain{EvmChainID: 200901, Selector: 7937294810946806131, Name: "bitcoin-mainnet-bitlayer-1"}
@@ -35,8 +37,6 @@ var (
 	BITCOIN_TESTNET_SEPOLIA_BOB_1                  = Chain{EvmChainID: 808813, Selector: 5535534526963509396, Name: "bitcoin-testnet-sepolia-bob-1"}
 	BITTORRENT_CHAIN_MAINNET                       = Chain{EvmChainID: 199, Selector: 3776006016387883143, Name: "bittorrent_chain-mainnet"}
 	BITTORRENT_CHAIN_TESTNET                       = Chain{EvmChainID: 1029, Selector: 4459371029167934217, Name: "bittorrent_chain-testnet"}
-	BNB_MAINNET_OPBNB_1                            = Chain{EvmChainID: 204, Selector: 465944652040885897, Name: "bnb-mainnet-opbnb-1"}
-	BNB_TESTNET_SEPOLIA_OPBNB_1                    = Chain{EvmChainID: 5611, Selector: 13274425992935471758, Name: "bnb-testnet-sepolia-opbnb-1"}
 	CELO_MAINNET                                   = Chain{EvmChainID: 42220, Selector: 1346049177634351622, Name: "celo-mainnet"}
 	CELO_TESTNET_ALFAJORES                         = Chain{EvmChainID: 44787, Selector: 3552045678561919002, Name: "celo-testnet-alfajores"}
 	COINEX_SMART_CHAIN_MAINNET                     = Chain{EvmChainID: 52, Selector: 1761333065194157300, Name: "coinex_smart_chain-mainnet"}
@@ -262,7 +262,9 @@ var ALL = []Chain{
 	BERACHAIN_TESTNET_ARTIO,
 	BERACHAIN_TESTNET_BARTIO,
 	BINANCE_SMART_CHAIN_MAINNET,
+	BINANCE_SMART_CHAIN_MAINNET_OPBNB_1,
 	BINANCE_SMART_CHAIN_TESTNET,
+	BINANCE_SMART_CHAIN_TESTNET_OPBNB_1,
 	BITCICHAIN_MAINNET,
 	BITCICHAIN_TESTNET,
 	BITCOIN_MAINNET_BITLAYER_1,
@@ -278,8 +280,6 @@ var ALL = []Chain{
 	BITCOIN_TESTNET_SEPOLIA_BOB_1,
 	BITTORRENT_CHAIN_MAINNET,
 	BITTORRENT_CHAIN_TESTNET,
-	BNB_MAINNET_OPBNB_1,
-	BNB_TESTNET_SEPOLIA_OPBNB_1,
 	CELO_MAINNET,
 	CELO_TESTNET_ALFAJORES,
 	COINEX_SMART_CHAIN_MAINNET,
