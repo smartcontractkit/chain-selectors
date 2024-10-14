@@ -19,7 +19,9 @@ var (
 	BERACHAIN_TESTNET_ARTIO                        = Chain{EvmChainID: 80085, Selector: 12336603543561911511, Name: "berachain-testnet-artio"}
 	BERACHAIN_TESTNET_BARTIO                       = Chain{EvmChainID: 80084, Selector: 8999465244383784164, Name: "berachain-testnet-bartio"}
 	BINANCE_SMART_CHAIN_MAINNET                    = Chain{EvmChainID: 56, Selector: 11344663589394136015, Name: "binance_smart_chain-mainnet"}
+	BINANCE_SMART_CHAIN_MAINNET_OPBNB_1            = Chain{EvmChainID: 204, Selector: 465944652040885897, Name: "binance_smart_chain-mainnet-opbnb-1"}
 	BINANCE_SMART_CHAIN_TESTNET                    = Chain{EvmChainID: 97, Selector: 13264668187771770619, Name: "binance_smart_chain-testnet"}
+	BINANCE_SMART_CHAIN_TESTNET_OPBNB_1            = Chain{EvmChainID: 5611, Selector: 13274425992935471758, Name: "binance_smart_chain-testnet-opbnb-1"}
 	BITCICHAIN_MAINNET                             = Chain{EvmChainID: 1907, Selector: 4874388048629246000, Name: "bitcichain-mainnet"}
 	BITCICHAIN_TESTNET                             = Chain{EvmChainID: 1908, Selector: 4888058894222120000, Name: "bitcichain-testnet"}
 	BITCOIN_MAINNET_BITLAYER_1                     = Chain{EvmChainID: 200901, Selector: 7937294810946806131, Name: "bitcoin-mainnet-bitlayer-1"}
@@ -58,6 +60,7 @@ var (
 	ETHEREUM_MAINNET_OPTIMISM_1                    = Chain{EvmChainID: 10, Selector: 3734403246176062136, Name: "ethereum-mainnet-optimism-1"}
 	ETHEREUM_MAINNET_POLYGON_ZKEVM_1               = Chain{EvmChainID: 1101, Selector: 4348158687435793198, Name: "ethereum-mainnet-polygon-zkevm-1"}
 	ETHEREUM_MAINNET_SCROLL_1                      = Chain{EvmChainID: 534352, Selector: 13204309965629103672, Name: "ethereum-mainnet-scroll-1"}
+	ETHEREUM_MAINNET_TAIKO_1                       = Chain{EvmChainID: 167000, Selector: 16468599424800719238, Name: "ethereum-mainnet-taiko-1"}
 	ETHEREUM_MAINNET_XLAYER_1                      = Chain{EvmChainID: 196, Selector: 3016212468291539606, Name: "ethereum-mainnet-xlayer-1"}
 	ETHEREUM_MAINNET_ZIRCUIT_1                     = Chain{EvmChainID: 48900, Selector: 17198166215261833993, Name: "ethereum-mainnet-zircuit-1"}
 	ETHEREUM_MAINNET_ZKSYNC_1                      = Chain{EvmChainID: 324, Selector: 1562403441176082196, Name: "ethereum-mainnet-zksync-1"}
@@ -68,8 +71,10 @@ var (
 	ETHEREUM_TESTNET_GOERLI_OPTIMISM_1             = Chain{EvmChainID: 420, Selector: 2664363617261496610, Name: "ethereum-testnet-goerli-optimism-1"}
 	ETHEREUM_TESTNET_GOERLI_POLYGON_ZKEVM_1        = Chain{EvmChainID: 1442, Selector: 11059667695644972511, Name: "ethereum-testnet-goerli-polygon-zkevm-1"}
 	ETHEREUM_TESTNET_GOERLI_ZKSYNC_1               = Chain{EvmChainID: 280, Selector: 6802309497652714138, Name: "ethereum-testnet-goerli-zksync-1"}
+	ETHEREUM_TESTNET_HOLESKY                       = Chain{EvmChainID: 17000, Selector: 7717148896336251131, Name: "ethereum-testnet-holesky"}
 	ETHEREUM_TESTNET_HOLESKY_FRAXTAL_1             = Chain{EvmChainID: 2522, Selector: 8901520481741771655, Name: "ethereum-testnet-holesky-fraxtal-1"}
 	ETHEREUM_TESTNET_HOLESKY_MORPH_1               = Chain{EvmChainID: 2810, Selector: 8304510386741731151, Name: "ethereum-testnet-holesky-morph-1"}
+	ETHEREUM_TESTNET_HOLESKY_TAIKO_1               = Chain{EvmChainID: 167009, Selector: 7248756420937879088, Name: "ethereum-testnet-holesky-taiko-1"}
 	ETHEREUM_TESTNET_SEPOLIA                       = Chain{EvmChainID: 11155111, Selector: 16015286601757825753, Name: "ethereum-testnet-sepolia"}
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1            = Chain{EvmChainID: 421614, Selector: 3478487238524512106, Name: "ethereum-testnet-sepolia-arbitrum-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1_L3X_1      = Chain{EvmChainID: 12325, Selector: 3486622437121596122, Name: "ethereum-testnet-sepolia-arbitrum-1-l3x-1"}
@@ -90,11 +95,12 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_ZKEVM_1       = Chain{EvmChainID: 2442, Selector: 1654667687261492630, Name: "ethereum-testnet-sepolia-polygon-zkevm-1"}
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1              = Chain{EvmChainID: 534351, Selector: 2279865765895943307, Name: "ethereum-testnet-sepolia-scroll-1"}
 	ETHEREUM_TESTNET_SEPOLIA_SONEIUM_1             = Chain{EvmChainID: 1946, Selector: 686603546605904534, Name: "ethereum-testnet-sepolia-soneium-1"}
+	ETHEREUM_TESTNET_SEPOLIA_UNICHAIN_1            = Chain{EvmChainID: 1301, Selector: 14135854469784514356, Name: "ethereum-testnet-sepolia-unichain-1"}
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1              = Chain{EvmChainID: 195, Selector: 2066098519157881736, Name: "ethereum-testnet-sepolia-xlayer-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT_1             = Chain{EvmChainID: 48899, Selector: 4562743618362911021, Name: "ethereum-testnet-sepolia-zircuit-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1              = Chain{EvmChainID: 300, Selector: 6898391096552792247, Name: "ethereum-testnet-sepolia-zksync-1"}
+	FANTOM_MAINNET                                 = Chain{EvmChainID: 250, Selector: 3768048213127883732, Name: "fantom-mainnet"}
 	FANTOM_TESTNET                                 = Chain{EvmChainID: 4002, Selector: 4905564228793744293, Name: "fantom-testnet"}
-	FANTOM_TESTNET_OPERA                           = Chain{EvmChainID: 250, Selector: 3768048213127883732, Name: "fantom-testnet-opera"}
 	FILECOIN_MAINNET                               = Chain{EvmChainID: 314, Selector: 4561443241176882990, Name: "filecoin-mainnet"}
 	FILECOIN_TESTNET                               = Chain{EvmChainID: 31415926, Selector: 7060342227814389000, Name: "filecoin-testnet"}
 	FRAXTAL_MAINNET                                = Chain{EvmChainID: 252, Selector: 1462016016387883143, Name: "fraxtal-mainnet"}
@@ -113,6 +119,7 @@ var (
 	NEAR_TESTNET                                   = Chain{EvmChainID: 398, Selector: 5061593697262339000, Name: "near-testnet"}
 	NEONLINK_MAINNET                               = Chain{EvmChainID: 259, Selector: 8239338020728974000, Name: "neonlink-mainnet"}
 	NEONLINK_TESTNET                               = Chain{EvmChainID: 9559, Selector: 1113014352258747600, Name: "neonlink-testnet"}
+	PLUME_TESTNET                                  = Chain{EvmChainID: 161221135, Selector: 14684575664602284776, Name: "plume-testnet"}
 	POLKADOT_MAINNET_ASTAR                         = Chain{EvmChainID: 592, Selector: 6422105447186081193, Name: "polkadot-mainnet-astar"}
 	POLKADOT_MAINNET_CENTRIFUGE                    = Chain{EvmChainID: 2031, Selector: 8175830712062617656, Name: "polkadot-mainnet-centrifuge"}
 	POLKADOT_MAINNET_DARWINIA                      = Chain{EvmChainID: 46, Selector: 8866418665544333000, Name: "polkadot-mainnet-darwinia"}
@@ -255,7 +262,9 @@ var ALL = []Chain{
 	BERACHAIN_TESTNET_ARTIO,
 	BERACHAIN_TESTNET_BARTIO,
 	BINANCE_SMART_CHAIN_MAINNET,
+	BINANCE_SMART_CHAIN_MAINNET_OPBNB_1,
 	BINANCE_SMART_CHAIN_TESTNET,
+	BINANCE_SMART_CHAIN_TESTNET_OPBNB_1,
 	BITCICHAIN_MAINNET,
 	BITCICHAIN_TESTNET,
 	BITCOIN_MAINNET_BITLAYER_1,
@@ -294,6 +303,7 @@ var ALL = []Chain{
 	ETHEREUM_MAINNET_OPTIMISM_1,
 	ETHEREUM_MAINNET_POLYGON_ZKEVM_1,
 	ETHEREUM_MAINNET_SCROLL_1,
+	ETHEREUM_MAINNET_TAIKO_1,
 	ETHEREUM_MAINNET_XLAYER_1,
 	ETHEREUM_MAINNET_ZIRCUIT_1,
 	ETHEREUM_MAINNET_ZKSYNC_1,
@@ -304,8 +314,10 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_GOERLI_OPTIMISM_1,
 	ETHEREUM_TESTNET_GOERLI_POLYGON_ZKEVM_1,
 	ETHEREUM_TESTNET_GOERLI_ZKSYNC_1,
+	ETHEREUM_TESTNET_HOLESKY,
 	ETHEREUM_TESTNET_HOLESKY_FRAXTAL_1,
 	ETHEREUM_TESTNET_HOLESKY_MORPH_1,
+	ETHEREUM_TESTNET_HOLESKY_TAIKO_1,
 	ETHEREUM_TESTNET_SEPOLIA,
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1_L3X_1,
@@ -326,11 +338,12 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_ZKEVM_1,
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1,
 	ETHEREUM_TESTNET_SEPOLIA_SONEIUM_1,
+	ETHEREUM_TESTNET_SEPOLIA_UNICHAIN_1,
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1,
 	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT_1,
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1,
+	FANTOM_MAINNET,
 	FANTOM_TESTNET,
-	FANTOM_TESTNET_OPERA,
 	FILECOIN_MAINNET,
 	FILECOIN_TESTNET,
 	FRAXTAL_MAINNET,
@@ -349,6 +362,7 @@ var ALL = []Chain{
 	NEAR_TESTNET,
 	NEONLINK_MAINNET,
 	NEONLINK_TESTNET,
+	PLUME_TESTNET,
 	POLKADOT_MAINNET_ASTAR,
 	POLKADOT_MAINNET_CENTRIFUGE,
 	POLKADOT_MAINNET_DARWINIA,

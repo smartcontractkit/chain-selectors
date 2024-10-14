@@ -24,10 +24,7 @@ selectors:
     name: "velas-testnet"
   195:
     selector: 2066098519157881736
-    name: "ethereum-testnet-sepolia-xlayer-1"
-  250:
-    selector: 3768048213127883732
-    name: "fantom-testnet-opera"
+    name: "ethereum-testnet-sepolia-xlayer-1"  
   280:
     selector: 6802309497652714138
     name: "ethereum-testnet-goerli-zksync-1"
@@ -230,7 +227,23 @@ selectors:
     name: "hyperliquid-testnet"
   1513:
     selector: 4237030917318060427
-    name: "story-testnet"   
+    name: "story-testnet"
+  5611:
+    selector: 13274425992935471758
+    name: "binance_smart_chain-testnet-opbnb-1"
+  17000:
+    selector: 7717148896336251131
+    name: "ethereum-testnet-holesky"
+  1301:
+    selector: 14135854469784514356
+    name: "ethereum-testnet-sepolia-unichain-1"
+  167009:
+    selector: 7248756420937879088
+    name: "ethereum-testnet-holesky-taiko-1"
+  161221135:
+    selector: 14684575664602284776
+    name: "plume-testnet"
+ 
 
   # Mainnets
   1:
@@ -392,3 +405,12 @@ selectors:
   2020: 
     selector: 6916147374840168594
     name: "ronin-mainnet"
+  204:
+    selector: 465944652040885897
+    name: "binance_smart_chain-mainnet-opbnb-1"
+  167000:
+    selector: 16468599424800719238
+    name: "ethereum-mainnet-taiko-1"
+  250:
+    selector: 3768048213127883732
+    name: "fantom-mainnet"
