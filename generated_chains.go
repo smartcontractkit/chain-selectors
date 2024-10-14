@@ -35,8 +35,8 @@ var (
 	BITCOIN_TESTNET_SEPOLIA_BOB_1                  = Chain{EvmChainID: 808813, Selector: 5535534526963509396, Name: "bitcoin-testnet-sepolia-bob-1"}
 	BITTORRENT_CHAIN_MAINNET                       = Chain{EvmChainID: 199, Selector: 3776006016387883143, Name: "bittorrent_chain-mainnet"}
 	BITTORRENT_CHAIN_TESTNET                       = Chain{EvmChainID: 1029, Selector: 4459371029167934217, Name: "bittorrent_chain-testnet"}
-	BNB_MAINNET_OPBNB_1                            = Chain{EvmChainID: 204, Selector: 465944652040885897, Name: "bnb-mainnet-opBNB-1"}
-	BNB_TESTNET_SEPOLIA_OPBNB_1                    = Chain{EvmChainID: 5611, Selector: 13274425992935471758, Name: "bnb-testnet-sepolia-opBNB-1"}
+	BNB_MAINNET_OPBNB_1                            = Chain{EvmChainID: 204, Selector: 465944652040885897, Name: "bnb-mainnet-opbnb-1"}
+	BNB_TESTNET_SEPOLIA_OPBNB_1                    = Chain{EvmChainID: 5611, Selector: 13274425992935471758, Name: "bnb-testnet-sepolia-opbnb-1"}
 	CELO_MAINNET                                   = Chain{EvmChainID: 42220, Selector: 1346049177634351622, Name: "celo-mainnet"}
 	CELO_TESTNET_ALFAJORES                         = Chain{EvmChainID: 44787, Selector: 3552045678561919002, Name: "celo-testnet-alfajores"}
 	COINEX_SMART_CHAIN_MAINNET                     = Chain{EvmChainID: 52, Selector: 1761333065194157300, Name: "coinex_smart_chain-mainnet"}

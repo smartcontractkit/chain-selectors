@@ -230,7 +230,7 @@ selectors:
     name: "story-testnet"
   5611:
     selector: 13274425992935471758
-    name: "bnb-testnet-sepolia-opBNB-1"
+    name: "bnb-testnet-sepolia-opbnb-1"
   17000:
     selector: 7717148896336251131
     name: "ethereum-testnet-holesky"
@@ -407,7 +407,7 @@ selectors:
     name: "ronin-mainnet"
   204:
     selector: 465944652040885897
-    name: "bnb-mainnet-opBNB-1"
+    name: "bnb-mainnet-opbnb-1"
   167000:
     selector: 16468599424800719238
     name: "ethereum-mainnet-taiko-1"
