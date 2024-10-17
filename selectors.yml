@@ -243,6 +243,9 @@ selectors:
   161221135:
     selector: 14684575664602284776
     name: "plume-testnet"
+  4801:
+    selector: 5299555114858065850
+    name: "ethereum-testnet-worldchain"
  
 
   # Mainnets
@@ -414,3 +417,6 @@ selectors:
   250:
     selector: 3768048213127883732
     name: "fantom-mainnet"
+  480:
+    selector: 2049429975587534727
+    name: "ethereum-mainnet-worldchain" 
