@@ -61,6 +61,7 @@ var (
 	ETHEREUM_MAINNET_POLYGON_ZKEVM_1               = Chain{EvmChainID: 1101, Selector: 4348158687435793198, Name: "ethereum-mainnet-polygon-zkevm-1"}
 	ETHEREUM_MAINNET_SCROLL_1                      = Chain{EvmChainID: 534352, Selector: 13204309965629103672, Name: "ethereum-mainnet-scroll-1"}
 	ETHEREUM_MAINNET_TAIKO_1                       = Chain{EvmChainID: 167000, Selector: 16468599424800719238, Name: "ethereum-mainnet-taiko-1"}
+	ETHEREUM_MAINNET_WORLDCHAIN                    = Chain{EvmChainID: 480, Selector: 2049429975587534727, Name: "ethereum-mainnet-worldchain"}
 	ETHEREUM_MAINNET_XLAYER_1                      = Chain{EvmChainID: 196, Selector: 3016212468291539606, Name: "ethereum-mainnet-xlayer-1"}
 	ETHEREUM_MAINNET_ZIRCUIT_1                     = Chain{EvmChainID: 48900, Selector: 17198166215261833993, Name: "ethereum-mainnet-zircuit-1"}
 	ETHEREUM_MAINNET_ZKSYNC_1                      = Chain{EvmChainID: 324, Selector: 1562403441176082196, Name: "ethereum-mainnet-zksync-1"}
@@ -99,6 +100,7 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1              = Chain{EvmChainID: 195, Selector: 2066098519157881736, Name: "ethereum-testnet-sepolia-xlayer-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT_1             = Chain{EvmChainID: 48899, Selector: 4562743618362911021, Name: "ethereum-testnet-sepolia-zircuit-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1              = Chain{EvmChainID: 300, Selector: 6898391096552792247, Name: "ethereum-testnet-sepolia-zksync-1"}
+	ETHEREUM_TESTNET_WORLDCHAIN                    = Chain{EvmChainID: 4801, Selector: 5299555114858065850, Name: "ethereum-testnet-worldchain"}
 	FANTOM_MAINNET                                 = Chain{EvmChainID: 250, Selector: 3768048213127883732, Name: "fantom-mainnet"}
 	FANTOM_TESTNET                                 = Chain{EvmChainID: 4002, Selector: 4905564228793744293, Name: "fantom-testnet"}
 	FILECOIN_MAINNET                               = Chain{EvmChainID: 314, Selector: 4561443241176882990, Name: "filecoin-mainnet"}
@@ -304,6 +306,7 @@ var ALL = []Chain{
 	ETHEREUM_MAINNET_POLYGON_ZKEVM_1,
 	ETHEREUM_MAINNET_SCROLL_1,
 	ETHEREUM_MAINNET_TAIKO_1,
+	ETHEREUM_MAINNET_WORLDCHAIN,
 	ETHEREUM_MAINNET_XLAYER_1,
 	ETHEREUM_MAINNET_ZIRCUIT_1,
 	ETHEREUM_MAINNET_ZKSYNC_1,
@@ -342,6 +345,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1,
 	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT_1,
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1,
+	ETHEREUM_TESTNET_WORLDCHAIN,
 	FANTOM_MAINNET,
 	FANTOM_TESTNET,
 	FILECOIN_MAINNET,
