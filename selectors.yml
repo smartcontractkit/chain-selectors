@@ -245,7 +245,7 @@ selectors:
     name: "plume-testnet"
   4801:
     selector: 5299555114858065850
-    name: "ethereum-testnet-worldchain-1"
+    name: "ethereum-testnet-sepolia-worldchain-1"
  
 
   # Mainnets
