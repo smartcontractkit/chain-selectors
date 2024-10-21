@@ -606,3 +606,7 @@ selector_families:
   6916147374840168594:
     family: evm
     name: "ronin-mainnet"
+  5299555114858065850:
+    family: evm
+  2049429975587534727:
+    family: evm
