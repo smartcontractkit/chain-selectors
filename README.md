@@ -19,17 +19,17 @@ import (
 )
 
 func main() {
-    // Getting selector based on ChainId
-    selector, err := chainselectors.SelectorFromChainId(420)
+    // Getting selector based on ChainId and family
+    selector, err := chainselectors.SelectorFromChainIdAndFamily(420, "evm")
     
     // Getting ChainId based on ChainSelector
     chainId, err := chainselectors.ChainIdFromSelector(2664363617261496610)
     
     // Getting ChainName based on ChainId
-    chainName, err := chainselectors.NameFromChainId(420)
+    chainName, err := chainselectors.NameFromChainIdAndFamily(420, "evm")
     
-    // Getting ChainId based on the ChainName
-    chainId, err := chainselectors.ChainIdFromName("binance_smart_chain-testnet")
+    // Getting ChainId based on the ChainName and family
+    chainId, err := chainselectors.ChainIdFromNameAndFamily("binance_smart_chain-testnet", "evm")
     
     // Accessing mapping directly
     lookupChainId := uint64(1337)
