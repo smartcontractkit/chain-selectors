@@ -159,12 +159,12 @@ func ChainIdFromNameAndFamily(name string, family string) (string, error) {
 //}
 
 var chainsBySelector = make(map[uint64]Chain)
-var chainsByEvmChainID = make(map[uint64]Chain)
+var chainsByEvmChainID = make(map[string]Chain)
 
 func init() {
 	for _, ch := range ALL {
 		chainsBySelector[ch.Selector] = ch
-		chainsByEvmChainID[ch.EvmChainID] = ch
+		chainsByEvmChainID[ch.ChainID] = ch
 	}
 }
 
@@ -173,8 +173,8 @@ func ChainBySelector(sel uint64) (Chain, bool) {
 	return ch, exists
 }
 
-func ChainByEvmChainID(evmChainID uint64) (Chain, bool) {
-	ch, exists := chainsByEvmChainID[evmChainID]
+func ChainByEvmChainID(chainID string) (Chain, bool) {
+	ch, exists := chainsByEvmChainID[chainID]
 	return ch, exists
 }
 
