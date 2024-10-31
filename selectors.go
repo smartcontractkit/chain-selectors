@@ -15,7 +15,7 @@ var selectorsYml []byte
 //go:embed test_selectors.yml
 var testSelectorsYml []byte
 
-//go:embed selector_families.yml
+//go:embed selector_restructured.yml
 var selectorFamiliesYml []byte
 
 type newChainDetails struct {
