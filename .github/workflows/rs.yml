@@ -32,7 +32,7 @@ jobs:
           fi
           exit 1;
       - name: cargo fmt
-        working-directory: rs/chainselector
+        working-directory: rs/chainselectors
         run: cargo fmt --all -- --check
       - name: cargo clippy
         working-directory: rs/chainselectors
