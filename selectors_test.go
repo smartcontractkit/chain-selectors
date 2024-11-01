@@ -20,7 +20,7 @@ func TestNoSameChainSelectorsAreGenerated(t *testing.T) {
 }
 
 func TestNoOverlapBetweenRealAndTestChains(t *testing.T) {
-	for k, _ := range selectorsMap {
+	for k := range selectorsMap {
 		_, exist := testSelectorsMap[k]
 		assert.False(t, exist, "Chain %d is duplicated between real and test chains", k)
 	}

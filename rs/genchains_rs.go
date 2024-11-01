@@ -17,7 +17,6 @@ import (
 
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
-
 	"gopkg.in/yaml.v3"
 )
 
@@ -57,7 +56,7 @@ func main() {
 	if err := os.WriteFile(tmpFile, wr.Bytes(), 0644); err != nil {
 		panic(err)
 	}
-	// execute rustfmt on the temporary generated file
+	defer os.Remove(tmpFile)
 	cmd := exec.Command("rustfmt", tmpFile)
 	if err := cmd.Run(); err != nil {
 		panic(err)
@@ -66,7 +65,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	defer os.Remove(tmpFile)
 
 	if string(existingContent) == string(formatted) {
 		fmt.Println("rust: no changes detected")
@@ -78,8 +76,8 @@ func main() {
 }
 
 type SelectorsYamlEntry struct {
-	Name     string `yaml:"name"`
-	Selector uint64 `yaml:"selector"`
+	ChainName     string `yaml:"name"`
+	ChainSelector uint64 `yaml:"selector"`
 }
 
 type SelectorsYaml struct {
@@ -118,12 +116,12 @@ func readChainsFromSelectors(selectorsYml, testSelectorsYml string) ([]Chain, er
 	re := regexp.MustCompile("[-_]+")
 	caser := cases.Title(language.English)
 	chains := make([]Chain, 0, len(selectors.Selectors)+len(testSelectors.Selectors))
-	for chainID, selector := range selectors.Selectors {
+	for chainID, chain := range selectors.Selectors {
 		chains = append(chains, Chain{
 			EvmChainID: chainID,
-			Selector:   selector.Selector,
-			Name:       selector.Name,
-			VarName:    toVarName(selector.Name, selector.Selector, caser, re),
+			Selector:   chain.ChainSelector,
+			Name:       chain.ChainName,
+			VarName:    toVarName(chain.ChainName, chain.ChainSelector, caser, re),
 		})
 	}
 
