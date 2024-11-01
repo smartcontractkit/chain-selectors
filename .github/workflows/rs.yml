@@ -35,12 +35,12 @@ jobs:
         working-directory: rs/chainselector
         run: cargo fmt --all -- --check
       - name: cargo clippy
-        working-directory: rs/chainselector
+        working-directory: rs/chainselectors
         run: cargo clippy --all-targets --all-features -- -D warnings
       - name: cargo test
-        working-directory: rs/chainselector
+        working-directory: rs/chainselectors
         run: cargo test
         timeout-minutes: 1
       - name: cargo build
-        working-directory: rs/chainselector 
+        working-directory: rs/chainselectors
         run: cargo build
