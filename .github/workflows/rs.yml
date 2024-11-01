@@ -1,7 +1,11 @@
 name: Rust - Build and test
 
-on: [ push ]
-
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  
 jobs:
   build-test:
     name: Build and test
@@ -10,12 +14,10 @@ jobs:
       - name: Checkout sources
         uses: actions/checkout@v3
       - name: Install rust toolchain
-        working-directory: ./rs/chainselectors
         uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt, clippy
       - uses: Swatinem/rust-cache@v2
-        working-directory: ./rs/chainselector
         with:
           cache-on-failure: true
       - name: Set up Go
