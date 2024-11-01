@@ -18,21 +18,21 @@ func TestNoSameChainSelectorsAreGenerated(t *testing.T) {
 	}
 }
 
-//func TestNoOverlapBetweenRealAndTestChains(t *testing.T) {
-//	for k, _ := range selectorsMap {
-//		_, exist := testSelectorsMap[k]
-//		assert.False(t, exist, "Chain %d is duplicated between real and test chains", k)
-//	}
-//}
+func TestNoOverlapBetweenRealAndTestChains(t *testing.T) {
+	for k, _ := range selectorToChainDetails {
+		_, exist := testSelectorsMap[k]
+		assert.False(t, exist, "Chain %d is duplicated between real and test chains", k)
+	}
+}
 
 func TestBothSelectorsYmlAndTestSelectorsYmlAreValid(t *testing.T) {
 	optimismGoerliSelector, err := SelectorFromChainIdAndFamily("420", "")
 	require.NoError(t, err)
 	assert.Equal(t, uint64(2664363617261496610), optimismGoerliSelector)
 
-	testChainSelector, err := SelectorFromChainIdAndFamily("90000020", "")
-	require.NoError(t, err)
-	assert.Equal(t, uint64(17810359353458878177), testChainSelector)
+	testChainSelector, exist := ChainBySelector(17810359353458878177)
+	require.True(t, exist)
+	assert.Equal(t, "90000020", testChainSelector.ChainID)
 }
 
 func TestEvmChainIdToChainSelectorReturningCopiedMap(t *testing.T) {
@@ -51,7 +51,7 @@ func TestAllChainSelectorsHaveFamilies(t *testing.T) {
 		family, err := GetSelectorFamily(ch.Selector)
 		require.NoError(t, err,
 			"Family not found for selector %d (chain id %d, name %s), please update selector_families.yml with the appropriate chain family for this chain",
-			ch.Selector, ch.EvmChainID, ch.Name)
+			ch.Selector, ch.ChainID, ch.Name)
 		require.NotEmpty(t, family)
 	}
 }
@@ -193,32 +193,32 @@ func Test_ChainBySelector(t *testing.T) {
 	})
 }
 
-func Test_ChainByEvmChainID(t *testing.T) {
-	t.Run("exist", func(t *testing.T) {
-		for _, ch := range ALL {
-			v, exists := ChainByEvmChainID(ch.EvmChainID)
-			assert.True(t, exists)
-			assert.Equal(t, ch, v)
-		}
-	})
-
-	t.Run("non existent", func(t *testing.T) {
-		_, exists := ChainByEvmChainID(rand.Uint64())
-		assert.False(t, exists)
-	})
-}
+//func Test_ChainByEvmChainID(t *testing.T) {
+//	t.Run("exist", func(t *testing.T) {
+//		for _, ch := range ALL {
+//			v, exists := ChainByEvmChainID(ch.ChainID)
+//			assert.True(t, exists)
+//			assert.Equal(t, ch, v)
+//		}
+//	})
+//
+//	t.Run("non existent", func(t *testing.T) {
+//		_, exists := ChainByEvmChainID(strconv.FormatUint(rand.Uint64(), 10))
+//		assert.False(t, exists)
+//	})
+//}
 
 func Test_IsEvm(t *testing.T) {
 	t.Run("exist", func(t *testing.T) {
 		for _, ch := range ALL {
-			isEvm, err := IsEvm(ch.Selector)
+			isEvm, err := ChainSelectorExist(ch.Selector)
 			assert.NoError(t, err)
 			assert.True(t, isEvm)
 		}
 	})
 
 	t.Run("non existent", func(t *testing.T) {
-		isEvm, err := IsEvm(rand.Uint64())
+		isEvm, err := ChainSelectorExist(rand.Uint64())
 		assert.Error(t, err)
 		assert.False(t, isEvm)
 	})

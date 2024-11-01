@@ -22,6 +22,7 @@ type chain struct {
 	ChainID  string
 	Selector uint64
 	Name     string
+	Family   string
 	VarName  string
 }
 
@@ -32,12 +33,13 @@ type Chain struct {
 	Selector   uint64
 	Name       string
 	ChainID    string
+	Family     string
 	VarName    string
 }
 
 var (
 {{ range . }}
-	{{.VarName}} = Chain{ChainID: "{{ .ChainID }}", Selector: {{ .Selector }}, Name: "{{ .Name }}"}{{ end }}
+	{{.VarName}} = Chain{ChainID: "{{ .ChainID }}", Selector: {{ .Selector }}, Family: "{{ .Family }}", Name: "{{ .Name }}"}{{ end }}
 )
 
 var ALL = []Chain{
@@ -83,6 +85,7 @@ func genChainsSourceCode() (string, error) {
 			ChainID:  chainDetails.ChainID,
 			Selector: chainSelector,
 			Name:     chainDetails.Name,
+			Family:   chainDetails.Family,
 			VarName:  toVarName(chainDetails.Name, chainSelector),
 		})
 	}

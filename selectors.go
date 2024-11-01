@@ -9,7 +9,7 @@ import (
 
 //go:generate go run genchains.go
 
-//go:embed test_selectors.yml
+//go:embed test_selectors_restructured.yml
 var testSelectorsYml []byte
 
 //go:embed selector_restructured.yml
@@ -30,6 +30,7 @@ const (
 )
 
 var chainIDToSelectorMapForFamily = make(map[string]map[string]uint64)
+var testChainIDToSelectorMapForFamily = make(map[string]map[string]uint64)
 var selectorToChainDetails = loadChainDetailsBySelector()
 var testSelectorsMap = loadTestChains()
 
@@ -43,6 +44,21 @@ func loadTestChains() map[uint64]chainDetails {
 	if err != nil {
 		panic(err)
 	}
+
+	for k, v := range data.SelectorFamilies {
+		if v.Family == "" {
+			continue
+		}
+
+		// update testChainIDToSelectorMapForFamily
+		_, exist := testChainIDToSelectorMapForFamily[v.Family]
+		if exist {
+			testChainIDToSelectorMapForFamily[v.Family][v.ChainID] = k
+		} else {
+			testChainIDToSelectorMapForFamily[v.Family] = make(map[string]uint64)
+		}
+	}
+
 	return data.SelectorFamilies
 }
 
@@ -168,13 +184,12 @@ func TestChainIds() []uint64 {
 	return chainIds
 }
 
+// ------------------------For Test------------------------
 var chainsBySelector = make(map[uint64]Chain)
-var chainsByEvmChainID = make(map[string]Chain)
 
 func init() {
 	for _, ch := range ALL {
 		chainsBySelector[ch.Selector] = ch
-		chainsByEvmChainID[ch.ChainID] = ch
 	}
 }
 
@@ -183,16 +198,11 @@ func ChainBySelector(sel uint64) (Chain, bool) {
 	return ch, exists
 }
 
-func ChainByEvmChainID(chainID string) (Chain, bool) {
-	ch, exists := chainsByEvmChainID[chainID]
-	return ch, exists
-}
-
-func IsEvm(chainSel uint64) (bool, error) {
+func ChainSelectorExist(chainSel uint64) (bool, error) {
 	_, exists := ChainBySelector(chainSel)
 	if !exists {
 		return false, fmt.Errorf("chain %d not found", chainSel)
 	}
-	// We always return true since only evm chains are supported atm.
+
 	return true, nil
 }
