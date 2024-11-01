@@ -4,6 +4,9 @@ CCIP uses its own set of chain selectors represented by uint64 to identify block
 mapping between the custom chain identifiers (`chainSelectorId`) chain names and the chain identifiers
 used by the blockchains themselves (`chainId`).
 
+Please refer to the [official documentation](https://docs.chain.link/ccip/supported-networks) to learn more about
+supported networks and their selectors.
+
 ### Installation
 
 `go get github.com/smartcontractkit/chain-selectors`
