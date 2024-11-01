@@ -3,18 +3,48 @@ pub mod generated_chains;
 #[cfg(test)]
 mod tests {
     use super::*;
-    use generated_chains::ChainName;
+
+    use generated_chains::{ChainId, ChainName};
+    use std::str::FromStr;
 
     #[test]
-    fn convert_from_chain_id() {
-        assert_eq!(
-            ChainName::from_chain_id(1),
-            Some(ChainName::EthereumMainnet)
-        );
+    fn chain_from_id() {
+        match ChainName::try_from(1 as ChainId) {
+            Ok(chain) => {
+                assert_eq!(chain, ChainName::EthereumMainnet);
+            }
+            Err(_) => panic!("should have succeeded"),
+        }
     }
 
     #[test]
-    fn convert_to_chain_selector() {
+    fn chain_from_unknown_id() {
+        match ChainName::try_from(0 as ChainId) {
+            Ok(_) => panic!("should have failed for unknown chain"),
+            Err(e) => {
+                assert_eq!(e.to_string(), "unknown chain id: 0");
+            }
+        }
+    }
+
+    #[test]
+    fn chain_from_str() {
+        let chain = ChainName::from_str("ethereum-mainnet").unwrap();
+        assert_eq!(chain, ChainName::EthereumMainnet);
+    }
+
+    #[test]
+    fn chain_from_str_unknown() {
+        match ChainName::from_str("ethereum-dummy-x") {
+            Ok(_) => panic!("should have failed for unknown chain"),
+            Err(e) => {
+                assert_eq!(e.to_string(), "unknown chain name: ethereum-dummy-x");
+            }
+        };
+    }
+
+    #[test]
+    fn to_chain_selector() {
         assert_eq!(
             generated_chains::chain_selector(ChainName::EthereumMainnet),
             5009297550715157269
