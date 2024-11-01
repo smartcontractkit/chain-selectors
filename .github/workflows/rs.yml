@@ -3,9 +3,9 @@ name: Rust - Build and test
 on:
   push:
     branches:
-      - master
+      - gen-rs
   pull_request:
-  
+
 jobs:
   build-test:
     name: Build and test
