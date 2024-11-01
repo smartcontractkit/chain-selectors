@@ -46,7 +46,7 @@ func main() {
 Chain names must respect the following format:
 `<blockchain>-<type>-<network_instance>`
 
-When a component requires more than 1 word, use snake-case to connect them, e.g `polygon-zkevm`
+When a component requires more than 1 word, use snake-case to connect them, e.g `polygon-zkevm`.
 
 | Parameter | Description | Example                       |
 | --- | --- |-------------------------------|
@@ -58,9 +58,9 @@ More on `network_instance`: only include it if `type` is not mainnet. This is be
 
 Rules for `network_instance`:
 1. If chain has an officially-named testnet, use it, e.g
-celo-testnet-alfajores, ethereum-testnet-holesky
+`celo-testnet-alfajores`, `ethereum-testnet-holesky`
 2. If not above, and chain is a rollup, use the name of its settlement network, e.g `base-testnet-sepolia`
-3. If not above, use a number, e.g bsc-testnet-1
+3. If not above, use a number, e.g `bsc-testnet-1`
 
 Example chain names that comply with the format:
 ```
