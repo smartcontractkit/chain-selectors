@@ -3,17 +3,15 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
 	"go/format"
-	"html/template"
 	"os"
-	"sort"
 	"strconv"
 	"strings"
+	"text/template"
 	"unicode"
 
-	chain_selectors "github.com/smartcontractkit/chain-selectors"
+	"github.com/smartcontractkit/chain-selectors/internal/gotmpl"
 )
 
 const filename = "generated_chains.go"
@@ -48,7 +46,7 @@ var ALL = []Chain{
 `)
 
 func main() {
-	src, err := genChainsSourceCode()
+	src, err := gotmpl.Run(chainTemplate, &goNameEncoder{})
 	if err != nil {
 		panic(err)
 	}
@@ -74,32 +72,9 @@ func main() {
 	}
 }
 
-func genChainsSourceCode() (string, error) {
-	var wr = new(bytes.Buffer)
-	chains := make([]chain, 0)
+type goNameEncoder struct{}
 
-	for evmChainID, chainSel := range chain_selectors.EvmChainIdToChainSelector() {
-		name, err := chain_selectors.NameFromChainId(evmChainID)
-		if err != nil {
-			return "", err
-		}
-
-		chains = append(chains, chain{
-			EvmChainID: evmChainID,
-			Selector:   chainSel,
-			Name:       name,
-			VarName:    toVarName(name, chainSel),
-		})
-	}
-
-	sort.Slice(chains, func(i, j int) bool { return chains[i].VarName < chains[j].VarName })
-	if err := chainTemplate.ExecuteTemplate(wr, "", chains); err != nil {
-		return "", err
-	}
-	return wr.String(), nil
-}
-
-func toVarName(name string, chainSel uint64) string {
+func (*goNameEncoder) VarName(name string, chainSel uint64) string {
 	const unnamed = "TEST"
 	x := strings.ReplaceAll(name, "-", "_")
 	x = strings.ToUpper(x)
