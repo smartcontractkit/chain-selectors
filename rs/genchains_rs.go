@@ -71,17 +71,20 @@ func main() {
 func rustfmt(src []byte) ([]byte, error) {
 	tmpFile := path.Join(os.TempDir(), generatedFileName)
 	if err := os.WriteFile(tmpFile, src, 0644); err != nil {
-		panic(err)
+		return nil, err
 	}
 	defer os.Remove(tmpFile)
 
-	cmd := exec.Command("rustfmt", tmpFile)
-	if err := cmd.Run(); err != nil {
-		panic(err)
+	if err := exec.Command("rustfmt", tmpFile).Run(); err != nil {
+		// if rustfmt is not installed, try to use docker
+		cmd := exec.Command("docker", "run", "--rm", "-v", fmt.Sprintf("%s:/usr/src/app/generated_chains.rs", tmpFile), "-w", "/usr/src/app", "rust:1.82-alpine", "/bin/sh", "-c", "rustup component add rustfmt &>/dev/null && rustfmt generated_chains.rs")
+		if dockerErr := cmd.Run(); dockerErr != nil {
+			return nil, err
+		}
 	}
 	formatted, err := os.ReadFile(tmpFile)
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	return formatted, nil
