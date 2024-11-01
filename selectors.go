@@ -9,16 +9,13 @@ import (
 
 //go:generate go run genchains.go
 
-//go:embed selectors.yml
-var selectorsYml []byte
-
 //go:embed test_selectors.yml
 var testSelectorsYml []byte
 
 //go:embed selector_restructured.yml
-var selectorFamiliesYml []byte
+var selectorYml []byte
 
-type newChainDetails struct {
+type chainDetails struct {
 	Family  string `yaml:"family"`
 	Name    string `yaml:"name"`
 	ChainID string `yaml:"chain_id"`
@@ -34,14 +31,28 @@ const (
 
 var chainIDToSelectorMapForFamily = make(map[string]map[string]uint64)
 var selectorToChainDetails = loadChainDetailsBySelector()
+var testSelectorsMap = loadTestChains()
 
-func loadChainDetailsBySelector() map[uint64]newChainDetails {
+func loadTestChains() map[uint64]chainDetails {
 	type yamlData struct {
-		SelectorFamilies map[uint64]newChainDetails `yaml:"selector_families"`
+		SelectorFamilies map[uint64]chainDetails `yaml:"selectors"`
 	}
 
 	var data yamlData
-	err := yaml.Unmarshal(selectorFamiliesYml, &data)
+	err := yaml.Unmarshal(testSelectorsYml, &data)
+	if err != nil {
+		panic(err)
+	}
+	return data.SelectorFamilies
+}
+
+func loadChainDetailsBySelector() map[uint64]chainDetails {
+	type yamlData struct {
+		SelectorFamilies map[uint64]chainDetails `yaml:"selectors"`
+	}
+
+	var data yamlData
+	err := yaml.Unmarshal(selectorYml, &data)
 	if err != nil {
 		panic(err)
 	}
@@ -72,8 +83,8 @@ func GetSelectorFamily(selector uint64) (string, error) {
 	return details.Family, nil
 }
 
-func ChainSelectorToChainDetails() map[uint64]newChainDetails {
-	copyMap := make(map[uint64]newChainDetails, len(selectorToChainDetails))
+func ChainSelectorToChainDetails() map[uint64]chainDetails {
+	copyMap := make(map[uint64]chainDetails, len(selectorToChainDetails))
 	for k, v := range selectorToChainDetails {
 		copyMap[k] = v
 	}
@@ -149,14 +160,13 @@ func ChainIdFromNameAndFamily(name string, family string) (string, error) {
 	return "0", fmt.Errorf("chain not found for name %s", name)
 }
 
-//TODO fix after code gen
-//func TestChainIds() []uint64 {
-//	chainIds := make([]uint64, 0, len(testSelectorsMap))
-//	for k := range testSelectorsMap {
-//		chainIds = append(chainIds, k)
-//	}
-//	return chainIds
-//}
+func TestChainIds() []uint64 {
+	chainIds := make([]uint64, 0, len(testSelectorsMap))
+	for k := range testSelectorsMap {
+		chainIds = append(chainIds, k)
+	}
+	return chainIds
+}
 
 var chainsBySelector = make(map[uint64]Chain)
 var chainsByEvmChainID = make(map[string]Chain)

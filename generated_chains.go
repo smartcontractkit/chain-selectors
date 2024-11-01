@@ -120,7 +120,6 @@ var (
 	NEAR_TESTNET                                   = Chain{ChainID: "398", Selector: 5061593697262339000, Name: "near-testnet"}
 	NEONLINK_MAINNET                               = Chain{ChainID: "259", Selector: 8239338020728974000, Name: "neonlink-mainnet"}
 	NEONLINK_TESTNET                               = Chain{ChainID: "9559", Selector: 1113014352258747600, Name: "neonlink-testnet"}
-	PLUME_TESTNET                                  = Chain{ChainID: "161221135", Selector: 10199579733509604193, Name: "plume-testnet"}
 	PLUME_TESTNET                                  = Chain{ChainID: "161221135", Selector: 14684575664602284776, Name: "plume-testnet"}
 	POLKADOT_MAINNET_ASTAR                         = Chain{ChainID: "592", Selector: 6422105447186081193, Name: "polkadot-mainnet-astar"}
 	POLKADOT_MAINNET_CENTRIFUGE                    = Chain{ChainID: "2031", Selector: 8175830712062617656, Name: "polkadot-mainnet-centrifuge"}
@@ -368,7 +367,6 @@ var ALL = []Chain{
 	NEAR_TESTNET,
 	NEONLINK_MAINNET,
 	NEONLINK_TESTNET,
-	PLUME_TESTNET,
 	PLUME_TESTNET,
 	POLKADOT_MAINNET_ASTAR,
 	POLKADOT_MAINNET_CENTRIFUGE,

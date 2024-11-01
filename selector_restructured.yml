@@ -1,4 +1,4 @@
-selector_families:
+selectors:
   176199025415897437:
     family: evm
   222782988166878823:
@@ -512,10 +512,6 @@ selector_families:
     family: evm
   10106333385848939617:
     family: evm
-  10199579733509604193:
-    family: evm
-    name: plume-testnet
-    chain_id: "161221135"
   10344971235874465080:
     family: evm
     name: ethereum-testnet-sepolia-base-1
