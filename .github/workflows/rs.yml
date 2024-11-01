@@ -1,10 +1,6 @@
 name: Rust - Build and test
 
-on:
-  push:
-    branches:
-      - gen-rs
-  pull_request:
+on: [ push ]
 
 jobs:
   build-test:
