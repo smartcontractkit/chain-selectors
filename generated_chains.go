@@ -144,7 +144,6 @@ var (
 	STORY_TESTNET                                  = Chain{ChainID: "1513", Selector: 4237030917318060427, Family: "evm", Name: "story-testnet"}
 	TELOS_EVM_MAINNET                              = Chain{ChainID: "40", Selector: 1477345371608778000, Family: "evm", Name: "telos-evm-mainnet"}
 	TELOS_EVM_TESTNET                              = Chain{ChainID: "41", Selector: 729797994450396300, Family: "evm", Name: "telos-evm-testnet"}
-	TEST_781901677223027175                        = Chain{ChainID: "", Selector: 781901677223027175, Family: "evm", Name: ""}
 	VELAS_MAINNET                                  = Chain{ChainID: "106", Selector: 374210358663784372, Family: "evm", Name: "velas-mainnet"}
 	VELAS_TESTNET                                  = Chain{ChainID: "111", Selector: 572210378683744374, Family: "evm", Name: "velas-testnet"}
 	WEMIX_MAINNET                                  = Chain{ChainID: "1111", Selector: 5142893604156789321, Family: "evm", Name: "wemix-mainnet"}
@@ -289,7 +288,6 @@ var ALL = []Chain{
 	STORY_TESTNET,
 	TELOS_EVM_MAINNET,
 	TELOS_EVM_TESTNET,
-	TEST_781901677223027175,
 	VELAS_MAINNET,
 	VELAS_TESTNET,
 	WEMIX_MAINNET,

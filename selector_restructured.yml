@@ -23,8 +23,6 @@ selectors:
     family: evm
     name: telos-evm-testnet
     chain_id: "41"
-  781901677223027175:
-    family: evm
   829525985033418733:
     chain_id: "919"
     family: evm

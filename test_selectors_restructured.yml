@@ -310,3 +310,6 @@ selectors:
   6448403805635971860:
     family: evm
     chain_id: '90000043'
+  781901677223027175:
+    family: evm
+    chain_id: "76578"
