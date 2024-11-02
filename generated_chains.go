@@ -33,7 +33,7 @@ var (
 	BITCOIN_TESTNET_BITLAYER_1                     = Chain{ChainID: "200810", Selector: 3789623672476206327, Family: "evm", Name: "bitcoin-testnet-bitlayer-1"}
 	BITCOIN_TESTNET_BOTANIX                        = Chain{ChainID: "3636", Selector: 1467223411771711614, Family: "evm", Name: "bitcoin-testnet-botanix"}
 	BITCOIN_TESTNET_BSQUARED_1                     = Chain{ChainID: "1123", Selector: 1948510578179542068, Family: "evm", Name: "bitcoin-testnet-bsquared-1"}
-	BITCOIN_TESTNET_MERLIN                         = Chain{ChainID: "11155420", Selector: 5269261765892944301, Family: "evm", Name: "bitcoin-testnet-merlin"}
+	BITCOIN_TESTNET_MERLIN                         = Chain{ChainID: "686868", Selector: 5269261765892944301, Family: "evm", Name: "bitcoin-testnet-merlin"}
 	BITCOIN_TESTNET_ROOTSTOCK                      = Chain{ChainID: "31", Selector: 8953668971247136127, Family: "evm", Name: "bitcoin-testnet-rootstock"}
 	BITCOIN_TESTNET_SEPOLIA_BOB_1                  = Chain{ChainID: "808813", Selector: 5535534526963509396, Family: "evm", Name: "bitcoin-testnet-sepolia-bob-1"}
 	BITTORRENT_CHAIN_MAINNET                       = Chain{ChainID: "199", Selector: 3776006016387883143, Family: "evm", Name: "bittorrent_chain-mainnet"}
@@ -144,13 +144,12 @@ var (
 	STORY_TESTNET                                  = Chain{ChainID: "1513", Selector: 4237030917318060427, Family: "evm", Name: "story-testnet"}
 	TELOS_EVM_MAINNET                              = Chain{ChainID: "40", Selector: 1477345371608778000, Family: "evm", Name: "telos-evm-mainnet"}
 	TELOS_EVM_TESTNET                              = Chain{ChainID: "41", Selector: 729797994450396300, Family: "evm", Name: "telos-evm-testnet"}
-	TEST_17198166215261833993                      = Chain{ChainID: "48900", Selector: 17198166215261833993, Family: "evm", Name: ""}
-	TEST_6448403805635971860                       = Chain{ChainID: "90000043", Selector: 6448403805635971860, Family: "evm", Name: ""}
 	TEST_781901677223027175                        = Chain{ChainID: "", Selector: 781901677223027175, Family: "evm", Name: ""}
 	VELAS_MAINNET                                  = Chain{ChainID: "106", Selector: 374210358663784372, Family: "evm", Name: "velas-mainnet"}
 	VELAS_TESTNET                                  = Chain{ChainID: "111", Selector: 572210378683744374, Family: "evm", Name: "velas-testnet"}
 	WEMIX_MAINNET                                  = Chain{ChainID: "1111", Selector: 5142893604156789321, Family: "evm", Name: "wemix-mainnet"}
 	WEMIX_TESTNET                                  = Chain{ChainID: "1112", Selector: 9284632837123596123, Family: "evm", Name: "wemix-testnet"}
+	ZIRCUIT_MAINNET                                = Chain{ChainID: "48900", Selector: 17198166215261833993, Family: "evm", Name: "zircuit-mainnet"}
 	ZKLINK_NOVA_MAINNET                            = Chain{ChainID: "810180", Selector: 4350319965322101699, Family: "evm", Name: "zklink_nova-mainnet"}
 	ZKLINK_NOVA_TESTNET                            = Chain{ChainID: "810181", Selector: 5837261596322416298, Family: "evm", Name: "zklink_nova-testnet"}
 )
@@ -290,13 +289,12 @@ var ALL = []Chain{
 	STORY_TESTNET,
 	TELOS_EVM_MAINNET,
 	TELOS_EVM_TESTNET,
-	TEST_17198166215261833993,
-	TEST_6448403805635971860,
 	TEST_781901677223027175,
 	VELAS_MAINNET,
 	VELAS_TESTNET,
 	WEMIX_MAINNET,
 	WEMIX_TESTNET,
+	ZIRCUIT_MAINNET,
 	ZKLINK_NOVA_MAINNET,
 	ZKLINK_NOVA_TESTNET,
 }
