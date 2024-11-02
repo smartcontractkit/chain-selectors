@@ -1,7 +1,9 @@
 package chain_selectors
 
 import (
+	"fmt"
 	"math/rand"
+	"strconv"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -30,7 +32,7 @@ func TestBothSelectorsYmlAndTestSelectorsYmlAreValid(t *testing.T) {
 	require.NoError(t, err)
 	assert.Equal(t, uint64(2664363617261496610), optimismGoerliSelector)
 
-	testChainSelector, exist := ChainBySelector(17810359353458878177)
+	testChainSelector, exist := TestChainBySelector(17810359353458878177)
 	require.True(t, exist)
 	assert.Equal(t, "90000020", testChainSelector.ChainID)
 }
@@ -47,11 +49,19 @@ func TestEvmChainIdToChainSelectorReturningCopiedMap(t *testing.T) {
 }
 
 func TestAllChainSelectorsHaveFamilies(t *testing.T) {
-	for _, ch := range ALL {
-		family, err := GetSelectorFamily(ch.Selector)
+	for selector, details := range selectorToChainDetails {
+		family, err := GetSelectorFamily(selector)
 		require.NoError(t, err,
 			"Family not found for selector %d (chain id %d, name %s), please update selector_families.yml with the appropriate chain family for this chain",
-			ch.Selector, ch.ChainID, ch.Name)
+			selector, details.ChainID, details.Name)
+		require.NotEmpty(t, family)
+	}
+
+	for selector, details := range testSelectorsMap {
+		family, err := GetTestSelectorFamily(selector)
+		require.NoError(t, err,
+			"Family not found for selector %d (chain id %d, name %s), please update selector_families.yml with the appropriate chain family for this chain",
+			selector, details.ChainID, details.Name)
 		require.NotEmpty(t, family)
 	}
 }
@@ -72,11 +82,6 @@ func Test_ChainSelectors(t *testing.T) {
 			name:          "optimism chain",
 			chainSelector: 2664363617261496610,
 			chainId:       "420",
-		},
-		{
-			name:          "test chain",
-			chainSelector: 17810359353458878177,
-			chainId:       "90000020",
 		},
 		{
 			name:          "not existing chain",
@@ -110,15 +115,36 @@ func Test_ChainSelectors(t *testing.T) {
 	}
 }
 
-//func Test_TestChainIds(t *testing.T) {
-//	chainIds := TestChainIds()
-//	assert.Equal(t, len(chainIds), len(testSelectorsMap), "Should return correct number of test chain ids")
-//
-//	for _, chainId := range chainIds {
-//		_, exist := testSelectorsMap[chainId]
-//		assert.True(t, exist)
-//	}
-//}
+func Test_TestChainIds(t *testing.T) {
+	chainIds := TestChainIds()
+	assert.Equal(t, len(chainIds), len(testSelectorsMap), "Should return correct number of test chain ids")
+
+	tests := []struct {
+		name          string
+		chainSelector uint64
+		chainId       string
+		expectErr     bool
+	}{
+		{
+			name:          "test chain",
+			chainSelector: 17810359353458878177,
+			chainId:       "90000020",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			details, exists := TestChainBySelector(test.chainSelector)
+			assert.True(t, exists)
+			assert.Equal(t, details.ChainID, test.chainId)
+		})
+	}
+
+	for _, chainId := range chainIds {
+		_, exist := testSelectorsMap[chainId]
+		assert.True(t, exist)
+	}
+}
 
 func Test_ChainNames(t *testing.T) {
 	tests := []struct {
@@ -141,11 +167,6 @@ func Test_ChainNames(t *testing.T) {
 			name:      "chain without a name defined",
 			chainName: "geth-testnet",
 			chainId:   "1337",
-		},
-		{
-			name:      "test simulated chain without a dedicated name",
-			chainName: "90000013",
-			chainId:   "90000013",
 		},
 		{
 			name:      "not existing chain",
@@ -179,47 +200,52 @@ func Test_ChainNames(t *testing.T) {
 }
 
 func Test_ChainBySelector(t *testing.T) {
+	testMap := loadTestChains()
 	t.Run("exist", func(t *testing.T) {
-		for _, ch := range ALL {
-			v, exists := ChainBySelector(ch.Selector)
+		for selector, details := range testMap {
+			v, exists := TestChainBySelector(selector)
 			assert.True(t, exists)
-			assert.Equal(t, ch, v)
+			assert.Equal(t, details.ChainID, v.ChainID)
 		}
 	})
 
 	t.Run("non existent", func(t *testing.T) {
-		_, exists := ChainBySelector(rand.Uint64())
+		_, exists := TestChainBySelector(rand.Uint64())
 		assert.False(t, exists)
 	})
 }
 
-//func Test_ChainByEvmChainID(t *testing.T) {
-//	t.Run("exist", func(t *testing.T) {
-//		for _, ch := range ALL {
-//			v, exists := ChainByEvmChainID(ch.ChainID)
-//			assert.True(t, exists)
-//			assert.Equal(t, ch, v)
-//		}
-//	})
-//
-//	t.Run("non existent", func(t *testing.T) {
-//		_, exists := ChainByEvmChainID(strconv.FormatUint(rand.Uint64(), 10))
-//		assert.False(t, exists)
-//	})
-//}
-
-func Test_IsEvm(t *testing.T) {
+func Test_SelectorMap(t *testing.T) {
+	selectorMap := loadChainDetailsBySelector()
 	t.Run("exist", func(t *testing.T) {
-		for _, ch := range ALL {
-			isEvm, err := ChainSelectorExist(ch.Selector)
-			assert.NoError(t, err)
-			assert.True(t, isEvm)
+		for selector, details := range selectorMap {
+			v, err := SelectorFromChainIdAndFamily(details.ChainID, details.Family)
+			assert.Nil(t, err)
+			if selector != v {
+				fmt.Printf("%v %v", selector, v)
+			}
 		}
 	})
 
 	t.Run("non existent", func(t *testing.T) {
-		isEvm, err := ChainSelectorExist(rand.Uint64())
+		_, err := SelectorFromChainIdAndFamily(strconv.FormatUint(rand.Uint64(), 10), "")
 		assert.Error(t, err)
-		assert.False(t, isEvm)
+	})
+}
+
+func Test_TestSelectorMap(t *testing.T) {
+	testMap := loadTestChains()
+	t.Run("exist", func(t *testing.T) {
+		for selector := range testMap {
+			exist, err := TestChainSelectorExist(selector)
+			assert.NoError(t, err)
+			assert.True(t, exist)
+		}
+	})
+
+	t.Run("non existent", func(t *testing.T) {
+		exist, err := TestChainSelectorExist(rand.Uint64())
+		assert.Error(t, err)
+		assert.False(t, exist)
 	})
 }

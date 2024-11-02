@@ -1,209 +1,312 @@
 selectors:
   176199025415897437:
+    family: evm
     chain_id: '90000044'
   328334718812072308:
+    family: evm
     chain_id: '90000011'
   665284410079532457:
+    family: evm
     chain_id: '90000092'
   789068866484373046:
+    family: evm
     chain_id: '90000003'
   909606746561742123:
+    family: evm
     chain_id: '90000001'
   928756709184343973:
+    family: evm
     chain_id: '90000055'
   964127714438319834:
+    family: evm
     chain_id: '90000005'
   973671184102733124:
+    family: evm
     chain_id: '90000084'
   1273605685587320666:
+    family: evm
     chain_id: '90000019'
   1488785539820432596:
+    family: evm
     chain_id: '90000066'
   1974710175227680991:
+    family: evm
     chain_id: '90000079'
   2509173735760116798:
+    family: evm
     chain_id: '90000090'
   2783890746839497525:
+    family: evm
     chain_id: '90000048'
   2953028829530698683:
+    family: evm
     chain_id: '90000039'
   3330151784927722907:
+    family: evm
     chain_id: '90000083'
   3574539439524578558:
+    family: evm
     chain_id: '90000013'
   3632230855428784129:
+    family: evm
     chain_id: '90000082'
   3740583887329090549:
+    family: evm
     chain_id: '90000040'
   4066443121807923198:
+    family: evm
     chain_id: '90000008'
   4174149892778961910:
+    family: evm
     chain_id: '90000086'
   4543928599863227519:
+    family: evm
     chain_id: '90000014'
   4716670523656754658:
+    family: evm
     chain_id: '90000041'
   4793464827907405086:
-    chain_id: '3337'
+    family: evm
     name: geth-devnet-3
+    chain_id: '3337'
   5548718428018410741:
+    family: evm
     chain_id: '90000002'
   5614341928911841614:
+    family: evm
     chain_id: '90000025'
   5721565186521185178:
+    family: evm
     chain_id: '90000004'
   6059917085984771915:
+    family: evm
     chain_id: '90000068'
   6443235356619661032:
+    family: evm
     chain_id: '90000015'
-  6448403805635971860:
-    chain_id: '90000043'
   6676710761873615962:
+    family: evm
     chain_id: '90000035'
   6690738652320128159:
+    family: evm
     chain_id: '90000062'
   6742472197519042017:
+    family: evm
     chain_id: '90000022'
   6747736380229414777:
+    family: evm
     chain_id: '90000009'
   6751512843227450641:
+    family: evm
     chain_id: '90000060'
   6875898693582952601:
+    family: evm
     chain_id: '90000100'
   7005880874640146484:
+    family: evm
     chain_id: '90000033'
   7032045258883126022:
+    family: evm
     chain_id: '90000058'
   7353384334508842175:
+    family: evm
     chain_id: '90000085'
   7404045285477377670:
+    family: evm
     chain_id: '90000073'
   7431973150957944526:
+    family: evm
     chain_id: '90000099'
   7585715102059681757:
+    family: evm
     chain_id: '90000052'
   7715160997071429212:
+    family: evm
     chain_id: '90000012'
   7777066535355430289:
+    family: evm
     chain_id: '90000018'
   7823363553221722351:
+    family: evm
     chain_id: '90000064'
   7961714422080771198:
+    family: evm
     chain_id: '90000076'
   8015762103567576333:
+    family: evm
     chain_id: '90000047'
   8211981504472319767:
+    family: evm
     chain_id: '90000094'
   8354317460459584308:
+    family: evm
     chain_id: '90000078'
   8412806778050735057:
+    family: evm
     chain_id: '90000007'
   8694984074292254623:
+    family: evm
     chain_id: '90000010'
   8698844633699288298:
+    family: evm
     chain_id: '90000069'
   8794884152664322911:
+    family: evm
     chain_id: '90000032'
   8966794841936584464:
+    family: evm
     chain_id: '90000006'
   9156614022853705708:
+    family: evm
     chain_id: '90000050'
   9248511054298050610:
+    family: evm
     chain_id: '90000027'
   9264503539336248559:
+    family: evm
     chain_id: '90000057'
   9574369650680012313:
+    family: evm
     chain_id: '90000053'
   9675086780529785020:
+    family: evm
     chain_id: '90000098'
   9932483170498916221:
+    family: evm
     chain_id: '90000026'
   10089241509396411113:
+    family: evm
     chain_id: '90000051'
   10106333385848939617:
+    family: evm
     chain_id: '90000089'
   10199579733509604193:
+    family: evm
     chain_id: '90000029'
   10497629267361915835:
+    family: evm
     chain_id: '90000087'
   10537986502862404866:
+    family: evm
     chain_id: '90000088'
   10547673735879567911:
+    family: evm
     chain_id: '90000038'
   11335955773964346155:
+    family: evm
     chain_id: '90000070'
   11754399446572002459:
+    family: evm
     chain_id: '90000030'
   11787463284727550157:
+    family: evm
     chain_id: '1000'
   11985232338641871056:
+    family: evm
     chain_id: '90000017'
   12027427861168955422:
+    family: evm
     chain_id: '90000061'
   12226902941055802385:
+    family: evm
     chain_id: '90000037'
   12470167056735102403:
+    family: evm
     chain_id: '90000067'
   12499149790922928210:
+    family: evm
     chain_id: '90000091'
   12513826466599144030:
+    family: evm
     chain_id: '90000063'
   12922642891491394802:
-    chain_id: '2337'
+    family: evm
     name: geth-devnet-2
+    chain_id: '2337'
   12965905455277595820:
+    family: evm
     chain_id: '90000042'
   13087962012083037329:
+    family: evm
     chain_id: '90000016'
   13443138560923813712:
+    family: evm
     chain_id: '90000097'
   13648736134397881410:
+    family: evm
     chain_id: '90000021'
   13781595843667691007:
+    family: evm
     chain_id: '90000059'
   13819071330241498802:
+    family: evm
     chain_id: '90000081'
   13936493323944617843:
+    family: evm
     chain_id: '90000056'
   13973515790491921010:
+    family: evm
     chain_id: '90000036'
   14506622911400094011:
+    family: evm
     chain_id: '90000074'
   14943531413383612703:
+    family: evm
     chain_id: '90000046'
   15168140751097121912:
+    family: evm
     chain_id: '90000077'
   15210860601736105873:
+    family: evm
     chain_id: '90000071'
   15447447865219782832:
+    family: evm
     chain_id: '90000072'
   15733873364998401606:
+    family: evm
     chain_id: '90000028'
   15767478222558315144:
+    family: evm
     chain_id: '90000054'
   15804983202763665802:
+    family: evm
     chain_id: '90000031'
   15896959195233368219:
+    family: evm
     chain_id: '90000080'
   15945074456050759193:
+    family: evm
     chain_id: '90000095'
   15998314635132476942:
+    family: evm
     chain_id: '90000034'
   16449698933146693970:
+    family: evm
     chain_id: '90000024'
   16591966440843528322:
+    family: evm
     chain_id: '90000049'
   16702426279731183946:
+    family: evm
     chain_id: '90000023'
   17251043223284625647:
+    family: evm
     chain_id: '90000045'
   17514102371649734225:
+    family: evm
     chain_id: '90000093'
   17580537314894454709:
+    family: evm
     chain_id: '90000096'
   17759418850483131633:
+    family: evm
     chain_id: '90000065'
   17810359353458878177:
-    chain_id: '90000020'
+    family: evm
+    chain_id: "90000020"
   18316006852148771137:
+    family: evm
     chain_id: '90000075'
+  6448403805635971860:
+    family: evm
+    chain_id: '90000043'

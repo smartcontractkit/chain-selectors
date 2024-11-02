@@ -106,8 +106,6 @@ var (
 	FILECOIN_MAINNET                               = Chain{ChainID: "314", Selector: 4561443241176882990, Family: "evm", Name: "filecoin-mainnet"}
 	FILECOIN_TESTNET                               = Chain{ChainID: "31415926", Selector: 7060342227814389000, Family: "evm", Name: "filecoin-testnet"}
 	FRAXTAL_MAINNET                                = Chain{ChainID: "252", Selector: 1462016016387883143, Family: "evm", Name: "fraxtal-mainnet"}
-	GETH_DEVNET_2                                  = Chain{ChainID: "2337", Selector: 12922642891491394802, Family: "evm", Name: "geth-devnet-2"}
-	GETH_DEVNET_3                                  = Chain{ChainID: "3337", Selector: 4793464827907405086, Family: "evm", Name: "geth-devnet-3"}
 	GETH_TESTNET                                   = Chain{ChainID: "1337", Selector: 3379446385462418246, Family: "evm", Name: "geth-testnet"}
 	GNOSIS_CHAIN_MAINNET                           = Chain{ChainID: "100", Selector: 465200170687744372, Family: "evm", Name: "gnosis_chain-mainnet"}
 	GNOSIS_CHAIN_TESTNET_CHIADO                    = Chain{ChainID: "10200", Selector: 8871595565390010547, Family: "evm", Name: "gnosis_chain-testnet-chiado"}
@@ -146,109 +144,9 @@ var (
 	STORY_TESTNET                                  = Chain{ChainID: "1513", Selector: 4237030917318060427, Family: "evm", Name: "story-testnet"}
 	TELOS_EVM_MAINNET                              = Chain{ChainID: "40", Selector: 1477345371608778000, Family: "evm", Name: "telos-evm-mainnet"}
 	TELOS_EVM_TESTNET                              = Chain{ChainID: "41", Selector: 729797994450396300, Family: "evm", Name: "telos-evm-testnet"}
-	TEST_10089241509396411113                      = Chain{ChainID: "90000051", Selector: 10089241509396411113, Family: "evm", Name: ""}
-	TEST_10106333385848939617                      = Chain{ChainID: "90000089", Selector: 10106333385848939617, Family: "evm", Name: ""}
-	TEST_10199579733509604193                      = Chain{ChainID: "90000029", Selector: 10199579733509604193, Family: "evm", Name: ""}
-	TEST_10497629267361915835                      = Chain{ChainID: "90000087", Selector: 10497629267361915835, Family: "evm", Name: ""}
-	TEST_10537986502862404866                      = Chain{ChainID: "90000088", Selector: 10537986502862404866, Family: "evm", Name: ""}
-	TEST_10547673735879567911                      = Chain{ChainID: "90000038", Selector: 10547673735879567911, Family: "evm", Name: ""}
-	TEST_11335955773964346155                      = Chain{ChainID: "90000070", Selector: 11335955773964346155, Family: "evm", Name: ""}
-	TEST_11754399446572002459                      = Chain{ChainID: "90000030", Selector: 11754399446572002459, Family: "evm", Name: ""}
-	TEST_11787463284727550157                      = Chain{ChainID: "1000", Selector: 11787463284727550157, Family: "evm", Name: ""}
-	TEST_11985232338641871056                      = Chain{ChainID: "90000017", Selector: 11985232338641871056, Family: "evm", Name: ""}
-	TEST_12027427861168955422                      = Chain{ChainID: "90000061", Selector: 12027427861168955422, Family: "evm", Name: ""}
-	TEST_12226902941055802385                      = Chain{ChainID: "90000037", Selector: 12226902941055802385, Family: "evm", Name: ""}
-	TEST_12470167056735102403                      = Chain{ChainID: "90000067", Selector: 12470167056735102403, Family: "evm", Name: ""}
-	TEST_12499149790922928210                      = Chain{ChainID: "90000091", Selector: 12499149790922928210, Family: "evm", Name: ""}
-	TEST_12513826466599144030                      = Chain{ChainID: "90000063", Selector: 12513826466599144030, Family: "evm", Name: ""}
-	TEST_1273605685587320666                       = Chain{ChainID: "90000019", Selector: 1273605685587320666, Family: "evm", Name: ""}
-	TEST_12965905455277595820                      = Chain{ChainID: "90000042", Selector: 12965905455277595820, Family: "evm", Name: ""}
-	TEST_13087962012083037329                      = Chain{ChainID: "90000016", Selector: 13087962012083037329, Family: "evm", Name: ""}
-	TEST_13443138560923813712                      = Chain{ChainID: "90000097", Selector: 13443138560923813712, Family: "evm", Name: ""}
-	TEST_13648736134397881410                      = Chain{ChainID: "90000021", Selector: 13648736134397881410, Family: "evm", Name: ""}
-	TEST_13781595843667691007                      = Chain{ChainID: "90000059", Selector: 13781595843667691007, Family: "evm", Name: ""}
-	TEST_13819071330241498802                      = Chain{ChainID: "90000081", Selector: 13819071330241498802, Family: "evm", Name: ""}
-	TEST_13936493323944617843                      = Chain{ChainID: "90000056", Selector: 13936493323944617843, Family: "evm", Name: ""}
-	TEST_13973515790491921010                      = Chain{ChainID: "90000036", Selector: 13973515790491921010, Family: "evm", Name: ""}
-	TEST_14506622911400094011                      = Chain{ChainID: "", Selector: 14506622911400094011, Family: "evm", Name: ""}
-	TEST_1488785539820432596                       = Chain{ChainID: "90000066", Selector: 1488785539820432596, Family: "evm", Name: ""}
-	TEST_14943531413383612703                      = Chain{ChainID: "90000046", Selector: 14943531413383612703, Family: "evm", Name: ""}
-	TEST_15168140751097121912                      = Chain{ChainID: "90000077", Selector: 15168140751097121912, Family: "evm", Name: ""}
-	TEST_15210860601736105873                      = Chain{ChainID: "90000071", Selector: 15210860601736105873, Family: "evm", Name: ""}
-	TEST_15447447865219782832                      = Chain{ChainID: "90000072", Selector: 15447447865219782832, Family: "evm", Name: ""}
-	TEST_15733873364998401606                      = Chain{ChainID: "90000028", Selector: 15733873364998401606, Family: "evm", Name: ""}
-	TEST_15767478222558315144                      = Chain{ChainID: "90000054", Selector: 15767478222558315144, Family: "evm", Name: ""}
-	TEST_15804983202763665802                      = Chain{ChainID: "90000031", Selector: 15804983202763665802, Family: "evm", Name: ""}
-	TEST_15896959195233368219                      = Chain{ChainID: "90000080", Selector: 15896959195233368219, Family: "evm", Name: ""}
-	TEST_15945074456050759193                      = Chain{ChainID: "90000095", Selector: 15945074456050759193, Family: "evm", Name: ""}
-	TEST_15998314635132476942                      = Chain{ChainID: "90000034", Selector: 15998314635132476942, Family: "evm", Name: ""}
-	TEST_16449698933146693970                      = Chain{ChainID: "90000024", Selector: 16449698933146693970, Family: "evm", Name: ""}
-	TEST_16591966440843528322                      = Chain{ChainID: "90000049", Selector: 16591966440843528322, Family: "evm", Name: ""}
-	TEST_16702426279731183946                      = Chain{ChainID: "90000023", Selector: 16702426279731183946, Family: "evm", Name: ""}
 	TEST_17198166215261833993                      = Chain{ChainID: "48900", Selector: 17198166215261833993, Family: "evm", Name: ""}
-	TEST_17251043223284625647                      = Chain{ChainID: "90000045", Selector: 17251043223284625647, Family: "evm", Name: ""}
-	TEST_17514102371649734225                      = Chain{ChainID: "90000093", Selector: 17514102371649734225, Family: "evm", Name: ""}
-	TEST_17580537314894454709                      = Chain{ChainID: "90000096", Selector: 17580537314894454709, Family: "evm", Name: ""}
-	TEST_176199025415897437                        = Chain{ChainID: "90000044", Selector: 176199025415897437, Family: "evm", Name: ""}
-	TEST_17759418850483131633                      = Chain{ChainID: "90000065", Selector: 17759418850483131633, Family: "evm", Name: ""}
-	TEST_17810359353458878177                      = Chain{ChainID: "90000020", Selector: 17810359353458878177, Family: "evm", Name: ""}
-	TEST_18316006852148771137                      = Chain{ChainID: "90000075", Selector: 18316006852148771137, Family: "evm", Name: ""}
-	TEST_1974710175227680991                       = Chain{ChainID: "90000079", Selector: 1974710175227680991, Family: "evm", Name: ""}
-	TEST_2509173735760116798                       = Chain{ChainID: "90000090", Selector: 2509173735760116798, Family: "evm", Name: ""}
-	TEST_2783890746839497525                       = Chain{ChainID: "90000048", Selector: 2783890746839497525, Family: "evm", Name: ""}
-	TEST_2953028829530698683                       = Chain{ChainID: "90000039", Selector: 2953028829530698683, Family: "evm", Name: ""}
-	TEST_328334718812072308                        = Chain{ChainID: "90000011", Selector: 328334718812072308, Family: "evm", Name: ""}
-	TEST_3330151784927722907                       = Chain{ChainID: "90000083", Selector: 3330151784927722907, Family: "evm", Name: ""}
-	TEST_3574539439524578558                       = Chain{ChainID: "90000013", Selector: 3574539439524578558, Family: "evm", Name: ""}
-	TEST_3632230855428784129                       = Chain{ChainID: "90000082", Selector: 3632230855428784129, Family: "evm", Name: ""}
-	TEST_3740583887329090549                       = Chain{ChainID: "90000040", Selector: 3740583887329090549, Family: "evm", Name: ""}
-	TEST_4066443121807923198                       = Chain{ChainID: "90000008", Selector: 4066443121807923198, Family: "evm", Name: ""}
-	TEST_4174149892778961910                       = Chain{ChainID: "90000086", Selector: 4174149892778961910, Family: "evm", Name: ""}
-	TEST_4543928599863227519                       = Chain{ChainID: "90000014", Selector: 4543928599863227519, Family: "evm", Name: ""}
-	TEST_4716670523656754658                       = Chain{ChainID: "90000041", Selector: 4716670523656754658, Family: "evm", Name: ""}
-	TEST_5548718428018410741                       = Chain{ChainID: "90000002", Selector: 5548718428018410741, Family: "evm", Name: ""}
-	TEST_5614341928911841614                       = Chain{ChainID: "90000025", Selector: 5614341928911841614, Family: "evm", Name: ""}
-	TEST_5721565186521185178                       = Chain{ChainID: "90000004", Selector: 5721565186521185178, Family: "evm", Name: ""}
-	TEST_6059917085984771915                       = Chain{ChainID: "90000068", Selector: 6059917085984771915, Family: "evm", Name: ""}
-	TEST_6443235356619661032                       = Chain{ChainID: "90000015", Selector: 6443235356619661032, Family: "evm", Name: ""}
 	TEST_6448403805635971860                       = Chain{ChainID: "90000043", Selector: 6448403805635971860, Family: "evm", Name: ""}
-	TEST_665284410079532457                        = Chain{ChainID: "90000092", Selector: 665284410079532457, Family: "evm", Name: ""}
-	TEST_6676710761873615962                       = Chain{ChainID: "90000035", Selector: 6676710761873615962, Family: "evm", Name: ""}
-	TEST_6690738652320128159                       = Chain{ChainID: "90000062", Selector: 6690738652320128159, Family: "evm", Name: ""}
-	TEST_6742472197519042017                       = Chain{ChainID: "90000022", Selector: 6742472197519042017, Family: "evm", Name: ""}
-	TEST_6747736380229414777                       = Chain{ChainID: "90000009", Selector: 6747736380229414777, Family: "evm", Name: ""}
-	TEST_6751512843227450641                       = Chain{ChainID: "90000060", Selector: 6751512843227450641, Family: "evm", Name: ""}
-	TEST_6875898693582952601                       = Chain{ChainID: "90000100", Selector: 6875898693582952601, Family: "evm", Name: ""}
-	TEST_7005880874640146484                       = Chain{ChainID: "90000033", Selector: 7005880874640146484, Family: "evm", Name: ""}
-	TEST_7032045258883126022                       = Chain{ChainID: "90000058", Selector: 7032045258883126022, Family: "evm", Name: ""}
-	TEST_7353384334508842175                       = Chain{ChainID: "90000085", Selector: 7353384334508842175, Family: "evm", Name: ""}
-	TEST_7404045285477377670                       = Chain{ChainID: "90000073", Selector: 7404045285477377670, Family: "evm", Name: ""}
-	TEST_7431973150957944526                       = Chain{ChainID: "90000099", Selector: 7431973150957944526, Family: "evm", Name: ""}
-	TEST_7585715102059681757                       = Chain{ChainID: "90000052", Selector: 7585715102059681757, Family: "evm", Name: ""}
-	TEST_7715160997071429212                       = Chain{ChainID: "90000012", Selector: 7715160997071429212, Family: "evm", Name: ""}
-	TEST_7777066535355430289                       = Chain{ChainID: "90000018", Selector: 7777066535355430289, Family: "evm", Name: ""}
 	TEST_781901677223027175                        = Chain{ChainID: "", Selector: 781901677223027175, Family: "evm", Name: ""}
-	TEST_7823363553221722351                       = Chain{ChainID: "90000064", Selector: 7823363553221722351, Family: "evm", Name: ""}
-	TEST_789068866484373046                        = Chain{ChainID: "90000003", Selector: 789068866484373046, Family: "evm", Name: ""}
-	TEST_7961714422080771198                       = Chain{ChainID: "90000076", Selector: 7961714422080771198, Family: "evm", Name: ""}
-	TEST_8015762103567576333                       = Chain{ChainID: "90000047", Selector: 8015762103567576333, Family: "evm", Name: ""}
-	TEST_8211981504472319767                       = Chain{ChainID: "90000094", Selector: 8211981504472319767, Family: "evm", Name: ""}
-	TEST_8354317460459584308                       = Chain{ChainID: "90000078", Selector: 8354317460459584308, Family: "evm", Name: ""}
-	TEST_8412806778050735057                       = Chain{ChainID: "90000007", Selector: 8412806778050735057, Family: "evm", Name: ""}
-	TEST_8694984074292254623                       = Chain{ChainID: "90000010", Selector: 8694984074292254623, Family: "evm", Name: ""}
-	TEST_8698844633699288298                       = Chain{ChainID: "90000069", Selector: 8698844633699288298, Family: "evm", Name: ""}
-	TEST_8794884152664322911                       = Chain{ChainID: "90000032", Selector: 8794884152664322911, Family: "evm", Name: ""}
-	TEST_8966794841936584464                       = Chain{ChainID: "90000006", Selector: 8966794841936584464, Family: "evm", Name: ""}
-	TEST_909606746561742123                        = Chain{ChainID: "90000001", Selector: 909606746561742123, Family: "evm", Name: ""}
-	TEST_9156614022853705708                       = Chain{ChainID: "90000050", Selector: 9156614022853705708, Family: "evm", Name: ""}
-	TEST_9248511054298050610                       = Chain{ChainID: "", Selector: 9248511054298050610, Family: "evm", Name: ""}
-	TEST_9264503539336248559                       = Chain{ChainID: "90000057", Selector: 9264503539336248559, Family: "evm", Name: ""}
-	TEST_928756709184343973                        = Chain{ChainID: "90000055", Selector: 928756709184343973, Family: "evm", Name: ""}
-	TEST_9574369650680012313                       = Chain{ChainID: "90000053", Selector: 9574369650680012313, Family: "evm", Name: ""}
-	TEST_964127714438319834                        = Chain{ChainID: "90000005", Selector: 964127714438319834, Family: "evm", Name: ""}
-	TEST_9675086780529785020                       = Chain{ChainID: "90000098", Selector: 9675086780529785020, Family: "evm", Name: ""}
-	TEST_973671184102733124                        = Chain{ChainID: "90000084", Selector: 973671184102733124, Family: "evm", Name: ""}
-	TEST_9932483170498916221                       = Chain{ChainID: "90000026", Selector: 9932483170498916221, Family: "evm", Name: ""}
 	VELAS_MAINNET                                  = Chain{ChainID: "106", Selector: 374210358663784372, Family: "evm", Name: "velas-mainnet"}
 	VELAS_TESTNET                                  = Chain{ChainID: "111", Selector: 572210378683744374, Family: "evm", Name: "velas-testnet"}
 	WEMIX_MAINNET                                  = Chain{ChainID: "1111", Selector: 5142893604156789321, Family: "evm", Name: "wemix-mainnet"}
@@ -354,8 +252,6 @@ var ALL = []Chain{
 	FILECOIN_MAINNET,
 	FILECOIN_TESTNET,
 	FRAXTAL_MAINNET,
-	GETH_DEVNET_2,
-	GETH_DEVNET_3,
 	GETH_TESTNET,
 	GNOSIS_CHAIN_MAINNET,
 	GNOSIS_CHAIN_TESTNET_CHIADO,
@@ -394,109 +290,9 @@ var ALL = []Chain{
 	STORY_TESTNET,
 	TELOS_EVM_MAINNET,
 	TELOS_EVM_TESTNET,
-	TEST_10089241509396411113,
-	TEST_10106333385848939617,
-	TEST_10199579733509604193,
-	TEST_10497629267361915835,
-	TEST_10537986502862404866,
-	TEST_10547673735879567911,
-	TEST_11335955773964346155,
-	TEST_11754399446572002459,
-	TEST_11787463284727550157,
-	TEST_11985232338641871056,
-	TEST_12027427861168955422,
-	TEST_12226902941055802385,
-	TEST_12470167056735102403,
-	TEST_12499149790922928210,
-	TEST_12513826466599144030,
-	TEST_1273605685587320666,
-	TEST_12965905455277595820,
-	TEST_13087962012083037329,
-	TEST_13443138560923813712,
-	TEST_13648736134397881410,
-	TEST_13781595843667691007,
-	TEST_13819071330241498802,
-	TEST_13936493323944617843,
-	TEST_13973515790491921010,
-	TEST_14506622911400094011,
-	TEST_1488785539820432596,
-	TEST_14943531413383612703,
-	TEST_15168140751097121912,
-	TEST_15210860601736105873,
-	TEST_15447447865219782832,
-	TEST_15733873364998401606,
-	TEST_15767478222558315144,
-	TEST_15804983202763665802,
-	TEST_15896959195233368219,
-	TEST_15945074456050759193,
-	TEST_15998314635132476942,
-	TEST_16449698933146693970,
-	TEST_16591966440843528322,
-	TEST_16702426279731183946,
 	TEST_17198166215261833993,
-	TEST_17251043223284625647,
-	TEST_17514102371649734225,
-	TEST_17580537314894454709,
-	TEST_176199025415897437,
-	TEST_17759418850483131633,
-	TEST_17810359353458878177,
-	TEST_18316006852148771137,
-	TEST_1974710175227680991,
-	TEST_2509173735760116798,
-	TEST_2783890746839497525,
-	TEST_2953028829530698683,
-	TEST_328334718812072308,
-	TEST_3330151784927722907,
-	TEST_3574539439524578558,
-	TEST_3632230855428784129,
-	TEST_3740583887329090549,
-	TEST_4066443121807923198,
-	TEST_4174149892778961910,
-	TEST_4543928599863227519,
-	TEST_4716670523656754658,
-	TEST_5548718428018410741,
-	TEST_5614341928911841614,
-	TEST_5721565186521185178,
-	TEST_6059917085984771915,
-	TEST_6443235356619661032,
 	TEST_6448403805635971860,
-	TEST_665284410079532457,
-	TEST_6676710761873615962,
-	TEST_6690738652320128159,
-	TEST_6742472197519042017,
-	TEST_6747736380229414777,
-	TEST_6751512843227450641,
-	TEST_6875898693582952601,
-	TEST_7005880874640146484,
-	TEST_7032045258883126022,
-	TEST_7353384334508842175,
-	TEST_7404045285477377670,
-	TEST_7431973150957944526,
-	TEST_7585715102059681757,
-	TEST_7715160997071429212,
-	TEST_7777066535355430289,
 	TEST_781901677223027175,
-	TEST_7823363553221722351,
-	TEST_789068866484373046,
-	TEST_7961714422080771198,
-	TEST_8015762103567576333,
-	TEST_8211981504472319767,
-	TEST_8354317460459584308,
-	TEST_8412806778050735057,
-	TEST_8694984074292254623,
-	TEST_8698844633699288298,
-	TEST_8794884152664322911,
-	TEST_8966794841936584464,
-	TEST_909606746561742123,
-	TEST_9156614022853705708,
-	TEST_9248511054298050610,
-	TEST_9264503539336248559,
-	TEST_928756709184343973,
-	TEST_9574369650680012313,
-	TEST_964127714438319834,
-	TEST_9675086780529785020,
-	TEST_973671184102733124,
-	TEST_9932483170498916221,
 	VELAS_MAINNET,
 	VELAS_TESTNET,
 	WEMIX_MAINNET,

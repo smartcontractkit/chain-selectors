@@ -15,7 +15,7 @@ var testSelectorsYml []byte
 //go:embed selector_restructured.yml
 var selectorYml []byte
 
-type chainDetails struct {
+type ChainDetails struct {
 	Family  string `yaml:"family"`
 	Name    string `yaml:"name"`
 	ChainID string `yaml:"chain_id"`
@@ -34,9 +34,9 @@ var testChainIDToSelectorMapForFamily = make(map[string]map[string]uint64)
 var selectorToChainDetails = loadChainDetailsBySelector()
 var testSelectorsMap = loadTestChains()
 
-func loadTestChains() map[uint64]chainDetails {
+func loadTestChains() map[uint64]ChainDetails {
 	type yamlData struct {
-		SelectorFamilies map[uint64]chainDetails `yaml:"selectors"`
+		Selectors map[uint64]ChainDetails `yaml:"selectors"`
 	}
 
 	var data yamlData
@@ -45,7 +45,7 @@ func loadTestChains() map[uint64]chainDetails {
 		panic(err)
 	}
 
-	for k, v := range data.SelectorFamilies {
+	for k, v := range data.Selectors {
 		if v.Family == "" {
 			continue
 		}
@@ -59,12 +59,12 @@ func loadTestChains() map[uint64]chainDetails {
 		}
 	}
 
-	return data.SelectorFamilies
+	return data.Selectors
 }
 
-func loadChainDetailsBySelector() map[uint64]chainDetails {
+func loadChainDetailsBySelector() map[uint64]ChainDetails {
 	type yamlData struct {
-		SelectorFamilies map[uint64]chainDetails `yaml:"selectors"`
+		Selectors map[uint64]ChainDetails `yaml:"selectors"`
 	}
 
 	var data yamlData
@@ -73,7 +73,7 @@ func loadChainDetailsBySelector() map[uint64]chainDetails {
 		panic(err)
 	}
 
-	for k, v := range data.SelectorFamilies {
+	for k, v := range data.Selectors {
 		if v.Family == "" {
 			continue
 		}
@@ -87,7 +87,7 @@ func loadChainDetailsBySelector() map[uint64]chainDetails {
 		}
 	}
 
-	return data.SelectorFamilies
+	return data.Selectors
 }
 
 func GetSelectorFamily(selector uint64) (string, error) {
@@ -99,8 +99,8 @@ func GetSelectorFamily(selector uint64) (string, error) {
 	return details.Family, nil
 }
 
-func ChainSelectorToChainDetails() map[uint64]chainDetails {
-	copyMap := make(map[uint64]chainDetails, len(selectorToChainDetails))
+func ChainSelectorToChainDetails() map[uint64]ChainDetails {
+	copyMap := make(map[uint64]ChainDetails, len(selectorToChainDetails))
 	for k, v := range selectorToChainDetails {
 		copyMap[k] = v
 	}
@@ -129,8 +129,9 @@ func SelectorFromChainIdAndFamily(chainId string, family string) (uint64, error)
 
 	selector, exist := selectorMap[chainId]
 	if !exist {
-		return 0, fmt.Errorf("chain selector not found for chain %v", chainId)
+		return 0, fmt.Errorf("chain selector not found for chainID %v", chainId)
 	}
+
 	return selector, nil
 }
 
@@ -185,21 +186,23 @@ func TestChainIds() []uint64 {
 }
 
 // ------------------------For Test------------------------
-var chainsBySelector = make(map[uint64]Chain)
 
-func init() {
-	for _, ch := range ALL {
-		chainsBySelector[ch.Selector] = ch
-	}
-}
-
-func ChainBySelector(sel uint64) (Chain, bool) {
-	ch, exists := chainsBySelector[sel]
+func TestChainBySelector(sel uint64) (ChainDetails, bool) {
+	ch, exists := testSelectorsMap[sel]
 	return ch, exists
 }
 
-func ChainSelectorExist(chainSel uint64) (bool, error) {
-	_, exists := ChainBySelector(chainSel)
+func GetTestSelectorFamily(selector uint64) (string, error) {
+	details, exist := testSelectorsMap[selector]
+	if !exist {
+		return "", fmt.Errorf("chain detail not found for selector %d", selector)
+	}
+
+	return details.Family, nil
+}
+
+func TestChainSelectorExist(chainSel uint64) (bool, error) {
+	_, exists := TestChainBySelector(chainSel)
 	if !exists {
 		return false, fmt.Errorf("chain %d not found", chainSel)
 	}
