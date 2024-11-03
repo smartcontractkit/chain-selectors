@@ -17,14 +17,8 @@ use std::str::FromStr;
 use chainselectors::generated_chains;
 
 fn main() {
-    match generated_chains::ChainName::try_from(420) {
-        Ok(c) => {
-            assert_eq!(c, generated_chains::ChainName::EthereumTestnetGoerliOptimism1);
-        }
-        Err(_) => {
-            panic!("Failed to convert chain id to chain name");
-        }
-    }
+    let chain = generated_chains::ChainName::try_from(420).unwrap();
+    assert_eq!(chain, generated_chains::ChainName::EthereumTestnetGoerliOptimism1);
     
     let selector = generated_chains::chain_selector(generated_chains::ChainName::EthereumTestnetGoerliOptimism1);
     assert_eq!(
@@ -32,14 +26,8 @@ fn main() {
         2664363617261496610,
     );
 
-    match generated_chains::ChainName::from_str("ethereum-testnet-goerli-optimism-1") {
-        Ok(chain) => {
-            assert_eq!(chain, generated_chains::ChainName::EthereumTestnetGoerliOptimism1);
-        }
-        Err(_) => {
-            panic!("Failed to parse chain name");
-        }
-    }
+    let chain_from_str = generated_chains::ChainName::from_str("ethereum-testnet-goerli-optimism-1").unwrap();
+    assert_eq!(chain_from_str, generated_chains::ChainName::EthereumTestnetGoerliOptimism1);
 }
 ```
 
