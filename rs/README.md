@@ -2,13 +2,15 @@
 
 This folder contains the Rust implementation of the Chain Selectors module.
 
-## Installation
+## User Guide
+
+### Installation
 
 ```shell
 cargo add --git https://github.com/smartcontractkit/chain-selectors --tag <TAG>
 ```
 
-## Usage
+### Usage
 
 ```rust
 use std::str::FromStr;
