@@ -77,8 +77,14 @@ func rustfmt(src []byte) ([]byte, error) {
 
 	if err := exec.Command("rustfmt", tmpFile).Run(); err != nil {
 		// if rustfmt is not installed, try to use docker
-		cmd := exec.Command("docker", "run", "--rm", "-v", fmt.Sprintf("%s:/usr/src/app/generated_chains.rs", tmpFile), "-w", "/usr/src/app", "rust:1.82-alpine", "/bin/sh", "-c", "rustup component add rustfmt &>/dev/null && rustfmt generated_chains.rs")
-		if dockerErr := cmd.Run(); dockerErr != nil {
+		vol := fmt.Sprintf("%s:/usr/src/app/%s", tmpFile, generatedFileName)
+		rustfmtCmd := fmt.Sprintf("rustup component add rustfmt &>/dev/null && rustfmt %s", generatedFileName)
+		if dockerErr := exec.Command(
+			"docker", "run", "--rm",
+			"-v", vol, "-w", "/usr/src/app",
+			"rust:1.82-alpine",
+			"/bin/sh", "-c", rustfmtCmd,
+		).Run(); dockerErr != nil {
 			return nil, err
 		}
 	}
