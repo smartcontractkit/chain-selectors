@@ -167,7 +167,7 @@ func Test_ChainNames(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			chainId, err1 := ChainIdFromNameAndFamily(test.chainName, "")
-			chainName, err2 := NameFromChainIdAndFamily(test.chainId, "")
+			selector, err2 := SelectorFromChainIdAndFamily(chainId, "")
 			if test.expectErr {
 				require.Error(t, err1)
 				require.Error(t, err2)
@@ -177,7 +177,8 @@ func Test_ChainNames(t *testing.T) {
 			assert.Equal(t, test.chainId, chainId)
 
 			require.NoError(t, err2)
-			assert.Equal(t, test.chainName, chainName)
+			detail, _ := selectorToChainDetails[selector]
+			assert.Equal(t, test.chainName, detail.Name)
 		})
 	}
 }

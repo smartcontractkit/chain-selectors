@@ -157,34 +157,6 @@ func SelectorFromChainIdAndFamily(chainId string, family string) (uint64, error)
 	return selector, nil
 }
 
-func NameFromChainIdAndFamily(chainId string, family string) (string, error) {
-	// if family is missing use EVM as default
-	if family == "" {
-		family = FamilyEVM
-	}
-
-	selectorMap, exist := chainIDToSelectorMapForFamily[family]
-	if !exist {
-		return "", fmt.Errorf("chain family not found for chain %v, family %v", chainId, family)
-	}
-
-	selector, exist := selectorMap[chainId]
-	if !exist {
-		return "", fmt.Errorf("chain selector not found for chain %v, family %v", chainId, family)
-	}
-
-	details, exist := selectorToChainDetails[selector]
-	if !exist {
-		return "", fmt.Errorf("chain details not found for chain %v, family %v", chainId, family)
-	}
-
-	// when name is missing use chainID
-	if details.Name == "" {
-		return chainId, nil
-	}
-	return details.Name, nil
-}
-
 func ChainIdFromNameAndFamily(name string, family string) (string, error) {
 	// if family is missing use EVM as default
 	if family == "" {
