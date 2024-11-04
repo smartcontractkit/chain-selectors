@@ -13,7 +13,7 @@ import (
 func TestNoSameChainSelectorsAreGenerated(t *testing.T) {
 	chainSelectors := map[uint64]struct{}{}
 
-	for selector := range selectorToChainDetails {
+	for selector := range selectorsMap {
 		_, exist := chainSelectors[selector]
 		assert.False(t, exist, "Chain Selectors should be unique. Selector %d is duplicated for chain %d", selector)
 		chainSelectors[selector] = struct{}{}
@@ -21,8 +21,8 @@ func TestNoSameChainSelectorsAreGenerated(t *testing.T) {
 }
 
 func TestNoOverlapBetweenRealAndTestChains(t *testing.T) {
-	for k, _ := range selectorToChainDetails {
-		_, exist := testSelectorToChainDetailsMap[k]
+	for k, _ := range selectorsMap {
+		_, exist := testSelectorsMap[k]
 		assert.False(t, exist, "Chain %d is duplicated between real and test chains", k)
 	}
 }
@@ -49,7 +49,7 @@ func TestBothSelectorsYmlAndTestSelectorsYmlAreValid(t *testing.T) {
 	assert.Equal(t, "90000020", testChainSelector.ChainID)
 }
 
-func TestEvmChainIdToChainSelectorReturningCopiedMap(t *testing.T) {
+func TestChainIdToChainSelectorReturningCopiedMap(t *testing.T) {
 	selectors := ChainSelectorToChainDetails()
 	tmp := selectors[5009297550715157269]
 	tmp.ChainID = "2"
@@ -121,10 +121,10 @@ func Test_ChainSelectors(t *testing.T) {
 
 func Test_TestChainIds(t *testing.T) {
 	chainIds := TestChainIds()
-	assert.Equal(t, len(chainIds), len(testSelectorToChainDetailsMap), "Should return correct number of test chain ids")
+	assert.Equal(t, len(chainIds), len(testSelectorsMap), "Should return correct number of test chain ids")
 
 	for _, chainId := range chainIds {
-		_, exist := testSelectorToChainDetailsMap[chainId]
+		_, exist := testSelectorsMap[chainId]
 		assert.True(t, exist)
 	}
 }
@@ -177,14 +177,14 @@ func Test_ChainNames(t *testing.T) {
 			assert.Equal(t, test.chainId, chainId)
 
 			require.NoError(t, err2)
-			detail, _ := selectorToChainDetails[selector]
+			detail, _ := selectorsMap[selector]
 			assert.Equal(t, test.chainName, detail.Name)
 		})
 	}
 }
 
 func Test_ChainBySelector(t *testing.T) {
-	testMap := loadTestChainDetailsBySelector()
+	testMap := loadYML(testSelectorsYml)
 	t.Run("exist", func(t *testing.T) {
 		for selector, details := range testMap {
 			v, exists := ChainBySelector(selector)
@@ -200,7 +200,7 @@ func Test_ChainBySelector(t *testing.T) {
 }
 
 func Test_SelectorMap(t *testing.T) {
-	selectorMap := loadChainDetailsBySelector()
+	selectorMap := loadYML(selectorYml)
 	t.Run("exist", func(t *testing.T) {
 		for selector, details := range selectorMap {
 			v, err := SelectorFromChainIdAndFamily(details.ChainID, details.Family)
