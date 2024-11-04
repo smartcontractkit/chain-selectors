@@ -216,18 +216,19 @@ func Test_SelectorMap(t *testing.T) {
 	})
 }
 
-func Test_TestSelectorMap(t *testing.T) {
-	testMap := loadTestChainDetailsBySelector()
+func Test_IsEvm(t *testing.T) {
 	t.Run("exist", func(t *testing.T) {
-		for selector := range testMap {
-			exist, err := TestChainSelectorExist(selector)
-			assert.NoError(t, err)
-			assert.True(t, exist)
+		for _, ch := range ALL {
+			if ch.Family == FamilyEVM {
+				exist, err := IsEvm(ch.Selector)
+				assert.NoError(t, err)
+				assert.True(t, exist)
+			}
 		}
 	})
 
 	t.Run("non existent", func(t *testing.T) {
-		exist, err := TestChainSelectorExist(rand.Uint64())
+		exist, err := IsEvm(rand.Uint64())
 		assert.Error(t, err)
 		assert.False(t, exist)
 	})

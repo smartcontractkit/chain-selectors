@@ -208,7 +208,6 @@ func TestChainIds() []uint64 {
 	return chainIds
 }
 
-// ---------------------------- legacy functions---------------------------
 var chainsBySelector = make(map[uint64]Chain)
 var chainsByEvmChainID = make(map[string]Chain)
 
@@ -226,6 +225,11 @@ func ChainByEvmChainID(evmChainID string) (Chain, bool) {
 	return ch, exists
 }
 
+func ChainBySelector(sel uint64) (Chain, bool) {
+	ch, exists := chainsBySelector[sel]
+	return ch, exists
+}
+
 func IsEvm(chainSel uint64) (bool, error) {
 	chain, exists := ChainBySelector(chainSel)
 	if !exists {
@@ -236,18 +240,4 @@ func IsEvm(chainSel uint64) (bool, error) {
 		return true, nil
 	}
 	return false, nil
-}
-
-func ChainBySelector(sel uint64) (Chain, bool) {
-	ch, exists := chainsBySelector[sel]
-	return ch, exists
-}
-
-func TestChainSelectorExist(chainSel uint64) (bool, error) {
-	_, exists := ChainBySelector(chainSel)
-	if !exists {
-		return false, fmt.Errorf("chain %d not found", chainSel)
-	}
-
-	return true, nil
 }
