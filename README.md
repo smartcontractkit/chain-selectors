@@ -41,6 +41,47 @@ func main() {
 
 ### Contributing
 
+#### Naming new chains
+
+Chain names must respect the following format:
+`<blockchain>-<type>-<network_instance>`
+
+When a component requires more than 1 word, use snake-case to connect them, e.g `polygon-zkevm`.
+
+| Parameter | Description | Example                       |
+| --- | --- |-------------------------------|
+| blockchain | Name of the chain | `ethereum`, `avalanche`, `polygon-zkevm`    |
+| type | Type of network | `testnet`, `mainnet`, `devnet`      |
+| network_instance | [Only if not mainnet] Identifier of specific network | `alfajores`, `holesky`, `sepolia`, `1` |
+
+More on `network_instance`: only include it if `type` is not mainnet. This is because legacy testnet instances are often dropped after a new one is spun up, e.g Ethereum Rinkeby.
+
+Rules for `network_instance`:
+1. If chain has an officially-named testnet, use it, e.g
+`celo-testnet-alfajores`, `ethereum-testnet-holesky`
+2. If not above, and chain is a rollup, use the name of its settlement network, e.g `base-testnet-sepolia`
+3. If not above, use a number, e.g `bsc-testnet-1`
+
+Example chain names that comply with the format:
+```
+astar-mainnet
+astar-testnet-shibuya
+celo-mainnet
+celo-testnet-sepolia
+polygon-zkevm-mainnet
+polygon-zkevm-testnet-cardona
+ethereum-mainnet
+ethereum-testnet-sepolia
+ethereum-testnet-holesky
+optimism-mainnet
+optimism-testnet-sepolia
+bsc-mainnet
+bsc-testnet-1
+```
+
+You may find some existing names follow a legacy naming pattern: `<blockchain>-<type>-<network_name>-<parachain>-<rollup>-<rollup_instance>`. Those names are kept as is due to complexity of migration. The transition form legacy pattern to the new pattern is motivated by chain migrations, e.g Celo migrating from an L1 into an L2, rendering the legacy name stale.
+
+
 #### Adding new chains
 
 Any new chains and selectors should be always added to [selectors.yml](selectors.yml) and client libraries should load
@@ -55,24 +96,12 @@ $chain_id:
   name: $chain_name as string # Although name is optional parameter, please provide it and respect the format described below
 ```
 
-Chain names must respect the following format:
-`<blockchain>-<type>-<network_name>-<parachain>-<rollup>-<rollup_instance>`
-
-| Parameter | Description | Example                       |
-| --- | --- |-------------------------------|
-| blockchain | Name of blockchain protocol (or anchor blockchain) | `ethereum`, `cosmos`, `polkadot`    |
-| type | Type of the blockchain | `testnet`, `mainnet`, `devnet`      |
-| network_name | Name of specific network | `kovan`, `rinkeby`, `opera`, `kusama` |
-| parachain | Name of parachain based on blockchain_protocol | `moonbeam`, `edgeware`, `okex`      |
-| rollup | Name of rollup protocol | `arbitrum`, `optimism`            |
-| rollup_instance | Instance of rollup | `1`, `one`                        |
-
-
 [selectors.yml](selectors.yml) file is divided into sections based on the blockchain type. 
 Please make sure to add new entries to the both sections and keep them sorted by chain id within these sections.
 
 If you need to add a new chain for testing purposes (e.g. running tests with simulated environment) don't mix it with
 the main file and use [test_selectors.yml](test_selectors.yml) instead. This file is used only for testing purposes.
+
 
 #### Adding new client libraries
 
