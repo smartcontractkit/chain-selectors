@@ -13,10 +13,21 @@ import (
 func TestNoSameChainSelectorsAreGenerated(t *testing.T) {
 	chainSelectors := map[uint64]struct{}{}
 
-	for selector := range selectorsMap {
+	for selector := range chainIdToChainSelector {
 		_, exist := chainSelectors[selector]
 		assert.False(t, exist, "Chain Selectors should be unique. Selector %d is duplicated for chain %d", selector)
 		chainSelectors[selector] = struct{}{}
+	}
+}
+
+func TestNoSameChainIDAndFamilyAreGenerated(t *testing.T) {
+	chainIDAndFamily := map[string]struct{}{}
+
+	for _, details := range chainIdToChainSelector {
+		key := fmt.Sprintf("%s:%s", details.ChainID, details.Family)
+		_, exist := chainIDAndFamily[key]
+		assert.False(t, exist, "ChainID within single family should be unique. chainID %s is duplicated for family", details.ChainID, details.Family)
+		chainIDAndFamily[key] = struct{}{}
 	}
 }
 
@@ -166,7 +177,7 @@ func Test_ChainNames(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			chainId, err1 := ChainIdFromNameAndFamily(test.chainName, "")
+			chainId, err1 := ChainIdFromName(test.chainName)
 			selector, err2 := SelectorFromChainIdAndFamily(chainId, "")
 			if test.expectErr {
 				require.Error(t, err1)

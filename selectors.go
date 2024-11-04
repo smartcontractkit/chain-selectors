@@ -82,15 +82,6 @@ func ChainSelectorToChainDetails() map[uint64]ChainDetails {
 	return copyMap
 }
 
-func TestChainSelectorToChainDetails() map[uint64]ChainDetails {
-	copyMap := make(map[uint64]ChainDetails, len(selectorsMap))
-	for k, v := range testSelectorsMap {
-		copyMap[k] = v
-	}
-
-	return copyMap
-}
-
 func GetSelectorFamily(selector uint64) (string, error) {
 	// previously selector_families.yml includes both real and test chains, therefore we check both maps
 	details, exist := chainIdToChainSelector[selector]
