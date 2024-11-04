@@ -75,7 +75,9 @@ func rustfmt(src []byte) ([]byte, error) {
 	}
 	defer os.Remove(tmpFile)
 
-	if err := exec.Command("rustfmt", tmpFile).Run(); err != nil {
+	cmd := exec.Command("rustfmt", tmpFile)
+	cmd.Stderr = os.Stderr
+	if err := cmd.Run(); err != nil {
 		// if rustfmt is not installed, try to use docker
 		vol := fmt.Sprintf("%s:/usr/src/app/%s", tmpFile, generatedFileName)
 		rustfmtCmd := fmt.Sprintf("rustup component add rustfmt &>/dev/null && rustfmt %s", generatedFileName)
