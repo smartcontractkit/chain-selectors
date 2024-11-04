@@ -6,11 +6,20 @@ use std::{
 };
 use thiserror::Error;
 
-#[derive(Error, Debug)]
+#[derive(Error, Debug, PartialEq, Eq, Clone)]
 pub enum Error {
     #[error("unknown chain name: {0}")]
-    UnknownChain(String),
+    UnknownChainName(String),
+    #[error("unknown chain id: {0}")]
+    UnknownChainId(u64),
+    #[error("unknown chain selector: {0}")]
+    UnknownChainSelector(u64),
 }
+
+#[derive(Debug, Hash, PartialEq, Eq, Clone, Copy)]
+pub struct ChainId(pub u64);
+#[derive(Debug, Hash, PartialEq, Eq, Clone, Copy)]
+pub struct ChainSelector(pub u64);
 
 #[derive(
     Debug, Hash, PartialEq, Eq, Clone, Copy, serde::Serialize, serde::Deserialize, PartialOrd, Ord,
@@ -22,27 +31,41 @@ pub enum ChainName {
 {{- end}}
 }
 
-impl ChainName {
-    pub fn chain_id(self) -> u64 {
-        self as u64
+impl From<ChainName> for ChainId {
+    fn from(chain_name: ChainName) -> ChainId {
+        ChainId(chain_name as u64)
     }
+}
 
-    pub fn from_chain_id(chain_id: u64) -> Option<Self> {
-        match chain_id {
-        {{- range .}}
-            {{ .EvmChainID }} => Some(Self::{{ .VarName }}),
-        {{- end}}
-            _ => None,
-        } 
+impl From<ChainName> for ChainSelector {
+    fn from(chain_name: ChainName) -> ChainSelector {
+        chain_selector(chain_name)
     }
+}
 
-    pub fn from_chain_selector(chain_selector: u64) -> Option<Self> {
-        match chain_selector {
+impl TryFrom<ChainId> for ChainName {
+    type Error = Error;
+
+    fn try_from(chain_id: ChainId) -> Result<Self, Self::Error> {
+        match chain_id.0 {
         {{- range .}}
-            {{ .Selector }} => Some(Self::{{ .VarName }}),
+            {{ .EvmChainID }} => Ok(Self::{{ .VarName }}),
         {{- end}}
-            _ => None,
-        } 
+            _ => Err(Error::UnknownChainId(chain_id.0)),
+        }
+    }
+}
+
+impl TryFrom<ChainSelector> for ChainName {
+    type Error = Error;
+
+    fn try_from(chain_selector: ChainSelector) -> Result<Self, Self::Error> {
+        match chain_selector.0 {
+        {{- range .}}
+            {{ .Selector }} => Ok(Self::{{ .VarName }}),
+        {{- end}}
+            _ => Err(Error::UnknownChainSelector(chain_selector.0)),
+        }
     }
 }
 
@@ -54,7 +77,7 @@ impl FromStr for ChainName {
 		{{- range .}}
 			"{{ .Name }}" => Ok(Self::{{ .VarName }}),
 		{{- end}}
-            _ => Err(Error::UnknownChain(input.to_string())),
+            _ => Err(Error::UnknownChainName(input.to_string())),
         }
     }
 }
@@ -73,10 +96,10 @@ impl Display for ChainName {
     }
 }
 
-pub fn chain_selector(chain: ChainName) -> u64 {
+pub fn chain_selector(chain: ChainName) -> ChainSelector {
     match chain {
     {{- range .}}
-        ChainName::{{ .VarName }} => {{ .Selector }},
+        ChainName::{{ .VarName }} => ChainSelector({{ .Selector }}),
     {{- end}}
     }
 }

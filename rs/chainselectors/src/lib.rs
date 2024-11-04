@@ -4,20 +4,23 @@ pub mod generated_chains;
 mod tests {
     use super::*;
 
-    use generated_chains::ChainName;
+    use generated_chains::{ChainName, ChainId, ChainSelector};
     use std::str::FromStr;
 
     #[test]
     fn chain_from_id() {
         assert_eq!(
-            ChainName::from_chain_id(1),
-            Some(ChainName::EthereumMainnet),
+            ChainName::try_from(ChainId(1)).unwrap(),
+            ChainName::EthereumMainnet,
         );
     }
 
     #[test]
     fn chain_from_unknown_id() {
-        assert_eq!(ChainName::from_chain_id(0), None);
+        assert_eq!(
+            ChainName::try_from(ChainId(0)).unwrap_err().to_string(), 
+            "unknown chain id: 0",
+        );
     }
 
     #[test]
@@ -38,20 +41,23 @@ mod tests {
     fn to_chain_selector() {
         assert_eq!(
             generated_chains::chain_selector(ChainName::EthereumMainnet),
-            5009297550715157269
+            ChainSelector(5009297550715157269),
         );
     }
 
     #[test]
     fn chain_from_selector() {
         assert_eq!(
-            ChainName::from_chain_selector(5009297550715157269),
-            Some(ChainName::EthereumMainnet),
+            ChainName::try_from(ChainSelector(5009297550715157269)).unwrap(),
+            ChainName::EthereumMainnet,
         );
     }
 
     #[test]
     fn chain_from_selector_unknown() {
-        assert_eq!(ChainName::from_chain_selector(1), None);
+        assert_eq!(
+            ChainName::try_from(ChainSelector(1)).unwrap_err().to_string(), 
+            "unknown chain selector: 1"
+        );
     }
 }
