@@ -17,12 +17,8 @@ mod tests {
 
     #[test]
     fn chain_from_unknown_id() {
-        match ChainName::try_from(0 as ChainId) {
-            Ok(_) => panic!("should have failed for unknown chain"),
-            Err(e) => {
-                assert_eq!(e.to_string(), "unknown chain id: 0");
-            }
-        }
+        let e = ChainName::try_from(0 as ChainId).unwrap_err();
+        assert_eq!(e.to_string(), "unknown chain id: 0");
     }
 
     #[test]
