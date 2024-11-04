@@ -14,20 +14,20 @@ cargo add --git https://github.com/smartcontractkit/chain-selectors --tag <TAG>
 
 ```rust
 use std::str::FromStr;
-use chainselectors::generated_chains;
+use chainselectors::generated_chains::{ChainName, ChainSelector, ChainId};
 
 fn main() {
-    let chain = generated_chains::ChainName::try_from(420).unwrap();
-    assert_eq!(chain, generated_chains::ChainName::EthereumTestnetGoerliOptimism1);
+    let chain = ChainName::try_from(ChainId(420)).unwrap();
+    assert_eq!(chain, ChainName::EthereumTestnetGoerliOptimism1);
     
-    let selector = generated_chains::chain_selector(generated_chains::ChainName::EthereumTestnetGoerliOptimism1);
+    let selector = ChainSelector::from(ChainName::EthereumTestnetGoerliOptimism1);
     assert_eq!(
         selector,
-        2664363617261496610,
+        ChainSelector(2664363617261496610),
     );
 
-    let chain_from_str = generated_chains::ChainName::from_str("ethereum-testnet-goerli-optimism-1").unwrap();
-    assert_eq!(chain_from_str, generated_chains::ChainName::EthereumTestnetGoerliOptimism1);
+    let chain_from_str = ChainName::from_str("ethereum-testnet-goerli-optimism-1").unwrap();
+    assert_eq!(chain_from_str, ChainName::EthereumTestnetGoerliOptimism1);
 }
 ```
 

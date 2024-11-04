@@ -11,15 +11,32 @@ pub enum Error {
     #[error("unknown chain name: {0}")]
     UnknownChainName(String),
     #[error("unknown chain id: {0}")]
-    UnknownChainId(u64),
+    UnknownChainId(ChainId),
     #[error("unknown chain selector: {0}")]
-    UnknownChainSelector(u64),
+    UnknownChainSelector(ChainSelector),
 }
 
-#[derive(Debug, Hash, PartialEq, Eq, Clone, Copy)]
+#[derive(
+    Debug, Hash, PartialEq, Eq, Clone, Copy, serde::Serialize, serde::Deserialize, PartialOrd, Ord,
+)]
 pub struct ChainId(pub u64);
-#[derive(Debug, Hash, PartialEq, Eq, Clone, Copy)]
+
+impl Display for ChainId {
+    fn fmt(&self, f: &mut Formatter) -> FmtResult {
+        write!(f, "{}", self.0)
+    }
+}
+
+#[derive(
+    Debug, Hash, PartialEq, Eq, Clone, Copy, serde::Serialize, serde::Deserialize, PartialOrd, Ord,
+)]
 pub struct ChainSelector(pub u64);
+
+impl Display for ChainSelector {
+    fn fmt(&self, f: &mut Formatter) -> FmtResult {
+        write!(f, "{}", self.0)
+    }
+}
 
 #[derive(
     Debug, Hash, PartialEq, Eq, Clone, Copy, serde::Serialize, serde::Deserialize, PartialOrd, Ord,
@@ -38,8 +55,12 @@ impl From<ChainName> for ChainId {
 }
 
 impl From<ChainName> for ChainSelector {
-    fn from(chain_name: ChainName) -> ChainSelector {
-        chain_selector(chain_name)
+    fn from(chain: ChainName) -> Self {
+        match chain {
+        {{- range .}}
+            ChainName::{{ .VarName }} => Self({{ .Selector }}),
+        {{- end}}
+        }
     }
 }
 
@@ -51,7 +72,7 @@ impl TryFrom<ChainId> for ChainName {
         {{- range .}}
             {{ .EvmChainID }} => Ok(Self::{{ .VarName }}),
         {{- end}}
-            _ => Err(Error::UnknownChainId(chain_id.0)),
+            _ => Err(Error::UnknownChainId(chain_id)),
         }
     }
 }
@@ -64,7 +85,7 @@ impl TryFrom<ChainSelector> for ChainName {
         {{- range .}}
             {{ .Selector }} => Ok(Self::{{ .VarName }}),
         {{- end}}
-            _ => Err(Error::UnknownChainSelector(chain_selector.0)),
+            _ => Err(Error::UnknownChainSelector(chain_selector)),
         }
     }
 }
@@ -93,13 +114,5 @@ impl Display for ChainName {
 			{{- end}}
             }
         )
-    }
-}
-
-pub fn chain_selector(chain: ChainName) -> ChainSelector {
-    match chain {
-    {{- range .}}
-        ChainName::{{ .VarName }} => ChainSelector({{ .Selector }}),
-    {{- end}}
     }
 }

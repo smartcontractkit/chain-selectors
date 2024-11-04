@@ -38,9 +38,9 @@ mod tests {
     }
 
     #[test]
-    fn to_chain_selector() {
+    fn chain_selector_from_chain() {
         assert_eq!(
-            generated_chains::chain_selector(ChainName::EthereumMainnet),
+            ChainSelector::from(ChainName::EthereumMainnet),
             ChainSelector(5009297550715157269),
         );
     }
