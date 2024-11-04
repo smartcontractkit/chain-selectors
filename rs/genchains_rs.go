@@ -35,27 +35,27 @@ func main() {
 	rsDir := wd()
 	tmplRaw, err := os.ReadFile(path.Join(rsDir, tmplFileName))
 	if err != nil {
-		panic(err)
+		panic(fmt.Errorf("failed to read template file: %w", err))
 	}
 	tmpl, err := template.New(generatedFileName).Parse(string(tmplRaw))
 	if err != nil {
-		panic(err)
+		panic(fmt.Errorf("failed to parse template: %w", err))
 	}
 
 	generatedFilePath := path.Join(rsDir, "chainselectors", "src", generatedFileName)
 	existingContent, err := os.ReadFile(generatedFilePath)
 	if err != nil {
-		panic(err)
+		panic(fmt.Errorf("failed to read existing file: %w", err))
 	}
 
 	raw, err := gotmpl.Run(tmpl, newRustNameEncoder())
 	if err != nil {
-		panic(err)
+		panic(fmt.Errorf("failed to run go-template: %w", err))
 	}
 
 	formatted, err := rustfmt([]byte(raw))
 	if err != nil {
-		panic(err)
+		panic(fmt.Errorf("failed to format rust code: %w", err))
 	}
 
 	if string(existingContent) == string(formatted) {
@@ -64,7 +64,7 @@ func main() {
 	}
 
 	if err := os.WriteFile(generatedFilePath, formatted, 0644); err != nil {
-		panic(err)
+		panic(fmt.Errorf("failed to update %s: %w", generatedFileName, err))
 	}
 }
 
