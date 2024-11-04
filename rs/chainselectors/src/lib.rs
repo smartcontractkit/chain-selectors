@@ -4,7 +4,7 @@ pub mod generated_chains;
 mod tests {
     use super::*;
 
-    use generated_chains::{ChainName, ChainId, ChainSelector};
+    use generated_chains::{ChainId, ChainName, ChainSelector};
     use std::str::FromStr;
 
     #[test]
@@ -18,7 +18,7 @@ mod tests {
     #[test]
     fn chain_from_unknown_id() {
         assert_eq!(
-            ChainName::try_from(ChainId(0)).unwrap_err().to_string(), 
+            ChainName::try_from(ChainId(0)).unwrap_err().to_string(),
             "unknown chain id: 0",
         );
     }
@@ -56,7 +56,9 @@ mod tests {
     #[test]
     fn chain_from_selector_unknown() {
         assert_eq!(
-            ChainName::try_from(ChainSelector(1)).unwrap_err().to_string(), 
+            ChainName::try_from(ChainSelector(1))
+                .unwrap_err()
+                .to_string(),
             "unknown chain selector: 1"
         );
     }
