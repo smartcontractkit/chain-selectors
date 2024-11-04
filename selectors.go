@@ -80,11 +80,11 @@ func loadChainDetailsBySelector() map[uint64]ChainDetails {
 
 		// update chainIDToSelectorMapForFamily
 		_, exist := chainIDToSelectorMapForFamily[v.Family]
-		if exist {
-			chainIDToSelectorMapForFamily[v.Family][v.ChainID] = k
-		} else {
+		if !exist {
 			chainIDToSelectorMapForFamily[v.Family] = make(map[string]uint64)
 		}
+
+		chainIDToSelectorMapForFamily[v.Family][v.ChainID] = k
 	}
 
 	return data.Selectors
