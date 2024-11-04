@@ -90,6 +90,16 @@ func genChainsSourceCode() (string, error) {
 		})
 	}
 
+	for chainSelector, chainDetails := range chain_selectors.TestChainSelectorToChainDetails() {
+		chains = append(chains, chain{
+			ChainID:  chainDetails.ChainID,
+			Selector: chainSelector,
+			Name:     chainDetails.Name,
+			Family:   chainDetails.Family,
+			VarName:  toVarName(chainDetails.Name, chainSelector),
+		})
+	}
+
 	sort.Slice(chains, func(i, j int) bool { return chains[i].VarName < chains[j].VarName })
 	if err := chainTemplate.ExecuteTemplate(wr, "", chains); err != nil {
 		return "", err
