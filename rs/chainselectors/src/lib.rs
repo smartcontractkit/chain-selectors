@@ -4,27 +4,28 @@ pub mod generated_chains;
 mod tests {
     use super::*;
 
-    use generated_chains::{ChainId, ChainName};
+    use generated_chains::ChainName;
     use std::str::FromStr;
 
     #[test]
     fn chain_from_id() {
         assert_eq!(
-            ChainName::try_from(1 as ChainId).unwrap(),
-            ChainName::EthereumMainnet
+            ChainName::from_chain_id(1),
+            Some(ChainName::EthereumMainnet),
         );
     }
 
     #[test]
     fn chain_from_unknown_id() {
-        let e = ChainName::try_from(0 as ChainId).unwrap_err();
-        assert_eq!(e.to_string(), "unknown chain id: 0");
+        assert_eq!(ChainName::from_chain_id(0), None);
     }
 
     #[test]
     fn chain_from_str() {
-        let chain = ChainName::from_str("ethereum-mainnet").unwrap();
-        assert_eq!(chain, ChainName::EthereumMainnet);
+        assert_eq!(
+            ChainName::from_str("ethereum-mainnet").unwrap(),
+            ChainName::EthereumMainnet,
+        );
     }
 
     #[test]
@@ -39,5 +40,18 @@ mod tests {
             generated_chains::chain_selector(ChainName::EthereumMainnet),
             5009297550715157269
         );
+    }
+
+    #[test]
+    fn chain_from_selector() {
+        assert_eq!(
+            ChainName::from_chain_selector(5009297550715157269),
+            Some(ChainName::EthereumMainnet),
+        );
+    }
+
+    #[test]
+    fn chain_from_selector_unknown() {
+        assert_eq!(ChainName::from_chain_selector(1), None);
     }
 }
