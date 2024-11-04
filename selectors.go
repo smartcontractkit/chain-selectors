@@ -90,22 +90,6 @@ func loadChainDetailsBySelector() map[uint64]ChainDetails {
 	return data.Selectors
 }
 
-func GetSelectorFamily(selector uint64) (string, error) {
-	// previously selector_families.yml includes both real and test chains, therefore we check both maps
-	details, exist := selectorToChainDetails[selector]
-	if exist {
-		return details.Family, nil
-
-	}
-
-	details, exist = testSelectorToChainDetailsMap[selector]
-	if exist {
-		return details.Family, nil
-	}
-
-	return "", fmt.Errorf("chain detail not found for selector %d", selector)
-}
-
 func ChainSelectorToChainDetails() map[uint64]ChainDetails {
 	copyMap := make(map[uint64]ChainDetails, len(selectorToChainDetails))
 	for k, v := range selectorToChainDetails {
@@ -124,12 +108,34 @@ func TestChainSelectorToChainDetails() map[uint64]ChainDetails {
 	return copyMap
 }
 
+func GetSelectorFamily(selector uint64) (string, error) {
+	// previously selector_families.yml includes both real and test chains, therefore we check both maps
+	details, exist := selectorToChainDetails[selector]
+	if exist {
+		return details.Family, nil
+
+	}
+
+	details, exist = testSelectorToChainDetailsMap[selector]
+	if exist {
+		return details.Family, nil
+	}
+
+	return "", fmt.Errorf("chain detail not found for selector %d", selector)
+}
+
 func ChainIdFromSelector(chainSelectorId uint64) (string, error) {
 	chainDetail, ok := selectorToChainDetails[chainSelectorId]
-	if !ok {
-		return "0", fmt.Errorf("chain not found for chain selector %d", chainSelectorId)
+	if ok {
+		return chainDetail.ChainID, nil
 	}
-	return chainDetail.ChainID, nil
+
+	chainDetail, ok = testSelectorToChainDetailsMap[chainSelectorId]
+	if ok {
+		return chainDetail.ChainID, nil
+	}
+
+	return "0", fmt.Errorf("chain not found for chain selector %d", chainSelectorId)
 }
 
 func SelectorFromChainIdAndFamily(chainId string, family string) (uint64, error) {
@@ -145,7 +151,7 @@ func SelectorFromChainIdAndFamily(chainId string, family string) (uint64, error)
 
 	selector, exist := selectorMap[chainId]
 	if !exist {
-		return 0, fmt.Errorf("chain selector not found for chainID %v", chainId)
+		return 0, fmt.Errorf("chain selector not found for chainID %v, family %v", chainId, family)
 	}
 
 	return selector, nil
@@ -159,19 +165,20 @@ func NameFromChainIdAndFamily(chainId string, family string) (string, error) {
 
 	selectorMap, exist := chainIDToSelectorMapForFamily[family]
 	if !exist {
-		return "", fmt.Errorf("chain family not found for chain %v, %v", chainId, family)
+		return "", fmt.Errorf("chain family not found for chain %v, family %v", chainId, family)
 	}
 
 	selector, exist := selectorMap[chainId]
 	if !exist {
-		return "", fmt.Errorf("chain selector not found for chain %v, %v", chainId, family)
+		return "", fmt.Errorf("chain selector not found for chain %v, family %v", chainId, family)
 	}
 
 	details, exist := selectorToChainDetails[selector]
 	if !exist {
-		return "", fmt.Errorf("chain details not found for chain %v, %v", chainId, family)
+		return "", fmt.Errorf("chain details not found for chain %v, family %v", chainId, family)
 	}
 
+	// when name is missing use chainID
 	if details.Name == "" {
 		return chainId, nil
 	}
@@ -190,7 +197,7 @@ func ChainIdFromNameAndFamily(name string, family string) (string, error) {
 		}
 	}
 
-	return "0", fmt.Errorf("chain not found for name %s", name)
+	return "0", fmt.Errorf("chain not found for name %s and family %s", name, family)
 }
 
 func TestChainIds() []uint64 {
