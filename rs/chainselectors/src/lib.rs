@@ -9,12 +9,7 @@ mod tests {
 
     #[test]
     fn chain_from_id() {
-        match ChainName::try_from(1 as ChainId) {
-            Ok(chain) => {
-                assert_eq!(chain, ChainName::EthereumMainnet);
-            }
-            Err(_) => panic!("should have succeeded"),
-        }
+        assert_eq!(ChainName::try_from(1 as ChainId).unwrap(), ChainName::EthereumMainnet);
     }
 
     #[test]
