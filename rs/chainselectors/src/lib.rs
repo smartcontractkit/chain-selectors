@@ -9,7 +9,10 @@ mod tests {
 
     #[test]
     fn chain_from_id() {
-        assert_eq!(ChainName::try_from(1 as ChainId).unwrap(), ChainName::EthereumMainnet);
+        assert_eq!(
+            ChainName::try_from(1 as ChainId).unwrap(),
+            ChainName::EthereumMainnet
+        );
     }
 
     #[test]
