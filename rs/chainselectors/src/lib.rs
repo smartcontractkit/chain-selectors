@@ -35,12 +35,8 @@ mod tests {
 
     #[test]
     fn chain_from_str_unknown() {
-        match ChainName::from_str("ethereum-dummy-x") {
-            Ok(_) => panic!("should have failed for unknown chain"),
-            Err(e) => {
-                assert_eq!(e.to_string(), "unknown chain name: ethereum-dummy-x");
-            }
-        };
+        let e = ChainName::from_str("ethereum-dummy-x").unwrap_err();
+        assert_eq!(e.to_string(), "unknown chain name: ethereum-dummy-x");
     }
 
     #[test]
