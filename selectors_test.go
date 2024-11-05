@@ -13,7 +13,7 @@ import (
 func TestNoSameChainSelectorsAreGenerated(t *testing.T) {
 	chainSelectors := map[uint64]struct{}{}
 
-	for selector := range chainIdToChainSelector {
+	for selector := range chainSelectorToDetails {
 		_, exist := chainSelectors[selector]
 		assert.False(t, exist, "Chain Selectors should be unique. Selector %d is duplicated for chain %d", selector)
 		chainSelectors[selector] = struct{}{}
@@ -23,7 +23,7 @@ func TestNoSameChainSelectorsAreGenerated(t *testing.T) {
 func TestNoSameChainIDAndFamilyAreGenerated(t *testing.T) {
 	chainIDAndFamily := map[string]struct{}{}
 
-	for _, details := range chainIdToChainSelector {
+	for _, details := range chainSelectorToDetails {
 		key := fmt.Sprintf("%s:%s", details.ChainID, details.Family)
 		_, exist := chainIDAndFamily[key]
 		assert.False(t, exist, "ChainID within single family should be unique. chainID %s is duplicated for family", details.ChainID, details.Family)
@@ -66,7 +66,7 @@ func TestChainIdToChainSelectorReturningCopiedMap(t *testing.T) {
 	tmp.ChainID = "2"
 	selectors[5009297550715157269] = tmp
 
-	chainID, err := ChainIdFromSelector(5009297550715157269)
+	chainID, err := GetChainIdFromSelector(5009297550715157269)
 	assert.NoError(t, err)
 	assert.NotEqual(t, chainID, tmp)
 }
@@ -114,7 +114,7 @@ func Test_ChainSelectors(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			chainId, err1 := ChainIdFromSelector(test.chainSelector)
+			chainId, err1 := GetChainIdFromSelector(test.chainSelector)
 			chainSelector, err2 := SelectorFromChainIdAndFamily(test.chainId, "")
 			if test.expectErr {
 				require.Error(t, err1)
@@ -135,7 +135,11 @@ func Test_TestChainIds(t *testing.T) {
 	assert.Equal(t, len(chainIds), len(testSelectorsMap), "Should return correct number of test chain ids")
 
 	for _, chainId := range chainIds {
-		_, exist := testSelectorsMap[chainId]
+		selector, err := SelectorFromChainId(chainId)
+		if err != nil {
+			return
+		}
+		_, exist := testSelectorsMap[selector]
 		assert.True(t, exist)
 	}
 }
@@ -177,15 +181,15 @@ func Test_ChainNames(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			chainId, err1 := ChainIdFromName(test.chainName)
-			selector, err2 := SelectorFromChainIdAndFamily(chainId, "")
+			chainID, err1 := ChainIdFromNameAndFamily(test.chainName, FamilyEVM)
+			selector, err2 := SelectorFromChainIdAndFamily(chainID, "")
 			if test.expectErr {
 				require.Error(t, err1)
 				require.Error(t, err2)
 				return
 			}
 			require.NoError(t, err1)
-			assert.Equal(t, test.chainId, chainId)
+			assert.Equal(t, test.chainId, chainID)
 
 			require.NoError(t, err2)
 			detail, _ := selectorsMap[selector]
