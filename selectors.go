@@ -101,11 +101,11 @@ func ChainIdFromSelector(chainSelectorId uint64) (uint64, error) {
 		return 0, err
 	}
 
-	parseInt, err := strconv.ParseInt(chainId, 10, 64)
+	parseInt, err := strconv.ParseUint(chainId, 10, 64)
 	if err != nil {
 		return 0, err
 	}
-	return uint64(parseInt), fmt.Errorf("chain not found for chain selector %d", chainSelectorId)
+	return parseInt, fmt.Errorf("chain not found for chain selector %d", chainSelectorId)
 }
 
 func GetChainIdFromSelector(chainSelectorId uint64) (string, error) {
@@ -150,12 +150,12 @@ func ChainIdFromName(name string) (uint64, error) {
 		return 0, err
 	}
 
-	parseInt, err := strconv.ParseInt(chainID, 10, 64)
+	parseInt, err := strconv.ParseUint(chainID, 10, 64)
 	if err != nil {
 		return 0, err
 	}
 
-	return uint64(parseInt), nil
+	return parseInt, nil
 }
 
 // NameFromChainId is for backward compatibility support
@@ -197,12 +197,12 @@ func ChainIdFromNameAndFamily(name string, family string) (string, error) {
 func TestChainIds() []uint64 {
 	chainIds := make([]uint64, 0, len(testSelectorsMap))
 	for _, details := range testSelectorsMap {
-		parseInt, err := strconv.ParseInt(details.ChainID, 10, 64)
+		parseInt, err := strconv.ParseUint(details.ChainID, 10, 64)
 		if err != nil {
 			continue
 		}
 
-		chainIds = append(chainIds, uint64(parseInt))
+		chainIds = append(chainIds, parseInt)
 	}
 	return chainIds
 }
