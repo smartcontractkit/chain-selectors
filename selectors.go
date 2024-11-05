@@ -150,6 +150,7 @@ func ChainIdFromName(name string) (uint64, error) {
 		return 0, err
 	}
 
+	// assume chain family is evm and chain id can be converted to uint64
 	parseInt, err := strconv.ParseUint(chainID, 10, 64)
 	if err != nil {
 		return 0, err
