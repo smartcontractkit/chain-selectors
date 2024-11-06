@@ -20,8 +20,8 @@ func TestNoSameChainSelectorsAreGenerated(t *testing.T) {
 }
 
 func TestNoOverlapBetweenRealAndTestChains(t *testing.T) {
-	for k, _ := range selectorsMap {
-		_, exist := testSelectorsMap[k]
+	for k, _ := range evmSelectorsMap {
+		_, exist := evmTestSelectorsMap[k]
 		assert.False(t, exist, "Chain %d is duplicated between real and test chains", k)
 	}
 }
@@ -113,10 +113,10 @@ func Test_ChainSelectors(t *testing.T) {
 
 func Test_TestChainIds(t *testing.T) {
 	chainIds := TestChainIds()
-	assert.Equal(t, len(chainIds), len(testSelectorsMap), "Should return correct number of test chain ids")
+	assert.Equal(t, len(chainIds), len(evmTestSelectorsMap), "Should return correct number of test chain ids")
 
 	for _, chainId := range chainIds {
-		_, exist := testSelectorsMap[chainId]
+		_, exist := evmTestSelectorsMap[chainId]
 		assert.True(t, exist)
 	}
 }
