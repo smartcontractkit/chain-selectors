@@ -11,7 +11,7 @@ const (
 )
 
 func GetSelectorFamily(selector uint64) (string, error) {
-	if _, exist := evmChainIdToChainSelector[selector]; exist {
+	if _, exist := evmChainsBySelector[selector]; exist {
 		return FamilyEVM, nil
 	}
 	if _, exist := solanaChainIdBySelector[selector]; exist {
