@@ -16,7 +16,7 @@ import (
 	chain_selectors "github.com/smartcontractkit/chain-selectors"
 )
 
-const filename = "generated_chains.go"
+const filename = "generated_chains_evm.go"
 
 type chain struct {
 	EvmChainID uint64

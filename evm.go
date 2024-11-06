@@ -8,7 +8,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-//go:generate go run genchains.go
+//go:generate go run genchains_evm.go
 
 //go:embed selectors.yml
 var selectorsYml []byte
