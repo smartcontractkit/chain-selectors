@@ -8,7 +8,7 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-//go:generate go run genchains.go
+//go:generate go run genchains_evm.go
 
 //go:embed selectors.yml
 var selectorsYml []byte
@@ -16,7 +16,7 @@ var selectorsYml []byte
 //go:embed test_selectors.yml
 var testSelectorsYml []byte
 
-type chainDetails struct {
+type ChainDetails struct {
 	ChainSelector uint64 `yaml:"selector"`
 	ChainName     string `yaml:"name"`
 }
@@ -36,8 +36,8 @@ func init() {
 	}
 }
 
-func loadAllEVMSelectors() map[uint64]chainDetails {
-	output := make(map[uint64]chainDetails, len(evmSelectorsMap)+len(evmTestSelectorsMap))
+func loadAllEVMSelectors() map[uint64]ChainDetails {
+	output := make(map[uint64]ChainDetails, len(evmSelectorsMap)+len(evmTestSelectorsMap))
 	for k, v := range evmSelectorsMap {
 		output[k] = v
 	}
@@ -47,9 +47,9 @@ func loadAllEVMSelectors() map[uint64]chainDetails {
 	return output
 }
 
-func parseYml(ymlFile []byte) map[uint64]chainDetails {
+func parseYml(ymlFile []byte) map[uint64]ChainDetails {
 	type ymlData struct {
-		SelectorsByEvmChainId map[uint64]chainDetails `yaml:"selectors"`
+		SelectorsByEvmChainId map[uint64]ChainDetails `yaml:"selectors"`
 	}
 
 	var data ymlData

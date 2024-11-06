@@ -2,6 +2,7 @@ package chain_selectors
 
 import (
 	"math/rand"
+	"strconv"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -51,9 +52,10 @@ func TestAllChainSelectorsHaveFamilies(t *testing.T) {
 	for _, ch := range ALL {
 		family, err := GetSelectorFamily(ch.Selector)
 		require.NoError(t, err,
-			"Family not found for selector %d (chain id %d, name %s), please update selector_families.yml with the appropriate chain family for this chain",
+			"Family not found for selector %d (chain id %d, name %s), please update selector.yml with the appropriate chain family for this chain",
 			ch.Selector, ch.EvmChainID, ch.Name)
 		require.NotEmpty(t, family)
+		require.Equal(t, FamilyEVM, family)
 	}
 }
 
@@ -223,4 +225,13 @@ func Test_IsEvm(t *testing.T) {
 		assert.Error(t, err)
 		assert.False(t, isEvm)
 	})
+}
+
+func Test_EVMGetChainDetailsByChainIDAndFamily(t *testing.T) {
+	for k, v := range evmChainIdToChainSelector {
+		strChainID := strconv.FormatUint(k, 10)
+		details, err := GetChainDetailsByChainIDAndFamily(strChainID, FamilyEVM)
+		assert.NoError(t, err)
+		assert.Equal(t, v, details)
+	}
 }
