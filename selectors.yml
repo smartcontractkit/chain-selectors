@@ -1,3 +1,5 @@
+# EVM selectors.
+# File doesn't have a family suffix for backwards compatibility.
 ---
 selectors:
   # Testnets
