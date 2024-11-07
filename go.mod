@@ -3,6 +3,7 @@ module github.com/smartcontractkit/chain-selectors
 go 1.20
 
 require (
+	github.com/mr-tron/base58 v1.2.0
 	github.com/stretchr/testify v1.8.4
 	gopkg.in/yaml.v3 v3.0.1
 )

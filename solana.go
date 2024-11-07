@@ -4,6 +4,7 @@ import (
 	_ "embed"
 	"fmt"
 
+	"github.com/mr-tron/base58"
 	"gopkg.in/yaml.v3"
 )
 
@@ -33,7 +34,21 @@ func parseSolanaYml(ymlFile []byte) map[string]ChainDetails {
 	if err != nil {
 		panic(err)
 	}
+
+	validateSolanaChainID(data.SelectorsBySolanaChainId)
 	return data.SelectorsBySolanaChainId
+}
+
+func validateSolanaChainID(data map[string]ChainDetails) {
+	for genesisHash := range data {
+		b, err := base58.Decode(genesisHash)
+		if err != nil {
+			panic(fmt.Errorf("failed to decode base58 genesis hash %s: %w", genesisHash, err))
+		}
+		if len(b) != 32 {
+			panic(fmt.Errorf("decoded genesis hash %s is not 32 bytes long", genesisHash))
+		}
+	}
 }
 
 func SolanaChainIdToChainSelector() map[string]uint64 {
@@ -53,4 +68,13 @@ func SolanaNameFromChainId(chainId string) (string, error) {
 		return chainId, nil
 	}
 	return details.ChainName, nil
+}
+
+func SolanaChainIdFromSelector(selector uint64) (string, error) {
+	chainId, exist := solanaChainIdBySelector[selector]
+	if !exist {
+		return "", fmt.Errorf("chain id not found for selector %d", selector)
+	}
+
+	return chainId, nil
 }

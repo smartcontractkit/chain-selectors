@@ -2,7 +2,7 @@
 
 CCIP uses its own set of chain selectors represented by uint64 to identify blockchains. This repository contains a
 mapping between the custom chain identifiers (`chainSelectorId`) chain names and the chain identifiers
-used by the blockchains themselves (`chainId`).
+used by the blockchains themselves (`chainId`). For solana we use the base58 encoded genesis hash as the chain id.
 
 Please refer to the [official documentation](https://docs.chain.link/ccip/supported-networks) to learn more about
 supported networks and their selectors.
@@ -19,6 +19,13 @@ import (
 )
 
 func main() {
+    // -------------------Chains agnostic --------------------:
+    
+    // Getting chain family based on selector
+    family, err := GetSelectorFamily(2664363617261496610)
+	
+    // -------------------For EVM chains--------------------
+	
     // Getting selector based on ChainId
     selector, err := chainselectors.SelectorFromChainId(420)
     
@@ -34,8 +41,22 @@ func main() {
     // Accessing mapping directly
     lookupChainId := uint64(1337)
     if chainSelector, exists := chainselectors.EvmChainIdToChainSelector()[lookupChainId]; exists {
-        fmt.Println("Found chain selector for chain", lookupChainId, ":", chainSelector)
+        fmt.Println("Found evm chain selector for chain", lookupChainId, ":", chainSelector)
     }
+
+    // -------------------Solana Chain --------------------:
+	
+    // Getting chain family based on selector
+    family, err := SolanaNameFromChainId("5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d")
+
+    // Getting chain id from chain selector
+	chainId, err := chainselectors.SolanaChainIdFromSelector(124615329519749607)
+
+    // Accessing mapping directly
+    lookupChainId := "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d"
+    if chainSelector, exists:= chainselectors.SolanaChainIdToChainSelector()[lookupChainId]; exists {
+        fmt.Println("Found solana chain selector for chain", lookupChainId, ":", chainSelector)
+    }   
 }
 ```
 
