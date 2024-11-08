@@ -67,7 +67,7 @@ func main() {
 		fmt.Println("solana: no changes detected")
 		return
 	}
-	fmt.Println("evm: updating generations")
+	fmt.Println("solana: updating generations")
 
 	err = os.WriteFile(filename, formatted, 0644)
 	if err != nil {
