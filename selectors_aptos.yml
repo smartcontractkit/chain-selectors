@@ -1,0 +1,7 @@
+selectors:
+  1:
+    name: aptos-mainnet
+    selector: 4741433654826277614
+  2: 
+    name: aptos-testnet
+    selector: 743186221051783445
