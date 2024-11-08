@@ -1,0 +1,7 @@
+selectors:
+  1:
+    name: aptos-mainnet
+    selector: 124
+  2: 
+    name: aptos-testnet
+    selector: 321

@@ -26,6 +26,12 @@ func GetSelectorFamily(selector uint64) (string, error) {
 		return FamilySolana, nil
 	}
 
+	// check aptos
+	_, exist = aptosChainIdBySelector[selector]
+	if exist {
+		return FamilyAptos, nil
+	}
+
 	return "", fmt.Errorf("unknown chain selector %d", selector)
 }
 
@@ -45,6 +51,18 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 		return details, nil
 	case FamilySolana:
 		details, exist := solanaSelectorsMap[chainID]
+		if !exist {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return details, nil
+	case FamilyAptos:
+		aptosChainId, err := strconv.ParseUint(chainID, 10, 64)
+		if err != nil {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		details, exist := aptosSelectorsMap[aptosChainId]
 		if !exist {
 			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
