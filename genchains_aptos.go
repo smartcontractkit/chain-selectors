@@ -19,7 +19,7 @@ import (
 const filename = "generated_chains_aptos.go"
 
 type chain struct {
-	ChainID  string
+	ChainID  uint64
 	Selector uint64
 	Name     string
 	VarName  string
@@ -86,7 +86,7 @@ func genChainsSourceCode() (string, error) {
 		}
 
 		chains = append(chains, chain{
-			ChainID:  strconv.FormatUint(ChainID, 10),
+			ChainID:  ChainID,
 			Selector: chainSel,
 			Name:     name,
 			VarName:  toVarName(name, chainSel),
