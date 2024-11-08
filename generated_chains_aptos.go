@@ -9,8 +9,8 @@ type AptosChain struct {
 }
 
 var (
-	APTOS_MAINNET = AptosChain{ChainID: 1, Selector: 124, Name: "aptos-mainnet"}
-	APTOS_TESTNET = AptosChain{ChainID: 2, Selector: 321, Name: "aptos-testnet"}
+	APTOS_MAINNET = AptosChain{ChainID: 1, Selector: 4741433654826277614, Name: "aptos-mainnet"}
+	APTOS_TESTNET = AptosChain{ChainID: 2, Selector: 743186221051783445, Name: "aptos-testnet"}
 )
 
 var AptosALL = []AptosChain{
