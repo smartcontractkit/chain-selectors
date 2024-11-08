@@ -1,6 +1,21 @@
 # Chain Selectors
 
-CCIP uses its own set of chain selectors represented by uint64 to identify blockchains. This repository contains a
+CCIP uses its own set of chain selectors represented by uint64 to identify blockchains. It is a random
+integer generated as follows:
+```python3
+python3
+>>> import random
+>>> random.randint(1, 2**64-1)
+```
+The scheme is used for several reasons:
+- Global uniqueness across blockchain families
+- Very unlikely to collide with existing chain ID schemes, reducing confusion
+- Efficient on/off-chain representation
+- No preference towards any family or chain
+- Decoupled from chain name which may change over time with rebrands/forks
+
+
+This repository contains a
 mapping between the custom chain identifiers (`chainSelectorId`) chain names and the chain identifiers
 used by the blockchains themselves (`chainId`). For solana we use the base58 encoded genesis hash as the chain id.
 
