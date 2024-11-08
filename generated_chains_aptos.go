@@ -2,15 +2,15 @@
 package chain_selectors
 
 type AptosChain struct {
-	ChainID  string
+	ChainID  uint64
 	Selector uint64
 	Name     string
 	VarName  string
 }
 
 var (
-	APTOS_MAINNET = AptosChain{ChainID: "1", Selector: 124, Name: "aptos-mainnet"}
-	APTOS_TESTNET = AptosChain{ChainID: "2", Selector: 321, Name: "aptos-testnet"}
+	APTOS_MAINNET = AptosChain{ChainID: 1, Selector: 124, Name: "aptos-mainnet"}
+	APTOS_TESTNET = AptosChain{ChainID: 2, Selector: 321, Name: "aptos-testnet"}
 )
 
 var AptosALL = []AptosChain{

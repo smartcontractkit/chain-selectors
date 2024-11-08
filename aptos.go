@@ -39,7 +39,7 @@ func parseAptosYml(ymlFile []byte) map[uint64]ChainDetails {
 }
 
 func validateAptosChainID(data map[uint64]ChainDetails) {
-	// TODO:
+	// TODO: https://smartcontract-it.atlassian.net/browse/NONEVM-890
 }
 
 func AptosChainIdToChainSelector() map[uint64]uint64 {
