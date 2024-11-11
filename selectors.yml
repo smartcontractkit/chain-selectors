@@ -185,6 +185,9 @@ selectors:
   810181:
     selector: 5837261596322416298
     name: "zklink_nova-testnet"
+  978658:
+    selector: 3676916124122457866
+    name: "treasure-testnet-topaz"
   31415926:
     selector: 7060342227814389000
     name: "filecoin-testnet"
