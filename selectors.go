@@ -35,6 +35,37 @@ func GetSelectorFamily(selector uint64) (string, error) {
 	return "", fmt.Errorf("unknown chain selector %d", selector)
 }
 
+func GetChainIDFromSelector(selector uint64) (string, error) {
+	destChainFamily, err := GetSelectorFamily(selector)
+	if err != nil {
+		return "", err
+	}
+
+	var id uint64
+	var destChainID string
+	switch destChainFamily {
+	case FamilyEVM:
+		id, err = ChainIdFromSelector(selector)
+		if err != nil {
+			return "", fmt.Errorf("failed to get %v chain ID from selector %d: %w", destChainFamily, selector, err)
+		}
+		destChainID = fmt.Sprintf("%d", id)
+	case FamilySolana:
+		destChainID, err = SolanaChainIdFromSelector(selector)
+		if err != nil {
+			return "", fmt.Errorf("failed to get %v chain ID from selector %d: %w", destChainFamily, selector, err)
+		}
+	case FamilyAptos:
+		id, err = AptosChainIdFromSelector(selector)
+		if err != nil {
+			return "", fmt.Errorf("failed to get %v chain ID from selector %d: %w", destChainFamily, selector, err)
+		}
+		destChainID = fmt.Sprintf("%d", id)
+	}
+
+	return destChainID, nil
+}
+
 func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDetails, error) {
 	switch family {
 	case FamilyEVM:

@@ -69,3 +69,11 @@ func Test_AptosGetChainDetailsByChainIDAndFamily(t *testing.T) {
 		assert.Equal(t, v, details)
 	}
 }
+
+func Test_AptosGetChainIDByChainSelector(t *testing.T) {
+	for k, v := range aptosSelectorsMap {
+		chainID, err := GetChainIDFromSelector(v.ChainSelector)
+		assert.NoError(t, err)
+		assert.Equal(t, chainID, fmt.Sprintf("%v", k))
+	}
+}

@@ -1,6 +1,7 @@
 package chain_selectors
 
 import (
+	"fmt"
 	"math/rand"
 	"testing"
 
@@ -73,5 +74,13 @@ func Test_SolanaGetChainDetailsByChainIDAndFamily(t *testing.T) {
 		details, err := GetChainDetailsByChainIDAndFamily(k, FamilySolana)
 		assert.NoError(t, err)
 		assert.Equal(t, v, details)
+	}
+}
+
+func Test_SolanaGetChainIDByChainSelector(t *testing.T) {
+	for k, v := range solanaSelectorsMap {
+		chainID, err := GetChainIDFromSelector(v.ChainSelector)
+		assert.NoError(t, err)
+		assert.Equal(t, chainID, fmt.Sprintf("%v", k))
 	}
 }
