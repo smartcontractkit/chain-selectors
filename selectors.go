@@ -61,6 +61,8 @@ func GetChainIDFromSelector(selector uint64) (string, error) {
 			return "", fmt.Errorf("failed to get %v chain ID from selector %d: %w", destChainFamily, selector, err)
 		}
 		destChainID = fmt.Sprintf("%d", id)
+	default:
+		return "", fmt.Errorf("selector %d is not supported", selector)
 	}
 
 	return destChainID, nil
