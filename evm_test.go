@@ -1,6 +1,7 @@
 package chain_selectors
 
 import (
+	"fmt"
 	"math/rand"
 	"strconv"
 	"testing"
@@ -233,5 +234,13 @@ func Test_EVMGetChainDetailsByChainIDAndFamily(t *testing.T) {
 		details, err := GetChainDetailsByChainIDAndFamily(strChainID, FamilyEVM)
 		assert.NoError(t, err)
 		assert.Equal(t, v, details)
+	}
+}
+
+func Test_EVMGetChainIDByChainSelector(t *testing.T) {
+	for k, v := range evmSelectorsMap {
+		chainID, err := GetChainIDFromSelector(v.ChainSelector)
+		assert.NoError(t, err)
+		assert.Equal(t, chainID, fmt.Sprintf("%v", k))
 	}
 }
