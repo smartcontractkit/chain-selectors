@@ -82,7 +82,7 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1_TREASURE_1 = Chain{EvmChainID: 978657, Selector: 10443705513486043421, Name: "ethereum-testnet-sepolia-arbitrum-1-treasure-1"}
 	ETHEREUM_TESTNET_SEPOLIA_BASE_1                = Chain{EvmChainID: 84532, Selector: 10344971235874465080, Name: "ethereum-testnet-sepolia-base-1"}
 	ETHEREUM_TESTNET_SEPOLIA_BLAST_1               = Chain{EvmChainID: 168587773, Selector: 2027362563942762617, Name: "ethereum-testnet-sepolia-blast-1"}
-	ETHEREUM_TESTNET_SEPOLIA_CORN_1                = Chain{EvmChainID: 21000000, Selector: 1467427327723633929, Name: "ethereum-testnet-sepolia-corn-1"}
+	ETHEREUM_TESTNET_SEPOLIA_CORN_1                = Chain{EvmChainID: 21000001, Selector: 1467427327723633929, Name: "ethereum-testnet-sepolia-corn-1"}
 	ETHEREUM_TESTNET_SEPOLIA_IMMUTABLE_ZKEVM_1     = Chain{EvmChainID: 13473, Selector: 4526165231216331901, Name: "ethereum-testnet-sepolia-immutable-zkevm-1"}
 	ETHEREUM_TESTNET_SEPOLIA_KROMA_1               = Chain{EvmChainID: 2358, Selector: 5990477251245693094, Name: "ethereum-testnet-sepolia-kroma-1"}
 	ETHEREUM_TESTNET_SEPOLIA_LENS_1                = Chain{EvmChainID: 37111, Selector: 6827576821754315911, Name: "ethereum-testnet-sepolia-lens-1"}
