@@ -69,6 +69,7 @@ func EvmChainIdToChainSelector() map[uint64]uint64 {
 	return copyMap
 }
 
+// Deprecated, this only supports EVM chains, use the chain agnostic `GetChainIDFromSelector` instead
 func ChainIdFromSelector(chainSelectorId uint64) (uint64, error) {
 	for k, v := range evmChainIdToChainSelector {
 		if v.ChainSelector == chainSelectorId {
