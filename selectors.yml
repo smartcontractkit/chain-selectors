@@ -227,9 +227,9 @@ selectors:
   1328:
     selector: 1216300075444106652
     name: "sei-testnet-atlantic"
-  64165:
+  57054:
     selector: 3676871237479449268
-    name: "sonic-testnet"
+    name: "sonic-testnet-blaze"
   998:
     selector: 4286062357653186312
     name: "hyperliquid-testnet"
