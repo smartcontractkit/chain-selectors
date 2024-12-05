@@ -114,6 +114,7 @@ var (
 	HEDERA_MAINNET                                 = Chain{EvmChainID: 295, Selector: 3229138320728879060, Name: "hedera-mainnet"}
 	HEDERA_TESTNET                                 = Chain{EvmChainID: 296, Selector: 222782988166878823, Name: "hedera-testnet"}
 	HYPERLIQUID_TESTNET                            = Chain{EvmChainID: 998, Selector: 4286062357653186312, Name: "hyperliquid-testnet"}
+	INK_TESTNET_SEPOLIA                            = Chain{EvmChainID: 763373, Selector: 9763904284804119144, Name: "ink-testnet-sepolia"}
 	KAVA_MAINNET                                   = Chain{EvmChainID: 2222, Selector: 7550000543357438061, Name: "kava-mainnet"}
 	KAVA_TESTNET                                   = Chain{EvmChainID: 2221, Selector: 2110537777356199208, Name: "kava-testnet"}
 	KUSAMA_MAINNET_MOONRIVER                       = Chain{EvmChainID: 1285, Selector: 1355020143337428062, Name: "kusama-mainnet-moonriver"}
@@ -141,6 +142,7 @@ var (
 	SEI_TESTNET_ATLANTIC                           = Chain{EvmChainID: 1328, Selector: 1216300075444106652, Name: "sei-testnet-atlantic"}
 	SHIBARIUM_MAINNET                              = Chain{EvmChainID: 109, Selector: 3993510008929295315, Name: "shibarium-mainnet"}
 	SHIBARIUM_TESTNET_PUPPYNET                     = Chain{EvmChainID: 157, Selector: 17833296867764334567, Name: "shibarium-testnet-puppynet"}
+	SONEIUM_MAINNET                                = Chain{EvmChainID: 1868, Selector: 12505351618335765396, Name: "soneium-mainnet"}
 	SONIC_MAINNET                                  = Chain{EvmChainID: 146, Selector: 1673871237479749969, Name: "sonic-mainnet"}
 	SONIC_TESTNET_BLAZE                            = Chain{EvmChainID: 57054, Selector: 3676871237479449268, Name: "sonic-testnet-blaze"}
 	STORY_TESTNET                                  = Chain{EvmChainID: 1513, Selector: 4237030917318060427, Name: "story-testnet"}
@@ -363,6 +365,7 @@ var ALL = []Chain{
 	HEDERA_MAINNET,
 	HEDERA_TESTNET,
 	HYPERLIQUID_TESTNET,
+	INK_TESTNET_SEPOLIA,
 	KAVA_MAINNET,
 	KAVA_TESTNET,
 	KUSAMA_MAINNET_MOONRIVER,
@@ -390,6 +393,7 @@ var ALL = []Chain{
 	SEI_TESTNET_ATLANTIC,
 	SHIBARIUM_MAINNET,
 	SHIBARIUM_TESTNET_PUPPYNET,
+	SONEIUM_MAINNET,
 	SONIC_MAINNET,
 	SONIC_TESTNET_BLAZE,
 	STORY_TESTNET,

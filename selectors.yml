@@ -176,6 +176,9 @@ selectors:
   717160:
     selector: 4418231248214522936
     name: "ethereum-testnet-sepolia-polygon-validium-1"
+  763373:
+    selector: 9763904284804119144
+    name: "ink-testnet-sepolia"
   534351:
     selector: 2279865765895943307
     name: "ethereum-testnet-sepolia-scroll-1"
@@ -344,6 +347,9 @@ selectors:
   1285:
     selector: 1355020143337428062
     name: "kusama-mainnet-moonriver"
+  1868:
+    selector: 12505351618335765396
+    name: "soneium-mainnet"
   1907:
     selector: 4874388048629246000
     name: "bitcichain-mainnet"
