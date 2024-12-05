@@ -142,7 +142,7 @@ var (
 	SHIBARIUM_MAINNET                              = Chain{EvmChainID: 109, Selector: 3993510008929295315, Name: "shibarium-mainnet"}
 	SHIBARIUM_TESTNET_PUPPYNET                     = Chain{EvmChainID: 157, Selector: 17833296867764334567, Name: "shibarium-testnet-puppynet"}
 	SONIC_MAINNET                                  = Chain{EvmChainID: 146, Selector: 1673871237479749969, Name: "sonic-mainnet"}
-	SONIC_TESTNET                                  = Chain{EvmChainID: 57054, Selector: 3676871237479449268, Name: "sonic-testnet"}
+	SONIC_TESTNET_BLAZE                            = Chain{EvmChainID: 57054, Selector: 3676871237479449268, Name: "sonic-testnet-blaze"}
 	STORY_TESTNET                                  = Chain{EvmChainID: 1513, Selector: 4237030917318060427, Name: "story-testnet"}
 	TELOS_EVM_MAINNET                              = Chain{EvmChainID: 40, Selector: 1477345371608778000, Name: "telos-evm-mainnet"}
 	TELOS_EVM_TESTNET                              = Chain{EvmChainID: 41, Selector: 729797994450396300, Name: "telos-evm-testnet"}
@@ -391,7 +391,7 @@ var ALL = []Chain{
 	SHIBARIUM_MAINNET,
 	SHIBARIUM_TESTNET_PUPPYNET,
 	SONIC_MAINNET,
-	SONIC_TESTNET,
+	SONIC_TESTNET_BLAZE,
 	STORY_TESTNET,
 	TELOS_EVM_MAINNET,
 	TELOS_EVM_TESTNET,
