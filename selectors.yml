@@ -440,3 +440,6 @@ selectors:
   480:
     selector: 2049429975587534727
     name: "ethereum-mainnet-worldchain-1" 
+  21000000:
+    selector: 9043146809313071210
+    name: "corn-mainnet"
