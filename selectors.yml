@@ -290,6 +290,9 @@ selectors:
   137:
     selector: 4051577828743386545
     name: "polygon-mainnet"
+  146:
+    selector: 1673871237479749969
+    name: "sonic-mainnet"
   196:
     selector: 3016212468291539606
     name: "ethereum-mainnet-xlayer-1"
