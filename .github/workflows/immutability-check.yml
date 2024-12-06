@@ -61,6 +61,6 @@ jobs:
             Existing `chain-selectors` are immutable. Please ensure you have not modified or removed an existing selector
 
             ```yaml
-            ${{ steps.immutability-check.outputs.result || steps.removed-selectors-check.outputs.result }}
+            ${{ (steps.immutability-check.outputs.result != '{}') && steps.immutability-check.outputs.result || steps.removed-selectors-check.outputs.result }}
             ```
           reactions: '+1'
