@@ -19,20 +19,34 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.base.ref }}
           path: old
+
       - name: Extract Immutability Violations
         id: immutability-check
         uses: mikefarah/yq@bc5b54cb1d1f720db16c9f75c5b45384d00e5cbf # v4.44.5
         with:
-          # This check will fail if any selector that is present in the previous ref has been modified in the current ref
+          # Checks if any selector that is present in the previous ref has been modified in the current ref
           cmd: yq e '.selectors as $old | load("selectors.yml") | .selectors as $new | $new | with_entries(select(.key as $key | $old | has($key))) | with_entries(select(.key as $key | $old[$key].selector != $new[$key].selector))' old/selectors.yml
+
+      - name: Extract Removed Selectors
+        id: removed-selectors-check
+        uses: mikefarah/yq@bc5b54cb1d1f720db16c9f75c5b45384d00e5cbf # v4.44.5
+        with:
+          # Checks if any selector that previously existed has been removed
+          cmd: yq e '.selectors as $old | load("selectors.yml").selectors as $new | $old | with_entries(select(.key as $key | $new | has($key) == false))' old/selectors.yml
 
       - name: Check Immutability Violations
         id: check-violations
         run: |
           violations=$(echo '${{ steps.immutability-check.outputs.result }}')
+          removed=$(echo '${{ steps.removed-selectors-check.outputs.result }}')
           
           if [[ ! $violations == "{}" ]]; then
             echo "Selector immutability has been violated. Please ensure that exisiting selectors are not modified."
+            exit 1
+          fi
+
+          if [[ ! $removed == "{}" ]]; then
+            echo "Selector immutability has been violated. Please ensure that exisiting selectors are not removed."
             exit 1
           fi
 
@@ -42,14 +56,11 @@ jobs:
         with:
           issue-number: ${{ github.event.pull_request.number }}
           body: |
-            ❌ Selector Immutability has been violated.
-            Please ensure that exisiting selectors are not modified or removed.
+            **Selector Immutability has been violated  ❌**
+
+            Existing `chain-selectors` are immutable. Please ensure you have not modified or removed an existing selector
 
             ```yaml
-            ${{ steps.immutability-check.outputs.result }}
+            ${{ steps.immutability-check.outputs.result || steps.removed-selectors-check.outputs.result }}
             ```
           reactions: '+1'
-
-
-# Key removal check
-# yq e '.selectors as $old | load("new.yml").selectors as $new | $old | with_entries(select(.key as $key | $new | has($key) == false))' old.yml
