@@ -29,7 +29,7 @@ selectors:
     name: "velas-testnet"
   195:
     selector: 2066098519157881736
-    name: "ethereum-testnet-sepolia-xlayer-1"
+    name: "ethereum-testnet-sepolia-xlayer-1"  
   280:
     selector: 6802309497652714138
     name: "ethereum-testnet-goerli-zksync-1"
@@ -230,6 +230,9 @@ selectors:
   1328:
     selector: 1216300075444106652
     name: "sei-testnet-atlantic"
+  57054:
+    selector: 3676871237479449268
+    name: "sonic-testnet-blaze"
   998:
     selector: 4286062357653186312
     name: "hyperliquid-testnet"
@@ -254,6 +257,7 @@ selectors:
   4801:
     selector: 5299555114858065850
     name: "ethereum-testnet-sepolia-worldchain-1"
+ 
 
   # Mainnets
   1:
@@ -421,7 +425,7 @@ selectors:
   1329:
     selector: 9027416829622342829
     name: "sei-mainnet"
-  2020:
+  2020: 
     selector: 6916147374840168594
     name: "ronin-mainnet"
   204:
@@ -435,7 +439,7 @@ selectors:
     name: "fantom-mainnet"
   480:
     selector: 2049429975587534727
-    name: "ethereum-mainnet-worldchain-1"
+    name: "ethereum-mainnet-worldchain-1" 
   21000000:
     selector: 9043146809313071210
     name: "corn-mainnet"
