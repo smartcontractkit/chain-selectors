@@ -4,7 +4,7 @@
 selectors:
   # Testnets
   31:
-    selector: 8953668971247136128
+    selector: 8953668971247136127
     name: "bitcoin-testnet-rootstock"
   41:
     selector: 729797994450396300
@@ -230,9 +230,6 @@ selectors:
   1328:
     selector: 1216300075444106652
     name: "sei-testnet-atlantic"
-  57054:
-    selector: 3676871237479449268
-    name: "sonic-testnet-blaze"
   998:
     selector: 4286062357653186312
     name: "hyperliquid-testnet"
