@@ -1,0 +1,55 @@
+# In order to prevent accidental changes to selectors, we're ensuring their immutability
+# This action will fail if the immutability is violated
+name: Ensure Selector Immutability
+
+on: [ pull_request ]
+
+jobs:
+  immutability-check:
+    name: Check Selector Immutability
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: Checkout Changes
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Checkout Previous Ref
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.event.before }}
+          path: old
+      - name: Extract Immutability Violations
+        id: immutability-check
+        uses: mikefarah/yq@bc5b54cb1d1f720db16c9f75c5b45384d00e5cbf # v4.44.5
+        with:
+          # This check will fail if any selector that is present in the previous ref has been modified in the current ref
+          cmd: yq e '.selectors as $old | load("selectors.yml") | .selectors as $new | $new | with_entries(select(.key as $key | $old | has($key))) | with_entries(select(.key as $key | $old[$key].selector != $new[$key].selector))' old/selectors.yml
+
+      - name: Check Immutability Violations
+        id: check-violations
+        run: |
+          violations=$(echo '${{ steps.immutability-check.outputs.result }}')
+          
+          if [[ ! $violations == "{}" ]]; then
+            echo "Selector immutability has been violated. Please ensure that exisiting selectors are not modified."
+            exit 1
+          fi
+
+      - name: Create comment
+        if: failure()
+        uses: peter-evans/create-or-update-comment@71345be0265236311c031f5c7866368bd1eff043 # v4.0.0
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ❌ Selector Immutability has been violated.
+            Please ensure that exisiting selectors are not modified or removed.
+
+            ```yaml
+            ${{ steps.immutability-check.outputs.result }}
+            ```
+          reactions: '+1'
+
+
+# Key removal check
+# yq e '.selectors as $old | load("new.yml").selectors as $new | $old | with_entries(select(.key as $key | $new | has($key) == false))' old.yml
