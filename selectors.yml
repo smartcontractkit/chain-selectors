@@ -66,6 +66,9 @@ selectors:
   1112:
     selector: 9284632837123596123
     name: "wemix-testnet"
+  1114: 
+    selector: 4264732132125536123 
+    name: "core-testnet"
   1123:
     selector: 1948510578179542068
     name: "bitcoin-testnet-bsquared-1"
@@ -350,6 +353,9 @@ selectors:
   1111:
     selector: 5142893604156789321
     name: "wemix-mainnet"
+  1116: 
+    selector: 1224752112135636129 
+    name: "core-mainnet"
   12324:
     selector: 3162193654116181371
     name: "ethereum-mainnet-arbitrum-1-l3x-1"
