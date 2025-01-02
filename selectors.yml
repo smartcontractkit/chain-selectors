@@ -125,7 +125,7 @@ selectors:
     name: "neonlink-testnet"
   10143: 
     selector: 2183018362218727504 
-    name: "monad_testnet"
+    name: "monad-testnet"
   13473:
     selector: 4526165231216331901
     name: "ethereum-testnet-sepolia-immutable-zkevm-1"
