@@ -258,6 +258,7 @@ var (
 	TEST_90000098                                  = Chain{EvmChainID: 90000098, Selector: 9675086780529785020, Name: "90000098"}
 	TEST_90000099                                  = Chain{EvmChainID: 90000099, Selector: 7431973150957944526, Name: "90000099"}
 	TEST_90000100                                  = Chain{EvmChainID: 90000100, Selector: 6875898693582952601, Name: "90000100"}
+	TREASURE_MAINNET                               = Chain{EvmChainID: 61166, Selector: 5214452172935136222, Name: "treasure-mainnet"}
 	TREASURE_TESTNET_TOPAZ                         = Chain{EvmChainID: 978658, Selector: 3676916124122457866, Name: "treasure-testnet-topaz"}
 	VELAS_MAINNET                                  = Chain{EvmChainID: 106, Selector: 374210358663784372, Name: "velas-mainnet"}
 	VELAS_TESTNET                                  = Chain{EvmChainID: 111, Selector: 572210378683744374, Name: "velas-testnet"}
@@ -517,6 +518,7 @@ var ALL = []Chain{
 	TEST_90000098,
 	TEST_90000099,
 	TEST_90000100,
+	TREASURE_MAINNET,
 	TREASURE_TESTNET_TOPAZ,
 	VELAS_MAINNET,
 	VELAS_TESTNET,

@@ -356,6 +356,9 @@ selectors:
   1116: 
     selector: 1224752112135636129 
     name: "core-mainnet"
+  61166: 
+    selector: 5214452172935136222 
+    name: "treasure-mainnet"  
   12324:
     selector: 3162193654116181371
     name: "ethereum-mainnet-arbitrum-1-l3x-1"
