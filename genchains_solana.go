@@ -11,8 +11,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
-	"unicode"
 
+	"github.com/mr-tron/base58"
 	chain_selectors "github.com/smartcontractkit/chain-selectors"
 )
 
@@ -81,6 +81,7 @@ func genChainsSourceCode() (string, error) {
 
 	for ChainID, chainSel := range chain_selectors.SolanaChainIdToChainSelector() {
 		name, err := chain_selectors.SolanaNameFromChainId(ChainID)
+		// fmt.Println(ChainID, name, toVarName(name, chainSel), err)
 		if err != nil {
 			return "", err
 		}
@@ -91,6 +92,7 @@ func genChainsSourceCode() (string, error) {
 			Name:     name,
 			VarName:  toVarName(name, chainSel),
 		})
+
 	}
 
 	sort.Slice(chains, func(i, j int) bool { return chains[i].VarName < chains[j].VarName })
@@ -104,9 +106,17 @@ func toVarName(name string, chainSel uint64) string {
 	const unnamed = "TEST"
 	x := strings.ReplaceAll(name, "-", "_")
 	x = strings.ToUpper(x)
-	if len(x) > 0 && unicode.IsDigit(rune(x[0])) {
+
+	// if len(x) > 0 && unicode.IsDigit(rune(x[0]))
+	// for evm, the above condition is used to detect if name == chainId == (some number) -> which means its a test chain
+	// for solana, as chainId is not a number but a base58 encoded genesis hash, this check cannot corectly detect test chains
+	// we need to check if the name (chainId) is a valid base58 encoded genesis hash
+
+	_, err := base58.Decode(name)
+	if err == nil {
 		x = unnamed + "_" + x
 	}
+
 	if len(x) == 0 {
 		x = unnamed + "_" + strconv.FormatUint(chainSel, 10)
 	}
