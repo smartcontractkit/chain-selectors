@@ -14,7 +14,7 @@ import (
 	"github.com/smartcontractkit/chain-selectors/internal/gotmpl"
 )
 
-const filename = "generated_chains.go"
+const filename = "generated_chains_evm.go"
 
 type chain struct {
 	EvmChainID uint64
@@ -62,9 +62,10 @@ func main() {
 	}
 
 	if string(existingContent) == string(formatted) {
-		fmt.Println("no changes detected")
+		fmt.Println("evm: no changes detected")
 		return
 	}
+	fmt.Println("evm: updating generations")
 
 	err = os.WriteFile(filename, formatted, 0644)
 	if err != nil {
