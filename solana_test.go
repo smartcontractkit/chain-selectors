@@ -84,3 +84,10 @@ func Test_SolanaGetChainIDByChainSelector(t *testing.T) {
 		assert.Equal(t, chainID, fmt.Sprintf("%v", k))
 	}
 }
+
+func Test_SolanaNoOverlapBetweenRealAndTestChains(t *testing.T) {
+	for k, _ := range solanaSelectorsMap {
+		_, exist := solanaTestSelectorsMap[k]
+		assert.False(t, exist, "Chain %d is duplicated between real and test chains", k)
+	}
+}
