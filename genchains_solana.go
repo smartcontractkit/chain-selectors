@@ -11,8 +11,8 @@ import (
 	"sort"
 	"strconv"
 	"strings"
-	"unicode"
 
+	"github.com/mr-tron/base58"
 	chain_selectors "github.com/smartcontractkit/chain-selectors"
 )
 
@@ -104,7 +104,14 @@ func toVarName(name string, chainSel uint64) string {
 	const unnamed = "TEST"
 	x := strings.ReplaceAll(name, "-", "_")
 	x = strings.ToUpper(x)
-	if len(x) > 0 && unicode.IsDigit(rune(x[0])) {
+
+	// if len(x) > 0 && unicode.IsDigit(rune(x[0]))
+	// for evm, the above condition is used to detect if name == chainId == (some number) -> which means its a test chain
+	// for solana, as chainId is not a number but a base58 encoded hash, we cannot use the above condition
+	// we need to check if the name == chainId == a valid base58 encoded hash
+
+	_, err := base58.Decode(name)
+	if err == nil {
 		x = unnamed + "_" + x
 	}
 	if len(x) == 0 {
