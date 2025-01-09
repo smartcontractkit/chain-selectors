@@ -4,40 +4,47 @@ import (
 	"bytes"
 	"sort"
 	"text/template"
-
-	chain_selectors "github.com/smartcontractkit/chain-selectors"
 )
 
-type NameEncoder interface {
-	VarName(name string, chainSel uint64) string
+// chain is a generic struct that can be used to represent chain families.
+// C is the type of the chain ID.
+//
+// Supported types:
+// EVM: uint64
+// Solana: string
+// Aptos: uint64
+type chain[C uint64 | string] struct {
+	ChainID  C
+	Selector uint64
+	Name     string
+	VarName  string
+	EnumName string
 }
 
-type chain struct {
-	EvmChainID uint64
-	Selector   uint64
-	Name       string
-	VarName    string
-}
+// Run runs the template with the given chains and returns the result.
+// C is the type of the chain ID.
+func Run[C uint64 | string](tmpl *template.Template, chainSelFunc func() map[C]uint64, nameFunc func(C) (string, error)) (string, error) {
+	chains := make([]chain[C], 0)
+	enc := newNameEncoder()
 
-func Run(tmpl *template.Template, enc NameEncoder) (string, error) {
-	var wr = new(bytes.Buffer)
-	chains := make([]chain, 0)
-
-	for evmChainID, chainSel := range chain_selectors.EvmChainIdToChainSelector() {
-		name, err := chain_selectors.NameFromChainId(evmChainID)
+	for chainID, chainSel := range chainSelFunc() {
+		name, err := nameFunc(chainID)
 		if err != nil {
 			return "", err
 		}
 
-		chains = append(chains, chain{
-			EvmChainID: evmChainID,
-			Selector:   chainSel,
-			Name:       name,
-			VarName:    enc.VarName(name, chainSel),
+		chains = append(chains, chain[C]{
+			ChainID:  chainID,
+			Selector: chainSel,
+			Name:     name,
+			VarName:  enc.varName(name, chainSel),
+			EnumName: enc.enumName(name, chainSel),
 		})
 	}
 
 	sort.Slice(chains, func(i, j int) bool { return chains[i].VarName < chains[j].VarName })
+
+	var wr = new(bytes.Buffer)
 
 	if err := tmpl.Execute(wr, chains); err != nil {
 		return "", err

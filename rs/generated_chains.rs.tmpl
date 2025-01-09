@@ -44,7 +44,7 @@ impl Display for ChainSelector {
 #[repr(u64)]
 pub enum ChainName {
 {{- range .}}
-    {{ .VarName }} = {{ .EvmChainID }},
+    {{ .EnumName }} = {{ .ChainID }},
 {{- end}}
 }
 
@@ -58,7 +58,7 @@ impl From<ChainName> for ChainSelector {
     fn from(chain: ChainName) -> Self {
         match chain {
         {{- range .}}
-            ChainName::{{ .VarName }} => Self({{ .Selector }}),
+            ChainName::{{ .EnumName }} => Self({{ .Selector }}),
         {{- end}}
         }
     }
@@ -70,7 +70,7 @@ impl TryFrom<ChainId> for ChainName {
     fn try_from(chain_id: ChainId) -> Result<Self, Self::Error> {
         match chain_id.0 {
         {{- range .}}
-            {{ .EvmChainID }} => Ok(Self::{{ .VarName }}),
+            {{ .ChainID }} => Ok(Self::{{ .EnumName }}),
         {{- end}}
             _ => Err(Error::UnknownChainId(chain_id)),
         }
@@ -83,7 +83,7 @@ impl TryFrom<ChainSelector> for ChainName {
     fn try_from(chain_selector: ChainSelector) -> Result<Self, Self::Error> {
         match chain_selector.0 {
         {{- range .}}
-            {{ .Selector }} => Ok(Self::{{ .VarName }}),
+            {{ .Selector }} => Ok(Self::{{ .EnumName }}),
         {{- end}}
             _ => Err(Error::UnknownChainSelector(chain_selector)),
         }
@@ -96,7 +96,7 @@ impl FromStr for ChainName {
     fn from_str(input: &str) -> Result<Self, Self::Err> {
         match input {
 		{{- range .}}
-			"{{ .Name }}" => Ok(Self::{{ .VarName }}),
+			"{{ .Name }}" => Ok(Self::{{ .EnumName }}),
 		{{- end}}
             _ => Err(Error::UnknownChainName(input.to_string())),
         }
@@ -110,7 +110,7 @@ impl Display for ChainName {
             "{}",
             match self {
 			{{- range .}}
-				Self::{{ .VarName }} => "{{ .Name }}",
+				Self::{{ .EnumName }} => "{{ .Name }}",
 			{{- end}}
             }
         )
