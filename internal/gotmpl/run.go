@@ -25,7 +25,6 @@ type chain[C uint64 | string] struct {
 // C is the type of the chain ID.
 func Run[C uint64 | string](tmpl *template.Template, chainSelFunc func() map[C]uint64, nameFunc func(C) (string, error)) (string, error) {
 	chains := make([]chain[C], 0)
-	enc := newNameEncoder()
 
 	for chainID, chainSel := range chainSelFunc() {
 		name, err := nameFunc(chainID)
@@ -37,8 +36,8 @@ func Run[C uint64 | string](tmpl *template.Template, chainSelFunc func() map[C]u
 			ChainID:  chainID,
 			Selector: chainSel,
 			Name:     name,
-			VarName:  enc.varName(name, chainSel),
-			EnumName: enc.enumName(name, chainSel),
+			VarName:  encodeVarName(name, chainSel),
+			EnumName: encodeEnumName(name, chainSel),
 		})
 	}
 
