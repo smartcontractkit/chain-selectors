@@ -23,7 +23,7 @@ jobs:
           cache: false
       - name: Make sure generated files are updated
         run: |
-          if go generate ./rs | grep -q 'rust: no changes detected'; then
+          if go generate ./rs | grep -q 'evm (rust): no changes detected'; then
             exit 0;
           fi
           exit 1;
