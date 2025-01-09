@@ -52,7 +52,7 @@ func getChainInfo(selector uint64) (chainInfo, error) {
 			return chainInfo{}, fmt.Errorf("failed to get %s chain ID from selector %d: %w", chainID, selector, err)
 		}
 
-		details, exist := solanaSelectorsMap[chainID]
+		details, exist := solanaChainIdToChainSelector[chainID]
 		if !exist {
 			return chainInfo{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
@@ -123,7 +123,7 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 
 		return details, nil
 	case FamilySolana:
-		details, exist := solanaSelectorsMap[chainID]
+		details, exist := solanaChainIdToChainSelector[chainID]
 		if !exist {
 			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
