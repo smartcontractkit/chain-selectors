@@ -13,15 +13,34 @@ import (
 //go:embed selectors_solana.yml
 var solanaSelectorsYml []byte
 
+//go:embed test_selectors_solana.yml
+var testSelectorsSolanaYml []byte
+
 var (
-	solanaSelectorsMap      = parseSolanaYml(solanaSelectorsYml)
-	solanaChainIdBySelector = make(map[uint64]string)
+	solanaSelectorsMap           = parseSolanaYml(solanaSelectorsYml)
+	solanaTestSelectorsMap       = parseSolanaYml(testSelectorsSolanaYml)
+	solanaChainIdToChainSelector = loadAllSolanaSelectors()
+	solanaChainIdBySelector      = make(map[uint64]string)
 )
 
 func init() {
 	for k, v := range solanaSelectorsMap {
 		solanaChainIdBySelector[v.ChainSelector] = k
 	}
+	for k, v := range solanaTestSelectorsMap {
+		solanaChainIdBySelector[v.ChainSelector] = k
+	}
+}
+
+func loadAllSolanaSelectors() map[string]ChainDetails {
+	output := make(map[string]ChainDetails, len(solanaSelectorsMap)+len(solanaTestSelectorsMap))
+	for k, v := range solanaSelectorsMap {
+		output[k] = v
+	}
+	for k, v := range solanaTestSelectorsMap {
+		output[k] = v
+	}
+	return output
 }
 
 func parseSolanaYml(ymlFile []byte) map[string]ChainDetails {
@@ -52,15 +71,15 @@ func validateSolanaChainID(data map[string]ChainDetails) {
 }
 
 func SolanaChainIdToChainSelector() map[string]uint64 {
-	copyMap := make(map[string]uint64, len(solanaSelectorsMap))
-	for k, v := range solanaSelectorsMap {
+	copyMap := make(map[string]uint64, len(solanaChainIdToChainSelector))
+	for k, v := range solanaChainIdToChainSelector {
 		copyMap[k] = v.ChainSelector
 	}
 	return copyMap
 }
 
 func SolanaNameFromChainId(chainId string) (string, error) {
-	details, exist := solanaSelectorsMap[chainId]
+	details, exist := solanaChainIdToChainSelector[chainId]
 	if !exist {
 		return "", fmt.Errorf("chain name not found for chain %v", chainId)
 	}

@@ -11,6 +11,7 @@ const (
 	FamilyStarknet = "starknet"
 	FamilyCosmos   = "cosmos"
 	FamilyAptos    = "aptos"
+	FamilyTron     = "tron"
 )
 
 type chainInfo struct {
@@ -52,7 +53,7 @@ func getChainInfo(selector uint64) (chainInfo, error) {
 			return chainInfo{}, fmt.Errorf("failed to get %s chain ID from selector %d: %w", chainID, selector, err)
 		}
 
-		details, exist := solanaSelectorsMap[chainID]
+		details, exist := solanaChainIdToChainSelector[chainID]
 		if !exist {
 			return chainInfo{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
@@ -76,6 +77,28 @@ func getChainInfo(selector uint64) (chainInfo, error) {
 		}
 
 		details, exist := aptosSelectorsMap[chainID]
+		if !exist {
+			return chainInfo{}, fmt.Errorf("invalid chain id %d for %s", chainID, family)
+		}
+
+		return chainInfo{
+			Family:       family,
+			ChainID:      fmt.Sprintf("%d", chainID),
+			ChainDetails: details,
+		}, nil
+	}
+
+	// check tron
+	_, exist = tronChainIdBySelector[selector]
+	if exist {
+		family := FamilyTron
+
+		chainID, err := TronChainIdFromSelector(selector)
+		if err != nil {
+			return chainInfo{}, fmt.Errorf("failed to get %v chain ID from selector %d: %w", chainID, selector, err)
+		}
+
+		details, exist := tronSelectorsMap[chainID]
 		if !exist {
 			return chainInfo{}, fmt.Errorf("invalid chain id %d for %s", chainID, family)
 		}
@@ -123,7 +146,7 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 
 		return details, nil
 	case FamilySolana:
-		details, exist := solanaSelectorsMap[chainID]
+		details, exist := solanaChainIdToChainSelector[chainID]
 		if !exist {
 			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
@@ -136,6 +159,18 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 		}
 
 		details, exist := aptosSelectorsMap[aptosChainId]
+		if !exist {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return details, nil
+	case FamilyTron:
+		tronChainId, err := strconv.ParseUint(chainID, 10, 64)
+		if err != nil {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		details, exist := tronSelectorsMap[tronChainId]
 		if !exist {
 			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
