@@ -50,7 +50,7 @@ var (
 	CRONOS_TESTNET                                 = Chain{EvmChainID: 338, Selector: 2995292832068775165, Name: "cronos-testnet"}
 	CRONOS_TESTNET_ZKEVM_1                         = Chain{EvmChainID: 282, Selector: 3842103497652714138, Name: "cronos-testnet-zkevm-1"}
 	CRONOS_ZKEVM_MAINNET                           = Chain{EvmChainID: 388, Selector: 8788096068760390840, Name: "cronos-zkevm-mainnet"}
-	CRONOS_ZKEVM_TESTNET_1                         = Chain{EvmChainID: 240, Selector: 16487132492576884721, Name: "cronos-zkevm-testnet-1"}
+	CRONOS_ZKEVM_TESTNET_SEPOLIA                   = Chain{EvmChainID: 240, Selector: 16487132492576884721, Name: "cronos-zkevm-testnet-sepolia"}
 	ETHEREUM_MAINNET                               = Chain{EvmChainID: 1, Selector: 5009297550715157269, Name: "ethereum-mainnet"}
 	ETHEREUM_MAINNET_ARBITRUM_1                    = Chain{EvmChainID: 42161, Selector: 4949039107694359620, Name: "ethereum-mainnet-arbitrum-1"}
 	ETHEREUM_MAINNET_ARBITRUM_1_L3X_1              = Chain{EvmChainID: 12324, Selector: 3162193654116181371, Name: "ethereum-mainnet-arbitrum-1-l3x-1"}
@@ -124,7 +124,7 @@ var (
 	GNOSIS_CHAIN_TESTNET_CHIADO                    = Chain{EvmChainID: 10200, Selector: 8871595565390010547, Name: "gnosis_chain-testnet-chiado"}
 	HEDERA_MAINNET                                 = Chain{EvmChainID: 295, Selector: 3229138320728879060, Name: "hedera-mainnet"}
 	HEDERA_TESTNET                                 = Chain{EvmChainID: 296, Selector: 222782988166878823, Name: "hedera-testnet"}
-	HEMI_TESTNET_1                                 = Chain{EvmChainID: 743111, Selector: 16126893759944359622, Name: "hemi-testnet-1"}
+	HEMI_TESTNET                                   = Chain{EvmChainID: 743111, Selector: 16126893759944359622, Name: "hemi-testnet"}
 	HYPERLIQUID_TESTNET                            = Chain{EvmChainID: 998, Selector: 4286062357653186312, Name: "hyperliquid-testnet"}
 	INK_TESTNET_SEPOLIA                            = Chain{EvmChainID: 763373, Selector: 9763904284804119144, Name: "ink-testnet-sepolia"}
 	KAVA_MAINNET                                   = Chain{EvmChainID: 2222, Selector: 7550000543357438061, Name: "kava-mainnet"}
@@ -318,7 +318,7 @@ var ALL = []Chain{
 	CRONOS_TESTNET,
 	CRONOS_TESTNET_ZKEVM_1,
 	CRONOS_ZKEVM_MAINNET,
-	CRONOS_ZKEVM_TESTNET_1,
+	CRONOS_ZKEVM_TESTNET_SEPOLIA,
 	ETHEREUM_MAINNET,
 	ETHEREUM_MAINNET_ARBITRUM_1,
 	ETHEREUM_MAINNET_ARBITRUM_1_L3X_1,
@@ -392,7 +392,7 @@ var ALL = []Chain{
 	GNOSIS_CHAIN_TESTNET_CHIADO,
 	HEDERA_MAINNET,
 	HEDERA_TESTNET,
-	HEMI_TESTNET_1,
+	HEMI_TESTNET,
 	HYPERLIQUID_TESTNET,
 	INK_TESTNET_SEPOLIA,
 	KAVA_MAINNET,
