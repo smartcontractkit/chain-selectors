@@ -196,7 +196,7 @@ selectors:
     name: "ethereum-testnet-sepolia-polygon-validium-1"
   743111:
     selector: 16126893759944359622
-    name: "hemi-testnet"
+    name: "hemi-testnet-sepolia"
   763373:
     selector: 9763904284804119144
     name: "ink-testnet-sepolia"
