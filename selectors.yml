@@ -39,6 +39,9 @@ selectors:
   280:
     selector: 6802309497652714138
     name: "ethereum-testnet-goerli-zksync-1"
+  282:
+    selector: 3842103497652714138
+    name: "cronos-testnet-zkevm-1"
   296:
     selector: 222782988166878823
     name: "hedera-testnet"

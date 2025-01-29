@@ -48,6 +48,7 @@ var (
 	CORN_MAINNET                                   = Chain{EvmChainID: 21000000, Selector: 9043146809313071210, Name: "corn-mainnet"}
 	CRONOS_MAINNET                                 = Chain{EvmChainID: 25, Selector: 1456215246176062136, Name: "cronos-mainnet"}
 	CRONOS_TESTNET                                 = Chain{EvmChainID: 338, Selector: 2995292832068775165, Name: "cronos-testnet"}
+	CRONOS_TESTNET_ZKEVM_1                         = Chain{EvmChainID: 282, Selector: 3842103497652714138, Name: "cronos-testnet-zkevm-1"}
 	CRONOS_ZKEVM_MAINNET                           = Chain{EvmChainID: 388, Selector: 8788096068760390840, Name: "cronos-zkevm-mainnet"}
 	CRONOS_ZKEVM_TESTNET_1                         = Chain{EvmChainID: 240, Selector: 16487132492576884721, Name: "cronos-zkevm-testnet-1"}
 	ETHEREUM_MAINNET                               = Chain{EvmChainID: 1, Selector: 5009297550715157269, Name: "ethereum-mainnet"}
@@ -315,6 +316,7 @@ var ALL = []Chain{
 	CORN_MAINNET,
 	CRONOS_MAINNET,
 	CRONOS_TESTNET,
+	CRONOS_TESTNET_ZKEVM_1,
 	CRONOS_ZKEVM_MAINNET,
 	CRONOS_ZKEVM_TESTNET_1,
 	ETHEREUM_MAINNET,
