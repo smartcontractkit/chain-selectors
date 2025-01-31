@@ -5,3 +5,6 @@ selectors:
   2: 
     name: aptos-testnet
     selector: 743186221051783445
+  4:
+    name: aptos-localnet
+    selector: 4457093679053095497
