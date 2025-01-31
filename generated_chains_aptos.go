@@ -9,11 +9,13 @@ type AptosChain struct {
 }
 
 var (
-	APTOS_MAINNET = AptosChain{ChainID: 1, Selector: 4741433654826277614, Name: "aptos-mainnet"}
-	APTOS_TESTNET = AptosChain{ChainID: 2, Selector: 743186221051783445, Name: "aptos-testnet"}
+	APTOS_LOCALNET = AptosChain{ChainID: 4, Selector: 4457093679053095497, Name: "aptos-localnet"}
+	APTOS_MAINNET  = AptosChain{ChainID: 1, Selector: 4741433654826277614, Name: "aptos-mainnet"}
+	APTOS_TESTNET  = AptosChain{ChainID: 2, Selector: 743186221051783445, Name: "aptos-testnet"}
 )
 
 var AptosALL = []AptosChain{
+	APTOS_LOCALNET,
 	APTOS_MAINNET,
 	APTOS_TESTNET,
 }
