@@ -44,7 +44,7 @@ func getChainInfo(selector uint64) (chainInfo, error) {
 	}
 
 	// check solana
-	_, exist = solanaChainIdBySelector[selector]
+	_, exist = solanaChainsBySelector[selector]
 	if exist {
 		family := FamilySolana
 

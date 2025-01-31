@@ -55,7 +55,7 @@ func Test_YmlAreValid(t *testing.T) {
 }
 
 func Test_SolanaChainSelectors(t *testing.T) {
-	for selector, chainId := range solanaChainIdBySelector {
+	for selector, chain := range solanaChainsBySelector {
 		family, err := GetSelectorFamily(selector)
 		require.NoError(t, err,
 			"selector %v should be returned as solana family, but received %v",
@@ -65,7 +65,13 @@ func Test_SolanaChainSelectors(t *testing.T) {
 
 		id, err := SolanaChainIdFromSelector(selector)
 		require.Nil(t, err)
-		require.Equal(t, chainId, id)
+		require.Equal(t, chain.ChainID, id)
+
+		returnedChain, exists := SolanaChainBySelector(selector)
+		require.True(t, exists)
+		require.Equal(t, returnedChain.ChainID, id)
+
+		require.Equal(t, id, returnedChain.ChainID)
 	}
 }
 
