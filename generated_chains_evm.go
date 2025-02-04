@@ -18,6 +18,7 @@ var (
 	AVALANCHE_SUBNET_DEXALOT_TESTNET               = Chain{EvmChainID: 432201, Selector: 1458281248224512906, Name: "avalanche-subnet-dexalot-testnet"}
 	AVALANCHE_TESTNET_FUJI                         = Chain{EvmChainID: 43113, Selector: 14767482510784806043, Name: "avalanche-testnet-fuji"}
 	AVALANCHE_TESTNET_NEXON                        = Chain{EvmChainID: 595581, Selector: 7837562506228496256, Name: "avalanche-testnet-nexon"}
+	BERACHAIN_MAINNET                              = Chain{EvmChainID: 80094, Selector: 1294465214383781161, Name: "berachain-mainnet"}
 	BERACHAIN_TESTNET_ARTIO                        = Chain{EvmChainID: 80085, Selector: 12336603543561911511, Name: "berachain-testnet-artio"}
 	BERACHAIN_TESTNET_BARTIO                       = Chain{EvmChainID: 80084, Selector: 8999465244383784164, Name: "berachain-testnet-bartio"}
 	BINANCE_SMART_CHAIN_MAINNET                    = Chain{EvmChainID: 56, Selector: 11344663589394136015, Name: "binance_smart_chain-mainnet"}
@@ -286,6 +287,7 @@ var ALL = []Chain{
 	AVALANCHE_SUBNET_DEXALOT_TESTNET,
 	AVALANCHE_TESTNET_FUJI,
 	AVALANCHE_TESTNET_NEXON,
+	BERACHAIN_MAINNET,
 	BERACHAIN_TESTNET_ARTIO,
 	BERACHAIN_TESTNET_BARTIO,
 	BINANCE_SMART_CHAIN_MAINNET,
