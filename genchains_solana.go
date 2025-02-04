@@ -3,17 +3,13 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
 	"go/format"
-	"html/template"
 	"os"
-	"sort"
-	"strconv"
-	"strings"
+	"text/template"
 
-	"github.com/mr-tron/base58"
 	chain_selectors "github.com/smartcontractkit/chain-selectors"
+	"github.com/smartcontractkit/chain-selectors/internal/gotmpl"
 )
 
 const filename = "generated_chains_solana.go"
@@ -48,7 +44,7 @@ var SolanaALL = []SolanaChain{
 `)
 
 func main() {
-	src, err := genChainsSourceCode()
+	src, err := gotmpl.Run(chainTemplate, chain_selectors.SolanaChainIdToChainSelector, chain_selectors.SolanaNameFromChainId)
 	if err != nil {
 		panic(err)
 	}
@@ -73,49 +69,4 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-}
-
-func genChainsSourceCode() (string, error) {
-	var wr = new(bytes.Buffer)
-	chains := make([]chain, 0)
-
-	for ChainID, chainSel := range chain_selectors.SolanaChainIdToChainSelector() {
-		name, err := chain_selectors.SolanaNameFromChainId(ChainID)
-		if err != nil {
-			return "", err
-		}
-
-		chains = append(chains, chain{
-			ChainID:  ChainID,
-			Selector: chainSel,
-			Name:     name,
-			VarName:  toVarName(name, chainSel),
-		})
-	}
-
-	sort.Slice(chains, func(i, j int) bool { return chains[i].VarName < chains[j].VarName })
-	if err := chainTemplate.ExecuteTemplate(wr, "", chains); err != nil {
-		return "", err
-	}
-	return wr.String(), nil
-}
-
-func toVarName(name string, chainSel uint64) string {
-	const unnamed = "TEST"
-	x := strings.ReplaceAll(name, "-", "_")
-	x = strings.ToUpper(x)
-
-	// if len(x) > 0 && unicode.IsDigit(rune(x[0]))
-	// for evm, the above condition is used to detect if name == chainId == (some number) -> which means its a test chain
-	// for solana, as chainId is not a number but a base58 encoded hash, we cannot use the above condition
-	// we need to check if the name == chainId == a valid base58 encoded hash
-
-	_, err := base58.Decode(name)
-	if err == nil {
-		x = unnamed + "_" + x
-	}
-	if len(x) == 0 {
-		x = unnamed + "_" + strconv.FormatUint(chainSel, 10)
-	}
-	return x
 }
