@@ -20,15 +20,12 @@ var (
 	solanaSelectorsMap           = parseSolanaYml(solanaSelectorsYml)
 	solanaTestSelectorsMap       = parseSolanaYml(testSelectorsSolanaYml)
 	solanaChainIdToChainSelector = loadAllSolanaSelectors()
-	solanaChainIdBySelector      = make(map[uint64]string)
+	solanaChainsBySelector       = make(map[uint64]SolanaChain)
 )
 
 func init() {
-	for k, v := range solanaSelectorsMap {
-		solanaChainIdBySelector[v.ChainSelector] = k
-	}
-	for k, v := range solanaTestSelectorsMap {
-		solanaChainIdBySelector[v.ChainSelector] = k
+	for _, v := range SolanaALL {
+		solanaChainsBySelector[v.Selector] = v
 	}
 }
 
@@ -90,10 +87,16 @@ func SolanaNameFromChainId(chainId string) (string, error) {
 }
 
 func SolanaChainIdFromSelector(selector uint64) (string, error) {
-	chainId, exist := solanaChainIdBySelector[selector]
+	chain, exist := solanaChainsBySelector[selector]
 	if !exist {
-		return "", fmt.Errorf("chain id not found for selector %d", selector)
+		return "", fmt.Errorf("chain not found for selector %d", selector)
 	}
 
-	return chainId, nil
+	return chain.ChainID, nil
+}
+
+func SolanaChainBySelector(selector uint64) (SolanaChain, bool) {
+	chain, exists := solanaChainsBySelector[selector]
+
+	return chain, exists
 }
