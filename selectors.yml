@@ -275,6 +275,9 @@ selectors:
   161221135:
     selector: 14684575664602284776
     name: "plume-testnet"
+  98864:
+    selector: 3743020999916460931
+    name: "plume-devnet"
   4801:
     selector: 5299555114858065850
     name: "ethereum-testnet-sepolia-worldchain-1"
