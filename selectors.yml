@@ -278,6 +278,9 @@ selectors:
   4801:
     selector: 5299555114858065850
     name: "ethereum-testnet-sepolia-worldchain-1"
+  999999999: 
+    selector: 1293555114858065859
+    name: "zora-testnet" 
 
   # Mainnets
   1:
