@@ -36,6 +36,18 @@ func init() {
 	}
 }
 
+func NewChainSelectorsObj(chainDetails Chain) []Chain {
+	currentChains := ALL
+
+	newChain := []Chain{
+		chainDetails,
+	}
+
+	currentChains = append(currentChains, newChain...)
+
+	return currentChains
+}
+
 func loadAllEVMSelectors() map[uint64]ChainDetails {
 	output := make(map[uint64]ChainDetails, len(evmSelectorsMap)+len(evmTestSelectorsMap))
 	for k, v := range evmSelectorsMap {
