@@ -49,7 +49,10 @@ func Test_AptosYmlAreValid(t *testing.T) {
 
 func Test_AptosChainSelectors(t *testing.T) {
 	for selector, chainId := range aptosChainIdBySelector {
-		family, err := GetSelectorFamily(selector)
+		csObj, err := NewChainSelectorsObj(ChainInfo{})
+		assert.NoError(t, err)
+
+		family, err := csObj.GetSelectorFamily(selector)
 		require.NoError(t, err,
 			"selector %v should be returned as aptos family, but received %v",
 			selector, err)
@@ -64,7 +67,10 @@ func Test_AptosChainSelectors(t *testing.T) {
 
 func Test_AptosGetChainDetailsByChainIDAndFamily(t *testing.T) {
 	for k, v := range aptosSelectorsMap {
-		details, err := GetChainDetailsByChainIDAndFamily(fmt.Sprint(k), FamilyAptos)
+		csObj, err := NewChainSelectorsObj(ChainInfo{})
+		assert.NoError(t, err)
+
+		details, err := csObj.GetChainDetailsByChainIDAndFamily(fmt.Sprint(k), FamilyAptos)
 		assert.NoError(t, err)
 		assert.Equal(t, v, details)
 	}
@@ -72,7 +78,10 @@ func Test_AptosGetChainDetailsByChainIDAndFamily(t *testing.T) {
 
 func Test_AptosGetChainIDByChainSelector(t *testing.T) {
 	for k, v := range aptosSelectorsMap {
-		chainID, err := GetChainIDFromSelector(v.ChainSelector)
+		csObj, err := NewChainSelectorsObj(ChainInfo{})
+		assert.NoError(t, err)
+
+		chainID, err := csObj.GetChainIDFromSelector(v.ChainSelector)
 		assert.NoError(t, err)
 		assert.Equal(t, chainID, fmt.Sprintf("%v", k))
 	}

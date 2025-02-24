@@ -56,7 +56,9 @@ func Test_YmlAreValid(t *testing.T) {
 
 func Test_SolanaChainSelectors(t *testing.T) {
 	for selector, chain := range solanaChainsBySelector {
-		family, err := GetSelectorFamily(selector)
+		csObj, err := NewChainSelectorsObj(ChainInfo{})
+		require.NoError(t, err)
+		family, err := csObj.GetSelectorFamily(selector)
 		require.NoError(t, err,
 			"selector %v should be returned as solana family, but received %v",
 			selector, err)
@@ -77,7 +79,10 @@ func Test_SolanaChainSelectors(t *testing.T) {
 
 func Test_SolanaGetChainDetailsByChainIDAndFamily(t *testing.T) {
 	for k, v := range solanaSelectorsMap {
-		details, err := GetChainDetailsByChainIDAndFamily(k, FamilySolana)
+		csObj, err := NewChainSelectorsObj(ChainInfo{})
+		assert.NoError(t, err)
+
+		details, err := csObj.GetChainDetailsByChainIDAndFamily(k, FamilySolana)
 		assert.NoError(t, err)
 		assert.Equal(t, v, details)
 	}
@@ -85,7 +90,9 @@ func Test_SolanaGetChainDetailsByChainIDAndFamily(t *testing.T) {
 
 func Test_SolanaGetChainIDByChainSelector(t *testing.T) {
 	for k, v := range solanaSelectorsMap {
-		chainID, err := GetChainIDFromSelector(v.ChainSelector)
+		csObj, err := NewChainSelectorsObj(ChainInfo{})
+		require.NoError(t, err)
+		chainID, err := csObj.GetChainIDFromSelector(v.ChainSelector)
 		assert.NoError(t, err)
 		assert.Equal(t, chainID, fmt.Sprintf("%v", k))
 	}

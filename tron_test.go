@@ -55,7 +55,10 @@ func Test_TronYmlAreValid(t *testing.T) {
 
 func Test_TronChainSelectors(t *testing.T) {
 	for selector, chainId := range tronChainIdBySelector {
-		family, err := GetSelectorFamily(selector)
+		csObj, err := NewChainSelectorsObj(ChainInfo{})
+		assert.NoError(t, err)
+
+		family, err := csObj.GetSelectorFamily(selector)
 		require.NoError(t, err,
 			"selector %v should be returned as tron family, but received %v",
 			selector, err)
@@ -70,7 +73,10 @@ func Test_TronChainSelectors(t *testing.T) {
 
 func Test_TronGetChainDetailsByChainIDAndFamily(t *testing.T) {
 	for k, v := range tronSelectorsMap {
-		details, err := GetChainDetailsByChainIDAndFamily(fmt.Sprint(k), FamilyTron)
+		csObj, err := NewChainSelectorsObj(ChainInfo{})
+		assert.NoError(t, err)
+
+		details, err := csObj.GetChainDetailsByChainIDAndFamily(fmt.Sprint(k), FamilyTron)
 		assert.NoError(t, err)
 		assert.Equal(t, v, details)
 	}
@@ -78,7 +84,10 @@ func Test_TronGetChainDetailsByChainIDAndFamily(t *testing.T) {
 
 func Test_TronGetChainIDByChainSelector(t *testing.T) {
 	for k, v := range tronSelectorsMap {
-		chainID, err := GetChainIDFromSelector(v.ChainSelector)
+		csObj, err := NewChainSelectorsObj(ChainInfo{})
+		assert.NoError(t, err)
+
+		chainID, err := csObj.GetChainIDFromSelector(v.ChainSelector)
 		assert.NoError(t, err)
 		assert.Equal(t, chainID, fmt.Sprintf("%v", k))
 	}
