@@ -1,4 +1,4 @@
-# Chain Selectors
+# Chain Selectors [![Go Reference](https://pkg.go.dev/badge/github.com/smartcontractkit/chain-selectors.svg)](https://pkg.go.dev/github.com/smartcontractkit/chain-selectors)
 
 CCIP uses its own set of chain selectors represented by uint64 to identify blockchains. It is a random
 integer generated as follows:
