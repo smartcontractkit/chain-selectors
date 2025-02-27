@@ -281,6 +281,9 @@ selectors:
   4801:
     selector: 5299555114858065850
     name: "ethereum-testnet-sepolia-worldchain-1"
+  192940:
+    selector: 7189150270347329685
+    name: "mind-testnet"
 
   # Mainnets
   1:
@@ -502,3 +505,6 @@ selectors:
   232:
     selector: 5608378062013572713
     name: "lens-mainnet"
+  228:
+    selector: 11690709103138290329
+    name: "mind-mainnet"
