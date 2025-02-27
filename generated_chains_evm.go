@@ -131,6 +131,7 @@ var (
 	KAVA_MAINNET                                   = Chain{EvmChainID: 2222, Selector: 7550000543357438061, Name: "kava-mainnet"}
 	KAVA_TESTNET                                   = Chain{EvmChainID: 2221, Selector: 2110537777356199208, Name: "kava-testnet"}
 	KUSAMA_MAINNET_MOONRIVER                       = Chain{EvmChainID: 1285, Selector: 1355020143337428062, Name: "kusama-mainnet-moonriver"}
+	LENS_MAINNET                                   = Chain{EvmChainID: 232, Selector: 5608378062013572713, Name: "lens-mainnet"}
 	MONAD_TESTNET                                  = Chain{EvmChainID: 10143, Selector: 2183018362218727504, Name: "monad-testnet"}
 	MORPH_MAINNET                                  = Chain{EvmChainID: 2818, Selector: 18164309074156128038, Name: "morph-mainnet"}
 	NEAR_MAINNET                                   = Chain{EvmChainID: 397, Selector: 2039744413822257700, Name: "near-mainnet"}
@@ -402,6 +403,7 @@ var ALL = []Chain{
 	KAVA_MAINNET,
 	KAVA_TESTNET,
 	KUSAMA_MAINNET_MOONRIVER,
+	LENS_MAINNET,
 	MONAD_TESTNET,
 	MORPH_MAINNET,
 	NEAR_MAINNET,
