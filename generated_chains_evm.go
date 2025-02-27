@@ -21,6 +21,7 @@ var (
 	BERACHAIN_MAINNET                              = Chain{EvmChainID: 80094, Selector: 1294465214383781161, Name: "berachain-mainnet"}
 	BERACHAIN_TESTNET_ARTIO                        = Chain{EvmChainID: 80085, Selector: 12336603543561911511, Name: "berachain-testnet-artio"}
 	BERACHAIN_TESTNET_BARTIO                       = Chain{EvmChainID: 80084, Selector: 8999465244383784164, Name: "berachain-testnet-bartio"}
+	BERACHAIN_TESTNET_BEPOLIA                      = Chain{EvmChainID: 80069, Selector: 7728255861635209484, Name: "berachain-testnet-bepolia"}
 	BINANCE_SMART_CHAIN_MAINNET                    = Chain{EvmChainID: 56, Selector: 11344663589394136015, Name: "binance_smart_chain-mainnet"}
 	BINANCE_SMART_CHAIN_MAINNET_OPBNB_1            = Chain{EvmChainID: 204, Selector: 465944652040885897, Name: "binance_smart_chain-mainnet-opbnb-1"}
 	BINANCE_SMART_CHAIN_TESTNET                    = Chain{EvmChainID: 97, Selector: 13264668187771770619, Name: "binance_smart_chain-testnet"}
@@ -295,6 +296,7 @@ var ALL = []Chain{
 	BERACHAIN_MAINNET,
 	BERACHAIN_TESTNET_ARTIO,
 	BERACHAIN_TESTNET_BARTIO,
+	BERACHAIN_TESTNET_BEPOLIA,
 	BINANCE_SMART_CHAIN_MAINNET,
 	BINANCE_SMART_CHAIN_MAINNET_OPBNB_1,
 	BINANCE_SMART_CHAIN_TESTNET,
