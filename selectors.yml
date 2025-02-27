@@ -499,3 +499,6 @@ selectors:
   2818:
     selector: 18164309074156128038
     name: "morph-mainnet"
+  232:
+    selector: 5608378062013572713
+    name: "lens-mainnet"
