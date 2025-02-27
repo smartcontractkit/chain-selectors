@@ -8,3 +8,6 @@ selectors:
   4:
     name: aptos-localnet
     selector: 4457093679053095497
+  5: 
+    name: 'sish-testnet'
+    selector: 7953668971247136127

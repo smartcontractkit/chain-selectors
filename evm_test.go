@@ -51,7 +51,10 @@ func TestEvmChainIdToChainSelectorReturningCopiedMap(t *testing.T) {
 
 func TestAllChainSelectorsHaveFamilies(t *testing.T) {
 	for _, ch := range ALL {
-		family, err := GetSelectorFamily(ch.Selector)
+		csObj, err := NewChainSelectorsObj(ChainInfo{})
+		assert.NoError(t, err)
+
+		family, err := csObj.GetSelectorFamily(ch.Selector)
 		require.NoError(t, err,
 			"Family not found for selector %d (chain id %d, name %s), please update selector.yml with the appropriate chain family for this chain",
 			ch.Selector, ch.EvmChainID, ch.Name)
@@ -231,7 +234,10 @@ func Test_IsEvm(t *testing.T) {
 func Test_EVMGetChainDetailsByChainIDAndFamily(t *testing.T) {
 	for k, v := range evmChainIdToChainSelector {
 		strChainID := strconv.FormatUint(k, 10)
-		details, err := GetChainDetailsByChainIDAndFamily(strChainID, FamilyEVM)
+		csObj, err := NewChainSelectorsObj(ChainInfo{})
+		assert.NoError(t, err)
+
+		details, err := csObj.GetChainDetailsByChainIDAndFamily(strChainID, FamilyEVM)
 		assert.NoError(t, err)
 		assert.Equal(t, v, details)
 	}
@@ -239,7 +245,10 @@ func Test_EVMGetChainDetailsByChainIDAndFamily(t *testing.T) {
 
 func Test_EVMGetChainIDByChainSelector(t *testing.T) {
 	for k, v := range evmSelectorsMap {
-		chainID, err := GetChainIDFromSelector(v.ChainSelector)
+		csObj, err := NewChainSelectorsObj(ChainInfo{})
+		assert.NoError(t, err)
+
+		chainID, err := csObj.GetChainIDFromSelector(v.ChainSelector)
 		assert.NoError(t, err)
 		assert.Equal(t, chainID, fmt.Sprintf("%v", k))
 	}

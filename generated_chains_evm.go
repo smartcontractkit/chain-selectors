@@ -278,6 +278,7 @@ var (
 	WEMIX_TESTNET                                  = Chain{EvmChainID: 1112, Selector: 9284632837123596123, Name: "wemix-testnet"}
 	ZKLINK_NOVA_MAINNET                            = Chain{EvmChainID: 810180, Selector: 4350319965322101699, Name: "zklink_nova-mainnet"}
 	ZKLINK_NOVA_TESTNET                            = Chain{EvmChainID: 810181, Selector: 5837261596322416298, Name: "zklink_nova-testnet"}
+	ZORA_TESTNET                                   = Chain{EvmChainID: 999999999, Selector: 1293555114858065859, Name: "zora-testnet"}
 )
 
 var ALL = []Chain{
@@ -550,4 +551,5 @@ var ALL = []Chain{
 	WEMIX_TESTNET,
 	ZKLINK_NOVA_MAINNET,
 	ZKLINK_NOVA_TESTNET,
+	ZORA_TESTNET,
 }
