@@ -288,8 +288,11 @@ selectors:
     selector: 7189150270347329685
     name: "mind-testnet"
   1338:
-    selector: 2181150070347029680
+    selector: 2443239559770384419
     name: "megaeth-testnet"
+  6342:
+    selector: 2181150070347029680
+    name: "ethereum-testnet-sepolia-megaeth-1"
   # Mainnets
   1:
     selector: 5009297550715157269
