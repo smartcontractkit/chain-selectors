@@ -141,6 +141,9 @@ selectors:
   33111:
     selector: 9900119385908781505
     name: "apechain-testnet-curtis"
+  43111:
+    selector: 1804312132722180201
+    name: "hemi-mainnet"
   43113:
     selector: 14767482510784806043
     name: "avalanche-testnet-fuji"
