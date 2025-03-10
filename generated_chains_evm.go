@@ -102,7 +102,7 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_LINEA_1               = Chain{EvmChainID: 59141, Selector: 5719461335882077547, Name: "ethereum-testnet-sepolia-linea-1"}
 	ETHEREUM_TESTNET_SEPOLIA_LISK_1                = Chain{EvmChainID: 4202, Selector: 5298399861320400553, Name: "ethereum-testnet-sepolia-lisk-1"}
 	ETHEREUM_TESTNET_SEPOLIA_MANTLE_1              = Chain{EvmChainID: 5003, Selector: 8236463271206331221, Name: "ethereum-testnet-sepolia-mantle-1"}
-	ETHEREUM_TESTNET_SEPOLIA_MEGAETH_1             = Chain{EvmChainID: 6342, Selector: 2181150070347029680, Name: "ethereum-testnet-sepolia-megaeth-1"}
+	ETHEREUM_TESTNET_SEPOLIA_MEGAETH_1             = Chain{EvmChainID: 6342, Selector: 2443239559770384419, Name: "ethereum-testnet-sepolia-megaeth-1"}
 	ETHEREUM_TESTNET_SEPOLIA_METIS_1               = Chain{EvmChainID: 59902, Selector: 3777822886988675105, Name: "ethereum-testnet-sepolia-metis-1"}
 	ETHEREUM_TESTNET_SEPOLIA_MODE_1                = Chain{EvmChainID: 919, Selector: 829525985033418733, Name: "ethereum-testnet-sepolia-mode-1"}
 	ETHEREUM_TESTNET_SEPOLIA_OPTIMISM_1            = Chain{EvmChainID: 11155420, Selector: 5224473277236331295, Name: "ethereum-testnet-sepolia-optimism-1"}
@@ -134,7 +134,7 @@ var (
 	KAVA_TESTNET                                   = Chain{EvmChainID: 2221, Selector: 2110537777356199208, Name: "kava-testnet"}
 	KUSAMA_MAINNET_MOONRIVER                       = Chain{EvmChainID: 1285, Selector: 1355020143337428062, Name: "kusama-mainnet-moonriver"}
 	LENS_MAINNET                                   = Chain{EvmChainID: 232, Selector: 5608378062013572713, Name: "lens-mainnet"}
-	MEGAETH_TESTNET                                = Chain{EvmChainID: 1338, Selector: 2443239559770384419, Name: "megaeth-testnet"}
+	MEGAETH_TESTNET                                = Chain{EvmChainID: 1338, Selector: 2181150070347029680, Name: "megaeth-testnet"}
 	MIND_MAINNET                                   = Chain{EvmChainID: 228, Selector: 11690709103138290329, Name: "mind-mainnet"}
 	MIND_TESTNET                                   = Chain{EvmChainID: 192940, Selector: 7189150270347329685, Name: "mind-testnet"}
 	MONAD_TESTNET                                  = Chain{EvmChainID: 10143, Selector: 2183018362218727504, Name: "monad-testnet"}
