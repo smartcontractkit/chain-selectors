@@ -126,6 +126,7 @@ var (
 	GNOSIS_CHAIN_TESTNET_CHIADO                    = Chain{EvmChainID: 10200, Selector: 8871595565390010547, Name: "gnosis_chain-testnet-chiado"}
 	HEDERA_MAINNET                                 = Chain{EvmChainID: 295, Selector: 3229138320728879060, Name: "hedera-mainnet"}
 	HEDERA_TESTNET                                 = Chain{EvmChainID: 296, Selector: 222782988166878823, Name: "hedera-testnet"}
+	HEMI_MAINNET                                   = Chain{EvmChainID: 43111, Selector: 1804312132722180201, Name: "hemi-mainnet"}
 	HEMI_TESTNET_SEPOLIA                           = Chain{EvmChainID: 743111, Selector: 16126893759944359622, Name: "hemi-testnet-sepolia"}
 	HYPERLIQUID_TESTNET                            = Chain{EvmChainID: 998, Selector: 4286062357653186312, Name: "hyperliquid-testnet"}
 	INK_TESTNET_SEPOLIA                            = Chain{EvmChainID: 763373, Selector: 9763904284804119144, Name: "ink-testnet-sepolia"}
@@ -402,6 +403,7 @@ var ALL = []Chain{
 	GNOSIS_CHAIN_TESTNET_CHIADO,
 	HEDERA_MAINNET,
 	HEDERA_TESTNET,
+	HEMI_MAINNET,
 	HEMI_TESTNET_SEPOLIA,
 	HYPERLIQUID_TESTNET,
 	INK_TESTNET_SEPOLIA,
