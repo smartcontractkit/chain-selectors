@@ -102,6 +102,7 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_LINEA_1               = Chain{EvmChainID: 59141, Selector: 5719461335882077547, Name: "ethereum-testnet-sepolia-linea-1"}
 	ETHEREUM_TESTNET_SEPOLIA_LISK_1                = Chain{EvmChainID: 4202, Selector: 5298399861320400553, Name: "ethereum-testnet-sepolia-lisk-1"}
 	ETHEREUM_TESTNET_SEPOLIA_MANTLE_1              = Chain{EvmChainID: 5003, Selector: 8236463271206331221, Name: "ethereum-testnet-sepolia-mantle-1"}
+	ETHEREUM_TESTNET_SEPOLIA_MEGAETH_1             = Chain{EvmChainID: 6342, Selector: 2443239559770384419, Name: "ethereum-testnet-sepolia-megaeth-1"}
 	ETHEREUM_TESTNET_SEPOLIA_METIS_1               = Chain{EvmChainID: 59902, Selector: 3777822886988675105, Name: "ethereum-testnet-sepolia-metis-1"}
 	ETHEREUM_TESTNET_SEPOLIA_MODE_1                = Chain{EvmChainID: 919, Selector: 829525985033418733, Name: "ethereum-testnet-sepolia-mode-1"}
 	ETHEREUM_TESTNET_SEPOLIA_OPTIMISM_1            = Chain{EvmChainID: 11155420, Selector: 5224473277236331295, Name: "ethereum-testnet-sepolia-optimism-1"}
@@ -378,6 +379,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_LINEA_1,
 	ETHEREUM_TESTNET_SEPOLIA_LISK_1,
 	ETHEREUM_TESTNET_SEPOLIA_MANTLE_1,
+	ETHEREUM_TESTNET_SEPOLIA_MEGAETH_1,
 	ETHEREUM_TESTNET_SEPOLIA_METIS_1,
 	ETHEREUM_TESTNET_SEPOLIA_MODE_1,
 	ETHEREUM_TESTNET_SEPOLIA_OPTIMISM_1,
