@@ -290,6 +290,9 @@ selectors:
   192940:
     selector: 7189150270347329685
     name: "mind-testnet"
+  6342:
+    selector: 2443239559770384419
+    name: "megaeth-testnet"
 
   # Mainnets
   1:
