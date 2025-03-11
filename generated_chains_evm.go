@@ -174,6 +174,7 @@ var (
 	TELOS_EVM_TESTNET                              = Chain{EvmChainID: 41, Selector: 729797994450396300, Name: "telos-evm-testnet"}
 	TEST_0G_TESTNET_NEWTON                         = Chain{EvmChainID: 16600, Selector: 16088006396410204581, Name: "0g-testnet-newton"}
 	TEST_1000                                      = Chain{EvmChainID: 1000, Selector: 11787463284727550157, Name: "1000"}
+	TEST_1338                                      = Chain{EvmChainID: 1338, Selector: 2181150070347029680, Name: "1338"}
 	TEST_76578                                     = Chain{EvmChainID: 76578, Selector: 781901677223027175, Name: "76578"}
 	TEST_90000001                                  = Chain{EvmChainID: 90000001, Selector: 909606746561742123, Name: "90000001"}
 	TEST_90000002                                  = Chain{EvmChainID: 90000002, Selector: 5548718428018410741, Name: "90000002"}
@@ -451,6 +452,7 @@ var ALL = []Chain{
 	TELOS_EVM_TESTNET,
 	TEST_0G_TESTNET_NEWTON,
 	TEST_1000,
+	TEST_1338,
 	TEST_76578,
 	TEST_90000001,
 	TEST_90000002,
