@@ -134,7 +134,7 @@ var (
 	KAVA_TESTNET                                   = Chain{EvmChainID: 2221, Selector: 2110537777356199208, Name: "kava-testnet"}
 	KUSAMA_MAINNET_MOONRIVER                       = Chain{EvmChainID: 1285, Selector: 1355020143337428062, Name: "kusama-mainnet-moonriver"}
 	LENS_MAINNET                                   = Chain{EvmChainID: 232, Selector: 5608378062013572713, Name: "lens-mainnet"}
-	MEGAETH_TESTNET                                = Chain{EvmChainID: 1338, Selector: 2181150070347029680, Name: "megaeth-testnet"}
+	MEGAETH_TESTNET                                = Chain{EvmChainID: 6342, Selector: 2443239559770384419, Name: "megaeth-testnet"}
 	MIND_MAINNET                                   = Chain{EvmChainID: 228, Selector: 11690709103138290329, Name: "mind-mainnet"}
 	MIND_TESTNET                                   = Chain{EvmChainID: 192940, Selector: 7189150270347329685, Name: "mind-testnet"}
 	MONAD_TESTNET                                  = Chain{EvmChainID: 10143, Selector: 2183018362218727504, Name: "monad-testnet"}
@@ -174,6 +174,7 @@ var (
 	TELOS_EVM_TESTNET                              = Chain{EvmChainID: 41, Selector: 729797994450396300, Name: "telos-evm-testnet"}
 	TEST_0G_TESTNET_NEWTON                         = Chain{EvmChainID: 16600, Selector: 16088006396410204581, Name: "0g-testnet-newton"}
 	TEST_1000                                      = Chain{EvmChainID: 1000, Selector: 11787463284727550157, Name: "1000"}
+	TEST_1338                                      = Chain{EvmChainID: 1338, Selector: 2181150070347029680, Name: "1338"}
 	TEST_76578                                     = Chain{EvmChainID: 76578, Selector: 781901677223027175, Name: "76578"}
 	TEST_90000001                                  = Chain{EvmChainID: 90000001, Selector: 909606746561742123, Name: "90000001"}
 	TEST_90000002                                  = Chain{EvmChainID: 90000002, Selector: 5548718428018410741, Name: "90000002"}
@@ -451,6 +452,7 @@ var ALL = []Chain{
 	TELOS_EVM_TESTNET,
 	TEST_0G_TESTNET_NEWTON,
 	TEST_1000,
+	TEST_1338,
 	TEST_76578,
 	TEST_90000001,
 	TEST_90000002,
