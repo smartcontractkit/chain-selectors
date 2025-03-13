@@ -67,7 +67,7 @@ func getChainInfo(selector uint64) (chainInfo, error) {
 	}
 
 	// check aptos
-	_, exist = aptosChainIdBySelector[selector]
+	_, exist = aptosChainsBySelector[selector]
 	if exist {
 		family := FamilyAptos
 
