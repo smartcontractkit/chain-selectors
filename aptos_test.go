@@ -48,7 +48,7 @@ func Test_AptosYmlAreValid(t *testing.T) {
 }
 
 func Test_AptosChainSelectors(t *testing.T) {
-	for selector, chainId := range aptosChainIdBySelector {
+	for selector, chain := range aptosChainsBySelector {
 		family, err := GetSelectorFamily(selector)
 		require.NoError(t, err,
 			"selector %v should be returned as aptos family, but received %v",
@@ -58,7 +58,12 @@ func Test_AptosChainSelectors(t *testing.T) {
 
 		id, err := AptosChainIdFromSelector(selector)
 		require.Nil(t, err)
-		require.Equal(t, chainId, id)
+		require.Equal(t, chain.ChainID, id)
+
+		returnedChain, exists := AptosChainBySelector(selector)
+		require.True(t, exists)
+		require.Equal(t, returnedChain.ChainID, id)
+		require.Equal(t, id, returnedChain.ChainID)
 	}
 }
 
