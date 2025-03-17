@@ -378,6 +378,9 @@ selectors:
   592:
     selector: 6422105447186081193
     name: "polkadot-mainnet-astar"
+  999:
+    selector: 2442541497099098535
+    name: "hyperliquid-mainnet"
   1088:
     selector: 8805746078405598895
     name: "ethereum-mainnet-metis-1"
@@ -449,6 +452,8 @@ selectors:
     name: "berachain-mainnet"
   98865:
     selector: 3208172210661564830
+  98866:
+    selector: 17912061998839310979
     name: "plume-mainnet"
   432204:
     selector: 5463201557265485081
