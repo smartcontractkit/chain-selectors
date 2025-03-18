@@ -13,13 +13,13 @@ import (
 var aptosSelectorsYml []byte
 
 var (
-	aptosSelectorsMap      = parseAptosYml(aptosSelectorsYml)
-	aptosChainIdBySelector = make(map[uint64]uint64)
+	aptosSelectorsMap     = parseAptosYml(aptosSelectorsYml)
+	aptosChainsBySelector = make(map[uint64]AptosChain)
 )
 
 func init() {
-	for k, v := range aptosSelectorsMap {
-		aptosChainIdBySelector[v.ChainSelector] = k
+	for _, v := range AptosALL {
+		aptosChainsBySelector[v.Selector] = v
 	}
 }
 
@@ -62,10 +62,15 @@ func AptosNameFromChainId(chainId uint64) (string, error) {
 }
 
 func AptosChainIdFromSelector(selector uint64) (uint64, error) {
-	chainId, exist := aptosChainIdBySelector[selector]
+	chain, exist := aptosChainsBySelector[selector]
 	if !exist {
 		return 0, fmt.Errorf("chain id not found for selector %d", selector)
 	}
 
-	return chainId, nil
+	return chain.ChainID, nil
+}
+
+func AptosChainBySelector(selector uint64) (AptosChain, bool) {
+	chain, exist := aptosChainsBySelector[selector]
+	return chain, exist
 }

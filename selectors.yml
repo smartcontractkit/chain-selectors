@@ -141,6 +141,9 @@ selectors:
   33111:
     selector: 9900119385908781505
     name: "apechain-testnet-curtis"
+  43111:
+    selector: 1804312132722180201
+    name: "hemi-mainnet"
   43113:
     selector: 14767482510784806043
     name: "avalanche-testnet-fuji"
@@ -173,6 +176,9 @@ selectors:
   80084:
     selector: 8999465244383784164
     name: "berachain-testnet-bartio"
+  80069:
+    selector: 7728255861635209484
+    name: "berachain-testnet-bepolia"
   84531:
     selector: 5790810961207155433
     name: "ethereum-testnet-goerli-base-1"
@@ -281,6 +287,14 @@ selectors:
   4801:
     selector: 5299555114858065850
     name: "ethereum-testnet-sepolia-worldchain-1"
+  192940:
+    selector: 7189150270347329685
+    name: "mind-testnet"
+  1338:
+    selector: 2181150070347029680
+  6342:
+    selector: 2443239559770384419
+    name: "megaeth-testnet"
 
   # Mainnets
   1:
@@ -364,6 +378,9 @@ selectors:
   592:
     selector: 6422105447186081193
     name: "polkadot-mainnet-astar"
+  999:
+    selector: 2442541497099098535
+    name: "hyperliquid-mainnet"
   1088:
     selector: 8805746078405598895
     name: "ethereum-mainnet-metis-1"
@@ -435,6 +452,8 @@ selectors:
     name: "berachain-mainnet"
   98865:
     selector: 3208172210661564830
+  98866:
+    selector: 17912061998839310979
     name: "plume-mainnet"
   432204:
     selector: 5463201557265485081
@@ -499,3 +518,9 @@ selectors:
   2818:
     selector: 18164309074156128038
     name: "morph-mainnet"
+  232:
+    selector: 5608378062013572713
+    name: "lens-mainnet"
+  228:
+    selector: 11690709103138290329
+    name: "mind-mainnet"
