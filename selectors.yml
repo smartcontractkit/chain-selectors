@@ -185,6 +185,9 @@ selectors:
   84532:
     selector: 10344971235874465080
     name: "ethereum-testnet-sepolia-base-1"
+  98867:
+    selector: 13874588925447303949
+    name: "plume-testnet-sepolia"
   10200:
     selector: 8871595565390010547
     name: "gnosis_chain-testnet-chiado"

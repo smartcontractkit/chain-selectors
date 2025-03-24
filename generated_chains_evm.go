@@ -147,6 +147,7 @@ var (
 	PLUME_DEVNET                                   = Chain{EvmChainID: 98864, Selector: 3743020999916460931, Name: "plume-devnet"}
 	PLUME_MAINNET                                  = Chain{EvmChainID: 98866, Selector: 17912061998839310979, Name: "plume-mainnet"}
 	PLUME_TESTNET                                  = Chain{EvmChainID: 161221135, Selector: 14684575664602284776, Name: "plume-testnet"}
+	PLUME_TESTNET_SEPOLIA                          = Chain{EvmChainID: 98867, Selector: 13874588925447303949, Name: "plume-testnet-sepolia"}
 	POLKADOT_MAINNET_ASTAR                         = Chain{EvmChainID: 592, Selector: 6422105447186081193, Name: "polkadot-mainnet-astar"}
 	POLKADOT_MAINNET_CENTRIFUGE                    = Chain{EvmChainID: 2031, Selector: 8175830712062617656, Name: "polkadot-mainnet-centrifuge"}
 	POLKADOT_MAINNET_DARWINIA                      = Chain{EvmChainID: 46, Selector: 8866418665544333000, Name: "polkadot-mainnet-darwinia"}
@@ -427,6 +428,7 @@ var ALL = []Chain{
 	PLUME_DEVNET,
 	PLUME_MAINNET,
 	PLUME_TESTNET,
+	PLUME_TESTNET_SEPOLIA,
 	POLKADOT_MAINNET_ASTAR,
 	POLKADOT_MAINNET_CENTRIFUGE,
 	POLKADOT_MAINNET_DARWINIA,
