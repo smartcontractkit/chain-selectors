@@ -9,6 +9,7 @@ type Chain struct {
 }
 
 var (
+	ANVIL_DEVNET                                   = Chain{EvmChainID: 31337, Selector: 7759470850252068959, Name: "anvil-devnet"}
 	APECHAIN_MAINNET                               = Chain{EvmChainID: 33139, Selector: 14894068710063348487, Name: "apechain-mainnet"}
 	APECHAIN_TESTNET_CURTIS                        = Chain{EvmChainID: 33111, Selector: 9900119385908781505, Name: "apechain-testnet-curtis"}
 	AREON_MAINNET                                  = Chain{EvmChainID: 463, Selector: 1939936305787790600, Name: "areon-mainnet"}
@@ -290,6 +291,7 @@ var (
 )
 
 var ALL = []Chain{
+	ANVIL_DEVNET,
 	APECHAIN_MAINNET,
 	APECHAIN_TESTNET_CURTIS,
 	AREON_MAINNET,

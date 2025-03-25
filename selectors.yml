@@ -87,6 +87,9 @@ selectors:
   1337:
     selector: 3379446385462418246
     name: "geth-testnet"
+  31337:
+    selector: 7759470850252068959
+    name: "anvil-devnet"
   45439:
     selector: 8446413392851542429
     name: "private-testnet-opala"
