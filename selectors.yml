@@ -530,3 +530,6 @@ selectors:
   228:
     selector: 11690709103138290329
     name: "mind-mainnet"
+  3448148188:
+    selector: 2052925811360307749
+    name: "tron-testnet-nile"
