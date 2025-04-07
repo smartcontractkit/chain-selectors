@@ -313,6 +313,15 @@ selectors:
   53302:
     selector: 13694007683517087973
     name: "superseed-testnet"
+  128123:
+    selector: 1910019406958449359
+    name: "etherlink-testnet"
+  1740:
+    selector: 6286293440461807648
+    name: "metal-testnet"
+  6930:
+    selector: 305104239123120457
+    name: "nibiru-testnet"
 
   # Mainnets
   1:
@@ -557,3 +566,12 @@ selectors:
   185:
     selector: 17164792800244661392
     name: "mint-mainnet"
+  42793:
+    selector: 13624601974233774587
+    name: "etherlink-mainnet"
+  1750:
+    selector: 13447077090413146373
+    name: "metal-mainnet"
+  6900:
+    selector: 17349189558768828726
+    name: "nibiru-mainnet"
