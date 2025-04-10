@@ -1,4 +1,7 @@
 selectors:
+  3448148188:
+    selector: 2052925811360307749
+    name: "tron-testnet-nile"
   2494104990:
     selector: 13231703482326770598
     name: "tron-testnet-shasta"
