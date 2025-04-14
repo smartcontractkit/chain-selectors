@@ -562,6 +562,15 @@ selectors:
   228:
     selector: 11690709103138290329
     name: "mind-mainnet"
+  3448148188:
+    selector: 2052925811360307749
+    name: "tron-testnet-nile-evm"
+  2494104990:
+    selector: 13231703482326770598
+    name: "tron-testnet-shasta-evm"
+  728126428:
+    selector: 1546563616611573946
+    name: "tron-mainnet-evm"
   7777777:
     selector: 3555797439612589184
     name: "zora-mainnet"
