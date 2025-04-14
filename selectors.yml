@@ -218,9 +218,18 @@ selectors:
   686868:
     selector: 5269261765892944301
     name: "bitcoin-testnet-merlin"
+  5668:
+    selector: 8911150974185440581
+    name: "nexon-dev"
   595581:
     selector: 7837562506228496256
     name: "avalanche-testnet-nexon"
+  807424:
+    selector: 14632960069656270105
+    name: "nexon-qa"
+  847799:
+    selector: 5556806327594153475
+    name: "nexon-stage"
   810181:
     selector: 5837261596322416298
     name: "zklink_nova-testnet"
@@ -301,6 +310,29 @@ selectors:
   6342:
     selector: 2443239559770384419
     name: "megaeth-testnet"
+  999999999:
+    selector: 16244020411108056671
+    name: "zora-testnet"
+  1687:
+    selector: 10749384167430721561
+    name: "mint-testnet"
+  11124:
+    selector: 16235373811196386733
+    name: "abstract-testnet"
+  53302:
+    selector: 13694007683517087973
+    name: "superseed-testnet"
+  128123:
+    selector: 1910019406958449359
+    name: "etherlink-testnet"
+  1740:
+    selector: 6286293440461807648
+    name: "metal-testnet"
+  6930:
+    selector: 305104239123120457
+    name: "nibiru-testnet"
+  
+
 
   # Mainnets
   1:
@@ -539,3 +571,33 @@ selectors:
   728126428:
     selector: 1546563616611573946
     name: "tron-mainnet-evm"
+  7777777:
+    selector: 3555797439612589184
+    name: "zora-mainnet"
+  5330:
+    selector: 470401360549526817
+    name: "superseed-mainnet"
+  2741:
+    selector: 3577778157919314504
+    name: "abstract-mainnet"
+  1135:
+    selector: 15293031020466096408
+    name: "lisk-mainnet"
+  185:
+    selector: 17164792800244661392
+    name: "mint-mainnet"
+  42793:
+    selector: 13624601974233774587
+    name: "etherlink-mainnet"
+  1750:
+    selector: 13447077090413146373
+    name: "metal-mainnet"
+  6900:
+    selector: 17349189558768828726
+    name: "nibiru-mainnet"
+  60118:
+    selector: 15758750456714168963
+    name: "nexon-mainnet-lith"
+  68414:
+    selector: 12657445206920369324
+    name: "nexon-mainnet-henesys"
