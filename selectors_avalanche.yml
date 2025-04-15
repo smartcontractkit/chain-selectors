@@ -1,4 +1,4 @@
 selectors:
-  "P_CHAIN":
+  P_CHAIN:
     selector: 14538442734262914677
     name: avalanche-testnet-pchain
