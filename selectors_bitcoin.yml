@@ -1,0 +1,7 @@
+selectors:
+  bitcoin_mainnet:
+    selector: 5295418179606748534
+    name: bitcoin-mainnet
+  bitcoin_testnet:
+    selector: 8997884582513251897
+    name: bitcoin-testnet

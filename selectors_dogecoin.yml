@@ -1,0 +1,4 @@
+selectors:
+  dogecoin_mainnet:
+    selector: 16302150171372387475
+    name: dogecoin-mainnet

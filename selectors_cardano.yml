@@ -1,0 +1,4 @@
+selectors:
+  mainnet: # Cardano has no chain ID so just setting mainnet here.
+    selector: 18250519624687173261
+    name: cardano-mainnet

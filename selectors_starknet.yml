@@ -1,0 +1,7 @@
+selectors:
+  "SN_MAIN":
+    selector: 5960762769611298915
+    name: ethereum-mainnet-starknet-1
+  "SN_SEPOLIA":
+    selector: 11318573058732070403
+    name: ethereum-testnet-sepolia-starknet-1

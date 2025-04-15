@@ -84,11 +84,11 @@ Chain names must respect the following format:
 
 When a component requires more than 1 word, use snake-case to connect them, e.g `polygon-zkevm`.
 
-| Parameter | Description | Example                       |
-| --- | --- |-------------------------------|
-| blockchain | Name of the chain | `ethereum`, `avalanche`, `polygon-zkevm`    |
-| type | Type of network | `testnet`, `mainnet`, `devnet`      |
-| network_instance | [Only if not mainnet] Identifier of specific network | `alfajores`, `holesky`, `sepolia`, `1` |
+| Parameter        | Description                                          | Example                                  |
+| ---------------- | ---------------------------------------------------- | ---------------------------------------- |
+| blockchain       | Name of the chain                                    | `ethereum`, `avalanche`, `polygon-zkevm` |
+| type             | Type of network                                      | `testnet`, `mainnet`, `devnet`           |
+| network_instance | [Only if not mainnet] Identifier of specific network | `alfajores`, `holesky`, `sepolia`, `1`   |
 
 More on `network_instance`: only include it if `type` is not mainnet. This is because legacy testnet instances are often dropped after a new one is spun up, e.g Ethereum Rinkeby.
 
