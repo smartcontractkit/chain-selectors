@@ -2,6 +2,3 @@ selectors:
   mainnet: # Polkadot has no chain ID so just setting mainnet here.
     selector: 17682575637005174718
     name: polkadot-mainnet
-  2090: # Centrifuge EVM compatible parachain
-    selector: 16208397184138842754
-    name: polkadot-testnet-centrifuge-demo

@@ -331,7 +331,11 @@ selectors:
   6930:
     selector: 305104239123120457
     name: "nibiru-testnet"
-  
+
+  2090: # Centrifuge EVM compatible parachain
+    selector: 16208397184138842754
+    name: polkadot-testnet-centrifuge-demo
+
 
 
   # Mainnets
