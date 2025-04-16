@@ -6,12 +6,14 @@ import (
 )
 
 const (
-	FamilyEVM      = "evm"
-	FamilySolana   = "solana"
-	FamilyStarknet = "starknet"
-	FamilyCosmos   = "cosmos"
-	FamilyAptos    = "aptos"
-	FamilyTron     = "tron"
+	FamilyEVM       = "evm"
+	FamilySolana    = "solana"
+	FamilyStarknet  = "starknet"
+	FamilyCosmos    = "cosmos"
+	FamilyAptos     = "aptos"
+	FamilyTron      = "tron"
+	FamilyAvalanche = "avalanche"
+	FamilyBeacon    = "beacon"
 )
 
 type chainInfo struct {
@@ -66,6 +68,28 @@ func getChainInfo(selector uint64) (chainInfo, error) {
 
 	}
 
+	// check avalanche
+	_, exist = avalancheChainIdBySelector[selector]
+	if exist {
+		family := FamilyAvalanche
+
+		chainID, err := AvalancheChainIdFromSelector(selector)
+		if err != nil {
+			return chainInfo{}, fmt.Errorf("failed to get %v chain ID from selector %d: %w", chainID, selector, err)
+		}
+
+		details, exist := avalancheSelectorsMap[chainID]
+		if !exist {
+			return chainInfo{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return chainInfo{
+			Family:       family,
+			ChainID:      fmt.Sprintf("%s", chainID),
+			ChainDetails: details,
+		}, nil
+	}
+
 	// check aptos
 	_, exist = aptosChainsBySelector[selector]
 	if exist {
@@ -77,6 +101,28 @@ func getChainInfo(selector uint64) (chainInfo, error) {
 		}
 
 		details, exist := aptosSelectorsMap[chainID]
+		if !exist {
+			return chainInfo{}, fmt.Errorf("invalid chain id %d for %s", chainID, family)
+		}
+
+		return chainInfo{
+			Family:       family,
+			ChainID:      fmt.Sprintf("%d", chainID),
+			ChainDetails: details,
+		}, nil
+	}
+
+	// check beacon
+	_, exist = beaconChainIdBySelector[selector]
+	if exist {
+		family := FamilyBeacon
+
+		chainID, err := BeaconChainIdFromSelector(selector)
+		if err != nil {
+			return chainInfo{}, fmt.Errorf("failed to get %v chain ID from selector %d: %w", chainID, selector, err)
+		}
+
+		details, exist := beaconSelectorsMap[chainID]
 		if !exist {
 			return chainInfo{}, fmt.Errorf("invalid chain id %d for %s", chainID, family)
 		}
@@ -152,6 +198,13 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 		}
 
 		return details, nil
+	case FamilyAvalanche:
+		details, exist := avalancheSelectorsMap[chainID]
+		if !exist {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return details, nil
 	case FamilyAptos:
 		aptosChainId, err := strconv.ParseUint(chainID, 10, 64)
 		if err != nil {
@@ -159,6 +212,18 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 		}
 
 		details, exist := aptosSelectorsMap[aptosChainId]
+		if !exist {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return details, nil
+	case FamilyBeacon:
+		beaconChainId, err := strconv.ParseUint(chainID, 10, 64)
+		if err != nil {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		details, exist := beaconSelectorsMap[beaconChainId]
 		if !exist {
 			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
