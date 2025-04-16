@@ -48,6 +48,7 @@ var (
 	CELO_TESTNET_ALFAJORES                         = Chain{EvmChainID: 44787, Selector: 3552045678561919002, Name: "celo-testnet-alfajores"}
 	COINEX_SMART_CHAIN_MAINNET                     = Chain{EvmChainID: 52, Selector: 1761333065194157300, Name: "coinex_smart_chain-mainnet"}
 	COINEX_SMART_CHAIN_TESTNET                     = Chain{EvmChainID: 53, Selector: 8955032871639343000, Name: "coinex_smart_chain-testnet"}
+	CONFLUX_MAINNET                                = Chain{EvmChainID: 1030, Selector: 3358365939762719202, Name: "conflux-mainnet"}
 	CORE_MAINNET                                   = Chain{EvmChainID: 1116, Selector: 1224752112135636129, Name: "core-mainnet"}
 	CORE_TESTNET                                   = Chain{EvmChainID: 1114, Selector: 4264732132125536123, Name: "core-testnet"}
 	CORN_MAINNET                                   = Chain{EvmChainID: 21000000, Selector: 9043146809313071210, Name: "corn-mainnet"}
@@ -171,6 +172,7 @@ var (
 	POLKADOT_MAINNET_MOONBEAM                      = Chain{EvmChainID: 1284, Selector: 1252863800116739621, Name: "polkadot-mainnet-moonbeam"}
 	POLKADOT_TESTNET_ASTAR_SHIBUYA                 = Chain{EvmChainID: 81, Selector: 6955638871347136141, Name: "polkadot-testnet-astar-shibuya"}
 	POLKADOT_TESTNET_CENTRIFUGE_ALTAIR             = Chain{EvmChainID: 2088, Selector: 2333097300889804761, Name: "polkadot-testnet-centrifuge-altair"}
+	POLKADOT_TESTNET_CENTRIFUGE_DEMO               = Chain{EvmChainID: 2090, Selector: 16208397184138842754, Name: "polkadot-testnet-centrifuge-demo"}
 	POLKADOT_TESTNET_DARWINIA_PANGORO              = Chain{EvmChainID: 45, Selector: 4340886533089894000, Name: "polkadot-testnet-darwinia-pangoro"}
 	POLKADOT_TESTNET_MOONBEAM_MOONBASE             = Chain{EvmChainID: 1287, Selector: 5361632739113536121, Name: "polkadot-testnet-moonbeam-moonbase"}
 	POLYGON_MAINNET                                = Chain{EvmChainID: 137, Selector: 4051577828743386545, Name: "polygon-mainnet"}
@@ -307,6 +309,7 @@ var (
 	VELAS_TESTNET                                  = Chain{EvmChainID: 111, Selector: 572210378683744374, Name: "velas-testnet"}
 	WEMIX_MAINNET                                  = Chain{EvmChainID: 1111, Selector: 5142893604156789321, Name: "wemix-mainnet"}
 	WEMIX_TESTNET                                  = Chain{EvmChainID: 1112, Selector: 9284632837123596123, Name: "wemix-testnet"}
+	ZETACHAIN_MAINNET                              = Chain{EvmChainID: 7000, Selector: 10817664450262215148, Name: "zetachain-mainnet"}
 	ZKLINK_NOVA_MAINNET                            = Chain{EvmChainID: 810180, Selector: 4350319965322101699, Name: "zklink_nova-mainnet"}
 	ZKLINK_NOVA_TESTNET                            = Chain{EvmChainID: 810181, Selector: 5837261596322416298, Name: "zklink_nova-testnet"}
 	ZORA_MAINNET                                   = Chain{EvmChainID: 7777777, Selector: 3555797439612589184, Name: "zora-mainnet"}
@@ -353,6 +356,7 @@ var ALL = []Chain{
 	CELO_TESTNET_ALFAJORES,
 	COINEX_SMART_CHAIN_MAINNET,
 	COINEX_SMART_CHAIN_TESTNET,
+	CONFLUX_MAINNET,
 	CORE_MAINNET,
 	CORE_TESTNET,
 	CORN_MAINNET,
@@ -476,6 +480,7 @@ var ALL = []Chain{
 	POLKADOT_MAINNET_MOONBEAM,
 	POLKADOT_TESTNET_ASTAR_SHIBUYA,
 	POLKADOT_TESTNET_CENTRIFUGE_ALTAIR,
+	POLKADOT_TESTNET_CENTRIFUGE_DEMO,
 	POLKADOT_TESTNET_DARWINIA_PANGORO,
 	POLKADOT_TESTNET_MOONBEAM_MOONBASE,
 	POLYGON_MAINNET,
@@ -612,6 +617,7 @@ var ALL = []Chain{
 	VELAS_TESTNET,
 	WEMIX_MAINNET,
 	WEMIX_TESTNET,
+	ZETACHAIN_MAINNET,
 	ZKLINK_NOVA_MAINNET,
 	ZKLINK_NOVA_TESTNET,
 	ZORA_MAINNET,
