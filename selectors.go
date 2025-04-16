@@ -15,6 +15,7 @@ const (
 	FamilyAvalanche = "avalanche"
 	FamilyBeacon    = "beacon"
 	FamilyBitcoin   = "bitcoin"
+	FamilyDogecoin  = "dogecoin"
 )
 
 type chainInfo struct {
@@ -157,6 +158,28 @@ func getChainInfo(selector uint64) (chainInfo, error) {
 		}, nil
 	}
 
+	// check dogecoin
+	_, exist = dogecoinChainIdBySelector[selector]
+	if exist {
+		family := FamilyDogecoin
+
+		chainID, err := DogecoinChainIdFromSelector(selector)
+		if err != nil {
+			return chainInfo{}, fmt.Errorf("failed to get %v chain ID from selector %d: %w", chainID, selector, err)
+		}
+
+		details, exist := dogecoinSelectorsMap[chainID]
+		if !exist {
+			return chainInfo{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return chainInfo{
+			Family:       family,
+			ChainID:      chainID,
+			ChainDetails: details,
+		}, nil
+	}
+
 	// check tron
 	_, exist = tronChainIdBySelector[selector]
 	if exist {
@@ -254,6 +277,13 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 		return details, nil
 	case FamilyBitcoin:
 		details, exist := bitcoinSelectorsMap[chainID]
+		if !exist {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return details, nil
+	case FamilyDogecoin:
+		details, exist := dogecoinSelectorsMap[chainID]
 		if !exist {
 			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
