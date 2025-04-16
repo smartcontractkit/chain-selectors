@@ -343,6 +343,9 @@ selectors:
   9000:
     selector: 344208382356656551
     name: "ondo-testnet"
+  2090: # Centrifuge EVM compatible parachain
+    selector: 16208397184138842754
+    name: polkadot-testnet-centrifuge-demo
 
   # Mainnets
   1:
@@ -617,3 +620,9 @@ selectors:
   68414:
     selector: 12657445206920369324
     name: "nexon-mainnet-henesys"
+  7000:
+    selector: 10817664450262215148
+    name: "zetachain-mainnet"
+  1030:
+    selector: 3358365939762719202
+    name: "conflux-mainnet"
