@@ -336,6 +336,7 @@ selectors:
     name: "ondo-testnet"
 
 
+
   # Mainnets
   1:
     selector: 5009297550715157269
@@ -603,3 +604,9 @@ selectors:
   68414:
     selector: 12657445206920369324
     name: "nexon-mainnet-henesys"
+  7000:
+    selector: 10817664450262215148
+    name: "zetachain-mainnet"
+  1030:
+    selector: 3358365939762719202
+    name: "conflux-mainnet"
