@@ -343,9 +343,7 @@ selectors:
   9000:
     selector: 344208382356656551
     name: "ondo-testnet"
-  2090: # Centrifuge EVM compatible parachain
-    selector: 16208397184138842754
-    name: polkadot-testnet-centrifuge-demo
+
 
   # Mainnets
   1:

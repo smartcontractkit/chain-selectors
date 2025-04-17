@@ -177,7 +177,6 @@ var (
 	POLKADOT_MAINNET_MOONBEAM                      = Chain{EvmChainID: 1284, Selector: 1252863800116739621, Name: "polkadot-mainnet-moonbeam"}
 	POLKADOT_TESTNET_ASTAR_SHIBUYA                 = Chain{EvmChainID: 81, Selector: 6955638871347136141, Name: "polkadot-testnet-astar-shibuya"}
 	POLKADOT_TESTNET_CENTRIFUGE_ALTAIR             = Chain{EvmChainID: 2088, Selector: 2333097300889804761, Name: "polkadot-testnet-centrifuge-altair"}
-	POLKADOT_TESTNET_CENTRIFUGE_DEMO               = Chain{EvmChainID: 2090, Selector: 16208397184138842754, Name: "polkadot-testnet-centrifuge-demo"}
 	POLKADOT_TESTNET_DARWINIA_PANGORO              = Chain{EvmChainID: 45, Selector: 4340886533089894000, Name: "polkadot-testnet-darwinia-pangoro"}
 	POLKADOT_TESTNET_MOONBEAM_MOONBASE             = Chain{EvmChainID: 1287, Selector: 5361632739113536121, Name: "polkadot-testnet-moonbeam-moonbase"}
 	POLYGON_MAINNET                                = Chain{EvmChainID: 137, Selector: 4051577828743386545, Name: "polygon-mainnet"}
@@ -494,7 +493,6 @@ var ALL = []Chain{
 	POLKADOT_MAINNET_MOONBEAM,
 	POLKADOT_TESTNET_ASTAR_SHIBUYA,
 	POLKADOT_TESTNET_CENTRIFUGE_ALTAIR,
-	POLKADOT_TESTNET_CENTRIFUGE_DEMO,
 	POLKADOT_TESTNET_DARWINIA_PANGORO,
 	POLKADOT_TESTNET_MOONBEAM_MOONBASE,
 	POLYGON_MAINNET,
