@@ -1,0 +1,8 @@
+selectors:
+  -239:
+    name: ton-mainnet
+    selector: 16448340667252469081
+  -3:
+    name: ton-testnet
+    selector: 1399300952838017768
+
