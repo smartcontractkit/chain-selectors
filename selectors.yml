@@ -182,6 +182,9 @@ selectors:
   80069:
     selector: 7728255861635209484
     name: "berachain-testnet-bepolia"
+  80087:
+    selector: 2285225387454015855
+    name: "zero-g-testnet-galileo"
   84531:
     selector: 5790810961207155433
     name: "ethereum-testnet-goerli-base-1"
