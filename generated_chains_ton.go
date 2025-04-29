@@ -9,11 +9,13 @@ type TonChain struct {
 }
 
 var (
-	TON_MAINNET = TonChain{ChainID: -239, Selector: 16448340667252469081, Name: "ton-mainnet"}
-	TON_TESTNET = TonChain{ChainID: -3, Selector: 1399300952838017768, Name: "ton-testnet"}
+	TON_LOCALNET = TonChain{ChainID: -217, Selector: 13879075125137744094, Name: "ton-localnet"}
+	TON_MAINNET  = TonChain{ChainID: -239, Selector: 16448340667252469081, Name: "ton-mainnet"}
+	TON_TESTNET  = TonChain{ChainID: -3, Selector: 1399300952838017768, Name: "ton-testnet"}
 )
 
 var TonALL = []TonChain{
+	TON_LOCALNET,
 	TON_MAINNET,
 	TON_TESTNET,
 }

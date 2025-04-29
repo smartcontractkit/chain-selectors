@@ -5,4 +5,7 @@ selectors:
   -3:
     name: ton-testnet
     selector: 1399300952838017768
+  -217:
+    name: ton-localnet
+    selector: 13879075125137744094
 

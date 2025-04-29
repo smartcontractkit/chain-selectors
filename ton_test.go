@@ -27,6 +27,11 @@ func Test_TonYmlAreValid(t *testing.T) {
 			chainsId:      -3,
 			expectErr:     false,
 		},
+		{
+			name:          "ton-localnet",
+			chainSelector: 13879075125137744094,
+			chainsId:      -217,
+		},
 	}
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
