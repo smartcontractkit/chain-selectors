@@ -66,6 +66,7 @@ var (
 	ETHEREUM_MAINNET_HASHKEY_1                     = Chain{EvmChainID: 177, Selector: 7613811247471741961, Name: "ethereum-mainnet-hashkey-1"}
 	ETHEREUM_MAINNET_IMMUTABLE_ZKEVM_1             = Chain{EvmChainID: 13371, Selector: 1237925231416731909, Name: "ethereum-mainnet-immutable-zkevm-1"}
 	ETHEREUM_MAINNET_INK_1                         = Chain{EvmChainID: 57073, Selector: 3461204551265785888, Name: "ethereum-mainnet-ink-1"}
+	ETHEREUM_MAINNET_JANCTION_1                    = Chain{EvmChainID: 678, Selector: 9107126442626377432, Name: "ethereum-mainnet-janction-1"}
 	ETHEREUM_MAINNET_KROMA_1                       = Chain{EvmChainID: 255, Selector: 3719320017875267166, Name: "ethereum-mainnet-kroma-1"}
 	ETHEREUM_MAINNET_LINEA_1                       = Chain{EvmChainID: 59144, Selector: 4627098889531055414, Name: "ethereum-mainnet-linea-1"}
 	ETHEREUM_MAINNET_MANTLE_1                      = Chain{EvmChainID: 5000, Selector: 1556008542357238666, Name: "ethereum-mainnet-mantle-1"}
@@ -100,6 +101,7 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_CORN_1                = Chain{EvmChainID: 21000001, Selector: 1467427327723633929, Name: "ethereum-testnet-sepolia-corn-1"}
 	ETHEREUM_TESTNET_SEPOLIA_HASHKEY_1             = Chain{EvmChainID: 133, Selector: 4356164186791070119, Name: "ethereum-testnet-sepolia-hashkey-1"}
 	ETHEREUM_TESTNET_SEPOLIA_IMMUTABLE_ZKEVM_1     = Chain{EvmChainID: 13473, Selector: 4526165231216331901, Name: "ethereum-testnet-sepolia-immutable-zkevm-1"}
+	ETHEREUM_TESTNET_SEPOLIA_JANCTION_1            = Chain{EvmChainID: 679, Selector: 5059197667603797935, Name: "ethereum-testnet-sepolia-janction-1"}
 	ETHEREUM_TESTNET_SEPOLIA_KROMA_1               = Chain{EvmChainID: 2358, Selector: 5990477251245693094, Name: "ethereum-testnet-sepolia-kroma-1"}
 	ETHEREUM_TESTNET_SEPOLIA_LENS_1                = Chain{EvmChainID: 37111, Selector: 6827576821754315911, Name: "ethereum-testnet-sepolia-lens-1"}
 	ETHEREUM_TESTNET_SEPOLIA_LINEA_1               = Chain{EvmChainID: 59141, Selector: 5719461335882077547, Name: "ethereum-testnet-sepolia-linea-1"}
@@ -373,6 +375,7 @@ var ALL = []Chain{
 	ETHEREUM_MAINNET_HASHKEY_1,
 	ETHEREUM_MAINNET_IMMUTABLE_ZKEVM_1,
 	ETHEREUM_MAINNET_INK_1,
+	ETHEREUM_MAINNET_JANCTION_1,
 	ETHEREUM_MAINNET_KROMA_1,
 	ETHEREUM_MAINNET_LINEA_1,
 	ETHEREUM_MAINNET_MANTLE_1,
@@ -407,6 +410,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_CORN_1,
 	ETHEREUM_TESTNET_SEPOLIA_HASHKEY_1,
 	ETHEREUM_TESTNET_SEPOLIA_IMMUTABLE_ZKEVM_1,
+	ETHEREUM_TESTNET_SEPOLIA_JANCTION_1,
 	ETHEREUM_TESTNET_SEPOLIA_KROMA_1,
 	ETHEREUM_TESTNET_SEPOLIA_LENS_1,
 	ETHEREUM_TESTNET_SEPOLIA_LINEA_1,
