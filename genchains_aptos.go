@@ -3,17 +3,13 @@
 package main
 
 import (
-	"bytes"
 	"fmt"
 	"go/format"
-	"html/template"
 	"os"
-	"sort"
-	"strconv"
-	"strings"
-	"unicode"
+	"text/template"
 
 	chain_selectors "github.com/smartcontractkit/chain-selectors"
+	"github.com/smartcontractkit/chain-selectors/internal/gotmpl"
 )
 
 const filename = "generated_chains_aptos.go"
@@ -48,7 +44,7 @@ var AptosALL = []AptosChain{
 `)
 
 func main() {
-	src, err := genChainsSourceCode()
+	src, err := gotmpl.Run(chainTemplate, chain_selectors.AptosChainIdToChainSelector, chain_selectors.AptosNameFromChainId)
 	if err != nil {
 		panic(err)
 	}
@@ -73,42 +69,4 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-}
-
-func genChainsSourceCode() (string, error) {
-	var wr = new(bytes.Buffer)
-	chains := make([]chain, 0)
-
-	for ChainID, chainSel := range chain_selectors.AptosChainIdToChainSelector() {
-		name, err := chain_selectors.AptosNameFromChainId(ChainID)
-		if err != nil {
-			return "", err
-		}
-
-		chains = append(chains, chain{
-			ChainID:  ChainID,
-			Selector: chainSel,
-			Name:     name,
-			VarName:  toVarName(name, chainSel),
-		})
-	}
-
-	sort.Slice(chains, func(i, j int) bool { return chains[i].VarName < chains[j].VarName })
-	if err := chainTemplate.ExecuteTemplate(wr, "", chains); err != nil {
-		return "", err
-	}
-	return wr.String(), nil
-}
-
-func toVarName(name string, chainSel uint64) string {
-	const unnamed = "TEST"
-	x := strings.ReplaceAll(name, "-", "_")
-	x = strings.ToUpper(x)
-	if len(x) > 0 && unicode.IsDigit(rune(x[0])) {
-		x = unnamed + "_" + x
-	}
-	if len(x) == 0 {
-		x = unnamed + "_" + strconv.FormatUint(chainSel, 10)
-	}
-	return x
 }
