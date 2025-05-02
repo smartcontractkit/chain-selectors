@@ -136,6 +136,8 @@ var (
 	HYPERLIQUID_MAINNET                            = Chain{EvmChainID: 999, Selector: 2442541497099098535, Name: "hyperliquid-mainnet"}
 	HYPERLIQUID_TESTNET                            = Chain{EvmChainID: 998, Selector: 4286062357653186312, Name: "hyperliquid-testnet"}
 	INK_TESTNET_SEPOLIA                            = Chain{EvmChainID: 763373, Selector: 9763904284804119144, Name: "ink-testnet-sepolia"}
+	JANCTION_MAINNET                               = Chain{EvmChainID: 678, Selector: 9107126442626377432, Name: "janction-mainnet"}
+	JANCTION_TESTNET_SEPOLIA                       = Chain{EvmChainID: 679, Selector: 5059197667603797935, Name: "janction-testnet-sepolia"}
 	KAVA_MAINNET                                   = Chain{EvmChainID: 2222, Selector: 7550000543357438061, Name: "kava-mainnet"}
 	KAVA_TESTNET                                   = Chain{EvmChainID: 2221, Selector: 2110537777356199208, Name: "kava-testnet"}
 	KUSAMA_MAINNET_MOONRIVER                       = Chain{EvmChainID: 1285, Selector: 1355020143337428062, Name: "kusama-mainnet-moonriver"}
@@ -154,6 +156,8 @@ var (
 	NEAR_TESTNET                                   = Chain{EvmChainID: 398, Selector: 5061593697262339000, Name: "near-testnet"}
 	NEONLINK_MAINNET                               = Chain{EvmChainID: 259, Selector: 8239338020728974000, Name: "neonlink-mainnet"}
 	NEONLINK_TESTNET                               = Chain{EvmChainID: 9559, Selector: 1113014352258747600, Name: "neonlink-testnet"}
+	NEOX_MAINNET                                   = Chain{EvmChainID: 47763, Selector: 7222032299962346917, Name: "neox-mainnet"}
+	NEOX_TESTNET_T4                                = Chain{EvmChainID: 12227332, Selector: 2217764097022649312, Name: "neox-testnet-t4"}
 	NEXON_DEV                                      = Chain{EvmChainID: 5668, Selector: 8911150974185440581, Name: "nexon-dev"}
 	NEXON_MAINNET_HENESYS                          = Chain{EvmChainID: 68414, Selector: 12657445206920369324, Name: "nexon-mainnet-henesys"}
 	NEXON_MAINNET_LITH                             = Chain{EvmChainID: 60118, Selector: 15758750456714168963, Name: "nexon-mainnet-lith"}
@@ -443,6 +447,8 @@ var ALL = []Chain{
 	HYPERLIQUID_MAINNET,
 	HYPERLIQUID_TESTNET,
 	INK_TESTNET_SEPOLIA,
+	JANCTION_MAINNET,
+	JANCTION_TESTNET_SEPOLIA,
 	KAVA_MAINNET,
 	KAVA_TESTNET,
 	KUSAMA_MAINNET_MOONRIVER,
@@ -461,6 +467,8 @@ var ALL = []Chain{
 	NEAR_TESTNET,
 	NEONLINK_MAINNET,
 	NEONLINK_TESTNET,
+	NEOX_MAINNET,
+	NEOX_TESTNET_T4,
 	NEXON_DEV,
 	NEXON_MAINNET_HENESYS,
 	NEXON_MAINNET_LITH,
