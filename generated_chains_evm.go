@@ -156,6 +156,8 @@ var (
 	NEAR_TESTNET                                   = Chain{EvmChainID: 398, Selector: 5061593697262339000, Name: "near-testnet"}
 	NEONLINK_MAINNET                               = Chain{EvmChainID: 259, Selector: 8239338020728974000, Name: "neonlink-mainnet"}
 	NEONLINK_TESTNET                               = Chain{EvmChainID: 9559, Selector: 1113014352258747600, Name: "neonlink-testnet"}
+	NEOX_MAINNET                                   = Chain{EvmChainID: 47763, Selector: 7222032299962346917, Name: "neox-mainnet"}
+	NEOX_TESTNET                                   = Chain{EvmChainID: 12227332, Selector: 2217764097022649312, Name: "neox-testnet"}
 	NEXON_DEV                                      = Chain{EvmChainID: 5668, Selector: 8911150974185440581, Name: "nexon-dev"}
 	NEXON_MAINNET_HENESYS                          = Chain{EvmChainID: 68414, Selector: 12657445206920369324, Name: "nexon-mainnet-henesys"}
 	NEXON_MAINNET_LITH                             = Chain{EvmChainID: 60118, Selector: 15758750456714168963, Name: "nexon-mainnet-lith"}
@@ -465,6 +467,8 @@ var ALL = []Chain{
 	NEAR_TESTNET,
 	NEONLINK_MAINNET,
 	NEONLINK_TESTNET,
+	NEOX_MAINNET,
+	NEOX_TESTNET,
 	NEXON_DEV,
 	NEXON_MAINNET_HENESYS,
 	NEXON_MAINNET_LITH,
