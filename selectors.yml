@@ -62,7 +62,7 @@ selectors:
     name: "areon-testnet"
   678:
     selector: 9107126442626377432
-    name: "ethereum-mainnet-janction-1"
+    name: "ethereum-mainnet-janction"
   679:
     selector: 5059197667603797935
     name: "ethereum-testnet-sepolia-janction-1"
