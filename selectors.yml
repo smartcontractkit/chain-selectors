@@ -446,7 +446,7 @@ selectors:
     name: "treasure-mainnet"
   12227332:
     selector: 2217764097022649312
-    name: "neox-testnet"
+    name: "neox-testnet-t4"
   12324:
     selector: 3162193654116181371
     name: "ethereum-mainnet-arbitrum-1-l3x-1"
