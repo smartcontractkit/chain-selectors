@@ -17,13 +17,13 @@ func Test_SuiYmlAreValid(t *testing.T) {
 	}{
 		{
 			name:          "sui-mainnet",
-			chainSelector: 124615329519749607,
+			chainSelector: 1111,
 			chainsId:      1,
 			expectErr:     false,
 		},
 		{
 			name:          "sui-testnet",
-			chainSelector: 6302590918974934319,
+			chainSelector: 2222,
 			chainsId:      2,
 			expectErr:     false,
 		},
@@ -54,7 +54,7 @@ func Test_SuiChainSelectors(t *testing.T) {
 			"selector %v should be returned as sui family, but received %v",
 			selector, err)
 		require.NotEmpty(t, family)
-		require.Equal(t, FamilyAptos, family)
+		require.Equal(t, FamilySui, family)
 
 		id, err := SuiChainIdFromSelector(selector)
 		require.Nil(t, err)
@@ -69,7 +69,7 @@ func Test_SuiChainSelectors(t *testing.T) {
 
 func Test_SuiGetChainDetailsByChainIDAndFamily(t *testing.T) {
 	for k, v := range suiSelectorsMap {
-		details, err := GetChainDetailsByChainIDAndFamily(fmt.Sprint(k), FamilyAptos)
+		details, err := GetChainDetailsByChainIDAndFamily(fmt.Sprint(k), FamilySui)
 		assert.NoError(t, err)
 		assert.Equal(t, v, details)
 	}
