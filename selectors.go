@@ -210,6 +210,18 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 		}
 
 		return details, nil
+	case FamilySui:
+		suiChainId, err := strconv.ParseUint(chainID, 10, 64)
+		if err != nil {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		details, exist := suiSelectorsMap[suiChainId]
+		if !exist {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return details, nil
 	case FamilyTron:
 		tronChainId, err := strconv.ParseUint(chainID, 10, 64)
 		if err != nil {
