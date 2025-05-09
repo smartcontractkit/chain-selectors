@@ -9,9 +9,9 @@ type SuiChain struct {
 }
 
 var (
-	SUI_LOCALNET = SuiChain{ChainID: 4, Selector: 4444, Name: "sui-localnet"}
-	SUI_MAINNET  = SuiChain{ChainID: 1, Selector: 1111, Name: "sui-mainnet"}
-	SUI_TESTNET  = SuiChain{ChainID: 2, Selector: 2222, Name: "sui-testnet"}
+	SUI_LOCALNET = SuiChain{ChainID: 4, Selector: 18395503381733958356, Name: "sui-localnet"}
+	SUI_MAINNET  = SuiChain{ChainID: 1, Selector: 17529533435026248318, Name: "sui-mainnet"}
+	SUI_TESTNET  = SuiChain{ChainID: 2, Selector: 9762610643973837292, Name: "sui-testnet"}
 )
 
 var SuiALL = []SuiChain{
