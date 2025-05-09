@@ -17,13 +17,13 @@ func Test_SuiYmlAreValid(t *testing.T) {
 	}{
 		{
 			name:          "sui-mainnet",
-			chainSelector: 1111,
+			chainSelector: 17529533435026248318,
 			chainsId:      1,
 			expectErr:     false,
 		},
 		{
 			name:          "sui-testnet",
-			chainSelector: 2222,
+			chainSelector: 9762610643973837292,
 			chainsId:      2,
 			expectErr:     false,
 		},
