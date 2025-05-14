@@ -48,6 +48,7 @@ var (
 	CELO_TESTNET_ALFAJORES                         = Chain{EvmChainID: 44787, Selector: 3552045678561919002, Name: "celo-testnet-alfajores"}
 	COINEX_SMART_CHAIN_MAINNET                     = Chain{EvmChainID: 52, Selector: 1761333065194157300, Name: "coinex_smart_chain-mainnet"}
 	COINEX_SMART_CHAIN_TESTNET                     = Chain{EvmChainID: 53, Selector: 8955032871639343000, Name: "coinex_smart_chain-testnet"}
+	CONFLUX_MAINNET                                = Chain{EvmChainID: 1030, Selector: 3358365939762719202, Name: "conflux-mainnet"}
 	CORE_MAINNET                                   = Chain{EvmChainID: 1116, Selector: 1224752112135636129, Name: "core-mainnet"}
 	CORE_TESTNET                                   = Chain{EvmChainID: 1114, Selector: 4264732132125536123, Name: "core-testnet"}
 	CORN_MAINNET                                   = Chain{EvmChainID: 21000000, Selector: 9043146809313071210, Name: "corn-mainnet"}
@@ -313,6 +314,7 @@ var (
 	WEMIX_MAINNET                                  = Chain{EvmChainID: 1111, Selector: 5142893604156789321, Name: "wemix-mainnet"}
 	WEMIX_TESTNET                                  = Chain{EvmChainID: 1112, Selector: 9284632837123596123, Name: "wemix-testnet"}
 	ZERO_G_TESTNET_GALILEO                         = Chain{EvmChainID: 80087, Selector: 2285225387454015855, Name: "zero-g-testnet-galileo"}
+	ZETACHAIN_MAINNET                              = Chain{EvmChainID: 7000, Selector: 10817664450262215148, Name: "zetachain-mainnet"}
 	ZKLINK_NOVA_MAINNET                            = Chain{EvmChainID: 810180, Selector: 4350319965322101699, Name: "zklink_nova-mainnet"}
 	ZKLINK_NOVA_TESTNET                            = Chain{EvmChainID: 810181, Selector: 5837261596322416298, Name: "zklink_nova-testnet"}
 	ZORA_MAINNET                                   = Chain{EvmChainID: 7777777, Selector: 3555797439612589184, Name: "zora-mainnet"}
@@ -359,6 +361,7 @@ var ALL = []Chain{
 	CELO_TESTNET_ALFAJORES,
 	COINEX_SMART_CHAIN_MAINNET,
 	COINEX_SMART_CHAIN_TESTNET,
+	CONFLUX_MAINNET,
 	CORE_MAINNET,
 	CORE_TESTNET,
 	CORN_MAINNET,
@@ -624,6 +627,7 @@ var ALL = []Chain{
 	WEMIX_MAINNET,
 	WEMIX_TESTNET,
 	ZERO_G_TESTNET_GALILEO,
+	ZETACHAIN_MAINNET,
 	ZKLINK_NOVA_MAINNET,
 	ZKLINK_NOVA_TESTNET,
 	ZORA_MAINNET,
