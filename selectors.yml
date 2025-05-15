@@ -147,6 +147,9 @@ selectors:
   16600:
     selector: 16088006396410204581
     name: "0g-testnet-newton"
+  16601:
+    selector: 2131427466778448014
+    name: "0g-testnet-galileo"
   33111:
     selector: 9900119385908781505
     name: "apechain-testnet-curtis"
