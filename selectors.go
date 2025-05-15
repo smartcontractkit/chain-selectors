@@ -11,6 +11,7 @@ const (
 	FamilyStarknet = "starknet"
 	FamilyCosmos   = "cosmos"
 	FamilyAptos    = "aptos"
+	FamilySui      = "sui"
 	FamilyTron     = "tron"
 	FamilyTon      = "ton"
 )
@@ -78,6 +79,28 @@ func getChainInfo(selector uint64) (chainInfo, error) {
 		}
 
 		details, exist := aptosSelectorsMap[chainID]
+		if !exist {
+			return chainInfo{}, fmt.Errorf("invalid chain id %d for %s", chainID, family)
+		}
+
+		return chainInfo{
+			Family:       family,
+			ChainID:      fmt.Sprintf("%d", chainID),
+			ChainDetails: details,
+		}, nil
+	}
+
+	// check sui
+	_, exist = suiChainsBySelector[selector]
+	if exist {
+		family := FamilySui
+
+		chainID, err := SuiChainIdFromSelector(selector)
+		if err != nil {
+			return chainInfo{}, fmt.Errorf("failed to get %v chain ID from selector %d: %w", chainID, selector, err)
+		}
+
+		details, exist := suiSelectorsMap[chainID]
 		if !exist {
 			return chainInfo{}, fmt.Errorf("invalid chain id %d for %s", chainID, family)
 		}
@@ -182,6 +205,18 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 		}
 
 		details, exist := aptosSelectorsMap[aptosChainId]
+		if !exist {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return details, nil
+	case FamilySui:
+		suiChainId, err := strconv.ParseUint(chainID, 10, 64)
+		if err != nil {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		details, exist := suiSelectorsMap[suiChainId]
 		if !exist {
 			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
