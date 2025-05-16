@@ -162,6 +162,9 @@ selectors:
   44787:
     selector: 3552045678561919002
     name: "celo-testnet-alfajores"
+  48898:
+    selector: 13781831279385219069
+    name: "zircuit-testnet-garfield"
   48899:
     selector: 4562743618362911021
     name: "ethereum-testnet-sepolia-zircuit-1"
