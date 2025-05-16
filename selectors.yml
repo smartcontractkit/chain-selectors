@@ -165,6 +165,9 @@ selectors:
   48899:
     selector: 4562743618362911021
     name: "ethereum-testnet-sepolia-zircuit-1"
+  48898:
+    selector: 13781831279385219069
+    name: "zircuit-testnet-garfield"
   59140:
     selector: 1355246678561316402
     name: "ethereum-testnet-goerli-linea-1"

@@ -316,6 +316,7 @@ var (
 	WEMIX_TESTNET                                  = Chain{EvmChainID: 1112, Selector: 9284632837123596123, Name: "wemix-testnet"}
 	ZERO_G_TESTNET_GALILEO                         = Chain{EvmChainID: 80087, Selector: 2285225387454015855, Name: "zero-g-testnet-galileo"}
 	ZETACHAIN_MAINNET                              = Chain{EvmChainID: 7000, Selector: 10817664450262215148, Name: "zetachain-mainnet"}
+	ZIRCUIT_TESTNET_GARFIELD                       = Chain{EvmChainID: 48898, Selector: 13781831279385219069, Name: "zircuit-testnet-garfield"}
 	ZKLINK_NOVA_MAINNET                            = Chain{EvmChainID: 810180, Selector: 4350319965322101699, Name: "zklink_nova-mainnet"}
 	ZKLINK_NOVA_TESTNET                            = Chain{EvmChainID: 810181, Selector: 5837261596322416298, Name: "zklink_nova-testnet"}
 	ZORA_MAINNET                                   = Chain{EvmChainID: 7777777, Selector: 3555797439612589184, Name: "zora-mainnet"}
@@ -630,6 +631,7 @@ var ALL = []Chain{
 	WEMIX_TESTNET,
 	ZERO_G_TESTNET_GALILEO,
 	ZETACHAIN_MAINNET,
+	ZIRCUIT_TESTNET_GARFIELD,
 	ZKLINK_NOVA_MAINNET,
 	ZKLINK_NOVA_TESTNET,
 	ZORA_MAINNET,
