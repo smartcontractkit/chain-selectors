@@ -349,6 +349,9 @@ selectors:
   9000:
     selector: 344208382356656551
     name: "ondo-testnet"
+  129399:
+    selector: 9090863410735740267
+    name: "polygon-testnet-katana-tatara"
 
   # Mainnets
   1:
