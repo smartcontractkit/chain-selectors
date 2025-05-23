@@ -180,6 +180,7 @@ var (
 	POLKADOT_TESTNET_DARWINIA_PANGORO              = Chain{EvmChainID: 45, Selector: 4340886533089894000, Name: "polkadot-testnet-darwinia-pangoro"}
 	POLKADOT_TESTNET_MOONBEAM_MOONBASE             = Chain{EvmChainID: 1287, Selector: 5361632739113536121, Name: "polkadot-testnet-moonbeam-moonbase"}
 	POLYGON_MAINNET                                = Chain{EvmChainID: 137, Selector: 4051577828743386545, Name: "polygon-mainnet"}
+	POLYGON_MAINNET_KATANA_TATARA                  = Chain{EvmChainID: 747474, Selector: 2459028469735686113, Name: "polygon-mainnet-katana-tatara"}
 	POLYGON_TESTNET_AMOY                           = Chain{EvmChainID: 80002, Selector: 16281711391670634445, Name: "polygon-testnet-amoy"}
 	POLYGON_TESTNET_KATANA_TATARA                  = Chain{EvmChainID: 129399, Selector: 9090863410735740267, Name: "polygon-testnet-katana-tatara"}
 	POLYGON_TESTNET_MUMBAI                         = Chain{EvmChainID: 80001, Selector: 12532609583862916517, Name: "polygon-testnet-mumbai"}
@@ -496,6 +497,7 @@ var ALL = []Chain{
 	POLKADOT_TESTNET_DARWINIA_PANGORO,
 	POLKADOT_TESTNET_MOONBEAM_MOONBASE,
 	POLYGON_MAINNET,
+	POLYGON_MAINNET_KATANA_TATARA,
 	POLYGON_TESTNET_AMOY,
 	POLYGON_TESTNET_KATANA_TATARA,
 	POLYGON_TESTNET_MUMBAI,

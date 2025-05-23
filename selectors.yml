@@ -632,3 +632,6 @@ selectors:
   1030:
     selector: 3358365939762719202
     name: "conflux-mainnet"
+  747474:
+    selector: 2459028469735686113
+    name: "polygon-mainnet-katana-tatara"
