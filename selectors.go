@@ -11,7 +11,9 @@ const (
 	FamilyStarknet = "starknet"
 	FamilyCosmos   = "cosmos"
 	FamilyAptos    = "aptos"
+	FamilySui      = "sui"
 	FamilyTron     = "tron"
+	FamilyTon      = "ton"
 )
 
 type chainInfo struct {
@@ -88,6 +90,28 @@ func getChainInfo(selector uint64) (chainInfo, error) {
 		}, nil
 	}
 
+	// check sui
+	_, exist = suiChainsBySelector[selector]
+	if exist {
+		family := FamilySui
+
+		chainID, err := SuiChainIdFromSelector(selector)
+		if err != nil {
+			return chainInfo{}, fmt.Errorf("failed to get %v chain ID from selector %d: %w", chainID, selector, err)
+		}
+
+		details, exist := suiSelectorsMap[chainID]
+		if !exist {
+			return chainInfo{}, fmt.Errorf("invalid chain id %d for %s", chainID, family)
+		}
+
+		return chainInfo{
+			Family:       family,
+			ChainID:      fmt.Sprintf("%d", chainID),
+			ChainDetails: details,
+		}, nil
+	}
+
 	// check tron
 	_, exist = tronChainIdBySelector[selector]
 	if exist {
@@ -99,6 +123,28 @@ func getChainInfo(selector uint64) (chainInfo, error) {
 		}
 
 		details, exist := tronSelectorsMap[chainID]
+		if !exist {
+			return chainInfo{}, fmt.Errorf("invalid chain id %d for %s", chainID, family)
+		}
+
+		return chainInfo{
+			Family:       family,
+			ChainID:      fmt.Sprintf("%d", chainID),
+			ChainDetails: details,
+		}, nil
+	}
+
+	// check ton
+	_, exist = tonChainIdBySelector[selector]
+	if exist {
+		family := FamilyTon
+
+		chainID, err := TonChainIdFromSelector(selector)
+		if err != nil {
+			return chainInfo{}, fmt.Errorf("failed to get %v chain ID from selector %d: %w", chainID, selector, err)
+		}
+
+		details, exist := tonSelectorsMap[chainID]
 		if !exist {
 			return chainInfo{}, fmt.Errorf("invalid chain id %d for %s", chainID, family)
 		}
@@ -164,6 +210,18 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 		}
 
 		return details, nil
+	case FamilySui:
+		suiChainId, err := strconv.ParseUint(chainID, 10, 64)
+		if err != nil {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		details, exist := suiSelectorsMap[suiChainId]
+		if !exist {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return details, nil
 	case FamilyTron:
 		tronChainId, err := strconv.ParseUint(chainID, 10, 64)
 		if err != nil {
@@ -171,6 +229,18 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 		}
 
 		details, exist := tronSelectorsMap[tronChainId]
+		if !exist {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return details, nil
+
+	case FamilyTon:
+		tonChainId, err := strconv.ParseInt(chainID, 10, 32)
+		if err != nil {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+		details, exist := tonSelectorsMap[int32(tonChainId)]
 		if !exist {
 			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}

@@ -9,6 +9,8 @@ type Chain struct {
 }
 
 var (
+	ABSTRACT_MAINNET                               = Chain{EvmChainID: 2741, Selector: 3577778157919314504, Name: "abstract-mainnet"}
+	ABSTRACT_TESTNET                               = Chain{EvmChainID: 11124, Selector: 16235373811196386733, Name: "abstract-testnet"}
 	ANVIL_DEVNET                                   = Chain{EvmChainID: 31337, Selector: 7759470850252068959, Name: "anvil-devnet"}
 	APECHAIN_MAINNET                               = Chain{EvmChainID: 33139, Selector: 14894068710063348487, Name: "apechain-mainnet"}
 	APECHAIN_TESTNET_CURTIS                        = Chain{EvmChainID: 33111, Selector: 9900119385908781505, Name: "apechain-testnet-curtis"}
@@ -46,6 +48,7 @@ var (
 	CELO_TESTNET_ALFAJORES                         = Chain{EvmChainID: 44787, Selector: 3552045678561919002, Name: "celo-testnet-alfajores"}
 	COINEX_SMART_CHAIN_MAINNET                     = Chain{EvmChainID: 52, Selector: 1761333065194157300, Name: "coinex_smart_chain-mainnet"}
 	COINEX_SMART_CHAIN_TESTNET                     = Chain{EvmChainID: 53, Selector: 8955032871639343000, Name: "coinex_smart_chain-testnet"}
+	CONFLUX_MAINNET                                = Chain{EvmChainID: 1030, Selector: 3358365939762719202, Name: "conflux-mainnet"}
 	CORE_MAINNET                                   = Chain{EvmChainID: 1116, Selector: 1224752112135636129, Name: "core-mainnet"}
 	CORE_TESTNET                                   = Chain{EvmChainID: 1114, Selector: 4264732132125536123, Name: "core-testnet"}
 	CORN_MAINNET                                   = Chain{EvmChainID: 21000000, Selector: 9043146809313071210, Name: "corn-mainnet"}
@@ -115,6 +118,8 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1              = Chain{EvmChainID: 195, Selector: 2066098519157881736, Name: "ethereum-testnet-sepolia-xlayer-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT_1             = Chain{EvmChainID: 48899, Selector: 4562743618362911021, Name: "ethereum-testnet-sepolia-zircuit-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1              = Chain{EvmChainID: 300, Selector: 6898391096552792247, Name: "ethereum-testnet-sepolia-zksync-1"}
+	ETHERLINK_MAINNET                              = Chain{EvmChainID: 42793, Selector: 13624601974233774587, Name: "etherlink-mainnet"}
+	ETHERLINK_TESTNET                              = Chain{EvmChainID: 128123, Selector: 1910019406958449359, Name: "etherlink-testnet"}
 	FANTOM_MAINNET                                 = Chain{EvmChainID: 250, Selector: 3768048213127883732, Name: "fantom-mainnet"}
 	FANTOM_TESTNET                                 = Chain{EvmChainID: 4002, Selector: 4905564228793744293, Name: "fantom-testnet"}
 	FILECOIN_MAINNET                               = Chain{EvmChainID: 314, Selector: 4561443241176882990, Name: "filecoin-mainnet"}
@@ -132,19 +137,36 @@ var (
 	HYPERLIQUID_MAINNET                            = Chain{EvmChainID: 999, Selector: 2442541497099098535, Name: "hyperliquid-mainnet"}
 	HYPERLIQUID_TESTNET                            = Chain{EvmChainID: 998, Selector: 4286062357653186312, Name: "hyperliquid-testnet"}
 	INK_TESTNET_SEPOLIA                            = Chain{EvmChainID: 763373, Selector: 9763904284804119144, Name: "ink-testnet-sepolia"}
+	JANCTION_MAINNET                               = Chain{EvmChainID: 678, Selector: 9107126442626377432, Name: "janction-mainnet"}
+	JANCTION_TESTNET_SEPOLIA                       = Chain{EvmChainID: 679, Selector: 5059197667603797935, Name: "janction-testnet-sepolia"}
 	KAVA_MAINNET                                   = Chain{EvmChainID: 2222, Selector: 7550000543357438061, Name: "kava-mainnet"}
 	KAVA_TESTNET                                   = Chain{EvmChainID: 2221, Selector: 2110537777356199208, Name: "kava-testnet"}
 	KUSAMA_MAINNET_MOONRIVER                       = Chain{EvmChainID: 1285, Selector: 1355020143337428062, Name: "kusama-mainnet-moonriver"}
 	LENS_MAINNET                                   = Chain{EvmChainID: 232, Selector: 5608378062013572713, Name: "lens-mainnet"}
+	LISK_MAINNET                                   = Chain{EvmChainID: 1135, Selector: 15293031020466096408, Name: "lisk-mainnet"}
 	MEGAETH_TESTNET                                = Chain{EvmChainID: 6342, Selector: 2443239559770384419, Name: "megaeth-testnet"}
+	METAL_MAINNET                                  = Chain{EvmChainID: 1750, Selector: 13447077090413146373, Name: "metal-mainnet"}
+	METAL_TESTNET                                  = Chain{EvmChainID: 1740, Selector: 6286293440461807648, Name: "metal-testnet"}
 	MIND_MAINNET                                   = Chain{EvmChainID: 228, Selector: 11690709103138290329, Name: "mind-mainnet"}
 	MIND_TESTNET                                   = Chain{EvmChainID: 192940, Selector: 7189150270347329685, Name: "mind-testnet"}
+	MINT_MAINNET                                   = Chain{EvmChainID: 185, Selector: 17164792800244661392, Name: "mint-mainnet"}
+	MINT_TESTNET                                   = Chain{EvmChainID: 1687, Selector: 10749384167430721561, Name: "mint-testnet"}
 	MONAD_TESTNET                                  = Chain{EvmChainID: 10143, Selector: 2183018362218727504, Name: "monad-testnet"}
 	MORPH_MAINNET                                  = Chain{EvmChainID: 2818, Selector: 18164309074156128038, Name: "morph-mainnet"}
 	NEAR_MAINNET                                   = Chain{EvmChainID: 397, Selector: 2039744413822257700, Name: "near-mainnet"}
 	NEAR_TESTNET                                   = Chain{EvmChainID: 398, Selector: 5061593697262339000, Name: "near-testnet"}
 	NEONLINK_MAINNET                               = Chain{EvmChainID: 259, Selector: 8239338020728974000, Name: "neonlink-mainnet"}
 	NEONLINK_TESTNET                               = Chain{EvmChainID: 9559, Selector: 1113014352258747600, Name: "neonlink-testnet"}
+	NEOX_MAINNET                                   = Chain{EvmChainID: 47763, Selector: 7222032299962346917, Name: "neox-mainnet"}
+	NEOX_TESTNET_T4                                = Chain{EvmChainID: 12227332, Selector: 2217764097022649312, Name: "neox-testnet-t4"}
+	NEXON_DEV                                      = Chain{EvmChainID: 5668, Selector: 8911150974185440581, Name: "nexon-dev"}
+	NEXON_MAINNET_HENESYS                          = Chain{EvmChainID: 68414, Selector: 12657445206920369324, Name: "nexon-mainnet-henesys"}
+	NEXON_MAINNET_LITH                             = Chain{EvmChainID: 60118, Selector: 15758750456714168963, Name: "nexon-mainnet-lith"}
+	NEXON_QA                                       = Chain{EvmChainID: 807424, Selector: 14632960069656270105, Name: "nexon-qa"}
+	NEXON_STAGE                                    = Chain{EvmChainID: 847799, Selector: 5556806327594153475, Name: "nexon-stage"}
+	NIBIRU_MAINNET                                 = Chain{EvmChainID: 6900, Selector: 17349189558768828726, Name: "nibiru-mainnet"}
+	NIBIRU_TESTNET                                 = Chain{EvmChainID: 6930, Selector: 305104239123120457, Name: "nibiru-testnet"}
+	ONDO_TESTNET                                   = Chain{EvmChainID: 9000, Selector: 344208382356656551, Name: "ondo-testnet"}
 	PLUME_DEVNET                                   = Chain{EvmChainID: 98864, Selector: 3743020999916460931, Name: "plume-devnet"}
 	PLUME_MAINNET                                  = Chain{EvmChainID: 98866, Selector: 17912061998839310979, Name: "plume-mainnet"}
 	PLUME_TESTNET                                  = Chain{EvmChainID: 161221135, Selector: 14684575664602284776, Name: "plume-testnet"}
@@ -158,8 +180,10 @@ var (
 	POLKADOT_TESTNET_DARWINIA_PANGORO              = Chain{EvmChainID: 45, Selector: 4340886533089894000, Name: "polkadot-testnet-darwinia-pangoro"}
 	POLKADOT_TESTNET_MOONBEAM_MOONBASE             = Chain{EvmChainID: 1287, Selector: 5361632739113536121, Name: "polkadot-testnet-moonbeam-moonbase"}
 	POLYGON_MAINNET                                = Chain{EvmChainID: 137, Selector: 4051577828743386545, Name: "polygon-mainnet"}
+	POLYGON_MAINNET_KATANA                         = Chain{EvmChainID: 747474, Selector: 2459028469735686113, Name: "polygon-mainnet-katana"}
 	POLYGON_TESTNET_AMOY                           = Chain{EvmChainID: 80002, Selector: 16281711391670634445, Name: "polygon-testnet-amoy"}
 	POLYGON_TESTNET_MUMBAI                         = Chain{EvmChainID: 80001, Selector: 12532609583862916517, Name: "polygon-testnet-mumbai"}
+	POLYGON_TESTNET_TATARA                         = Chain{EvmChainID: 129399, Selector: 9090863410735740267, Name: "polygon-testnet-tatara"}
 	PRIVATE_TESTNET_ANDESITE                       = Chain{EvmChainID: 2024, Selector: 6915682381028791124, Name: "private-testnet-andesite"}
 	PRIVATE_TESTNET_GRANITE                        = Chain{EvmChainID: 2023, Selector: 3260900564719373474, Name: "private-testnet-granite"}
 	PRIVATE_TESTNET_MICA                           = Chain{EvmChainID: 424242, Selector: 4489326297382772450, Name: "private-testnet-mica"}
@@ -175,8 +199,11 @@ var (
 	SONIC_MAINNET                                  = Chain{EvmChainID: 146, Selector: 1673871237479749969, Name: "sonic-mainnet"}
 	SONIC_TESTNET_BLAZE                            = Chain{EvmChainID: 57054, Selector: 3676871237479449268, Name: "sonic-testnet-blaze"}
 	STORY_TESTNET                                  = Chain{EvmChainID: 1513, Selector: 4237030917318060427, Name: "story-testnet"}
+	SUPERSEED_MAINNET                              = Chain{EvmChainID: 5330, Selector: 470401360549526817, Name: "superseed-mainnet"}
+	SUPERSEED_TESTNET                              = Chain{EvmChainID: 53302, Selector: 13694007683517087973, Name: "superseed-testnet"}
 	TELOS_EVM_MAINNET                              = Chain{EvmChainID: 40, Selector: 1477345371608778000, Name: "telos-evm-mainnet"}
 	TELOS_EVM_TESTNET                              = Chain{EvmChainID: 41, Selector: 729797994450396300, Name: "telos-evm-testnet"}
+	TEST_0G_TESTNET_GALILEO                        = Chain{EvmChainID: 16601, Selector: 2131427466778448014, Name: "0g-testnet-galileo"}
 	TEST_0G_TESTNET_NEWTON                         = Chain{EvmChainID: 16600, Selector: 16088006396410204581, Name: "0g-testnet-newton"}
 	TEST_1000                                      = Chain{EvmChainID: 1000, Selector: 11787463284727550157, Name: "1000"}
 	TEST_1338                                      = Chain{EvmChainID: 1338, Selector: 2181150070347029680, Name: "1338"}
@@ -284,15 +311,25 @@ var (
 	TEST_98865                                     = Chain{EvmChainID: 98865, Selector: 3208172210661564830, Name: "98865"}
 	TREASURE_MAINNET                               = Chain{EvmChainID: 61166, Selector: 5214452172935136222, Name: "treasure-mainnet"}
 	TREASURE_TESTNET_TOPAZ                         = Chain{EvmChainID: 978658, Selector: 3676916124122457866, Name: "treasure-testnet-topaz"}
+	TRON_MAINNET_EVM                               = Chain{EvmChainID: 728126428, Selector: 1546563616611573946, Name: "tron-mainnet-evm"}
+	TRON_TESTNET_NILE_EVM                          = Chain{EvmChainID: 3448148188, Selector: 2052925811360307749, Name: "tron-testnet-nile-evm"}
+	TRON_TESTNET_SHASTA_EVM                        = Chain{EvmChainID: 2494104990, Selector: 13231703482326770598, Name: "tron-testnet-shasta-evm"}
 	VELAS_MAINNET                                  = Chain{EvmChainID: 106, Selector: 374210358663784372, Name: "velas-mainnet"}
 	VELAS_TESTNET                                  = Chain{EvmChainID: 111, Selector: 572210378683744374, Name: "velas-testnet"}
 	WEMIX_MAINNET                                  = Chain{EvmChainID: 1111, Selector: 5142893604156789321, Name: "wemix-mainnet"}
 	WEMIX_TESTNET                                  = Chain{EvmChainID: 1112, Selector: 9284632837123596123, Name: "wemix-testnet"}
+	ZERO_G_TESTNET_GALILEO                         = Chain{EvmChainID: 80087, Selector: 2285225387454015855, Name: "zero-g-testnet-galileo"}
+	ZETACHAIN_MAINNET                              = Chain{EvmChainID: 7000, Selector: 10817664450262215148, Name: "zetachain-mainnet"}
+	ZIRCUIT_TESTNET_GARFIELD                       = Chain{EvmChainID: 48898, Selector: 13781831279385219069, Name: "zircuit-testnet-garfield"}
 	ZKLINK_NOVA_MAINNET                            = Chain{EvmChainID: 810180, Selector: 4350319965322101699, Name: "zklink_nova-mainnet"}
 	ZKLINK_NOVA_TESTNET                            = Chain{EvmChainID: 810181, Selector: 5837261596322416298, Name: "zklink_nova-testnet"}
+	ZORA_MAINNET                                   = Chain{EvmChainID: 7777777, Selector: 3555797439612589184, Name: "zora-mainnet"}
+	ZORA_TESTNET                                   = Chain{EvmChainID: 999999999, Selector: 16244020411108056671, Name: "zora-testnet"}
 )
 
 var ALL = []Chain{
+	ABSTRACT_MAINNET,
+	ABSTRACT_TESTNET,
 	ANVIL_DEVNET,
 	APECHAIN_MAINNET,
 	APECHAIN_TESTNET_CURTIS,
@@ -330,6 +367,7 @@ var ALL = []Chain{
 	CELO_TESTNET_ALFAJORES,
 	COINEX_SMART_CHAIN_MAINNET,
 	COINEX_SMART_CHAIN_TESTNET,
+	CONFLUX_MAINNET,
 	CORE_MAINNET,
 	CORE_TESTNET,
 	CORN_MAINNET,
@@ -399,6 +437,8 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_XLAYER_1,
 	ETHEREUM_TESTNET_SEPOLIA_ZIRCUIT_1,
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1,
+	ETHERLINK_MAINNET,
+	ETHERLINK_TESTNET,
 	FANTOM_MAINNET,
 	FANTOM_TESTNET,
 	FILECOIN_MAINNET,
@@ -416,19 +456,36 @@ var ALL = []Chain{
 	HYPERLIQUID_MAINNET,
 	HYPERLIQUID_TESTNET,
 	INK_TESTNET_SEPOLIA,
+	JANCTION_MAINNET,
+	JANCTION_TESTNET_SEPOLIA,
 	KAVA_MAINNET,
 	KAVA_TESTNET,
 	KUSAMA_MAINNET_MOONRIVER,
 	LENS_MAINNET,
+	LISK_MAINNET,
 	MEGAETH_TESTNET,
+	METAL_MAINNET,
+	METAL_TESTNET,
 	MIND_MAINNET,
 	MIND_TESTNET,
+	MINT_MAINNET,
+	MINT_TESTNET,
 	MONAD_TESTNET,
 	MORPH_MAINNET,
 	NEAR_MAINNET,
 	NEAR_TESTNET,
 	NEONLINK_MAINNET,
 	NEONLINK_TESTNET,
+	NEOX_MAINNET,
+	NEOX_TESTNET_T4,
+	NEXON_DEV,
+	NEXON_MAINNET_HENESYS,
+	NEXON_MAINNET_LITH,
+	NEXON_QA,
+	NEXON_STAGE,
+	NIBIRU_MAINNET,
+	NIBIRU_TESTNET,
+	ONDO_TESTNET,
 	PLUME_DEVNET,
 	PLUME_MAINNET,
 	PLUME_TESTNET,
@@ -442,8 +499,10 @@ var ALL = []Chain{
 	POLKADOT_TESTNET_DARWINIA_PANGORO,
 	POLKADOT_TESTNET_MOONBEAM_MOONBASE,
 	POLYGON_MAINNET,
+	POLYGON_MAINNET_KATANA,
 	POLYGON_TESTNET_AMOY,
 	POLYGON_TESTNET_MUMBAI,
+	POLYGON_TESTNET_TATARA,
 	PRIVATE_TESTNET_ANDESITE,
 	PRIVATE_TESTNET_GRANITE,
 	PRIVATE_TESTNET_MICA,
@@ -459,8 +518,11 @@ var ALL = []Chain{
 	SONIC_MAINNET,
 	SONIC_TESTNET_BLAZE,
 	STORY_TESTNET,
+	SUPERSEED_MAINNET,
+	SUPERSEED_TESTNET,
 	TELOS_EVM_MAINNET,
 	TELOS_EVM_TESTNET,
+	TEST_0G_TESTNET_GALILEO,
 	TEST_0G_TESTNET_NEWTON,
 	TEST_1000,
 	TEST_1338,
@@ -568,10 +630,18 @@ var ALL = []Chain{
 	TEST_98865,
 	TREASURE_MAINNET,
 	TREASURE_TESTNET_TOPAZ,
+	TRON_MAINNET_EVM,
+	TRON_TESTNET_NILE_EVM,
+	TRON_TESTNET_SHASTA_EVM,
 	VELAS_MAINNET,
 	VELAS_TESTNET,
 	WEMIX_MAINNET,
 	WEMIX_TESTNET,
+	ZERO_G_TESTNET_GALILEO,
+	ZETACHAIN_MAINNET,
+	ZIRCUIT_TESTNET_GARFIELD,
 	ZKLINK_NOVA_MAINNET,
 	ZKLINK_NOVA_TESTNET,
+	ZORA_MAINNET,
+	ZORA_TESTNET,
 }

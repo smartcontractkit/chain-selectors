@@ -17,19 +17,19 @@ func Test_TronYmlAreValid(t *testing.T) {
 	}{
 		{
 			name:          "tron-mainnet",
-			chainSelector: 1546563616611573946,
+			chainSelector: 1546563616611573945,
 			chainsId:      728126428,
 			expectErr:     false,
 		},
 		{
 			name:          "tron-testnet-nile",
-			chainSelector: 2052925811360307749,
+			chainSelector: 2052925811360307740,
 			chainsId:      3448148188,
 			expectErr:     false,
 		},
 		{
 			name:          "tron-testnet-shasta",
-			chainSelector: 13231703482326770598,
+			chainSelector: 13231703482326770597,
 			chainsId:      2494104990,
 			expectErr:     false,
 		},

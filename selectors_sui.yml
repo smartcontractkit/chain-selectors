@@ -1,0 +1,10 @@
+selectors:
+  1:
+    name: sui-mainnet
+    selector: 17529533435026248318
+  2: 
+    name: sui-testnet
+    selector: 9762610643973837292
+  4:
+    name: sui-localnet
+    selector: 18395503381733958356
