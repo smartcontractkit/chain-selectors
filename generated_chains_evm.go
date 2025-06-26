@@ -52,7 +52,6 @@ var (
 	CORE_MAINNET                                   = Chain{EvmChainID: 1116, Selector: 1224752112135636129, Name: "core-mainnet"}
 	CORE_TESTNET                                   = Chain{EvmChainID: 1114, Selector: 4264732132125536123, Name: "core-testnet"}
 	CORN_MAINNET                                   = Chain{EvmChainID: 21000000, Selector: 9043146809313071210, Name: "corn-mainnet"}
-	CRONOS_MAINNET                                 = Chain{EvmChainID: 25, Selector: 1456215246176062136, Name: "cronos-mainnet"}
 	CRONOS_TESTNET                                 = Chain{EvmChainID: 338, Selector: 2995292832068775165, Name: "cronos-testnet"}
 	CRONOS_TESTNET_ZKEVM_1                         = Chain{EvmChainID: 282, Selector: 3842103497652714138, Name: "cronos-testnet-zkevm-1"}
 	CRONOS_ZKEVM_MAINNET                           = Chain{EvmChainID: 388, Selector: 8788096068760390840, Name: "cronos-zkevm-mainnet"}
@@ -187,6 +186,7 @@ var (
 	PRIVATE_TESTNET_ANDESITE                       = Chain{EvmChainID: 2024, Selector: 6915682381028791124, Name: "private-testnet-andesite"}
 	PRIVATE_TESTNET_GRANITE                        = Chain{EvmChainID: 2023, Selector: 3260900564719373474, Name: "private-testnet-granite"}
 	PRIVATE_TESTNET_MICA                           = Chain{EvmChainID: 424242, Selector: 4489326297382772450, Name: "private-testnet-mica"}
+	PRIVATE_TESTNET_OBSIDIAN                       = Chain{EvmChainID: 25, Selector: 2795886852617363260, Name: "private-testnet-obsidian"}
 	PRIVATE_TESTNET_OPALA                          = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala"}
 	RONIN_MAINNET                                  = Chain{EvmChainID: 2020, Selector: 6916147374840168594, Name: "ronin-mainnet"}
 	RONIN_TESTNET_SAIGON                           = Chain{EvmChainID: 2021, Selector: 13116810400804392105, Name: "ronin-testnet-saigon"}
@@ -371,7 +371,6 @@ var ALL = []Chain{
 	CORE_MAINNET,
 	CORE_TESTNET,
 	CORN_MAINNET,
-	CRONOS_MAINNET,
 	CRONOS_TESTNET,
 	CRONOS_TESTNET_ZKEVM_1,
 	CRONOS_ZKEVM_MAINNET,
@@ -506,6 +505,7 @@ var ALL = []Chain{
 	PRIVATE_TESTNET_ANDESITE,
 	PRIVATE_TESTNET_GRANITE,
 	PRIVATE_TESTNET_MICA,
+	PRIVATE_TESTNET_OBSIDIAN,
 	PRIVATE_TESTNET_OPALA,
 	RONIN_MAINNET,
 	RONIN_TESTNET_SAIGON,
