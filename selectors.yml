@@ -66,6 +66,9 @@ selectors:
   679:
     selector: 5059197667603797935
     name: "janction-testnet-sepolia"
+  682:
+    selector: 6260932437388305511
+    name: "private-testnet-obsidian"
   919:
     selector: 829525985033418733
     name: "ethereum-testnet-sepolia-mode-1"

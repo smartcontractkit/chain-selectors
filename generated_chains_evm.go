@@ -187,6 +187,7 @@ var (
 	PRIVATE_TESTNET_ANDESITE                       = Chain{EvmChainID: 2024, Selector: 6915682381028791124, Name: "private-testnet-andesite"}
 	PRIVATE_TESTNET_GRANITE                        = Chain{EvmChainID: 2023, Selector: 3260900564719373474, Name: "private-testnet-granite"}
 	PRIVATE_TESTNET_MICA                           = Chain{EvmChainID: 424242, Selector: 4489326297382772450, Name: "private-testnet-mica"}
+	PRIVATE_TESTNET_OBSIDIAN                       = Chain{EvmChainID: 682, Selector: 6260932437388305511, Name: "private-testnet-obsidian"}
 	PRIVATE_TESTNET_OPALA                          = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala"}
 	RONIN_MAINNET                                  = Chain{EvmChainID: 2020, Selector: 6916147374840168594, Name: "ronin-mainnet"}
 	RONIN_TESTNET_SAIGON                           = Chain{EvmChainID: 2021, Selector: 13116810400804392105, Name: "ronin-testnet-saigon"}
@@ -506,6 +507,7 @@ var ALL = []Chain{
 	PRIVATE_TESTNET_ANDESITE,
 	PRIVATE_TESTNET_GRANITE,
 	PRIVATE_TESTNET_MICA,
+	PRIVATE_TESTNET_OBSIDIAN,
 	PRIVATE_TESTNET_OPALA,
 	RONIN_MAINNET,
 	RONIN_TESTNET_SAIGON,
