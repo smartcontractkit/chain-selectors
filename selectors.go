@@ -2,6 +2,7 @@ package chain_selectors
 
 import (
 	"fmt"
+	"regexp"
 	"strconv"
 )
 
@@ -249,4 +250,15 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 	default:
 		return ChainDetails{}, fmt.Errorf("family %s is not yet support", family)
 	}
+}
+
+// ExtractNetworkName removes chain env identifier from the full network name.
+func ExtractNetworkName(fullNetworkName string) (string, error) {
+	// Create a regexp pattern that matches any of the three.
+	re := regexp.MustCompile(`(mainnet|testnet|devnet)`)
+	name := re.FindString(fullNetworkName)
+	if name == "" {
+		return "", fmt.Errorf("failed to  name from : %s", fullNetworkName)
+	}
+	return name, nil
 }
