@@ -252,13 +252,13 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 	}
 }
 
-// ExtractNetworkName extracts the network name from a given selector string.
-func ExtractNetworkName(selector string) (string, error) {
+// ExtractNetworkName removes chain env identifier from the full network name.
+func ExtractNetworkName(fullNetworkName string) (string, error) {
 	// Create a regexp pattern that matches any of the three.
 	re := regexp.MustCompile(`(mainnet|testnet|devnet)`)
-	name := re.FindString(selector)
+	name := re.FindString(fullNetworkName)
 	if name == "" {
-		return "", fmt.Errorf("failed to extract network name from selector: %s", selector)
+		return "", fmt.Errorf("failed to  name from : %s", fullNetworkName)
 	}
 	return name, nil
 }
