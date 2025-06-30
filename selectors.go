@@ -252,13 +252,13 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 	}
 }
 
-// ExtractNetworkName removes chain env identifier from the full network name.
-func ExtractNetworkName(fullNetworkName string) (string, error) {
+// ExtractNetworkEnvName returns chain env identifier from the full network name, for e.g. blockchain-mainnet returns mainnet.
+func ExtractNetworkEnvName(networkName string) (string, error) {
 	// Create a regexp pattern that matches any of the three.
 	re := regexp.MustCompile(`(mainnet|testnet|devnet)`)
-	name := re.FindString(fullNetworkName)
-	if name == "" {
-		return "", fmt.Errorf("failed to  name from : %s", fullNetworkName)
+	envName := re.FindString(networkName)
+	if envName == "" {
+		return "", fmt.Errorf("failed to extract network env name from : %s", networkName)
 	}
-	return name, nil
+	return envName, nil
 }
