@@ -361,6 +361,9 @@ selectors:
   129399:
     selector: 9090863410735740267
     name: "polygon-testnet-tatara"
+  9746:
+    selector: 3967220077692964309
+    name: "plasma-testnet"
 
   # Mainnets
   1:
@@ -644,3 +647,6 @@ selectors:
   747474:
     selector: 2459028469735686113
     name: "polygon-mainnet-katana"
+  9745:
+    selector: 9335212494177455608
+    name: "plasma-mainnet"
