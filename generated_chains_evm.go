@@ -145,6 +145,7 @@ var (
 	LENS_MAINNET                                   = Chain{EvmChainID: 232, Selector: 5608378062013572713, Name: "lens-mainnet"}
 	LISK_MAINNET                                   = Chain{EvmChainID: 1135, Selector: 15293031020466096408, Name: "lisk-mainnet"}
 	MEGAETH_TESTNET                                = Chain{EvmChainID: 6342, Selector: 2443239559770384419, Name: "megaeth-testnet"}
+	MEMENTO_TESTNET                                = Chain{EvmChainID: 12052024, Selector: 4827185390138236183, Name: "memento-testnet"}
 	METAL_MAINNET                                  = Chain{EvmChainID: 1750, Selector: 13447077090413146373, Name: "metal-mainnet"}
 	METAL_TESTNET                                  = Chain{EvmChainID: 1740, Selector: 6286293440461807648, Name: "metal-testnet"}
 	MIND_MAINNET                                   = Chain{EvmChainID: 228, Selector: 11690709103138290329, Name: "mind-mainnet"}
@@ -167,6 +168,7 @@ var (
 	NIBIRU_MAINNET                                 = Chain{EvmChainID: 6900, Selector: 17349189558768828726, Name: "nibiru-mainnet"}
 	NIBIRU_TESTNET                                 = Chain{EvmChainID: 6930, Selector: 305104239123120457, Name: "nibiru-testnet"}
 	ONDO_TESTNET                                   = Chain{EvmChainID: 9000, Selector: 344208382356656551, Name: "ondo-testnet"}
+	PHAROS_TESTNET                                 = Chain{EvmChainID: 688688, Selector: 4012524741200567430, Name: "pharos-testnet"}
 	PLASMA_MAINNET                                 = Chain{EvmChainID: 9745, Selector: 9335212494177455608, Name: "plasma-mainnet"}
 	PLASMA_TESTNET                                 = Chain{EvmChainID: 9746, Selector: 3967220077692964309, Name: "plasma-testnet"}
 	PLUME_DEVNET                                   = Chain{EvmChainID: 98864, Selector: 3743020999916460931, Name: "plume-devnet"}
@@ -467,6 +469,7 @@ var ALL = []Chain{
 	LENS_MAINNET,
 	LISK_MAINNET,
 	MEGAETH_TESTNET,
+	MEMENTO_TESTNET,
 	METAL_MAINNET,
 	METAL_TESTNET,
 	MIND_MAINNET,
@@ -489,6 +492,7 @@ var ALL = []Chain{
 	NIBIRU_MAINNET,
 	NIBIRU_TESTNET,
 	ONDO_TESTNET,
+	PHAROS_TESTNET,
 	PLASMA_MAINNET,
 	PLASMA_TESTNET,
 	PLUME_DEVNET,
