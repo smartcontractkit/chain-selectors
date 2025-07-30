@@ -364,6 +364,12 @@ selectors:
   9746:
     selector: 3967220077692964309
     name: "plasma-testnet"
+  12052024:
+    selector: 4827185390138236183
+    name: "memento-testnet"
+  688688:
+    selector: 4012524741200567430
+    name: "pharos-testnet"
 
   # Mainnets
   1:
