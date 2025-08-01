@@ -72,6 +72,9 @@ selectors:
   919:
     selector: 829525985033418733
     name: "ethereum-testnet-sepolia-mode-1"
+  1001:
+    selector: 2624132734533621656
+    name: "kaia-testnet-kairos"
   1029:
     selector: 4459371029167934217
     name: "bittorrent_chain-testnet"
@@ -504,6 +507,9 @@ selectors:
   5000:
     selector: 1556008542357238666
     name: "ethereum-mainnet-mantle-1"
+  8217:
+    selector: 9813823125703490621
+    name: "kaia-mainnet"
   8453:
     selector: 15971525489660198786
     name: "ethereum-mainnet-base-1"
