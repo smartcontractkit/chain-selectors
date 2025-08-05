@@ -373,6 +373,12 @@ selectors:
   688688:
     selector: 4012524741200567430
     name: "pharos-testnet"
+  812242:
+    selector: 7225665875429174318
+    name: "codex-testnet"
+  2391:
+    selector: 9488606126177218005
+    name: "tac-testnet"
 
   # Mainnets
   1:
@@ -662,3 +668,12 @@ selectors:
   9745:
     selector: 9335212494177455608
     name: "plasma-mainnet"
+  81224:
+    selector: 9478124434908827753
+    name: "codex-mainnet"
+  239:
+    selector: 5936861837188149645
+    name: "tac-mainnet"
+  143:
+    selector: 8481857512324358265
+    name: "monad-mainnet"
