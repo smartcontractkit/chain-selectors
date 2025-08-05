@@ -111,6 +111,9 @@ selectors:
   1908:
     selector: 4888058894222120000
     name: "bitcichain-testnet"
+  2129:
+    selector: 12168171414969487009
+    name: "memento-testnet"
   2221:
     selector: 2110537777356199208
     name: "kava-testnet"
@@ -367,9 +370,6 @@ selectors:
   9746:
     selector: 3967220077692964309
     name: "plasma-testnet"
-  12052024:
-    selector: 4827185390138236183
-    name: "memento-testnet"
   688688:
     selector: 4012524741200567430
     name: "pharos-testnet"
@@ -534,6 +534,9 @@ selectors:
   47763:
     selector: 7222032299962346917
     name: "neox-mainnet"
+  51888:
+    selector: 6473245816409426016
+    name: "memento-mainnet"
   80094:
     selector: 1294465214383781161
     name: "berachain-mainnet"
