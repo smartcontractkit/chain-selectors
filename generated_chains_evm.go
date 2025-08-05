@@ -46,6 +46,8 @@ var (
 	BITTORRENT_CHAIN_TESTNET                       = Chain{EvmChainID: 1029, Selector: 4459371029167934217, Name: "bittorrent_chain-testnet"}
 	CELO_MAINNET                                   = Chain{EvmChainID: 42220, Selector: 1346049177634351622, Name: "celo-mainnet"}
 	CELO_TESTNET_ALFAJORES                         = Chain{EvmChainID: 44787, Selector: 3552045678561919002, Name: "celo-testnet-alfajores"}
+	CODEX_MAINNET                                  = Chain{EvmChainID: 81224, Selector: 9478124434908827753, Name: "codex-mainnet"}
+	CODEX_TESTNET                                  = Chain{EvmChainID: 812242, Selector: 7225665875429174318, Name: "codex-testnet"}
 	COINEX_SMART_CHAIN_MAINNET                     = Chain{EvmChainID: 52, Selector: 1761333065194157300, Name: "coinex_smart_chain-mainnet"}
 	COINEX_SMART_CHAIN_TESTNET                     = Chain{EvmChainID: 53, Selector: 8955032871639343000, Name: "coinex_smart_chain-testnet"}
 	CONFLUX_MAINNET                                = Chain{EvmChainID: 1030, Selector: 3358365939762719202, Name: "conflux-mainnet"}
@@ -154,6 +156,7 @@ var (
 	MIND_TESTNET                                   = Chain{EvmChainID: 192940, Selector: 7189150270347329685, Name: "mind-testnet"}
 	MINT_MAINNET                                   = Chain{EvmChainID: 185, Selector: 17164792800244661392, Name: "mint-mainnet"}
 	MINT_TESTNET                                   = Chain{EvmChainID: 1687, Selector: 10749384167430721561, Name: "mint-testnet"}
+	MONAD_MAINNET                                  = Chain{EvmChainID: 143, Selector: 8481857512324358265, Name: "monad-mainnet"}
 	MONAD_TESTNET                                  = Chain{EvmChainID: 10143, Selector: 2183018362218727504, Name: "monad-testnet"}
 	MORPH_MAINNET                                  = Chain{EvmChainID: 2818, Selector: 18164309074156128038, Name: "morph-mainnet"}
 	NEAR_MAINNET                                   = Chain{EvmChainID: 397, Selector: 2039744413822257700, Name: "near-mainnet"}
@@ -208,6 +211,8 @@ var (
 	STORY_TESTNET                                  = Chain{EvmChainID: 1513, Selector: 4237030917318060427, Name: "story-testnet"}
 	SUPERSEED_MAINNET                              = Chain{EvmChainID: 5330, Selector: 470401360549526817, Name: "superseed-mainnet"}
 	SUPERSEED_TESTNET                              = Chain{EvmChainID: 53302, Selector: 13694007683517087973, Name: "superseed-testnet"}
+	TAC_MAINNET                                    = Chain{EvmChainID: 239, Selector: 5936861837188149645, Name: "tac-mainnet"}
+	TAC_TESTNET                                    = Chain{EvmChainID: 2391, Selector: 9488606126177218005, Name: "tac-testnet"}
 	TELOS_EVM_MAINNET                              = Chain{EvmChainID: 40, Selector: 1477345371608778000, Name: "telos-evm-mainnet"}
 	TELOS_EVM_TESTNET                              = Chain{EvmChainID: 41, Selector: 729797994450396300, Name: "telos-evm-testnet"}
 	TEST_0G_TESTNET_GALILEO                        = Chain{EvmChainID: 16601, Selector: 2131427466778448014, Name: "0g-testnet-galileo"}
@@ -372,6 +377,8 @@ var ALL = []Chain{
 	BITTORRENT_CHAIN_TESTNET,
 	CELO_MAINNET,
 	CELO_TESTNET_ALFAJORES,
+	CODEX_MAINNET,
+	CODEX_TESTNET,
 	COINEX_SMART_CHAIN_MAINNET,
 	COINEX_SMART_CHAIN_TESTNET,
 	CONFLUX_MAINNET,
@@ -480,6 +487,7 @@ var ALL = []Chain{
 	MIND_TESTNET,
 	MINT_MAINNET,
 	MINT_TESTNET,
+	MONAD_MAINNET,
 	MONAD_TESTNET,
 	MORPH_MAINNET,
 	NEAR_MAINNET,
@@ -534,6 +542,8 @@ var ALL = []Chain{
 	STORY_TESTNET,
 	SUPERSEED_MAINNET,
 	SUPERSEED_TESTNET,
+	TAC_MAINNET,
+	TAC_TESTNET,
 	TELOS_EVM_MAINNET,
 	TELOS_EVM_TESTNET,
 	TEST_0G_TESTNET_GALILEO,
