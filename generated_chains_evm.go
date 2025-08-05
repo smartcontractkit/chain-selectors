@@ -149,7 +149,8 @@ var (
 	LENS_MAINNET                                   = Chain{EvmChainID: 232, Selector: 5608378062013572713, Name: "lens-mainnet"}
 	LISK_MAINNET                                   = Chain{EvmChainID: 1135, Selector: 15293031020466096408, Name: "lisk-mainnet"}
 	MEGAETH_TESTNET                                = Chain{EvmChainID: 6342, Selector: 2443239559770384419, Name: "megaeth-testnet"}
-	MEMENTO_TESTNET                                = Chain{EvmChainID: 12052024, Selector: 4827185390138236183, Name: "memento-testnet"}
+	MEMENTO_MAINNET                                = Chain{EvmChainID: 51888, Selector: 6473245816409426016, Name: "memento-mainnet"}
+	MEMENTO_TESTNET                                = Chain{EvmChainID: 2129, Selector: 12168171414969487009, Name: "memento-testnet"}
 	METAL_MAINNET                                  = Chain{EvmChainID: 1750, Selector: 13447077090413146373, Name: "metal-mainnet"}
 	METAL_TESTNET                                  = Chain{EvmChainID: 1740, Selector: 6286293440461807648, Name: "metal-testnet"}
 	MIND_MAINNET                                   = Chain{EvmChainID: 228, Selector: 11690709103138290329, Name: "mind-mainnet"}
@@ -480,6 +481,7 @@ var ALL = []Chain{
 	LENS_MAINNET,
 	LISK_MAINNET,
 	MEGAETH_TESTNET,
+	MEMENTO_MAINNET,
 	MEMENTO_TESTNET,
 	METAL_MAINNET,
 	METAL_TESTNET,
