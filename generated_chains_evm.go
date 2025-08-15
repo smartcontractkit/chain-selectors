@@ -331,6 +331,8 @@ var (
 	VELAS_TESTNET                                  = Chain{EvmChainID: 111, Selector: 572210378683744374, Name: "velas-testnet"}
 	WEMIX_MAINNET                                  = Chain{EvmChainID: 1111, Selector: 5142893604156789321, Name: "wemix-mainnet"}
 	WEMIX_TESTNET                                  = Chain{EvmChainID: 1112, Selector: 9284632837123596123, Name: "wemix-testnet"}
+	XDC_MAINNET                                    = Chain{EvmChainID: 50, Selector: 17673274061779414707, Name: "xdc-mainnet"}
+	XDC_TESTNET                                    = Chain{EvmChainID: 51, Selector: 3017758115101368649, Name: "xdc-testnet"}
 	ZERO_G_TESTNET_GALILEO                         = Chain{EvmChainID: 80087, Selector: 2285225387454015855, Name: "zero-g-testnet-galileo"}
 	ZETACHAIN_MAINNET                              = Chain{EvmChainID: 7000, Selector: 10817664450262215148, Name: "zetachain-mainnet"}
 	ZIRCUIT_TESTNET_GARFIELD                       = Chain{EvmChainID: 48898, Selector: 13781831279385219069, Name: "zircuit-testnet-garfield"}
@@ -663,6 +665,8 @@ var ALL = []Chain{
 	VELAS_TESTNET,
 	WEMIX_MAINNET,
 	WEMIX_TESTNET,
+	XDC_MAINNET,
+	XDC_TESTNET,
 	ZERO_G_TESTNET_GALILEO,
 	ZETACHAIN_MAINNET,
 	ZIRCUIT_TESTNET_GARFIELD,

@@ -12,6 +12,9 @@ selectors:
   45:
     selector: 4340886533089894000
     name: "polkadot-testnet-darwinia-pangoro"
+  51:
+    selector: 3017758115101368649
+    name: "xdc-testnet"
   53:
     selector: 8955032871639343000
     name: "coinex_smart_chain-testnet"
@@ -399,6 +402,9 @@ selectors:
   46:
     selector: 8866418665544333000
     name: "polkadot-mainnet-darwinia"
+  50:
+    selector: 17673274061779414707
+    name: "xdc-mainnet"
   52:
     selector: 1761333065194157300
     name: "coinex_smart_chain-mainnet"
