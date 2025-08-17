@@ -3,6 +3,7 @@ package chain_selectors
 import (
 	_ "embed"
 	"fmt"
+	"log"
 
 	"github.com/mr-tron/base58"
 	"gopkg.in/yaml.v3"
@@ -24,6 +25,21 @@ var (
 )
 
 func init() {
+	// Load extra selectors
+	for chainID, chainDetails := range getExtraSelectors().Solana {
+		if _, exists := solanaSelectorsMap[chainID]; exists {
+			log.Printf("WARN: Skipping extra selector for chain %s because it already exists", chainID)
+			continue
+		}
+		solanaSelectorsMap[chainID] = chainDetails
+		solanaChainIdToChainSelector[chainID] = chainDetails
+		solanaChainsBySelector[chainDetails.ChainSelector] = SolanaChain{
+			ChainID:  chainID,
+			Selector: chainDetails.ChainSelector,
+			Name:     chainDetails.ChainName,
+		}
+	}
+
 	for _, v := range SolanaALL {
 		solanaChainsBySelector[v.Selector] = v
 	}

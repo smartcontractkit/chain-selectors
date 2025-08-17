@@ -3,6 +3,7 @@ package chain_selectors
 import (
 	_ "embed"
 	"fmt"
+	"log"
 
 	"gopkg.in/yaml.v3"
 )
@@ -18,6 +19,20 @@ var (
 )
 
 func init() {
+	// Load extra selectors
+	for chainID, chainDetails := range getExtraSelectors().Aptos {
+		if _, exists := aptosSelectorsMap[chainID]; exists {
+			log.Printf("WARN: Skipping extra selector for chain %d because it already exists", chainID)
+			continue
+		}
+		aptosSelectorsMap[chainID] = chainDetails
+		aptosChainsBySelector[chainDetails.ChainSelector] = AptosChain{
+			ChainID:  chainID,
+			Selector: chainDetails.ChainSelector,
+			Name:     chainDetails.ChainName,
+		}
+	}
+
 	for _, v := range AptosALL {
 		aptosChainsBySelector[v.Selector] = v
 	}
