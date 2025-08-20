@@ -1,6 +1,12 @@
 # EVM test selectors.
 # File doesn't have a family suffix for backwards compatibility.
 selectors:
+  4:
+    selector: 8966794841936584462
+    name: geth-devnet-4
+  5:
+    selector: 8966794841936584463
+    name: geth-devnet-5
   # For testing purposes
   1000:
     selector: 11787463284727550157

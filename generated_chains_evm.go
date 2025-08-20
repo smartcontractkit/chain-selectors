@@ -129,6 +129,8 @@ var (
 	FRAXTAL_MAINNET                                = Chain{EvmChainID: 252, Selector: 1462016016387883143, Name: "fraxtal-mainnet"}
 	GETH_DEVNET_2                                  = Chain{EvmChainID: 2337, Selector: 12922642891491394802, Name: "geth-devnet-2"}
 	GETH_DEVNET_3                                  = Chain{EvmChainID: 3337, Selector: 4793464827907405086, Name: "geth-devnet-3"}
+	GETH_DEVNET_4                                  = Chain{EvmChainID: 4, Selector: 8966794841936584462, Name: "geth-devnet-4"}
+	GETH_DEVNET_5                                  = Chain{EvmChainID: 5, Selector: 8966794841936584463, Name: "geth-devnet-5"}
 	GETH_TESTNET                                   = Chain{EvmChainID: 1337, Selector: 3379446385462418246, Name: "geth-testnet"}
 	GNOSIS_CHAIN_MAINNET                           = Chain{EvmChainID: 100, Selector: 465200170687744372, Name: "gnosis_chain-mainnet"}
 	GNOSIS_CHAIN_TESTNET_CHIADO                    = Chain{EvmChainID: 10200, Selector: 8871595565390010547, Name: "gnosis_chain-testnet-chiado"}
@@ -463,6 +465,8 @@ var ALL = []Chain{
 	FRAXTAL_MAINNET,
 	GETH_DEVNET_2,
 	GETH_DEVNET_3,
+	GETH_DEVNET_4,
+	GETH_DEVNET_5,
 	GETH_TESTNET,
 	GNOSIS_CHAIN_MAINNET,
 	GNOSIS_CHAIN_TESTNET_CHIADO,
