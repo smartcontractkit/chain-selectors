@@ -324,6 +324,7 @@ var (
 	TEST_98865                                     = Chain{EvmChainID: 98865, Selector: 3208172210661564830, Name: "98865"}
 	TREASURE_MAINNET                               = Chain{EvmChainID: 61166, Selector: 5214452172935136222, Name: "treasure-mainnet"}
 	TREASURE_TESTNET_TOPAZ                         = Chain{EvmChainID: 978658, Selector: 3676916124122457866, Name: "treasure-testnet-topaz"}
+	TRON_DEVNET_EVM                                = Chain{EvmChainID: 3360022319, Selector: 13231703482326770600, Name: "tron-devnet-evm"}
 	TRON_MAINNET_EVM                               = Chain{EvmChainID: 728126428, Selector: 1546563616611573946, Name: "tron-mainnet-evm"}
 	TRON_TESTNET_NILE_EVM                          = Chain{EvmChainID: 3448148188, Selector: 2052925811360307749, Name: "tron-testnet-nile-evm"}
 	TRON_TESTNET_SHASTA_EVM                        = Chain{EvmChainID: 2494104990, Selector: 13231703482326770598, Name: "tron-testnet-shasta-evm"}
@@ -658,6 +659,7 @@ var ALL = []Chain{
 	TEST_98865,
 	TREASURE_MAINNET,
 	TREASURE_TESTNET_TOPAZ,
+	TRON_DEVNET_EVM,
 	TRON_MAINNET_EVM,
 	TRON_TESTNET_NILE_EVM,
 	TRON_TESTNET_SHASTA_EVM,
