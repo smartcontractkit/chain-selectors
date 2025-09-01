@@ -55,7 +55,7 @@ evm:
     selector: 1234567890123456789
     name: "test-evm-chain"
 solana:
-  "test-solana-genesis": 
+  "ASwXBTzJM5evpfrWSHSjZaxPErZRuiGJnFixGUHi4NQT":  #Random solana chainID
     selector: 1111111111111111111
     name: "test-solana-chain"
 ton:
@@ -153,6 +153,9 @@ func TestExtraSelectorsE2E(t *testing.T) {
 	//Should not override chain id that already exists in selectors.yml
 	selector, err = SelectorFromChainId(999)
 	assert.NoError(t, err)
+    chain, ok := ChainBySelector(2442541497099098535)
+	assert.Equal(t, true, ok)
+	assert.Equal(t, "hyperliquid-mainnet", chain.Name)
 	assert.Equal(t, uint64(2442541497099098535), selector)
 	name, err = NameFromChainId(999)
 	assert.NoError(t, err)

@@ -16,8 +16,10 @@ type extraSelectorsData struct {
 	Tron   map[uint64]ChainDetails `yaml:"tron"`
 }
 
-var extraSelectors extraSelectorsData
-var extraSelectorsLoaded bool
+var (
+	extraSelectors       extraSelectorsData
+	extraSelectorsLoaded bool
+)
 
 func loadAndParseExtraSelectors() (result extraSelectorsData) {
 	extraSelectorsFile := os.Getenv("EXTRA_SELECTORS_FILE")
@@ -35,6 +37,25 @@ func loadAndParseExtraSelectors() (result extraSelectorsData) {
 	err = yaml.Unmarshal(fileContent, &data)
 	if err != nil {
 		log.Printf("Error unmarshaling extra selectors YAML: %v", err)
+		return
+	}
+
+	// Validate individual chain formats
+	err = validateSolanaChainID(data.Solana)
+	if err != nil {
+        log.Println(data.Solana)
+		log.Printf("Error parsing extra selectors for Solana: %v", err)
+		return
+	}
+
+	err = validateSuiChainID(data.Sui)
+	if err != nil {
+		log.Printf("Error parsing extra selectors for Sui: %v", err)
+		return
+	}
+	err = validateAptosChainID(data.Aptos)
+	if err != nil {
+		log.Printf("Error parsing extra selectors for Aptos: %v", err)
 		return
 	}
 

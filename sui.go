@@ -49,12 +49,17 @@ func parseSuiYml(ymlFile []byte) map[uint64]ChainDetails {
 		panic(err)
 	}
 
-	validateSuiChainID(data.SelectorsBySuiChainId)
+	err = validateSuiChainID(data.SelectorsBySuiChainId)
+	if err != nil {
+		panic(err)
+	}
+
 	return data.SelectorsBySuiChainId
 }
 
-func validateSuiChainID(data map[uint64]ChainDetails) {
+func validateSuiChainID(data map[uint64]ChainDetails) error {
 	// TODO: https://smartcontract-it.atlassian.net/browse/NONEVM-890
+    return nil
 }
 
 func SuiChainIdToChainSelector() map[uint64]uint64 {

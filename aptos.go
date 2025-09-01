@@ -49,12 +49,17 @@ func parseAptosYml(ymlFile []byte) map[uint64]ChainDetails {
 		panic(err)
 	}
 
-	validateAptosChainID(data.SelectorsByAptosChainId)
+	err = validateAptosChainID(data.SelectorsByAptosChainId)
+	if err != nil {
+		panic(err)
+	}
+
 	return data.SelectorsByAptosChainId
 }
 
-func validateAptosChainID(data map[uint64]ChainDetails) {
+func validateAptosChainID(data map[uint64]ChainDetails) error {
 	// TODO: https://smartcontract-it.atlassian.net/browse/NONEVM-890
+    return nil
 }
 
 func AptosChainIdToChainSelector() map[uint64]uint64 {
