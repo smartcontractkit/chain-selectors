@@ -689,3 +689,6 @@ selectors:
   143:
     selector: 8481857512324358265
     name: "monad-mainnet"
+  16661:
+    selector: 4426351306075016396
+    name: "0g-mainnet"
