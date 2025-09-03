@@ -6,16 +6,7 @@ import (
 	"strconv"
 )
 
-const (
-	FamilyEVM      = "evm"
-	FamilySolana   = "solana"
-	FamilyStarknet = "starknet"
-	FamilyCosmos   = "cosmos"
-	FamilyAptos    = "aptos"
-	FamilySui      = "sui"
-	FamilyTron     = "tron"
-	FamilyTon      = "ton"
-)
+
 
 type chainInfo struct {
 	Family       string

@@ -3,6 +3,7 @@ package chain_selectors
 import (
 	_ "embed"
 	"fmt"
+	"log"
 
 	"gopkg.in/yaml.v3"
 )
@@ -18,6 +19,20 @@ var (
 )
 
 func init() {
+	// Load extra selectors
+	for chainID, chainDetails := range getExtraSelectors().Sui {
+		if _, exists := suiSelectorsMap[chainID]; exists {
+			log.Printf("WARN: Skipping extra selector for chain %d because it already exists", chainID)
+			continue
+		}
+		suiSelectorsMap[chainID] = chainDetails
+		suiChainsBySelector[chainDetails.ChainSelector] = SuiChain{
+			ChainID:  chainID,
+			Selector: chainDetails.ChainSelector,
+			Name:     chainDetails.ChainName,
+		}
+	}
+
 	for _, v := range SuiALL {
 		suiChainsBySelector[v.Selector] = v
 	}
@@ -34,12 +49,17 @@ func parseSuiYml(ymlFile []byte) map[uint64]ChainDetails {
 		panic(err)
 	}
 
-	validateSuiChainID(data.SelectorsBySuiChainId)
+	err = validateSuiChainID(data.SelectorsBySuiChainId)
+	if err != nil {
+		panic(err)
+	}
+
 	return data.SelectorsBySuiChainId
 }
 
-func validateSuiChainID(data map[uint64]ChainDetails) {
+func validateSuiChainID(data map[uint64]ChainDetails) error {
 	// TODO: https://smartcontract-it.atlassian.net/browse/NONEVM-890
+    return nil
 }
 
 func SuiChainIdToChainSelector() map[uint64]uint64 {
