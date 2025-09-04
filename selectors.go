@@ -169,6 +169,15 @@ func GetChainIDFromSelector(selector uint64) (string, error) {
 	return chainInfo.ChainID, nil
 }
 
+func GetChainNameFromSelector(selector uint64) (string, error) {
+	chainInfo, err := getChainInfo(selector)
+	if err != nil {
+		return "", fmt.Errorf("unknown chain selector %d", selector)
+	}
+
+	return chainInfo.ChainDetails.ChainName, nil
+}
+
 func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDetails, error) {
 	switch family {
 	case FamilyEVM:
