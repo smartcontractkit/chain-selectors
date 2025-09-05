@@ -1,0 +1,44 @@
+name: Call Track RMN Releases
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  call-track-rmn-releases:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      # setup github token
+      - name: Setup GitHub token
+        id: setup-github-token
+        uses: smartcontractkit/.github/actions/setup-github-token@ef78fa97bf3c77de6563db1175422703e9e6674f
+        with:
+          aws-role-arn: ${{ secrets.AWS_OIDC_MANIFEST_PIPELINE_AUTO_ACCESS_TOKEN_ISSUER_ROLE_ARN }}
+          aws-lambda-url: ${{ secrets.GATI_DEVEX_LAMBDA_URL }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          aws-role-duration-seconds: ${{ secrets.AWS_ROLE_DURATION_SECONDS }}
+      # dispatch job on chainlink-integrations-pipeline
+      - name: Dispatch workflow
+        id: dispatch
+        uses: smartcontractkit/.github/actions/dispatch-workflow@main
+        env:
+          DISTINCT_RUN_NAME: "chain-selectors-new-release-rmn-notification"
+        with:
+          repo: smartcontractkit/chainlink-integrations-pipeline
+          workflow: track-rmn-releases.yml
+          ref: main
+          actor: "app-token-issuer-devex[bot]"
+          github-token: ${{ steps.setup-github-token.outputs.access-token }}
+          # distinct_run_name is used by the dispatch-workflow action to find the right job
+          # hence it is also passed as one of the workflow-dispatch-fields 
+          # and then used as run-name in chainlink-integrations-pipeline
+          distinct_run_name: ${{ github.sha }}
+          workflow-dispatch-fields: |
+            --field distinct_run_name="${{ github.sha }}"
