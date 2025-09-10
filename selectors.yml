@@ -293,6 +293,9 @@ selectors:
   2024:
     selector: 6915682381028791124
     name: "private-testnet-andesite"
+  2025:
+    selector: 15513093881969820114
+    name: "dtcc-testnet-andesite"
   200810:
     selector: 3789623672476206327
     name: "bitcoin-testnet-bitlayer-1"
