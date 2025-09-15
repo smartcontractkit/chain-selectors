@@ -701,3 +701,6 @@ selectors:
   945:
     selector: 2177900824115119161
     name: "bittensor-testnet"
+  2019775:
+    selector: 945045181441419236
+    name: "jovay-testnet"
