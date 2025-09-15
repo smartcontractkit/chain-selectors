@@ -42,6 +42,8 @@ var (
 	BITCOIN_TESTNET_MERLIN                         = Chain{EvmChainID: 686868, Selector: 5269261765892944301, Name: "bitcoin-testnet-merlin"}
 	BITCOIN_TESTNET_ROOTSTOCK                      = Chain{EvmChainID: 31, Selector: 8953668971247136127, Name: "bitcoin-testnet-rootstock"}
 	BITCOIN_TESTNET_SEPOLIA_BOB_1                  = Chain{EvmChainID: 808813, Selector: 5535534526963509396, Name: "bitcoin-testnet-sepolia-bob-1"}
+	BITTENSOR_MAINNET                              = Chain{EvmChainID: 964, Selector: 2135107236357186872, Name: "bittensor-mainnet"}
+	BITTENSOR_TESTNET                              = Chain{EvmChainID: 945, Selector: 2177900824115119161, Name: "bittensor-testnet"}
 	BITTORRENT_CHAIN_MAINNET                       = Chain{EvmChainID: 199, Selector: 3776006016387883143, Name: "bittorrent_chain-mainnet"}
 	BITTORRENT_CHAIN_TESTNET                       = Chain{EvmChainID: 1029, Selector: 4459371029167934217, Name: "bittorrent_chain-testnet"}
 	CELO_MAINNET                                   = Chain{EvmChainID: 42220, Selector: 1346049177634351622, Name: "celo-mainnet"}
@@ -379,6 +381,8 @@ var ALL = []Chain{
 	BITCOIN_TESTNET_MERLIN,
 	BITCOIN_TESTNET_ROOTSTOCK,
 	BITCOIN_TESTNET_SEPOLIA_BOB_1,
+	BITTENSOR_MAINNET,
+	BITTENSOR_TESTNET,
 	BITTORRENT_CHAIN_MAINNET,
 	BITTORRENT_CHAIN_TESTNET,
 	CELO_MAINNET,
