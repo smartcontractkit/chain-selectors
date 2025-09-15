@@ -695,3 +695,9 @@ selectors:
   16661:
     selector: 4426351306075016396
     name: "0g-mainnet"
+  964:
+    selector: 2135107236357186872
+    name: "bittensor-mainnet"
+  945:
+    selector: 2177900824115119161
+    name: "bittensor-testnet"
