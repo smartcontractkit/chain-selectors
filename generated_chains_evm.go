@@ -144,6 +144,7 @@ var (
 	INK_TESTNET_SEPOLIA                            = Chain{EvmChainID: 763373, Selector: 9763904284804119144, Name: "ink-testnet-sepolia"}
 	JANCTION_MAINNET                               = Chain{EvmChainID: 678, Selector: 9107126442626377432, Name: "janction-mainnet"}
 	JANCTION_TESTNET_SEPOLIA                       = Chain{EvmChainID: 679, Selector: 5059197667603797935, Name: "janction-testnet-sepolia"}
+	JOVAY_MAINNET                                  = Chain{EvmChainID: 5734951, Selector: 1523760397290643893, Name: "jovay-mainnet"}
 	JOVAY_TESTNET                                  = Chain{EvmChainID: 2019775, Selector: 945045181441419236, Name: "jovay-testnet"}
 	KAIA_MAINNET                                   = Chain{EvmChainID: 8217, Selector: 9813823125703490621, Name: "kaia-mainnet"}
 	KAIA_TESTNET_KAIROS                            = Chain{EvmChainID: 1001, Selector: 2624132734533621656, Name: "kaia-testnet-kairos"}
@@ -484,6 +485,7 @@ var ALL = []Chain{
 	INK_TESTNET_SEPOLIA,
 	JANCTION_MAINNET,
 	JANCTION_TESTNET_SEPOLIA,
+	JOVAY_MAINNET,
 	JOVAY_TESTNET,
 	KAIA_MAINNET,
 	KAIA_TESTNET_KAIROS,
