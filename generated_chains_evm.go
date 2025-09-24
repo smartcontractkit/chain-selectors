@@ -125,6 +125,8 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1              = Chain{EvmChainID: 300, Selector: 6898391096552792247, Name: "ethereum-testnet-sepolia-zksync-1"}
 	ETHERLINK_MAINNET                              = Chain{EvmChainID: 42793, Selector: 13624601974233774587, Name: "etherlink-mainnet"}
 	ETHERLINK_TESTNET                              = Chain{EvmChainID: 128123, Selector: 1910019406958449359, Name: "etherlink-testnet"}
+	EVERCLEAR_MAINNET                              = Chain{EvmChainID: 25327, Selector: 9723842205701363942, Name: "everclear-mainnet"}
+	EVERCLEAR_TESTNET_SEPOLIA                      = Chain{EvmChainID: 6398, Selector: 379340054879810246, Name: "everclear-testnet-sepolia"}
 	FANTOM_MAINNET                                 = Chain{EvmChainID: 250, Selector: 3768048213127883732, Name: "fantom-mainnet"}
 	FANTOM_TESTNET                                 = Chain{EvmChainID: 4002, Selector: 4905564228793744293, Name: "fantom-testnet"}
 	FILECOIN_MAINNET                               = Chain{EvmChainID: 314, Selector: 4561443241176882990, Name: "filecoin-mainnet"}
@@ -466,6 +468,8 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1,
 	ETHERLINK_MAINNET,
 	ETHERLINK_TESTNET,
+	EVERCLEAR_MAINNET,
+	EVERCLEAR_TESTNET_SEPOLIA,
 	FANTOM_MAINNET,
 	FANTOM_TESTNET,
 	FILECOIN_MAINNET,
