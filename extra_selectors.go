@@ -8,12 +8,13 @@ import (
 )
 
 type extraSelectorsData struct {
-	Evm    map[uint64]ChainDetails `yaml:"evm"`
-	Aptos  map[uint64]ChainDetails `yaml:"aptos"`
-	Solana map[string]ChainDetails `yaml:"solana"`
-	Sui    map[uint64]ChainDetails `yaml:"sui"`
-	Ton    map[int32]ChainDetails  `yaml:"ton"`
-	Tron   map[uint64]ChainDetails `yaml:"tron"`
+	Evm      map[uint64]ChainDetails `yaml:"evm"`
+	Aptos    map[uint64]ChainDetails `yaml:"aptos"`
+	Solana   map[string]ChainDetails `yaml:"solana"`
+	Sui      map[uint64]ChainDetails `yaml:"sui"`
+	Ton      map[int32]ChainDetails  `yaml:"ton"`
+	Tron     map[uint64]ChainDetails `yaml:"tron"`
+	Starknet map[string]ChainDetails `yaml:"starknet"`
 }
 
 var (
@@ -43,7 +44,7 @@ func loadAndParseExtraSelectors() (result extraSelectorsData) {
 	// Validate individual chain formats
 	err = validateSolanaChainID(data.Solana)
 	if err != nil {
-        log.Println(data.Solana)
+		log.Println(data.Solana)
 		log.Printf("Error parsing extra selectors for Solana: %v", err)
 		return
 	}

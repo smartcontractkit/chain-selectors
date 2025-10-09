@@ -74,6 +74,10 @@ tron:
   123:
     selector: 123557890123456789
     name: "test-tron-chain"
+starknet:
+  "TEST_SN":
+    selector: 1111111111111111111
+    name: "test-starknet-chain"
 `
 )
 
@@ -85,6 +89,7 @@ func TestExtraSelectors(t *testing.T) {
 		assert.Empty(t, result.Sui)
 		assert.Empty(t, result.Ton)
 		assert.Empty(t, result.Tron)
+		assert.Empty(t, result.Starknet)
 
 		evmChain, exists := result.Evm[999]
 		assert.True(t, exists)
@@ -98,6 +103,7 @@ func TestExtraSelectors(t *testing.T) {
 		assert.Len(t, result.Sui, 1)
 		assert.Len(t, result.Ton, 1)
 		assert.Len(t, result.Tron, 1)
+		assert.Len(t, result.Starknet, 1)
 
 		aptosChain, exists := result.Aptos[888]
 		assert.True(t, exists)
@@ -117,6 +123,7 @@ func TestExtraSelectors(t *testing.T) {
 		assert.Empty(t, result.Sui)
 		assert.Empty(t, result.Ton)
 		assert.Empty(t, result.Tron)
+		assert.Empty(t, result.Starknet)
 	})
 
 }
@@ -153,7 +160,7 @@ func TestExtraSelectorsE2E(t *testing.T) {
 	//Should not override chain id that already exists in selectors.yml
 	selector, err = SelectorFromChainId(999)
 	assert.NoError(t, err)
-    chain, ok := ChainBySelector(2442541497099098535)
+	chain, ok := ChainBySelector(2442541497099098535)
 	assert.Equal(t, true, ok)
 	assert.Equal(t, "hyperliquid-mainnet", chain.Name)
 	assert.Equal(t, uint64(2442541497099098535), selector)
