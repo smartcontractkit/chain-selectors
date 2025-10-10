@@ -6,8 +6,6 @@ import (
 	"strconv"
 )
 
-
-
 type chainInfo struct {
 	Family       string
 	ChainID      string
@@ -148,6 +146,28 @@ func getChainInfo(selector uint64) (chainInfo, error) {
 		}, nil
 	}
 
+	// check starknet
+	_, exist = starknetChainsBySelector[selector]
+	if exist {
+		family := FamilyStarknet
+
+		chainID, err := StarknetChainIdFromSelector(selector)
+		if err != nil {
+			return chainInfo{}, fmt.Errorf("failed to get %v chain ID from selector %d: %w", chainID, selector, err)
+		}
+
+		details, exist := starknetSelectorsMap[chainID]
+		if !exist {
+			return chainInfo{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return chainInfo{
+			Family:       family,
+			ChainID:      chainID,
+			ChainDetails: details,
+		}, nil
+	}
+
 	return chainInfo{}, fmt.Errorf("unknown chain selector %d", selector)
 }
 
@@ -242,6 +262,13 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
 		details, exist := tonSelectorsMap[int32(tonChainId)]
+		if !exist {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return details, nil
+	case FamilyStarknet:
+		details, exist := starknetSelectorsMap[chainID]
 		if !exist {
 			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
