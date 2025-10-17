@@ -19,13 +19,13 @@ func Test_StarknetYmlAreValid(t *testing.T) {
 		{
 			name:          "ethereum-mainnet-starknet-1",
 			chainSelector: 511843109281680063,
-			chainsId:      "SN_SEPOLIA",
+			chainsId:      "SN_MAIN",
 			expectErr:     false,
 		},
 		{
 			name:          "ethereum-testnet-sepolia-starknet-1",
 			chainSelector: 4115550741429562104,
-			chainsId:      "SN_MAIN",
+			chainsId:      "SN_SEPOLIA",
 			expectErr:     false,
 		},
 		{
