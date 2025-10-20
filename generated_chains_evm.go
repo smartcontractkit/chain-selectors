@@ -47,6 +47,7 @@ var (
 	BITTORRENT_CHAIN_MAINNET                       = Chain{EvmChainID: 199, Selector: 3776006016387883143, Name: "bittorrent_chain-mainnet"}
 	BITTORRENT_CHAIN_TESTNET                       = Chain{EvmChainID: 1029, Selector: 4459371029167934217, Name: "bittorrent_chain-testnet"}
 	CELO_MAINNET                                   = Chain{EvmChainID: 42220, Selector: 1346049177634351622, Name: "celo-mainnet"}
+	CELO_SEPOLIA                                   = Chain{EvmChainID: 11142220, Selector: 3761762704474186180, Name: "celo-sepolia"}
 	CELO_TESTNET_ALFAJORES                         = Chain{EvmChainID: 44787, Selector: 3552045678561919002, Name: "celo-testnet-alfajores"}
 	CODEX_MAINNET                                  = Chain{EvmChainID: 81224, Selector: 9478124434908827753, Name: "codex-mainnet"}
 	CODEX_TESTNET                                  = Chain{EvmChainID: 812242, Selector: 7225665875429174318, Name: "codex-testnet"}
@@ -97,6 +98,8 @@ var (
 	ETHEREUM_TESTNET_HOLESKY_FRAXTAL_1             = Chain{EvmChainID: 2522, Selector: 8901520481741771655, Name: "ethereum-testnet-holesky-fraxtal-1"}
 	ETHEREUM_TESTNET_HOLESKY_MORPH_1               = Chain{EvmChainID: 2810, Selector: 8304510386741731151, Name: "ethereum-testnet-holesky-morph-1"}
 	ETHEREUM_TESTNET_HOLESKY_TAIKO_1               = Chain{EvmChainID: 167009, Selector: 7248756420937879088, Name: "ethereum-testnet-holesky-taiko-1"}
+	ETHEREUM_TESTNET_HOODI                         = Chain{EvmChainID: 560048, Selector: 10380998176179737091, Name: "ethereum-testnet-hoodi"}
+	ETHEREUM_TESTNET_HOODI_TAIKO                   = Chain{EvmChainID: 167012, Selector: 9873759436596923887, Name: "ethereum-testnet-hoodi-taiko"}
 	ETHEREUM_TESTNET_SEPOLIA                       = Chain{EvmChainID: 11155111, Selector: 16015286601757825753, Name: "ethereum-testnet-sepolia"}
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1            = Chain{EvmChainID: 421614, Selector: 3478487238524512106, Name: "ethereum-testnet-sepolia-arbitrum-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1_L3X_1      = Chain{EvmChainID: 12325, Selector: 3486622437121596122, Name: "ethereum-testnet-sepolia-arbitrum-1-l3x-1"}
@@ -225,6 +228,7 @@ var (
 	TELOS_EVM_TESTNET                              = Chain{EvmChainID: 41, Selector: 729797994450396300, Name: "telos-evm-testnet"}
 	TEST_0G_MAINNET                                = Chain{EvmChainID: 16661, Selector: 4426351306075016396, Name: "0g-mainnet"}
 	TEST_0G_TESTNET_GALILEO                        = Chain{EvmChainID: 16601, Selector: 2131427466778448014, Name: "0g-testnet-galileo"}
+	TEST_0G_TESTNET_GALILEO_1                      = Chain{EvmChainID: 16602, Selector: 6892437333620424805, Name: "0g-testnet-galileo-1"}
 	TEST_0G_TESTNET_NEWTON                         = Chain{EvmChainID: 16600, Selector: 16088006396410204581, Name: "0g-testnet-newton"}
 	TEST_1000                                      = Chain{EvmChainID: 1000, Selector: 11787463284727550157, Name: "1000"}
 	TEST_1338                                      = Chain{EvmChainID: 1338, Selector: 2181150070347029680, Name: "1338"}
@@ -342,6 +346,7 @@ var (
 	WEMIX_TESTNET                                  = Chain{EvmChainID: 1112, Selector: 9284632837123596123, Name: "wemix-testnet"}
 	XDC_MAINNET                                    = Chain{EvmChainID: 50, Selector: 17673274061779414707, Name: "xdc-mainnet"}
 	XDC_TESTNET                                    = Chain{EvmChainID: 51, Selector: 3017758115101368649, Name: "xdc-testnet"}
+	XLAYER_TESTNET                                 = Chain{EvmChainID: 1952, Selector: 10212741611335999305, Name: "xlayer-testnet"}
 	ZERO_G_TESTNET_GALILEO                         = Chain{EvmChainID: 80087, Selector: 2285225387454015855, Name: "zero-g-testnet-galileo"}
 	ZETACHAIN_MAINNET                              = Chain{EvmChainID: 7000, Selector: 10817664450262215148, Name: "zetachain-mainnet"}
 	ZIRCUIT_TESTNET_GARFIELD                       = Chain{EvmChainID: 48898, Selector: 13781831279385219069, Name: "zircuit-testnet-garfield"}
@@ -390,6 +395,7 @@ var ALL = []Chain{
 	BITTORRENT_CHAIN_MAINNET,
 	BITTORRENT_CHAIN_TESTNET,
 	CELO_MAINNET,
+	CELO_SEPOLIA,
 	CELO_TESTNET_ALFAJORES,
 	CODEX_MAINNET,
 	CODEX_TESTNET,
@@ -440,6 +446,8 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_HOLESKY_FRAXTAL_1,
 	ETHEREUM_TESTNET_HOLESKY_MORPH_1,
 	ETHEREUM_TESTNET_HOLESKY_TAIKO_1,
+	ETHEREUM_TESTNET_HOODI,
+	ETHEREUM_TESTNET_HOODI_TAIKO,
 	ETHEREUM_TESTNET_SEPOLIA,
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1_L3X_1,
@@ -568,6 +576,7 @@ var ALL = []Chain{
 	TELOS_EVM_TESTNET,
 	TEST_0G_MAINNET,
 	TEST_0G_TESTNET_GALILEO,
+	TEST_0G_TESTNET_GALILEO_1,
 	TEST_0G_TESTNET_NEWTON,
 	TEST_1000,
 	TEST_1338,
@@ -685,6 +694,7 @@ var ALL = []Chain{
 	WEMIX_TESTNET,
 	XDC_MAINNET,
 	XDC_TESTNET,
+	XLAYER_TESTNET,
 	ZERO_G_TESTNET_GALILEO,
 	ZETACHAIN_MAINNET,
 	ZIRCUIT_TESTNET_GARFIELD,
