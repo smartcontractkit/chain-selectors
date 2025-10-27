@@ -31,14 +31,14 @@ func loadAndParseExtraSelectors() (result extraSelectorsData) {
 	fileContent, err := os.ReadFile(extraSelectorsFile)
 	if err != nil {
 		log.Printf("Error reading extra selectors file %s: %v", extraSelectorsFile, err)
-		return
+		panic(err)
 	}
 
 	var data extraSelectorsData
 	err = yaml.Unmarshal(fileContent, &data)
 	if err != nil {
 		log.Printf("Error unmarshaling extra selectors YAML: %v", err)
-		return
+		panic(err)
 	}
 
 	// Validate individual chain formats
@@ -46,18 +46,18 @@ func loadAndParseExtraSelectors() (result extraSelectorsData) {
 	if err != nil {
 		log.Println(data.Solana)
 		log.Printf("Error parsing extra selectors for Solana: %v", err)
-		return
+		panic(err)
 	}
 
 	err = validateSuiChainID(data.Sui)
 	if err != nil {
 		log.Printf("Error parsing extra selectors for Sui: %v", err)
-		return
+		panic(err)
 	}
 	err = validateAptosChainID(data.Aptos)
 	if err != nil {
 		log.Printf("Error parsing extra selectors for Aptos: %v", err)
-		return
+		panic(err)
 	}
 
 	log.Printf("Successfully loaded extra selectors from %s", extraSelectorsFile)
