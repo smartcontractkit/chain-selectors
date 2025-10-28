@@ -409,6 +409,9 @@ selectors:
   167012:
     selector: 9873759436596923887
     name: "ethereum-testnet-hoodi-taiko"
+  26888:
+    selector: 7051849327615092843
+    name: "ab-testnet"
 
   # Mainnets
   1:
@@ -728,3 +731,6 @@ selectors:
   25327:
     selector: 9723842205701363942
     name: "everclear-mainnet"
+  36888:
+    selector: 4829375610284793157
+    name: "ab-mainnet"
