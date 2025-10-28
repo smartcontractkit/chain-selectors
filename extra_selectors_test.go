@@ -128,6 +128,54 @@ func TestExtraSelectors(t *testing.T) {
 
 }
 
+func TestExtraSelectorsInvalidFormat(t *testing.T) {
+	t.Run("Invalid YAML syntax should panic", func(t *testing.T) {
+		invalidYaml := `
+evm:
+  999:
+    selector: 1234567890123456789
+    name: "test-evm-chain"
+invalid: yaml: syntax: [unclosed
+`
+		filePath := createTempYamlFile(t, invalidYaml)
+		defer os.Remove(filePath)
+
+		cleanup := setSelectorEnv(t, filePath)
+		defer cleanup()
+
+		assert.Panics(t, func() {
+			loadAndParseExtraSelectors()
+		}, "Expected panic for invalid YAML syntax")
+	})
+
+	t.Run("Invalid chain ID type should panic", func(t *testing.T) {
+		invalidEvmChainIdYaml := `
+evm:
+  "abc":  # string
+    selector: 1234567890123456789
+    name: "test-evm-chain"
+`
+		filePath := createTempYamlFile(t, invalidEvmChainIdYaml)
+		defer os.Remove(filePath)
+
+		cleanup := setSelectorEnv(t, filePath)
+		defer cleanup()
+
+		assert.Panics(t, func() {
+			loadAndParseExtraSelectors()
+		}, "Expected panic for invalid EVM chain ID type")
+	})
+
+	t.Run("Non-existent file should panic", func(t *testing.T) {
+		cleanup := setSelectorEnv(t, "/non/existent/file.yaml")
+		defer cleanup()
+
+		assert.Panics(t, func() {
+			loadAndParseExtraSelectors()
+		}, "Expected panic for non-existent file")
+	})
+}
+
 func TestExtraSelectorsE2E(t *testing.T) {
 	var err error
 	var cwd string
