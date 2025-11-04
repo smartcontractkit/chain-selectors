@@ -349,6 +349,9 @@ selectors:
   6342:
     selector: 2443239559770384419
     name: "megaeth-testnet"
+  6343:
+    selector: 18241817625092392675
+    name: "megaeth-testnet-2"
   999999999:
     selector: 16244020411108056671
     name: "zora-testnet"
