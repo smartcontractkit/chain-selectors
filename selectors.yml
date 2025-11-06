@@ -409,6 +409,9 @@ selectors:
   167012:
     selector: 9873759436596923887
     name: "ethereum-testnet-hoodi-taiko"
+  688689:
+    selector: 16098325658947243212
+    name: "pharos-atlantic-testnet"
 
   # Mainnets
   1:
