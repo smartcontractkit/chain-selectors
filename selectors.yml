@@ -349,6 +349,9 @@ selectors:
   6342:
     selector: 2443239559770384419
     name: "megaeth-testnet"
+  6343:
+    selector: 18241817625092392675
+    name: "megaeth-testnet-2"
   999999999:
     selector: 16244020411108056671
     name: "zora-testnet"
@@ -409,6 +412,9 @@ selectors:
   167012:
     selector: 9873759436596923887
     name: "ethereum-testnet-hoodi-taiko"
+  26888:
+    selector: 7051849327615092843
+    name: "ab-testnet"
   688689:
     selector: 16098325658947243212
     name: "pharos-atlantic-testnet"
@@ -731,3 +737,6 @@ selectors:
   25327:
     selector: 9723842205701363942
     name: "everclear-mainnet"
+  36888:
+    selector: 4829375610284793157
+    name: "ab-mainnet"

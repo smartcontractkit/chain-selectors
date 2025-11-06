@@ -11,6 +11,8 @@ type Chain struct {
 var (
 	ABSTRACT_MAINNET                               = Chain{EvmChainID: 2741, Selector: 3577778157919314504, Name: "abstract-mainnet"}
 	ABSTRACT_TESTNET                               = Chain{EvmChainID: 11124, Selector: 16235373811196386733, Name: "abstract-testnet"}
+	AB_MAINNET                                     = Chain{EvmChainID: 36888, Selector: 4829375610284793157, Name: "ab-mainnet"}
+	AB_TESTNET                                     = Chain{EvmChainID: 26888, Selector: 7051849327615092843, Name: "ab-testnet"}
 	ANVIL_DEVNET                                   = Chain{EvmChainID: 31337, Selector: 7759470850252068959, Name: "anvil-devnet"}
 	APECHAIN_MAINNET                               = Chain{EvmChainID: 33139, Selector: 14894068710063348487, Name: "apechain-mainnet"}
 	APECHAIN_TESTNET_CURTIS                        = Chain{EvmChainID: 33111, Selector: 9900119385908781505, Name: "apechain-testnet-curtis"}
@@ -159,6 +161,7 @@ var (
 	LENS_MAINNET                                   = Chain{EvmChainID: 232, Selector: 5608378062013572713, Name: "lens-mainnet"}
 	LISK_MAINNET                                   = Chain{EvmChainID: 1135, Selector: 15293031020466096408, Name: "lisk-mainnet"}
 	MEGAETH_TESTNET                                = Chain{EvmChainID: 6342, Selector: 2443239559770384419, Name: "megaeth-testnet"}
+	MEGAETH_TESTNET_2                              = Chain{EvmChainID: 6343, Selector: 18241817625092392675, Name: "megaeth-testnet-2"}
 	MEMENTO_MAINNET                                = Chain{EvmChainID: 51888, Selector: 6473245816409426016, Name: "memento-mainnet"}
 	MEMENTO_TESTNET                                = Chain{EvmChainID: 2129, Selector: 12168171414969487009, Name: "memento-testnet"}
 	METAL_MAINNET                                  = Chain{EvmChainID: 1750, Selector: 13447077090413146373, Name: "metal-mainnet"}
@@ -360,6 +363,8 @@ var (
 var ALL = []Chain{
 	ABSTRACT_MAINNET,
 	ABSTRACT_TESTNET,
+	AB_MAINNET,
+	AB_TESTNET,
 	ANVIL_DEVNET,
 	APECHAIN_MAINNET,
 	APECHAIN_TESTNET_CURTIS,
@@ -508,6 +513,7 @@ var ALL = []Chain{
 	LENS_MAINNET,
 	LISK_MAINNET,
 	MEGAETH_TESTNET,
+	MEGAETH_TESTNET_2,
 	MEMENTO_MAINNET,
 	MEMENTO_TESTNET,
 	METAL_MAINNET,

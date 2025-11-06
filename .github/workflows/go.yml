@@ -24,5 +24,5 @@ jobs:
           exit 1;
       - name: Test
         env:
-          EXTRA_SELECTORS_FILE: ./extra_selectors_test.yml
+          EXTRA_SELECTORS_FILE: ./test_extra_selectors.yml
         run: go test -v ./...
