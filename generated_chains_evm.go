@@ -187,6 +187,7 @@ var (
 	NIBIRU_MAINNET                                 = Chain{EvmChainID: 6900, Selector: 17349189558768828726, Name: "nibiru-mainnet"}
 	NIBIRU_TESTNET                                 = Chain{EvmChainID: 6930, Selector: 305104239123120457, Name: "nibiru-testnet"}
 	ONDO_TESTNET                                   = Chain{EvmChainID: 9000, Selector: 344208382356656551, Name: "ondo-testnet"}
+	PHAROS_ATLANTIC_TESTNET                        = Chain{EvmChainID: 688689, Selector: 16098325658947243212, Name: "pharos-atlantic-testnet"}
 	PHAROS_TESTNET                                 = Chain{EvmChainID: 688688, Selector: 4012524741200567430, Name: "pharos-testnet"}
 	PLASMA_MAINNET                                 = Chain{EvmChainID: 9745, Selector: 9335212494177455608, Name: "plasma-mainnet"}
 	PLASMA_TESTNET                                 = Chain{EvmChainID: 9746, Selector: 3967220077692964309, Name: "plasma-testnet"}
@@ -538,6 +539,7 @@ var ALL = []Chain{
 	NIBIRU_MAINNET,
 	NIBIRU_TESTNET,
 	ONDO_TESTNET,
+	PHAROS_ATLANTIC_TESTNET,
 	PHAROS_TESTNET,
 	PLASMA_MAINNET,
 	PLASMA_TESTNET,
