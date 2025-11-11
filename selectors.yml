@@ -412,6 +412,9 @@ selectors:
   167012:
     selector: 9873759436596923887
     name: "ethereum-testnet-hoodi-taiko"
+  167013:
+    selector: 15858691699034549072
+    name: "ethereum-testnet-hoodi-taiko-1"
   26888:
     selector: 7051849327615092843
     name: "ab-testnet"

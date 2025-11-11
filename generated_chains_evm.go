@@ -102,6 +102,7 @@ var (
 	ETHEREUM_TESTNET_HOLESKY_TAIKO_1               = Chain{EvmChainID: 167009, Selector: 7248756420937879088, Name: "ethereum-testnet-holesky-taiko-1"}
 	ETHEREUM_TESTNET_HOODI                         = Chain{EvmChainID: 560048, Selector: 10380998176179737091, Name: "ethereum-testnet-hoodi"}
 	ETHEREUM_TESTNET_HOODI_TAIKO                   = Chain{EvmChainID: 167012, Selector: 9873759436596923887, Name: "ethereum-testnet-hoodi-taiko"}
+	ETHEREUM_TESTNET_HOODI_TAIKO_1                 = Chain{EvmChainID: 167013, Selector: 15858691699034549072, Name: "ethereum-testnet-hoodi-taiko-1"}
 	ETHEREUM_TESTNET_SEPOLIA                       = Chain{EvmChainID: 11155111, Selector: 16015286601757825753, Name: "ethereum-testnet-sepolia"}
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1            = Chain{EvmChainID: 421614, Selector: 3478487238524512106, Name: "ethereum-testnet-sepolia-arbitrum-1"}
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1_L3X_1      = Chain{EvmChainID: 12325, Selector: 3486622437121596122, Name: "ethereum-testnet-sepolia-arbitrum-1-l3x-1"}
@@ -454,6 +455,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_HOLESKY_TAIKO_1,
 	ETHEREUM_TESTNET_HOODI,
 	ETHEREUM_TESTNET_HOODI_TAIKO,
+	ETHEREUM_TESTNET_HOODI_TAIKO_1,
 	ETHEREUM_TESTNET_SEPOLIA,
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_ARBITRUM_1_L3X_1,
