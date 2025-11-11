@@ -1,7 +1,6 @@
 package chain_selectors
 
 import (
-	"log"
 	"os"
 	"path/filepath"
 	"testing"
@@ -186,8 +185,7 @@ func TestExtraSelectorsE2E(t *testing.T) {
 	envFilePath := filepath.Join(cwd, os.Getenv("EXTRA_SELECTORS_FILE"))
 
 	if envFilePath != testFilePath {
-		log.Printf("Skipping test because EXTRA_SELECTORS_FILE is not set to %s", testFilePath)
-		return
+		t.Skipf("Skipping test because EXTRA_SELECTORS_FILE is not set to %s", testFilePath)
 	}
 
 	var selector uint64
@@ -215,4 +213,18 @@ func TestExtraSelectorsE2E(t *testing.T) {
 	name, err = NameFromChainId(999)
 	assert.NoError(t, err)
 	assert.Equal(t, "hyperliquid-mainnet", name)
+}
+
+// Validates a custom provide file for formating errors. This can be used in external CI checks to ensure the file is valid.
+func TestExtraSelectorsValidateCustomFile(t *testing.T) {
+	extraSelectorsFile := os.Getenv("EXTRA_SELECTORS_FILE")
+	if extraSelectorsFile == "" {
+		t.Skip("EXTRA_SELECTORS_FILE environment variable is not set")
+		return
+	}
+
+	// loadAndParseExtraSelectors will panic if the file has errors
+	assert.NotPanics(t, func() {
+		loadAndParseExtraSelectors()
+	}, "Loading extra selectors file should not panic if file is valid")
 }
