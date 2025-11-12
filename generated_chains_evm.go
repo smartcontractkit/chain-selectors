@@ -224,6 +224,8 @@ var (
 	SONEIUM_MAINNET                                = Chain{EvmChainID: 1868, Selector: 12505351618335765396, Name: "soneium-mainnet"}
 	SONIC_MAINNET                                  = Chain{EvmChainID: 146, Selector: 1673871237479749969, Name: "sonic-mainnet"}
 	SONIC_TESTNET_BLAZE                            = Chain{EvmChainID: 57054, Selector: 3676871237479449268, Name: "sonic-testnet-blaze"}
+	STABLE_MAINNET                                 = Chain{EvmChainID: 988, Selector: 16978377838628290997, Name: "stable-mainnet"}
+	STABLE_TESTNET                                 = Chain{EvmChainID: 2201, Selector: 11793402411494852765, Name: "stable-testnet"}
 	STORY_TESTNET                                  = Chain{EvmChainID: 1513, Selector: 4237030917318060427, Name: "story-testnet"}
 	SUPERSEED_MAINNET                              = Chain{EvmChainID: 5330, Selector: 470401360549526817, Name: "superseed-mainnet"}
 	SUPERSEED_TESTNET                              = Chain{EvmChainID: 53302, Selector: 13694007683517087973, Name: "superseed-testnet"}
@@ -577,6 +579,8 @@ var ALL = []Chain{
 	SONEIUM_MAINNET,
 	SONIC_MAINNET,
 	SONIC_TESTNET_BLAZE,
+	STABLE_MAINNET,
+	STABLE_TESTNET,
 	STORY_TESTNET,
 	SUPERSEED_MAINNET,
 	SUPERSEED_TESTNET,
