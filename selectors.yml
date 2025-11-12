@@ -117,6 +117,9 @@ selectors:
   2129:
     selector: 12168171414969487009
     name: "memento-testnet"
+  2201:
+    selector: 11793402411494852765
+    name: "stable-testnet"
   2221:
     selector: 2110537777356199208
     name: "kava-testnet"
@@ -507,6 +510,9 @@ selectors:
   592:
     selector: 6422105447186081193
     name: "polkadot-mainnet-astar"
+  988:
+    selector: 16978377838628290997
+    name: "stable-mainnet"
   999:
     selector: 2442541497099098535
     name: "hyperliquid-mainnet"
