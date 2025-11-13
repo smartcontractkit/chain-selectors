@@ -161,6 +161,7 @@ var (
 	KUSAMA_MAINNET_MOONRIVER                       = Chain{EvmChainID: 1285, Selector: 1355020143337428062, Name: "kusama-mainnet-moonriver"}
 	LENS_MAINNET                                   = Chain{EvmChainID: 232, Selector: 5608378062013572713, Name: "lens-mainnet"}
 	LISK_MAINNET                                   = Chain{EvmChainID: 1135, Selector: 15293031020466096408, Name: "lisk-mainnet"}
+	MEGAETH_MAINNET                                = Chain{EvmChainID: 4326, Selector: 6093540873831549674, Name: "megaeth-mainnet"}
 	MEGAETH_TESTNET                                = Chain{EvmChainID: 6342, Selector: 2443239559770384419, Name: "megaeth-testnet"}
 	MEGAETH_TESTNET_2                              = Chain{EvmChainID: 6343, Selector: 18241817625092392675, Name: "megaeth-testnet-2"}
 	MEMENTO_MAINNET                                = Chain{EvmChainID: 51888, Selector: 6473245816409426016, Name: "memento-mainnet"}
@@ -516,6 +517,7 @@ var ALL = []Chain{
 	KUSAMA_MAINNET_MOONRIVER,
 	LENS_MAINNET,
 	LISK_MAINNET,
+	MEGAETH_MAINNET,
 	MEGAETH_TESTNET,
 	MEGAETH_TESTNET_2,
 	MEMENTO_MAINNET,
