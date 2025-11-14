@@ -749,3 +749,6 @@ selectors:
   36888:
     selector: 4829375610284793157
     name: "ab-mainnet"
+  4326:
+    selector: 6093540873831549674
+    name: "megaeth-mainnet"
