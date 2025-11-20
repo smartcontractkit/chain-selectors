@@ -16,6 +16,7 @@ var (
 	ANVIL_DEVNET                                   = Chain{EvmChainID: 31337, Selector: 7759470850252068959, Name: "anvil-devnet"}
 	APECHAIN_MAINNET                               = Chain{EvmChainID: 33139, Selector: 14894068710063348487, Name: "apechain-mainnet"}
 	APECHAIN_TESTNET_CURTIS                        = Chain{EvmChainID: 33111, Selector: 9900119385908781505, Name: "apechain-testnet-curtis"}
+	ARC_TESTNET                                    = Chain{EvmChainID: 5042002, Selector: 3034092155422581607, Name: "arc-testnet"}
 	AREON_MAINNET                                  = Chain{EvmChainID: 463, Selector: 1939936305787790600, Name: "areon-mainnet"}
 	AREON_TESTNET                                  = Chain{EvmChainID: 462, Selector: 7317911323415911000, Name: "areon-testnet"}
 	AVALANCHE_MAINNET                              = Chain{EvmChainID: 43114, Selector: 6433500567565415381, Name: "avalanche-mainnet"}
@@ -101,6 +102,7 @@ var (
 	ETHEREUM_TESTNET_HOLESKY_MORPH_1               = Chain{EvmChainID: 2810, Selector: 8304510386741731151, Name: "ethereum-testnet-holesky-morph-1"}
 	ETHEREUM_TESTNET_HOLESKY_TAIKO_1               = Chain{EvmChainID: 167009, Selector: 7248756420937879088, Name: "ethereum-testnet-holesky-taiko-1"}
 	ETHEREUM_TESTNET_HOODI                         = Chain{EvmChainID: 560048, Selector: 10380998176179737091, Name: "ethereum-testnet-hoodi"}
+	ETHEREUM_TESTNET_HOODI_MORPH                   = Chain{EvmChainID: 2910, Selector: 1064004874793747259, Name: "ethereum-testnet-hoodi-morph"}
 	ETHEREUM_TESTNET_HOODI_TAIKO                   = Chain{EvmChainID: 167012, Selector: 9873759436596923887, Name: "ethereum-testnet-hoodi-taiko"}
 	ETHEREUM_TESTNET_HOODI_TAIKO_1                 = Chain{EvmChainID: 167013, Selector: 15858691699034549072, Name: "ethereum-testnet-hoodi-taiko-1"}
 	ETHEREUM_TESTNET_SEPOLIA                       = Chain{EvmChainID: 11155111, Selector: 16015286601757825753, Name: "ethereum-testnet-sepolia"}
@@ -234,6 +236,7 @@ var (
 	TAC_TESTNET                                    = Chain{EvmChainID: 2391, Selector: 9488606126177218005, Name: "tac-testnet"}
 	TELOS_EVM_MAINNET                              = Chain{EvmChainID: 40, Selector: 1477345371608778000, Name: "telos-evm-mainnet"}
 	TELOS_EVM_TESTNET                              = Chain{EvmChainID: 41, Selector: 729797994450396300, Name: "telos-evm-testnet"}
+	TEMPO_TESTNET                                  = Chain{EvmChainID: 42429, Selector: 3963528237232804922, Name: "tempo-testnet"}
 	TEST_0G_MAINNET                                = Chain{EvmChainID: 16661, Selector: 4426351306075016396, Name: "0g-mainnet"}
 	TEST_0G_TESTNET_GALILEO                        = Chain{EvmChainID: 16601, Selector: 2131427466778448014, Name: "0g-testnet-galileo"}
 	TEST_0G_TESTNET_GALILEO_1                      = Chain{EvmChainID: 16602, Selector: 6892437333620424805, Name: "0g-testnet-galileo-1"}
@@ -372,6 +375,7 @@ var ALL = []Chain{
 	ANVIL_DEVNET,
 	APECHAIN_MAINNET,
 	APECHAIN_TESTNET_CURTIS,
+	ARC_TESTNET,
 	AREON_MAINNET,
 	AREON_TESTNET,
 	AVALANCHE_MAINNET,
@@ -457,6 +461,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_HOLESKY_MORPH_1,
 	ETHEREUM_TESTNET_HOLESKY_TAIKO_1,
 	ETHEREUM_TESTNET_HOODI,
+	ETHEREUM_TESTNET_HOODI_MORPH,
 	ETHEREUM_TESTNET_HOODI_TAIKO,
 	ETHEREUM_TESTNET_HOODI_TAIKO_1,
 	ETHEREUM_TESTNET_SEPOLIA,
@@ -590,6 +595,7 @@ var ALL = []Chain{
 	TAC_TESTNET,
 	TELOS_EVM_MAINNET,
 	TELOS_EVM_TESTNET,
+	TEMPO_TESTNET,
 	TEST_0G_MAINNET,
 	TEST_0G_TESTNET_GALILEO,
 	TEST_0G_TESTNET_GALILEO_1,
