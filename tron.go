@@ -3,6 +3,7 @@ package chain_selectors
 import (
 	_ "embed"
 	"fmt"
+	"log"
 
 	"gopkg.in/yaml.v3"
 )
@@ -18,6 +19,16 @@ var (
 )
 
 func init() {
+	// Load extra selectors
+	for chainID, chainDetails := range getExtraSelectors().Tron {
+		if _, exists := tronSelectorsMap[chainID]; exists {
+			log.Printf("WARN: Skipping extra selector for chain %d because it already exists", chainID)
+			continue
+		}
+		tronSelectorsMap[chainID] = chainDetails
+		tronChainIdBySelector[chainDetails.ChainSelector] = chainID
+	}
+
 	for k, v := range tronSelectorsMap {
 		tronChainIdBySelector[v.ChainSelector] = k
 	}

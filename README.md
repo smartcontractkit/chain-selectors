@@ -75,6 +75,19 @@ func main() {
 }
 ```
 
+### Adding additional chains at runtime
+
+You can add additional chains at runtime by setting the `EXTRA_SELECTORS_FILE` environment variable to point to a YAML file containing additional chain mappings. This is useful for adding custom chains or test networks without modifying the main selectors file.
+
+The extra selectors file should follow this format with blockchain family keys:
+
+```yaml
+evm:
+  $chain_id:
+    selector: $chain_selector
+    name: $chain_name
+```
+
 ### Contributing
 
 #### Naming new chains

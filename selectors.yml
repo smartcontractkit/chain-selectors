@@ -12,6 +12,9 @@ selectors:
   45:
     selector: 4340886533089894000
     name: "polkadot-testnet-darwinia-pangoro"
+  51:
+    selector: 3017758115101368649
+    name: "xdc-testnet"
   53:
     selector: 8955032871639343000
     name: "coinex_smart_chain-testnet"
@@ -60,9 +63,21 @@ selectors:
   462:
     selector: 7317911323415911000
     name: "areon-testnet"
+  678:
+    selector: 9107126442626377432
+    name: "janction-mainnet"
+  679:
+    selector: 5059197667603797935
+    name: "janction-testnet-sepolia"
+  682:
+    selector: 6260932437388305511
+    name: "private-testnet-obsidian"
   919:
     selector: 829525985033418733
     name: "ethereum-testnet-sepolia-mode-1"
+  1001:
+    selector: 2624132734533621656
+    name: "kaia-testnet-kairos"
   1029:
     selector: 4459371029167934217
     name: "bittorrent_chain-testnet"
@@ -87,6 +102,9 @@ selectors:
   1337:
     selector: 3379446385462418246
     name: "geth-testnet"
+  31337:
+    selector: 7759470850252068959
+    name: "anvil-devnet"
   45439:
     selector: 8446413392851542429
     name: "private-testnet-opala"
@@ -96,6 +114,12 @@ selectors:
   1908:
     selector: 4888058894222120000
     name: "bitcichain-testnet"
+  2129:
+    selector: 12168171414969487009
+    name: "memento-testnet"
+  2201:
+    selector: 11793402411494852765
+    name: "stable-testnet"
   2221:
     selector: 2110537777356199208
     name: "kava-testnet"
@@ -138,6 +162,12 @@ selectors:
   16600:
     selector: 16088006396410204581
     name: "0g-testnet-newton"
+  16601:
+    selector: 2131427466778448014
+    name: "0g-testnet-galileo"
+  16602:
+    selector: 6892437333620424805
+    name: "0g-testnet-galileo-1"
   33111:
     selector: 9900119385908781505
     name: "apechain-testnet-curtis"
@@ -150,6 +180,9 @@ selectors:
   44787:
     selector: 3552045678561919002
     name: "celo-testnet-alfajores"
+  48898:
+    selector: 13781831279385219069
+    name: "zircuit-testnet-garfield"
   48899:
     selector: 4562743618362911021
     name: "ethereum-testnet-sepolia-zircuit-1"
@@ -179,12 +212,18 @@ selectors:
   80069:
     selector: 7728255861635209484
     name: "berachain-testnet-bepolia"
+  80087:
+    selector: 2285225387454015855
+    name: "zero-g-testnet-galileo"
   84531:
     selector: 5790810961207155433
     name: "ethereum-testnet-goerli-base-1"
   84532:
     selector: 10344971235874465080
     name: "ethereum-testnet-sepolia-base-1"
+  98867:
+    selector: 13874588925447303949
+    name: "plume-testnet-sepolia"
   10200:
     selector: 8871595565390010547
     name: "gnosis_chain-testnet-chiado"
@@ -212,9 +251,18 @@ selectors:
   686868:
     selector: 5269261765892944301
     name: "bitcoin-testnet-merlin"
+  5668:
+    selector: 8911150974185440581
+    name: "nexon-dev"
   595581:
     selector: 7837562506228496256
     name: "avalanche-testnet-nexon"
+  807424:
+    selector: 14632960069656270105
+    name: "nexon-qa"
+  847799:
+    selector: 5556806327594153475
+    name: "nexon-stage"
   810181:
     selector: 5837261596322416298
     name: "zklink_nova-testnet"
@@ -245,6 +293,15 @@ selectors:
   2021:
     selector: 13116810400804392105
     name: "ronin-testnet-saigon"
+  2023:
+    selector: 3260900564719373474
+    name: "private-testnet-granite"
+  2024:
+    selector: 6915682381028791124
+    name: "private-testnet-andesite"
+  2025:
+    selector: 15513093881969820114
+    name: "dtcc-testnet-andesite"
   200810:
     selector: 3789623672476206327
     name: "bitcoin-testnet-bitlayer-1"
@@ -295,6 +352,87 @@ selectors:
   6342:
     selector: 2443239559770384419
     name: "megaeth-testnet"
+  6343:
+    selector: 18241817625092392675
+    name: "megaeth-testnet-2"
+  999999999:
+    selector: 16244020411108056671
+    name: "zora-testnet"
+  1687:
+    selector: 10749384167430721561
+    name: "mint-testnet"
+  11124:
+    selector: 16235373811196386733
+    name: "abstract-testnet"
+  53302:
+    selector: 13694007683517087973
+    name: "superseed-testnet"
+  128123:
+    selector: 1910019406958449359
+    name: "etherlink-testnet"
+  1740:
+    selector: 6286293440461807648
+    name: "metal-testnet"
+  6930:
+    selector: 305104239123120457
+    name: "nibiru-testnet"
+  9000:
+    selector: 344208382356656551
+    name: "ondo-testnet"
+  129399:
+    selector: 9090863410735740267
+    name: "polygon-testnet-tatara"
+  9746:
+    selector: 3967220077692964309
+    name: "plasma-testnet"
+  688688:
+    selector: 4012524741200567430
+    name: "pharos-testnet"
+  812242:
+    selector: 7225665875429174318
+    name: "codex-testnet"
+  2391:
+    selector: 9488606126177218005
+    name: "tac-testnet"
+  945:
+    selector: 2177900824115119161
+    name: "bittensor-testnet"
+  2019775:
+    selector: 945045181441419236
+    name: "jovay-testnet"
+  6398:
+    selector: 379340054879810246
+    name: "everclear-testnet-sepolia"
+  1952:
+    selector: 10212741611335999305
+    name: "xlayer-testnet"
+  560048:
+    selector: 10380998176179737091
+    name: "ethereum-testnet-hoodi"
+  11142220:
+    selector: 3761762704474186180
+    name: "celo-sepolia"
+  167012:
+    selector: 9873759436596923887
+    name: "ethereum-testnet-hoodi-taiko"
+  167013:
+    selector: 15858691699034549072
+    name: "ethereum-testnet-hoodi-taiko-1"
+  26888:
+    selector: 7051849327615092843
+    name: "ab-testnet"
+  688689:
+    selector: 16098325658947243212
+    name: "pharos-atlantic-testnet"
+  2910:
+    selector: 1064004874793747259
+    name: "ethereum-testnet-hoodi-morph"
+  5042002:
+    selector: 3034092155422581607
+    name: "arc-testnet"
+  42429:
+    selector: 3963528237232804922
+    name: "tempo-testnet"
 
   # Mainnets
   1:
@@ -315,6 +453,9 @@ selectors:
   46:
     selector: 8866418665544333000
     name: "polkadot-mainnet-darwinia"
+  50:
+    selector: 17673274061779414707
+    name: "xdc-mainnet"
   52:
     selector: 1761333065194157300
     name: "coinex_smart_chain-mainnet"
@@ -378,6 +519,9 @@ selectors:
   592:
     selector: 6422105447186081193
     name: "polkadot-mainnet-astar"
+  988:
+    selector: 16978377838628290997
+    name: "stable-mainnet"
   999:
     selector: 2442541497099098535
     name: "hyperliquid-mainnet"
@@ -396,6 +540,9 @@ selectors:
   61166:
     selector: 5214452172935136222
     name: "treasure-mainnet"
+  12227332:
+    selector: 2217764097022649312
+    name: "neox-testnet-t4"
   12324:
     selector: 3162193654116181371
     name: "ethereum-mainnet-arbitrum-1-l3x-1"
@@ -426,6 +573,9 @@ selectors:
   5000:
     selector: 1556008542357238666
     name: "ethereum-mainnet-mantle-1"
+  8217:
+    selector: 9813823125703490621
+    name: "kaia-mainnet"
   8453:
     selector: 15971525489660198786
     name: "ethereum-mainnet-base-1"
@@ -447,6 +597,12 @@ selectors:
   43114:
     selector: 6433500567565415381
     name: "avalanche-mainnet"
+  47763:
+    selector: 7222032299962346917
+    name: "neox-mainnet"
+  51888:
+    selector: 6473245816409426016
+    name: "memento-mainnet"
   80094:
     selector: 1294465214383781161
     name: "berachain-mainnet"
@@ -524,3 +680,84 @@ selectors:
   228:
     selector: 11690709103138290329
     name: "mind-mainnet"
+  3448148188:
+    selector: 2052925811360307749
+    name: "tron-testnet-nile-evm"
+  2494104990:
+    selector: 13231703482326770598
+    name: "tron-testnet-shasta-evm"
+  728126428:
+    selector: 1546563616611573946
+    name: "tron-mainnet-evm"
+  3360022319:
+    selector: 13231703482326770600
+    name: "tron-devnet-evm"
+  7777777:
+    selector: 3555797439612589184
+    name: "zora-mainnet"
+  5330:
+    selector: 470401360549526817
+    name: "superseed-mainnet"
+  2741:
+    selector: 3577778157919314504
+    name: "abstract-mainnet"
+  1135:
+    selector: 15293031020466096408
+    name: "lisk-mainnet"
+  185:
+    selector: 17164792800244661392
+    name: "mint-mainnet"
+  42793:
+    selector: 13624601974233774587
+    name: "etherlink-mainnet"
+  1750:
+    selector: 13447077090413146373
+    name: "metal-mainnet"
+  6900:
+    selector: 17349189558768828726
+    name: "nibiru-mainnet"
+  60118:
+    selector: 15758750456714168963
+    name: "nexon-mainnet-lith"
+  68414:
+    selector: 12657445206920369324
+    name: "nexon-mainnet-henesys"
+  7000:
+    selector: 10817664450262215148
+    name: "zetachain-mainnet"
+  1030:
+    selector: 3358365939762719202
+    name: "conflux-mainnet"
+  747474:
+    selector: 2459028469735686113
+    name: "polygon-mainnet-katana"
+  9745:
+    selector: 9335212494177455608
+    name: "plasma-mainnet"
+  81224:
+    selector: 9478124434908827753
+    name: "codex-mainnet"
+  239:
+    selector: 5936861837188149645
+    name: "tac-mainnet"
+  143:
+    selector: 8481857512324358265
+    name: "monad-mainnet"
+  16661:
+    selector: 4426351306075016396
+    name: "0g-mainnet"
+  964:
+    selector: 2135107236357186872
+    name: "bittensor-mainnet"
+  5734951:
+    selector: 1523760397290643893
+    name: "jovay-mainnet"
+  25327:
+    selector: 9723842205701363942
+    name: "everclear-mainnet"
+  36888:
+    selector: 4829375610284793157
+    name: "ab-mainnet"
+  4326:
+    selector: 6093540873831549674
+    name: "megaeth-mainnet"

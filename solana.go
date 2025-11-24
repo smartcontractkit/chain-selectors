@@ -3,6 +3,7 @@ package chain_selectors
 import (
 	_ "embed"
 	"fmt"
+	"log"
 
 	"github.com/mr-tron/base58"
 	"gopkg.in/yaml.v3"
@@ -24,6 +25,21 @@ var (
 )
 
 func init() {
+	// Load extra selectors
+	for chainID, chainDetails := range getExtraSelectors().Solana {
+		if _, exists := solanaSelectorsMap[chainID]; exists {
+			log.Printf("WARN: Skipping extra selector for chain %s because it already exists", chainID)
+			continue
+		}
+		solanaSelectorsMap[chainID] = chainDetails
+		solanaChainIdToChainSelector[chainID] = chainDetails
+		solanaChainsBySelector[chainDetails.ChainSelector] = SolanaChain{
+			ChainID:  chainID,
+			Selector: chainDetails.ChainSelector,
+			Name:     chainDetails.ChainName,
+		}
+	}
+
 	for _, v := range SolanaALL {
 		solanaChainsBySelector[v.Selector] = v
 	}
@@ -51,20 +67,25 @@ func parseSolanaYml(ymlFile []byte) map[string]ChainDetails {
 		panic(err)
 	}
 
-	validateSolanaChainID(data.SelectorsBySolanaChainId)
+	err = validateSolanaChainID(data.SelectorsBySolanaChainId)
+	if err != nil {
+		panic(err)
+	}
+
 	return data.SelectorsBySolanaChainId
 }
 
-func validateSolanaChainID(data map[string]ChainDetails) {
+func validateSolanaChainID(data map[string]ChainDetails) error {
 	for genesisHash := range data {
 		b, err := base58.Decode(genesisHash)
 		if err != nil {
-			panic(fmt.Errorf("failed to decode base58 genesis hash %s: %w", genesisHash, err))
+			return fmt.Errorf("failed to decode base58 genesis hash %s: %w", genesisHash, err)
 		}
 		if len(b) != 32 {
-			panic(fmt.Errorf("decoded genesis hash %s is not 32 bytes long", genesisHash))
+			return fmt.Errorf("decoded genesis hash %s is not 32 bytes long", genesisHash)
 		}
 	}
+	return nil
 }
 
 func SolanaChainIdToChainSelector() map[string]uint64 {

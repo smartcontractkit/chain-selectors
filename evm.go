@@ -3,6 +3,7 @@ package chain_selectors
 import (
 	_ "embed"
 	"fmt"
+	"log"
 	"strconv"
 
 	"gopkg.in/yaml.v3"
@@ -16,11 +17,6 @@ var selectorsYml []byte
 //go:embed test_selectors.yml
 var testSelectorsYml []byte
 
-type ChainDetails struct {
-	ChainSelector uint64 `yaml:"selector"`
-	ChainName     string `yaml:"name"`
-}
-
 var (
 	evmSelectorsMap           = parseYml(selectorsYml)
 	evmTestSelectorsMap       = parseYml(testSelectorsYml)
@@ -30,6 +26,24 @@ var (
 )
 
 func init() {
+	// Load extra selectors
+	for chainID, chainDetails := range getExtraSelectors().Evm {
+		if _, exists := evmSelectorsMap[chainID]; exists {
+			log.Printf("WARN: Skipping extra selector for chain %d because it already exists", chainID)
+			continue
+		}
+
+		evmSelectorsMap[chainID] = chainDetails
+		evmChainIdToChainSelector[chainID] = chainDetails
+		chain := Chain{
+			EvmChainID: chainID,
+			Selector:   chainDetails.ChainSelector,
+			Name:       chainDetails.ChainName,
+		}
+		evmChainsBySelector[chainDetails.ChainSelector] = chain
+		evmChainsByEvmChainID[chainID] = chain
+	}
+
 	for _, ch := range ALL {
 		evmChainsBySelector[ch.Selector] = ch
 		evmChainsByEvmChainID[ch.EvmChainID] = ch
