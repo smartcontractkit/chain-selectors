@@ -1,0 +1,230 @@
+//go:build ignore
+
+package main
+
+import (
+	"fmt"
+	"os"
+
+	"gopkg.in/yaml.v3"
+)
+
+const outputFilename = "all_selectors.yml"
+
+type ChainDetails struct {
+	ChainSelector uint64 `yaml:"selector"`
+	ChainName     string `yaml:"name"`
+}
+
+// Structure for reading EVM chains
+type evmYamlData struct {
+	Selectors map[uint64]ChainDetails `yaml:"selectors"`
+}
+
+// Final output structure
+type allSelectorsData struct {
+	Evm      map[uint64]ChainDetails `yaml:"evm,omitempty"`
+	Solana   map[string]ChainDetails `yaml:"solana,omitempty"`
+	Aptos    map[uint64]ChainDetails `yaml:"aptos,omitempty"`
+	Sui      map[uint64]ChainDetails `yaml:"sui,omitempty"`
+	Tron     map[uint64]ChainDetails `yaml:"tron,omitempty"`
+	Ton      map[int32]ChainDetails  `yaml:"ton,omitempty"`
+	Starknet map[string]ChainDetails `yaml:"starknet,omitempty"`
+}
+
+func main() {
+	result := allSelectorsData{}
+
+	// Read EVM chains
+	evmData, err := readEvmYaml("selectors.yml")
+	if err != nil {
+		fmt.Printf("Warning: Could not read selectors.yml: %v\n", err)
+	} else {
+		result.Evm = evmData
+	}
+
+	// Read Solana chains
+	solanaData, err := readSolanaYaml("selectors_solana.yml")
+	if err != nil {
+		fmt.Printf("Warning: Could not read selectors_solana.yml: %v\n", err)
+	} else {
+		result.Solana = solanaData
+	}
+
+	// Read Aptos chains
+	aptosData, err := readAptosYaml("selectors_aptos.yml")
+	if err != nil {
+		fmt.Printf("Warning: Could not read selectors_aptos.yml: %v\n", err)
+	} else {
+		result.Aptos = aptosData
+	}
+
+	// Read Sui chains
+	suiData, err := readSuiYaml("selectors_sui.yml")
+	if err != nil {
+		fmt.Printf("Warning: Could not read selectors_sui.yml: %v\n", err)
+	} else {
+		result.Sui = suiData
+	}
+
+	// Read Tron chains
+	tronData, err := readTronYaml("selectors_tron.yml")
+	if err != nil {
+		fmt.Printf("Warning: Could not read selectors_tron.yml: %v\n", err)
+	} else {
+		result.Tron = tronData
+	}
+
+	// Read Ton chains
+	tonData, err := readTonYaml("selectors_ton.yml")
+	if err != nil {
+		fmt.Printf("Warning: Could not read selectors_ton.yml: %v\n", err)
+	} else {
+		result.Ton = tonData
+	}
+
+	// Read Starknet chains
+	starknetData, err := readStarknetYaml("selectors_starknet.yml")
+	if err != nil {
+		fmt.Printf("Warning: Could not read selectors_starknet.yml: %v\n", err)
+	} else {
+		result.Starknet = starknetData
+	}
+
+	// Write consolidated output
+	err = writeAllSelectors(outputFilename, result)
+	if err != nil {
+		fmt.Printf("Error writing %s: %v\n", outputFilename, err)
+		os.Exit(1)
+	}
+}
+
+func readEvmYaml(filename string) (map[uint64]ChainDetails, error) {
+	data, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	var parsed evmYamlData
+	err = yaml.Unmarshal(data, &parsed)
+	if err != nil {
+		return nil, err
+	}
+
+	return parsed.Selectors, nil
+}
+
+func readSolanaYaml(filename string) (map[string]ChainDetails, error) {
+	data, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	var parsed struct {
+		Selectors map[string]ChainDetails `yaml:"selectors"`
+	}
+	err = yaml.Unmarshal(data, &parsed)
+	if err != nil {
+		return nil, err
+	}
+
+	return parsed.Selectors, nil
+}
+
+func readAptosYaml(filename string) (map[uint64]ChainDetails, error) {
+	data, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	var parsed struct {
+		Selectors map[uint64]ChainDetails `yaml:"selectors"`
+	}
+	err = yaml.Unmarshal(data, &parsed)
+	if err != nil {
+		return nil, err
+	}
+
+	return parsed.Selectors, nil
+}
+
+func readSuiYaml(filename string) (map[uint64]ChainDetails, error) {
+	data, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	var parsed struct {
+		Selectors map[uint64]ChainDetails `yaml:"selectors"`
+	}
+	err = yaml.Unmarshal(data, &parsed)
+	if err != nil {
+		return nil, err
+	}
+
+	return parsed.Selectors, nil
+}
+
+func readTronYaml(filename string) (map[uint64]ChainDetails, error) {
+	data, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	var parsed struct {
+		Selectors map[uint64]ChainDetails `yaml:"selectors"`
+	}
+	err = yaml.Unmarshal(data, &parsed)
+	if err != nil {
+		return nil, err
+	}
+
+	return parsed.Selectors, nil
+}
+
+func readTonYaml(filename string) (map[int32]ChainDetails, error) {
+	data, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	var parsed struct {
+		Selectors map[int32]ChainDetails `yaml:"selectors"`
+	}
+	err = yaml.Unmarshal(data, &parsed)
+	if err != nil {
+		return nil, err
+	}
+
+	return parsed.Selectors, nil
+}
+
+func readStarknetYaml(filename string) (map[string]ChainDetails, error) {
+	data, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	var parsed struct {
+		Selectors map[string]ChainDetails `yaml:"selectors"`
+	}
+	err = yaml.Unmarshal(data, &parsed)
+	if err != nil {
+		return nil, err
+	}
+
+	return parsed.Selectors, nil
+}
+
+func writeAllSelectors(filename string, data allSelectorsData) error {
+	output, err := yaml.Marshal(data)
+	if err != nil {
+		return err
+	}
+
+	// Add header comment
+	header := []byte("# Consolidated chain selectors for all blockchain families\n# This file is auto-generated by 'go generate'. DO NOT EDIT MANUALLY.\n# Generated from: selectors.yml, selectors_solana.yml, selectors_aptos.yml, selectors_sui.yml, selectors_tron.yml, selectors_ton.yml, selectors_starknet.yml\n\n")
+	output = append(header, output...)
+
+	return os.WriteFile(filename, output, 0644)
+}

@@ -1,6 +1,8 @@
 package chain_selectors
 
 import (
+	"net/http"
+	"net/http/httptest"
 	"os"
 	"path/filepath"
 	"testing"
@@ -227,4 +229,131 @@ func TestExtraSelectorsValidateCustomFile(t *testing.T) {
 	assert.NotPanics(t, func() {
 		loadAndParseExtraSelectors()
 	}, "Loading extra selectors file should not panic if file is valid")
+}
+
+// URL fetching tests
+func TestLoadFromHTTPURL(t *testing.T) {
+	t.Run("valid HTTP URL with EVM chains", func(t *testing.T) {
+		// Create a test HTTP server serving valid YAML
+		yamlContent := `
+evm:
+  888888:
+    selector: 1234567890123456789
+    name: "test-http-chain"
+  999999:
+    selector: 9876543210987654321
+    name: "test-http-chain-2"
+`
+		server := createTestServer(t, yamlContent, http.StatusOK)
+		defer server.Close()
+
+		// Reset the loaded state
+		extraSelectorsLoaded = false
+
+		cleanup := setSelectorEnv(t, server.URL)
+		defer cleanup()
+
+		result := loadAndParseExtraSelectors()
+		require.NotNil(t, result.Evm)
+		assert.Len(t, result.Evm, 2)
+		assert.Equal(t, uint64(1234567890123456789), result.Evm[888888].ChainSelector)
+		assert.Equal(t, "test-http-chain", result.Evm[888888].ChainName)
+	})
+}
+
+func TestURL404(t *testing.T) {
+	// Create server that returns 404
+	yamlContent := ""
+	server := createTestServer(t, yamlContent, http.StatusNotFound)
+	defer server.Close()
+
+	extraSelectorsLoaded = false
+	cleanup := setSelectorEnv(t, server.URL)
+	defer cleanup()
+
+	// Should panic with 404 error
+	assert.Panics(t, func() {
+		loadAndParseExtraSelectors()
+	})
+}
+
+func TestURL500(t *testing.T) {
+	// Create server that returns 500
+	yamlContent := ""
+	server := createTestServer(t, yamlContent, http.StatusInternalServerError)
+	defer server.Close()
+
+	extraSelectorsLoaded = false
+	cleanup := setSelectorEnv(t, server.URL)
+	defer cleanup()
+
+	// Should panic with 500 error
+	assert.Panics(t, func() {
+		loadAndParseExtraSelectors()
+	})
+}
+
+func TestURLWithInvalidYAML(t *testing.T) {
+	// Server returns 200 but invalid YAML
+	invalidYaml := `
+evm:
+  this is not valid yaml: [[[
+`
+	server := createTestServer(t, invalidYaml, http.StatusOK)
+	defer server.Close()
+
+	extraSelectorsLoaded = false
+	cleanup := setSelectorEnv(t, server.URL)
+	defer cleanup()
+
+	// Should panic with YAML parsing error
+	assert.Panics(t, func() {
+		loadAndParseExtraSelectors()
+	})
+}
+
+func TestURLWithMultipleFamilies(t *testing.T) {
+	yamlContent := `
+evm:
+  123456:
+    selector: 1111111111111111111
+    name: "test-evm"
+solana:
+  "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d":
+    selector: 2222222222222222222
+    name: "test-solana"
+aptos:
+  77:
+    selector: 3333333333333333333
+    name: "test-aptos"
+`
+	server := createTestServer(t, yamlContent, http.StatusOK)
+	defer server.Close()
+
+	extraSelectorsLoaded = false
+	cleanup := setSelectorEnv(t, server.URL)
+	defer cleanup()
+
+	result := loadAndParseExtraSelectors()
+	require.NotNil(t, result.Evm)
+	require.NotNil(t, result.Solana)
+	require.NotNil(t, result.Aptos)
+
+	assert.Len(t, result.Evm, 1)
+	assert.Len(t, result.Solana, 1)
+	assert.Len(t, result.Aptos, 1)
+
+	assert.Equal(t, "test-evm", result.Evm[123456].ChainName)
+	assert.Equal(t, "test-solana", result.Solana["5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d"].ChainName)
+	assert.Equal(t, "test-aptos", result.Aptos[77].ChainName)
+}
+
+// Helper function to create test HTTP server
+func createTestServer(t *testing.T, content string, statusCode int) *httptest.Server {
+	return httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(statusCode)
+		if statusCode == http.StatusOK {
+			w.Write([]byte(content))
+		}
+	}))
 }
