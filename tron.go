@@ -9,6 +9,7 @@ import (
 )
 
 //go:generate go run genchains_tron.go
+//go:generate go run generate_all_selectors.go
 
 //go:embed selectors_tron.yml
 var tronSelectorsYml []byte

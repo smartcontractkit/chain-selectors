@@ -1,8 +1,14 @@
 package chain_selectors
 
 import (
+	"context"
+	"fmt"
+	"io"
 	"log"
+	"net/http"
 	"os"
+	"strings"
+	"time"
 
 	"gopkg.in/yaml.v3"
 )
@@ -28,10 +34,25 @@ func loadAndParseExtraSelectors() (result extraSelectorsData) {
 		return
 	}
 
-	fileContent, err := os.ReadFile(extraSelectorsFile)
-	if err != nil {
-		log.Printf("Error reading extra selectors file %s: %v", extraSelectorsFile, err)
-		panic(err)
+	var fileContent []byte
+	var err error
+
+	// Check if it's a URL
+	if strings.HasPrefix(extraSelectorsFile, "http://") || strings.HasPrefix(extraSelectorsFile, "https://") {
+		log.Printf("Fetching extra selectors from URL: %s", extraSelectorsFile)
+		fileContent, err = fetchFromURL(extraSelectorsFile)
+		if err != nil {
+			log.Printf("Error fetching extra selectors from URL %s: %v", extraSelectorsFile, err)
+			panic(err)
+		}
+		log.Printf("Successfully fetched extra selectors from URL")
+	} else {
+		// File path (existing behavior)
+		fileContent, err = os.ReadFile(extraSelectorsFile)
+		if err != nil {
+			log.Printf("Error reading extra selectors file %s: %v", extraSelectorsFile, err)
+			panic(err)
+		}
 	}
 
 	var data extraSelectorsData
@@ -70,4 +91,27 @@ func getExtraSelectors() extraSelectorsData {
 		extraSelectorsLoaded = true
 	}
 	return extraSelectors
+}
+
+// fetchFromURL fetches content from an HTTP/HTTPS URL with a timeout
+func fetchFromURL(url string) ([]byte, error) {
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	defer cancel()
+
+	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
+	if err != nil {
+		return nil, fmt.Errorf("failed to create request: %w", err)
+	}
+
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return nil, fmt.Errorf("failed to fetch URL: %w", err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("HTTP %d: %s", resp.StatusCode, resp.Status)
+	}
+
+	return io.ReadAll(resp.Body)
 }

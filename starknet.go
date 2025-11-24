@@ -9,6 +9,7 @@ import (
 )
 
 //go:generate go run genchains_starknet.go
+//go:generate go run generate_all_selectors.go
 
 //go:embed selectors_starknet.yml
 var starknetSelectorsYml []byte

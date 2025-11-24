@@ -10,6 +10,7 @@ import (
 )
 
 //go:generate go run genchains_evm.go
+//go:generate go run generate_all_selectors.go
 
 //go:embed selectors.yml
 var selectorsYml []byte
