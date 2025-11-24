@@ -141,7 +141,7 @@ var (
 	FILECOIN_TESTNET                               = Chain{EvmChainID: 31415926, Selector: 7060342227814389000, Name: "filecoin-testnet"}
 	FRAXTAL_MAINNET                                = Chain{EvmChainID: 252, Selector: 1462016016387883143, Name: "fraxtal-mainnet"}
 	GATE_CHAIN_MAINNET                             = Chain{EvmChainID: 86, Selector: 9688382747979139404, Name: "gate-chain-mainnet"}
-	GATE_CHAIN_TESTNET                             = Chain{EvmChainID: 85, Selector: 3558960680482140165, Name: "gate-chain-testnet"}
+	GATE_CHAIN_TESTNET_METEORA                     = Chain{EvmChainID: 85, Selector: 3558960680482140165, Name: "gate-chain-testnet-meteora"}
 	GATE_LAYER_MAINNET                             = Chain{EvmChainID: 10088, Selector: 9373518659714509671, Name: "gate-layer-mainnet"}
 	GATE_LAYER_TESTNET                             = Chain{EvmChainID: 10087, Selector: 3667207123485082040, Name: "gate-layer-testnet"}
 	GETH_DEVNET_2                                  = Chain{EvmChainID: 2337, Selector: 12922642891491394802, Name: "geth-devnet-2"}
@@ -504,7 +504,7 @@ var ALL = []Chain{
 	FILECOIN_TESTNET,
 	FRAXTAL_MAINNET,
 	GATE_CHAIN_MAINNET,
-	GATE_CHAIN_TESTNET,
+	GATE_CHAIN_TESTNET_METEORA,
 	GATE_LAYER_MAINNET,
 	GATE_LAYER_TESTNET,
 	GETH_DEVNET_2,
