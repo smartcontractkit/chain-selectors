@@ -83,7 +83,7 @@ func EvmChainIdToChainSelector() map[uint64]uint64 {
 	return copyMap
 }
 
-// Deprecated, this only supports EVM chains, use the chain agnostic `GetChainIDFromSelector` instead
+// Deprecated, this only supports EVM chains, use the chain agnostic `GetChainDetailsByChainIDAndFamily` instead
 func ChainIdFromSelector(chainSelectorId uint64) (uint64, error) {
 	for k, v := range evmChainIdToChainSelector {
 		if v.ChainSelector == chainSelectorId {
@@ -93,7 +93,7 @@ func ChainIdFromSelector(chainSelectorId uint64) (uint64, error) {
 	return 0, fmt.Errorf("chain not found for chain selector %d", chainSelectorId)
 }
 
-// Deprecated, this only supports EVM chains, use the chain agnostic `GetChainDetailsByChainIDAndFamily` instead
+// Deprecated, this only supports EVM chains, use the chain agnostic `GetChainIDFromSelector` instead
 func SelectorFromChainId(chainId uint64) (uint64, error) {
 	if chainSelectorId, exist := evmChainIdToChainSelector[chainId]; exist {
 		return chainSelectorId.ChainSelector, nil
@@ -101,7 +101,7 @@ func SelectorFromChainId(chainId uint64) (uint64, error) {
 	return 0, fmt.Errorf("chain selector not found for chain %d", chainId)
 }
 
-// Deprecated, this only supports EVM chains, use the chain agnostic `NameFromChainId` instead
+// Deprecated, this only supports EVM chains, use the chain agnostic `GetChainNameFromSelector` instead
 func NameFromChainId(chainId uint64) (string, error) {
 	details, exist := evmChainIdToChainSelector[chainId]
 	if !exist {
