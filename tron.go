@@ -4,11 +4,13 @@ import (
 	_ "embed"
 	"fmt"
 	"log"
+	"strconv"
 
 	"gopkg.in/yaml.v3"
 )
 
 //go:generate go run genchains_tron.go
+//go:generate go run generate_all_selectors.go
 
 //go:embed selectors_tron.yml
 var tronSelectorsYml []byte
@@ -59,6 +61,13 @@ func TronChainIdToChainSelector() map[uint64]uint64 {
 func TronNameFromChainId(chainId uint64) (string, error) {
 	details, exist := tronSelectorsMap[chainId]
 	if !exist {
+		// Try remote datasource if enabled
+		if remoteDetails, ok := getRemoteChainByID(FamilyTron, fmt.Sprint(chainId)); ok {
+			if remoteDetails.ChainName == "" {
+				return fmt.Sprint(chainId), nil
+			}
+			return remoteDetails.ChainName, nil
+		}
 		return "", fmt.Errorf("chain name not found for chain %v", chainId)
 	}
 	if details.ChainName == "" {
@@ -70,6 +79,11 @@ func TronNameFromChainId(chainId uint64) (string, error) {
 func TronChainIdFromSelector(selector uint64) (uint64, error) {
 	chainId, exist := tronChainIdBySelector[selector]
 	if !exist {
+		// Try remote datasource if enabled (selectors are globally unique)
+		if _, remoteChainID, _, ok := getRemoteChainBySelector(selector); ok {
+			id, _ := strconv.ParseUint(remoteChainID, 10, 64)
+			return id, nil
+		}
 		return 0, fmt.Errorf("chain id not found for selector %d", selector)
 	}
 

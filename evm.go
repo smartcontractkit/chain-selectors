@@ -10,6 +10,7 @@ import (
 )
 
 //go:generate go run genchains_evm.go
+//go:generate go run generate_all_selectors.go
 
 //go:embed selectors.yml
 var selectorsYml []byte
@@ -90,6 +91,11 @@ func ChainIdFromSelector(chainSelectorId uint64) (uint64, error) {
 			return k, nil
 		}
 	}
+	// Try remote datasource if enabled (selectors are globally unique)
+	if _, chainID, _, ok := getRemoteChainBySelector(chainSelectorId); ok {
+		id, _ := strconv.ParseUint(chainID, 10, 64)
+		return id, nil
+	}
 	return 0, fmt.Errorf("chain not found for chain selector %d", chainSelectorId)
 }
 
@@ -98,6 +104,10 @@ func SelectorFromChainId(chainId uint64) (uint64, error) {
 	if chainSelectorId, exist := evmChainIdToChainSelector[chainId]; exist {
 		return chainSelectorId.ChainSelector, nil
 	}
+	// Try remote datasource if enabled
+	if details, ok := getRemoteChainByID(FamilyEVM, strconv.FormatUint(chainId, 10)); ok {
+		return details.ChainSelector, nil
+	}
 	return 0, fmt.Errorf("chain selector not found for chain %d", chainId)
 }
 
@@ -105,6 +115,13 @@ func SelectorFromChainId(chainId uint64) (uint64, error) {
 func NameFromChainId(chainId uint64) (string, error) {
 	details, exist := evmChainIdToChainSelector[chainId]
 	if !exist {
+		// Try remote datasource if enabled
+		if remoteDetails, ok := getRemoteChainByID(FamilyEVM, strconv.FormatUint(chainId, 10)); ok {
+			if remoteDetails.ChainName == "" {
+				return strconv.FormatUint(chainId, 10), nil
+			}
+			return remoteDetails.ChainName, nil
+		}
 		return "", fmt.Errorf("chain name not found for chain %d", chainId)
 	}
 	if details.ChainName == "" {
@@ -138,12 +155,35 @@ func TestChainIds() []uint64 {
 
 func ChainBySelector(sel uint64) (Chain, bool) {
 	ch, exists := evmChainsBySelector[sel]
-	return ch, exists
+	if exists {
+		return ch, true
+	}
+	// Try remote datasource if enabled (selectors are globally unique)
+	if _, chainID, details, ok := getRemoteChainBySelector(sel); ok {
+		evmChainID, _ := strconv.ParseUint(chainID, 10, 64)
+		return Chain{
+			EvmChainID: evmChainID,
+			Selector:   details.ChainSelector,
+			Name:       details.ChainName,
+		}, true
+	}
+	return Chain{}, false
 }
 
 func ChainByEvmChainID(evmChainID uint64) (Chain, bool) {
 	ch, exists := evmChainsByEvmChainID[evmChainID]
-	return ch, exists
+	if exists {
+		return ch, true
+	}
+	// Try remote datasource if enabled
+	if details, ok := getRemoteChainByID(FamilyEVM, strconv.FormatUint(evmChainID, 10)); ok {
+		return Chain{
+			EvmChainID: evmChainID,
+			Selector:   details.ChainSelector,
+			Name:       details.ChainName,
+		}, true
+	}
+	return Chain{}, false
 }
 
 func IsEvm(chainSel uint64) (bool, error) {

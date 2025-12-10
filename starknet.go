@@ -9,6 +9,7 @@ import (
 )
 
 //go:generate go run genchains_starknet.go
+//go:generate go run generate_all_selectors.go
 
 //go:embed selectors_starknet.yml
 var starknetSelectorsYml []byte
@@ -64,6 +65,13 @@ func StarknetChainIdToChainSelector() map[string]uint64 {
 func StarknetNameFromChainId(chainId string) (string, error) {
 	details, exist := starknetSelectorsMap[chainId]
 	if !exist {
+		// Try remote datasource if enabled
+		if remoteDetails, ok := getRemoteChainByID(FamilyStarknet, chainId); ok {
+			if remoteDetails.ChainName == "" {
+				return chainId, nil
+			}
+			return remoteDetails.ChainName, nil
+		}
 		return "", fmt.Errorf("chain name not found for chain %v", chainId)
 	}
 	if details.ChainName == "" {
@@ -76,6 +84,10 @@ func StarknetNameFromChainId(chainId string) (string, error) {
 func StarknetChainIdFromSelector(selector uint64) (string, error) {
 	chain, exist := starknetChainsBySelector[selector]
 	if !exist {
+		// Try remote datasource if enabled (selectors are globally unique)
+		if _, chainID, _, ok := getRemoteChainBySelector(selector); ok {
+			return chainID, nil
+		}
 		return "", fmt.Errorf("chain not found for selector %d", selector)
 	}
 
@@ -84,6 +96,16 @@ func StarknetChainIdFromSelector(selector uint64) (string, error) {
 
 func StarknetChainBySelector(selector uint64) (StarknetChain, bool) {
 	chain, exists := starknetChainsBySelector[selector]
-
-	return chain, exists
+	if exists {
+		return chain, true
+	}
+	// Try remote datasource if enabled (selectors are globally unique)
+	if _, chainID, details, ok := getRemoteChainBySelector(selector); ok {
+		return StarknetChain{
+			ChainID:  chainID,
+			Selector: details.ChainSelector,
+			Name:     details.ChainName,
+		}, true
+	}
+	return StarknetChain{}, false
 }

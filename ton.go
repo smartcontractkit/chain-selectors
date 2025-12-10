@@ -4,11 +4,13 @@ import (
 	_ "embed"
 	"fmt"
 	"log"
+	"strconv"
 
 	"gopkg.in/yaml.v3"
 )
 
 //go:generate go run genchains_ton.go
+//go:generate go run generate_all_selectors.go
 
 //go:embed selectors_ton.yml
 var tonSelectorsYml []byte
@@ -59,6 +61,13 @@ func TonChainIdToChainSelector() map[int32]uint64 {
 func TonNameFromChainId(chainId int32) (string, error) {
 	details, exist := tonSelectorsMap[chainId]
 	if !exist {
+		// Try remote datasource if enabled
+		if remoteDetails, ok := getRemoteChainByID(FamilyTon, fmt.Sprint(chainId)); ok {
+			if remoteDetails.ChainName == "" {
+				return fmt.Sprint(chainId), nil
+			}
+			return remoteDetails.ChainName, nil
+		}
 		return "", fmt.Errorf("chain name not found for chain %v", chainId)
 	}
 	if details.ChainName == "" {
@@ -70,6 +79,11 @@ func TonNameFromChainId(chainId int32) (string, error) {
 func TonChainIdFromSelector(selector uint64) (int32, error) {
 	chainId, exist := tonChainIdBySelector[selector]
 	if !exist {
+		// Try remote datasource if enabled (selectors are globally unique)
+		if _, remoteChainID, _, ok := getRemoteChainBySelector(selector); ok {
+			id, _ := strconv.ParseInt(remoteChainID, 10, 32)
+			return int32(id), nil
+		}
 		return 0, fmt.Errorf("chain id not found for selector %d", selector)
 	}
 

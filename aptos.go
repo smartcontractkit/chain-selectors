@@ -4,11 +4,13 @@ import (
 	_ "embed"
 	"fmt"
 	"log"
+	"strconv"
 
 	"gopkg.in/yaml.v3"
 )
 
 //go:generate go run genchains_aptos.go
+//go:generate go run generate_all_selectors.go
 
 //go:embed selectors_aptos.yml
 var aptosSelectorsYml []byte
@@ -59,7 +61,7 @@ func parseAptosYml(ymlFile []byte) map[uint64]ChainDetails {
 
 func validateAptosChainID(data map[uint64]ChainDetails) error {
 	// TODO: https://smartcontract-it.atlassian.net/browse/NONEVM-890
-    return nil
+	return nil
 }
 
 func AptosChainIdToChainSelector() map[uint64]uint64 {
@@ -73,6 +75,13 @@ func AptosChainIdToChainSelector() map[uint64]uint64 {
 func AptosNameFromChainId(chainId uint64) (string, error) {
 	details, exist := aptosSelectorsMap[chainId]
 	if !exist {
+		// Try remote datasource if enabled
+		if remoteDetails, ok := getRemoteChainByID(FamilyAptos, fmt.Sprint(chainId)); ok {
+			if remoteDetails.ChainName == "" {
+				return fmt.Sprint(chainId), nil
+			}
+			return remoteDetails.ChainName, nil
+		}
 		return "", fmt.Errorf("chain name not found for chain %v", chainId)
 	}
 	if details.ChainName == "" {
@@ -84,6 +93,11 @@ func AptosNameFromChainId(chainId uint64) (string, error) {
 func AptosChainIdFromSelector(selector uint64) (uint64, error) {
 	chain, exist := aptosChainsBySelector[selector]
 	if !exist {
+		// Try remote datasource if enabled (selectors are globally unique)
+		if _, chainID, _, ok := getRemoteChainBySelector(selector); ok {
+			id, _ := strconv.ParseUint(chainID, 10, 64)
+			return id, nil
+		}
 		return 0, fmt.Errorf("chain id not found for selector %d", selector)
 	}
 
@@ -92,5 +106,17 @@ func AptosChainIdFromSelector(selector uint64) (uint64, error) {
 
 func AptosChainBySelector(selector uint64) (AptosChain, bool) {
 	chain, exist := aptosChainsBySelector[selector]
-	return chain, exist
+	if exist {
+		return chain, true
+	}
+	// Try remote datasource if enabled (selectors are globally unique)
+	if _, chainID, details, ok := getRemoteChainBySelector(selector); ok {
+		id, _ := strconv.ParseUint(chainID, 10, 64)
+		return AptosChain{
+			ChainID:  id,
+			Selector: details.ChainSelector,
+			Name:     details.ChainName,
+		}, true
+	}
+	return AptosChain{}, false
 }

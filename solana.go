@@ -10,6 +10,7 @@ import (
 )
 
 //go:generate go run genchains_solana.go
+//go:generate go run generate_all_selectors.go
 
 //go:embed selectors_solana.yml
 var solanaSelectorsYml []byte
@@ -99,6 +100,13 @@ func SolanaChainIdToChainSelector() map[string]uint64 {
 func SolanaNameFromChainId(chainId string) (string, error) {
 	details, exist := solanaChainIdToChainSelector[chainId]
 	if !exist {
+		// Try remote datasource if enabled
+		if remoteDetails, ok := getRemoteChainByID(FamilySolana, chainId); ok {
+			if remoteDetails.ChainName == "" {
+				return chainId, nil
+			}
+			return remoteDetails.ChainName, nil
+		}
 		return "", fmt.Errorf("chain name not found for chain %v", chainId)
 	}
 	if details.ChainName == "" {
@@ -110,6 +118,10 @@ func SolanaNameFromChainId(chainId string) (string, error) {
 func SolanaChainIdFromSelector(selector uint64) (string, error) {
 	chain, exist := solanaChainsBySelector[selector]
 	if !exist {
+		// Try remote datasource if enabled (selectors are globally unique)
+		if _, chainID, _, ok := getRemoteChainBySelector(selector); ok {
+			return chainID, nil
+		}
 		return "", fmt.Errorf("chain not found for selector %d", selector)
 	}
 
@@ -118,6 +130,16 @@ func SolanaChainIdFromSelector(selector uint64) (string, error) {
 
 func SolanaChainBySelector(selector uint64) (SolanaChain, bool) {
 	chain, exists := solanaChainsBySelector[selector]
-
-	return chain, exists
+	if exists {
+		return chain, true
+	}
+	// Try remote datasource if enabled (selectors are globally unique)
+	if _, chainID, details, ok := getRemoteChainBySelector(selector); ok {
+		return SolanaChain{
+			ChainID:  chainID,
+			Selector: details.ChainSelector,
+			Name:     details.ChainName,
+		}, true
+	}
+	return SolanaChain{}, false
 }
