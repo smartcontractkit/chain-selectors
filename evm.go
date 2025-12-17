@@ -101,7 +101,7 @@ func SelectorFromChainId(chainId uint64) (uint64, error) {
 	return 0, fmt.Errorf("chain selector not found for chain %d", chainId)
 }
 
-// Deprecated, this only supports EVM chains, use the chain agnostic `NameFromChainId` instead
+// Deprecated, this only supports EVM chains, use the chain agnostic `GetChainDetailsByChainIDAndFamily` instead
 func NameFromChainId(chainId uint64) (string, error) {
 	details, exist := evmChainIdToChainSelector[chainId]
 	if !exist {
