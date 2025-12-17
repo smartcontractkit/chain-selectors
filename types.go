@@ -9,6 +9,7 @@ const (
 	FamilySui      = "sui"
 	FamilyTron     = "tron"
 	FamilyTon      = "ton"
+	FamilyCanton   = "canton"
 )
 
 type ChainDetails struct {

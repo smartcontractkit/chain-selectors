@@ -1,0 +1,13 @@
+selectors:
+  LocalNet:
+    selector: 8706591216959472610
+    name: canton-localnet
+  DevNet:
+    selector: 10109143320554840099
+    name: canton-devnet
+  TestNet:
+    selector: 9268731218649498074
+    name: canton-testnet
+  MainNet:
+    selector: 2308837218439511688
+    name: canton-mainnet

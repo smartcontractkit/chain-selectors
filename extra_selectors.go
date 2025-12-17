@@ -15,6 +15,7 @@ type extraSelectorsData struct {
 	Ton      map[int32]ChainDetails  `yaml:"ton"`
 	Tron     map[uint64]ChainDetails `yaml:"tron"`
 	Starknet map[string]ChainDetails `yaml:"starknet"`
+	Canton   map[string]ChainDetails `yaml:"canton"`
 }
 
 var (
@@ -57,6 +58,11 @@ func loadAndParseExtraSelectors() (result extraSelectorsData) {
 	err = validateAptosChainID(data.Aptos)
 	if err != nil {
 		log.Printf("Error parsing extra selectors for Aptos: %v", err)
+		panic(err)
+	}
+
+	if err := validateCantonChainID(data.Canton); err != nil {
+		log.Printf("Error parsing extra selectors for Canton: %v", err)
 		panic(err)
 	}
 
