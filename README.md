@@ -153,24 +153,6 @@ aptos:
 # Also supports: tron, ton, sui, starknet sections as needed
 ```
 
-#### Behavior Notes
-
-**EXTRA_SELECTORS_FILE:**
-
-- Supports **local file paths only**
-- Loaded at startup (eager loading)
-- **Fail-fast:** Panics on any error (file not found, parse error)
-- Duplicate chains skipped with warning logs
-- Works in air-gapped environments
-
-**ENABLE_REMOTE_DATASOURCE:**
-
-- **Lazy loading:** Only fetches when a chain is not found in embedded/extra chains
-- Fetches from hardcoded GitHub main branch URL (30-second timeout)
-- Remote data is cached after first fetch
-- **Graceful fallback:** If fetch fails, logs warning and returns error for that lookup
-- Embedded chains always work, even if remote fetch fails
-
 **General:**
 
 - Embedded chains are always loaded at startup

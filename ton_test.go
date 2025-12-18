@@ -2,6 +2,10 @@ package chain_selectors
 
 import (
 	"fmt"
+	"net/http"
+	"net/http/httptest"
+	"os"
+	"sync"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -75,4 +79,76 @@ func Test_TonGetChainIDByChainSelector(t *testing.T) {
 		assert.NoError(t, err)
 		assert.Equal(t, chainID, fmt.Sprintf("%v", k))
 	}
+}
+
+func Test_TonRemoteFallback(t *testing.T) {
+	// Test data - chain not in embedded data
+	testSelector := uint64(8888888888888888888)
+	testChainID := int32(-999)
+	testChainName := "ton-test-remote"
+
+	// Create a mock HTTP server
+	mockYAML := `
+ton:
+  -999:
+    selector: 8888888888888888888
+    name: "ton-test-remote"
+`
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte(mockYAML))
+	}))
+	t.Cleanup(server.Close)
+
+	// Override the remote datasource URL
+	setRemoteDatasourceURL(t, server.URL)
+
+	// Reset remote state for this test
+	originalRemoteSelectors := remoteSelectors
+	originalRemoteSelectorsFetched := remoteSelectorsFetched
+	originalOnce := remoteSelectorsOnce
+	t.Cleanup(func() {
+		remoteSelectors = originalRemoteSelectors
+		remoteSelectorsFetched = originalRemoteSelectorsFetched
+		remoteSelectorsOnce = originalOnce
+	})
+
+	remoteSelectorsOnce = sync.Once{}
+	remoteSelectorsFetched = false
+
+	// Enable remote datasource
+	t.Setenv("ENABLE_REMOTE_DATASOURCE", "true")
+
+	t.Run("TonChainIdFromSelector falls back to remote", func(t *testing.T) {
+		chainID, err := TonChainIdFromSelector(testSelector)
+		require.NoError(t, err)
+		assert.Equal(t, testChainID, chainID)
+	})
+
+	t.Run("TonNameFromChainId falls back to remote", func(t *testing.T) {
+		name, err := TonNameFromChainId(testChainID)
+		require.NoError(t, err)
+		assert.Equal(t, testChainName, name)
+	})
+}
+
+func Test_TonRemoteDisabled(t *testing.T) {
+	// Make sure remote datasource is disabled
+	os.Unsetenv("ENABLE_REMOTE_DATASOURCE")
+
+	// Use a selector that definitely doesn't exist in embedded data
+	nonExistentSelector := uint64(9999999999999999999)
+	nonExistentChainID := int32(99999)
+
+	t.Run("TonChainIdFromSelector returns error when remote disabled", func(t *testing.T) {
+		_, err := TonChainIdFromSelector(nonExistentSelector)
+		require.Error(t, err)
+		assert.Contains(t, err.Error(), "chain id not found")
+	})
+
+	t.Run("TonNameFromChainId returns error when remote disabled", func(t *testing.T) {
+		_, err := TonNameFromChainId(nonExistentChainID)
+		require.Error(t, err)
+		assert.Contains(t, err.Error(), "chain name not found")
+	})
 }

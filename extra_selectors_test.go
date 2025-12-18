@@ -23,11 +23,19 @@ func createTempYamlFile(t *testing.T, yamlContent string) string {
 	return tmpFile.Name()
 }
 
-func setSelectorEnv(_ *testing.T, filePath string) func() {
-	os.Setenv("EXTRA_SELECTORS_FILE", filePath)
-	return func() {
-		os.Unsetenv("EXTRA_SELECTORS_FILE")
-	}
+func setSelectorEnv(t *testing.T, filePath string) {
+	t.Setenv("EXTRA_SELECTORS_FILE", filePath)
+}
+
+// setRemoteDatasourceURL overrides the remoteDatasourceURL for testing
+// Typically used with httptest.NewServer to create a mock HTTP server
+// Usage: setRemoteDatasourceURL(t, server.URL)
+func setRemoteDatasourceURL(t *testing.T, url string) {
+	original := remoteDatasourceURL
+	remoteDatasourceURL = url
+	t.Cleanup(func() {
+		remoteDatasourceURL = original
+	})
 }
 
 func runTestWithYaml(t *testing.T, testName string, yamlContent string, validate func(*testing.T, extraSelectorsData)) {
@@ -35,8 +43,7 @@ func runTestWithYaml(t *testing.T, testName string, yamlContent string, validate
 		filePath := createTempYamlFile(t, yamlContent)
 		defer os.Remove(filePath)
 
-		cleanup := setSelectorEnv(t, filePath)
-		defer cleanup()
+		setSelectorEnv(t, filePath)
 
 		result := loadAndParseExtraSelectors()
 		validate(t, result)
@@ -142,8 +149,7 @@ invalid: yaml: syntax: [unclosed
 		filePath := createTempYamlFile(t, invalidYaml)
 		defer os.Remove(filePath)
 
-		cleanup := setSelectorEnv(t, filePath)
-		defer cleanup()
+		setSelectorEnv(t, filePath)
 
 		assert.Panics(t, func() {
 			loadAndParseExtraSelectors()
@@ -160,8 +166,7 @@ evm:
 		filePath := createTempYamlFile(t, invalidEvmChainIdYaml)
 		defer os.Remove(filePath)
 
-		cleanup := setSelectorEnv(t, filePath)
-		defer cleanup()
+		setSelectorEnv(t, filePath)
 
 		assert.Panics(t, func() {
 			loadAndParseExtraSelectors()
@@ -169,8 +174,7 @@ evm:
 	})
 
 	t.Run("Non-existent file should panic", func(t *testing.T) {
-		cleanup := setSelectorEnv(t, "/non/existent/file.yaml")
-		defer cleanup()
+		setSelectorEnv(t, "/non/existent/file.yaml")
 
 		assert.Panics(t, func() {
 			loadAndParseExtraSelectors()
@@ -241,26 +245,22 @@ func TestIsRemoteDatasourceEnabled(t *testing.T) {
 	})
 
 	t.Run("enabled when set to true", func(t *testing.T) {
-		os.Setenv("ENABLE_REMOTE_DATASOURCE", "true")
-		t.Cleanup(func() { os.Unsetenv("ENABLE_REMOTE_DATASOURCE") })
+		t.Setenv("ENABLE_REMOTE_DATASOURCE", "true")
 		assert.True(t, isRemoteDatasourceEnabled())
 	})
 
 	t.Run("enabled when set to 1", func(t *testing.T) {
-		os.Setenv("ENABLE_REMOTE_DATASOURCE", "1")
-		t.Cleanup(func() { os.Unsetenv("ENABLE_REMOTE_DATASOURCE") })
+		t.Setenv("ENABLE_REMOTE_DATASOURCE", "1")
 		assert.True(t, isRemoteDatasourceEnabled())
 	})
 
 	t.Run("disabled when set to false", func(t *testing.T) {
-		os.Setenv("ENABLE_REMOTE_DATASOURCE", "false")
-		t.Cleanup(func() { os.Unsetenv("ENABLE_REMOTE_DATASOURCE") })
+		t.Setenv("ENABLE_REMOTE_DATASOURCE", "false")
 		assert.False(t, isRemoteDatasourceEnabled())
 	})
 
 	t.Run("disabled when set to invalid value", func(t *testing.T) {
-		os.Setenv("ENABLE_REMOTE_DATASOURCE", "invalid")
-		t.Cleanup(func() { os.Unsetenv("ENABLE_REMOTE_DATASOURCE") })
+		t.Setenv("ENABLE_REMOTE_DATASOURCE", "invalid")
 		assert.False(t, isRemoteDatasourceEnabled())
 	})
 }
@@ -276,7 +276,6 @@ func TestGetRemoteChainByID(t *testing.T) {
 		remoteSelectors = originalRemoteSelectors
 		remoteSelectorsFetched = originalRemoteSelectorsFetched
 		remoteSelectorsOnce = originalOnce
-		os.Unsetenv("ENABLE_REMOTE_DATASOURCE")
 	})
 
 	// Reset sync.Once and mark as already fetched to prevent network calls
@@ -298,7 +297,7 @@ func TestGetRemoteChainByID(t *testing.T) {
 	remoteSelectorsFetched = true
 
 	// Enable remote datasource
-	os.Setenv("ENABLE_REMOTE_DATASOURCE", "true")
+	t.Setenv("ENABLE_REMOTE_DATASOURCE", "true")
 
 	t.Run("EVM chain found", func(t *testing.T) {
 		details, ok := getRemoteChainByID(FamilyEVM, "12345")
@@ -348,7 +347,6 @@ func TestGetRemoteChainBySelector(t *testing.T) {
 		remoteSelectors = originalRemoteSelectors
 		remoteSelectorsFetched = originalRemoteSelectorsFetched
 		remoteSelectorsOnce = originalOnce
-		os.Unsetenv("ENABLE_REMOTE_DATASOURCE")
 	})
 
 	// Reset sync.Once and mark as already fetched to prevent network calls
@@ -370,7 +368,7 @@ func TestGetRemoteChainBySelector(t *testing.T) {
 	remoteSelectorsFetched = true
 
 	// Enable remote datasource
-	os.Setenv("ENABLE_REMOTE_DATASOURCE", "true")
+	t.Setenv("ENABLE_REMOTE_DATASOURCE", "true")
 
 	t.Run("EVM selector found", func(t *testing.T) {
 		family, chainID, details, ok := getRemoteChainBySelector(9999999999)
@@ -470,7 +468,6 @@ func TestRemoteFallbackInLookupFunctions(t *testing.T) {
 		remoteSelectors = originalRemoteSelectors
 		remoteSelectorsFetched = originalRemoteSelectorsFetched
 		remoteSelectorsOnce = originalOnce
-		os.Unsetenv("ENABLE_REMOTE_DATASOURCE")
 	})
 
 	// Reset sync.Once and mark as already fetched to prevent network calls
@@ -491,7 +488,7 @@ func TestRemoteFallbackInLookupFunctions(t *testing.T) {
 	remoteSelectorsFetched = true
 
 	// Enable remote datasource
-	os.Setenv("ENABLE_REMOTE_DATASOURCE", "true")
+	t.Setenv("ENABLE_REMOTE_DATASOURCE", "true")
 
 	t.Run("SelectorFromChainId falls back to remote", func(t *testing.T) {
 		selector, err := SelectorFromChainId(testChainID)
@@ -542,4 +539,49 @@ func TestRemoteDisabledDoesNotFallback(t *testing.T) {
 		_, ok := ChainBySelector(nonExistentSelector)
 		assert.False(t, ok)
 	})
+}
+
+// Example test demonstrating how to mock the remote datasource using httptest.NewServer
+func TestLoadRemoteDatasourceWithMockServer(t *testing.T) {
+	// Create a mock HTTP server
+	mockYAML := `
+evm:
+  999888:
+    selector: 9876543210
+    name: "test-mock-chain"
+`
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte(mockYAML))
+	}))
+	t.Cleanup(server.Close)
+
+	// Override the remote datasource URL to point to our mock server
+	setRemoteDatasourceURL(t, server.URL)
+
+	// Reset remote state for this test
+	originalRemoteSelectors := remoteSelectors
+	originalRemoteSelectorsFetched := remoteSelectorsFetched
+	originalOnce := remoteSelectorsOnce
+	t.Cleanup(func() {
+		remoteSelectors = originalRemoteSelectors
+		remoteSelectorsFetched = originalRemoteSelectorsFetched
+		remoteSelectorsOnce = originalOnce
+	})
+
+	remoteSelectorsOnce = sync.Once{}
+	remoteSelectorsFetched = false
+
+	// Enable remote datasource
+	t.Setenv("ENABLE_REMOTE_DATASOURCE", "true")
+
+	// Trigger the remote datasource load
+	result := loadRemoteDatasource()
+
+	// Verify the mock data was loaded
+	require.NotNil(t, result.Evm)
+	details, exists := result.Evm[999888]
+	require.True(t, exists, "Expected chain ID 999888 to exist in result")
+	assert.Equal(t, uint64(9876543210), details.ChainSelector)
+	assert.Equal(t, "test-mock-chain", details.ChainName)
 }

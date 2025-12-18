@@ -14,10 +14,9 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-const (
-	// remoteDatasourceURL is the hardcoded URL for fetching all chains from the main branch
-	remoteDatasourceURL = "https://raw.githubusercontent.com/smartcontractkit/chain-selectors/main/all_selectors.yml"
-)
+// remoteDatasourceURL is the URL for fetching all chains from the main branch
+// Can be overridden in tests to point to a mock server
+var remoteDatasourceURL = "https://raw.githubusercontent.com/smartcontractkit/chain-selectors/main/all_selectors.yml"
 
 type extraSelectorsData struct {
 	Evm      map[uint64]ChainDetails `yaml:"evm"`
@@ -117,6 +116,13 @@ func getRemoteChainByID(family string, chainID string) (ChainDetails, bool) {
 
 // getRemoteChainBySelector looks up a chain from the remote datasource by selector
 // Returns the family, chain ID (as string), chain details, and whether it was found
+//
+// Note: This function performs a linear search across all families and chains.
+// We could optimize this with a reverse map (selector -> chain info) for O(1) lookups,
+// but given that this is a fallback mechanism only called when embedded data doesn't
+// have the chain, and the remote datasource is lazy-loaded only once, the additional
+// memory and complexity may not be worth it. If this becomes a bottleneck, consider
+// building a selector index map after loading the remote datasource.
 func getRemoteChainBySelector(selector uint64) (family string, chainID string, details ChainDetails, ok bool) {
 	if !tryLazyFetchRemoteSelectors() {
 		return "", "", ChainDetails{}, false
@@ -228,7 +234,8 @@ func getExtraSelectors() extraSelectorsData {
 
 // loadRemoteDatasource fetches chain data from the hardcoded remote URL
 // Called lazily when a chain is not found in embedded chains
-// Returns empty data on error (graceful degradation)
+// Gracefully handles fetch/parse errors (returns empty data to allow embedded chains to work)
+// but panics on validation errors (data corruption that should be fixed in the remote datasource)
 func loadRemoteDatasource() extraSelectorsData {
 	log.Printf("Fetching remote chain data from: %s", remoteDatasourceURL)
 
@@ -245,20 +252,20 @@ func loadRemoteDatasource() extraSelectorsData {
 		return extraSelectorsData{}
 	}
 
-	// Validate chain formats
+	// Validate chain formats - panic on validation errors (data corruption)
 	if err := validateSolanaChainID(data.Solana); err != nil {
-		log.Printf("Warning: Invalid Solana chain IDs in remote datasource: %v. Skipping remote Solana chains.", err)
-		data.Solana = nil
+		log.Printf("Error: Invalid Solana chain IDs in remote datasource: %v", err)
+		panic(err)
 	}
 
 	if err := validateSuiChainID(data.Sui); err != nil {
-		log.Printf("Warning: Invalid Sui chain IDs in remote datasource: %v. Skipping remote Sui chains.", err)
-		data.Sui = nil
+		log.Printf("Error: Invalid Sui chain IDs in remote datasource: %v", err)
+		panic(err)
 	}
 
 	if err := validateAptosChainID(data.Aptos); err != nil {
-		log.Printf("Warning: Invalid Aptos chain IDs in remote datasource: %v. Skipping remote Aptos chains.", err)
-		data.Aptos = nil
+		log.Printf("Error: Invalid Aptos chain IDs in remote datasource: %v", err)
+		panic(err)
 	}
 
 	log.Printf("Successfully loaded remote datasource from %s", remoteDatasourceURL)

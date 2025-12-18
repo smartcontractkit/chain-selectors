@@ -3,6 +3,10 @@ package chain_selectors
 import (
 	"fmt"
 	"math/rand"
+	"net/http"
+	"net/http/httptest"
+	"os"
+	"sync"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -96,4 +100,92 @@ func Test_SolanaNoOverlapBetweenRealAndTestChains(t *testing.T) {
 		_, exist := solanaTestSelectorsMap[k]
 		assert.False(t, exist, "Chain %d is duplicated between real and test chains", k)
 	}
+}
+
+func Test_SolanaRemoteFallback(t *testing.T) {
+	// Test data - chain not in embedded data
+	testSelector := uint64(5555555555555555555)
+	// Use a base58 encoded string that represents exactly 32 bytes
+	// This is a slight modification of an existing genesis hash
+	testChainID := "2eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d"
+	testChainName := "solana-test-remote"
+
+	// Create a mock HTTP server
+	mockYAML := `
+solana:
+  2eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d:
+    selector: 5555555555555555555
+    name: "solana-test-remote"
+`
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte(mockYAML))
+	}))
+	t.Cleanup(server.Close)
+
+	// Override the remote datasource URL
+	setRemoteDatasourceURL(t, server.URL)
+
+	// Reset remote state for this test
+	originalRemoteSelectors := remoteSelectors
+	originalRemoteSelectorsFetched := remoteSelectorsFetched
+	originalOnce := remoteSelectorsOnce
+	t.Cleanup(func() {
+		remoteSelectors = originalRemoteSelectors
+		remoteSelectorsFetched = originalRemoteSelectorsFetched
+		remoteSelectorsOnce = originalOnce
+	})
+
+	remoteSelectorsOnce = sync.Once{}
+	remoteSelectorsFetched = false
+
+	// Enable remote datasource
+	t.Setenv("ENABLE_REMOTE_DATASOURCE", "true")
+
+	t.Run("SolanaChainIdFromSelector falls back to remote", func(t *testing.T) {
+		chainID, err := SolanaChainIdFromSelector(testSelector)
+		require.NoError(t, err)
+		assert.Equal(t, testChainID, chainID)
+	})
+
+	t.Run("SolanaNameFromChainId falls back to remote", func(t *testing.T) {
+		name, err := SolanaNameFromChainId(testChainID)
+		require.NoError(t, err)
+		assert.Equal(t, testChainName, name)
+	})
+
+	t.Run("SolanaChainBySelector falls back to remote", func(t *testing.T) {
+		chain, exists := SolanaChainBySelector(testSelector)
+		require.True(t, exists)
+		assert.Equal(t, testSelector, chain.Selector)
+		assert.Equal(t, testChainID, chain.ChainID)
+		assert.Equal(t, testChainName, chain.Name)
+	})
+}
+
+func Test_SolanaRemoteDisabled(t *testing.T) {
+	// Make sure remote datasource is disabled
+	os.Unsetenv("ENABLE_REMOTE_DATASOURCE")
+
+	// Use a selector that definitely doesn't exist in embedded data
+	nonExistentSelector := uint64(6666666666666666666)
+	// Use a slight modification of an existing genesis hash
+	nonExistentChainID := "7eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d"
+
+	t.Run("SolanaChainIdFromSelector returns error when remote disabled", func(t *testing.T) {
+		_, err := SolanaChainIdFromSelector(nonExistentSelector)
+		require.Error(t, err)
+		assert.Contains(t, err.Error(), "chain not found")
+	})
+
+	t.Run("SolanaNameFromChainId returns error when remote disabled", func(t *testing.T) {
+		_, err := SolanaNameFromChainId(nonExistentChainID)
+		require.Error(t, err)
+		assert.Contains(t, err.Error(), "chain name not found")
+	})
+
+	t.Run("SolanaChainBySelector returns false when remote disabled", func(t *testing.T) {
+		_, exists := SolanaChainBySelector(nonExistentSelector)
+		assert.False(t, exists)
+	})
 }

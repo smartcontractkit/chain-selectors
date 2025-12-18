@@ -3,6 +3,10 @@ package chain_selectors
 import (
 	"fmt"
 	"math/rand"
+	"net/http"
+	"net/http/httptest"
+	"os"
+	"sync"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -83,4 +87,89 @@ func Test_StarknetGetChainIDByChainSelector(t *testing.T) {
 		assert.NoError(t, err)
 		assert.Equal(t, chainID, fmt.Sprintf("%v", k))
 	}
+}
+
+func Test_StarknetRemoteFallback(t *testing.T) {
+	// Test data - chain not in embedded data
+	testSelector := uint64(1111111111111111111)
+	testChainID := "SN_TEST_REMOTE"
+	testChainName := "starknet-test-remote"
+
+	// Create a mock HTTP server
+	mockYAML := `
+starknet:
+  SN_TEST_REMOTE:
+    selector: 1111111111111111111
+    name: "starknet-test-remote"
+`
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte(mockYAML))
+	}))
+	t.Cleanup(server.Close)
+
+	// Override the remote datasource URL
+	setRemoteDatasourceURL(t, server.URL)
+
+	// Reset remote state for this test
+	originalRemoteSelectors := remoteSelectors
+	originalRemoteSelectorsFetched := remoteSelectorsFetched
+	originalOnce := remoteSelectorsOnce
+	t.Cleanup(func() {
+		remoteSelectors = originalRemoteSelectors
+		remoteSelectorsFetched = originalRemoteSelectorsFetched
+		remoteSelectorsOnce = originalOnce
+	})
+
+	remoteSelectorsOnce = sync.Once{}
+	remoteSelectorsFetched = false
+
+	// Enable remote datasource
+	t.Setenv("ENABLE_REMOTE_DATASOURCE", "true")
+
+	t.Run("StarknetChainIdFromSelector falls back to remote", func(t *testing.T) {
+		chainID, err := StarknetChainIdFromSelector(testSelector)
+		require.NoError(t, err)
+		assert.Equal(t, testChainID, chainID)
+	})
+
+	t.Run("StarknetNameFromChainId falls back to remote", func(t *testing.T) {
+		name, err := StarknetNameFromChainId(testChainID)
+		require.NoError(t, err)
+		assert.Equal(t, testChainName, name)
+	})
+
+	t.Run("StarknetChainBySelector falls back to remote", func(t *testing.T) {
+		chain, exists := StarknetChainBySelector(testSelector)
+		require.True(t, exists)
+		assert.Equal(t, testSelector, chain.Selector)
+		assert.Equal(t, testChainID, chain.ChainID)
+		assert.Equal(t, testChainName, chain.Name)
+	})
+}
+
+func Test_StarknetRemoteDisabled(t *testing.T) {
+	// Make sure remote datasource is disabled
+	os.Unsetenv("ENABLE_REMOTE_DATASOURCE")
+
+	// Use a selector that definitely doesn't exist in embedded data
+	nonExistentSelector := uint64(2222222222222222222)
+	nonExistentChainID := "SN_NONEXISTENT"
+
+	t.Run("StarknetChainIdFromSelector returns error when remote disabled", func(t *testing.T) {
+		_, err := StarknetChainIdFromSelector(nonExistentSelector)
+		require.Error(t, err)
+		assert.Contains(t, err.Error(), "chain not found")
+	})
+
+	t.Run("StarknetNameFromChainId returns error when remote disabled", func(t *testing.T) {
+		_, err := StarknetNameFromChainId(nonExistentChainID)
+		require.Error(t, err)
+		assert.Contains(t, err.Error(), "chain name not found")
+	})
+
+	t.Run("StarknetChainBySelector returns false when remote disabled", func(t *testing.T) {
+		_, exists := StarknetChainBySelector(nonExistentSelector)
+		assert.False(t, exists)
+	})
 }

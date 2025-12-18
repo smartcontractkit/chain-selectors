@@ -81,7 +81,10 @@ func TonChainIdFromSelector(selector uint64) (int32, error) {
 	if !exist {
 		// Try remote datasource if enabled (selectors are globally unique)
 		if _, remoteChainID, _, ok := getRemoteChainBySelector(selector); ok {
-			id, _ := strconv.ParseInt(remoteChainID, 10, 32)
+			id, err := strconv.ParseInt(remoteChainID, 10, 32)
+			if err != nil {
+				return 0, fmt.Errorf("invalid chain id from remote datasource for selector %d: %w", selector, err)
+			}
 			return int32(id), nil
 		}
 		return 0, fmt.Errorf("chain id not found for selector %d", selector)

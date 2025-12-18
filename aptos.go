@@ -95,7 +95,10 @@ func AptosChainIdFromSelector(selector uint64) (uint64, error) {
 	if !exist {
 		// Try remote datasource if enabled (selectors are globally unique)
 		if _, chainID, _, ok := getRemoteChainBySelector(selector); ok {
-			id, _ := strconv.ParseUint(chainID, 10, 64)
+			id, err := strconv.ParseUint(chainID, 10, 64)
+			if err != nil {
+				return 0, fmt.Errorf("invalid chain id from remote datasource for selector %d: %w", selector, err)
+			}
 			return id, nil
 		}
 		return 0, fmt.Errorf("chain id not found for selector %d", selector)
@@ -111,7 +114,10 @@ func AptosChainBySelector(selector uint64) (AptosChain, bool) {
 	}
 	// Try remote datasource if enabled (selectors are globally unique)
 	if _, chainID, details, ok := getRemoteChainBySelector(selector); ok {
-		id, _ := strconv.ParseUint(chainID, 10, 64)
+		id, err := strconv.ParseUint(chainID, 10, 64)
+		if err != nil {
+			return AptosChain{}, false
+		}
 		return AptosChain{
 			ChainID:  id,
 			Selector: details.ChainSelector,

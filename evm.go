@@ -93,7 +93,10 @@ func ChainIdFromSelector(chainSelectorId uint64) (uint64, error) {
 	}
 	// Try remote datasource if enabled (selectors are globally unique)
 	if _, chainID, _, ok := getRemoteChainBySelector(chainSelectorId); ok {
-		id, _ := strconv.ParseUint(chainID, 10, 64)
+		id, err := strconv.ParseUint(chainID, 10, 64)
+		if err != nil {
+			return 0, fmt.Errorf("invalid chain id from remote datasource for selector %d: %w", chainSelectorId, err)
+		}
 		return id, nil
 	}
 	return 0, fmt.Errorf("chain not found for chain selector %d", chainSelectorId)
