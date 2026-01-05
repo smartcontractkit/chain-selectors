@@ -1,0 +1,42 @@
+name: Rust - Build and test
+
+on: [ push ]
+
+jobs:
+  build-test:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v3
+      - name: Install rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+        with:
+          cache-on-failure: true
+      - name: Set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version-file: "go.mod"
+          cache: false
+      - name: Make sure generated files are updated
+        run: |
+          if go generate ./rs | grep -q 'evm (rust): no changes detected'; then
+            exit 0;
+          fi
+          exit 1;
+      - name: cargo fmt
+        working-directory: rs/chainselectors
+        run: cargo fmt --all -- --check
+      - name: cargo clippy
+        working-directory: rs/chainselectors
+        run: cargo clippy --all-targets --all-features -- -D warnings
+      - name: cargo test
+        working-directory: rs/chainselectors
+        run: cargo test
+        timeout-minutes: 1
+      - name: cargo build
+        working-directory: rs/chainselectors
+        run: cargo build
