@@ -27,7 +27,7 @@ func setSelectorEnv(_ *testing.T, filePath string) func() {
 	}
 }
 
-func runTestWithYaml(t *testing.T, testName string, yamlContent string, validate func(*testing.T, extraSelectorsData)) {
+func runTestWithYaml(t *testing.T, testName string, yamlContent string, validate func(*testing.T, ExtraSelectorsData)) {
 	t.Run(testName, func(t *testing.T) {
 		filePath := createTempYamlFile(t, yamlContent)
 		defer os.Remove(filePath)
@@ -81,7 +81,7 @@ starknet:
 )
 
 func TestExtraSelectors(t *testing.T) {
-	runTestWithYaml(t, "Extra selectors: single family", yamlSingleFamily, func(t *testing.T, result extraSelectorsData) {
+	runTestWithYaml(t, "Extra selectors: single family", yamlSingleFamily, func(t *testing.T, result ExtraSelectorsData) {
 		assert.Len(t, result.Evm, 1)
 		assert.Empty(t, result.Aptos)
 		assert.Empty(t, result.Solana)
@@ -96,7 +96,7 @@ func TestExtraSelectors(t *testing.T) {
 		assert.Equal(t, "test-evm-chain", evmChain.ChainName)
 	})
 
-	runTestWithYaml(t, "Extra selectors: multiple families", yamlMultipleFamilies, func(t *testing.T, result extraSelectorsData) {
+	runTestWithYaml(t, "Extra selectors: multiple families", yamlMultipleFamilies, func(t *testing.T, result ExtraSelectorsData) {
 		assert.Len(t, result.Evm, 1)
 		assert.Len(t, result.Aptos, 1)
 		assert.Len(t, result.Sui, 1)
@@ -115,7 +115,7 @@ func TestExtraSelectors(t *testing.T) {
 		assert.Equal(t, "test-sui-chain", suiChain.ChainName)
 	})
 
-	runTestWithYaml(t, "Extra selectors: empty YAML file", ``, func(t *testing.T, result extraSelectorsData) {
+	runTestWithYaml(t, "Extra selectors: empty YAML file", ``, func(t *testing.T, result ExtraSelectorsData) {
 		assert.Empty(t, result.Evm)
 		assert.Empty(t, result.Aptos)
 		assert.Empty(t, result.Solana)
