@@ -2,18 +2,20 @@
 
 CCIP uses its own set of chain selectors represented by uint64 to identify blockchains. It is a random
 integer generated as follows:
+
 ```python3
 python3
 >>> import random
 >>> random.randint(1, 2**64-1)
 ```
+
 The scheme is used for several reasons:
+
 - Global uniqueness across blockchain families
 - Very unlikely to collide with existing chain ID schemes, reducing confusion
 - Efficient on/off-chain representation
 - No preference towards any family or chain
 - Decoupled from chain name which may change over time with rebrands/forks
-
 
 This repository contains a
 mapping between the custom chain identifiers (`chainSelectorId`) chain names and the chain identifiers
@@ -35,24 +37,24 @@ import (
 
 func main() {
     // -------------------Chains agnostic --------------------:
-    
+
     // Getting chain family based on selector
     family, err := GetSelectorFamily(2664363617261496610)
-	
+
     // -------------------For EVM chains--------------------
-	
+
     // Getting selector based on ChainId
     selector, err := chainselectors.SelectorFromChainId(420)
-    
+
     // Getting ChainId based on ChainSelector
     chainId, err := chainselectors.ChainIdFromSelector(2664363617261496610)
-    
+
     // Getting ChainName based on ChainId
     chainName, err := chainselectors.NameFromChainId(420)
-    
+
     // Getting ChainId based on the ChainName
     chainId, err := chainselectors.ChainIdFromName("binance_smart_chain-testnet")
-    
+
     // Accessing mapping directly
     lookupChainId := uint64(1337)
     if chainSelector, exists := chainselectors.EvmChainIdToChainSelector()[lookupChainId]; exists {
@@ -60,7 +62,7 @@ func main() {
     }
 
     // -------------------Solana Chain --------------------:
-	
+
     // Getting chain family based on selector
     family, err := SolanaNameFromChainId("5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d")
 
@@ -71,9 +73,63 @@ func main() {
     lookupChainId := "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d"
     if chainSelector, exists:= chainselectors.SolanaChainIdToChainSelector()[lookupChainId]; exists {
         fmt.Println("Found solana chain selector for chain", lookupChainId, ":", chainSelector)
-    }   
+    }
 }
 ```
+
+### Remote API (Fetch from GitHub)
+
+You can fetch chain information dynamically from GitHub. This allows you to get the latest chain data without updating the package.
+
+```go
+import (
+    chainsel "github.com/smartcontractkit/chain-selectors/remote"
+)
+```
+
+#### Chain-Agnostic Functions
+
+These functions work across all blockchain families (EVM, Solana, Aptos, Sui, Ton, Tron, Starknet):
+
+```go
+// Get chain details by selector (returns family, chain ID, and name)
+details, err := chainsel.GetChainDetailsBySelector(ctx, 5009297550715157269)
+// Returns: ChainDetailsWithMetadata{Family: "evm", ChainID: "1", ChainName: "ethereum-mainnet", ...}
+
+// Get chain details by chain ID and family
+details, err := chainsel.GetChainDetailsByChainIDAndFamily(ctx, "1", "evm")
+// Returns: ChainDetails{ChainSelector: 5009297550715157269, ChainName: "ethereum-mainnet"}
+```
+
+#### EVM-Specific Functions
+
+These functions are specific to EVM chains:
+
+```go
+// Get all EVM chain ID to selector mappings
+mapping, err := chainsel.EvmChainIdToChainSelector(ctx)
+
+// Get EVM chain ID from chain name
+chainID, err := chainsel.EvmChainIdFromName(ctx, "ethereum-mainnet")
+
+// Get chain details by selector
+chain, exists, err := chainsel.EvmChainBySelector(ctx, 5009297550715157269)
+
+// Get chain details by EVM chain ID
+chain, exists, err := chainsel.EvmChainByEvmChainID(ctx, 1)
+
+// Check if a selector belongs to an EVM chain
+isEvm, err := chainsel.IsEvm(ctx, 5009297550715157269)
+```
+
+**Note:** When using remote fetching:
+
+- Extra selectors (from `EXTRA_SELECTORS_FILE`) are **not included** in remote API responses
+- Embedded chains from the package are **ignored** - only chains from GitHub are used
+- Use remote fetching when you need the latest chain data from the repository
+- Use in-memory functions when you need to include extra selectors or prefer faster lookups
+- Caching is **enabled by default** with a 5-minute TTL to reduce network calls
+- use `WithCacheTTL(0)` to disable or customize the TTL
 
 ### Adding additional chains at runtime
 
@@ -97,21 +153,23 @@ Chain names must respect the following format:
 
 When a component requires more than 1 word, use snake-case to connect them, e.g `polygon-zkevm`.
 
-| Parameter | Description | Example                       |
-| --- | --- |-------------------------------|
-| blockchain | Name of the chain | `ethereum`, `avalanche`, `polygon-zkevm`    |
-| type | Type of network | `testnet`, `mainnet`, `devnet`      |
-| network_instance | [Only if not mainnet] Identifier of specific network | `alfajores`, `holesky`, `sepolia`, `1` |
+| Parameter        | Description                                          | Example                                  |
+| ---------------- | ---------------------------------------------------- | ---------------------------------------- |
+| blockchain       | Name of the chain                                    | `ethereum`, `avalanche`, `polygon-zkevm` |
+| type             | Type of network                                      | `testnet`, `mainnet`, `devnet`           |
+| network_instance | [Only if not mainnet] Identifier of specific network | `alfajores`, `holesky`, `sepolia`, `1`   |
 
 More on `network_instance`: only include it if `type` is not mainnet. This is because legacy testnet instances are often dropped after a new one is spun up, e.g Ethereum Rinkeby.
 
 Rules for `network_instance`:
+
 1. If chain has an officially-named testnet, use it, e.g
-`celo-testnet-alfajores`, `ethereum-testnet-holesky`
+   `celo-testnet-alfajores`, `ethereum-testnet-holesky`
 2. If not above, and chain is a rollup, use the name of its settlement network, e.g `base-testnet-sepolia`
 3. If not above, use a number, e.g `bsc-testnet-1`
 
 Example chain names that comply with the format:
+
 ```
 astar-mainnet
 astar-testnet-shibuya
@@ -130,7 +188,6 @@ bsc-testnet-1
 
 You may find some existing names follow a legacy naming pattern: `<blockchain>-<type>-<network_name>-<parachain>-<rollup>-<rollup_instance>`. Those names are kept as is due to complexity of migration. The transition form legacy pattern to the new pattern is motivated by chain migrations, e.g Celo migrating from an L1 into an L2, rendering the legacy name stale.
 
-
 #### Adding new chains
 
 Any new chains and selectors should be always added to [selectors.yml](selectors.yml) and client libraries should load
@@ -145,12 +202,11 @@ $chain_id:
   name: $chain_name as string # Although name is optional parameter, please provide it and respect the format described below
 ```
 
-[selectors.yml](selectors.yml) file is divided into sections based on the blockchain type. 
+[selectors.yml](selectors.yml) file is divided into sections based on the blockchain type.
 Please make sure to add new entries to the both sections and keep them sorted by chain id within these sections.
 
 If you need to add a new chain for testing purposes (e.g. running tests with simulated environment) don't mix it with
 the main file and use [test_selectors.yml](test_selectors.yml) instead. This file is used only for testing purposes.
-
 
 #### Adding new client libraries
 
@@ -159,4 +215,3 @@ If you need a support for a new language, please open a PR with the following ch
 - Library codebase is in a separate directory
 - Library uses selectors.yml as a source of truth
 - Proper Github workflow is present to make sure code compiles and tests pass
-
