@@ -51,6 +51,8 @@ type remoteCacheData struct {
 	// Starknet
 	starknetSelectorsMap     map[string]chain_selectors.ChainDetails
 	starknetChainsBySelector map[uint64]chain_selectors.StarknetChain
+	// Canton
+	cantonSelectorsMap map[string]chain_selectors.ChainDetails
 	// Metadata
 	fetchedAt time.Time
 }
@@ -162,6 +164,7 @@ func fetchRemoteSelectors(ctx context.Context, config *Config) (*remoteCacheData
 		tronChainIdBySelector:        make(map[uint64]uint64),
 		starknetSelectorsMap:         data.Starknet,
 		starknetChainsBySelector:     make(map[uint64]chain_selectors.StarknetChain),
+		cantonSelectorsMap:           data.Canton,
 		fetchedAt:                    time.Now(),
 	}
 
@@ -348,6 +351,17 @@ func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Opt
 		}
 	}
 
+	// Check Canton chains
+	for chainID, details := range cache.cantonSelectorsMap {
+		if details.ChainSelector == selector {
+			return ChainDetailsWithMetadata{
+				ChainDetails: details,
+				Family:       chain_selectors.FamilyCanton,
+				ChainID:      chainID,
+			}, nil
+		}
+	}
+
 	return ChainDetailsWithMetadata{}, fmt.Errorf("unknown chain selector %d", selector)
 }
 
@@ -435,6 +449,14 @@ func GetChainDetailsByChainIDAndFamily(ctx context.Context, chainID string, fami
 
 	case chain_selectors.FamilyStarknet:
 		details, exist := cache.starknetSelectorsMap[chainID]
+		if !exist {
+			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return details, nil
+
+	case chain_selectors.FamilyCanton:
+		details, exist := cache.cantonSelectorsMap[chainID]
 		if !exist {
 			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}

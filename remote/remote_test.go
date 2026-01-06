@@ -87,6 +87,7 @@ func newMockServer() *httptest.Server {
 }
 
 func TestGetChainDetailsBySelector(t *testing.T) {
+	ClearCache()
 	server := newMockServer()
 	t.Cleanup(server.Close)
 
@@ -114,6 +115,7 @@ func TestGetChainDetailsBySelector(t *testing.T) {
 }
 
 func TestGetChainDetailsByChainIDAndFamily(t *testing.T) {
+	ClearCache()
 	server := newMockServer()
 	t.Cleanup(server.Close)
 
@@ -146,6 +148,7 @@ func TestGetChainDetailsByChainIDAndFamily(t *testing.T) {
 }
 
 func TestRemoteWithMockServer(t *testing.T) {
+	ClearCache()
 	// Create a mock server that returns test data
 	mockYAML := `evm:
   1:
@@ -162,6 +165,13 @@ aptos:
   1:
     selector: 4741433654867091981
     name: aptos-mainnet
+canton:
+  MainNet:
+    selector: 2199546568103630433
+    name: canton-mainnet
+  TestNet:
+    selector: 13503176106905080262
+    name: canton-testnet
 `
 
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -207,6 +217,25 @@ aptos:
 		// Solana mainnet returns the actual on-chain ID, not just "mainnet"
 		assert.NotEmpty(t, details.ChainID, "Chain ID should not be empty")
 		assert.Equal(t, "solana-mainnet", details.ChainName)
+	})
+
+	// Test with Canton chain
+	t.Run("GetCantonChainDetails", func(t *testing.T) {
+		details, err := GetChainDetailsBySelector(ctx, 2199546568103630433,
+			WithURL(server.URL),
+		)
+		require.NoError(t, err)
+		assert.Equal(t, chain_selectors.FamilyCanton, details.Family)
+		assert.Equal(t, "MainNet", details.ChainID)
+		assert.Equal(t, "canton-mainnet", details.ChainName)
+	})
+	t.Run("GetCantonChainDetailsByChainIDAndFamily", func(t *testing.T) {
+		details, err := GetChainDetailsByChainIDAndFamily(ctx, "TestNet", chain_selectors.FamilyCanton,
+			WithURL(server.URL),
+		)
+		require.NoError(t, err)
+		assert.Equal(t, uint64(13503176106905080262), details.ChainSelector)
+		assert.Equal(t, "canton-testnet", details.ChainName)
 	})
 
 	// Test EVM-specific functions
@@ -298,4 +327,3 @@ aptos:
 		assert.Error(t, err, "Expected error for invalid YAML")
 	})
 }
-

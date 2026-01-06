@@ -834,3 +834,16 @@ starknet:
     SN_SEPOLIA:
         selector: 4115550741429562104
         name: ethereum-testnet-sepolia-starknet-1
+canton:
+    DevNet:
+        selector: 10109143320554840099
+        name: canton-devnet
+    LocalNet:
+        selector: 8706591216959472610
+        name: canton-localnet
+    MainNet:
+        selector: 2308837218439511688
+        name: canton-mainnet
+    TestNet:
+        selector: 9268731218649498074
+        name: canton-testnet

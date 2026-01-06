@@ -1,10 +1,10 @@
 module github.com/smartcontractkit/chain-selectors
 
-go 1.20
+go 1.21
 
 require (
 	github.com/mr-tron/base58 v1.2.0
-	github.com/stretchr/testify v1.8.4
+	github.com/stretchr/testify v1.11.1
 	gopkg.in/yaml.v3 v3.0.1
 )
 
