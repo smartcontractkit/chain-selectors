@@ -225,12 +225,12 @@ canton:
 			WithURL(server.URL),
 		)
 		require.NoError(t, err)
-		assert.Equal(t, FamilyCanton, details.Family)
+		assert.Equal(t, chain_selectors.FamilyCanton, details.Family)
 		assert.Equal(t, "MainNet", details.ChainID)
 		assert.Equal(t, "canton-mainnet", details.ChainName)
 	})
 	t.Run("GetCantonChainDetailsByChainIDAndFamily", func(t *testing.T) {
-		details, err := GetChainDetailsByChainIDAndFamily(ctx, "TestNet", FamilyCanton,
+		details, err := GetChainDetailsByChainIDAndFamily(ctx, "TestNet", chain_selectors.FamilyCanton,
 			WithURL(server.URL),
 		)
 		require.NoError(t, err)
