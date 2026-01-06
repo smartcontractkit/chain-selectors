@@ -7,6 +7,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/smartcontractkit/chain-selectors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -99,7 +100,7 @@ func TestGetChainDetailsBySelector(t *testing.T) {
 		WithTimeout(5*time.Second),
 	)
 	require.NoError(t, err)
-	assert.Equal(t, FamilyEVM, details.Family)
+	assert.Equal(t, chain_selectors.FamilyEVM, details.Family)
 	assert.Equal(t, "1", details.ChainID)
 	assert.Equal(t, "ethereum-mainnet", details.ChainName)
 	assert.Equal(t, ethereumMainnetSelector, details.ChainSelector)
@@ -119,7 +120,7 @@ func TestGetChainDetailsByChainIDAndFamily(t *testing.T) {
 	ctx := context.Background()
 
 	// Test with Ethereum Mainnet
-	details, err := GetChainDetailsByChainIDAndFamily(ctx, "1", FamilyEVM,
+	details, err := GetChainDetailsByChainIDAndFamily(ctx, "1", chain_selectors.FamilyEVM,
 		WithURL(server.URL),
 		WithTimeout(5*time.Second),
 	)
@@ -128,14 +129,14 @@ func TestGetChainDetailsByChainIDAndFamily(t *testing.T) {
 	assert.Equal(t, "ethereum-mainnet", details.ChainName)
 
 	// Test with non-existent chain ID
-	_, err = GetChainDetailsByChainIDAndFamily(ctx, "999999999", FamilyEVM,
+	_, err = GetChainDetailsByChainIDAndFamily(ctx, "999999999", chain_selectors.FamilyEVM,
 		WithURL(server.URL),
 		WithTimeout(5*time.Second),
 	)
 	assert.Error(t, err)
 
 	// Test with Solana chain
-	details, err = GetChainDetailsByChainIDAndFamily(ctx, "mainnet", FamilySolana,
+	details, err = GetChainDetailsByChainIDAndFamily(ctx, "mainnet", chain_selectors.FamilySolana,
 		WithURL(server.URL),
 		WithTimeout(5*time.Second),
 	)
@@ -179,14 +180,14 @@ aptos:
 			WithTimeout(5*time.Second),
 		)
 		require.NoError(t, err)
-		assert.Equal(t, FamilyEVM, details.Family)
+		assert.Equal(t, chain_selectors.FamilyEVM, details.Family)
 		assert.Equal(t, "1", details.ChainID)
 		assert.Equal(t, "ethereum-mainnet", details.ChainName)
 	})
 
 	// Test GetChainDetailsByChainIDAndFamily with mock server
 	t.Run("GetChainDetailsByChainIDAndFamily", func(t *testing.T) {
-		details, err := GetChainDetailsByChainIDAndFamily(ctx, "137", FamilyEVM,
+		details, err := GetChainDetailsByChainIDAndFamily(ctx, "137", chain_selectors.FamilyEVM,
 			WithURL(server.URL),
 			WithTimeout(5*time.Second),
 		)
@@ -202,7 +203,7 @@ aptos:
 			WithTimeout(5*time.Second),
 		)
 		require.NoError(t, err)
-		assert.Equal(t, FamilySolana, details.Family)
+		assert.Equal(t, chain_selectors.FamilySolana, details.Family)
 		// Solana mainnet returns the actual on-chain ID, not just "mainnet"
 		assert.NotEmpty(t, details.ChainID, "Chain ID should not be empty")
 		assert.Equal(t, "solana-mainnet", details.ChainName)

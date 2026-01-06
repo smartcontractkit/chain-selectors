@@ -9,6 +9,7 @@ import (
 	"sync"
 	"time"
 
+	chain_selectors "github.com/smartcontractkit/chain-selectors"
 	"gopkg.in/yaml.v3"
 )
 
@@ -21,17 +22,6 @@ const (
 	DefaultCacheTTL = 5 * time.Minute
 )
 
-// Family constants for blockchain types
-const (
-	FamilyEVM      = "evm"
-	FamilySolana   = "solana"
-	FamilyAptos    = "aptos"
-	FamilySui      = "sui"
-	FamilyTon      = "ton"
-	FamilyTron     = "tron"
-	FamilyStarknet = "starknet"
-)
-
 var (
 	// remoteCache stores the parsed remote data to avoid repeated HTTP calls
 	remoteCache     *remoteCacheData
@@ -40,27 +30,27 @@ var (
 
 type remoteCacheData struct {
 	// EVM
-	evmChainIdToChainSelector map[uint64]ChainDetails
-	evmChainsBySelector       map[uint64]Chain
-	evmChainsByEvmChainID     map[uint64]Chain
+	evmChainIdToChainSelector map[uint64]chain_selectors.ChainDetails
+	evmChainsBySelector       map[uint64]chain_selectors.Chain
+	evmChainsByEvmChainID     map[uint64]chain_selectors.Chain
 	// Solana
-	solanaChainIdToChainSelector map[string]ChainDetails
-	solanaChainsBySelector       map[uint64]SolanaChain
+	solanaChainIdToChainSelector map[string]chain_selectors.ChainDetails
+	solanaChainsBySelector       map[uint64]chain_selectors.SolanaChain
 	// Aptos
-	aptosSelectorsMap     map[uint64]ChainDetails
-	aptosChainsBySelector map[uint64]AptosChain
+	aptosSelectorsMap     map[uint64]chain_selectors.ChainDetails
+	aptosChainsBySelector map[uint64]chain_selectors.AptosChain
 	// Sui
-	suiSelectorsMap     map[uint64]ChainDetails
-	suiChainsBySelector map[uint64]SuiChain
+	suiSelectorsMap     map[uint64]chain_selectors.ChainDetails
+	suiChainsBySelector map[uint64]chain_selectors.SuiChain
 	// Ton
-	tonSelectorsMap      map[int32]ChainDetails
+	tonSelectorsMap      map[int32]chain_selectors.ChainDetails
 	tonChainIdBySelector map[uint64]int32
 	// Tron
-	tronSelectorsMap      map[uint64]ChainDetails
+	tronSelectorsMap      map[uint64]chain_selectors.ChainDetails
 	tronChainIdBySelector map[uint64]uint64
 	// Starknet
-	starknetSelectorsMap     map[string]ChainDetails
-	starknetChainsBySelector map[uint64]StarknetChain
+	starknetSelectorsMap     map[string]chain_selectors.ChainDetails
+	starknetChainsBySelector map[uint64]chain_selectors.StarknetChain
 	// Metadata
 	fetchedAt time.Time
 }
@@ -103,58 +93,6 @@ func WithCacheTTL(ttl time.Duration) Option {
 	return func(c *Config) {
 		c.CacheTTL = ttl
 	}
-}
-
-// ChainDetails represents the basic chain information
-type ChainDetails struct {
-	ChainSelector uint64 `yaml:"selector" json:"chainSelector"`
-	ChainName     string `yaml:"name" json:"chainName"`
-}
-
-// Chain represents an EVM chain
-type Chain struct {
-	EvmChainID uint64
-	Selector   uint64
-	Name       string
-}
-
-// SolanaChain represents a Solana chain
-type SolanaChain struct {
-	ChainID  string
-	Selector uint64
-	Name     string
-}
-
-// AptosChain represents an Aptos chain
-type AptosChain struct {
-	ChainID  uint64
-	Selector uint64
-	Name     string
-}
-
-// SuiChain represents a Sui chain
-type SuiChain struct {
-	ChainID  uint64
-	Selector uint64
-	Name     string
-}
-
-// StarknetChain represents a Starknet chain
-type StarknetChain struct {
-	ChainID  string
-	Selector uint64
-	Name     string
-}
-
-// ExtraSelectorsData represents the structure of the all_selectors.yml file
-type ExtraSelectorsData struct {
-	Evm      map[uint64]ChainDetails `yaml:"evm"`
-	Solana   map[string]ChainDetails `yaml:"solana"`
-	Aptos    map[uint64]ChainDetails `yaml:"aptos"`
-	Sui      map[uint64]ChainDetails `yaml:"sui"`
-	Ton      map[int32]ChainDetails  `yaml:"ton"`
-	Tron     map[uint64]ChainDetails `yaml:"tron"`
-	Starknet map[string]ChainDetails `yaml:"starknet"`
 }
 
 // fetchRemoteSelectors fetches and parses the all_selectors.yml file from GitHub
@@ -202,7 +140,7 @@ func fetchRemoteSelectors(ctx context.Context, config *Config) (*remoteCacheData
 	}
 
 	// Parse YAML
-	var data ExtraSelectorsData
+	var data chain_selectors.ExtraSelectorsData
 	if err := yaml.Unmarshal(body, &data); err != nil {
 		return nil, fmt.Errorf("failed to parse remote selectors YAML: %w", err)
 	}
@@ -210,26 +148,26 @@ func fetchRemoteSelectors(ctx context.Context, config *Config) (*remoteCacheData
 	// Build cache data structure
 	cache := &remoteCacheData{
 		evmChainIdToChainSelector:    data.Evm,
-		evmChainsBySelector:          make(map[uint64]Chain),
-		evmChainsByEvmChainID:        make(map[uint64]Chain),
+		evmChainsBySelector:          make(map[uint64]chain_selectors.Chain),
+		evmChainsByEvmChainID:        make(map[uint64]chain_selectors.Chain),
 		solanaChainIdToChainSelector: data.Solana,
-		solanaChainsBySelector:       make(map[uint64]SolanaChain),
+		solanaChainsBySelector:       make(map[uint64]chain_selectors.SolanaChain),
 		aptosSelectorsMap:            data.Aptos,
-		aptosChainsBySelector:        make(map[uint64]AptosChain),
+		aptosChainsBySelector:        make(map[uint64]chain_selectors.AptosChain),
 		suiSelectorsMap:              data.Sui,
-		suiChainsBySelector:          make(map[uint64]SuiChain),
+		suiChainsBySelector:          make(map[uint64]chain_selectors.SuiChain),
 		tonSelectorsMap:              data.Ton,
 		tonChainIdBySelector:         make(map[uint64]int32),
 		tronSelectorsMap:             data.Tron,
 		tronChainIdBySelector:        make(map[uint64]uint64),
 		starknetSelectorsMap:         data.Starknet,
-		starknetChainsBySelector:     make(map[uint64]StarknetChain),
+		starknetChainsBySelector:     make(map[uint64]chain_selectors.StarknetChain),
 		fetchedAt:                    time.Now(),
 	}
 
 	// Build EVM lookup maps
 	for chainID, details := range data.Evm {
-		chain := Chain{
+		chain := chain_selectors.Chain{
 			EvmChainID: chainID,
 			Selector:   details.ChainSelector,
 			Name:       details.ChainName,
@@ -240,7 +178,7 @@ func fetchRemoteSelectors(ctx context.Context, config *Config) (*remoteCacheData
 
 	// Build Solana lookup maps
 	for chainID, details := range data.Solana {
-		chain := SolanaChain{
+		chain := chain_selectors.SolanaChain{
 			ChainID:  chainID,
 			Selector: details.ChainSelector,
 			Name:     details.ChainName,
@@ -250,7 +188,7 @@ func fetchRemoteSelectors(ctx context.Context, config *Config) (*remoteCacheData
 
 	// Build Aptos lookup maps
 	for chainID, details := range data.Aptos {
-		chain := AptosChain{
+		chain := chain_selectors.AptosChain{
 			ChainID:  chainID,
 			Selector: details.ChainSelector,
 			Name:     details.ChainName,
@@ -260,7 +198,7 @@ func fetchRemoteSelectors(ctx context.Context, config *Config) (*remoteCacheData
 
 	// Build Sui lookup maps
 	for chainID, details := range data.Sui {
-		chain := SuiChain{
+		chain := chain_selectors.SuiChain{
 			ChainID:  chainID,
 			Selector: details.ChainSelector,
 			Name:     details.ChainName,
@@ -280,7 +218,7 @@ func fetchRemoteSelectors(ctx context.Context, config *Config) (*remoteCacheData
 
 	// Build Starknet lookup maps
 	for chainID, details := range data.Starknet {
-		chain := StarknetChain{
+		chain := chain_selectors.StarknetChain{
 			ChainID:  chainID,
 			Selector: details.ChainSelector,
 			Name:     details.ChainName,
@@ -320,7 +258,7 @@ func applyOptions(opts []Option) *Config {
 
 // ChainDetailsWithMetadata extends ChainDetails with additional metadata
 type ChainDetailsWithMetadata struct {
-	ChainDetails
+	chain_selectors.ChainDetails
 	Family  string
 	ChainID string
 }
@@ -338,7 +276,7 @@ func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Opt
 		if details.ChainSelector == selector {
 			return ChainDetailsWithMetadata{
 				ChainDetails: details,
-				Family:       FamilyEVM,
+				Family:       chain_selectors.FamilyEVM,
 				ChainID:      fmt.Sprintf("%d", chainID),
 			}, nil
 		}
@@ -349,7 +287,7 @@ func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Opt
 		if details.ChainSelector == selector {
 			return ChainDetailsWithMetadata{
 				ChainDetails: details,
-				Family:       FamilySolana,
+				Family:       chain_selectors.FamilySolana,
 				ChainID:      chainID,
 			}, nil
 		}
@@ -360,7 +298,7 @@ func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Opt
 		if details.ChainSelector == selector {
 			return ChainDetailsWithMetadata{
 				ChainDetails: details,
-				Family:       FamilyAptos,
+				Family:       chain_selectors.FamilyAptos,
 				ChainID:      fmt.Sprintf("%d", chainID),
 			}, nil
 		}
@@ -371,7 +309,7 @@ func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Opt
 		if details.ChainSelector == selector {
 			return ChainDetailsWithMetadata{
 				ChainDetails: details,
-				Family:       FamilySui,
+				Family:       chain_selectors.FamilySui,
 				ChainID:      fmt.Sprintf("%d", chainID),
 			}, nil
 		}
@@ -382,7 +320,7 @@ func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Opt
 		if details.ChainSelector == selector {
 			return ChainDetailsWithMetadata{
 				ChainDetails: details,
-				Family:       FamilyTron,
+				Family:       chain_selectors.FamilyTron,
 				ChainID:      fmt.Sprintf("%d", chainID),
 			}, nil
 		}
@@ -393,7 +331,7 @@ func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Opt
 		if details.ChainSelector == selector {
 			return ChainDetailsWithMetadata{
 				ChainDetails: details,
-				Family:       FamilyTon,
+				Family:       chain_selectors.FamilyTon,
 				ChainID:      fmt.Sprintf("%d", chainID),
 			}, nil
 		}
@@ -404,7 +342,7 @@ func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Opt
 		if details.ChainSelector == selector {
 			return ChainDetailsWithMetadata{
 				ChainDetails: details,
-				Family:       FamilyStarknet,
+				Family:       chain_selectors.FamilyStarknet,
 				ChainID:      chainID,
 			}, nil
 		}
@@ -414,97 +352,97 @@ func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Opt
 }
 
 // GetChainDetailsByChainIDAndFamily fetches chain data from GitHub and returns chain details for a given chain ID and family
-func GetChainDetailsByChainIDAndFamily(ctx context.Context, chainID string, family string, opts ...Option) (ChainDetails, error) {
+func GetChainDetailsByChainIDAndFamily(ctx context.Context, chainID string, family string, opts ...Option) (chain_selectors.ChainDetails, error) {
 	config := applyOptions(opts)
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
-		return ChainDetails{}, err
+		return chain_selectors.ChainDetails{}, err
 	}
 
 	switch family {
-	case FamilyEVM:
+	case chain_selectors.FamilyEVM:
 		evmChainID, err := strconv.ParseUint(chainID, 10, 64)
 		if err != nil {
-			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
 
 		details, exist := cache.evmChainIdToChainSelector[evmChainID]
 		if !exist {
-			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
 
 		return details, nil
 
-	case FamilySolana:
+	case chain_selectors.FamilySolana:
 		details, exist := cache.solanaChainIdToChainSelector[chainID]
 		if !exist {
-			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
 
 		return details, nil
 
-	case FamilyAptos:
+	case chain_selectors.FamilyAptos:
 		aptosChainID, err := strconv.ParseUint(chainID, 10, 64)
 		if err != nil {
-			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
 
 		details, exist := cache.aptosSelectorsMap[aptosChainID]
 		if !exist {
-			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
 
 		return details, nil
 
-	case FamilySui:
+	case chain_selectors.FamilySui:
 		suiChainID, err := strconv.ParseUint(chainID, 10, 64)
 		if err != nil {
-			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
 
 		details, exist := cache.suiSelectorsMap[suiChainID]
 		if !exist {
-			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
 
 		return details, nil
 
-	case FamilyTron:
+	case chain_selectors.FamilyTron:
 		tronChainID, err := strconv.ParseUint(chainID, 10, 64)
 		if err != nil {
-			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
 
 		details, exist := cache.tronSelectorsMap[tronChainID]
 		if !exist {
-			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
 
 		return details, nil
 
-	case FamilyTon:
+	case chain_selectors.FamilyTon:
 		tonChainID, err := strconv.ParseInt(chainID, 10, 32)
 		if err != nil {
-			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
 
 		details, exist := cache.tonSelectorsMap[int32(tonChainID)]
 		if !exist {
-			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
 
 		return details, nil
 
-	case FamilyStarknet:
+	case chain_selectors.FamilyStarknet:
 		details, exist := cache.starknetSelectorsMap[chainID]
 		if !exist {
-			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
 
 		return details, nil
 
 	default:
-		return ChainDetails{}, fmt.Errorf("family %s is not supported", family)
+		return chain_selectors.ChainDetails{}, fmt.Errorf("family %s is not supported", family)
 	}
 }
 
@@ -514,4 +452,3 @@ func ClearCache() {
 	remoteCache = nil
 	remoteCacheLock.Unlock()
 }
-

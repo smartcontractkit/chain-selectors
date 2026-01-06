@@ -4,6 +4,8 @@ import (
 	"context"
 	"fmt"
 	"strconv"
+
+	chain_selectors "github.com/smartcontractkit/chain-selectors"
 )
 
 // EvmChainIdToChainSelector fetches chain data from GitHub and returns a map of EVM chain ID to chain selector
@@ -47,11 +49,11 @@ func EvmChainIdFromName(ctx context.Context, name string, opts ...Option) (uint6
 }
 
 // EvmChainBySelector fetches chain data from GitHub and returns the EVM chain for a given selector
-func EvmChainBySelector(ctx context.Context, sel uint64, opts ...Option) (Chain, bool, error) {
+func EvmChainBySelector(ctx context.Context, sel uint64, opts ...Option) (chain_selectors.Chain, bool, error) {
 	config := applyOptions(opts)
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
-		return Chain{}, false, err
+		return chain_selectors.Chain{}, false, err
 	}
 
 	ch, exists := cache.evmChainsBySelector[sel]
@@ -59,11 +61,11 @@ func EvmChainBySelector(ctx context.Context, sel uint64, opts ...Option) (Chain,
 }
 
 // EvmChainByEvmChainID fetches chain data from GitHub and returns the EVM chain for a given EVM chain ID
-func EvmChainByEvmChainID(ctx context.Context, evmChainID uint64, opts ...Option) (Chain, bool, error) {
+func EvmChainByEvmChainID(ctx context.Context, evmChainID uint64, opts ...Option) (chain_selectors.Chain, bool, error) {
 	config := applyOptions(opts)
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
-		return Chain{}, false, err
+		return chain_selectors.Chain{}, false, err
 	}
 
 	ch, exists := cache.evmChainsByEvmChainID[evmChainID]
@@ -84,4 +86,3 @@ func IsEvm(ctx context.Context, chainSel uint64, opts ...Option) (bool, error) {
 	}
 	return true, nil
 }
-
