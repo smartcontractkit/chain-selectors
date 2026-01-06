@@ -515,145 +515,92 @@ func ClearCache() {
 	remoteCacheLock.Unlock()
 }
 
-// TonChain represents a TON chain
-type TonChain struct {
-	ChainID  int32
-	Selector uint64
-	Name     string
-}
-
-// TronChain represents a TRON chain
-type TronChain struct {
-	ChainID  uint64
-	Selector uint64
-	Name     string
-}
-
-// EvmGetAllChains fetches chain data from GitHub and returns all EVM chains
-func EvmGetAllChains(ctx context.Context, opts ...Option) ([]Chain, error) {
+// GetChainByName fetches chain data from GitHub and returns chain details for a given chain name.
+// Searches across all chain families (EVM, Solana, Aptos, Sui, Tron, Ton, Starknet).
+func GetChainByName(ctx context.Context, name string, opts ...Option) (ChainDetailsWithMetadata, error) {
 	config := applyOptions(opts)
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
-		return nil, err
+		return ChainDetailsWithMetadata{}, err
 	}
 
-	chains := make([]Chain, 0, len(cache.evmChainsBySelector))
-	for _, chain := range cache.evmChainsBySelector {
-		chains = append(chains, chain)
-	}
-	return chains, nil
-}
-
-// SolanaGetAllChains fetches chain data from GitHub and returns all Solana chains
-func SolanaGetAllChains(ctx context.Context, opts ...Option) ([]SolanaChain, error) {
-	config := applyOptions(opts)
-	cache, err := fetchRemoteSelectors(ctx, config)
-	if err != nil {
-		return nil, err
+	// Check EVM chains
+	for chainID, details := range cache.evmChainIdToChainSelector {
+		if details.ChainName == name {
+			return ChainDetailsWithMetadata{
+				ChainDetails: details,
+				Family:       FamilyEVM,
+				ChainID:      fmt.Sprintf("%d", chainID),
+			}, nil
+		}
 	}
 
-	chains := make([]SolanaChain, 0, len(cache.solanaChainsBySelector))
-	for _, chain := range cache.solanaChainsBySelector {
-		chains = append(chains, chain)
-	}
-	return chains, nil
-}
-
-// AptosGetAllChains fetches chain data from GitHub and returns all Aptos chains
-func AptosGetAllChains(ctx context.Context, opts ...Option) ([]AptosChain, error) {
-	config := applyOptions(opts)
-	cache, err := fetchRemoteSelectors(ctx, config)
-	if err != nil {
-		return nil, err
+	// Check Solana chains
+	for chainID, details := range cache.solanaChainIdToChainSelector {
+		if details.ChainName == name {
+			return ChainDetailsWithMetadata{
+				ChainDetails: details,
+				Family:       FamilySolana,
+				ChainID:      chainID,
+			}, nil
+		}
 	}
 
-	chains := make([]AptosChain, 0, len(cache.aptosChainsBySelector))
-	for _, chain := range cache.aptosChainsBySelector {
-		chains = append(chains, chain)
-	}
-	return chains, nil
-}
-
-// SuiGetAllChains fetches chain data from GitHub and returns all Sui chains
-func SuiGetAllChains(ctx context.Context, opts ...Option) ([]SuiChain, error) {
-	config := applyOptions(opts)
-	cache, err := fetchRemoteSelectors(ctx, config)
-	if err != nil {
-		return nil, err
+	// Check Aptos chains
+	for chainID, details := range cache.aptosSelectorsMap {
+		if details.ChainName == name {
+			return ChainDetailsWithMetadata{
+				ChainDetails: details,
+				Family:       FamilyAptos,
+				ChainID:      fmt.Sprintf("%d", chainID),
+			}, nil
+		}
 	}
 
-	chains := make([]SuiChain, 0, len(cache.suiChainsBySelector))
-	for _, chain := range cache.suiChainsBySelector {
-		chains = append(chains, chain)
-	}
-	return chains, nil
-}
-
-// TonGetAllChains fetches chain data from GitHub and returns all TON chains
-func TonGetAllChains(ctx context.Context, opts ...Option) ([]TonChain, error) {
-	config := applyOptions(opts)
-	cache, err := fetchRemoteSelectors(ctx, config)
-	if err != nil {
-		return nil, err
+	// Check Sui chains
+	for chainID, details := range cache.suiSelectorsMap {
+		if details.ChainName == name {
+			return ChainDetailsWithMetadata{
+				ChainDetails: details,
+				Family:       FamilySui,
+				ChainID:      fmt.Sprintf("%d", chainID),
+			}, nil
+		}
 	}
 
-	chains := make([]TonChain, 0, len(cache.tonSelectorsMap))
-	for chainID, details := range cache.tonSelectorsMap {
-		chains = append(chains, TonChain{
-			ChainID:  chainID,
-			Selector: details.ChainSelector,
-			Name:     details.ChainName,
-		})
-	}
-	return chains, nil
-}
-
-// TronGetAllChains fetches chain data from GitHub and returns all TRON chains
-func TronGetAllChains(ctx context.Context, opts ...Option) ([]TronChain, error) {
-	config := applyOptions(opts)
-	cache, err := fetchRemoteSelectors(ctx, config)
-	if err != nil {
-		return nil, err
-	}
-
-	chains := make([]TronChain, 0, len(cache.tronSelectorsMap))
+	// Check Tron chains
 	for chainID, details := range cache.tronSelectorsMap {
-		chains = append(chains, TronChain{
-			ChainID:  chainID,
-			Selector: details.ChainSelector,
-			Name:     details.ChainName,
-		})
-	}
-	return chains, nil
-}
-
-// TonChainIdToChainSelector fetches chain data from GitHub and returns a map of TON chain ID to chain selector
-func TonChainIdToChainSelector(ctx context.Context, opts ...Option) (map[int32]uint64, error) {
-	config := applyOptions(opts)
-	cache, err := fetchRemoteSelectors(ctx, config)
-	if err != nil {
-		return nil, err
+		if details.ChainName == name {
+			return ChainDetailsWithMetadata{
+				ChainDetails: details,
+				Family:       FamilyTron,
+				ChainID:      fmt.Sprintf("%d", chainID),
+			}, nil
+		}
 	}
 
-	result := make(map[int32]uint64, len(cache.tonSelectorsMap))
-	for k, v := range cache.tonSelectorsMap {
-		result[k] = v.ChainSelector
-	}
-	return result, nil
-}
-
-// SolanaChainIdToChainSelector fetches chain data from GitHub and returns a map of Solana chain ID to chain selector
-func SolanaChainIdToChainSelector(ctx context.Context, opts ...Option) (map[string]uint64, error) {
-	config := applyOptions(opts)
-	cache, err := fetchRemoteSelectors(ctx, config)
-	if err != nil {
-		return nil, err
+	// Check Ton chains
+	for chainID, details := range cache.tonSelectorsMap {
+		if details.ChainName == name {
+			return ChainDetailsWithMetadata{
+				ChainDetails: details,
+				Family:       FamilyTon,
+				ChainID:      fmt.Sprintf("%d", chainID),
+			}, nil
+		}
 	}
 
-	result := make(map[string]uint64, len(cache.solanaChainIdToChainSelector))
-	for k, v := range cache.solanaChainIdToChainSelector {
-		result[k] = v.ChainSelector
+	// Check Starknet chains
+	for chainID, details := range cache.starknetSelectorsMap {
+		if details.ChainName == name {
+			return ChainDetailsWithMetadata{
+				ChainDetails: details,
+				Family:       FamilyStarknet,
+				ChainID:      chainID,
+			}, nil
+		}
 	}
-	return result, nil
+
+	return ChainDetailsWithMetadata{}, fmt.Errorf("chain not found for name %s", name)
 }
 
