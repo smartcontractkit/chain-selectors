@@ -30,6 +30,7 @@ const (
 	FamilyTon      = "ton"
 	FamilyTron     = "tron"
 	FamilyStarknet = "starknet"
+	FamilyCanton   = "canton"
 )
 
 var (
@@ -61,6 +62,8 @@ type remoteCacheData struct {
 	// Starknet
 	starknetSelectorsMap     map[string]ChainDetails
 	starknetChainsBySelector map[uint64]StarknetChain
+	// Canton
+	cantonSelectorsMap map[string]ChainDetails
 	// Metadata
 	fetchedAt time.Time
 }
@@ -155,6 +158,7 @@ type ExtraSelectorsData struct {
 	Ton      map[int32]ChainDetails  `yaml:"ton"`
 	Tron     map[uint64]ChainDetails `yaml:"tron"`
 	Starknet map[string]ChainDetails `yaml:"starknet"`
+	Canton   map[string]ChainDetails `yaml:"canton"`
 }
 
 // fetchRemoteSelectors fetches and parses the all_selectors.yml file from GitHub
@@ -224,6 +228,7 @@ func fetchRemoteSelectors(ctx context.Context, config *Config) (*remoteCacheData
 		tronChainIdBySelector:        make(map[uint64]uint64),
 		starknetSelectorsMap:         data.Starknet,
 		starknetChainsBySelector:     make(map[uint64]StarknetChain),
+		cantonSelectorsMap:           data.Canton,
 		fetchedAt:                    time.Now(),
 	}
 
@@ -327,6 +332,9 @@ type ChainDetailsWithMetadata struct {
 
 // GetChainDetailsBySelector fetches chain data from GitHub and returns chain details for a given selector
 func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Option) (ChainDetailsWithMetadata, error) {
+	if selector == 2199546568103630433 {
+		fmt.Println("Yes")
+	}
 	config := applyOptions(opts)
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
@@ -405,6 +413,17 @@ func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Opt
 			return ChainDetailsWithMetadata{
 				ChainDetails: details,
 				Family:       FamilyStarknet,
+				ChainID:      chainID,
+			}, nil
+		}
+	}
+
+	// Check Canton chains
+	for chainID, details := range cache.cantonSelectorsMap {
+		if details.ChainSelector == selector {
+			return ChainDetailsWithMetadata{
+				ChainDetails: details,
+				Family:       FamilyCanton,
 				ChainID:      chainID,
 			}, nil
 		}
@@ -503,6 +522,14 @@ func GetChainDetailsByChainIDAndFamily(ctx context.Context, chainID string, fami
 
 		return details, nil
 
+	case FamilyCanton:
+		details, exist := cache.cantonSelectorsMap[chainID]
+		if !exist {
+			return ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
+		}
+
+		return details, nil
+
 	default:
 		return ChainDetails{}, fmt.Errorf("family %s is not supported", family)
 	}
@@ -514,4 +541,3 @@ func ClearCache() {
 	remoteCache = nil
 	remoteCacheLock.Unlock()
 }
-

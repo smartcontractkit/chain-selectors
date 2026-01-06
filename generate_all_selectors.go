@@ -71,6 +71,14 @@ func main() {
 		result.Starknet = starknetData
 	}
 
+	// Read Canton chains
+	cantonData, err := readCantonYaml("selectors_canton.yml")
+	if err != nil {
+		fmt.Printf("Warning: Could not read selectors_canton.yml: %v\n", err)
+	} else {
+		result.Canton = cantonData
+	}
+
 	// Write consolidated output
 	err = writeAllSelectors(outputFilename, result)
 	if err != nil {
@@ -182,6 +190,23 @@ func readTonYaml(filename string) (map[int32]chain_selectors.ChainDetails, error
 }
 
 func readStarknetYaml(filename string) (map[string]chain_selectors.ChainDetails, error) {
+	data, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	var parsed struct {
+		Selectors map[string]chain_selectors.ChainDetails `yaml:"selectors"`
+	}
+	err = yaml.Unmarshal(data, &parsed)
+	if err != nil {
+		return nil, err
+	}
+
+	return parsed.Selectors, nil
+}
+
+func readCantonYaml(filename string) (map[string]chain_selectors.ChainDetails, error) {
 	data, err := os.ReadFile(filename)
 	if err != nil {
 		return nil, err
