@@ -7,23 +7,24 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
-type extraSelectorsData struct {
-	Evm      map[uint64]ChainDetails `yaml:"evm"`
-	Aptos    map[uint64]ChainDetails `yaml:"aptos"`
-	Solana   map[string]ChainDetails `yaml:"solana"`
-	Sui      map[uint64]ChainDetails `yaml:"sui"`
-	Ton      map[int32]ChainDetails  `yaml:"ton"`
-	Tron     map[uint64]ChainDetails `yaml:"tron"`
-	Starknet map[string]ChainDetails `yaml:"starknet"`
-	Canton   map[string]ChainDetails `yaml:"canton"`
+// ExtraSelectorsData is a format expected when loading extra selectors from a YAML file.
+type ExtraSelectorsData struct {
+	Evm      map[uint64]ChainDetails `yaml:"evm,omitempty"`
+	Aptos    map[uint64]ChainDetails `yaml:"aptos,omitempty"`
+	Solana   map[string]ChainDetails `yaml:"solana,omitempty"`
+	Sui      map[uint64]ChainDetails `yaml:"sui,omitempty"`
+	Ton      map[int32]ChainDetails  `yaml:"ton,omitempty"`
+	Tron     map[uint64]ChainDetails `yaml:"tron,omitempty"`
+	Starknet map[string]ChainDetails `yaml:"starknet,omitempty"`
+	Canton   map[string]ChainDetails `yaml:"canton,omitempty"`
 }
 
 var (
-	extraSelectors       extraSelectorsData
+	extraSelectors       ExtraSelectorsData
 	extraSelectorsLoaded bool
 )
 
-func loadAndParseExtraSelectors() (result extraSelectorsData) {
+func loadAndParseExtraSelectors() (result ExtraSelectorsData) {
 	extraSelectorsFile := os.Getenv("EXTRA_SELECTORS_FILE")
 	if extraSelectorsFile == "" {
 		return
@@ -35,7 +36,7 @@ func loadAndParseExtraSelectors() (result extraSelectorsData) {
 		panic(err)
 	}
 
-	var data extraSelectorsData
+	var data ExtraSelectorsData
 	err = yaml.Unmarshal(fileContent, &data)
 	if err != nil {
 		log.Printf("Error unmarshaling extra selectors YAML: %v", err)
@@ -70,7 +71,7 @@ func loadAndParseExtraSelectors() (result extraSelectorsData) {
 	return data
 }
 
-func getExtraSelectors() extraSelectorsData {
+func getExtraSelectors() ExtraSelectorsData {
 	if !extraSelectorsLoaded {
 		extraSelectors = loadAndParseExtraSelectors()
 		extraSelectorsLoaded = true
