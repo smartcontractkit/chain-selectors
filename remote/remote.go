@@ -332,9 +332,6 @@ type ChainDetailsWithMetadata struct {
 
 // GetChainDetailsBySelector fetches chain data from GitHub and returns chain details for a given selector
 func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Option) (ChainDetailsWithMetadata, error) {
-	if selector == 2199546568103630433 {
-		fmt.Println("Yes")
-	}
 	config := applyOptions(opts)
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
