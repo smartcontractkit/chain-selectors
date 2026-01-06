@@ -275,7 +275,7 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 
 		return details, nil
 	default:
-		return ChainDetails{}, fmt.Errorf("family %s is not yet support", family)
+		return ChainDetails{}, fmt.Errorf("family %s is not yet supported", family)
 	}
 }
 
