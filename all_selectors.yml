@@ -270,6 +270,9 @@ evm:
     1513:
         selector: 4237030917318060427
         name: story-testnet
+    1672:
+        selector: 7801139999541420232
+        name: pharos-mainnet
     1687:
         selector: 10749384167430721561
         name: mint-testnet
