@@ -773,3 +773,6 @@ selectors:
   86:
     selector: 9688382747979139404
     name: gate-chain-mainnet
+  1672:
+    selector: 7801139999541420232
+    name: pharos-mainnet
