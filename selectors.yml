@@ -439,6 +439,9 @@ selectors:
   85:
     selector: 3558960680482140165
     name: gate-chain-testnet-meteora
+  99999:
+    selector: 9418205736192840573
+    name: "adi-testnet"
 
   # Mainnets
   1:
@@ -776,3 +779,6 @@ selectors:
   1672:
     selector: 7801139999541420232
     name: pharos-mainnet
+  36900:
+    selector: 4059281736450291836
+    name: "adi-mainnet"

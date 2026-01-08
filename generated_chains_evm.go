@@ -13,6 +13,8 @@ var (
 	ABSTRACT_TESTNET                               = Chain{EvmChainID: 11124, Selector: 16235373811196386733, Name: "abstract-testnet"}
 	AB_MAINNET                                     = Chain{EvmChainID: 36888, Selector: 4829375610284793157, Name: "ab-mainnet"}
 	AB_TESTNET                                     = Chain{EvmChainID: 26888, Selector: 7051849327615092843, Name: "ab-testnet"}
+	ADI_MAINNET                                    = Chain{EvmChainID: 36900, Selector: 4059281736450291836, Name: "adi-mainnet"}
+	ADI_TESTNET                                    = Chain{EvmChainID: 99999, Selector: 9418205736192840573, Name: "adi-testnet"}
 	ANVIL_DEVNET                                   = Chain{EvmChainID: 31337, Selector: 7759470850252068959, Name: "anvil-devnet"}
 	APECHAIN_MAINNET                               = Chain{EvmChainID: 33139, Selector: 14894068710063348487, Name: "apechain-mainnet"}
 	APECHAIN_TESTNET_CURTIS                        = Chain{EvmChainID: 33111, Selector: 9900119385908781505, Name: "apechain-testnet-curtis"}
@@ -377,6 +379,8 @@ var ALL = []Chain{
 	ABSTRACT_TESTNET,
 	AB_MAINNET,
 	AB_TESTNET,
+	ADI_MAINNET,
+	ADI_TESTNET,
 	ANVIL_DEVNET,
 	APECHAIN_MAINNET,
 	APECHAIN_TESTNET_CURTIS,

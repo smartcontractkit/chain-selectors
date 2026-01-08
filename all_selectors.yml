@@ -495,6 +495,9 @@ evm:
     36888:
         selector: 4829375610284793157
         name: ab-mainnet
+    36900:
+        selector: 4059281736450291836
+        name: adi-mainnet
     37111:
         selector: 6827576821754315911
         name: ethereum-testnet-sepolia-lens-1
@@ -621,6 +624,9 @@ evm:
     98867:
         selector: 13874588925447303949
         name: plume-testnet-sepolia
+    99999:
+        selector: 9418205736192840573
+        name: adi-testnet
     128123:
         selector: 1910019406958449359
         name: etherlink-testnet
