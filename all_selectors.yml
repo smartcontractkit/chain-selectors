@@ -459,6 +459,9 @@ evm:
     13473:
         selector: 4526165231216331901
         name: ethereum-testnet-sepolia-immutable-zkevm-1
+    14601:
+        selector: 1763698235108410440
+        name: sonic-testnet
     16600:
         selector: 16088006396410204581
         name: 0g-testnet-newton
