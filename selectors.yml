@@ -442,6 +442,9 @@ selectors:
   99999:
     selector: 9418205736192840573
     name: "adi-testnet"
+  14601:
+    selector: 1763698235108410440
+    name: "sonic-testnet"
 
   # Mainnets
   1:
