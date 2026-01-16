@@ -433,6 +433,9 @@ selectors:
   42429:
     selector: 3963528237232804922
     name: "tempo-testnet"
+  42431:
+    selector: 8457817439310187923
+    name: "tempo-testnet-moderato"
   10087:
     selector: 3667207123485082040
     name: gate-layer-testnet
