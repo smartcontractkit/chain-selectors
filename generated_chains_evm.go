@@ -244,8 +244,8 @@ var (
 	TAC_TESTNET                                    = Chain{EvmChainID: 2391, Selector: 9488606126177218005, Name: "tac-testnet"}
 	TELOS_EVM_MAINNET                              = Chain{EvmChainID: 40, Selector: 1477345371608778000, Name: "telos-evm-mainnet"}
 	TELOS_EVM_TESTNET                              = Chain{EvmChainID: 41, Selector: 729797994450396300, Name: "telos-evm-testnet"}
-	TEMPO_MODERATO                                 = Chain{EvmChainID: 42431, Selector: 8457817439310187923, Name: "tempo-moderato"}
 	TEMPO_TESTNET                                  = Chain{EvmChainID: 42429, Selector: 3963528237232804922, Name: "tempo-testnet"}
+	TEMPO_TESTNET_MODERATO                         = Chain{EvmChainID: 42431, Selector: 8457817439310187923, Name: "tempo-testnet-moderato"}
 	TEST_0G_MAINNET                                = Chain{EvmChainID: 16661, Selector: 4426351306075016396, Name: "0g-mainnet"}
 	TEST_0G_TESTNET_GALILEO                        = Chain{EvmChainID: 16601, Selector: 2131427466778448014, Name: "0g-testnet-galileo"}
 	TEST_0G_TESTNET_GALILEO_1                      = Chain{EvmChainID: 16602, Selector: 6892437333620424805, Name: "0g-testnet-galileo-1"}
@@ -612,8 +612,8 @@ var ALL = []Chain{
 	TAC_TESTNET,
 	TELOS_EVM_MAINNET,
 	TELOS_EVM_TESTNET,
-	TEMPO_MODERATO,
 	TEMPO_TESTNET,
+	TEMPO_TESTNET_MODERATO,
 	TEST_0G_MAINNET,
 	TEST_0G_TESTNET_GALILEO,
 	TEST_0G_TESTNET_GALILEO_1,

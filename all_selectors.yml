@@ -515,7 +515,7 @@ evm:
         name: tempo-testnet
     42431:
         selector: 8457817439310187923
-        name: tempo-moderato
+        name: tempo-testnet-moderato
     42793:
         selector: 13624601974233774587
         name: etherlink-mainnet
