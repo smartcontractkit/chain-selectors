@@ -225,7 +225,8 @@ var (
 	PRIVATE_TESTNET_OBSIDIAN                       = Chain{EvmChainID: 682, Selector: 6260932437388305511, Name: "private-testnet-obsidian"}
 	PRIVATE_TESTNET_OPALA                          = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala"}
 	RONIN_MAINNET                                  = Chain{EvmChainID: 2020, Selector: 6916147374840168594, Name: "ronin-mainnet"}
-	RONIN_TESTNET_SAIGON                           = Chain{EvmChainID: 2021, Selector: 13116810400804392105, Name: "ronin-testnet-saigon"}
+	RONIN_TESTNET_SAIGON                           = Chain{EvmChainID: 202601, Selector: 5485765398768456995, Name: "ronin-testnet-saigon"}
+	RONIN_TESTNET_SAIGON_LEGACY                    = Chain{EvmChainID: 2021, Selector: 13116810400804392105, Name: "ronin-testnet-saigon-legacy"}
 	ROOTSTOCK_MAINNET                              = Chain{EvmChainID: 30, Selector: 11964252391146578476, Name: "rootstock-mainnet"}
 	SEI_MAINNET                                    = Chain{EvmChainID: 1329, Selector: 9027416829622342829, Name: "sei-mainnet"}
 	SEI_TESTNET_ATLANTIC                           = Chain{EvmChainID: 1328, Selector: 1216300075444106652, Name: "sei-testnet-atlantic"}
@@ -244,6 +245,7 @@ var (
 	TAC_TESTNET                                    = Chain{EvmChainID: 2391, Selector: 9488606126177218005, Name: "tac-testnet"}
 	TELOS_EVM_MAINNET                              = Chain{EvmChainID: 40, Selector: 1477345371608778000, Name: "telos-evm-mainnet"}
 	TELOS_EVM_TESTNET                              = Chain{EvmChainID: 41, Selector: 729797994450396300, Name: "telos-evm-testnet"}
+	TEMPO_MAINNET                                  = Chain{EvmChainID: 4217, Selector: 7281642695469137430, Name: "tempo-mainnet"}
 	TEMPO_TESTNET                                  = Chain{EvmChainID: 42429, Selector: 3963528237232804922, Name: "tempo-testnet"}
 	TEMPO_TESTNET_MODERATO                         = Chain{EvmChainID: 42431, Selector: 8457817439310187923, Name: "tempo-testnet-moderato"}
 	TEST_0G_MAINNET                                = Chain{EvmChainID: 16661, Selector: 4426351306075016396, Name: "0g-mainnet"}
@@ -594,6 +596,7 @@ var ALL = []Chain{
 	PRIVATE_TESTNET_OPALA,
 	RONIN_MAINNET,
 	RONIN_TESTNET_SAIGON,
+	RONIN_TESTNET_SAIGON_LEGACY,
 	ROOTSTOCK_MAINNET,
 	SEI_MAINNET,
 	SEI_TESTNET_ATLANTIC,
@@ -612,6 +615,7 @@ var ALL = []Chain{
 	TAC_TESTNET,
 	TELOS_EVM_MAINNET,
 	TELOS_EVM_TESTNET,
+	TEMPO_MAINNET,
 	TEMPO_TESTNET,
 	TEMPO_TESTNET_MODERATO,
 	TEST_0G_MAINNET,

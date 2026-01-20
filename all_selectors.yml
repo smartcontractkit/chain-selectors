@@ -302,7 +302,7 @@ evm:
         name: ronin-mainnet
     2021:
         selector: 13116810400804392105
-        name: ronin-testnet-saigon
+        name: ronin-testnet-saigon-legacy
     2023:
         selector: 3260900564719373474
         name: private-testnet-granite
@@ -372,6 +372,9 @@ evm:
     4202:
         selector: 5298399861320400553
         name: ethereum-testnet-sepolia-lisk-1
+    4217:
+        selector: 7281642695469137430
+        name: tempo-mainnet
     4326:
         selector: 6093540873831549674
         name: megaeth-mainnet
@@ -660,6 +663,9 @@ evm:
     200901:
         selector: 7937294810946806131
         name: bitcoin-mainnet-bitlayer-1
+    202601:
+        selector: 5485765398768456995
+        name: ronin-testnet-saigon
     421613:
         selector: 6101244977088475029
         name: ethereum-testnet-goerli-arbitrum-1

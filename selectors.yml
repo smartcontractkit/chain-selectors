@@ -292,7 +292,7 @@ selectors:
     name: "ethereum-testnet-sepolia-soneium-1"
   2021:
     selector: 13116810400804392105
-    name: "ronin-testnet-saigon"
+    name: "ronin-testnet-saigon-legacy"
   2023:
     selector: 3260900564719373474
     name: "private-testnet-granite"
@@ -302,6 +302,9 @@ selectors:
   2025:
     selector: 15513093881969820114
     name: "dtcc-testnet-andesite"
+  202601:
+    selector: 5485765398768456995
+    name: "ronin-testnet-saigon"
   200810:
     selector: 3789623672476206327
     name: "bitcoin-testnet-bitlayer-1"
@@ -788,3 +791,6 @@ selectors:
   36900:
     selector: 4059281736450291836
     name: "adi-mainnet"
+  4217:
+    selector: 7281642695469137430
+    name: "tempo-mainnet"
