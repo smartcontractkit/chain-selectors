@@ -372,6 +372,9 @@ evm:
     4202:
         selector: 5298399861320400553
         name: ethereum-testnet-sepolia-lisk-1
+    4217:
+        selector: 7281642695469137430
+        name: tempo-mainnet
     4326:
         selector: 6093540873831549674
         name: megaeth-mainnet
