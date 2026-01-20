@@ -788,3 +788,6 @@ selectors:
   36900:
     selector: 4059281736450291836
     name: "adi-mainnet"
+  4217:
+    selector: 7281642695469137430
+    name: "tempo-mainnet"
