@@ -28,9 +28,10 @@ func init() {
 		}
 		aptosSelectorsMap[chainID] = chainDetails
 		aptosChainsBySelector[chainDetails.ChainSelector] = AptosChain{
-			ChainID:  chainID,
-			Selector: chainDetails.ChainSelector,
-			Name:     chainDetails.ChainName,
+			ChainID:   chainID,
+			Selector:  chainDetails.ChainSelector,
+			Name:      chainDetails.ChainName,
+			IsMainnet: chainDetails.IsMainnet,
 		}
 	}
 
@@ -60,7 +61,7 @@ func parseAptosYml(ymlFile []byte) map[uint64]ChainDetails {
 
 func validateAptosChainID(data map[uint64]ChainDetails) error {
 	// TODO: https://smartcontract-it.atlassian.net/browse/NONEVM-890
-    return nil
+	return nil
 }
 
 func AptosChainIdToChainSelector() map[uint64]uint64 {
@@ -94,4 +95,12 @@ func AptosChainIdFromSelector(selector uint64) (uint64, error) {
 func AptosChainBySelector(selector uint64) (AptosChain, bool) {
 	chain, exist := aptosChainsBySelector[selector]
 	return chain, exist
+}
+
+func AptosIsMainnetChain(chainID uint64) (bool, error) {
+	details, exist := aptosSelectorsMap[chainID]
+	if !exist {
+		return false, fmt.Errorf("chain not found for chain ID: %v", chainID)
+	}
+	return details.IsMainnet, nil
 }

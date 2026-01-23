@@ -28,9 +28,10 @@ func init() {
 		}
 		cantonChainsByChainId[chainID] = chainDetails
 		cantonChainsBySelector[chainDetails.ChainSelector] = CantonChain{
-			ChainID:  chainID,
-			Selector: chainDetails.ChainSelector,
-			Name:     chainDetails.ChainName,
+			ChainID:   chainID,
+			Selector:  chainDetails.ChainSelector,
+			Name:      chainDetails.ChainName,
+			IsMainnet: chainDetails.IsMainnet,
 		}
 	}
 
@@ -57,9 +58,10 @@ func loadAllCantonSelectors(in map[string]ChainDetails) map[uint64]CantonChain {
 	output := make(map[uint64]CantonChain, len(cantonChainsByChainId))
 	for chainID, v := range in {
 		output[v.ChainSelector] = CantonChain{
-			ChainID:  chainID,
-			Selector: v.ChainSelector,
-			Name:     v.ChainName,
+			ChainID:   chainID,
+			Selector:  v.ChainSelector,
+			Name:      v.ChainName,
+			IsMainnet: v.IsMainnet,
 		}
 	}
 	return output
@@ -101,4 +103,12 @@ func CantonChainIdFromSelector(selector uint64) (string, error) {
 func CantonChainBySelector(selector uint64) (CantonChain, bool) {
 	chain, exists := cantonChainsBySelector[selector]
 	return chain, exists
+}
+
+func CantonIsMainnetChain(chainID string) (bool, error) {
+	details, exist := cantonChainsByChainId[chainID]
+	if !exist {
+		return false, fmt.Errorf("chain not found for chain ID: %v", chainID)
+	}
+	return details.IsMainnet, nil
 }

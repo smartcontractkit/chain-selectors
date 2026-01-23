@@ -28,9 +28,10 @@ func init() {
 		}
 		starknetSelectorsMap[chainID] = chainDetails
 		starknetChainsBySelector[chainDetails.ChainSelector] = StarknetChain{
-			ChainID:  chainID,
-			Selector: chainDetails.ChainSelector,
-			Name:     chainDetails.ChainName,
+			ChainID:   chainID,
+			Selector:  chainDetails.ChainSelector,
+			Name:      chainDetails.ChainName,
+			IsMainnet: chainDetails.IsMainnet,
 		}
 	}
 
@@ -87,4 +88,12 @@ func StarknetChainBySelector(selector uint64) (StarknetChain, bool) {
 	chain, exists := starknetChainsBySelector[selector]
 
 	return chain, exists
+}
+
+func StarknetIsMainnetChain(chainID string) (bool, error) {
+	details, exist := starknetSelectorsMap[chainID]
+	if !exist {
+		return false, fmt.Errorf("chain not found for chain ID: %v", chainID)
+	}
+	return details.IsMainnet, nil
 }
