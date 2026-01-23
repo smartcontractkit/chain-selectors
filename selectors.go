@@ -308,6 +308,15 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 	}
 }
 
+func IsMainnetChain(selector uint64) (bool, error) {
+	chainInfo, err := getChainInfo(selector)
+	if err != nil {
+		return false, fmt.Errorf("unknown chain selector %d", selector)
+	}
+
+	return chainInfo.ChainDetails.IsMainnet, nil
+}
+
 // ExtractNetworkEnvName returns chain env identifier from the full network name, for e.g. blockchain-mainnet returns mainnet.
 func ExtractNetworkEnvName(networkName string) (string, error) {
 	// Create a regexp pattern that matches any of the three.

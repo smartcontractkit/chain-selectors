@@ -86,7 +86,7 @@ func genChainsSourceCode() (string, error) {
 		if err != nil {
 			return "", err
 		}
-		isMainnet, err := chain_selectors.IsMainnetChain(evmChainID)
+		isMainnet, err := chain_selectors.EVMIsMainnetChain(evmChainID)
 		if err != nil {
 			return "", err
 		}
