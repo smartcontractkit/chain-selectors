@@ -834,7 +834,7 @@ evm:
     98865:
         selector: 3208172210661564830
         name: ""
-        is_mainnet: true
+        is_mainnet: false
     98866:
         selector: 17912061998839310979
         name: plume-mainnet
@@ -1050,7 +1050,7 @@ evm:
     3360022319:
         selector: 13231703482326770600
         name: tron-devnet-evm
-        is_mainnet: true
+        is_mainnet: false
     3448148188:
         selector: 2052925811360307749
         name: tron-testnet-nile-evm

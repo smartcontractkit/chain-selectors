@@ -355,10 +355,10 @@ var (
 	TEST_90000098                                  = Chain{EvmChainID: 90000098, Selector: 9675086780529785020, Name: "90000098", IsMainnet: false}
 	TEST_90000099                                  = Chain{EvmChainID: 90000099, Selector: 7431973150957944526, Name: "90000099", IsMainnet: false}
 	TEST_90000100                                  = Chain{EvmChainID: 90000100, Selector: 6875898693582952601, Name: "90000100", IsMainnet: false}
-	TEST_98865                                     = Chain{EvmChainID: 98865, Selector: 3208172210661564830, Name: "98865", IsMainnet: true}
+	TEST_98865                                     = Chain{EvmChainID: 98865, Selector: 3208172210661564830, Name: "98865", IsMainnet: false}
 	TREASURE_MAINNET                               = Chain{EvmChainID: 61166, Selector: 5214452172935136222, Name: "treasure-mainnet", IsMainnet: true}
 	TREASURE_TESTNET_TOPAZ                         = Chain{EvmChainID: 978658, Selector: 3676916124122457866, Name: "treasure-testnet-topaz", IsMainnet: false}
-	TRON_DEVNET_EVM                                = Chain{EvmChainID: 3360022319, Selector: 13231703482326770600, Name: "tron-devnet-evm", IsMainnet: true}
+	TRON_DEVNET_EVM                                = Chain{EvmChainID: 3360022319, Selector: 13231703482326770600, Name: "tron-devnet-evm", IsMainnet: false}
 	TRON_MAINNET_EVM                               = Chain{EvmChainID: 728126428, Selector: 1546563616611573946, Name: "tron-mainnet-evm", IsMainnet: true}
 	TRON_TESTNET_NILE_EVM                          = Chain{EvmChainID: 3448148188, Selector: 2052925811360307749, Name: "tron-testnet-nile-evm", IsMainnet: false}
 	TRON_TESTNET_SHASTA_EVM                        = Chain{EvmChainID: 2494104990, Selector: 13231703482326770598, Name: "tron-testnet-shasta-evm", IsMainnet: false}

@@ -837,7 +837,7 @@ selectors:
     is_mainnet: true
   98865:
     selector: 3208172210661564830
-    is_mainnet: true
+    is_mainnet: false
   98866:
     selector: 17912061998839310979
     name: "plume-mainnet"
@@ -937,7 +937,7 @@ selectors:
   3360022319:
     selector: 13231703482326770600
     name: "tron-devnet-evm"
-    is_mainnet: true
+    is_mainnet: false
   7777777:
     selector: 3555797439612589184
     name: "zora-mainnet"
