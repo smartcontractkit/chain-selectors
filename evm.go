@@ -57,7 +57,7 @@ func loadAllEVMSelectors() map[uint64]ChainDetails {
 		output[k] = v
 	}
 	for k, v := range evmTestSelectorsMap {
-		v.IsTestnet = true
+		v.IsMainnet = false
 		output[k] = v
 	}
 	return output
@@ -120,15 +120,15 @@ func IsTestnetChain(chainId uint64) (bool, error) {
 	if !exist {
 		return false, fmt.Errorf("chain not found for chain %d", chainId)
 	}
-	return details.IsTestnet, nil
+	return !details.IsMainnet, nil
 }
 
 func IsMainnetChain(chainId uint64) (bool, error) {
-	isTestnet, err := IsTestnetChain(chainId)
-	if err != nil {
-		return false, err
+	details, exist := evmChainIdToChainSelector[chainId]
+	if !exist {
+		return false, fmt.Errorf("chain not found for chain %d", chainId)
 	}
-	return !isTestnet, nil
+	return details.IsMainnet, nil
 }
 
 func ChainIdFromName(name string) (uint64, error) {
