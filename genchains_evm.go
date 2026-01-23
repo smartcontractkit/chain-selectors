@@ -32,6 +32,7 @@ type Chain struct {
 	EvmChainID uint64
 	Selector   uint64
 	Name       string
+    IsTestnet  bool
 	VarName    string
 }
 
@@ -84,11 +85,15 @@ func genChainsSourceCode() (string, error) {
 		if err != nil {
 			return "", err
 		}
-
+		isTestnet, err := chain_selectors.IsTestnetFromChainId(evmChainID)
+		if err != nil {
+			return "", err
+		}
 		chains = append(chains, chain{
 			EvmChainID: evmChainID,
 			Selector:   chainSel,
 			Name:       name,
+			IsTestnet:  isTestnet,
 			VarName:    toVarName(name, chainSel),
 		})
 	}

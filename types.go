@@ -15,4 +15,5 @@ const (
 type ChainDetails struct {
 	ChainSelector uint64 `yaml:"selector"`
 	ChainName     string `yaml:"name"`
+	IsTestnet     bool   `yaml:"is_testnet,omitempty"`
 }

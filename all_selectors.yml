@@ -18,15 +18,18 @@ evm:
     31:
         selector: 8953668971247136127
         name: bitcoin-testnet-rootstock
+        is_testnet: true
     40:
         selector: 1477345371608778000
         name: telos-evm-mainnet
     41:
         selector: 729797994450396300
         name: telos-evm-testnet
+        is_testnet: true
     45:
         selector: 4340886533089894000
         name: polkadot-testnet-darwinia-pangoro
+        is_testnet: true
     46:
         selector: 8866418665544333000
         name: polkadot-mainnet-darwinia
@@ -36,27 +39,32 @@ evm:
     51:
         selector: 3017758115101368649
         name: xdc-testnet
+        is_testnet: true
     52:
         selector: 1761333065194157300
         name: coinex_smart_chain-mainnet
     53:
         selector: 8955032871639343000
         name: coinex_smart_chain-testnet
+        is_testnet: true
     56:
         selector: 11344663589394136015
         name: binance_smart_chain-mainnet
     81:
         selector: 6955638871347136141
         name: polkadot-testnet-astar-shibuya
+        is_testnet: true
     85:
         selector: 3558960680482140165
         name: gate-chain-testnet-meteora
+        is_testnet: true
     86:
         selector: 9688382747979139404
         name: gate-chain-mainnet
     97:
         selector: 13264668187771770619
         name: binance_smart_chain-testnet
+        is_testnet: true
     100:
         selector: 465200170687744372
         name: gnosis_chain-mainnet
@@ -69,12 +77,14 @@ evm:
     111:
         selector: 572210378683744374
         name: velas-testnet
+        is_testnet: true
     130:
         selector: 1923510103922296319
         name: ethereum-mainnet-unichain-1
     133:
         selector: 4356164186791070119
         name: ethereum-testnet-sepolia-hashkey-1
+        is_testnet: true
     137:
         selector: 4051577828743386545
         name: polygon-mainnet
@@ -87,6 +97,7 @@ evm:
     157:
         selector: 17833296867764334567
         name: shibarium-testnet-puppynet
+        is_testnet: true
     177:
         selector: 7613811247471741961
         name: ethereum-mainnet-hashkey-1
@@ -96,6 +107,7 @@ evm:
     195:
         selector: 2066098519157881736
         name: ethereum-testnet-sepolia-xlayer-1
+        is_testnet: true
     196:
         selector: 3016212468291539606
         name: ethereum-mainnet-xlayer-1
@@ -120,6 +132,7 @@ evm:
     240:
         selector: 16487132492576884721
         name: cronos-zkevm-testnet-sepolia
+        is_testnet: true
     250:
         selector: 3768048213127883732
         name: fantom-mainnet
@@ -135,18 +148,22 @@ evm:
     280:
         selector: 6802309497652714138
         name: ethereum-testnet-goerli-zksync-1
+        is_testnet: true
     282:
         selector: 3842103497652714138
         name: cronos-testnet-zkevm-1
+        is_testnet: true
     295:
         selector: 3229138320728879060
         name: hedera-mainnet
     296:
         selector: 222782988166878823
         name: hedera-testnet
+        is_testnet: true
     300:
         selector: 6898391096552792247
         name: ethereum-testnet-sepolia-zksync-1
+        is_testnet: true
     314:
         selector: 4561443241176882990
         name: filecoin-mainnet
@@ -156,6 +173,7 @@ evm:
     338:
         selector: 2995292832068775165
         name: cronos-testnet
+        is_testnet: true
     388:
         selector: 8788096068760390840
         name: cronos-zkevm-mainnet
@@ -165,12 +183,15 @@ evm:
     398:
         selector: 5061593697262339000
         name: near-testnet
+        is_testnet: true
     420:
         selector: 2664363617261496610
         name: ethereum-testnet-goerli-optimism-1
+        is_testnet: true
     462:
         selector: 7317911323415911000
         name: areon-testnet
+        is_testnet: true
     463:
         selector: 1939936305787790600
         name: areon-mainnet
@@ -186,15 +207,19 @@ evm:
     679:
         selector: 5059197667603797935
         name: janction-testnet-sepolia
+        is_testnet: true
     682:
         selector: 6260932437388305511
         name: private-testnet-obsidian
+        is_testnet: true
     919:
         selector: 829525985033418733
         name: ethereum-testnet-sepolia-mode-1
+        is_testnet: true
     945:
         selector: 2177900824115119161
         name: bittensor-testnet
+        is_testnet: true
     964:
         selector: 2135107236357186872
         name: bittensor-mainnet
@@ -204,15 +229,18 @@ evm:
     998:
         selector: 4286062357653186312
         name: hyperliquid-testnet
+        is_testnet: true
     999:
         selector: 2442541497099098535
         name: hyperliquid-mainnet
     1001:
         selector: 2624132734533621656
         name: kaia-testnet-kairos
+        is_testnet: true
     1029:
         selector: 4459371029167934217
         name: bittorrent_chain-testnet
+        is_testnet: true
     1030:
         selector: 3358365939762719202
         name: conflux-mainnet
@@ -228,15 +256,18 @@ evm:
     1112:
         selector: 9284632837123596123
         name: wemix-testnet
+        is_testnet: true
     1114:
         selector: 4264732132125536123
         name: core-testnet
+        is_testnet: true
     1116:
         selector: 1224752112135636129
         name: core-mainnet
     1123:
         selector: 1948510578179542068
         name: bitcoin-testnet-bsquared-1
+        is_testnet: true
     1135:
         selector: 15293031020466096408
         name: lisk-mainnet
@@ -249,36 +280,45 @@ evm:
     1287:
         selector: 5361632739113536121
         name: polkadot-testnet-moonbeam-moonbase
+        is_testnet: true
     1301:
         selector: 14135854469784514356
         name: ethereum-testnet-sepolia-unichain-1
+        is_testnet: true
     1328:
         selector: 1216300075444106652
         name: sei-testnet-atlantic
+        is_testnet: true
     1329:
         selector: 9027416829622342829
         name: sei-mainnet
     1337:
         selector: 3379446385462418246
         name: geth-testnet
+        is_testnet: true
     1338:
         selector: 2181150070347029680
         name: ""
+        is_testnet: true
     1442:
         selector: 11059667695644972511
         name: ethereum-testnet-goerli-polygon-zkevm-1
+        is_testnet: true
     1513:
         selector: 4237030917318060427
         name: story-testnet
+        is_testnet: true
     1672:
         selector: 7801139999541420232
         name: pharos-mainnet
     1687:
         selector: 10749384167430721561
         name: mint-testnet
+        is_testnet: true
     1740:
         selector: 6286293440461807648
         name: metal-testnet
+        is_testnet: true
     1750:
         selector: 13447077090413146373
         name: metal-mainnet
@@ -291,72 +331,90 @@ evm:
     1908:
         selector: 4888058894222120000
         name: bitcichain-testnet
+        is_testnet: true
     1946:
         selector: 686603546605904534
         name: ethereum-testnet-sepolia-soneium-1
+        is_testnet: true
     1952:
         selector: 10212741611335999305
         name: xlayer-testnet
+        is_testnet: true
     2020:
         selector: 6916147374840168594
         name: ronin-mainnet
     2021:
         selector: 13116810400804392105
         name: ronin-testnet-saigon
+        is_testnet: true
     2023:
         selector: 3260900564719373474
         name: private-testnet-granite
+        is_testnet: true
     2024:
         selector: 6915682381028791124
         name: private-testnet-andesite
+        is_testnet: true
     2025:
         selector: 15513093881969820114
         name: dtcc-testnet-andesite
+        is_testnet: true
     2031:
         selector: 8175830712062617656
         name: polkadot-mainnet-centrifuge
     2088:
         selector: 2333097300889804761
         name: polkadot-testnet-centrifuge-altair
+        is_testnet: true
     2129:
         selector: 12168171414969487009
         name: memento-testnet
+        is_testnet: true
     2201:
         selector: 11793402411494852765
         name: stable-testnet
+        is_testnet: true
     2221:
         selector: 2110537777356199208
         name: kava-testnet
+        is_testnet: true
     2222:
         selector: 7550000543357438061
         name: kava-mainnet
     2358:
         selector: 5990477251245693094
         name: ethereum-testnet-sepolia-kroma-1
+        is_testnet: true
     2391:
         selector: 9488606126177218005
         name: tac-testnet
+        is_testnet: true
     2442:
         selector: 1654667687261492630
         name: ethereum-testnet-sepolia-polygon-zkevm-1
+        is_testnet: true
     2522:
         selector: 8901520481741771655
         name: ethereum-testnet-holesky-fraxtal-1
+        is_testnet: true
     2741:
         selector: 3577778157919314504
         name: abstract-mainnet
     2810:
         selector: 8304510386741731151
         name: ethereum-testnet-holesky-morph-1
+        is_testnet: true
     2818:
         selector: 18164309074156128038
         name: morph-mainnet
     2910:
         selector: 1064004874793747259
         name: ethereum-testnet-hoodi-morph
+        is_testnet: true
     3636:
         selector: 1467223411771711614
         name: bitcoin-testnet-botanix
+        is_testnet: true
     3637:
         selector: 4560701533377838164
         name: bitcoin-mainnet-botanix
@@ -366,12 +424,14 @@ evm:
     4002:
         selector: 4905564228793744293
         name: fantom-testnet
+        is_testnet: true
     4200:
         selector: 241851231317828981
         name: bitcoin-merlin-mainnet
     4202:
         selector: 5298399861320400553
         name: ethereum-testnet-sepolia-lisk-1
+        is_testnet: true
     4217:
         selector: 7281642695469137430
         name: tempo-mainnet
@@ -381,39 +441,48 @@ evm:
     4801:
         selector: 5299555114858065850
         name: ethereum-testnet-sepolia-worldchain-1
+        is_testnet: true
     5000:
         selector: 1556008542357238666
         name: ethereum-mainnet-mantle-1
     5001:
         selector: 4168263376276232250
         name: ethereum-testnet-goerli-mantle-1
+        is_testnet: true
     5003:
         selector: 8236463271206331221
         name: ethereum-testnet-sepolia-mantle-1
+        is_testnet: true
     5330:
         selector: 470401360549526817
         name: superseed-mainnet
     5611:
         selector: 13274425992935471758
         name: binance_smart_chain-testnet-opbnb-1
+        is_testnet: true
     5668:
         selector: 8911150974185440581
         name: nexon-dev
+        is_testnet: true
     6342:
         selector: 2443239559770384419
         name: megaeth-testnet
+        is_testnet: true
     6343:
         selector: 18241817625092392675
         name: megaeth-testnet-2
+        is_testnet: true
     6398:
         selector: 379340054879810246
         name: everclear-testnet-sepolia
+        is_testnet: true
     6900:
         selector: 17349189558768828726
         name: nibiru-mainnet
     6930:
         selector: 305104239123120457
         name: nibiru-testnet
+        is_testnet: true
     7000:
         selector: 10817664450262215148
         name: zetachain-mainnet
@@ -426,72 +495,89 @@ evm:
     9000:
         selector: 344208382356656551
         name: ondo-testnet
+        is_testnet: true
     9559:
         selector: 1113014352258747600
         name: neonlink-testnet
+        is_testnet: true
     9745:
         selector: 9335212494177455608
         name: plasma-mainnet
     9746:
         selector: 3967220077692964309
         name: plasma-testnet
+        is_testnet: true
     10087:
         selector: 3667207123485082040
         name: gate-layer-testnet
+        is_testnet: true
     10088:
         selector: 9373518659714509671
         name: gate-layer-mainnet
     10143:
         selector: 2183018362218727504
         name: monad-testnet
+        is_testnet: true
     10200:
         selector: 8871595565390010547
         name: gnosis_chain-testnet-chiado
+        is_testnet: true
     11124:
         selector: 16235373811196386733
         name: abstract-testnet
+        is_testnet: true
     12324:
         selector: 3162193654116181371
         name: ethereum-mainnet-arbitrum-1-l3x-1
     12325:
         selector: 3486622437121596122
         name: ethereum-testnet-sepolia-arbitrum-1-l3x-1
+        is_testnet: true
     13371:
         selector: 1237925231416731909
         name: ethereum-mainnet-immutable-zkevm-1
     13473:
         selector: 4526165231216331901
         name: ethereum-testnet-sepolia-immutable-zkevm-1
+        is_testnet: true
     14601:
         selector: 1763698235108410440
         name: sonic-testnet
+        is_testnet: true
     16600:
         selector: 16088006396410204581
         name: 0g-testnet-newton
+        is_testnet: true
     16601:
         selector: 2131427466778448014
         name: 0g-testnet-galileo
+        is_testnet: true
     16602:
         selector: 6892437333620424805
         name: 0g-testnet-galileo-1
+        is_testnet: true
     16661:
         selector: 4426351306075016396
         name: 0g-mainnet
     17000:
         selector: 7717148896336251131
         name: ethereum-testnet-holesky
+        is_testnet: true
     25327:
         selector: 9723842205701363942
         name: everclear-mainnet
     26888:
         selector: 7051849327615092843
         name: ab-testnet
+        is_testnet: true
     31337:
         selector: 7759470850252068959
         name: anvil-devnet
+        is_testnet: true
     33111:
         selector: 9900119385908781505
         name: apechain-testnet-curtis
+        is_testnet: true
     33139:
         selector: 14894068710063348487
         name: apechain-mainnet
@@ -507,6 +593,7 @@ evm:
     37111:
         selector: 6827576821754315911
         name: ethereum-testnet-sepolia-lens-1
+        is_testnet: true
     42161:
         selector: 4949039107694359620
         name: ethereum-mainnet-arbitrum-1
@@ -516,9 +603,11 @@ evm:
     42429:
         selector: 3963528237232804922
         name: tempo-testnet
+        is_testnet: true
     42431:
         selector: 8457817439310187923
         name: tempo-testnet-moderato
+        is_testnet: true
     42793:
         selector: 13624601974233774587
         name: etherlink-mainnet
@@ -528,24 +617,29 @@ evm:
     43113:
         selector: 14767482510784806043
         name: avalanche-testnet-fuji
+        is_testnet: true
     43114:
         selector: 6433500567565415381
         name: avalanche-mainnet
     44787:
         selector: 3552045678561919002
         name: celo-testnet-alfajores
+        is_testnet: true
     45439:
         selector: 8446413392851542429
         name: private-testnet-opala
+        is_testnet: true
     47763:
         selector: 7222032299962346917
         name: neox-mainnet
     48898:
         selector: 13781831279385219069
         name: zircuit-testnet-garfield
+        is_testnet: true
     48899:
         selector: 4562743618362911021
         name: ethereum-testnet-sepolia-zircuit-1
+        is_testnet: true
     48900:
         selector: 17198166215261833993
         name: ethereum-mainnet-zircuit-1
@@ -555,24 +649,29 @@ evm:
     53302:
         selector: 13694007683517087973
         name: superseed-testnet
+        is_testnet: true
     57054:
         selector: 3676871237479449268
         name: sonic-testnet-blaze
+        is_testnet: true
     57073:
         selector: 3461204551265785888
         name: ethereum-mainnet-ink-1
     59140:
         selector: 1355246678561316402
         name: ethereum-testnet-goerli-linea-1
+        is_testnet: true
     59141:
         selector: 5719461335882077547
         name: ethereum-testnet-sepolia-linea-1
+        is_testnet: true
     59144:
         selector: 4627098889531055414
         name: ethereum-mainnet-linea-1
     59902:
         selector: 3777822886988675105
         name: ethereum-testnet-sepolia-metis-1
+        is_testnet: true
     60118:
         selector: 15758750456714168963
         name: nexon-mainnet-lith
@@ -591,21 +690,27 @@ evm:
     80001:
         selector: 12532609583862916517
         name: polygon-testnet-mumbai
+        is_testnet: true
     80002:
         selector: 16281711391670634445
         name: polygon-testnet-amoy
+        is_testnet: true
     80069:
         selector: 7728255861635209484
         name: berachain-testnet-bepolia
+        is_testnet: true
     80084:
         selector: 8999465244383784164
         name: berachain-testnet-bartio
+        is_testnet: true
     80085:
         selector: 12336603543561911511
         name: berachain-testnet-artio
+        is_testnet: true
     80087:
         selector: 2285225387454015855
         name: zero-g-testnet-galileo
+        is_testnet: true
     80094:
         selector: 1294465214383781161
         name: berachain-mainnet
@@ -618,12 +723,15 @@ evm:
     84531:
         selector: 5790810961207155433
         name: ethereum-testnet-goerli-base-1
+        is_testnet: true
     84532:
         selector: 10344971235874465080
         name: ethereum-testnet-sepolia-base-1
+        is_testnet: true
     98864:
         selector: 3743020999916460931
         name: plume-devnet
+        is_testnet: true
     98865:
         selector: 3208172210661564830
         name: ""
@@ -633,117 +741,148 @@ evm:
     98867:
         selector: 13874588925447303949
         name: plume-testnet-sepolia
+        is_testnet: true
     99999:
         selector: 9418205736192840573
         name: adi-testnet
+        is_testnet: true
     128123:
         selector: 1910019406958449359
         name: etherlink-testnet
+        is_testnet: true
     129399:
         selector: 9090863410735740267
         name: polygon-testnet-tatara
+        is_testnet: true
     167000:
         selector: 16468599424800719238
         name: ethereum-mainnet-taiko-1
     167009:
         selector: 7248756420937879088
         name: ethereum-testnet-holesky-taiko-1
+        is_testnet: true
     167012:
         selector: 9873759436596923887
         name: ethereum-testnet-hoodi-taiko
+        is_testnet: true
     167013:
         selector: 15858691699034549072
         name: ethereum-testnet-hoodi-taiko-1
+        is_testnet: true
     192940:
         selector: 7189150270347329685
         name: mind-testnet
+        is_testnet: true
     200810:
         selector: 3789623672476206327
         name: bitcoin-testnet-bitlayer-1
+        is_testnet: true
     200901:
         selector: 7937294810946806131
         name: bitcoin-mainnet-bitlayer-1
     421613:
         selector: 6101244977088475029
         name: ethereum-testnet-goerli-arbitrum-1
+        is_testnet: true
     421614:
         selector: 3478487238524512106
         name: ethereum-testnet-sepolia-arbitrum-1
+        is_testnet: true
     424242:
         selector: 4489326297382772450
         name: private-testnet-mica
+        is_testnet: true
     432201:
         selector: 1458281248224512906
         name: avalanche-subnet-dexalot-testnet
+        is_testnet: true
     432204:
         selector: 5463201557265485081
         name: avalanche-subnet-dexalot-mainnet
     534351:
         selector: 2279865765895943307
         name: ethereum-testnet-sepolia-scroll-1
+        is_testnet: true
     534352:
         selector: 13204309965629103672
         name: ethereum-mainnet-scroll-1
     560048:
         selector: 10380998176179737091
         name: ethereum-testnet-hoodi
+        is_testnet: true
     595581:
         selector: 7837562506228496256
         name: avalanche-testnet-nexon
+        is_testnet: true
     686868:
         selector: 5269261765892944301
         name: bitcoin-testnet-merlin
+        is_testnet: true
     688688:
         selector: 4012524741200567430
         name: pharos-testnet
+        is_testnet: true
     688689:
         selector: 16098325658947243212
         name: pharos-atlantic-testnet
+        is_testnet: true
     717160:
         selector: 4418231248214522936
         name: ethereum-testnet-sepolia-polygon-validium-1
+        is_testnet: true
     743111:
         selector: 16126893759944359622
         name: hemi-testnet-sepolia
+        is_testnet: true
     747474:
         selector: 2459028469735686113
         name: polygon-mainnet-katana
     763373:
         selector: 9763904284804119144
         name: ink-testnet-sepolia
+        is_testnet: true
     807424:
         selector: 14632960069656270105
         name: nexon-qa
+        is_testnet: true
     808813:
         selector: 5535534526963509396
         name: bitcoin-testnet-sepolia-bob-1
+        is_testnet: true
     810180:
         selector: 4350319965322101699
         name: zklink_nova-mainnet
     810181:
         selector: 5837261596322416298
         name: zklink_nova-testnet
+        is_testnet: true
     812242:
         selector: 7225665875429174318
         name: codex-testnet
+        is_testnet: true
     847799:
         selector: 5556806327594153475
         name: nexon-stage
+        is_testnet: true
     978657:
         selector: 10443705513486043421
         name: ethereum-testnet-sepolia-arbitrum-1-treasure-1
+        is_testnet: true
     978658:
         selector: 3676916124122457866
         name: treasure-testnet-topaz
+        is_testnet: true
     978670:
         selector: 1010349088906777999
         name: ethereum-mainnet-arbitrum-1-treasure-1
     2019775:
         selector: 945045181441419236
         name: jovay-testnet
+        is_testnet: true
     5042002:
         selector: 3034092155422581607
         name: arc-testnet
+        is_testnet: true
     5734951:
         selector: 1523760397290643893
         name: jovay-mainnet
@@ -753,45 +892,56 @@ evm:
     11142220:
         selector: 3761762704474186180
         name: celo-sepolia
+        is_testnet: true
     11155111:
         selector: 16015286601757825753
         name: ethereum-testnet-sepolia
+        is_testnet: true
     11155420:
         selector: 5224473277236331295
         name: ethereum-testnet-sepolia-optimism-1
+        is_testnet: true
     12227332:
         selector: 2217764097022649312
         name: neox-testnet-t4
+        is_testnet: true
     21000000:
         selector: 9043146809313071210
         name: corn-mainnet
     21000001:
         selector: 1467427327723633929
         name: ethereum-testnet-sepolia-corn-1
+        is_testnet: true
     31415926:
         selector: 7060342227814389000
         name: filecoin-testnet
+        is_testnet: true
     161221135:
         selector: 14684575664602284776
         name: plume-testnet
+        is_testnet: true
     168587773:
         selector: 2027362563942762617
         name: ethereum-testnet-sepolia-blast-1
+        is_testnet: true
     728126428:
         selector: 1546563616611573946
         name: tron-mainnet-evm
     999999999:
         selector: 16244020411108056671
         name: zora-testnet
+        is_testnet: true
     2494104990:
         selector: 13231703482326770598
         name: tron-testnet-shasta-evm
+        is_testnet: true
     3360022319:
         selector: 13231703482326770600
         name: tron-devnet-evm
     3448148188:
         selector: 2052925811360307749
         name: tron-testnet-nile-evm
+        is_testnet: true
 aptos:
     1:
         selector: 4741433654826277614
