@@ -96,11 +96,3 @@ func AptosChainBySelector(selector uint64) (AptosChain, bool) {
 	chain, exist := aptosChainsBySelector[selector]
 	return chain, exist
 }
-
-func AptosIsMainnetChain(chainID uint64) (bool, error) {
-	details, exist := aptosSelectorsMap[chainID]
-	if !exist {
-		return false, fmt.Errorf("chain not found for chain ID: %v", chainID)
-	}
-	return details.IsMainnet, nil
-}

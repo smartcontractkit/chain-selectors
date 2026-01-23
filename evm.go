@@ -115,14 +115,6 @@ func NameFromChainId(chainId uint64) (string, error) {
 	return details.ChainName, nil
 }
 
-func EVMIsMainnetChain(chainId uint64) (bool, error) {
-	details, exist := evmChainIdToChainSelector[chainId]
-	if !exist {
-		return false, fmt.Errorf("chain not found for chain %d", chainId)
-	}
-	return details.IsMainnet, nil
-}
-
 func ChainIdFromName(name string) (uint64, error) {
 	for k, v := range evmChainIdToChainSelector {
 		if v.ChainName == name {

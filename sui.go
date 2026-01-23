@@ -96,11 +96,3 @@ func SuiChainBySelector(selector uint64) (SuiChain, bool) {
 	chain, exist := suiChainsBySelector[selector]
 	return chain, exist
 }
-
-func SuiIsMainnetChain(chainID uint64) (bool, error) {
-	details, exist := suiSelectorsMap[chainID]
-	if !exist {
-		return false, fmt.Errorf("chain not found for chain ID: %v", chainID)
-	}
-	return details.IsMainnet, nil
-}

@@ -123,11 +123,3 @@ func SolanaChainBySelector(selector uint64) (SolanaChain, bool) {
 
 	return chain, exists
 }
-
-func SolanaIsMainnetChain(chainID string) (bool, error) {
-	details, exist := solanaChainIdToChainSelector[chainID]
-	if !exist {
-		return false, fmt.Errorf("chain not found for chain ID: %v", chainID)
-	}
-	return details.IsMainnet, nil
-}

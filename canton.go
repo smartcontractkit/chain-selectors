@@ -104,11 +104,3 @@ func CantonChainBySelector(selector uint64) (CantonChain, bool) {
 	chain, exists := cantonChainsBySelector[selector]
 	return chain, exists
 }
-
-func CantonIsMainnetChain(chainID string) (bool, error) {
-	details, exist := cantonChainsByChainId[chainID]
-	if !exist {
-		return false, fmt.Errorf("chain not found for chain ID: %v", chainID)
-	}
-	return details.IsMainnet, nil
-}

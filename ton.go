@@ -76,11 +76,3 @@ func TonChainIdFromSelector(selector uint64) (int32, error) {
 
 	return chainId, nil
 }
-
-func TonIsMainnetChain(chainID int32) (bool, error) {
-	details, exist := tonSelectorsMap[chainID]
-	if !exist {
-		return false, fmt.Errorf("chain not found for chain ID: %v", chainID)
-	}
-	return details.IsMainnet, nil
-}

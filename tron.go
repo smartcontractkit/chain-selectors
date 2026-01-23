@@ -76,11 +76,3 @@ func TronChainIdFromSelector(selector uint64) (uint64, error) {
 
 	return chainId, nil
 }
-
-func TronIsMainnetChain(chainID uint64) (bool, error) {
-	details, exist := tronSelectorsMap[chainID]
-	if !exist {
-		return false, fmt.Errorf("chain not found for chain ID: %v", chainID)
-	}
-	return details.IsMainnet, nil
-}

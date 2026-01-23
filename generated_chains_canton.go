@@ -11,7 +11,7 @@ type CantonChain struct {
 var (
 	CANTON_DEVNET   = CantonChain{ChainID: "DevNet", Selector: 10109143320554840099, Name: "canton-devnet", IsMainnet: false}
 	CANTON_LOCALNET = CantonChain{ChainID: "LocalNet", Selector: 8706591216959472610, Name: "canton-localnet", IsMainnet: false}
-	CANTON_MAINNET  = CantonChain{ChainID: "MainNet", Selector: 2308837218439511688, Name: "canton-mainnet", IsMainnet: false}
+	CANTON_MAINNET  = CantonChain{ChainID: "MainNet", Selector: 2308837218439511688, Name: "canton-mainnet", IsMainnet: true}
 	CANTON_TESTNET  = CantonChain{ChainID: "TestNet", Selector: 9268731218649498074, Name: "canton-testnet", IsMainnet: false}
 )
 
