@@ -123,6 +123,14 @@ func IsTestnetChain(chainId uint64) (bool, error) {
 	return details.IsTestnet, nil
 }
 
+func IsMainnetChain(chainId uint64) (bool, error) {
+	isTestnet, err := IsTestnetChain(chainId)
+	if err != nil {
+		return false, err
+	}
+	return !isTestnet, nil
+}
+
 func ChainIdFromName(name string) (uint64, error) {
 	for k, v := range evmChainIdToChainSelector {
 		if v.ChainName == name {

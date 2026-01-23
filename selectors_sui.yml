@@ -2,9 +2,12 @@ selectors:
   1:
     name: sui-mainnet
     selector: 17529533435026248318
-  2: 
+    is_mainnet: true
+  2:
     name: sui-testnet
     selector: 9762610643973837292
+    is_mainnet: false
   4:
     name: sui-localnet
     selector: 18395503381733958356
+    is_mainnet: false
