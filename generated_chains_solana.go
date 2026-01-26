@@ -2,20 +2,20 @@
 package chain_selectors
 
 type SolanaChain struct {
-	ChainID   string
-	Selector  uint64
-	Name      string
-	VarName   string
-	IsMainnet bool
+	ChainID     string
+	Selector    uint64
+	Name        string
+	VarName     string
+	NetworkType NetworkType
 }
 
 var (
-	SOLANA_DEVNET                                     = SolanaChain{ChainID: "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG", Selector: 16423721717087811551, Name: "solana-devnet", IsMainnet: false}
-	SOLANA_MAINNET                                    = SolanaChain{ChainID: "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d", Selector: 124615329519749607, Name: "solana-mainnet", IsMainnet: true}
-	SOLANA_TESTNET                                    = SolanaChain{ChainID: "4uhcVJyU9pJkvQyS88uRDiswHXSCkY3zQawwpjk2NsNY", Selector: 6302590918974934319, Name: "solana-testnet", IsMainnet: false}
-	TEST_22222222222222222222222222222222222222222222 = SolanaChain{ChainID: "22222222222222222222222222222222222222222222", Selector: 12463857294658392847, Name: "22222222222222222222222222222222222222222222", IsMainnet: false}
-	TEST_33333333333333333333333333333333333333333333 = SolanaChain{ChainID: "33333333333333333333333333333333333333333333", Selector: 9837465928374658293, Name: "33333333333333333333333333333333333333333333", IsMainnet: false}
-	TEST_44444444444444444444444444444444444444444444 = SolanaChain{ChainID: "44444444444444444444444444444444444444444444", Selector: 16574839267584930184, Name: "44444444444444444444444444444444444444444444", IsMainnet: false}
+	SOLANA_DEVNET                                     = SolanaChain{ChainID: "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG", Selector: 16423721717087811551, Name: "solana-devnet", NetworkType: NetworkTypeTestnet}
+	SOLANA_MAINNET                                    = SolanaChain{ChainID: "5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d", Selector: 124615329519749607, Name: "solana-mainnet", NetworkType: NetworkTypeMainnet}
+	SOLANA_TESTNET                                    = SolanaChain{ChainID: "4uhcVJyU9pJkvQyS88uRDiswHXSCkY3zQawwpjk2NsNY", Selector: 6302590918974934319, Name: "solana-testnet", NetworkType: NetworkTypeTestnet}
+	TEST_22222222222222222222222222222222222222222222 = SolanaChain{ChainID: "22222222222222222222222222222222222222222222", Selector: 12463857294658392847, Name: "22222222222222222222222222222222222222222222", NetworkType: NetworkTypeTestnet}
+	TEST_33333333333333333333333333333333333333333333 = SolanaChain{ChainID: "33333333333333333333333333333333333333333333", Selector: 9837465928374658293, Name: "33333333333333333333333333333333333333333333", NetworkType: NetworkTypeTestnet}
+	TEST_44444444444444444444444444444444444444444444 = SolanaChain{ChainID: "44444444444444444444444444444444444444444444", Selector: 16574839267584930184, Name: "44444444444444444444444444444444444444444444", NetworkType: NetworkTypeTestnet}
 )
 
 var SolanaALL = []SolanaChain{

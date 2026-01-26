@@ -2,17 +2,17 @@ selectors:
   LocalNet:
     selector: 8706591216959472610
     name: canton-localnet
-    is_mainnet: false
+    network_type: testnet
   DevNet:
     selector: 10109143320554840099
     name: canton-devnet
-    is_mainnet: false
+    network_type: testnet
   TestNet:
     selector: 9268731218649498074
     name: canton-testnet
-    is_mainnet: false
+    network_type: testnet
   MainNet:
     selector: 2308837218439511688
     name: canton-mainnet
-    is_mainnet: true
+    network_type: mainnet
 

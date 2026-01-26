@@ -57,7 +57,7 @@ func loadAllEVMSelectors() map[uint64]ChainDetails {
 		output[k] = v
 	}
 	for k, v := range evmTestSelectorsMap {
-		v.IsMainnet = false
+		v.NetworkType = NetworkTypeTestnet
 		output[k] = v
 	}
 	return output

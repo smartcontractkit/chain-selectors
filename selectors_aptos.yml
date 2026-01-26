@@ -2,12 +2,12 @@ selectors:
   1:
     name: aptos-mainnet
     selector: 4741433654826277614
-    is_mainnet: true
+    network_type: mainnet
   2:
     name: aptos-testnet
     selector: 743186221051783445
-    is_mainnet: false
+    network_type: testnet
   4:
     name: aptos-localnet
     selector: 4457093679053095497
-    is_mainnet: false
+    network_type: testnet

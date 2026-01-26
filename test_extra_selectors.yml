@@ -2,8 +2,8 @@ evm:
   90909090111:
     selector: 1234567890123456789
     name: "test-evm-chain"
-    is_mainnet: false
+    network_type: testnet
   999:
     selector: 9876543210987654321
     name: "overriding-existing-chain"
-    is_mainnet: false
+    network_type: testnet

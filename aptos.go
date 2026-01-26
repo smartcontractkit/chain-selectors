@@ -28,10 +28,10 @@ func init() {
 		}
 		aptosSelectorsMap[chainID] = chainDetails
 		aptosChainsBySelector[chainDetails.ChainSelector] = AptosChain{
-			ChainID:   chainID,
-			Selector:  chainDetails.ChainSelector,
-			Name:      chainDetails.ChainName,
-			IsMainnet: chainDetails.IsMainnet,
+			ChainID:     chainID,
+			Selector:    chainDetails.ChainSelector,
+			Name:        chainDetails.ChainName,
+			NetworkType: chainDetails.NetworkType,
 		}
 	}
 

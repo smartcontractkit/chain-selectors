@@ -2,13 +2,13 @@ selectors:
   -239:
     name: ton-mainnet
     selector: 16448340667252469081
-    is_mainnet: true
+    network_type: mainnet
   -3:
     name: ton-testnet
     selector: 1399300952838017768
-    is_mainnet: false
+    network_type: testnet
   -217:
     name: ton-localnet
     selector: 13879075125137744094
-    is_mainnet: false
+    network_type: testnet
 

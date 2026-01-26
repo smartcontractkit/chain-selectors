@@ -308,13 +308,23 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 	}
 }
 
-func IsMainnetChain(selector uint64) (bool, error) {
+func GetNetworkType(selector uint64) (NetworkType, error) {
 	chainInfo, err := getChainInfo(selector)
 	if err != nil {
-		return false, fmt.Errorf("unknown chain selector %d", selector)
+		return "", fmt.Errorf("unknown chain selector %d", selector)
 	}
 
-	return chainInfo.ChainDetails.IsMainnet, nil
+	return chainInfo.ChainDetails.NetworkType, nil
+}
+
+
+func IsMainnetChain(selector uint64) (bool, error) {
+	networkType, err := GetNetworkType(selector)
+	if err != nil {
+		return false, err
+	}
+
+	return networkType == NetworkTypeMainnet, nil
 }
 
 func GetChainDetails(selector uint64) (ChainDetails, error) {

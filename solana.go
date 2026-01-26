@@ -35,10 +35,10 @@ func init() {
 		solanaSelectorsMap[chainID] = chainDetails
 		solanaChainIdToChainSelector[chainID] = chainDetails
 		solanaChainsBySelector[chainDetails.ChainSelector] = SolanaChain{
-			ChainID:   chainID,
-			Selector:  chainDetails.ChainSelector,
-			Name:      chainDetails.ChainName,
-			IsMainnet: chainDetails.IsMainnet,
+			ChainID:     chainID,
+			Selector:    chainDetails.ChainSelector,
+			Name:        chainDetails.ChainName,
+			NetworkType: chainDetails.NetworkType,
 		}
 	}
 

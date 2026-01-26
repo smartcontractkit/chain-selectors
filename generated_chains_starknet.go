@@ -2,16 +2,16 @@
 package chain_selectors
 
 type StarknetChain struct {
-	ChainID   string
-	Selector  uint64
-	Name      string
-	VarName   string
-	IsMainnet bool
+	ChainID     string
+	Selector    uint64
+	Name        string
+	VarName     string
+	NetworkType NetworkType
 }
 
 var (
-	ETHEREUM_MAINNET_STARKNET_1         = StarknetChain{ChainID: "SN_MAIN", Selector: 511843109281680063, Name: "ethereum-mainnet-starknet-1", IsMainnet: true}
-	ETHEREUM_TESTNET_SEPOLIA_STARKNET_1 = StarknetChain{ChainID: "SN_SEPOLIA", Selector: 4115550741429562104, Name: "ethereum-testnet-sepolia-starknet-1", IsMainnet: false}
+	ETHEREUM_MAINNET_STARKNET_1         = StarknetChain{ChainID: "SN_MAIN", Selector: 511843109281680063, Name: "ethereum-mainnet-starknet-1", NetworkType: NetworkTypeMainnet}
+	ETHEREUM_TESTNET_SEPOLIA_STARKNET_1 = StarknetChain{ChainID: "SN_SEPOLIA", Selector: 4115550741429562104, Name: "ethereum-testnet-sepolia-starknet-1", NetworkType: NetworkTypeTestnet}
 )
 
 var StarknetALL = []StarknetChain{

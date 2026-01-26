@@ -28,10 +28,10 @@ func init() {
 		}
 		suiSelectorsMap[chainID] = chainDetails
 		suiChainsBySelector[chainDetails.ChainSelector] = SuiChain{
-			ChainID:   chainID,
-			Selector:  chainDetails.ChainSelector,
-			Name:      chainDetails.ChainName,
-			IsMainnet: chainDetails.IsMainnet,
+			ChainID:     chainID,
+			Selector:    chainDetails.ChainSelector,
+			Name:        chainDetails.ChainName,
+			NetworkType: chainDetails.NetworkType,
 		}
 	}
 
