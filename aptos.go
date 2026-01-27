@@ -96,3 +96,10 @@ func AptosChainBySelector(selector uint64) (AptosChain, bool) {
 	chain, exist := aptosChainsBySelector[selector]
 	return chain, exist
 }
+
+func AptosNetworkTypeFromChainId(chainId uint64) (NetworkType, error) {
+	if chainDetails, exist := aptosSelectorsMap[chainId]; exist {
+		return chainDetails.NetworkType, nil
+	}
+	return "", fmt.Errorf("chain network type not found for chain %v", chainId)
+}

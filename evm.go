@@ -85,6 +85,13 @@ func EvmChainIdToChainSelector() map[uint64]uint64 {
 	return copyMap
 }
 
+func EvmNetworkTypeFromChainId(chainId uint64) (NetworkType, error) {
+	if chainDetails, exist := evmChainIdToChainSelector[chainId]; exist {
+		return chainDetails.NetworkType, nil
+	}
+	return "", fmt.Errorf("chain network type not found for chain %d", chainId)
+}
+
 // Deprecated, this only supports EVM chains, use the chain agnostic `GetChainIDFromSelector` instead
 func ChainIdFromSelector(chainSelectorId uint64) (uint64, error) {
 	for k, v := range evmChainIdToChainSelector {
