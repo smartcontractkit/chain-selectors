@@ -609,6 +609,10 @@ selectors:
     selector: 13231703482326770598
     name: "tron-testnet-shasta-evm"
     network_type: testnet
+  6281971:
+    selector: 7254999290874773717
+    name: dogeos-testnet-chikyu
+    network_type: testnet
 
   # Mainnets
   1:
