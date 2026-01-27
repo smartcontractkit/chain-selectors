@@ -28,9 +28,10 @@ func init() {
 		}
 		starknetSelectorsMap[chainID] = chainDetails
 		starknetChainsBySelector[chainDetails.ChainSelector] = StarknetChain{
-			ChainID:  chainID,
-			Selector: chainDetails.ChainSelector,
-			Name:     chainDetails.ChainName,
+			ChainID:     chainID,
+			Selector:    chainDetails.ChainSelector,
+			Name:        chainDetails.ChainName,
+			NetworkType: chainDetails.NetworkType,
 		}
 	}
 

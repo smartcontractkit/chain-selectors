@@ -28,9 +28,10 @@ func init() {
 		}
 		cantonChainsByChainId[chainID] = chainDetails
 		cantonChainsBySelector[chainDetails.ChainSelector] = CantonChain{
-			ChainID:  chainID,
-			Selector: chainDetails.ChainSelector,
-			Name:     chainDetails.ChainName,
+			ChainID:     chainID,
+			Selector:    chainDetails.ChainSelector,
+			Name:        chainDetails.ChainName,
+			NetworkType: chainDetails.NetworkType,
 		}
 	}
 
@@ -57,9 +58,10 @@ func loadAllCantonSelectors(in map[string]ChainDetails) map[uint64]CantonChain {
 	output := make(map[uint64]CantonChain, len(cantonChainsByChainId))
 	for chainID, v := range in {
 		output[v.ChainSelector] = CantonChain{
-			ChainID:  chainID,
-			Selector: v.ChainSelector,
-			Name:     v.ChainName,
+			ChainID:     chainID,
+			Selector:    v.ChainSelector,
+			Name:        v.ChainName,
+			NetworkType: v.NetworkType,
 		}
 	}
 	return output

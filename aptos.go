@@ -28,9 +28,10 @@ func init() {
 		}
 		aptosSelectorsMap[chainID] = chainDetails
 		aptosChainsBySelector[chainDetails.ChainSelector] = AptosChain{
-			ChainID:  chainID,
-			Selector: chainDetails.ChainSelector,
-			Name:     chainDetails.ChainName,
+			ChainID:     chainID,
+			Selector:    chainDetails.ChainSelector,
+			Name:        chainDetails.ChainName,
+			NetworkType: chainDetails.NetworkType,
 		}
 	}
 
@@ -60,7 +61,7 @@ func parseAptosYml(ymlFile []byte) map[uint64]ChainDetails {
 
 func validateAptosChainID(data map[uint64]ChainDetails) error {
 	// TODO: https://smartcontract-it.atlassian.net/browse/NONEVM-890
-    return nil
+	return nil
 }
 
 func AptosChainIdToChainSelector() map[uint64]uint64 {

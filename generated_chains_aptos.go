@@ -2,16 +2,17 @@
 package chain_selectors
 
 type AptosChain struct {
-	ChainID  uint64
-	Selector uint64
-	Name     string
-	VarName  string
+	ChainID     uint64
+	Selector    uint64
+	Name        string
+	VarName     string
+	NetworkType NetworkType
 }
 
 var (
-	APTOS_LOCALNET = AptosChain{ChainID: 4, Selector: 4457093679053095497, Name: "aptos-localnet"}
-	APTOS_MAINNET  = AptosChain{ChainID: 1, Selector: 4741433654826277614, Name: "aptos-mainnet"}
-	APTOS_TESTNET  = AptosChain{ChainID: 2, Selector: 743186221051783445, Name: "aptos-testnet"}
+	APTOS_LOCALNET = AptosChain{ChainID: 4, Selector: 4457093679053095497, Name: "aptos-localnet", NetworkType: NetworkTypeTestnet}
+	APTOS_MAINNET  = AptosChain{ChainID: 1, Selector: 4741433654826277614, Name: "aptos-mainnet", NetworkType: NetworkTypeMainnet}
+	APTOS_TESTNET  = AptosChain{ChainID: 2, Selector: 743186221051783445, Name: "aptos-testnet", NetworkType: NetworkTypeTestnet}
 )
 
 var AptosALL = []AptosChain{

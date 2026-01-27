@@ -2,16 +2,17 @@
 package chain_selectors
 
 type CantonChain struct {
-	ChainID  string
-	Selector uint64
-	Name     string
+	ChainID     string
+	Selector    uint64
+	Name        string
+	NetworkType NetworkType
 }
 
 var (
-	CANTON_DEVNET   = CantonChain{ChainID: "DevNet", Selector: 10109143320554840099, Name: "canton-devnet"}
-	CANTON_LOCALNET = CantonChain{ChainID: "LocalNet", Selector: 8706591216959472610, Name: "canton-localnet"}
-	CANTON_MAINNET  = CantonChain{ChainID: "MainNet", Selector: 2308837218439511688, Name: "canton-mainnet"}
-	CANTON_TESTNET  = CantonChain{ChainID: "TestNet", Selector: 9268731218649498074, Name: "canton-testnet"}
+	CANTON_DEVNET   = CantonChain{ChainID: "DevNet", Selector: 10109143320554840099, Name: "canton-devnet", NetworkType: NetworkTypeTestnet}
+	CANTON_LOCALNET = CantonChain{ChainID: "LocalNet", Selector: 8706591216959472610, Name: "canton-localnet", NetworkType: NetworkTypeTestnet}
+	CANTON_MAINNET  = CantonChain{ChainID: "MainNet", Selector: 2308837218439511688, Name: "canton-mainnet", NetworkType: NetworkTypeMainnet}
+	CANTON_TESTNET  = CantonChain{ChainID: "TestNet", Selector: 9268731218649498074, Name: "canton-testnet", NetworkType: NetworkTypeTestnet}
 )
 
 var CantonALL = []CantonChain{

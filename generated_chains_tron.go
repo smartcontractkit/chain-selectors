@@ -2,17 +2,18 @@
 package chain_selectors
 
 type TronChain struct {
-	ChainID  uint64
-	Selector uint64
-	Name     string
-	VarName  string
+	ChainID     uint64
+	Selector    uint64
+	Name        string
+	VarName     string
+	NetworkType NetworkType
 }
 
 var (
-	TRON_DEVNET         = TronChain{ChainID: 3360022319, Selector: 13231703482326770599, Name: "tron-devnet"}
-	TRON_MAINNET        = TronChain{ChainID: 728126428, Selector: 1546563616611573945, Name: "tron-mainnet"}
-	TRON_TESTNET_NILE   = TronChain{ChainID: 3448148188, Selector: 2052925811360307740, Name: "tron-testnet-nile"}
-	TRON_TESTNET_SHASTA = TronChain{ChainID: 2494104990, Selector: 13231703482326770597, Name: "tron-testnet-shasta"}
+	TRON_DEVNET         = TronChain{ChainID: 3360022319, Selector: 13231703482326770599, Name: "tron-devnet", NetworkType: NetworkTypeTestnet}
+	TRON_MAINNET        = TronChain{ChainID: 728126428, Selector: 1546563616611573945, Name: "tron-mainnet", NetworkType: NetworkTypeMainnet}
+	TRON_TESTNET_NILE   = TronChain{ChainID: 3448148188, Selector: 2052925811360307740, Name: "tron-testnet-nile", NetworkType: NetworkTypeTestnet}
+	TRON_TESTNET_SHASTA = TronChain{ChainID: 2494104990, Selector: 13231703482326770597, Name: "tron-testnet-shasta", NetworkType: NetworkTypeTestnet}
 )
 
 var TronALL = []TronChain{

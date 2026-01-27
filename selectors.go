@@ -308,6 +308,42 @@ func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDeta
 	}
 }
 
+func GetNetworkType(selector uint64) (NetworkType, error) {
+	chainInfo, err := getChainInfo(selector)
+	if err != nil {
+		return "", fmt.Errorf("unknown chain selector %d", selector)
+	}
+
+	return chainInfo.ChainDetails.NetworkType, nil
+}
+
+func IsMainnetChain(selector uint64) (bool, error) {
+	networkType, err := GetNetworkType(selector)
+	if err != nil {
+		return false, err
+	}
+
+	return networkType == NetworkTypeMainnet, nil
+}
+
+func IsTestnetChain(selector uint64) (bool, error) {
+	networkType, err := GetNetworkType(selector)
+	if err != nil {
+		return false, err
+	}
+
+	return networkType == NetworkTypeTestnet, nil
+}
+
+func GetChainDetails(selector uint64) (ChainDetails, error) {
+	chainInfo, err := getChainInfo(selector)
+	if err != nil {
+		return ChainDetails{}, fmt.Errorf("unknown chain selector %d", selector)
+	}
+
+	return chainInfo.ChainDetails, nil
+}
+
 // ExtractNetworkEnvName returns chain env identifier from the full network name, for e.g. blockchain-mainnet returns mainnet.
 func ExtractNetworkEnvName(networkName string) (string, error) {
 	// Create a regexp pattern that matches any of the three.
