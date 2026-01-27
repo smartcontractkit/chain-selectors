@@ -317,7 +317,6 @@ func GetNetworkType(selector uint64) (NetworkType, error) {
 	return chainInfo.ChainDetails.NetworkType, nil
 }
 
-
 func IsMainnetChain(selector uint64) (bool, error) {
 	networkType, err := GetNetworkType(selector)
 	if err != nil {
@@ -325,6 +324,15 @@ func IsMainnetChain(selector uint64) (bool, error) {
 	}
 
 	return networkType == NetworkTypeMainnet, nil
+}
+
+func IsTestnetChain(selector uint64) (bool, error) {
+	networkType, err := GetNetworkType(selector)
+	if err != nil {
+		return false, err
+	}
+
+	return networkType == NetworkTypeTestnet, nil
 }
 
 func GetChainDetails(selector uint64) (ChainDetails, error) {
