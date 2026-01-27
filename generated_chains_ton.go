@@ -2,16 +2,17 @@
 package chain_selectors
 
 type TonChain struct {
-	ChainID  int32
-	Selector uint64
-	Name     string
-	VarName  string
+	ChainID     int32
+	Selector    uint64
+	Name        string
+	VarName     string
+	NetworkType NetworkType
 }
 
 var (
-	TON_LOCALNET = TonChain{ChainID: -217, Selector: 13879075125137744094, Name: "ton-localnet"}
-	TON_MAINNET  = TonChain{ChainID: -239, Selector: 16448340667252469081, Name: "ton-mainnet"}
-	TON_TESTNET  = TonChain{ChainID: -3, Selector: 1399300952838017768, Name: "ton-testnet"}
+	TON_LOCALNET = TonChain{ChainID: -217, Selector: 13879075125137744094, Name: "ton-localnet", NetworkType: NetworkTypeTestnet}
+	TON_MAINNET  = TonChain{ChainID: -239, Selector: 16448340667252469081, Name: "ton-mainnet", NetworkType: NetworkTypeMainnet}
+	TON_TESTNET  = TonChain{ChainID: -3, Selector: 1399300952838017768, Name: "ton-testnet", NetworkType: NetworkTypeTestnet}
 )
 
 var TonALL = []TonChain{

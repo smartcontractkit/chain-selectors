@@ -28,9 +28,10 @@ func init() {
 		}
 		suiSelectorsMap[chainID] = chainDetails
 		suiChainsBySelector[chainDetails.ChainSelector] = SuiChain{
-			ChainID:  chainID,
-			Selector: chainDetails.ChainSelector,
-			Name:     chainDetails.ChainName,
+			ChainID:     chainID,
+			Selector:    chainDetails.ChainSelector,
+			Name:        chainDetails.ChainName,
+			NetworkType: chainDetails.NetworkType,
 		}
 	}
 
@@ -60,7 +61,7 @@ func parseSuiYml(ymlFile []byte) map[uint64]ChainDetails {
 
 func validateSuiChainID(data map[uint64]ChainDetails) error {
 	// TODO: https://smartcontract-it.atlassian.net/browse/NONEVM-890
-    return nil
+	return nil
 }
 
 func SuiChainIdToChainSelector() map[uint64]uint64 {
