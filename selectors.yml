@@ -448,9 +448,6 @@ selectors:
   14601:
     selector: 1763698235108410440
     name: "sonic-testnet"
-  6281971:
-    selector: 7254999290874773717
-    name: "dogeos-testnet-chikyu"
 
   # Mainnets
   1:
