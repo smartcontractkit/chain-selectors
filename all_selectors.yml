@@ -747,6 +747,9 @@ evm:
     5734951:
         selector: 1523760397290643893
         name: jovay-mainnet
+    6281971:
+        selector: 7254999290874773717
+        name: dogeos-testnet-chikyu
     7777777:
         selector: 3555797439612589184
         name: zora-mainnet
