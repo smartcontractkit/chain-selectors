@@ -89,3 +89,10 @@ func StarknetChainBySelector(selector uint64) (StarknetChain, bool) {
 
 	return chain, exists
 }
+
+func StarknetNetworkTypeFromChainId(chainId string) (NetworkType, error) {
+	if chainDetails, exist := starknetSelectorsMap[chainId]; exist {
+		return chainDetails.NetworkType, nil
+	}
+	return "", fmt.Errorf("chain network type not found for chain %v", chainId)
+}
