@@ -123,3 +123,10 @@ func SolanaChainBySelector(selector uint64) (SolanaChain, bool) {
 
 	return chain, exists
 }
+
+func SolanaNetworkTypeFromChainId(chainId string) (NetworkType, error) {
+	if chainDetails, exist := solanaChainIdToChainSelector[chainId]; exist {
+		return chainDetails.NetworkType, nil
+	}
+	return "", fmt.Errorf("chain network type not found for chain %v", chainId)
+}

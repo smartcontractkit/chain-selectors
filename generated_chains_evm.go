@@ -70,6 +70,8 @@ var (
 	CRONOS_ZKEVM_TESTNET_SEPOLIA                   = Chain{EvmChainID: 240, Selector: 16487132492576884721, Name: "cronos-zkevm-testnet-sepolia", NetworkType: NetworkTypeTestnet}
 	DOGEOS_TESTNET_CHIKYU                          = Chain{EvmChainID: 6281971, Selector: 7254999290874773717, Name: "dogeos-testnet-chikyu", NetworkType: NetworkTypeTestnet}
 	DTCC_TESTNET_ANDESITE                          = Chain{EvmChainID: 2025, Selector: 15513093881969820114, Name: "dtcc-testnet-andesite", NetworkType: NetworkTypeTestnet}
+	EDGE_MAINNET                                   = Chain{EvmChainID: 3343, Selector: 6325494908023253251, Name: "edge-mainnet", NetworkType: NetworkTypeMainnet}
+	EDGE_TESTNET                                   = Chain{EvmChainID: 33431, Selector: 13222148116102326311, Name: "edge-testnet", NetworkType: NetworkTypeTestnet}
 	ETHEREUM_MAINNET                               = Chain{EvmChainID: 1, Selector: 5009297550715157269, Name: "ethereum-mainnet", NetworkType: NetworkTypeMainnet}
 	ETHEREUM_MAINNET_ARBITRUM_1                    = Chain{EvmChainID: 42161, Selector: 4949039107694359620, Name: "ethereum-mainnet-arbitrum-1", NetworkType: NetworkTypeMainnet}
 	ETHEREUM_MAINNET_ARBITRUM_1_L3X_1              = Chain{EvmChainID: 12324, Selector: 3162193654116181371, Name: "ethereum-mainnet-arbitrum-1-l3x-1", NetworkType: NetworkTypeMainnet}
@@ -440,6 +442,8 @@ var ALL = []Chain{
 	CRONOS_ZKEVM_TESTNET_SEPOLIA,
 	DOGEOS_TESTNET_CHIKYU,
 	DTCC_TESTNET_ANDESITE,
+	EDGE_MAINNET,
+	EDGE_TESTNET,
 	ETHEREUM_MAINNET,
 	ETHEREUM_MAINNET_ARBITRUM_1,
 	ETHEREUM_MAINNET_ARBITRUM_1_L3X_1,

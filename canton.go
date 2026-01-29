@@ -104,3 +104,10 @@ func CantonChainBySelector(selector uint64) (CantonChain, bool) {
 	chain, exists := cantonChainsBySelector[selector]
 	return chain, exists
 }
+
+func CantonNetworkTypeFromChainId(chainId string) (NetworkType, error) {
+	if chainDetails, exist := cantonChainsByChainId[chainId]; exist {
+		return chainDetails.NetworkType, nil
+	}
+	return "", fmt.Errorf("chain network type not found for chain %v", chainId)
+}

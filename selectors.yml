@@ -227,6 +227,10 @@ selectors:
     selector: 9900119385908781505
     name: "apechain-testnet-curtis"
     network_type: testnet
+  33431:
+    selector: 13222148116102326311
+    name: "edge-testnet"
+    network_type: testnet
   43113:
     selector: 14767482510784806043
     name: "avalanche-testnet-fuji"
@@ -778,6 +782,10 @@ selectors:
   2222:
     selector: 7550000543357438061
     name: "kava-mainnet"
+    network_type: mainnet
+  3343:
+    selector: 6325494908023253251
+    name: "edge-mainnet"
     network_type: mainnet
   3637:
     selector: 4560701533377838164

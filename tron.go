@@ -76,3 +76,10 @@ func TronChainIdFromSelector(selector uint64) (uint64, error) {
 
 	return chainId, nil
 }
+
+func TronNetworkTypeFromChainId(chainId uint64) (NetworkType, error) {
+	if chainDetails, exist := tronSelectorsMap[chainId]; exist {
+		return chainDetails.NetworkType, nil
+	}
+	return "", fmt.Errorf("chain network type not found for chain %v", chainId)
+}
