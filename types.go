@@ -10,14 +10,17 @@ const (
 	FamilyTron     = "tron"
 	FamilyTon      = "ton"
 	FamilyCanton   = "canton"
+	FamilyStellar  = "stellar"
 )
 
 // NetworkType represents the type of network (testnet or mainnet)
 type NetworkType string
 
 const (
-	NetworkTypeTestnet NetworkType = "testnet"
-	NetworkTypeMainnet NetworkType = "mainnet"
+	NetworkTypeTestnet  NetworkType = "testnet"
+	NetworkTypeMainnet  NetworkType = "mainnet"
+	NetworkTypeLocalnet NetworkType = "localnet"
+	NetworkTypeFuturenet NetworkType = "futurenet"
 )
 
 type ChainDetails struct {
