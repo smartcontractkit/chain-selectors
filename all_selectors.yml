@@ -471,6 +471,10 @@ evm:
         selector: 1064004874793747259
         name: ethereum-testnet-hoodi-morph
         network_type: testnet
+    3343:
+        selector: 6325494908023253251
+        name: edge-mainnet
+        network_type: mainnet
     3636:
         selector: 1467223411771711614
         name: bitcoin-testnet-botanix
@@ -654,6 +658,10 @@ evm:
     33111:
         selector: 9900119385908781505
         name: apechain-testnet-curtis
+        network_type: testnet
+    33431:
+        selector: 13222148116102326311
+        name: edge-testnet
         network_type: testnet
     33139:
         selector: 14894068710063348487
