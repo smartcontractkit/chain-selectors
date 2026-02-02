@@ -1,7 +1,7 @@
   # Network IDs are SHA-256 hashes of the network passphrase (https://developers.stellar.org/docs/networks#network-ids)
 selectors:
-  # Localnet - sha256("Local SDF Network ; February 2026")
-  11f129a0e11abbf9059c4a6a455f43d98d837f1d87433160cca66c2cfd71c0e0: 
+  # Localnet - sha256("Standalone Network ; February 2017")
+  baefd734b8d3e48472cff83912375fedbc7573701912fe308af730180f97d74a: 
     selector: 17301180955411967724
     name: stellar-localnet
     network_type: localnet

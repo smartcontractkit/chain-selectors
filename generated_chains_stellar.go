@@ -10,7 +10,7 @@ type StellarChain struct {
 
 var (
 	STELLAR_FUTURENET = StellarChain{ChainID: "a3a1c6a78286713e29be0e9785670fa838d13917cd8eaeb4a3579ff1debc7fd5", Selector: 16297638191093199490, Name: "stellar-futurenet", NetworkType: NetworkTypeFuturenet}
-	STELLAR_LOCALNET  = StellarChain{ChainID: "11f129a0e11abbf9059c4a6a455f43d98d837f1d87433160cca66c2cfd71c0e0", Selector: 17301180955411967724, Name: "stellar-localnet", NetworkType: NetworkTypeLocalnet}
+	STELLAR_LOCALNET  = StellarChain{ChainID: "baefd734b8d3e48472cff83912375fedbc7573701912fe308af730180f97d74a", Selector: 17301180955411967724, Name: "stellar-localnet", NetworkType: NetworkTypeLocalnet}
 	STELLAR_MAINNET   = StellarChain{ChainID: "7ac33997544e3175d266bd022439b22cdb16508c01163f26e5cb2a3e1045a979", Selector: 17783245649066640917, Name: "stellar-mainnet", NetworkType: NetworkTypeMainnet}
 	STELLAR_TESTNET   = StellarChain{ChainID: "cee0302d59844d32bdca915c8203dd44b33fbb7edc19051ea37abedf28ecd472", Selector: 4894814558906953166, Name: "stellar-testnet", NetworkType: NetworkTypeTestnet}
 )
