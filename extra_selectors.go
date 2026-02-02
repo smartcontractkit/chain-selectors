@@ -17,6 +17,7 @@ type ExtraSelectorsData struct {
 	Tron     map[uint64]ChainDetails `yaml:"tron,omitempty"`
 	Starknet map[string]ChainDetails `yaml:"starknet,omitempty"`
 	Canton   map[string]ChainDetails `yaml:"canton,omitempty"`
+	Stellar  map[string]ChainDetails `yaml:"stellar,omitempty"`
 }
 
 var (
