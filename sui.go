@@ -96,3 +96,10 @@ func SuiChainBySelector(selector uint64) (SuiChain, bool) {
 	chain, exist := suiChainsBySelector[selector]
 	return chain, exist
 }
+
+func SuiNetworkTypeFromChainId(chainId uint64) (NetworkType, error) {
+	if chainDetails, exist := suiSelectorsMap[chainId]; exist {
+		return chainDetails.NetworkType, nil
+	}
+	return "", fmt.Errorf("chain network type not found for chain %d", chainId)
+}

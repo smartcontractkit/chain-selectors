@@ -76,3 +76,10 @@ func TonChainIdFromSelector(selector uint64) (int32, error) {
 
 	return chainId, nil
 }
+
+func TonNetworkTypeFromChainId(chainId int32) (NetworkType, error) {
+	if chainDetails, exist := tonSelectorsMap[chainId]; exist {
+		return chainDetails.NetworkType, nil
+	}
+	return "", fmt.Errorf("chain network type not found for chain %v", chainId)
+}

@@ -86,7 +86,8 @@ func genChainsSourceCode() (string, error) {
 		if err != nil {
 			return "", err
 		}
-		networkType, err := chain_selectors.GetNetworkType(chainSel)
+
+		networkType, err := chain_selectors.EvmNetworkTypeFromChainId(evmChainID)
 		if err != nil {
 			return "", err
 		}
