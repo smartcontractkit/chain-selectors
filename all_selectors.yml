@@ -659,14 +659,14 @@ evm:
         selector: 9900119385908781505
         name: apechain-testnet-curtis
         network_type: testnet
-    33139:
-        selector: 14894068710063348487
-        name: apechain-mainnet
-        network_type: mainnet
     33431:
         selector: 13222148116102326311
         name: edge-testnet
         network_type: testnet
+    33139:
+        selector: 14894068710063348487
+        name: apechain-mainnet
+        network_type: mainnet
     34443:
         selector: 7264351850409363825
         name: ethereum-mainnet-mode-1
