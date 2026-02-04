@@ -17,10 +17,8 @@ const (
 type NetworkType string
 
 const (
-	NetworkTypeTestnet  NetworkType = "testnet"
-	NetworkTypeMainnet  NetworkType = "mainnet"
-	NetworkTypeLocalnet NetworkType = "localnet"
-	NetworkTypeFuturenet NetworkType = "futurenet"
+	NetworkTypeTestnet NetworkType = "testnet"
+	NetworkTypeMainnet NetworkType = "mainnet"
 )
 
 type ChainDetails struct {
