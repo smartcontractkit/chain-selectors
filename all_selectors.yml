@@ -401,7 +401,7 @@ evm:
         network_type: mainnet
     2021:
         selector: 13116810400804392105
-        name: ronin-testnet-saigon
+        name: ronin-testnet-saigon-legacy
         network_type: testnet
     2023:
         selector: 3260900564719373474
@@ -891,6 +891,10 @@ evm:
         selector: 7937294810946806131
         name: bitcoin-mainnet-bitlayer-1
         network_type: mainnet
+    202601:
+        selector: 5485765398768456995
+        name: ronin-testnet-saigon
+        network_type: testnet
     421613:
         selector: 6101244977088475029
         name: ethereum-testnet-goerli-arbitrum-1

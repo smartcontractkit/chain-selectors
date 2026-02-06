@@ -229,7 +229,8 @@ var (
 	PRIVATE_TESTNET_OBSIDIAN                       = Chain{EvmChainID: 682, Selector: 6260932437388305511, Name: "private-testnet-obsidian", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_OPALA                          = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala", NetworkType: NetworkTypeTestnet}
 	RONIN_MAINNET                                  = Chain{EvmChainID: 2020, Selector: 6916147374840168594, Name: "ronin-mainnet", NetworkType: NetworkTypeMainnet}
-	RONIN_TESTNET_SAIGON                           = Chain{EvmChainID: 2021, Selector: 13116810400804392105, Name: "ronin-testnet-saigon", NetworkType: NetworkTypeTestnet}
+	RONIN_TESTNET_SAIGON                           = Chain{EvmChainID: 202601, Selector: 5485765398768456995, Name: "ronin-testnet-saigon", NetworkType: NetworkTypeTestnet}
+	RONIN_TESTNET_SAIGON_LEGACY                    = Chain{EvmChainID: 2021, Selector: 13116810400804392105, Name: "ronin-testnet-saigon-legacy", NetworkType: NetworkTypeTestnet}
 	ROOTSTOCK_MAINNET                              = Chain{EvmChainID: 30, Selector: 11964252391146578476, Name: "rootstock-mainnet", NetworkType: NetworkTypeMainnet}
 	SEI_MAINNET                                    = Chain{EvmChainID: 1329, Selector: 9027416829622342829, Name: "sei-mainnet", NetworkType: NetworkTypeMainnet}
 	SEI_TESTNET_ATLANTIC                           = Chain{EvmChainID: 1328, Selector: 1216300075444106652, Name: "sei-testnet-atlantic", NetworkType: NetworkTypeTestnet}
@@ -602,6 +603,7 @@ var ALL = []Chain{
 	PRIVATE_TESTNET_OPALA,
 	RONIN_MAINNET,
 	RONIN_TESTNET_SAIGON,
+	RONIN_TESTNET_SAIGON_LEGACY,
 	ROOTSTOCK_MAINNET,
 	SEI_MAINNET,
 	SEI_TESTNET_ATLANTIC,
