@@ -388,6 +388,10 @@ selectors:
     network_type: testnet
   2021:
     selector: 13116810400804392105
+    name: "ronin-testnet-saigon-legacy"
+    network_type: testnet
+  202601:
+    selector: 5485765398768456995
     name: "ronin-testnet-saigon"
     network_type: testnet
   2023:
