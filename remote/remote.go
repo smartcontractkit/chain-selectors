@@ -2,9 +2,12 @@ package remote
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"io"
+	"net"
 	"net/http"
+	"net/url"
 	"strconv"
 	"sync"
 	"time"
@@ -68,6 +71,9 @@ type Config struct {
 	// CacheTTL is the time-to-live for cached remote data
 	// If zero, no caching will be used (always fetch fresh data)
 	CacheTTL time.Duration
+	// FallbackToLocal enables fallback to embedded local selectors on network errors
+	// Default is false (no fallback)
+	FallbackToLocal bool
 }
 
 // Option is a functional option for configuring remote API calls
@@ -94,6 +100,14 @@ func WithTimeout(timeout time.Duration) Option {
 func WithCacheTTL(ttl time.Duration) Option {
 	return func(c *Config) {
 		c.CacheTTL = ttl
+	}
+}
+
+// WithFallbackToLocal enables fallback to embedded local selectors when remote fetch fails due to network errors.
+// Default is false (no fallback, return error as-is).
+func WithFallbackToLocal(enabled bool) Option {
+	return func(c *Config) {
+		c.FallbackToLocal = enabled
 	}
 }
 
@@ -267,10 +281,20 @@ type ChainDetailsWithMetadata struct {
 }
 
 // GetChainDetailsBySelector fetches chain data from GitHub and returns chain details for a given selector
+// If FallbackToLocal option is enabled and the remote fetch fails, it falls back to embedded local selectors
 func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Option) (ChainDetailsWithMetadata, error) {
 	config := applyOptions(opts)
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
+		// Only fallback to local selectors if the option is enabled and it's a network error
+		if config.FallbackToLocal && isNetworkError(err) {
+			localResult, localErr := getChainDetailsBySelectorFromLocal(selector)
+			if localErr != nil {
+				// Return original remote error if local fallback also fails
+				return ChainDetailsWithMetadata{}, err
+			}
+			return localResult, nil
+		}
 		return ChainDetailsWithMetadata{}, err
 	}
 
@@ -366,10 +390,20 @@ func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Opt
 }
 
 // GetChainDetailsByChainIDAndFamily fetches chain data from GitHub and returns chain details for a given chain ID and family
+// If FallbackToLocal option is enabled and the remote fetch fails, it falls back to embedded local selectors
 func GetChainDetailsByChainIDAndFamily(ctx context.Context, chainID string, family string, opts ...Option) (chain_selectors.ChainDetails, error) {
 	config := applyOptions(opts)
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
+		// Only fallback to local selectors if the option is enabled and it's a network error
+		if config.FallbackToLocal && isNetworkError(err) {
+			localResult, localErr := chain_selectors.GetChainDetailsByChainIDAndFamily(chainID, family)
+			if localErr != nil {
+				// Return original remote error if local fallback also fails
+				return chain_selectors.ChainDetails{}, err
+			}
+			return localResult, nil
+		}
 		return chain_selectors.ChainDetails{}, err
 	}
 
@@ -473,4 +507,56 @@ func ClearCache() {
 	remoteCacheLock.Lock()
 	remoteCache = nil
 	remoteCacheLock.Unlock()
+}
+
+// isNetworkError checks if an error is related to fetching remote selectors
+// This includes network errors, HTTP errors, and timeout errors
+func isNetworkError(err error) bool {
+	if err == nil {
+		return false
+	}
+
+	// Check for context timeout or cancellation
+	if errors.Is(err, context.DeadlineExceeded) || errors.Is(err, context.Canceled) {
+		return true
+	}
+
+	// Check for network errors (DNS, connection refused, timeout, etc.)
+	var netErr net.Error
+	if errors.As(err, &netErr) {
+		return true
+	}
+
+	// Check for URL errors (which often wrap network errors)
+	var urlErr *url.Error
+	if errors.As(err, &urlErr) {
+		return true
+	}
+
+	return true
+}
+
+// getChainDetailsBySelectorFromLocal looks up chain details from embedded local selectors
+func getChainDetailsBySelectorFromLocal(selector uint64) (ChainDetailsWithMetadata, error) {
+	// Use the parent package's getChainInfo function
+	chainInfo, err := chain_selectors.GetChainDetails(selector)
+	if err != nil {
+		return ChainDetailsWithMetadata{}, err
+	}
+
+	chainID, err := chain_selectors.GetChainIDFromSelector(selector)
+	if err != nil {
+		return ChainDetailsWithMetadata{}, err
+	}
+
+	family, err := chain_selectors.GetSelectorFamily(selector)
+	if err != nil {
+		return ChainDetailsWithMetadata{}, err
+	}
+
+	return ChainDetailsWithMetadata{
+		ChainDetails: chainInfo,
+		Family:       family,
+		ChainID:      chainID,
+	}, nil
 }

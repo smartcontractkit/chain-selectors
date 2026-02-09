@@ -327,3 +327,136 @@ canton:
 		assert.Error(t, err, "Expected error for invalid YAML")
 	})
 }
+
+func TestFallbackToLocal(t *testing.T) {
+	ClearCache()
+	ctx := context.Background()
+
+	// Create a server that always fails to simulate network failure
+	failingServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		// Simulate network failure by returning 500
+		w.WriteHeader(http.StatusInternalServerError)
+	}))
+	t.Cleanup(failingServer.Close)
+
+	// Test GetChainDetailsBySelector with fallback disabled (default)
+	t.Run("NoFallback_ShouldReturnError", func(t *testing.T) {
+		_, err := GetChainDetailsBySelector(ctx, chain_selectors.ETHEREUM_MAINNET.Selector,
+			WithURL(failingServer.URL),
+			WithTimeout(5*time.Second),
+			WithCacheTTL(0), // Disable cache
+		)
+		assert.Error(t, err, "Expected error when remote fetch fails without fallback")
+	})
+
+	// Test GetChainDetailsBySelector with fallback enabled
+	t.Run("WithFallback_ShouldReturnLocalData", func(t *testing.T) {
+		details, err := GetChainDetailsBySelector(ctx, chain_selectors.ETHEREUM_MAINNET.Selector,
+			WithURL(failingServer.URL),
+			WithTimeout(5*time.Second),
+			WithCacheTTL(0), // Disable cache
+			WithFallbackToLocal(true),
+		)
+		require.NoError(t, err, "Expected no error when fallback is enabled")
+		assert.Equal(t, chain_selectors.FamilyEVM, details.Family)
+		assert.Equal(t, "1", details.ChainID)
+		assert.Equal(t, chain_selectors.ETHEREUM_MAINNET.Selector, details.ChainSelector)
+	})
+
+	// Test GetChainDetailsByChainIDAndFamily with fallback disabled
+	t.Run("NoFallback_ByChainID_ShouldReturnError", func(t *testing.T) {
+		_, err := GetChainDetailsByChainIDAndFamily(ctx, "1", chain_selectors.FamilyEVM,
+			WithURL(failingServer.URL),
+			WithTimeout(5*time.Second),
+			WithCacheTTL(0), // Disable cache
+		)
+		assert.Error(t, err, "Expected error when remote fetch fails without fallback")
+	})
+
+	// Test GetChainDetailsByChainIDAndFamily with fallback enabled
+	t.Run("WithFallback_ByChainID_ShouldReturnLocalData", func(t *testing.T) {
+		details, err := GetChainDetailsByChainIDAndFamily(ctx, "1", chain_selectors.FamilyEVM,
+			WithURL(failingServer.URL),
+			WithTimeout(5*time.Second),
+			WithCacheTTL(0), // Disable cache
+			WithFallbackToLocal(true),
+		)
+		require.NoError(t, err, "Expected no error when fallback is enabled")
+		assert.Equal(t, chain_selectors.ETHEREUM_MAINNET.Selector, details.ChainSelector)
+	})
+
+	// Test with timeout to simulate network timeout
+	t.Run("NetworkTimeout_WithFallback", func(t *testing.T) {
+		// Create a server that never responds
+		slowServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			time.Sleep(10 * time.Second) // Sleep longer than timeout
+		}))
+		t.Cleanup(slowServer.Close)
+
+		details, err := GetChainDetailsBySelector(ctx, chain_selectors.ETHEREUM_MAINNET.Selector,
+			WithURL(slowServer.URL),
+			WithTimeout(100*time.Millisecond), // Very short timeout
+			WithCacheTTL(0),
+			WithFallbackToLocal(true),
+		)
+		require.NoError(t, err, "Expected no error with fallback on timeout")
+		assert.Equal(t, chain_selectors.FamilyEVM, details.Family)
+		assert.Equal(t, chain_selectors.ETHEREUM_MAINNET.Selector, details.ChainSelector)
+	})
+
+	// Test fallback with non-EVM chains
+	t.Run("Fallback_Solana", func(t *testing.T) {
+		// Get a known Solana selector from local data
+		solanaChains := chain_selectors.SolanaChainIdToChainSelector()
+		if len(solanaChains) == 0 {
+			t.Skip("No Solana chains available in local data")
+		}
+
+		// Get the first available Solana chain
+		var testSelector uint64
+		for _, selector := range solanaChains {
+			testSelector = selector
+			break
+		}
+
+		details, err := GetChainDetailsBySelector(ctx, testSelector,
+			WithURL(failingServer.URL),
+			WithTimeout(5*time.Second),
+			WithCacheTTL(0),
+			WithFallbackToLocal(true),
+		)
+		require.NoError(t, err, "Expected no error with fallback for Solana")
+		assert.Equal(t, chain_selectors.FamilySolana, details.Family)
+		assert.Equal(t, testSelector, details.ChainSelector)
+	})
+
+	// Test fallback returns original error when chain not found in local
+	t.Run("Fallback_ChainNotFoundInLocal_ReturnsOriginalError", func(t *testing.T) {
+		// Use a selector that doesn't exist in local data
+		unknownSelector := uint64(9999999999999999)
+
+		_, err := GetChainDetailsBySelector(ctx, unknownSelector,
+			WithURL(failingServer.URL),
+			WithTimeout(5*time.Second),
+			WithCacheTTL(0),
+			WithFallbackToLocal(true),
+		)
+		// Should return the original remote fetch error, not "unknown chain selector" error
+		require.Error(t, err)
+		assert.Contains(t, err.Error(), "failed to fetch remote selectors")
+	})
+
+	// Test fallback returns original error for GetChainDetailsByChainIDAndFamily
+	t.Run("Fallback_ByChainID_NotFoundInLocal_ReturnsOriginalError", func(t *testing.T) {
+		// Use a chain ID that doesn't exist in local data
+		_, err := GetChainDetailsByChainIDAndFamily(ctx, "9999999999", chain_selectors.FamilyEVM,
+			WithURL(failingServer.URL),
+			WithTimeout(5*time.Second),
+			WithCacheTTL(0),
+			WithFallbackToLocal(true),
+		)
+		// Should return the original remote fetch error, not "invalid chain id" error
+		require.Error(t, err)
+		assert.Contains(t, err.Error(), "failed to fetch remote selectors")
+	})
+}
