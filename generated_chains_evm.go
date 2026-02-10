@@ -130,6 +130,7 @@ var (
 	ETHEREUM_TESTNET_SEPOLIA_OPTIMISM_1            = Chain{EvmChainID: 11155420, Selector: 5224473277236331295, Name: "ethereum-testnet-sepolia-optimism-1", NetworkType: NetworkTypeTestnet}
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_VALIDIUM_1    = Chain{EvmChainID: 717160, Selector: 4418231248214522936, Name: "ethereum-testnet-sepolia-polygon-validium-1", NetworkType: NetworkTypeTestnet}
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_ZKEVM_1       = Chain{EvmChainID: 2442, Selector: 1654667687261492630, Name: "ethereum-testnet-sepolia-polygon-zkevm-1", NetworkType: NetworkTypeTestnet}
+	ETHEREUM_TESTNET_SEPOLIA_RONIN_1               = Chain{EvmChainID: 202601, Selector: 1091131740251125869, Name: "ethereum-testnet-sepolia-ronin-1", NetworkType: NetworkTypeTestnet}
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1              = Chain{EvmChainID: 534351, Selector: 2279865765895943307, Name: "ethereum-testnet-sepolia-scroll-1", NetworkType: NetworkTypeTestnet}
 	ETHEREUM_TESTNET_SEPOLIA_SONEIUM_1             = Chain{EvmChainID: 1946, Selector: 686603546605904534, Name: "ethereum-testnet-sepolia-soneium-1", NetworkType: NetworkTypeTestnet}
 	ETHEREUM_TESTNET_SEPOLIA_UNICHAIN_1            = Chain{EvmChainID: 1301, Selector: 14135854469784514356, Name: "ethereum-testnet-sepolia-unichain-1", NetworkType: NetworkTypeTestnet}
@@ -502,6 +503,7 @@ var ALL = []Chain{
 	ETHEREUM_TESTNET_SEPOLIA_OPTIMISM_1,
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_VALIDIUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_POLYGON_ZKEVM_1,
+	ETHEREUM_TESTNET_SEPOLIA_RONIN_1,
 	ETHEREUM_TESTNET_SEPOLIA_SCROLL_1,
 	ETHEREUM_TESTNET_SEPOLIA_SONEIUM_1,
 	ETHEREUM_TESTNET_SEPOLIA_UNICHAIN_1,

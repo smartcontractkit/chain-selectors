@@ -891,6 +891,10 @@ evm:
         selector: 7937294810946806131
         name: bitcoin-mainnet-bitlayer-1
         network_type: mainnet
+    202601:
+        selector: 1091131740251125869
+        name: ethereum-testnet-sepolia-ronin-1
+        network_type: testnet
     421613:
         selector: 6101244977088475029
         name: ethereum-testnet-goerli-arbitrum-1
