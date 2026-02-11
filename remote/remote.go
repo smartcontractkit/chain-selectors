@@ -2,12 +2,9 @@ package remote
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"io"
-	"net"
 	"net/http"
-	"net/url"
 	"strconv"
 	"sync"
 	"time"
@@ -71,9 +68,6 @@ type Config struct {
 	// CacheTTL is the time-to-live for cached remote data
 	// If zero, no caching will be used (always fetch fresh data)
 	CacheTTL time.Duration
-	// FallbackToLocal enables fallback to embedded local selectors on network errors
-	// Default is false (no fallback)
-	FallbackToLocal bool
 }
 
 // Option is a functional option for configuring remote API calls
@@ -100,14 +94,6 @@ func WithTimeout(timeout time.Duration) Option {
 func WithCacheTTL(ttl time.Duration) Option {
 	return func(c *Config) {
 		c.CacheTTL = ttl
-	}
-}
-
-// WithFallbackToLocal enables fallback to embedded local selectors when remote fetch fails due to network errors.
-// Default is false (no fallback, return error as-is).
-func WithFallbackToLocal(enabled bool) Option {
-	return func(c *Config) {
-		c.FallbackToLocal = enabled
 	}
 }
 
@@ -280,21 +266,19 @@ type ChainDetailsWithMetadata struct {
 	ChainID string
 }
 
-// GetChainDetailsBySelector fetches chain data from GitHub and returns chain details for a given selector
-// If FallbackToLocal option is enabled and the remote fetch fails, it falls back to embedded local selectors
+// GetChainDetailsBySelector fetches chain data and returns chain details for a given selector.
+// It first checks local embedded data, then falls back to remote if not found locally.
 func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Option) (ChainDetailsWithMetadata, error) {
 	config := applyOptions(opts)
+
+	// Try local data first
+	if localResult, err := getChainDetailsBySelectorFromLocal(selector); err == nil {
+		return localResult, nil
+	}
+	// If not found locally, try remote
+
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
-		// Only fallback to local selectors if the option is enabled and it's a network error
-		if config.FallbackToLocal && isNetworkError(err) {
-			localResult, localErr := getChainDetailsBySelectorFromLocal(selector)
-			if localErr != nil {
-				// Return original remote error if local fallback also fails
-				return ChainDetailsWithMetadata{}, err
-			}
-			return localResult, nil
-		}
 		return ChainDetailsWithMetadata{}, err
 	}
 
@@ -389,22 +373,27 @@ func GetChainDetailsBySelector(ctx context.Context, selector uint64, opts ...Opt
 	return ChainDetailsWithMetadata{}, fmt.Errorf("unknown chain selector %d", selector)
 }
 
-// GetChainDetailsByChainIDAndFamily fetches chain data from GitHub and returns chain details for a given chain ID and family
-// If FallbackToLocal option is enabled and the remote fetch fails, it falls back to embedded local selectors
+// GetChainDetailsByChainIDAndFamily fetches chain data and returns chain details for a given chain ID and family.
+// It first checks local embedded data, then falls back to remote if not found locally.
 func GetChainDetailsByChainIDAndFamily(ctx context.Context, chainID string, family string, opts ...Option) (chain_selectors.ChainDetails, error) {
 	config := applyOptions(opts)
+
+	// Try local data first
+	if localResult, err := chain_selectors.GetChainDetailsByChainIDAndFamily(chainID, family); err == nil {
+		return localResult, nil
+	}
+	// If not found locally, try remote
+
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
-		// Only fallback to local selectors if the option is enabled and it's a network error
-		if config.FallbackToLocal && isNetworkError(err) {
-			localResult, localErr := chain_selectors.GetChainDetailsByChainIDAndFamily(chainID, family)
-			if localErr != nil {
-				// Return original remote error if local fallback also fails
-				return chain_selectors.ChainDetails{}, err
-			}
-			return localResult, nil
-		}
 		return chain_selectors.ChainDetails{}, err
+	}
+
+	tryRemote := func(checkExists func() (chain_selectors.ChainDetails, bool)) (chain_selectors.ChainDetails, error) {
+		if details, exist := checkExists(); exist {
+			return details, nil
+		}
+		return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 	}
 
 	switch family {
@@ -413,89 +402,68 @@ func GetChainDetailsByChainIDAndFamily(ctx context.Context, chainID string, fami
 		if err != nil {
 			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
-
-		details, exist := cache.evmChainIdToChainSelector[evmChainID]
-		if !exist {
-			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
-		}
-
-		return details, nil
+		return tryRemote(func() (chain_selectors.ChainDetails, bool) {
+			details, exist := cache.evmChainIdToChainSelector[evmChainID]
+			return details, exist
+		})
 
 	case chain_selectors.FamilySolana:
-		details, exist := cache.solanaChainIdToChainSelector[chainID]
-		if !exist {
-			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
-		}
-
-		return details, nil
+		return tryRemote(func() (chain_selectors.ChainDetails, bool) {
+			details, exist := cache.solanaChainIdToChainSelector[chainID]
+			return details, exist
+		})
 
 	case chain_selectors.FamilyAptos:
 		aptosChainID, err := strconv.ParseUint(chainID, 10, 64)
 		if err != nil {
 			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
-
-		details, exist := cache.aptosSelectorsMap[aptosChainID]
-		if !exist {
-			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
-		}
-
-		return details, nil
+		return tryRemote(func() (chain_selectors.ChainDetails, bool) {
+			details, exist := cache.aptosSelectorsMap[aptosChainID]
+			return details, exist
+		})
 
 	case chain_selectors.FamilySui:
 		suiChainID, err := strconv.ParseUint(chainID, 10, 64)
 		if err != nil {
 			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
-
-		details, exist := cache.suiSelectorsMap[suiChainID]
-		if !exist {
-			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
-		}
-
-		return details, nil
+		return tryRemote(func() (chain_selectors.ChainDetails, bool) {
+			details, exist := cache.suiSelectorsMap[suiChainID]
+			return details, exist
+		})
 
 	case chain_selectors.FamilyTron:
 		tronChainID, err := strconv.ParseUint(chainID, 10, 64)
 		if err != nil {
 			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
-
-		details, exist := cache.tronSelectorsMap[tronChainID]
-		if !exist {
-			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
-		}
-
-		return details, nil
+		return tryRemote(func() (chain_selectors.ChainDetails, bool) {
+			details, exist := cache.tronSelectorsMap[tronChainID]
+			return details, exist
+		})
 
 	case chain_selectors.FamilyTon:
 		tonChainID, err := strconv.ParseInt(chainID, 10, 32)
 		if err != nil {
 			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
 		}
-
-		details, exist := cache.tonSelectorsMap[int32(tonChainID)]
-		if !exist {
-			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
-		}
-
-		return details, nil
+		return tryRemote(func() (chain_selectors.ChainDetails, bool) {
+			details, exist := cache.tonSelectorsMap[int32(tonChainID)]
+			return details, exist
+		})
 
 	case chain_selectors.FamilyStarknet:
-		details, exist := cache.starknetSelectorsMap[chainID]
-		if !exist {
-			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
-		}
-
-		return details, nil
+		return tryRemote(func() (chain_selectors.ChainDetails, bool) {
+			details, exist := cache.starknetSelectorsMap[chainID]
+			return details, exist
+		})
 
 	case chain_selectors.FamilyCanton:
-		details, exist := cache.cantonSelectorsMap[chainID]
-		if !exist {
-			return chain_selectors.ChainDetails{}, fmt.Errorf("invalid chain id %s for %s", chainID, family)
-		}
-
-		return details, nil
+		return tryRemote(func() (chain_selectors.ChainDetails, bool) {
+			details, exist := cache.cantonSelectorsMap[chainID]
+			return details, exist
+		})
 
 	default:
 		return chain_selectors.ChainDetails{}, fmt.Errorf("family %s is not supported", family)
@@ -509,37 +477,9 @@ func ClearCache() {
 	remoteCacheLock.Unlock()
 }
 
-// isNetworkError checks if an error is related to fetching remote selectors
-// This includes network errors, HTTP errors, and timeout errors
-func isNetworkError(err error) bool {
-	if err == nil {
-		return false
-	}
-
-	// Check for context timeout or cancellation
-	if errors.Is(err, context.DeadlineExceeded) || errors.Is(err, context.Canceled) {
-		return true
-	}
-
-	// Check for network errors (DNS, connection refused, timeout, etc.)
-	var netErr net.Error
-	if errors.As(err, &netErr) {
-		return true
-	}
-
-	// Check for URL errors (which often wrap network errors)
-	var urlErr *url.Error
-	if errors.As(err, &urlErr) {
-		return true
-	}
-
-	return true
-}
-
-// getChainDetailsBySelectorFromLocal looks up chain details from embedded local selectors
+// getChainDetailsBySelectorFromLocal is a helper to get chain details from local embedded data
 func getChainDetailsBySelectorFromLocal(selector uint64) (ChainDetailsWithMetadata, error) {
-	// Use the parent package's getChainInfo function
-	chainInfo, err := chain_selectors.GetChainDetails(selector)
+	family, err := chain_selectors.GetSelectorFamily(selector)
 	if err != nil {
 		return ChainDetailsWithMetadata{}, err
 	}
@@ -549,13 +489,13 @@ func getChainDetailsBySelectorFromLocal(selector uint64) (ChainDetailsWithMetada
 		return ChainDetailsWithMetadata{}, err
 	}
 
-	family, err := chain_selectors.GetSelectorFamily(selector)
+	details, err := chain_selectors.GetChainDetails(selector)
 	if err != nil {
 		return ChainDetailsWithMetadata{}, err
 	}
 
 	return ChainDetailsWithMetadata{
-		ChainDetails: chainInfo,
+		ChainDetails: details,
 		Family:       family,
 		ChainID:      chainID,
 	}, nil

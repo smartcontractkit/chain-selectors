@@ -23,9 +23,17 @@ func EvmChainIdToChainSelector(ctx context.Context, opts ...Option) (map[uint64]
 	return result, nil
 }
 
-// EvmChainIdFromName fetches chain data from GitHub and returns the EVM chain ID for a given chain name
+// EvmChainIdFromName returns the EVM chain ID for a given chain name.
+// It first checks local embedded data, then falls back to remote if not found.
 func EvmChainIdFromName(ctx context.Context, name string, opts ...Option) (uint64, error) {
 	config := applyOptions(opts)
+	
+	// Try local data first
+	if chainId, err := chain_selectors.ChainIdFromName(name); err == nil {
+		return chainId, nil
+	}
+	// If not found locally, try remote
+	
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
 		return 0, err
@@ -48,9 +56,17 @@ func EvmChainIdFromName(ctx context.Context, name string, opts ...Option) (uint6
 	return 0, fmt.Errorf("chain not found for name %s", name)
 }
 
-// EvmChainBySelector fetches chain data from GitHub and returns the EVM chain for a given selector
+// EvmChainBySelector returns the EVM chain for a given selector.
+// It first checks local embedded data, then falls back to remote if not found.
 func EvmChainBySelector(ctx context.Context, sel uint64, opts ...Option) (chain_selectors.Chain, bool, error) {
 	config := applyOptions(opts)
+	
+	// Try local data first
+	if ch, exists := chain_selectors.ChainBySelector(sel); exists {
+		return ch, true, nil
+	}
+	// If not found locally, try remote
+	
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
 		return chain_selectors.Chain{}, false, err
@@ -60,9 +76,17 @@ func EvmChainBySelector(ctx context.Context, sel uint64, opts ...Option) (chain_
 	return ch, exists, nil
 }
 
-// EvmChainByEvmChainID fetches chain data from GitHub and returns the EVM chain for a given EVM chain ID
+// EvmChainByEvmChainID returns the EVM chain for a given EVM chain ID.
+// It first checks local embedded data, then falls back to remote if not found.
 func EvmChainByEvmChainID(ctx context.Context, evmChainID uint64, opts ...Option) (chain_selectors.Chain, bool, error) {
 	config := applyOptions(opts)
+	
+	// Try local data first
+	if ch, exists := chain_selectors.ChainByEvmChainID(evmChainID); exists {
+		return ch, true, nil
+	}
+	// If not found locally, try remote
+	
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
 		return chain_selectors.Chain{}, false, err
@@ -72,9 +96,18 @@ func EvmChainByEvmChainID(ctx context.Context, evmChainID uint64, opts ...Option
 	return ch, exists, nil
 }
 
-// IsEvm fetches chain data from GitHub and checks if a chain selector is for an EVM chain
+// IsEvm checks if a chain selector is for an EVM chain.
+// It first checks local embedded data, then falls back to remote if not found.
 func IsEvm(ctx context.Context, chainSel uint64, opts ...Option) (bool, error) {
 	config := applyOptions(opts)
+	
+	// Try local data first
+	isEvm, err := chain_selectors.IsEvm(chainSel)
+	if err == nil {
+		return isEvm, nil
+	}
+	// If not found locally, try remote
+	
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
 		return false, err
