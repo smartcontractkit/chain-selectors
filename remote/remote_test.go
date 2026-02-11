@@ -130,8 +130,8 @@ func TestGetChainDetailsByChainIDAndFamily(t *testing.T) {
 	assert.Equal(t, uint64(5009297550715157269), details.ChainSelector)
 	assert.Equal(t, "ethereum-mainnet", details.ChainName)
 
-	// Test with non-existent chain ID
-	_, err = GetChainDetailsByChainIDAndFamily(ctx, "999999999", chain_selectors.FamilyEVM,
+	// Test with non-existent chain ID (not in local or remote)
+	_, err = GetChainDetailsByChainIDAndFamily(ctx, "7777777777", chain_selectors.FamilyEVM,
 		WithURL(server.URL),
 		WithTimeout(5*time.Second),
 	)
@@ -234,8 +234,9 @@ canton:
 			WithURL(server.URL),
 		)
 		require.NoError(t, err)
-		assert.Equal(t, uint64(13503176106905080262), details.ChainSelector)
-		assert.Equal(t, "canton-testnet", details.ChainName)
+		// May find from local or remote, both are valid
+		assert.NotEmpty(t, details.ChainSelector)
+		assert.Contains(t, details.ChainName, "testnet")
 	})
 
 	// Test EVM-specific functions
@@ -251,22 +252,30 @@ canton:
 		assert.Equal(t, "ethereum-mainnet", chain.Name)
 	})
 
-	// Test caching with mock server
+	// Test caching with mock server (using a remote-only chain)
 	t.Run("Caching", func(t *testing.T) {
 		callCount := 0
+		// Create YAML with a chain that doesn't exist in local
+		remoteCacheYAML := `
+evm:
+  7777777777:
+    selector: 8888888888888888888
+    name: test-cache-chain
+    network_type: testnet
+`
 		cachingServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			callCount++
 			w.Header().Set("Content-Type", "application/x-yaml")
 			w.WriteHeader(http.StatusOK)
-			w.Write([]byte(mockYAML))
+			w.Write([]byte(remoteCacheYAML))
 		}))
 		t.Cleanup(cachingServer.Close)
 
 		// Clear cache before test
 		ClearCache()
 
-		// First call - should hit server
-		_, err := GetChainDetailsBySelector(ctx, 5009297550715157269,
+		// First call - should hit server (not in local, so must fetch remote)
+		_, err := GetChainDetailsBySelector(ctx, 8888888888888888888,
 			WithURL(cachingServer.URL),
 			WithTimeout(5*time.Second),
 			WithCacheTTL(1*time.Minute),
@@ -275,7 +284,7 @@ canton:
 		assert.Equal(t, 1, callCount, "Expected 1 server call")
 
 		// Second call - should use cache
-		_, err = GetChainDetailsBySelector(ctx, 5009297550715157269,
+		_, err = GetChainDetailsBySelector(ctx, 8888888888888888888,
 			WithURL(cachingServer.URL),
 			WithTimeout(5*time.Second),
 			WithCacheTTL(1*time.Minute),
@@ -287,7 +296,7 @@ canton:
 		ClearCache()
 
 		// Third call - should hit server again
-		_, err = GetChainDetailsBySelector(ctx, 5009297550715157269,
+		_, err = GetChainDetailsBySelector(ctx, 8888888888888888888,
 			WithURL(cachingServer.URL),
 			WithTimeout(5*time.Second),
 			WithCacheTTL(1*time.Minute),
@@ -296,14 +305,15 @@ canton:
 		assert.Equal(t, 2, callCount, "Expected 2 server calls after cache clear")
 	})
 
-	// Test error handling
+	// Test error handling (using a selector that doesn't exist in local)
 	t.Run("ServerError", func(t *testing.T) {
 		errorServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			w.WriteHeader(http.StatusInternalServerError)
 		}))
 		t.Cleanup(errorServer.Close)
 
-		_, err := GetChainDetailsBySelector(ctx, 5009297550715157269,
+		// Use a selector that doesn't exist in local, so it tries remote and gets error
+		_, err := GetChainDetailsBySelector(ctx, 8888888888888888888,
 			WithURL(errorServer.URL),
 			WithTimeout(5*time.Second),
 			WithCacheTTL(0), // Disable cache to ensure we hit the error server
@@ -311,7 +321,7 @@ canton:
 		assert.Error(t, err, "Expected error for server error")
 	})
 
-	// Test invalid YAML
+	// Test invalid YAML (using a selector that doesn't exist in local)
 	t.Run("InvalidYAML", func(t *testing.T) {
 		invalidServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			w.WriteHeader(http.StatusOK)
@@ -319,7 +329,8 @@ canton:
 		}))
 		t.Cleanup(invalidServer.Close)
 
-		_, err := GetChainDetailsBySelector(ctx, 5009297550715157269,
+		// Use a selector that doesn't exist in local, so it tries remote and gets error
+		_, err := GetChainDetailsBySelector(ctx, 8888888888888888888,
 			WithURL(invalidServer.URL),
 			WithTimeout(5*time.Second),
 			WithCacheTTL(0), // Disable cache to ensure we hit the invalid YAML server
@@ -328,135 +339,121 @@ canton:
 	})
 }
 
-func TestFallbackToLocal(t *testing.T) {
+func TestLocalFirstWithRemoteFallback(t *testing.T) {
 	ClearCache()
+	
+	// Create a mock server with limited chain data (missing some chains from local package)
+	limitedMockYAML := `
+evm:
+  1:
+    selector: 5009297550715157269
+    name: ethereum-mainnet
+solana:
+  "mainnet":
+    selector: 124615329519749607
+    name: solana-mainnet
+`
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte(limitedMockYAML))
+	}))
+	t.Cleanup(server.Close)
+
 	ctx := context.Background()
 
-	// Create a server that always fails to simulate network failure
-	failingServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		// Simulate network failure by returning 500
-		w.WriteHeader(http.StatusInternalServerError)
-	}))
-	t.Cleanup(failingServer.Close)
-
-	// Test GetChainDetailsBySelector with fallback disabled (default)
-	t.Run("NoFallback_ShouldReturnError", func(t *testing.T) {
-		_, err := GetChainDetailsBySelector(ctx, chain_selectors.ETHEREUM_MAINNET.Selector,
-			WithURL(failingServer.URL),
+	t.Run("GetChainDetailsBySelector_LocalOnly", func(t *testing.T) {
+		// Chain that exists in local but not in remote should be found from local
+		// Using Ethereum Sepolia testnet selector which exists in local package but not in remote
+		sepoliaSelector := uint64(16015286601757825753)
+		
+		details, err := GetChainDetailsBySelector(ctx, sepoliaSelector,
+			WithURL(server.URL),
 			WithTimeout(5*time.Second),
 			WithCacheTTL(0), // Disable cache
 		)
-		assert.Error(t, err, "Expected error when remote fetch fails without fallback")
-	})
-
-	// Test GetChainDetailsBySelector with fallback enabled
-	t.Run("WithFallback_ShouldReturnLocalData", func(t *testing.T) {
-		details, err := GetChainDetailsBySelector(ctx, chain_selectors.ETHEREUM_MAINNET.Selector,
-			WithURL(failingServer.URL),
-			WithTimeout(5*time.Second),
-			WithCacheTTL(0), // Disable cache
-			WithFallbackToLocal(true),
-		)
-		require.NoError(t, err, "Expected no error when fallback is enabled")
+		require.NoError(t, err, "Expected no error, should find from local")
 		assert.Equal(t, chain_selectors.FamilyEVM, details.Family)
-		assert.Equal(t, "1", details.ChainID)
-		assert.Equal(t, chain_selectors.ETHEREUM_MAINNET.Selector, details.ChainSelector)
+		assert.Equal(t, sepoliaSelector, details.ChainSelector)
+		assert.NotEmpty(t, details.ChainName)
 	})
 
-	// Test GetChainDetailsByChainIDAndFamily with fallback disabled
-	t.Run("NoFallback_ByChainID_ShouldReturnError", func(t *testing.T) {
-		_, err := GetChainDetailsByChainIDAndFamily(ctx, "1", chain_selectors.FamilyEVM,
-			WithURL(failingServer.URL),
-			WithTimeout(5*time.Second),
-			WithCacheTTL(0), // Disable cache
-		)
-		assert.Error(t, err, "Expected error when remote fetch fails without fallback")
-	})
-
-	// Test GetChainDetailsByChainIDAndFamily with fallback enabled
-	t.Run("WithFallback_ByChainID_ShouldReturnLocalData", func(t *testing.T) {
-		details, err := GetChainDetailsByChainIDAndFamily(ctx, "1", chain_selectors.FamilyEVM,
-			WithURL(failingServer.URL),
-			WithTimeout(5*time.Second),
-			WithCacheTTL(0), // Disable cache
-			WithFallbackToLocal(true),
-		)
-		require.NoError(t, err, "Expected no error when fallback is enabled")
-		assert.Equal(t, chain_selectors.ETHEREUM_MAINNET.Selector, details.ChainSelector)
-	})
-
-	// Test with timeout to simulate network timeout
-	t.Run("NetworkTimeout_WithFallback", func(t *testing.T) {
-		// Create a server that never responds
-		slowServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			time.Sleep(10 * time.Second) // Sleep longer than timeout
+	t.Run("GetChainDetailsBySelector_FallsBackToRemote", func(t *testing.T) {
+		// Create a mock server with a chain that exists only in remote, not in local
+		remoteMockYAML := `
+evm:
+  999999999:
+    selector: 8888888888888888888
+    name: test-remote-only-chain
+    network_type: testnet
+`
+		remoteServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			w.WriteHeader(http.StatusOK)
+			w.Write([]byte(remoteMockYAML))
 		}))
-		t.Cleanup(slowServer.Close)
-
-		details, err := GetChainDetailsBySelector(ctx, chain_selectors.ETHEREUM_MAINNET.Selector,
-			WithURL(slowServer.URL),
-			WithTimeout(100*time.Millisecond), // Very short timeout
-			WithCacheTTL(0),
-			WithFallbackToLocal(true),
+		t.Cleanup(remoteServer.Close)
+		
+		// Try to get a chain that doesn't exist in local but exists in remote
+		remoteSelector := uint64(8888888888888888888)
+		
+		details, err := GetChainDetailsBySelector(ctx, remoteSelector,
+			WithURL(remoteServer.URL),
+			WithTimeout(5*time.Second),
+			WithCacheTTL(0), // Disable cache
 		)
-		require.NoError(t, err, "Expected no error with fallback on timeout")
+		require.NoError(t, err, "Expected no error - should fall back to remote")
 		assert.Equal(t, chain_selectors.FamilyEVM, details.Family)
-		assert.Equal(t, chain_selectors.ETHEREUM_MAINNET.Selector, details.ChainSelector)
+		assert.Equal(t, "test-remote-only-chain", details.ChainName)
 	})
 
-	// Test fallback with non-EVM chains
-	t.Run("Fallback_Solana", func(t *testing.T) {
-		// Get a known Solana selector from local data
-		solanaChains := chain_selectors.SolanaChainIdToChainSelector()
-		if len(solanaChains) == 0 {
-			t.Skip("No Solana chains available in local data")
-		}
-
-		// Get the first available Solana chain
-		var testSelector uint64
-		for _, selector := range solanaChains {
-			testSelector = selector
-			break
-		}
-
-		details, err := GetChainDetailsBySelector(ctx, testSelector,
-			WithURL(failingServer.URL),
+	t.Run("GetChainDetailsByChainIDAndFamily_LocalOnly", func(t *testing.T) {
+		// Chain that exists in local but not in remote should be found from local
+		// Try to get BSC chain which exists in local package but not in limited remote data
+		details, err := GetChainDetailsByChainIDAndFamily(ctx, "56", chain_selectors.FamilyEVM,
+			WithURL(server.URL),
 			WithTimeout(5*time.Second),
-			WithCacheTTL(0),
-			WithFallbackToLocal(true),
+			WithCacheTTL(0), // Disable cache
 		)
-		require.NoError(t, err, "Expected no error with fallback for Solana")
-		assert.Equal(t, chain_selectors.FamilySolana, details.Family)
-		assert.Equal(t, testSelector, details.ChainSelector)
+		require.NoError(t, err, "Expected no error, should find from local")
+		assert.NotEmpty(t, details.ChainSelector)
+		assert.NotEmpty(t, details.ChainName)
 	})
 
-	// Test fallback returns original error when chain not found in local
-	t.Run("Fallback_ChainNotFoundInLocal_ReturnsOriginalError", func(t *testing.T) {
-		// Use a selector that doesn't exist in local data
-		unknownSelector := uint64(9999999999999999)
-
-		_, err := GetChainDetailsBySelector(ctx, unknownSelector,
-			WithURL(failingServer.URL),
+	t.Run("GetChainDetailsByChainIDAndFamily_FallsBackToRemote", func(t *testing.T) {
+		// Create a mock server with a chain that exists only in remote
+		remoteMockYAML := `
+evm:
+  7777777777:
+    selector: 8888888888888888888
+    name: test-remote-only-chain
+    network_type: testnet
+`
+		remoteServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			w.WriteHeader(http.StatusOK)
+			w.Write([]byte(remoteMockYAML))
+		}))
+		t.Cleanup(remoteServer.Close)
+		
+		// Try to get a chain that doesn't exist in local but exists in remote
+		details, err := GetChainDetailsByChainIDAndFamily(ctx, "7777777777", chain_selectors.FamilyEVM,
+			WithURL(remoteServer.URL),
 			WithTimeout(5*time.Second),
-			WithCacheTTL(0),
-			WithFallbackToLocal(true),
+			WithCacheTTL(0), // Disable cache
 		)
-		// Should return the original remote fetch error, not "unknown chain selector" error
-		require.Error(t, err)
-		assert.Contains(t, err.Error(), "failed to fetch remote selectors")
+		require.NoError(t, err, "Expected no error - should fall back to remote")
+		assert.Equal(t, uint64(8888888888888888888), details.ChainSelector)
+		assert.Equal(t, "test-remote-only-chain", details.ChainName)
 	})
 
-	// Test fallback returns original error for GetChainDetailsByChainIDAndFamily
-	t.Run("Fallback_ByChainID_NotFoundInLocal_ReturnsOriginalError", func(t *testing.T) {
-		// Use a chain ID that doesn't exist in local data
-		_, err := GetChainDetailsByChainIDAndFamily(ctx, "9999999999", chain_selectors.FamilyEVM,
-			WithURL(failingServer.URL),
+	t.Run("GetChainDetailsByChainIDAndFamily_Solana_LocalOnly", func(t *testing.T) {
+		// Try to get Solana devnet which exists in local package but not in limited remote data
+		// Using the actual base58 encoded genesis hash
+		details, err := GetChainDetailsByChainIDAndFamily(ctx, "EtWTRABZaYq6iMfeYKouRu166VU2xqa1wcaWoxPkrZBG", chain_selectors.FamilySolana,
+			WithURL(server.URL),
 			WithTimeout(5*time.Second),
-			WithCacheTTL(0),
-			WithFallbackToLocal(true),
+			WithCacheTTL(0), // Disable cache
 		)
-		// Should return the original remote fetch error, not "invalid chain id" error
-		require.Error(t, err)
-		assert.Contains(t, err.Error(), "failed to fetch remote selectors")
+		require.NoError(t, err, "Expected no error, should find from local")
+		assert.NotEmpty(t, details.ChainSelector)
+		assert.Contains(t, details.ChainName, "devnet")
 	})
 }
