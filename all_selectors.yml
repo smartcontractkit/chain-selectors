@@ -723,6 +723,10 @@ evm:
         selector: 8446413392851542429
         name: private-testnet-opala
         network_type: testnet
+    46630:
+        selector: 2032988798112970440
+        name: robinhood-testnet
+        network_type: testnet
     47763:
         selector: 7222032299962346917
         name: neox-mainnet
