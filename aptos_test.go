@@ -82,3 +82,53 @@ func Test_AptosGetChainIDByChainSelector(t *testing.T) {
 		assert.Equal(t, chainID, fmt.Sprintf("%v", k))
 	}
 }
+
+func Test_ValidateAptosChainID(t *testing.T) {
+	t.Run("valid data passes", func(t *testing.T) {
+		data := map[uint64]ChainDetails{
+			1: {ChainSelector: 100, ChainName: "aptos-mainnet", NetworkType: NetworkTypeMainnet},
+			2: {ChainSelector: 200, ChainName: "aptos-testnet", NetworkType: NetworkTypeTestnet},
+		}
+		assert.NoError(t, validateAptosChainID(data))
+	})
+
+	t.Run("zero chain ID fails", func(t *testing.T) {
+		data := map[uint64]ChainDetails{
+			0: {ChainSelector: 100, ChainName: "aptos-invalid", NetworkType: NetworkTypeMainnet},
+		}
+		assert.ErrorContains(t, validateAptosChainID(data), "invalid aptos chain ID")
+	})
+
+	t.Run("zero selector fails", func(t *testing.T) {
+		data := map[uint64]ChainDetails{
+			1: {ChainSelector: 0, ChainName: "aptos-mainnet", NetworkType: NetworkTypeMainnet},
+		}
+		assert.ErrorContains(t, validateAptosChainID(data), "invalid chain selector")
+	})
+
+	t.Run("empty chain name fails", func(t *testing.T) {
+		data := map[uint64]ChainDetails{
+			1: {ChainSelector: 100, ChainName: "", NetworkType: NetworkTypeMainnet},
+		}
+		assert.ErrorContains(t, validateAptosChainID(data), "chain name is empty")
+	})
+
+	t.Run("invalid network type fails", func(t *testing.T) {
+		data := map[uint64]ChainDetails{
+			1: {ChainSelector: 100, ChainName: "aptos-mainnet", NetworkType: "invalid"},
+		}
+		assert.ErrorContains(t, validateAptosChainID(data), "invalid network type")
+	})
+
+	t.Run("duplicate selector fails", func(t *testing.T) {
+		data := map[uint64]ChainDetails{
+			1: {ChainSelector: 100, ChainName: "aptos-mainnet", NetworkType: NetworkTypeMainnet},
+			2: {ChainSelector: 100, ChainName: "aptos-testnet", NetworkType: NetworkTypeTestnet},
+		}
+		assert.ErrorContains(t, validateAptosChainID(data), "duplicate chain selector")
+	})
+
+	t.Run("existing aptos selectors are valid", func(t *testing.T) {
+		assert.NoError(t, validateAptosChainID(aptosSelectorsMap))
+	})
+}

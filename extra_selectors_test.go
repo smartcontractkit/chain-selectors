@@ -65,6 +65,7 @@ aptos:
   888:
     selector: 9876543210987654321
     name: "test-aptos-chain"
+    network_type: testnet
 sui:
   777:
     selector: 2222222222222222222
