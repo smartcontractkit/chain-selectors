@@ -60,7 +60,27 @@ func parseAptosYml(ymlFile []byte) map[uint64]ChainDetails {
 }
 
 func validateAptosChainID(data map[uint64]ChainDetails) error {
-	// TODO: https://smartcontract-it.atlassian.net/browse/NONEVM-890
+	seenSelectors := make(map[uint64]uint64) // selector -> chainID
+	for chainID, details := range data {
+		if chainID == 0 {
+			return fmt.Errorf("invalid aptos chain ID: must be > 0")
+		}
+		if details.ChainSelector == 0 {
+			return fmt.Errorf("invalid chain selector for aptos chain %d: must be > 0", chainID)
+		}
+		if details.ChainName == "" {
+			return fmt.Errorf("chain name is empty for aptos chain %d", chainID)
+		}
+		if details.NetworkType != NetworkTypeTestnet && details.NetworkType != NetworkTypeMainnet {
+			return fmt.Errorf("invalid network type %q for aptos chain %d: must be %q or %q",
+				details.NetworkType, chainID, NetworkTypeTestnet, NetworkTypeMainnet)
+		}
+		if existingChainID, exists := seenSelectors[details.ChainSelector]; exists {
+			return fmt.Errorf("duplicate chain selector %d: used by both aptos chain %d and %d",
+				details.ChainSelector, existingChainID, chainID)
+		}
+		seenSelectors[details.ChainSelector] = chainID
+	}
 	return nil
 }
 
