@@ -63,6 +63,8 @@ var (
 	CORE_MAINNET                                   = Chain{EvmChainID: 1116, Selector: 1224752112135636129, Name: "core-mainnet", NetworkType: NetworkTypeMainnet}
 	CORE_TESTNET                                   = Chain{EvmChainID: 1114, Selector: 4264732132125536123, Name: "core-testnet", NetworkType: NetworkTypeTestnet}
 	CORN_MAINNET                                   = Chain{EvmChainID: 21000000, Selector: 9043146809313071210, Name: "corn-mainnet", NetworkType: NetworkTypeMainnet}
+	CREDITCOIN_MAINNET                             = Chain{EvmChainID: 102030, Selector: 18240105181246962294, Name: "creditcoin-mainnet", NetworkType: NetworkTypeMainnet}
+	CREDITCOIN_TESTNET                             = Chain{EvmChainID: 102031, Selector: 16960985330067274105, Name: "creditcoin-testnet", NetworkType: NetworkTypeTestnet}
 	CRONOS_MAINNET                                 = Chain{EvmChainID: 25, Selector: 1456215246176062136, Name: "cronos-mainnet", NetworkType: NetworkTypeMainnet}
 	CRONOS_TESTNET                                 = Chain{EvmChainID: 338, Selector: 2995292832068775165, Name: "cronos-testnet", NetworkType: NetworkTypeTestnet}
 	CRONOS_TESTNET_ZKEVM_1                         = Chain{EvmChainID: 282, Selector: 3842103497652714138, Name: "cronos-testnet-zkevm-1", NetworkType: NetworkTypeTestnet}
@@ -437,6 +439,8 @@ var ALL = []Chain{
 	CORE_MAINNET,
 	CORE_TESTNET,
 	CORN_MAINNET,
+	CREDITCOIN_MAINNET,
+	CREDITCOIN_TESTNET,
 	CRONOS_MAINNET,
 	CRONOS_TESTNET,
 	CRONOS_TESTNET_ZKEVM_1,
