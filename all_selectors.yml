@@ -859,6 +859,14 @@ evm:
         selector: 9418205736192840573
         name: adi-testnet
         network_type: testnet
+    102030:
+        selector: 18240105181246962294
+        name: creditcoin-mainnet
+        network_type: mainnet
+    102031:
+        selector: 16960985330067274105
+        name: creditcoin-testnet
+        network_type: testnet
     128123:
         selector: 1910019406958449359
         name: etherlink-testnet
