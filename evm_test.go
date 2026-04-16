@@ -215,15 +215,13 @@ func Test_ChainByEvmChainID(t *testing.T) {
 func Test_IsEvm(t *testing.T) {
 	t.Run("exist", func(t *testing.T) {
 		for _, ch := range ALL {
-			isEvm, err := IsEvm(ch.Selector)
-			assert.NoError(t, err)
+			isEvm := IsEvm(ch.Selector)
 			assert.True(t, isEvm)
 		}
 	})
 
 	t.Run("non existent", func(t *testing.T) {
-		isEvm, err := IsEvm(rand.Uint64())
-		assert.Error(t, err)
+		isEvm := IsEvm(rand.Uint64())
 		assert.False(t, isEvm)
 	})
 }
