@@ -27,13 +27,13 @@ func EvmChainIdToChainSelector(ctx context.Context, opts ...Option) (map[uint64]
 // It first checks local embedded data, then falls back to remote if not found.
 func EvmChainIdFromName(ctx context.Context, name string, opts ...Option) (uint64, error) {
 	config := applyOptions(opts)
-	
+
 	// Try local data first
 	if chainId, err := chain_selectors.ChainIdFromName(name); err == nil {
 		return chainId, nil
 	}
 	// If not found locally, try remote
-	
+
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
 		return 0, err
@@ -60,13 +60,13 @@ func EvmChainIdFromName(ctx context.Context, name string, opts ...Option) (uint6
 // It first checks local embedded data, then falls back to remote if not found.
 func EvmChainBySelector(ctx context.Context, sel uint64, opts ...Option) (chain_selectors.Chain, bool, error) {
 	config := applyOptions(opts)
-	
+
 	// Try local data first
 	if ch, exists := chain_selectors.ChainBySelector(sel); exists {
 		return ch, true, nil
 	}
 	// If not found locally, try remote
-	
+
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
 		return chain_selectors.Chain{}, false, err
@@ -80,13 +80,13 @@ func EvmChainBySelector(ctx context.Context, sel uint64, opts ...Option) (chain_
 // It first checks local embedded data, then falls back to remote if not found.
 func EvmChainByEvmChainID(ctx context.Context, evmChainID uint64, opts ...Option) (chain_selectors.Chain, bool, error) {
 	config := applyOptions(opts)
-	
+
 	// Try local data first
 	if ch, exists := chain_selectors.ChainByEvmChainID(evmChainID); exists {
 		return ch, true, nil
 	}
 	// If not found locally, try remote
-	
+
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
 		return chain_selectors.Chain{}, false, err
@@ -100,14 +100,14 @@ func EvmChainByEvmChainID(ctx context.Context, evmChainID uint64, opts ...Option
 // It first checks local embedded data, then falls back to remote if not found.
 func IsEvm(ctx context.Context, chainSel uint64, opts ...Option) (bool, error) {
 	config := applyOptions(opts)
-	
+
 	// Try local data first
-	isEvm, err := chain_selectors.IsEvm(chainSel)
-	if err == nil {
+	isEvm := chain_selectors.IsEvm(chainSel)
+	if !isEvm {
 		return isEvm, nil
 	}
 	// If not found locally, try remote
-	
+
 	cache, err := fetchRemoteSelectors(ctx, config)
 	if err != nil {
 		return false, err
