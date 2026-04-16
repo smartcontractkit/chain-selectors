@@ -155,7 +155,7 @@ func ChainByEvmChainID(evmChainID uint64) (Chain, bool) {
 	return ch, exists
 }
 
-func IsEvm(chainSel uint64) bool {
+func IsEvm(chainSel uint64) (bool, error) {
 	_, exists := ChainBySelector(chainSel)
-	return exists
+	return exists, nil
 }

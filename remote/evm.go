@@ -102,7 +102,7 @@ func IsEvm(ctx context.Context, chainSel uint64, opts ...Option) (bool, error) {
 	config := applyOptions(opts)
 
 	// Try local data first
-	if isEvm := chain_selectors.IsEvm(chainSel); isEvm {
+	if isEvm, _ := chain_selectors.IsEvm(chainSel); isEvm {
 		return isEvm, nil
 	}
 	// If not found locally, try remote
