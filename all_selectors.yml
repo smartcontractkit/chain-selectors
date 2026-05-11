@@ -507,6 +507,10 @@ evm:
         selector: 6093540873831549674
         name: megaeth-mainnet
         network_type: mainnet
+    4663:
+        selector: 6180753054346818345
+        name: robinhood-mainnet
+        network_type: mainnet
     4801:
         selector: 5299555114858065850
         name: ethereum-testnet-sepolia-worldchain-1

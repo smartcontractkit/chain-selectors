@@ -1082,3 +1082,7 @@ selectors:
     selector: 18240105181246962294
     name: "creditcoin-mainnet"
     network_type: mainnet
+  4663:
+    selector: 6180753054346818345
+    name: "robinhood-mainnet"
+    network_type: mainnet
