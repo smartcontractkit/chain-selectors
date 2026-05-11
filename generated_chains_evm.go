@@ -231,6 +231,7 @@ var (
 	PRIVATE_TESTNET_MICA                           = Chain{EvmChainID: 424242, Selector: 4489326297382772450, Name: "private-testnet-mica", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_OBSIDIAN                       = Chain{EvmChainID: 682, Selector: 6260932437388305511, Name: "private-testnet-obsidian", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_OPALA                          = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala", NetworkType: NetworkTypeTestnet}
+	ROBINHOOD_MAINNET                              = Chain{EvmChainID: 4663, Selector: 6180753054346818345, Name: "robinhood-mainnet", NetworkType: NetworkTypeMainnet}
 	ROBINHOOD_TESTNET                              = Chain{EvmChainID: 46630, Selector: 2032988798112970440, Name: "robinhood-testnet", NetworkType: NetworkTypeTestnet}
 	RONIN_MAINNET                                  = Chain{EvmChainID: 2020, Selector: 6916147374840168594, Name: "ronin-mainnet", NetworkType: NetworkTypeMainnet}
 	RONIN_TESTNET_SAIGON                           = Chain{EvmChainID: 2021, Selector: 13116810400804392105, Name: "ronin-testnet-saigon", NetworkType: NetworkTypeTestnet}
@@ -607,6 +608,7 @@ var ALL = []Chain{
 	PRIVATE_TESTNET_MICA,
 	PRIVATE_TESTNET_OBSIDIAN,
 	PRIVATE_TESTNET_OPALA,
+	ROBINHOOD_MAINNET,
 	ROBINHOOD_TESTNET,
 	RONIN_MAINNET,
 	RONIN_TESTNET_SAIGON,
