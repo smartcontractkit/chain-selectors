@@ -1075,6 +1075,10 @@ evm:
         selector: 16244020411108056671
         name: zora-testnet
         network_type: testnet
+    2026041003:
+        selector: 604447335222770945
+        name: private-testnet-rhyolite
+        network_type: testnet
     2494104990:
         selector: 13231703482326770598
         name: tron-testnet-shasta-evm

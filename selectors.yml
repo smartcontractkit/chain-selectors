@@ -1086,3 +1086,7 @@ selectors:
     selector: 6180753054346818345
     name: "robinhood-mainnet"
     network_type: mainnet
+  2026041003:
+    selector: 604447335222770945
+    name: "private-testnet-rhyolite"
+    network_type: testnet
