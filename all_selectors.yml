@@ -1079,6 +1079,10 @@ evm:
         selector: 604447335222770945
         name: private-testnet-rhyolite
         network_type: testnet
+    2026041004:
+        selector: 1564738277398880633
+        name: private-testnet-pumice
+        network_type: testnet
     2494104990:
         selector: 13231703482326770598
         name: tron-testnet-shasta-evm
