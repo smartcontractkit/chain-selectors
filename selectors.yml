@@ -621,6 +621,29 @@ selectors:
     selector: 2032988798112970440
     name: "robinhood-testnet"
     network_type: testnet
+  98865:
+    selector: 3208172210661564830
+    network_type: testnet
+  3360022319:
+    selector: 13231703482326770600
+    name: "tron-devnet-evm"
+    network_type: testnet
+  202601:
+    selector: 1091131740251125869
+    name: "ethereum-testnet-sepolia-ronin-1"
+    network_type: testnet
+  102031:
+    selector: 16960985330067274105
+    name: "creditcoin-testnet"
+    network_type: testnet
+  2026041003:
+    selector: 604447335222770945
+    name: "private-testnet-rhyolite"
+    network_type: testnet
+  2026041004:
+    selector: 1564738277398880633
+    name: "private-testnet-pumice"
+    network_type: testnet
 
   # Mainnets
   1:
@@ -851,9 +874,6 @@ selectors:
     selector: 1294465214383781161
     name: "berachain-mainnet"
     network_type: mainnet
-  98865:
-    selector: 3208172210661564830
-    network_type: testnet
   98866:
     selector: 17912061998839310979
     name: "plume-mainnet"
@@ -950,10 +970,6 @@ selectors:
     selector: 1546563616611573946
     name: "tron-mainnet-evm"
     network_type: mainnet
-  3360022319:
-    selector: 13231703482326770600
-    name: "tron-devnet-evm"
-    network_type: testnet
   7777777:
     selector: 3555797439612589184
     name: "zora-mainnet"
@@ -1070,14 +1086,6 @@ selectors:
     selector: 1804312132722180201
     name: "hemi-mainnet"
     network_type: mainnet
-  202601:
-    selector: 1091131740251125869
-    name: "ethereum-testnet-sepolia-ronin-1"
-    network_type: testnet
-  102031:
-    selector: 16960985330067274105
-    name: "creditcoin-testnet"
-    network_type: testnet
   102030:
     selector: 18240105181246962294
     name: "creditcoin-mainnet"
@@ -1086,7 +1094,3 @@ selectors:
     selector: 6180753054346818345
     name: "robinhood-mainnet"
     network_type: mainnet
-  2026041003:
-    selector: 604447335222770945
-    name: "private-testnet-rhyolite"
-    network_type: testnet
