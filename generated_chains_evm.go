@@ -19,6 +19,7 @@ var (
 	ANVIL_DEVNET                                   = Chain{EvmChainID: 31337, Selector: 7759470850252068959, Name: "anvil-devnet", NetworkType: NetworkTypeTestnet}
 	APECHAIN_MAINNET                               = Chain{EvmChainID: 33139, Selector: 14894068710063348487, Name: "apechain-mainnet", NetworkType: NetworkTypeMainnet}
 	APECHAIN_TESTNET_CURTIS                        = Chain{EvmChainID: 33111, Selector: 9900119385908781505, Name: "apechain-testnet-curtis", NetworkType: NetworkTypeTestnet}
+	ARC_MAINNET                                    = Chain{EvmChainID: 5042, Selector: 6370580034781731079, Name: "arc-mainnet", NetworkType: NetworkTypeMainnet}
 	ARC_TESTNET                                    = Chain{EvmChainID: 5042002, Selector: 3034092155422581607, Name: "arc-testnet", NetworkType: NetworkTypeTestnet}
 	AREON_MAINNET                                  = Chain{EvmChainID: 463, Selector: 1939936305787790600, Name: "areon-mainnet", NetworkType: NetworkTypeMainnet}
 	AREON_TESTNET                                  = Chain{EvmChainID: 462, Selector: 7317911323415911000, Name: "areon-testnet", NetworkType: NetworkTypeTestnet}
@@ -398,6 +399,7 @@ var ALL = []Chain{
 	ANVIL_DEVNET,
 	APECHAIN_MAINNET,
 	APECHAIN_TESTNET_CURTIS,
+	ARC_MAINNET,
 	ARC_TESTNET,
 	AREON_MAINNET,
 	AREON_TESTNET,
