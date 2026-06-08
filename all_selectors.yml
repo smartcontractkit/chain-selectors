@@ -542,6 +542,10 @@ evm:
         selector: 8236463271206331221
         name: ethereum-testnet-sepolia-mantle-1
         network_type: testnet
+    5042:
+        selector: 6370580034781731079
+        name: arc-mainnet
+        network_type: mainnet
     5330:
         selector: 470401360549526817
         name: superseed-mainnet

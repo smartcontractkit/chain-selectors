@@ -1131,3 +1131,7 @@ selectors:
     selector: 6180753054346818345
     name: "robinhood-mainnet"
     network_type: mainnet
+  5042:
+    selector: 6370580034781731079
+    name: "arc-mainnet"
+    network_type: mainnet
