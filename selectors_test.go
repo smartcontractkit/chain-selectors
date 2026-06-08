@@ -217,3 +217,17 @@ func TestIsMainnetChain(t *testing.T) {
 		})
 	}
 }
+
+func TestIsDeprecated(t *testing.T) {
+	t.Run("known selector defaults to not deprecated", func(t *testing.T) {
+		deprecated, err := IsDeprecated(ETHEREUM_MAINNET.Selector)
+		require.NoError(t, err)
+		assert.False(t, deprecated)
+	})
+
+	t.Run("unknown selector returns error", func(t *testing.T) {
+		_, err := IsDeprecated(9999999999999999999)
+		require.Error(t, err)
+		assert.Contains(t, err.Error(), "unknown chain selector")
+	})
+}

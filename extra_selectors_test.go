@@ -7,6 +7,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
+	"gopkg.in/yaml.v3"
 )
 
 func createTempYamlFile(t *testing.T, yamlContent string) string {
@@ -53,6 +54,7 @@ evm:
   999:
     selector: 1234567890123456789
     name: "test-evm-chain"
+    deprecated: true
 solana:
   "ASwXBTzJM5evpfrWSHSjZaxPErZRuiGJnFixGUHi4NQT":  #Random solana chainID
     selector: 1111111111111111111
@@ -95,6 +97,7 @@ func TestExtraSelectors(t *testing.T) {
 		assert.True(t, exists)
 		assert.Equal(t, uint64(1234567890123456789), evmChain.ChainSelector)
 		assert.Equal(t, "test-evm-chain", evmChain.ChainName)
+		assert.False(t, evmChain.Deprecated)
 	})
 
 	runTestWithYaml(t, "Extra selectors: multiple families", yamlMultipleFamilies, func(t *testing.T, result ExtraSelectorsData) {
@@ -114,6 +117,10 @@ func TestExtraSelectors(t *testing.T) {
 		assert.True(t, exists)
 		assert.Equal(t, uint64(2222222222222222222), suiChain.ChainSelector)
 		assert.Equal(t, "test-sui-chain", suiChain.ChainName)
+
+		evmChain, exists := result.Evm[999]
+		assert.True(t, exists)
+		assert.True(t, evmChain.Deprecated)
 	})
 
 	runTestWithYaml(t, "Extra selectors: empty YAML file", ``, func(t *testing.T, result ExtraSelectorsData) {
@@ -126,6 +133,22 @@ func TestExtraSelectors(t *testing.T) {
 		assert.Empty(t, result.Starknet)
 	})
 
+}
+
+func TestExtraSelectorsMarshalDeprecatedField(t *testing.T) {
+	data := ExtraSelectorsData{
+		Evm: map[uint64]ChainDetails{
+			999: {
+				ChainSelector: 1234567890123456789,
+				ChainName:     "test-evm-chain",
+				Deprecated:    true,
+			},
+		},
+	}
+
+	output, err := yaml.Marshal(data)
+	require.NoError(t, err)
+	assert.Contains(t, string(output), "deprecated: true")
 }
 
 func TestExtraSelectorsInvalidFormat(t *testing.T) {
@@ -214,6 +237,15 @@ func TestExtraSelectorsE2E(t *testing.T) {
 	name, err = NameFromChainId(999)
 	assert.NoError(t, err)
 	assert.Equal(t, "hyperliquid-mainnet", name)
+
+	// Deprecated flag on extra selectors propagates through to IsDeprecated.
+	deprecated, err := IsDeprecated(1357913579135791357)
+	assert.NoError(t, err)
+	assert.True(t, deprecated)
+
+	deprecated, err = IsDeprecated(1234567890123456789)
+	assert.NoError(t, err)
+	assert.False(t, deprecated)
 }
 
 // Validates a custom provide file for formating errors. This can be used in external CI checks to ensure the file is valid.
