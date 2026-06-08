@@ -287,6 +287,7 @@ selectors:
     selector: 12336603543561911511
     name: "berachain-testnet-artio"
     network_type: testnet
+    deprecated: true
   80084:
     selector: 8999465244383784164
     name: "berachain-testnet-bartio"
@@ -399,6 +400,7 @@ selectors:
     selector: 10443705513486043421
     name: "ethereum-testnet-sepolia-arbitrum-1-treasure-1"
     network_type: testnet
+    deprecated: true
   1946:
     selector: 686603546605904534
     name: "ethereum-testnet-sepolia-soneium-1"
@@ -942,6 +944,7 @@ selectors:
     selector: 1010349088906777999
     name: "ethereum-mainnet-arbitrum-1-treasure-1"
     network_type: mainnet
+    deprecated: true
   48900:
     selector: 17198166215261833993
     name: "ethereum-mainnet-zircuit-1"

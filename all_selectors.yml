@@ -846,6 +846,7 @@ evm:
         selector: 12336603543561911511
         name: berachain-testnet-artio
         network_type: testnet
+        deprecated: true
     80087:
         selector: 2285225387454015855
         name: zero-g-testnet-galileo
@@ -1035,6 +1036,7 @@ evm:
         selector: 10443705513486043421
         name: ethereum-testnet-sepolia-arbitrum-1-treasure-1
         network_type: testnet
+        deprecated: true
     978658:
         selector: 3676916124122457866
         name: treasure-testnet-topaz
@@ -1044,6 +1046,7 @@ evm:
         selector: 1010349088906777999
         name: ethereum-mainnet-arbitrum-1-treasure-1
         network_type: mainnet
+        deprecated: true
     2019775:
         selector: 945045181441419236
         name: jovay-testnet
