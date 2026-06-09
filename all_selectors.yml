@@ -299,7 +299,6 @@ evm:
         selector: 4348158687435793198
         name: ethereum-mainnet-polygon-zkevm-1
         network_type: mainnet
-        deprecated: true
     1111:
         selector: 5142893604156789321
         name: wemix-mainnet
@@ -462,7 +461,6 @@ evm:
         selector: 1654667687261492630
         name: ethereum-testnet-sepolia-polygon-zkevm-1
         network_type: testnet
-        deprecated: true
     2522:
         selector: 8901520481741771655
         name: ethereum-testnet-holesky-fraxtal-1
@@ -647,7 +645,6 @@ evm:
         selector: 1763698235108410440
         name: sonic-testnet
         network_type: testnet
-        deprecated: true
     16600:
         selector: 16088006396410204581
         name: 0g-testnet-newton

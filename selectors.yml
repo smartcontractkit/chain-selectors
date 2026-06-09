@@ -177,7 +177,6 @@ selectors:
     selector: 1654667687261492630
     name: "ethereum-testnet-sepolia-polygon-zkevm-1"
     network_type: testnet
-    deprecated: true
   2522:
     selector: 8901520481741771655
     name: "ethereum-testnet-holesky-fraxtal-1"
@@ -625,8 +624,7 @@ selectors:
   14601:
     selector: 1763698235108410440
     name: "sonic-testnet"
-    network_type: testnet
-    deprecated: true
+    network_type: testnet    
   424242:
     selector: 4489326297382772450
     name: "private-testnet-mica"
@@ -804,8 +802,7 @@ selectors:
   1101:
     selector: 4348158687435793198
     name: "ethereum-mainnet-polygon-zkevm-1"
-    network_type: mainnet
-    deprecated: true
+    network_type: mainnet    
   1111:
     selector: 5142893604156789321
     name: "wemix-mainnet"
