@@ -47,6 +47,7 @@ selectors:
     selector: 2066098519157881736
     name: "ethereum-testnet-sepolia-xlayer-1"
     network_type: testnet
+    deprecated: true
   240:
     selector: 16487132492576884721
     name: "cronos-zkevm-testnet-sepolia"
@@ -91,6 +92,7 @@ selectors:
     selector: 5059197667603797935
     name: "janction-testnet-sepolia"
     network_type: testnet
+    deprecated: true
   682:
     selector: 6260932437388305511
     name: "private-testnet-obsidian"
@@ -119,6 +121,7 @@ selectors:
     selector: 1948510578179542068
     name: "bitcoin-testnet-bsquared-1"
     network_type: testnet
+    deprecated: true
   12325:
     selector: 3486622437121596122
     name: "ethereum-testnet-sepolia-arbitrum-1-l3x-1"
@@ -147,6 +150,7 @@ selectors:
     selector: 11059667695644972511
     name: "ethereum-testnet-goerli-polygon-zkevm-1"
     network_type: testnet
+    deprecated: true
   1908:
     selector: 4888058894222120000
     name: "bitcichain-testnet"
@@ -155,6 +159,7 @@ selectors:
     selector: 12168171414969487009
     name: "memento-testnet"
     network_type: testnet
+    deprecated: true
   2201:
     selector: 11793402411494852765
     name: "stable-testnet"
@@ -167,6 +172,7 @@ selectors:
     selector: 5990477251245693094
     name: "ethereum-testnet-sepolia-kroma-1"
     network_type: testnet
+    deprecated: true
   2442:
     selector: 1654667687261492630
     name: "ethereum-testnet-sepolia-polygon-zkevm-1"
@@ -175,14 +181,17 @@ selectors:
     selector: 8901520481741771655
     name: "ethereum-testnet-holesky-fraxtal-1"
     network_type: testnet
+    deprecated: true
   2810:
     selector: 8304510386741731151
     name: "ethereum-testnet-holesky-morph-1"
     network_type: testnet
+    deprecated: true
   3636:
     selector: 1467223411771711614
     name: "bitcoin-testnet-botanix"
     network_type: testnet
+    deprecated: true
   4002:
     selector: 4905564228793744293
     name: "fantom-testnet"
@@ -215,10 +224,12 @@ selectors:
     selector: 16088006396410204581
     name: "0g-testnet-newton"
     network_type: testnet
+    deprecated: true
   16601:
     selector: 2131427466778448014
     name: "0g-testnet-galileo"
     network_type: testnet
+    deprecated: true
   16602:
     selector: 6892437333620424805
     name: "0g-testnet-galileo-1"
@@ -239,6 +250,7 @@ selectors:
     selector: 3552045678561919002
     name: "celo-testnet-alfajores"
     network_type: testnet
+    deprecated: true
   48898:
     selector: 13781831279385219069
     name: "zircuit-testnet-garfield"
@@ -274,10 +286,12 @@ selectors:
     selector: 12336603543561911511
     name: "berachain-testnet-artio"
     network_type: testnet
+    deprecated: true
   80084:
     selector: 8999465244383784164
     name: "berachain-testnet-bartio"
     network_type: testnet
+    deprecated: true
   80069:
     selector: 7728255861635209484
     name: "berachain-testnet-bepolia"
@@ -286,6 +300,7 @@ selectors:
     selector: 2285225387454015855
     name: "zero-g-testnet-galileo"
     network_type: testnet
+    deprecated: true
   84531:
     selector: 5790810961207155433
     name: "ethereum-testnet-goerli-base-1"
@@ -358,6 +373,7 @@ selectors:
     selector: 3676916124122457866
     name: "treasure-testnet-topaz"
     network_type: testnet
+    deprecated: true
   31415926:
     selector: 7060342227814389000
     name: "filecoin-testnet"
@@ -378,10 +394,12 @@ selectors:
     selector: 2027362563942762617
     name: "ethereum-testnet-sepolia-blast-1"
     network_type: testnet
+    deprecated: true
   978657:
     selector: 10443705513486043421
     name: "ethereum-testnet-sepolia-arbitrum-1-treasure-1"
     network_type: testnet
+    deprecated: true
   1946:
     selector: 686603546605904534
     name: "ethereum-testnet-sepolia-soneium-1"
@@ -390,6 +408,7 @@ selectors:
     selector: 13116810400804392105
     name: "ronin-testnet-saigon"
     network_type: testnet
+    deprecated: true
   2023:
     selector: 3260900564719373474
     name: "private-testnet-granite"
@@ -422,6 +441,7 @@ selectors:
     selector: 3676871237479449268
     name: "sonic-testnet-blaze"
     network_type: testnet
+    deprecated: true
   998:
     selector: 4286062357653186312
     name: "hyperliquid-testnet"
@@ -438,6 +458,7 @@ selectors:
     selector: 7717148896336251131
     name: "ethereum-testnet-holesky"
     network_type: testnet
+    deprecated: true
   1301:
     selector: 14135854469784514356
     name: "ethereum-testnet-sepolia-unichain-1"
@@ -446,6 +467,7 @@ selectors:
     selector: 7248756420937879088
     name: "ethereum-testnet-holesky-taiko-1"
     network_type: testnet
+    deprecated: true
   161221135:
     selector: 14684575664602284776
     name: "plume-testnet"
@@ -469,6 +491,7 @@ selectors:
     selector: 2443239559770384419
     name: "megaeth-testnet"
     network_type: testnet
+    deprecated: true
   6343:
     selector: 18241817625092392675
     name: "megaeth-testnet-2"
@@ -481,6 +504,7 @@ selectors:
     selector: 10749384167430721561
     name: "mint-testnet"
     network_type: testnet
+    deprecated: true
   11124:
     selector: 16235373811196386733
     name: "abstract-testnet"
@@ -493,6 +517,7 @@ selectors:
     selector: 1910019406958449359
     name: "etherlink-testnet"
     network_type: testnet
+    deprecated: true
   1740:
     selector: 6286293440461807648
     name: "metal-testnet"
@@ -509,6 +534,7 @@ selectors:
     selector: 9090863410735740267
     name: "polygon-testnet-tatara"
     network_type: testnet
+    deprecated: true
   9746:
     selector: 3967220077692964309
     name: "plasma-testnet"
@@ -517,6 +543,7 @@ selectors:
     selector: 4012524741200567430
     name: "pharos-testnet"
     network_type: testnet
+    deprecated: true
   812242:
     selector: 7225665875429174318
     name: "codex-testnet"
@@ -577,6 +604,7 @@ selectors:
     selector: 3963528237232804922
     name: "tempo-testnet"
     network_type: testnet
+    deprecated: true
   42431:
     selector: 8457817439310187923
     name: "tempo-testnet-moderato"
@@ -596,7 +624,7 @@ selectors:
   14601:
     selector: 1763698235108410440
     name: "sonic-testnet"
-    network_type: testnet
+    network_type: testnet    
   424242:
     selector: 4489326297382772450
     name: "private-testnet-mica"
@@ -726,6 +754,7 @@ selectors:
     selector: 3719320017875267166
     name: "ethereum-mainnet-kroma-1"
     network_type: mainnet
+    deprecated: true
   259:
     selector: 8239338020728974000
     name: "neonlink-mainnet"
@@ -773,7 +802,7 @@ selectors:
   1101:
     selector: 4348158687435793198
     name: "ethereum-mainnet-polygon-zkevm-1"
-    network_type: mainnet
+    network_type: mainnet    
   1111:
     selector: 5142893604156789321
     name: "wemix-mainnet"
@@ -786,6 +815,7 @@ selectors:
     selector: 5214452172935136222
     name: "treasure-mainnet"
     network_type: mainnet
+    deprecated: true
   12324:
     selector: 3162193654116181371
     name: "ethereum-mainnet-arbitrum-1-l3x-1"
@@ -870,6 +900,7 @@ selectors:
     selector: 6473245816409426016
     name: "memento-mainnet"
     network_type: mainnet
+    deprecated: true
   80094:
     selector: 1294465214383781161
     name: "berachain-mainnet"
@@ -910,6 +941,7 @@ selectors:
     selector: 1010349088906777999
     name: "ethereum-mainnet-arbitrum-1-treasure-1"
     network_type: mainnet
+    deprecated: true
   48900:
     selector: 17198166215261833993
     name: "ethereum-mainnet-zircuit-1"
@@ -990,6 +1022,7 @@ selectors:
     selector: 17164792800244661392
     name: "mint-mainnet"
     network_type: mainnet
+    deprecated: true
   42793:
     selector: 13624601974233774587
     name: "etherlink-mainnet"
@@ -1054,6 +1087,7 @@ selectors:
     selector: 9723842205701363942
     name: "everclear-mainnet"
     network_type: mainnet
+    deprecated: true
   36888:
     selector: 4829375610284793157
     name: "ab-mainnet"

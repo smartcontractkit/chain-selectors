@@ -364,6 +364,16 @@ func IsTestnetChain(selector uint64) (bool, error) {
 	return networkType == NetworkTypeTestnet, nil
 }
 
+// IsDeprecated reports whether the chain for the given selector has been sunset or superseded.
+func IsDeprecated(selector uint64) (bool, error) {
+	chainDetails, err := GetChainDetails(selector)
+	if err != nil {
+		return false, err
+	}
+
+	return chainDetails.Deprecated, nil
+}
+
 func GetChainDetails(selector uint64) (ChainDetails, error) {
 	chainInfo, err := getChainInfo(selector)
 	if err != nil {

@@ -22,6 +22,10 @@ evm:
   10:
     selector: 3734403246176062136
     name: optimism-mainnet
+  777777:
+    selector: 1777777777777777777
+    name: remote-only-mainnet
+    deprecated: true
   56:
     selector: 11344663589394136015
     name: bsc-mainnet
@@ -145,6 +149,34 @@ func TestGetChainDetailsByChainIDAndFamily(t *testing.T) {
 	require.NoError(t, err)
 	assert.Equal(t, uint64(124615329519749607), details.ChainSelector)
 	assert.Equal(t, "solana-mainnet", details.ChainName)
+}
+
+func TestIsDeprecated(t *testing.T) {
+	ClearCache()
+	server := newMockServer()
+	t.Cleanup(server.Close)
+
+	ctx := context.Background()
+
+	deprecated, err := IsDeprecated(ctx, uint64(5009297550715157269),
+		WithURL(server.URL),
+		WithTimeout(5*time.Second),
+	)
+	require.NoError(t, err)
+	assert.False(t, deprecated)
+
+	deprecated, err = IsDeprecated(ctx, uint64(1777777777777777777),
+		WithURL(server.URL),
+		WithTimeout(5*time.Second),
+	)
+	require.NoError(t, err)
+	assert.True(t, deprecated)
+
+	_, err = IsDeprecated(ctx, uint64(999999999999999999),
+		WithURL(server.URL),
+		WithTimeout(5*time.Second),
+	)
+	assert.Error(t, err)
 }
 
 func TestRemoteWithMockServer(t *testing.T) {

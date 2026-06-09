@@ -7,3 +7,8 @@ evm:
     selector: 9876543210987654321
     name: "overriding-existing-chain"
     network_type: testnet
+  91919191222:
+    selector: 1357913579135791357
+    name: "test-evm-chain-deprecated"
+    network_type: testnet
+    deprecated: true
