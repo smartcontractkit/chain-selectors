@@ -1133,6 +1133,10 @@ evm:
         selector: 2052925811360307749
         name: tron-testnet-nile-evm
         network_type: testnet
+    7095321190:
+        selector: 10073034426865795585
+        name: glamsterdam-devnet-5
+        network_type: testnet
 aptos:
     1:
         selector: 4741433654826277614

@@ -157,6 +157,7 @@ var (
 	GETH_DEVNET_2                                  = Chain{EvmChainID: 2337, Selector: 12922642891491394802, Name: "geth-devnet-2", NetworkType: NetworkTypeTestnet}
 	GETH_DEVNET_3                                  = Chain{EvmChainID: 3337, Selector: 4793464827907405086, Name: "geth-devnet-3", NetworkType: NetworkTypeTestnet}
 	GETH_TESTNET                                   = Chain{EvmChainID: 1337, Selector: 3379446385462418246, Name: "geth-testnet", NetworkType: NetworkTypeTestnet}
+	GLAMSTERDAM_DEVNET_5                           = Chain{EvmChainID: 7095321190, Selector: 10073034426865795585, Name: "glamsterdam-devnet-5", NetworkType: NetworkTypeTestnet}
 	GNOSIS_CHAIN_MAINNET                           = Chain{EvmChainID: 100, Selector: 465200170687744372, Name: "gnosis_chain-mainnet", NetworkType: NetworkTypeMainnet}
 	GNOSIS_CHAIN_TESTNET_CHIADO                    = Chain{EvmChainID: 10200, Selector: 8871595565390010547, Name: "gnosis_chain-testnet-chiado", NetworkType: NetworkTypeTestnet}
 	HEDERA_MAINNET                                 = Chain{EvmChainID: 295, Selector: 3229138320728879060, Name: "hedera-mainnet", NetworkType: NetworkTypeMainnet}
@@ -537,6 +538,7 @@ var ALL = []Chain{
 	GETH_DEVNET_2,
 	GETH_DEVNET_3,
 	GETH_TESTNET,
+	GLAMSTERDAM_DEVNET_5,
 	GNOSIS_CHAIN_MAINNET,
 	GNOSIS_CHAIN_TESTNET_CHIADO,
 	HEDERA_MAINNET,
