@@ -41,6 +41,9 @@ func main() {
     // Getting chain family based on selector
     family, err := GetSelectorFamily(2664363617261496610)
 
+    // Getting chain details based on network name
+    details, err := chainselectors.GetChainDetailsByNetworkName("ethereum-mainnet")
+
     // -------------------For EVM chains--------------------
 
     // Getting selector based on ChainId
