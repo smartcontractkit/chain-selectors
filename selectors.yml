@@ -624,7 +624,7 @@ selectors:
   14601:
     selector: 1763698235108410440
     name: "sonic-testnet"
-    network_type: testnet    
+    network_type: testnet
   424242:
     selector: 4489326297382772450
     name: "private-testnet-mica"
@@ -672,10 +672,13 @@ selectors:
     selector: 1564738277398880633
     name: "private-testnet-pumice"
     network_type: testnet
-
   7095321190:
     selector: 10073034426865795585
     name: "glamsterdam-devnet-5"
+    network_type: testnet
+  2026041002:
+    selector: 4175996748267305081
+    name: "private-testnet-quartzite"
     network_type: testnet
 
   # Mainnets
@@ -807,7 +810,7 @@ selectors:
   1101:
     selector: 4348158687435793198
     name: "ethereum-mainnet-polygon-zkevm-1"
-    network_type: mainnet    
+    network_type: mainnet
   1111:
     selector: 5142893604156789321
     name: "wemix-mainnet"

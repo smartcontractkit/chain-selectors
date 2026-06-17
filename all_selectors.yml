@@ -1113,6 +1113,10 @@ evm:
         selector: 16244020411108056671
         name: zora-testnet
         network_type: testnet
+    2026041002:
+        selector: 4175996748267305081
+        name: private-testnet-quartzite
+        network_type: testnet
     2026041003:
         selector: 604447335222770945
         name: private-testnet-rhyolite
