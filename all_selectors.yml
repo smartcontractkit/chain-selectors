@@ -299,6 +299,7 @@ evm:
         selector: 4348158687435793198
         name: ethereum-mainnet-polygon-zkevm-1
         network_type: mainnet
+        deprecated: true
     1111:
         selector: 5142893604156789321
         name: wemix-mainnet
@@ -496,6 +497,7 @@ evm:
         selector: 4560701533377838164
         name: bitcoin-mainnet-botanix
         network_type: mainnet
+        deprecated: true
     3776:
         selector: 1540201334317828111
         name: ethereum-mainnet-astar-zkevm-1
