@@ -1142,3 +1142,7 @@ selectors:
     selector: 6370580034781731079
     name: "arc-mainnet"
     network_type: mainnet
+  2026041005:
+    selector: 13879014182901017172
+    name: "dtcc-mainnet-appchain"
+    network_type: mainnet
