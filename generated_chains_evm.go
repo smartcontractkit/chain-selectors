@@ -72,6 +72,7 @@ var (
 	CRONOS_ZKEVM_MAINNET                           = Chain{EvmChainID: 388, Selector: 8788096068760390840, Name: "cronos-zkevm-mainnet", NetworkType: NetworkTypeMainnet}
 	CRONOS_ZKEVM_TESTNET_SEPOLIA                   = Chain{EvmChainID: 240, Selector: 16487132492576884721, Name: "cronos-zkevm-testnet-sepolia", NetworkType: NetworkTypeTestnet}
 	DOGEOS_TESTNET_CHIKYU                          = Chain{EvmChainID: 6281971, Selector: 7254999290874773717, Name: "dogeos-testnet-chikyu", NetworkType: NetworkTypeTestnet}
+	DTCC_MAINNET_APPCHAIN                          = Chain{EvmChainID: 2026041005, Selector: 13879014182901017172, Name: "dtcc-mainnet-appchain", NetworkType: NetworkTypeMainnet}
 	DTCC_TESTNET_ANDESITE                          = Chain{EvmChainID: 2025, Selector: 15513093881969820114, Name: "dtcc-testnet-andesite", NetworkType: NetworkTypeTestnet}
 	EDGE_MAINNET                                   = Chain{EvmChainID: 3343, Selector: 6325494908023253251, Name: "edge-mainnet", NetworkType: NetworkTypeMainnet}
 	EDGE_TESTNET                                   = Chain{EvmChainID: 33431, Selector: 13222148116102326311, Name: "edge-testnet", NetworkType: NetworkTypeTestnet}
@@ -454,6 +455,7 @@ var ALL = []Chain{
 	CRONOS_ZKEVM_MAINNET,
 	CRONOS_ZKEVM_TESTNET_SEPOLIA,
 	DOGEOS_TESTNET_CHIKYU,
+	DTCC_MAINNET_APPCHAIN,
 	DTCC_TESTNET_ANDESITE,
 	EDGE_MAINNET,
 	EDGE_TESTNET,
