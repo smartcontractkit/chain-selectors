@@ -668,18 +668,23 @@ selectors:
     selector: 604447335222770945
     name: "private-testnet-rhyolite"
     network_type: testnet
+  2026041002:
+    selector: 4175996748267305081
+    name: "private-testnet-quartzite"
+    network_type: testnet
   2026041004:
     selector: 1564738277398880633
     name: "private-testnet-pumice"
+    network_type: testnet
+  7052886157:
+    selector: 410896468069059699
+    name: "glamsterdam-devnet-6"
     network_type: testnet
   7095321190:
     selector: 10073034426865795585
     name: "glamsterdam-devnet-5"
     network_type: testnet
-  2026041002:
-    selector: 4175996748267305081
-    name: "private-testnet-quartzite"
-    network_type: testnet
+    deprecated: true
 
   # Mainnets
   1:
