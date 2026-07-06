@@ -390,6 +390,7 @@ selectors:
     selector: 1467427327723633929
     name: "ethereum-testnet-sepolia-corn-1"
     network_type: testnet
+    deprecated: true
   168587773:
     selector: 2027362563942762617
     name: "ethereum-testnet-sepolia-blast-1"
@@ -484,6 +485,7 @@ selectors:
     selector: 7189150270347329685
     name: "mind-testnet"
     network_type: testnet
+    deprecated: true
   1338:
     selector: 2181150070347029680
     network_type: testnet
@@ -940,6 +942,7 @@ selectors:
     selector: 4411394078118774322
     name: "ethereum-mainnet-blast-1"
     network_type: mainnet
+    deprecated: true
   534352:
     selector: 13204309965629103672
     name: "ethereum-mainnet-scroll-1"
@@ -1001,6 +1004,7 @@ selectors:
     selector: 9043146809313071210
     name: "corn-mainnet"
     network_type: mainnet
+    deprecated: true
   2818:
     selector: 18164309074156128038
     name: "morph-mainnet"
@@ -1013,6 +1017,7 @@ selectors:
     selector: 11690709103138290329
     name: "mind-mainnet"
     network_type: mainnet
+    deprecated: true
   728126428:
     selector: 1546563616611573946
     name: "tron-mainnet-evm"
