@@ -949,6 +949,10 @@ evm:
         selector: 1091131740251125869
         name: ethereum-testnet-sepolia-ronin-1
         network_type: testnet
+    364301:
+        selector: 17611928792452358269
+        name: t-rex-testnet
+        network_type: testnet
     421613:
         selector: 6101244977088475029
         name: ethereum-testnet-goerli-arbitrum-1

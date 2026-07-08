@@ -687,6 +687,10 @@ selectors:
     name: "glamsterdam-devnet-5"
     network_type: testnet
     deprecated: true
+  364301:
+    selector: 17611928792452358269
+    name: "t-rex-testnet"
+    network_type: testnet
 
   # Mainnets
   1:
