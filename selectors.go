@@ -242,6 +242,48 @@ func GetChainNameFromSelector(selector uint64) (string, error) {
 	return chainInfo.ChainDetails.ChainName, nil
 }
 
+// GetChainDetailsByNetworkName returns chain details for the given network name.
+func GetChainDetailsByNetworkName(networkName string) (ChainDetails, error) {
+	if details, exist := getChainDetailsByNetworkName(networkName, evmChainIdToChainSelector); exist {
+		return details, nil
+	}
+	if details, exist := getChainDetailsByNetworkName(networkName, solanaChainIdToChainSelector); exist {
+		return details, nil
+	}
+	if details, exist := getChainDetailsByNetworkName(networkName, aptosSelectorsMap); exist {
+		return details, nil
+	}
+	if details, exist := getChainDetailsByNetworkName(networkName, suiSelectorsMap); exist {
+		return details, nil
+	}
+	if details, exist := getChainDetailsByNetworkName(networkName, tronSelectorsMap); exist {
+		return details, nil
+	}
+	if details, exist := getChainDetailsByNetworkName(networkName, tonSelectorsMap); exist {
+		return details, nil
+	}
+	if details, exist := getChainDetailsByNetworkName(networkName, starknetSelectorsMap); exist {
+		return details, nil
+	}
+	if details, exist := getChainDetailsByNetworkName(networkName, cantonChainsByChainId); exist {
+		return details, nil
+	}
+	if details, exist := getChainDetailsByNetworkName(networkName, stellarChainsByChainId); exist {
+		return details, nil
+	}
+
+	return ChainDetails{}, fmt.Errorf("chain details not found for network name %s", networkName)
+}
+
+func getChainDetailsByNetworkName[K comparable](networkName string, selectors map[K]ChainDetails) (ChainDetails, bool) {
+	for _, details := range selectors {
+		if details.ChainName == networkName {
+			return details, true
+		}
+	}
+	return ChainDetails{}, false
+}
+
 func GetChainDetailsByChainIDAndFamily(chainID string, family string) (ChainDetails, error) {
 	switch family {
 	case FamilyEVM:
@@ -362,6 +404,16 @@ func IsTestnetChain(selector uint64) (bool, error) {
 	}
 
 	return networkType == NetworkTypeTestnet, nil
+}
+
+// IsDeprecated reports whether the chain for the given selector has been sunset or superseded.
+func IsDeprecated(selector uint64) (bool, error) {
+	chainDetails, err := GetChainDetails(selector)
+	if err != nil {
+		return false, err
+	}
+
+	return chainDetails.Deprecated, nil
 }
 
 func GetChainDetails(selector uint64) (ChainDetails, error) {

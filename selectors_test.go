@@ -217,3 +217,51 @@ func TestIsMainnetChain(t *testing.T) {
 		})
 	}
 }
+
+func TestGetChainDetailsByNetworkName(t *testing.T) {
+	tests := []struct {
+		name     string
+		selector uint64
+	}{
+		{name: "EVM", selector: ETHEREUM_MAINNET.Selector},
+		{name: "Solana", selector: SOLANA_MAINNET.Selector},
+		{name: "Aptos", selector: APTOS_MAINNET.Selector},
+		{name: "Sui", selector: SUI_MAINNET.Selector},
+		{name: "Tron", selector: TRON_MAINNET.Selector},
+		{name: "TON", selector: TON_MAINNET.Selector},
+		{name: "Starknet", selector: ETHEREUM_MAINNET_STARKNET_1.Selector},
+		{name: "Canton", selector: CANTON_MAINNET.Selector},
+		{name: "Stellar", selector: STELLAR_MAINNET.Selector},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			expected, err := GetChainDetails(tt.selector)
+			require.NoError(t, err)
+
+			got, err := GetChainDetailsByNetworkName(expected.ChainName)
+			require.NoError(t, err)
+			assert.Equal(t, expected, got)
+		})
+	}
+
+	t.Run("unknown network name returns error", func(t *testing.T) {
+		_, err := GetChainDetailsByNetworkName("unknown-network")
+		require.Error(t, err)
+		assert.Contains(t, err.Error(), "chain details not found for network name unknown-network")
+	})
+}
+
+func TestIsDeprecated(t *testing.T) {
+	t.Run("known selector defaults to not deprecated", func(t *testing.T) {
+		deprecated, err := IsDeprecated(ETHEREUM_MAINNET.Selector)
+		require.NoError(t, err)
+		assert.False(t, deprecated)
+	})
+
+	t.Run("unknown selector returns error", func(t *testing.T) {
+		_, err := IsDeprecated(9999999999999999999)
+		require.Error(t, err)
+		assert.Contains(t, err.Error(), "unknown chain selector")
+	})
+}

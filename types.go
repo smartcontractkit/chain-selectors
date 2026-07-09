@@ -25,4 +25,6 @@ type ChainDetails struct {
 	ChainSelector uint64      `yaml:"selector"`
 	ChainName     string      `yaml:"name"`
 	NetworkType   NetworkType `yaml:"network_type"`
+	// Deprecated marks chains that have been sunset or superseded by a newer version.
+	Deprecated bool `yaml:"deprecated,omitempty"`
 }

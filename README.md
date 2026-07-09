@@ -41,6 +41,9 @@ func main() {
     // Getting chain family based on selector
     family, err := GetSelectorFamily(2664363617261496610)
 
+    // Getting chain details based on network name
+    details, err := chainselectors.GetChainDetailsByNetworkName("ethereum-mainnet")
+
     // -------------------For EVM chains--------------------
 
     // Getting selector based on ChainId
@@ -98,7 +101,13 @@ details, err := chainsel.GetChainDetailsBySelector(ctx, 5009297550715157269)
 
 // Get chain details by chain ID and family
 details, err := chainsel.GetChainDetailsByChainIDAndFamily(ctx, "1", "evm")
-// Returns: ChainDetails{ChainSelector: 5009297550715157269, ChainName: "ethereum-mainnet"}
+// Returns: ChainDetails{ChainSelector: 5009297550715157269, ChainName: "ethereum-mainnet", Deprecated: false}
+
+// Check whether a selector has been deprecated
+deprecated, err := chainselectors.IsDeprecated(5009297550715157269)
+
+// Or with the remote API
+deprecated, err = chainsel.IsDeprecated(ctx, 5009297550715157269)
 ```
 
 #### EVM-Specific Functions

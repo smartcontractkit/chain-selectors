@@ -470,6 +470,16 @@ func GetChainDetailsByChainIDAndFamily(ctx context.Context, chainID string, fami
 	}
 }
 
+// IsDeprecated reports whether the chain for the given selector has been sunset or superseded
+func IsDeprecated(ctx context.Context, selector uint64, opts ...Option) (bool, error) {
+	details, err := GetChainDetailsBySelector(ctx, selector, opts...)
+	if err != nil {
+		return false, err
+	}
+
+	return details.Deprecated, nil
+}
+
 // ClearCache clears the remote data cache, forcing the next remote call to fetch fresh data
 func ClearCache() {
 	remoteCacheLock.Lock()

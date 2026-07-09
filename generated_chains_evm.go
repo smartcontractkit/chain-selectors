@@ -19,6 +19,7 @@ var (
 	ANVIL_DEVNET                                   = Chain{EvmChainID: 31337, Selector: 7759470850252068959, Name: "anvil-devnet", NetworkType: NetworkTypeTestnet}
 	APECHAIN_MAINNET                               = Chain{EvmChainID: 33139, Selector: 14894068710063348487, Name: "apechain-mainnet", NetworkType: NetworkTypeMainnet}
 	APECHAIN_TESTNET_CURTIS                        = Chain{EvmChainID: 33111, Selector: 9900119385908781505, Name: "apechain-testnet-curtis", NetworkType: NetworkTypeTestnet}
+	ARC_MAINNET                                    = Chain{EvmChainID: 5042, Selector: 6370580034781731079, Name: "arc-mainnet", NetworkType: NetworkTypeMainnet}
 	ARC_TESTNET                                    = Chain{EvmChainID: 5042002, Selector: 3034092155422581607, Name: "arc-testnet", NetworkType: NetworkTypeTestnet}
 	AREON_MAINNET                                  = Chain{EvmChainID: 463, Selector: 1939936305787790600, Name: "areon-mainnet", NetworkType: NetworkTypeMainnet}
 	AREON_TESTNET                                  = Chain{EvmChainID: 462, Selector: 7317911323415911000, Name: "areon-testnet", NetworkType: NetworkTypeTestnet}
@@ -71,6 +72,7 @@ var (
 	CRONOS_ZKEVM_MAINNET                           = Chain{EvmChainID: 388, Selector: 8788096068760390840, Name: "cronos-zkevm-mainnet", NetworkType: NetworkTypeMainnet}
 	CRONOS_ZKEVM_TESTNET_SEPOLIA                   = Chain{EvmChainID: 240, Selector: 16487132492576884721, Name: "cronos-zkevm-testnet-sepolia", NetworkType: NetworkTypeTestnet}
 	DOGEOS_TESTNET_CHIKYU                          = Chain{EvmChainID: 6281971, Selector: 7254999290874773717, Name: "dogeos-testnet-chikyu", NetworkType: NetworkTypeTestnet}
+	DTCC_MAINNET_APPCHAIN                          = Chain{EvmChainID: 2026041005, Selector: 13879014182901017172, Name: "dtcc-mainnet-appchain", NetworkType: NetworkTypeMainnet}
 	DTCC_TESTNET_ANDESITE                          = Chain{EvmChainID: 2025, Selector: 15513093881969820114, Name: "dtcc-testnet-andesite", NetworkType: NetworkTypeTestnet}
 	EDGE_MAINNET                                   = Chain{EvmChainID: 3343, Selector: 6325494908023253251, Name: "edge-mainnet", NetworkType: NetworkTypeMainnet}
 	EDGE_TESTNET                                   = Chain{EvmChainID: 33431, Selector: 13222148116102326311, Name: "edge-testnet", NetworkType: NetworkTypeTestnet}
@@ -156,6 +158,8 @@ var (
 	GETH_DEVNET_2                                  = Chain{EvmChainID: 2337, Selector: 12922642891491394802, Name: "geth-devnet-2", NetworkType: NetworkTypeTestnet}
 	GETH_DEVNET_3                                  = Chain{EvmChainID: 3337, Selector: 4793464827907405086, Name: "geth-devnet-3", NetworkType: NetworkTypeTestnet}
 	GETH_TESTNET                                   = Chain{EvmChainID: 1337, Selector: 3379446385462418246, Name: "geth-testnet", NetworkType: NetworkTypeTestnet}
+	GLAMSTERDAM_DEVNET_5                           = Chain{EvmChainID: 7095321190, Selector: 10073034426865795585, Name: "glamsterdam-devnet-5", NetworkType: NetworkTypeTestnet}
+	GLAMSTERDAM_DEVNET_6                           = Chain{EvmChainID: 7052886157, Selector: 410896468069059699, Name: "glamsterdam-devnet-6", NetworkType: NetworkTypeTestnet}
 	GNOSIS_CHAIN_MAINNET                           = Chain{EvmChainID: 100, Selector: 465200170687744372, Name: "gnosis_chain-mainnet", NetworkType: NetworkTypeMainnet}
 	GNOSIS_CHAIN_TESTNET_CHIADO                    = Chain{EvmChainID: 10200, Selector: 8871595565390010547, Name: "gnosis_chain-testnet-chiado", NetworkType: NetworkTypeTestnet}
 	HEDERA_MAINNET                                 = Chain{EvmChainID: 295, Selector: 3229138320728879060, Name: "hedera-mainnet", NetworkType: NetworkTypeMainnet}
@@ -231,6 +235,8 @@ var (
 	PRIVATE_TESTNET_MICA                           = Chain{EvmChainID: 424242, Selector: 4489326297382772450, Name: "private-testnet-mica", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_OBSIDIAN                       = Chain{EvmChainID: 682, Selector: 6260932437388305511, Name: "private-testnet-obsidian", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_OPALA                          = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala", NetworkType: NetworkTypeTestnet}
+	PRIVATE_TESTNET_PUMICE                         = Chain{EvmChainID: 2026041004, Selector: 1564738277398880633, Name: "private-testnet-pumice", NetworkType: NetworkTypeTestnet}
+	PRIVATE_TESTNET_QUARTZITE                      = Chain{EvmChainID: 2026041002, Selector: 4175996748267305081, Name: "private-testnet-quartzite", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_RHYOLITE                       = Chain{EvmChainID: 2026041003, Selector: 604447335222770945, Name: "private-testnet-rhyolite", NetworkType: NetworkTypeTestnet}
 	ROBINHOOD_MAINNET                              = Chain{EvmChainID: 4663, Selector: 6180753054346818345, Name: "robinhood-mainnet", NetworkType: NetworkTypeMainnet}
 	ROBINHOOD_TESTNET                              = Chain{EvmChainID: 46630, Selector: 2032988798112970440, Name: "robinhood-testnet", NetworkType: NetworkTypeTestnet}
@@ -397,6 +403,7 @@ var ALL = []Chain{
 	ANVIL_DEVNET,
 	APECHAIN_MAINNET,
 	APECHAIN_TESTNET_CURTIS,
+	ARC_MAINNET,
 	ARC_TESTNET,
 	AREON_MAINNET,
 	AREON_TESTNET,
@@ -449,6 +456,7 @@ var ALL = []Chain{
 	CRONOS_ZKEVM_MAINNET,
 	CRONOS_ZKEVM_TESTNET_SEPOLIA,
 	DOGEOS_TESTNET_CHIKYU,
+	DTCC_MAINNET_APPCHAIN,
 	DTCC_TESTNET_ANDESITE,
 	EDGE_MAINNET,
 	EDGE_TESTNET,
@@ -534,6 +542,8 @@ var ALL = []Chain{
 	GETH_DEVNET_2,
 	GETH_DEVNET_3,
 	GETH_TESTNET,
+	GLAMSTERDAM_DEVNET_5,
+	GLAMSTERDAM_DEVNET_6,
 	GNOSIS_CHAIN_MAINNET,
 	GNOSIS_CHAIN_TESTNET_CHIADO,
 	HEDERA_MAINNET,
@@ -609,6 +619,8 @@ var ALL = []Chain{
 	PRIVATE_TESTNET_MICA,
 	PRIVATE_TESTNET_OBSIDIAN,
 	PRIVATE_TESTNET_OPALA,
+	PRIVATE_TESTNET_PUMICE,
+	PRIVATE_TESTNET_QUARTZITE,
 	PRIVATE_TESTNET_RHYOLITE,
 	ROBINHOOD_MAINNET,
 	ROBINHOOD_TESTNET,

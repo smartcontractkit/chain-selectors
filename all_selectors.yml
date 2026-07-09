@@ -123,10 +123,12 @@ evm:
         selector: 17164792800244661392
         name: mint-mainnet
         network_type: mainnet
+        deprecated: true
     195:
         selector: 2066098519157881736
         name: ethereum-testnet-sepolia-xlayer-1
         network_type: testnet
+        deprecated: true
     196:
         selector: 3016212468291539606
         name: ethereum-mainnet-xlayer-1
@@ -147,6 +149,7 @@ evm:
         selector: 11690709103138290329
         name: mind-mainnet
         network_type: mainnet
+        deprecated: true
     232:
         selector: 5608378062013572713
         name: lens-mainnet
@@ -171,6 +174,7 @@ evm:
         selector: 3719320017875267166
         name: ethereum-mainnet-kroma-1
         network_type: mainnet
+        deprecated: true
     259:
         selector: 8239338020728974000
         name: neonlink-mainnet
@@ -247,6 +251,7 @@ evm:
         selector: 5059197667603797935
         name: janction-testnet-sepolia
         network_type: testnet
+        deprecated: true
     682:
         selector: 6260932437388305511
         name: private-testnet-obsidian
@@ -295,6 +300,7 @@ evm:
         selector: 4348158687435793198
         name: ethereum-mainnet-polygon-zkevm-1
         network_type: mainnet
+        deprecated: true
     1111:
         selector: 5142893604156789321
         name: wemix-mainnet
@@ -315,6 +321,7 @@ evm:
         selector: 1948510578179542068
         name: bitcoin-testnet-bsquared-1
         network_type: testnet
+        deprecated: true
     1135:
         selector: 15293031020466096408
         name: lisk-mainnet
@@ -355,6 +362,7 @@ evm:
         selector: 11059667695644972511
         name: ethereum-testnet-goerli-polygon-zkevm-1
         network_type: testnet
+        deprecated: true
     1513:
         selector: 4237030917318060427
         name: story-testnet
@@ -367,6 +375,7 @@ evm:
         selector: 10749384167430721561
         name: mint-testnet
         network_type: testnet
+        deprecated: true
     1740:
         selector: 6286293440461807648
         name: metal-testnet
@@ -403,6 +412,7 @@ evm:
         selector: 13116810400804392105
         name: ronin-testnet-saigon
         network_type: testnet
+        deprecated: true
     2023:
         selector: 3260900564719373474
         name: private-testnet-granite
@@ -427,6 +437,7 @@ evm:
         selector: 12168171414969487009
         name: memento-testnet
         network_type: testnet
+        deprecated: true
     2201:
         selector: 11793402411494852765
         name: stable-testnet
@@ -443,6 +454,7 @@ evm:
         selector: 5990477251245693094
         name: ethereum-testnet-sepolia-kroma-1
         network_type: testnet
+        deprecated: true
     2391:
         selector: 9488606126177218005
         name: tac-testnet
@@ -455,6 +467,7 @@ evm:
         selector: 8901520481741771655
         name: ethereum-testnet-holesky-fraxtal-1
         network_type: testnet
+        deprecated: true
     2741:
         selector: 3577778157919314504
         name: abstract-mainnet
@@ -463,6 +476,7 @@ evm:
         selector: 8304510386741731151
         name: ethereum-testnet-holesky-morph-1
         network_type: testnet
+        deprecated: true
     2818:
         selector: 18164309074156128038
         name: morph-mainnet
@@ -479,10 +493,12 @@ evm:
         selector: 1467223411771711614
         name: bitcoin-testnet-botanix
         network_type: testnet
+        deprecated: true
     3637:
         selector: 4560701533377838164
         name: bitcoin-mainnet-botanix
         network_type: mainnet
+        deprecated: true
     3776:
         selector: 1540201334317828111
         name: ethereum-mainnet-astar-zkevm-1
@@ -527,6 +543,10 @@ evm:
         selector: 8236463271206331221
         name: ethereum-testnet-sepolia-mantle-1
         network_type: testnet
+    5042:
+        selector: 6370580034781731079
+        name: arc-mainnet
+        network_type: mainnet
     5330:
         selector: 470401360549526817
         name: superseed-mainnet
@@ -543,6 +563,7 @@ evm:
         selector: 2443239559770384419
         name: megaeth-testnet
         network_type: testnet
+        deprecated: true
     6343:
         selector: 18241817625092392675
         name: megaeth-testnet-2
@@ -631,10 +652,12 @@ evm:
         selector: 16088006396410204581
         name: 0g-testnet-newton
         network_type: testnet
+        deprecated: true
     16601:
         selector: 2131427466778448014
         name: 0g-testnet-galileo
         network_type: testnet
+        deprecated: true
     16602:
         selector: 6892437333620424805
         name: 0g-testnet-galileo-1
@@ -647,10 +670,12 @@ evm:
         selector: 7717148896336251131
         name: ethereum-testnet-holesky
         network_type: testnet
+        deprecated: true
     25327:
         selector: 9723842205701363942
         name: everclear-mainnet
         network_type: mainnet
+        deprecated: true
     26888:
         selector: 7051849327615092843
         name: ab-testnet
@@ -699,6 +724,7 @@ evm:
         selector: 3963528237232804922
         name: tempo-testnet
         network_type: testnet
+        deprecated: true
     42431:
         selector: 8457817439310187923
         name: tempo-testnet-moderato
@@ -723,6 +749,7 @@ evm:
         selector: 3552045678561919002
         name: celo-testnet-alfajores
         network_type: testnet
+        deprecated: true
     45439:
         selector: 8446413392851542429
         name: private-testnet-opala
@@ -751,6 +778,7 @@ evm:
         selector: 6473245816409426016
         name: memento-mainnet
         network_type: mainnet
+        deprecated: true
     53302:
         selector: 13694007683517087973
         name: superseed-testnet
@@ -759,6 +787,7 @@ evm:
         selector: 3676871237479449268
         name: sonic-testnet-blaze
         network_type: testnet
+        deprecated: true
     57073:
         selector: 3461204551265785888
         name: ethereum-mainnet-ink-1
@@ -791,6 +820,7 @@ evm:
         selector: 5214452172935136222
         name: treasure-mainnet
         network_type: mainnet
+        deprecated: true
     68414:
         selector: 12657445206920369324
         name: nexon-mainnet-henesys
@@ -815,14 +845,17 @@ evm:
         selector: 8999465244383784164
         name: berachain-testnet-bartio
         network_type: testnet
+        deprecated: true
     80085:
         selector: 12336603543561911511
         name: berachain-testnet-artio
         network_type: testnet
+        deprecated: true
     80087:
         selector: 2285225387454015855
         name: zero-g-testnet-galileo
         network_type: testnet
+        deprecated: true
     80094:
         selector: 1294465214383781161
         name: berachain-mainnet
@@ -835,6 +868,7 @@ evm:
         selector: 4411394078118774322
         name: ethereum-mainnet-blast-1
         network_type: mainnet
+        deprecated: true
     84531:
         selector: 5790810961207155433
         name: ethereum-testnet-goerli-base-1
@@ -875,10 +909,12 @@ evm:
         selector: 1910019406958449359
         name: etherlink-testnet
         network_type: testnet
+        deprecated: true
     129399:
         selector: 9090863410735740267
         name: polygon-testnet-tatara
         network_type: testnet
+        deprecated: true
     167000:
         selector: 16468599424800719238
         name: ethereum-mainnet-taiko-1
@@ -887,6 +923,7 @@ evm:
         selector: 7248756420937879088
         name: ethereum-testnet-holesky-taiko-1
         network_type: testnet
+        deprecated: true
     167012:
         selector: 9873759436596923887
         name: ethereum-testnet-hoodi-taiko
@@ -899,6 +936,7 @@ evm:
         selector: 7189150270347329685
         name: mind-testnet
         network_type: testnet
+        deprecated: true
     200810:
         selector: 3789623672476206327
         name: bitcoin-testnet-bitlayer-1
@@ -955,6 +993,7 @@ evm:
         selector: 4012524741200567430
         name: pharos-testnet
         network_type: testnet
+        deprecated: true
     688689:
         selector: 16098325658947243212
         name: pharos-atlantic-testnet
@@ -1003,14 +1042,17 @@ evm:
         selector: 10443705513486043421
         name: ethereum-testnet-sepolia-arbitrum-1-treasure-1
         network_type: testnet
+        deprecated: true
     978658:
         selector: 3676916124122457866
         name: treasure-testnet-topaz
         network_type: testnet
+        deprecated: true
     978670:
         selector: 1010349088906777999
         name: ethereum-mainnet-arbitrum-1-treasure-1
         network_type: mainnet
+        deprecated: true
     2019775:
         selector: 945045181441419236
         name: jovay-testnet
@@ -1051,10 +1093,12 @@ evm:
         selector: 9043146809313071210
         name: corn-mainnet
         network_type: mainnet
+        deprecated: true
     21000001:
         selector: 1467427327723633929
         name: ethereum-testnet-sepolia-corn-1
         network_type: testnet
+        deprecated: true
     31415926:
         selector: 7060342227814389000
         name: filecoin-testnet
@@ -1067,6 +1111,7 @@ evm:
         selector: 2027362563942762617
         name: ethereum-testnet-sepolia-blast-1
         network_type: testnet
+        deprecated: true
     728126428:
         selector: 1546563616611573946
         name: tron-mainnet-evm
@@ -1075,10 +1120,22 @@ evm:
         selector: 16244020411108056671
         name: zora-testnet
         network_type: testnet
+    2026041002:
+        selector: 4175996748267305081
+        name: private-testnet-quartzite
+        network_type: testnet
     2026041003:
         selector: 604447335222770945
         name: private-testnet-rhyolite
         network_type: testnet
+    2026041004:
+        selector: 1564738277398880633
+        name: private-testnet-pumice
+        network_type: testnet
+    2026041005:
+        selector: 13879014182901017172
+        name: dtcc-mainnet-appchain
+        network_type: mainnet
     2494104990:
         selector: 13231703482326770598
         name: tron-testnet-shasta-evm
@@ -1091,6 +1148,15 @@ evm:
         selector: 2052925811360307749
         name: tron-testnet-nile-evm
         network_type: testnet
+    7052886157:
+        selector: 410896468069059699
+        name: glamsterdam-devnet-6
+        network_type: testnet
+    7095321190:
+        selector: 10073034426865795585
+        name: glamsterdam-devnet-5
+        network_type: testnet
+        deprecated: true
 aptos:
     1:
         selector: 4741433654826277614
