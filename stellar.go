@@ -17,6 +17,11 @@ var stellarSelectorsYml []byte
 var (
 	stellarChainsByChainId  = parseStellarYml(stellarSelectorsYml)
 	stellarChainsBySelector = loadAllStellarSelectors(stellarChainsByChainId)
+	// Network passphrases are Stellar-specific (not part of the shared ChainDetails),
+	// so they are parsed separately. A Stellar network is defined by its passphrase and
+	// its network ID is SHA-256(passphrase); tx signing requires the passphrase string,
+	// which cannot be derived from the chain ID (the hash), hence it lives here.
+	stellarChainIdToPassphrase = parseStellarPassphrases(stellarSelectorsYml)
 )
 
 func init() {
@@ -32,6 +37,7 @@ func init() {
 			Selector:    chainDetails.ChainSelector,
 			Name:        chainDetails.ChainName,
 			NetworkType: chainDetails.NetworkType,
+			Passphrase:  stellarChainIdToPassphrase[chainID],
 		}
 	}
 
@@ -54,6 +60,26 @@ func parseStellarYml(ymlFile []byte) map[string]ChainDetails {
 	return data.SelectorsByNetworkId
 }
 
+func parseStellarPassphrases(ymlFile []byte) map[string]string {
+	type stellarDetails struct {
+		Passphrase string `yaml:"passphrase"`
+	}
+	type ymlData struct {
+		SelectorsByNetworkId map[string]stellarDetails `yaml:"selectors"`
+	}
+
+	var data ymlData
+	if err := yaml.Unmarshal(ymlFile, &data); err != nil {
+		panic(err)
+	}
+
+	out := make(map[string]string, len(data.SelectorsByNetworkId))
+	for chainID, v := range data.SelectorsByNetworkId {
+		out[chainID] = v.Passphrase
+	}
+	return out
+}
+
 func loadAllStellarSelectors(in map[string]ChainDetails) map[uint64]StellarChain {
 	output := make(map[uint64]StellarChain, len(stellarChainsByChainId))
 	for chainID, v := range in {
@@ -62,6 +88,7 @@ func loadAllStellarSelectors(in map[string]ChainDetails) map[uint64]StellarChain
 			Selector:    v.ChainSelector,
 			Name:        v.ChainName,
 			NetworkType: v.NetworkType,
+			Passphrase:  stellarChainIdToPassphrase[chainID],
 		}
 	}
 	return output
@@ -111,4 +138,15 @@ func StellarNetworkTypeFromChainId(chainId string) (NetworkType, error) {
 		return chainDetails.NetworkType, nil
 	}
 	return "", fmt.Errorf("chain network type not found for chain %v", chainId)
+}
+
+// StellarPassphraseFromChainId returns the network passphrase for a Stellar chain
+// ID (network ID). The network ID is SHA-256(passphrase); signing requires the
+// passphrase string, which cannot be derived from the ID.
+func StellarPassphraseFromChainId(chainID string) (string, error) {
+	passphrase, exist := stellarChainIdToPassphrase[chainID]
+	if !exist || passphrase == "" {
+		return "", fmt.Errorf("network passphrase not found for chain: %v", chainID)
+	}
+	return passphrase, nil
 }

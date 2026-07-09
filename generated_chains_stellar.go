@@ -6,12 +6,13 @@ type StellarChain struct {
 	Selector    uint64
 	Name        string
 	NetworkType NetworkType
+	Passphrase  string
 }
 
 var (
-	STELLAR_LOCALNET = StellarChain{ChainID: "baefd734b8d3e48472cff83912375fedbc7573701912fe308af730180f97d74a", Selector: 17301180955411967724, Name: "stellar-localnet", NetworkType: NetworkTypeTestnet}
-	STELLAR_MAINNET  = StellarChain{ChainID: "7ac33997544e3175d266bd022439b22cdb16508c01163f26e5cb2a3e1045a979", Selector: 17783245649066640917, Name: "stellar-mainnet", NetworkType: NetworkTypeMainnet}
-	STELLAR_TESTNET  = StellarChain{ChainID: "cee0302d59844d32bdca915c8203dd44b33fbb7edc19051ea37abedf28ecd472", Selector: 4894814558906953166, Name: "stellar-testnet", NetworkType: NetworkTypeTestnet}
+	STELLAR_LOCALNET = StellarChain{ChainID: "baefd734b8d3e48472cff83912375fedbc7573701912fe308af730180f97d74a", Selector: 17301180955411967724, Name: "stellar-localnet", NetworkType: NetworkTypeTestnet, Passphrase: "Standalone Network ; February 2017"}
+	STELLAR_MAINNET  = StellarChain{ChainID: "7ac33997544e3175d266bd022439b22cdb16508c01163f26e5cb2a3e1045a979", Selector: 17783245649066640917, Name: "stellar-mainnet", NetworkType: NetworkTypeMainnet, Passphrase: "Public Global Stellar Network ; September 2015"}
+	STELLAR_TESTNET  = StellarChain{ChainID: "cee0302d59844d32bdca915c8203dd44b33fbb7edc19051ea37abedf28ecd472", Selector: 4894814558906953166, Name: "stellar-testnet", NetworkType: NetworkTypeTestnet, Passphrase: "Test SDF Network ; September 2015"}
 )
 
 var StellarALL = []StellarChain{
