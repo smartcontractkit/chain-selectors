@@ -108,7 +108,22 @@ deprecated, err := chainselectors.IsDeprecated(5009297550715157269)
 
 // Or with the remote API
 deprecated, err = chainsel.IsDeprecated(ctx, 5009297550715157269)
+
+// Get a deprecated chain's scheduled sunset date (when it goes/went offline).
+// ok is false when no sunset date is set.
+sunset, ok, err := chainselectors.GetSunsetDate(5009297550715157269)
+
+// Check whether the sunset date has already passed (i.e. the chain is offline as of now).
+isOffline, err := chainselectors.IsSunset(5009297550715157269)
+
+// The same helpers are available on the remote API (note the ctx argument):
+sunset, ok, err = chainsel.GetSunsetDate(ctx, 5009297550715157269)
+isOffline, err = chainsel.IsSunset(ctx, 5009297550715157269)
 ```
+
+> **Deprecation vs. sunset:** `Deprecated` marks a chain as discouraged (it may still be live).
+> `SunsetAt` is the date it goes offline — a *future* date means it is still live, a *past* date
+> means it is offline. Empty means no sunset is scheduled.
 
 #### EVM-Specific Functions
 

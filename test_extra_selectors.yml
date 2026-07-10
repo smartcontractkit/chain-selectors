@@ -12,3 +12,8 @@ evm:
     name: "test-evm-chain-deprecated"
     network_type: testnet
     deprecated: true
+  92929292333:
+    selector: 2468013579246801357
+    name: "test-evm-chain-sunset-past"
+    network_type: testnet
+    sunset_at: "2020-01-01T00:00:00Z"

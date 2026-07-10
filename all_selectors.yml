@@ -124,11 +124,13 @@ evm:
         name: mint-mainnet
         network_type: mainnet
         deprecated: true
+        sunset_at: "2026-04-17"
     195:
         selector: 2066098519157881736
         name: ethereum-testnet-sepolia-xlayer-1
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-09-15"
     196:
         selector: 3016212468291539606
         name: ethereum-mainnet-xlayer-1
@@ -150,6 +152,7 @@ evm:
         name: mind-mainnet
         network_type: mainnet
         deprecated: true
+        sunset_at: "2026-05-30"
     232:
         selector: 5608378062013572713
         name: lens-mainnet
@@ -175,6 +178,7 @@ evm:
         name: ethereum-mainnet-kroma-1
         network_type: mainnet
         deprecated: true
+        sunset_at: "2025-06-30"
     259:
         selector: 8239338020728974000
         name: neonlink-mainnet
@@ -183,6 +187,8 @@ evm:
         selector: 6802309497652714138
         name: ethereum-testnet-goerli-zksync-1
         network_type: testnet
+        deprecated: true
+        sunset_at: "2024-04-13"
     282:
         selector: 3842103497652714138
         name: cronos-testnet-zkevm-1
@@ -227,6 +233,8 @@ evm:
         selector: 2664363617261496610
         name: ethereum-testnet-goerli-optimism-1
         network_type: testnet
+        deprecated: true
+        sunset_at: "2024-04-13"
     462:
         selector: 7317911323415911000
         name: areon-testnet
@@ -252,6 +260,7 @@ evm:
         name: janction-testnet-sepolia
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-12-01"
     682:
         selector: 6260932437388305511
         name: private-testnet-obsidian
@@ -301,6 +310,7 @@ evm:
         name: ethereum-mainnet-polygon-zkevm-1
         network_type: mainnet
         deprecated: true
+        sunset_at: "2026-07-01"
     1111:
         selector: 5142893604156789321
         name: wemix-mainnet
@@ -322,6 +332,7 @@ evm:
         name: bitcoin-testnet-bsquared-1
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-12-01"
     1135:
         selector: 15293031020466096408
         name: lisk-mainnet
@@ -363,6 +374,7 @@ evm:
         name: ethereum-testnet-goerli-polygon-zkevm-1
         network_type: testnet
         deprecated: true
+        sunset_at: "2024-04-13"
     1513:
         selector: 4237030917318060427
         name: story-testnet
@@ -376,6 +388,7 @@ evm:
         name: mint-testnet
         network_type: testnet
         deprecated: true
+        sunset_at: "2026-04-17"
     1740:
         selector: 6286293440461807648
         name: metal-testnet
@@ -413,6 +426,7 @@ evm:
         name: ronin-testnet-saigon
         network_type: testnet
         deprecated: true
+        sunset_at: "2026-02-05"
     2023:
         selector: 3260900564719373474
         name: private-testnet-granite
@@ -438,6 +452,7 @@ evm:
         name: memento-testnet
         network_type: testnet
         deprecated: true
+        sunset_at: "2026-04-27"
     2201:
         selector: 11793402411494852765
         name: stable-testnet
@@ -455,6 +470,7 @@ evm:
         name: ethereum-testnet-sepolia-kroma-1
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-06-30"
     2391:
         selector: 9488606126177218005
         name: tac-testnet
@@ -468,6 +484,7 @@ evm:
         name: ethereum-testnet-holesky-fraxtal-1
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-10-17"
     2741:
         selector: 3577778157919314504
         name: abstract-mainnet
@@ -477,6 +494,7 @@ evm:
         name: ethereum-testnet-holesky-morph-1
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-10-21"
     2818:
         selector: 18164309074156128038
         name: morph-mainnet
@@ -494,11 +512,13 @@ evm:
         name: bitcoin-testnet-botanix
         network_type: testnet
         deprecated: true
+        sunset_at: "2026-07-09"
     3637:
         selector: 4560701533377838164
         name: bitcoin-mainnet-botanix
         network_type: mainnet
         deprecated: true
+        sunset_at: "2026-07-09"
     3776:
         selector: 1540201334317828111
         name: ethereum-mainnet-astar-zkevm-1
@@ -539,6 +559,8 @@ evm:
         selector: 4168263376276232250
         name: ethereum-testnet-goerli-mantle-1
         network_type: testnet
+        deprecated: true
+        sunset_at: "2024-04-13"
     5003:
         selector: 8236463271206331221
         name: ethereum-testnet-sepolia-mantle-1
@@ -564,6 +586,7 @@ evm:
         name: megaeth-testnet
         network_type: testnet
         deprecated: true
+        sunset_at: "2026-03-29"
     6343:
         selector: 18241817625092392675
         name: megaeth-testnet-2
@@ -653,11 +676,13 @@ evm:
         name: 0g-testnet-newton
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-04-29"
     16601:
         selector: 2131427466778448014
         name: 0g-testnet-galileo
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-04-29"
     16602:
         selector: 6892437333620424805
         name: 0g-testnet-galileo-1
@@ -671,11 +696,13 @@ evm:
         name: ethereum-testnet-holesky
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-09-30"
     25327:
         selector: 9723842205701363942
         name: everclear-mainnet
         network_type: mainnet
         deprecated: true
+        sunset_at: "2026-05-21"
     26888:
         selector: 7051849327615092843
         name: ab-testnet
@@ -725,6 +752,7 @@ evm:
         name: tempo-testnet
         network_type: testnet
         deprecated: true
+        sunset_at: "2026-03-08"
     42431:
         selector: 8457817439310187923
         name: tempo-testnet-moderato
@@ -750,6 +778,7 @@ evm:
         name: celo-testnet-alfajores
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-09-30"
     45439:
         selector: 8446413392851542429
         name: private-testnet-opala
@@ -779,6 +808,7 @@ evm:
         name: memento-mainnet
         network_type: mainnet
         deprecated: true
+        sunset_at: "2026-04-27"
     53302:
         selector: 13694007683517087973
         name: superseed-testnet
@@ -788,6 +818,7 @@ evm:
         name: sonic-testnet-blaze
         network_type: testnet
         deprecated: true
+        sunset_at: "2026-05-01"
     57073:
         selector: 3461204551265785888
         name: ethereum-mainnet-ink-1
@@ -796,6 +827,8 @@ evm:
         selector: 1355246678561316402
         name: ethereum-testnet-goerli-linea-1
         network_type: testnet
+        deprecated: true
+        sunset_at: "2024-04-13"
     59141:
         selector: 5719461335882077547
         name: ethereum-testnet-sepolia-linea-1
@@ -821,6 +854,7 @@ evm:
         name: treasure-mainnet
         network_type: mainnet
         deprecated: true
+        sunset_at: "2025-05-30"
     68414:
         selector: 12657445206920369324
         name: nexon-mainnet-henesys
@@ -846,16 +880,19 @@ evm:
         name: berachain-testnet-bartio
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-02-06"
     80085:
         selector: 12336603543561911511
         name: berachain-testnet-artio
         network_type: testnet
         deprecated: true
+        sunset_at: "2024-06-09"
     80087:
         selector: 2285225387454015855
         name: zero-g-testnet-galileo
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-04-29"
     80094:
         selector: 1294465214383781161
         name: berachain-mainnet
@@ -869,10 +906,13 @@ evm:
         name: ethereum-mainnet-blast-1
         network_type: mainnet
         deprecated: true
+        sunset_at: "2026-05-30"
     84531:
         selector: 5790810961207155433
         name: ethereum-testnet-goerli-base-1
         network_type: testnet
+        deprecated: true
+        sunset_at: "2024-04-13"
     84532:
         selector: 10344971235874465080
         name: ethereum-testnet-sepolia-base-1
@@ -910,11 +950,13 @@ evm:
         name: etherlink-testnet
         network_type: testnet
         deprecated: true
+        sunset_at: "2026-03-13"
     129399:
         selector: 9090863410735740267
         name: polygon-testnet-tatara
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-08-20"
     167000:
         selector: 16468599424800719238
         name: ethereum-mainnet-taiko-1
@@ -924,6 +966,7 @@ evm:
         name: ethereum-testnet-holesky-taiko-1
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-09-30"
     167012:
         selector: 9873759436596923887
         name: ethereum-testnet-hoodi-taiko
@@ -937,6 +980,7 @@ evm:
         name: mind-testnet
         network_type: testnet
         deprecated: true
+        sunset_at: "2026-05-30"
     200810:
         selector: 3789623672476206327
         name: bitcoin-testnet-bitlayer-1
@@ -957,6 +1001,8 @@ evm:
         selector: 6101244977088475029
         name: ethereum-testnet-goerli-arbitrum-1
         network_type: testnet
+        deprecated: true
+        sunset_at: "2024-04-13"
     421614:
         selector: 3478487238524512106
         name: ethereum-testnet-sepolia-arbitrum-1
@@ -998,6 +1044,7 @@ evm:
         name: pharos-testnet
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-10-27"
     688689:
         selector: 16098325658947243212
         name: pharos-atlantic-testnet
@@ -1047,16 +1094,19 @@ evm:
         name: ethereum-testnet-sepolia-arbitrum-1-treasure-1
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-05-09"
     978658:
         selector: 3676916124122457866
         name: treasure-testnet-topaz
         network_type: testnet
         deprecated: true
+        sunset_at: "2025-05-09"
     978670:
         selector: 1010349088906777999
         name: ethereum-mainnet-arbitrum-1-treasure-1
         network_type: mainnet
         deprecated: true
+        sunset_at: "2025-05-30"
     2019775:
         selector: 945045181441419236
         name: jovay-testnet
@@ -1098,11 +1148,13 @@ evm:
         name: corn-mainnet
         network_type: mainnet
         deprecated: true
+        sunset_at: "2026-06-30"
     21000001:
         selector: 1467427327723633929
         name: ethereum-testnet-sepolia-corn-1
         network_type: testnet
         deprecated: true
+        sunset_at: "2026-06-30"
     31415926:
         selector: 7060342227814389000
         name: filecoin-testnet
@@ -1116,6 +1168,7 @@ evm:
         name: ethereum-testnet-sepolia-blast-1
         network_type: testnet
         deprecated: true
+        sunset_at: "2026-05-30"
     728126428:
         selector: 1546563616611573946
         name: tron-mainnet-evm
