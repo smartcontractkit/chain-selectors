@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"regexp"
 	"strconv"
+	"time"
 )
 
 type chainInfo struct {
@@ -414,6 +415,57 @@ func IsDeprecated(selector uint64) (bool, error) {
 	}
 
 	return chainDetails.Deprecated, nil
+}
+
+// ParseSunsetDate parses a ChainDetails.SunsetAt string (RFC 3339 or 2006-01-02).
+// ok is false and the time is zero when the value is empty.
+func ParseSunsetDate(sunsetAt string) (sunset time.Time, ok bool, err error) {
+	if sunsetAt == "" {
+		return time.Time{}, false, nil
+	}
+
+	for _, layout := range []string{time.RFC3339, "2006-01-02"} {
+		if t, err := time.Parse(layout, sunsetAt); err == nil {
+			return t, true, nil
+		}
+	}
+
+	return time.Time{}, false, fmt.Errorf("invalid sunset date %q", sunsetAt)
+}
+
+// GetSunsetDate returns the chain's scheduled sunset date; ok is false when none is set.
+func GetSunsetDate(selector uint64) (sunset time.Time, ok bool, err error) {
+	chainDetails, err := GetChainDetails(selector)
+	if err != nil {
+		return time.Time{}, false, err
+	}
+
+	return ParseSunsetDate(chainDetails.SunsetAt)
+}
+
+// SunsetPassed reports whether sunsetAt is set and strictly before now.
+// It returns false when no sunset date is set.
+func SunsetPassed(sunsetAt string, now time.Time) (bool, error) {
+	sunset, ok, err := ParseSunsetDate(sunsetAt)
+	if err != nil {
+		return false, err
+	}
+	if !ok {
+		return false, nil
+	}
+
+	return now.After(sunset), nil
+}
+
+// IsSunset reports whether the chain's sunset date has passed as of now.
+// Returns false when no sunset date is set or it is still in the future.
+func IsSunset(selector uint64) (bool, error) {
+	chainDetails, err := GetChainDetails(selector)
+	if err != nil {
+		return false, err
+	}
+
+	return SunsetPassed(chainDetails.SunsetAt, time.Now())
 }
 
 func GetChainDetails(selector uint64) (ChainDetails, error) {

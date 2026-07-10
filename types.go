@@ -27,4 +27,7 @@ type ChainDetails struct {
 	NetworkType   NetworkType `yaml:"network_type"`
 	// Deprecated marks chains that have been sunset or superseded by a newer version.
 	Deprecated bool `yaml:"deprecated,omitempty"`
+	// SunsetAt is when the chain is (or was) scheduled to go offline, as an RFC 3339
+	// datetime or "2006-01-02" date. Empty means no sunset is set.
+	SunsetAt string `yaml:"sunset_at,omitempty"`
 }

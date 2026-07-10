@@ -2,6 +2,7 @@ package chain_selectors
 
 import (
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -264,4 +265,133 @@ func TestIsDeprecated(t *testing.T) {
 		require.Error(t, err)
 		assert.Contains(t, err.Error(), "unknown chain selector")
 	})
+}
+
+// Parsing of both accepted formats plus empty/invalid.
+func TestParseSunsetDate(t *testing.T) {
+	tests := []struct {
+		name     string
+		input    string
+		wantOK   bool
+		wantTime time.Time
+		wantErr  bool
+	}{
+		{"RFC 3339 datetime", "2020-01-02T03:04:05Z", true, time.Date(2020, 1, 2, 3, 4, 5, 0, time.UTC), false},
+		{"date only", "2999-01-01", true, time.Date(2999, 1, 1, 0, 0, 0, 0, time.UTC), false},
+		{"empty is not set", "", false, time.Time{}, false},
+		{"invalid", "not-a-date", false, time.Time{}, true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			ts, ok, err := ParseSunsetDate(tt.input)
+			if tt.wantErr {
+				require.Error(t, err)
+				assert.Contains(t, err.Error(), "invalid sunset date")
+			} else {
+				require.NoError(t, err)
+			}
+			assert.Equal(t, tt.wantOK, ok)
+			assert.Equal(t, tt.wantTime, ts)
+		})
+	}
+}
+
+// Sunset liveness: future = live, past = dead, unset = never dead.
+func TestSunsetPassed(t *testing.T) {
+	now := time.Date(2025, 6, 1, 0, 0, 0, 0, time.UTC)
+	tests := []struct {
+		name       string
+		sunsetAt   string
+		wantPassed bool
+		wantErr    bool
+	}{
+		{"past date is dead", "2020-01-01T00:00:00Z", true, false},
+		{"future date is live", "2999-01-01", false, false},
+		{"empty is not sunset", "", false, false},
+		{"invalid", "not-a-date", false, true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			passed, err := SunsetPassed(tt.sunsetAt, now)
+			if tt.wantErr {
+				require.Error(t, err)
+				assert.Contains(t, err.Error(), "invalid sunset date")
+				return
+			}
+			require.NoError(t, err)
+			assert.Equal(t, tt.wantPassed, passed)
+		})
+	}
+}
+
+// Registry wiring and error propagation for GetSunsetDate / IsSunset.
+// (Past-date sunset is verified end-to-end in TestExtraSelectorsE2E.)
+func TestSunsetAccessors(t *testing.T) {
+	tests := []struct {
+		name        string
+		selector    uint64
+		wantHasDate bool
+		wantSunset  bool
+		wantErr     bool
+	}{
+		{"chain without sunset date", ETHEREUM_MAINNET.Selector, false, false, false},
+		{"unknown selector", 9999999999999999999, false, false, true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			_, ok, err := GetSunsetDate(tt.selector)
+			sunset, serr := IsSunset(tt.selector)
+			if tt.wantErr {
+				require.Error(t, err)
+				require.Error(t, serr)
+				return
+			}
+			require.NoError(t, err)
+			require.NoError(t, serr)
+			assert.Equal(t, tt.wantHasDate, ok)
+			assert.Equal(t, tt.wantSunset, sunset)
+		})
+	}
+}
+
+// Every configured sunset_at must parse, so a malformed date fails CI and can't be merged.
+func TestAllSunsetDatesValid(t *testing.T) {
+	check := func(name, sunsetAt string) {
+		if sunsetAt == "" {
+			return
+		}
+		_, ok, err := ParseSunsetDate(sunsetAt)
+		require.NoErrorf(t, err, "chain %q has invalid sunset_at %q", name, sunsetAt)
+		assert.Truef(t, ok, "chain %q sunset_at %q parsed but reported not set", name, sunsetAt)
+	}
+	checkAll := func(selectors []ChainDetails) {
+		for _, d := range selectors {
+			check(d.ChainName, d.SunsetAt)
+		}
+	}
+	values := func(m map[uint64]ChainDetails) []ChainDetails {
+		out := make([]ChainDetails, 0, len(m))
+		for _, d := range m {
+			out = append(out, d)
+		}
+		return out
+	}
+	stringKeyed := func(m map[string]ChainDetails) []ChainDetails {
+		out := make([]ChainDetails, 0, len(m))
+		for _, d := range m {
+			out = append(out, d)
+		}
+		return out
+	}
+	checkAll(values(evmChainIdToChainSelector))
+	checkAll(stringKeyed(solanaChainIdToChainSelector))
+	checkAll(values(aptosSelectorsMap))
+	checkAll(values(suiSelectorsMap))
+	checkAll(values(tronSelectorsMap))
+	checkAll(stringKeyed(starknetSelectorsMap))
+	checkAll(stringKeyed(cantonChainsByChainId))
+	checkAll(stringKeyed(stellarChainsByChainId))
+	for _, d := range tonSelectorsMap {
+		check(d.ChainName, d.SunsetAt)
+	}
 }

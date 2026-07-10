@@ -480,6 +480,26 @@ func IsDeprecated(ctx context.Context, selector uint64, opts ...Option) (bool, e
 	return details.Deprecated, nil
 }
 
+// GetSunsetDate returns the chain's scheduled sunset date; ok is false when none is set.
+func GetSunsetDate(ctx context.Context, selector uint64, opts ...Option) (time.Time, bool, error) {
+	details, err := GetChainDetailsBySelector(ctx, selector, opts...)
+	if err != nil {
+		return time.Time{}, false, err
+	}
+
+	return chain_selectors.ParseSunsetDate(details.SunsetAt)
+}
+
+// IsSunset reports whether the chain's sunset date has passed as of now.
+func IsSunset(ctx context.Context, selector uint64, opts ...Option) (bool, error) {
+	details, err := GetChainDetailsBySelector(ctx, selector, opts...)
+	if err != nil {
+		return false, err
+	}
+
+	return chain_selectors.SunsetPassed(details.SunsetAt, time.Now())
+}
+
 // ClearCache clears the remote data cache, forcing the next remote call to fetch fresh data
 func ClearCache() {
 	remoteCacheLock.Lock()

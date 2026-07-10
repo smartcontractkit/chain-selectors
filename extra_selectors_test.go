@@ -246,6 +246,16 @@ func TestExtraSelectorsE2E(t *testing.T) {
 	deprecated, err = IsDeprecated(1234567890123456789)
 	assert.NoError(t, err)
 	assert.False(t, deprecated)
+
+	// SunsetAt from an extra-selectors file propagates through to GetSunsetDate / IsSunset.
+	// (Parsing behavior is covered by unit tests in selectors_test.go.)
+	sunsetDate, ok, err := GetSunsetDate(2468013579246801357)
+	assert.NoError(t, err)
+	assert.True(t, ok)
+	assert.Equal(t, 2020, sunsetDate.Year())
+	sunset, err := IsSunset(2468013579246801357)
+	assert.NoError(t, err)
+	assert.True(t, sunset)
 }
 
 // Validates a custom provide file for formating errors. This can be used in external CI checks to ensure the file is valid.
