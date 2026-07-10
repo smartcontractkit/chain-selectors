@@ -115,6 +115,10 @@ sunset, ok, err := chainselectors.GetSunsetDate(5009297550715157269)
 
 // Check whether the sunset date has already passed (i.e. the chain is offline as of now).
 isOffline, err := chainselectors.IsSunset(5009297550715157269)
+
+// The same helpers are available on the remote API (note the ctx argument):
+sunset, ok, err = chainsel.GetSunsetDate(ctx, 5009297550715157269)
+isOffline, err = chainsel.IsSunset(ctx, 5009297550715157269)
 ```
 
 > **Deprecation vs. sunset:** `Deprecated` marks a chain as discouraged (it may still be live).

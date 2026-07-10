@@ -443,8 +443,8 @@ func GetSunsetDate(selector uint64) (sunset time.Time, ok bool, err error) {
 	return ParseSunsetDate(chainDetails.SunsetAt)
 }
 
-// SunsetPassed reports whether sunsetAt is set and strictly before now.
-// It returns false when no sunset date is set.
+// SunsetPassed reports whether sunsetAt is set and has been reached as of now.
+// The sunset time itself counts as passed. It returns false when no sunset date is set.
 func SunsetPassed(sunsetAt string, now time.Time) (bool, error) {
 	sunset, ok, err := ParseSunsetDate(sunsetAt)
 	if err != nil {
@@ -454,7 +454,7 @@ func SunsetPassed(sunsetAt string, now time.Time) (bool, error) {
 		return false, nil
 	}
 
-	return now.After(sunset), nil
+	return !now.Before(sunset), nil
 }
 
 // IsSunset reports whether the chain's sunset date has passed as of now.

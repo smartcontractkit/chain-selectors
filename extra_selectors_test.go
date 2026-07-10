@@ -258,7 +258,7 @@ func TestExtraSelectorsE2E(t *testing.T) {
 	assert.True(t, sunset)
 }
 
-// Validates a custom provide file for formating errors. This can be used in external CI checks to ensure the file is valid.
+// Validates a custom provided file for formatting errors. This can be used in external CI checks to ensure the file is valid.
 func TestExtraSelectorsValidateCustomFile(t *testing.T) {
 	extraSelectorsFile := os.Getenv("EXTRA_SELECTORS_FILE")
 	if extraSelectorsFile == "" {

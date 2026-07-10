@@ -306,6 +306,7 @@ func TestSunsetPassed(t *testing.T) {
 		wantErr    bool
 	}{
 		{"past date is dead", "2020-01-01T00:00:00Z", true, false},
+		{"exact sunset time is dead", "2025-06-01T00:00:00Z", true, false},
 		{"future date is live", "2999-01-01", false, false},
 		{"empty is not sunset", "", false, false},
 		{"invalid", "not-a-date", false, true},
