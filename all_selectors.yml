@@ -624,6 +624,10 @@ evm:
         selector: 8871595565390010547
         name: gnosis_chain-testnet-chiado
         network_type: testnet
+    10323:
+        selector: 9211758560309513668
+        name: mova-testnet
+        network_type: testnet
     11124:
         selector: 16235373811196386733
         name: abstract-testnet
@@ -821,6 +825,10 @@ evm:
         name: treasure-mainnet
         network_type: mainnet
         deprecated: true
+    61900:
+        selector: 3314641565992046393
+        name: mova-mainnet
+        network_type: mainnet
     68414:
         selector: 12657445206920369324
         name: nexon-mainnet-henesys
