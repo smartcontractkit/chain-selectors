@@ -691,6 +691,10 @@ selectors:
     selector: 17611928792452358269
     name: "t-rex-testnet"
     network_type: testnet
+  10323:
+    selector: 9211758560309513668
+    name: "mova-testnet"
+    network_type: testnet
 
   # Mainnets
   1:
@@ -1159,4 +1163,8 @@ selectors:
   2026041005:
     selector: 13879014182901017172
     name: "dtcc-mainnet-appchain"
+    network_type: mainnet
+  61900:
+    selector: 3314641565992046393
+    name: "mova-mainnet"
     network_type: mainnet
