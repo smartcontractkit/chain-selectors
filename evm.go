@@ -163,3 +163,17 @@ func IsEvm(chainSel uint64) (bool, error) {
 	// We always return true since only evm chains are supported atm.
 	return true, nil
 }
+
+var zkChains = map[uint64]struct{}{
+	ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1.Selector: {},
+	ETHEREUM_MAINNET_ZKSYNC_1.Selector: {},
+	LENS_MAINNET.Selector: {},
+	ETHEREUM_TESTNET_SEPOLIA_LENS_1.Selector: {},
+	CRONOS_ZKEVM_MAINNET.Selector: {},
+	CRONOS_ZKEVM_TESTNET_SEPOLIA.Selector: {},
+}
+
+func IsZkEvm(chainSel uint64) bool {
+	_, ok := zkChains[chainSel]
+	return ok
+}

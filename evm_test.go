@@ -244,3 +244,52 @@ func Test_EVMGetChainIDByChainSelector(t *testing.T) {
 		assert.Equal(t, chainID, fmt.Sprintf("%v", k))
 	}
 }
+
+func Test_IsZkEvm(t *testing.T) {
+	t.Parallel()
+
+	tests := []struct {
+		name          string
+		chainSelector uint64
+		isZk          bool
+	}{
+		{
+			name:          ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1.Name,
+			chainSelector: ETHEREUM_TESTNET_SEPOLIA_ZKSYNC_1.Selector,
+			isZk:          true,
+		},
+		{
+			name:          ETHEREUM_MAINNET_ZKSYNC_1.Name,
+			chainSelector: ETHEREUM_MAINNET_ZKSYNC_1.Selector,
+			isZk:          true,
+		},
+		{
+			name:          LENS_MAINNET.Name,
+			chainSelector: LENS_MAINNET.Selector,
+			isZk:          true,
+		},
+		{
+			name:          ETHEREUM_TESTNET_SEPOLIA_LENS_1.Name,
+			chainSelector: ETHEREUM_TESTNET_SEPOLIA_LENS_1.Selector,
+			isZk:          true,
+		},
+		{
+			name:          CRONOS_ZKEVM_MAINNET.Name,
+			chainSelector: CRONOS_ZKEVM_TESTNET_SEPOLIA.Selector,
+			isZk:          true,
+		},
+		{
+			name:          ETHEREUM_MAINNET.Name,
+			chainSelector: ETHEREUM_MAINNET.Selector,
+			isZk:          false,
+		},
+	}
+
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+			require.Equal(t, tt.isZk, IsZkEvm(tt.chainSelector))
+		})
+	}
+}
