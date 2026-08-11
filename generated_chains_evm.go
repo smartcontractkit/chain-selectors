@@ -195,6 +195,7 @@ var (
 	MONAD_TESTNET                                  = Chain{EvmChainID: 10143, Selector: 2183018362218727504, Name: "monad-testnet", NetworkType: NetworkTypeTestnet}
 	MORPH_MAINNET                                  = Chain{EvmChainID: 2818, Selector: 18164309074156128038, Name: "morph-mainnet", NetworkType: NetworkTypeMainnet}
 	MOVA_MAINNET                                   = Chain{EvmChainID: 61900, Selector: 3314641565992046393, Name: "mova-mainnet", NetworkType: NetworkTypeMainnet}
+	MOVA_MAINNET_2                                 = Chain{EvmChainID: 61901, Selector: 4215185756725900654, Name: "mova-mainnet-2", NetworkType: NetworkTypeMainnet}
 	MOVA_TESTNET                                   = Chain{EvmChainID: 10323, Selector: 9211758560309513668, Name: "mova-testnet", NetworkType: NetworkTypeTestnet}
 	NEAR_MAINNET                                   = Chain{EvmChainID: 397, Selector: 2039744413822257700, Name: "near-mainnet", NetworkType: NetworkTypeMainnet}
 	NEAR_TESTNET                                   = Chain{EvmChainID: 398, Selector: 5061593697262339000, Name: "near-testnet", NetworkType: NetworkTypeTestnet}
@@ -582,6 +583,7 @@ var ALL = []Chain{
 	MONAD_TESTNET,
 	MORPH_MAINNET,
 	MOVA_MAINNET,
+	MOVA_MAINNET_2,
 	MOVA_TESTNET,
 	NEAR_MAINNET,
 	NEAR_TESTNET,
