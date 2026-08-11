@@ -829,6 +829,11 @@ evm:
         selector: 3314641565992046393
         name: mova-mainnet
         network_type: mainnet
+        deprecated: true
+    61901:
+        selector: 4215185756725900654
+        name: mova-mainnet-2
+        network_type: mainnet
     68414:
         selector: 12657445206920369324
         name: nexon-mainnet-henesys
