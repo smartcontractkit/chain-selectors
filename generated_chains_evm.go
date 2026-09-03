@@ -162,6 +162,8 @@ var (
 	GLAMSTERDAM_DEVNET_6                           = Chain{EvmChainID: 7052886157, Selector: 410896468069059699, Name: "glamsterdam-devnet-6", NetworkType: NetworkTypeTestnet}
 	GNOSIS_CHAIN_MAINNET                           = Chain{EvmChainID: 100, Selector: 465200170687744372, Name: "gnosis_chain-mainnet", NetworkType: NetworkTypeMainnet}
 	GNOSIS_CHAIN_TESTNET_CHIADO                    = Chain{EvmChainID: 10200, Selector: 8871595565390010547, Name: "gnosis_chain-testnet-chiado", NetworkType: NetworkTypeTestnet}
+	GRAVITY_MAINNET                                = Chain{EvmChainID: 127001, Selector: 2988178761202034333, Name: "gravity-mainnet", NetworkType: NetworkTypeMainnet}
+	GRAVITY_TESTNET_LONGEVITY                      = Chain{EvmChainID: 7771625, Selector: 9181335567442030426, Name: "gravity-testnet-longevity", NetworkType: NetworkTypeTestnet}
 	HEDERA_MAINNET                                 = Chain{EvmChainID: 295, Selector: 3229138320728879060, Name: "hedera-mainnet", NetworkType: NetworkTypeMainnet}
 	HEDERA_TESTNET                                 = Chain{EvmChainID: 296, Selector: 222782988166878823, Name: "hedera-testnet", NetworkType: NetworkTypeTestnet}
 	HEMI_MAINNET                                   = Chain{EvmChainID: 43111, Selector: 1804312132722180201, Name: "hemi-mainnet", NetworkType: NetworkTypeMainnet}
@@ -550,6 +552,8 @@ var ALL = []Chain{
 	GLAMSTERDAM_DEVNET_6,
 	GNOSIS_CHAIN_MAINNET,
 	GNOSIS_CHAIN_TESTNET_CHIADO,
+	GRAVITY_MAINNET,
+	GRAVITY_TESTNET_LONGEVITY,
 	HEDERA_MAINNET,
 	HEDERA_TESTNET,
 	HEMI_MAINNET,
