@@ -1092,7 +1092,7 @@ evm:
         network_type: testnet
     7771625:
         selector: 9181335567442030426
-        name: gravity-testnet
+        name: gravity-testnet-longevity
         network_type: testnet
     7777777:
         selector: 3555797439612589184
