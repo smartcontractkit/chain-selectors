@@ -551,6 +551,7 @@ evm:
         selector: 470401360549526817
         name: superseed-mainnet
         network_type: mainnet
+        deprecated: true
     5611:
         selector: 13274425992935471758
         name: binance_smart_chain-testnet-opbnb-1
@@ -572,6 +573,7 @@ evm:
         selector: 379340054879810246
         name: everclear-testnet-sepolia
         network_type: testnet
+        deprecated: true
     6900:
         selector: 17349189558768828726
         name: nibiru-mainnet
@@ -787,6 +789,7 @@ evm:
         selector: 13694007683517087973
         name: superseed-testnet
         network_type: testnet
+        deprecated: true
     57054:
         selector: 3676871237479449268
         name: sonic-testnet-blaze
@@ -958,6 +961,7 @@ evm:
         selector: 3789623672476206327
         name: bitcoin-testnet-bitlayer-1
         network_type: testnet
+        deprecated: true
     200901:
         selector: 7937294810946806131
         name: bitcoin-mainnet-bitlayer-1
@@ -994,6 +998,7 @@ evm:
         selector: 2279865765895943307
         name: ethereum-testnet-sepolia-scroll-1
         network_type: testnet
+        deprecated: true
     534352:
         selector: 13204309965629103672
         name: ethereum-mainnet-scroll-1

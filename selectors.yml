@@ -345,6 +345,7 @@ selectors:
     selector: 2279865765895943307
     name: "ethereum-testnet-sepolia-scroll-1"
     network_type: testnet
+    deprecated: true
   686868:
     selector: 5269261765892944301
     name: "bitcoin-testnet-merlin"
@@ -426,6 +427,7 @@ selectors:
     selector: 3789623672476206327
     name: "bitcoin-testnet-bitlayer-1"
     network_type: testnet
+    deprecated: true
   808813:
     selector: 5535534526963509396
     name: "bitcoin-testnet-sepolia-bob-1"
@@ -515,6 +517,7 @@ selectors:
     selector: 13694007683517087973
     name: "superseed-testnet"
     network_type: testnet
+    deprecated: true
   128123:
     selector: 1910019406958449359
     name: "etherlink-testnet"
@@ -566,6 +569,7 @@ selectors:
     selector: 379340054879810246
     name: "everclear-testnet-sepolia"
     network_type: testnet
+    deprecated: true
   1952:
     selector: 10212741611335999305
     name: "xlayer-testnet"
@@ -1042,6 +1046,7 @@ selectors:
     selector: 470401360549526817
     name: "superseed-mainnet"
     network_type: mainnet
+    deprecated: true
   2741:
     selector: 3577778157919314504
     name: "abstract-mainnet"
