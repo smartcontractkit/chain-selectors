@@ -345,6 +345,7 @@ selectors:
     selector: 2279865765895943307
     name: "ethereum-testnet-sepolia-scroll-1"
     network_type: testnet
+    deprecated: true
   686868:
     selector: 5269261765892944301
     name: "bitcoin-testnet-merlin"

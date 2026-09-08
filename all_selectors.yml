@@ -997,6 +997,7 @@ evm:
         selector: 2279865765895943307
         name: ethereum-testnet-sepolia-scroll-1
         network_type: testnet
+        deprecated: true
     534352:
         selector: 13204309965629103672
         name: ethereum-mainnet-scroll-1
