@@ -573,6 +573,7 @@ evm:
         selector: 379340054879810246
         name: everclear-testnet-sepolia
         network_type: testnet
+        deprecated: true
     6900:
         selector: 17349189558768828726
         name: nibiru-mainnet

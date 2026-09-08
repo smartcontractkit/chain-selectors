@@ -569,6 +569,7 @@ selectors:
     selector: 379340054879810246
     name: "everclear-testnet-sepolia"
     network_type: testnet
+    deprecated: true
   1952:
     selector: 10212741611335999305
     name: "xlayer-testnet"
