@@ -1186,3 +1186,7 @@ selectors:
     selector: 2988178761202034333
     name: "gravity-mainnet"
     network_type: mainnet
+  4103882950:
+    selector: 18362000170840307455
+    name: "private-testnet-basalt"
+    network_type: testnet
