@@ -236,6 +236,7 @@ var (
 	POLYGON_TESTNET_MUMBAI                         = Chain{EvmChainID: 80001, Selector: 12532609583862916517, Name: "polygon-testnet-mumbai", NetworkType: NetworkTypeTestnet}
 	POLYGON_TESTNET_TATARA                         = Chain{EvmChainID: 129399, Selector: 9090863410735740267, Name: "polygon-testnet-tatara", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_ANDESITE                       = Chain{EvmChainID: 2024, Selector: 6915682381028791124, Name: "private-testnet-andesite", NetworkType: NetworkTypeTestnet}
+	PRIVATE_TESTNET_BASALT                         = Chain{EvmChainID: 4103882950, Selector: 18362000170840307455, Name: "private-testnet-basalt", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_GRANITE                        = Chain{EvmChainID: 2023, Selector: 3260900564719373474, Name: "private-testnet-granite", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_MICA                           = Chain{EvmChainID: 424242, Selector: 4489326297382772450, Name: "private-testnet-mica", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_OBSIDIAN                       = Chain{EvmChainID: 682, Selector: 6260932437388305511, Name: "private-testnet-obsidian", NetworkType: NetworkTypeTestnet}
@@ -626,6 +627,7 @@ var ALL = []Chain{
 	POLYGON_TESTNET_MUMBAI,
 	POLYGON_TESTNET_TATARA,
 	PRIVATE_TESTNET_ANDESITE,
+	PRIVATE_TESTNET_BASALT,
 	PRIVATE_TESTNET_GRANITE,
 	PRIVATE_TESTNET_MICA,
 	PRIVATE_TESTNET_OBSIDIAN,

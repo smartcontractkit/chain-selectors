@@ -1178,6 +1178,10 @@ evm:
         selector: 2052925811360307749
         name: tron-testnet-nile-evm
         network_type: testnet
+    4103882950:
+        selector: 18362000170840307455
+        name: private-testnet-basalt
+        network_type: testnet
     7052886157:
         selector: 410896468069059699
         name: glamsterdam-devnet-6
