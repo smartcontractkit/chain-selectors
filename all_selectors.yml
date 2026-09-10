@@ -1186,6 +1186,10 @@ evm:
         selector: 410896468069059699
         name: glamsterdam-devnet-6
         network_type: testnet
+    7091047534:
+        selector: 12540949017250913122
+        name: ethereum-testnet-plataberget
+        network_type: testnet
     7095321190:
         selector: 10073034426865795585
         name: glamsterdam-devnet-5
