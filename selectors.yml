@@ -705,6 +705,18 @@ selectors:
     selector: 9181335567442030426
     name: "gravity-testnet-longevity"
     network_type: testnet
+  4103882950:
+    selector: 18362000170840307455
+    name: "private-testnet-basalt"
+    network_type: testnet
+  7091047534:
+    selector: 12540949017250913122
+    name: "ethereum-testnet-plataberget"
+    network_type: testnet
+  936486:
+    selector: 4611245740287073885
+    name: "t-rex-testnet-zenith"
+    network_type: testnet
 
   # Mainnets
   1:
@@ -1191,11 +1203,3 @@ selectors:
     selector: 2988178761202034333
     name: "gravity-mainnet"
     network_type: mainnet
-  4103882950:
-    selector: 18362000170840307455
-    name: "private-testnet-basalt"
-    network_type: testnet
-  7091047534:
-    selector: 12540949017250913122
-    name: "ethereum-testnet-plataberget"
-    network_type: testnet

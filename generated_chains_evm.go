@@ -385,6 +385,7 @@ var (
 	TRON_TESTNET_NILE_EVM                          = Chain{EvmChainID: 3448148188, Selector: 2052925811360307749, Name: "tron-testnet-nile-evm", NetworkType: NetworkTypeTestnet}
 	TRON_TESTNET_SHASTA_EVM                        = Chain{EvmChainID: 2494104990, Selector: 13231703482326770598, Name: "tron-testnet-shasta-evm", NetworkType: NetworkTypeTestnet}
 	T_REX_TESTNET                                  = Chain{EvmChainID: 364301, Selector: 17611928792452358269, Name: "t-rex-testnet", NetworkType: NetworkTypeTestnet}
+	T_REX_TESTNET_ZENITH                           = Chain{EvmChainID: 936486, Selector: 4611245740287073885, Name: "t-rex-testnet-zenith", NetworkType: NetworkTypeTestnet}
 	VELAS_MAINNET                                  = Chain{EvmChainID: 106, Selector: 374210358663784372, Name: "velas-mainnet", NetworkType: NetworkTypeMainnet}
 	VELAS_TESTNET                                  = Chain{EvmChainID: 111, Selector: 572210378683744374, Name: "velas-testnet", NetworkType: NetworkTypeTestnet}
 	WEMIX_MAINNET                                  = Chain{EvmChainID: 1111, Selector: 5142893604156789321, Name: "wemix-mainnet", NetworkType: NetworkTypeMainnet}
@@ -777,6 +778,7 @@ var ALL = []Chain{
 	TRON_TESTNET_NILE_EVM,
 	TRON_TESTNET_SHASTA_EVM,
 	T_REX_TESTNET,
+	T_REX_TESTNET_ZENITH,
 	VELAS_MAINNET,
 	VELAS_TESTNET,
 	WEMIX_MAINNET,

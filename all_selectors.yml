@@ -1069,6 +1069,10 @@ evm:
         selector: 5556806327594153475
         name: nexon-stage
         network_type: testnet
+    936486:
+        selector: 4611245740287073885
+        name: t-rex-testnet-zenith
+        network_type: testnet
     978657:
         selector: 10443705513486043421
         name: ethereum-testnet-sepolia-arbitrum-1-treasure-1
