@@ -44,6 +44,11 @@ func main() {
     // Getting chain details based on network name
     details, err := chainselectors.GetChainDetailsByNetworkName("ethereum-mainnet")
 
+    // Listing chain families and their selectors (includes test and extra selectors)
+    families := chainselectors.Families()
+    solanaSelectors, err := chainselectors.SelectorsByFamily(chainselectors.FamilySolana)
+    allSelectors := chainselectors.AllSelectors()
+
     // -------------------For EVM chains--------------------
 
     // Getting selector based on ChainId
