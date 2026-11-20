@@ -717,6 +717,10 @@ selectors:
     selector: 4611245740287073885
     name: "t-rex-testnet-zenith"
     network_type: testnet
+  2026110701:
+    selector: 16138070312089718605
+    name: "private-testnet-lignite"
+    network_type: testnet
 
   # Mainnets
   1:

@@ -1175,6 +1175,10 @@ evm:
         selector: 13879014182901017172
         name: dtcc-mainnet-appchain
         network_type: mainnet
+    2026110701:
+        selector: 16138070312089718605
+        name: private-testnet-lignite
+        network_type: testnet
     2494104990:
         selector: 13231703482326770598
         name: tron-testnet-shasta-evm
