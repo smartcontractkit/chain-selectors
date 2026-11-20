@@ -239,6 +239,7 @@ var (
 	PRIVATE_TESTNET_ANDESITE                       = Chain{EvmChainID: 2024, Selector: 6915682381028791124, Name: "private-testnet-andesite", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_BASALT                         = Chain{EvmChainID: 4103882950, Selector: 18362000170840307455, Name: "private-testnet-basalt", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_GRANITE                        = Chain{EvmChainID: 2023, Selector: 3260900564719373474, Name: "private-testnet-granite", NetworkType: NetworkTypeTestnet}
+	PRIVATE_TESTNET_LIGNITE                        = Chain{EvmChainID: 2026110701, Selector: 16138070312089718605, Name: "private-testnet-lignite", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_MICA                           = Chain{EvmChainID: 424242, Selector: 4489326297382772450, Name: "private-testnet-mica", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_OBSIDIAN                       = Chain{EvmChainID: 682, Selector: 6260932437388305511, Name: "private-testnet-obsidian", NetworkType: NetworkTypeTestnet}
 	PRIVATE_TESTNET_OPALA                          = Chain{EvmChainID: 45439, Selector: 8446413392851542429, Name: "private-testnet-opala", NetworkType: NetworkTypeTestnet}
@@ -632,6 +633,7 @@ var ALL = []Chain{
 	PRIVATE_TESTNET_ANDESITE,
 	PRIVATE_TESTNET_BASALT,
 	PRIVATE_TESTNET_GRANITE,
+	PRIVATE_TESTNET_LIGNITE,
 	PRIVATE_TESTNET_MICA,
 	PRIVATE_TESTNET_OBSIDIAN,
 	PRIVATE_TESTNET_OPALA,
