@@ -202,6 +202,7 @@ selectors:
     selector: 5298399861320400553
     name: "ethereum-testnet-sepolia-lisk-1"
     network_type: testnet
+    deprecated: true
   5001:
     selector: 4168263376276232250
     name: "ethereum-testnet-goerli-mantle-1"
@@ -1072,6 +1073,7 @@ selectors:
     selector: 15293031020466096408
     name: "lisk-mainnet"
     network_type: mainnet
+    deprecated: true
   185:
     selector: 17164792800244661392
     name: "mint-mainnet"

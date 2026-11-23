@@ -327,6 +327,7 @@ evm:
         selector: 15293031020466096408
         name: lisk-mainnet
         network_type: mainnet
+        deprecated: true
     1284:
         selector: 1252863800116739621
         name: polkadot-mainnet-moonbeam
@@ -520,6 +521,7 @@ evm:
         selector: 5298399861320400553
         name: ethereum-testnet-sepolia-lisk-1
         network_type: testnet
+        deprecated: true
     4217:
         selector: 7281642695469137430
         name: tempo-mainnet
